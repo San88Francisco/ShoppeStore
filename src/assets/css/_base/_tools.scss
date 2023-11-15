@@ -1,4 +1,4 @@
-// Vars
+// VARS
 $accent-color: rgb(161, 138, 104);
 $white-color: rgb(255, 255, 255);
 $black-color: rgb(0, 0, 0);
@@ -6,6 +6,8 @@ $dark-gray-color: rgb(158, 158, 158);
 $gray-color: rgb(216, 216, 216);
 $light-gray-color: rgb(239, 239, 239);
 $errors-color: rgb(216, 39, 0);
+$placeholder-color: rgb(112,112,112);
+$transition-time: 300ms;
 
 * {
   margin: 0;
@@ -22,6 +24,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  border: 2px solid $dark-gray-color;
+  background: $white-color;
 }
 
 ul {
@@ -53,6 +60,20 @@ h5 {
   line-height: 1.68;
 }
 
+input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: $placeholder-color;
+
+  &::placeholder {
+    color: $placeholder-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.68;
+  }
+}
+
 @media screen and (width: 320px) {
   h1 {
     font-weight: 400;
@@ -69,4 +90,7 @@ h5 {
     font-size: 14px;
     line-height: 1.85;
   }
+  button {
+  border: 1px solid $dark-gray-color;
+}
 }
