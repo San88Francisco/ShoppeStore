@@ -1,3 +1,67 @@
-h1{
-   color: rgb(219, 10, 10);
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=DM+Sans:opsz@9..40&display=swap');
+body{
+   padding: 0px 96px;
 }
+.header {
+   margin: 64px 0px 16px;
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   grid-template-rows: 1fr;
+   .header__logo{
+      grid-column: 1/10;
+   }
+   .header__link{
+      grid-column: 10/13;
+      nav{
+         display: grid;
+         grid-template-columns: repeat(12, 1fr);
+         grid-template-rows: 1fr;
+         .navbar__page{
+            grid-column: 1/8;
+            ul{
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               li a {
+                  font-family: 'DM Sans', sans-serif;
+                  font-size: 16px;
+                  font-weight: 400;
+                  line-height: 27px;
+               }
+            }
+         }
+         .header__verticalhr{
+            grid-column: 8/9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            hr{
+               height: 17px;
+               border: 1px solid #70707054;
+               border-radius: 10px;
+            }
+         }
+         .navbar__user{
+            grid-column: 9/13;
+            ul{
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+
+            }
+         }
+      }
+      
+   }
+}
+@media screen and (max-width: 1500px){
+   .header{
+      .header__logo{
+         grid-column: 1/9;
+      }
+      .header__link{
+         grid-column: 9/13;
+      }
+   }
+}
+
