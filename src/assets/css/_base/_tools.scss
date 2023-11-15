@@ -1,0 +1,72 @@
+// Vars
+$accent-color: rgb(161, 138, 104);
+$white-color: rgb(255, 255, 255);
+$black-color: rgb(0, 0, 0);
+$dark-gray-color: rgb(158, 158, 158);
+$gray-color: rgb(216, 216, 216);
+$light-gray-color: rgb(239, 239, 239);
+$errors-color: rgb(216, 39, 0);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  background-color: $white-color;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 33px;
+}
+h2 {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.34;
+}
+h3 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.3;
+}
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+}
+h5 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+@media screen and (width: 320px) {
+  h1 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 2.18;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+}
