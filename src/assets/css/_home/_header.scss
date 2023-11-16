@@ -2,23 +2,13 @@
 body{
    padding: 0px 96px;
 }
-.header {
+.header{
    margin: 64px 0px 16px;
    display: grid;
    grid-template-columns: repeat(12, 1fr);
    grid-template-rows: 1fr;
-
-
-   //! Для сторінок shop, product ... (НА HEADER НЕ ВКЛЮЧАТИ)
-   // border-bottom: 2px solid #D8D8D8;
-   // padding-bottom: 19px;
-   
-   
    .header__logo{
       grid-column: 1/6;
-      a svg{
-         width: max(15vw);
-      }
    }
    .header__link{
       grid-column: 6/13;
@@ -85,20 +75,27 @@ body{
       }
       
    }
-}
 
-.act{
-   border-radius:1px;
-   border-bottom: 2px solid #000;
-}
+  .act{
+     border-radius:1px;
+     border-bottom: 2px solid #000;
+  }
 
-@media screen and (max-width: 850px){
-   .header{
-      .header__logo{
-         grid-column: 1/5;
-      }
-      .header__link{
-         grid-column: 5/13;
+   @media screen and (max-width: 850px){
+      .header{
+         .header__logo{
+            grid-column: 1/5;
+         }
+         .header__link{
+            grid-column: 5/13;
+         }
       }
    }
 }
+
+.header__underline{
+   //! Для сторінок shop, product ... (НА HEADER НЕ ВКЛЮЧАТИ)
+   border-bottom: 2px solid #D8D8D8;
+   padding-bottom: 19px;
+}
+
