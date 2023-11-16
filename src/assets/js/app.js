@@ -1,3 +1,1 @@
-fun = (a) => {
-    return a;
-}
+console.log('hello');
