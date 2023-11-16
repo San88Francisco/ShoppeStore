@@ -8,14 +8,16 @@ body{
    grid-template-columns: repeat(12, 1fr);
    grid-template-rows: 1fr;
    .header__logo{
-      grid-column: 1/10;
+      grid-column: 1/6;
+      a svg{
+         width: max(15vw);
+      }
    }
    .header__link{
-      grid-column: 10/13;
+      grid-column: 6/13;
       nav{
-         display: grid;
-         grid-template-columns: repeat(12, 1fr);
-         grid-template-rows: 1fr;
+         display: flex;
+         justify-content: flex-end;
          .navbar__page{
             grid-column: 1/8;
             ul{
@@ -27,11 +29,22 @@ body{
                   font-size: 16px;
                   font-weight: 400;
                   line-height: 27px;
+                  margin: 0px 1.5vw;
+                  padding-bottom: 10px;
+                  // &:hover{
+                  //    transition: 50ms all ease-in-out;
+                  //    border-radius:1px;
+                  //    border-bottom: 2px solid #000;
+                  // }
+                  &:active{
+                     transition: 50ms all ease-in-out;
+                     border-radius:1px;
+                     border-bottom: 2px solid #000;
+                  }
                }
             }
          }
          .header__verticalhr{
-            grid-column: 8/9;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -42,26 +55,42 @@ body{
             }
          }
          .navbar__user{
-            grid-column: 9/13;
             ul{
                display: flex;
                justify-content: space-between;
                align-items: center;
-
+               li a {
+                  margin: 0px 1.5vw;
+                  padding-bottom: 10px;
+                  // &:hover{
+                  //    transition: 50ms all ease-in-out;
+                  //    border-radius:1px;
+                  //    border-bottom: 2px solid #000;
+                  // }
+                  &:active{
+                     transition: 50ms all ease-in-out;
+                     border-radius:1px;
+                     border-bottom: 2px solid #000;
+                  }
+               }
             }
          }
       }
       
    }
 }
-@media screen and (max-width: 1500px){
+
+@media screen and (max-width: 850px){
    .header{
       .header__logo{
-         grid-column: 1/9;
+         grid-column: 1/5;
       }
       .header__link{
-         grid-column: 9/13;
+         grid-column: 5/13;
       }
    }
 }
+
+
+
 
