@@ -48,13 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const imgElement = block.querySelector(".shop-latest__heart");
 
-        let currentImage = '../../../assets/img/Home_img/heart.png';
+        let currentImage = './assets/img/Home_img/Body/heart.png';
 
         imgElement.addEventListener("click", function () {
-            if (currentImage === '../../../assets/img/Home_img/heart.png') {
-                currentImage = '../../../assets/img/Home_img/red_heart.png'; 
+            if (currentImage === './assets/img/Home_img/Body/heart.png') {
+                currentImage = './assets/img/Home_img/Body/red_heart.png'; 
             } else {
-                currentImage = '../../../assets/img/Home_img/heart.png';
+                currentImage = './assets/img/Home_img/Body/heart.png';
             }
             
             imgElement.src = currentImage;
