@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
    });
 
    slider.addEventListener('mouseleave', function () {
-       intervalId = setInterval(autoSlide, 2500);
+       intervalId = setInterval(autoSlide, 3500);
    });
 
    function changeSlide(index) {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
        changeSlide(currentIndex);
    }
 
-   intervalId = setInterval(autoSlide, 2500);
+   intervalId = setInterval(autoSlide, 3500);
 });
 
 
