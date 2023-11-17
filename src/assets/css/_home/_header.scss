@@ -5,8 +5,8 @@
    display: grid;
    grid-template-columns: repeat(12, 1fr);
    grid-template-rows: 1fr;
-   margin:  0 auto;
-
+   margin: 0 auto;
+   margin-top: 66px;
    .header__logo {
       grid-column: 1/6;
    }
