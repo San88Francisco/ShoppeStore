@@ -1,0 +1,116 @@
+
+.header {
+   margin: 64px 0px 16px;
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   grid-template-rows: 1fr;
+
+   .header__logo {
+      grid-column: 1/6;
+   }
+
+   .header__link {
+      grid-column: 6/13;
+
+      nav {
+         display: flex;
+         justify-content: flex-end;
+
+         .navbar__page {
+            grid-column: 1/8;
+
+            ul {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+
+               li:active {
+                  transition: 50ms all ease-in-out;
+                  border-radius: 1px;
+                  border-bottom: 2px solid #000;
+
+               }
+
+               li {
+                  height: 45px;
+               }
+
+               li a {
+                  margin: 0px 1.5vw;
+
+                  // &:hover{
+                  //    transition: 50ms all ease-in-out;
+                  //    border-radius:1px;
+                  //    border-bottom: 2px solid #000;
+                  // }
+               }
+            }
+         }
+
+         .header__verticalhr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            hr {
+               height: 17px;
+               border: 1px solid #70707054;
+               border-radius: 10px;
+               margin-bottom: 23px;
+            }
+         }
+
+         .navbar__user {
+            ul {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+
+               li:active {
+                  transition: 50ms all ease-in-out;
+                  border-radius: 1px;
+                  border-bottom: 2px solid #000;
+
+               }
+
+               li {
+                  height: 45px;
+               }
+
+               li a {
+                  margin: 0px 1.5vw;
+
+                  // &:hover{
+                  //    transition: 50ms all ease-in-out;
+                  //    border-radius:1px;
+                  //    border-bottom: 2px solid #000;
+                  // }
+               }
+            }
+         }
+      }
+   }
+
+   .act {
+      border-radius: 1px;
+      border-bottom: 2px solid #000;
+   }
+
+   @media screen and (max-width: 850px) {
+      .header {
+         .header__logo {
+            grid-column: 1/5;
+         }
+
+         .header__link {
+            grid-column: 5/13;
+         }
+      }
+   }
+}
+
+// .header__underline{
+//    //! Для сторінок shop, product ... (НА HEADER НЕ ВКЛЮЧАТИ)
+//    border-bottom: 2px solid #D8D8D8;
+//    padding-bottom: 19px;
+// }
