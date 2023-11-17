@@ -1,118 +1,113 @@
- .shop-latest{
-    padding: 0 96px;
-    .shop-latest-text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 0 40px 0;
-            p{
-            font-size: 33px;
-            font-weight: 700;
-            line-height: 43px;
-            letter-spacing: 0em;
-            }
-        
-            a{
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 26px;
-            letter-spacing: 0em;
-            color: $accent-color;
-            position: relative;
-            right: 53px;
-            }
-        }
-    @media (max-width: 1530px){
-        .shop-latest-text{
-            a{
-               right: 0;
-            }
-        }  
+.shop-latest {
+  padding: 0 96px;
+  .shop-latest-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 40px 0;
+    p {
+      font-size: 33px;
+      font-weight: 700;
+      line-height: 43px;
+      letter-spacing: 0em;
     }
-    .shop-latest-blocks {
+
+    a {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26px;
+      letter-spacing: 0em;
+      color: $accent-color;
+      position: relative;
+      right: 53px;
+    }
+  }
+  @media (max-width: 1530px) {
+    .shop-latest-text {
+      a {
+        right: 0;
+      }
+    }
+  }
+  .shop-latest-blocks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 57px;
     grid-row-gap: 178px;
     margin: 0 auto;
+  }
+
+  .shop-latest__block {
+    display: flex;
+    flex-direction: column;
+    max-width: 377px;
+    max-height: 380px;
+    position: relative;
+
+    .shop-latest__img {
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .shop-latest_hover {
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        min-height: 65px;
+        min-width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 0 30px 0 30px;
+        transition: all 0.4s ease;
+      }
+
+      &:hover .shop-latest_hover {
+        opacity: 1;
+      }
+
+      .shop-latest__heart {
+        width: 1.5em;
+      }
     }
-            
-.shop-latest__block {
-        display: flex;
-        flex-direction: column;
-        max-width: 377px;
-        max-height: 380px;
-        position: relative;
 
-        .shop-latest__img {
-          
-            img{
-                width: 100%;
-                height: auto;
-                border-radius: 10px;
-            }
-            
-            .shop-latest_hover{
-                opacity: 0;
-                background-color: rgba(255, 255, 255, .5);
-                min-height: 65px;
-                min-width: 100%;
-                position: absolute;
-                bottom: 0;
-                padding: 0 30px 0 30px;
-                transition: all .4s ease;
-            }
-           
-            &:hover .shop-latest_hover{
-                opacity: 1;
-            }
-        }    
+    .shop-latest_hover_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 65px;
+      min-width: 100%;
+      transition: all 0.3s ease;
+      p {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      a {
+        border: none;
+      }
+    }
+  }
 
-        .shop-latest_hover_container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 65px;
-            min-width: 100%;
-            transition: all 0.3s ease;
-            p{
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: normal;
-                text-transform: uppercase;
-            }
-            a{
-                border: none;
-                
-            }
-        }
-}
-    
-
-    .shop-latest__name {
+  .shop-latest__name {
     margin: 24px 0 16px 0;
-            
+
     font-size: 20px;
     font-weight: 400;
     line-height: 26px;
     letter-spacing: 0em;
     color: #000;
-    }
-            
-    .shop-latest__price {
-            
+  }
+
+  .shop-latest__price {
     font-size: 20px;
     font-weight: 500;
     line-height: 26px;
     letter-spacing: 0em;
-    
+
     color: $accent-color;
-    }
-
-
-    
+  }
 }
-    
-    
