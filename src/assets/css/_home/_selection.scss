@@ -1,6 +1,5 @@
  .shop-latest{
     padding: 0 96px;
-
     .shop-latest-text {
         display: flex;
         justify-content: space-between;
@@ -8,7 +7,7 @@
         margin: 0 0 40px 0;
             p{
             font-size: 33px;
-            font-weight: 500;
+            font-weight: 700;
             line-height: 43px;
             letter-spacing: 0em;
             }
@@ -39,24 +38,59 @@
     margin: 0 auto;
     }
             
-    .shop-latest__block {
+.shop-latest__block {
         display: flex;
         flex-direction: column;
         max-width: 377px;
         max-height: 380px;
+        position: relative;
+
+        .shop-latest__img {
+          
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
             
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: all 0.3s;
+            .shop-latest_hover{
+                opacity: 0;
+                background-color: rgba(255, 255, 255, .5);
+                min-height: 65px;
+                min-width: 100%;
+                position: absolute;
+                bottom: 0;
+                padding: 0 30px 0 30px;
+                transition: all .4s ease;
+            }
+           
+            &:hover .shop-latest_hover{
+                opacity: 1;
+            }
+        }    
+
+        .shop-latest_hover_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 65px;
+            min-width: 100%;
+            transition: all 0.3s ease;
+            p{
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            a{
+                border: none;
+                
+            }
         }
-            
-        &:hover img {
-            transform: scale(1.05);
-        }
-    }
-            
+}
+    
+
     .shop-latest__name {
     margin: 24px 0 16px 0;
             
@@ -76,6 +110,9 @@
     
     color: $accent-color;
     }
+
+
+    
 }
     
     
