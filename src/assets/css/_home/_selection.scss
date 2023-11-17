@@ -1,5 +1,5 @@
 .slider_top {
-   width: 90%;
+   width: 100%;
    height: 646px;
    position: relative;
    top: 16px;
@@ -95,6 +95,7 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
+      align-items: center;
    }
 
    input[type="radio"] {
