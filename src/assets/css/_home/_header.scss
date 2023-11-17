@@ -27,10 +27,37 @@
                align-items: center;
 
                li:active {
-                  transition: 50ms all ease-in-out;
-                  border-radius: 1px;
-                  border-bottom: 2px solid #000;
+                  // transition: 50ms all ease-in-out;
+                  // border-radius: 1px;
+                  // border-bottom: 2px solid #000;
+                  // padding-bottom: 30px;
+                  // border-width: 2px 0px;
+                  position: relative;
+                  &::after{
+                     content: '';
+                     transition: 50ms all ease-in-out;
+                     width: 40%;
+                     height: 30px;
+                     position: absolute;
+                     bottom: -2px;
+                  
+                     margin-left: auto;
+                     margin-right: auto;
+                     left: 0;
+                     right: 0;
+                     text-align: center;
+                     text-align: center;
 
+                     border-radius: 1px;
+                     border-bottom: 2px solid #000;
+                     padding-bottom: 30px;
+                     border-width: 2px 0px;
+                  }
+               }
+               .ourstory:active {
+                  &::after{
+                     width: 55%;
+                  }
                }
 
                li {
@@ -38,7 +65,9 @@
                }
 
                li a {
-                  margin: 0px 1.5vw;
+                  margin: 0px clamp(5px, 1.5vw, 30px);
+                  position: relative;
+                  z-index: 5;
 
                   // &:hover{
                   //    transition: 50ms all ease-in-out;
@@ -53,12 +82,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
             hr {
                height: 17px;
                border: 1px solid #70707054;
                border-radius: 10px;
-               margin-bottom: 23px;
+               margin-bottom: 23px;    
             }
          }
 
@@ -69,18 +97,44 @@
                align-items: center;
 
                li:active {
-                  transition: 50ms all ease-in-out;
-                  border-radius: 1px;
-                  border-bottom: 2px solid #000;
+                  // transition: 50ms all ease-in-out;
+                  // border-radius: 1px;
+                  // border-bottom: 2px solid #000;
+                  // padding-bottom: 30px;
+                  // border-width: 2px 0px;
+                  position: relative;
+                  &::after{
+                     content: '';
+                     transition: 50ms all ease-in-out;
+                     width: 40%;
+                     height: 30px;
+                     position: absolute;
+                     bottom: -2px;
+                  
+                     margin-left: auto;
+                     margin-right: auto;
+                     left: 0;
+                     right: 0;
+                     text-align: center;
+                     text-align: center;
 
+                     border-radius: 1px;
+                     border-bottom: 2px solid #000;
+                     padding-bottom: 30px;
+                     border-width: 2px 0px;
+                  }
+                 
                }
+               
 
                li {
                   height: 45px;
                }
 
                li a {
-                  margin: 0px 1.5vw;
+                  position: relative;
+                  z-index: 5;
+                  margin: 0px clamp(5px, 1.5vw, 30px);
 
                   // &:hover{
                   //    transition: 50ms all ease-in-out;
@@ -92,10 +146,27 @@
          }
       }
    }
-
    .act {
-      border-radius: 1px;
-      border-bottom: 2px solid #000;
+      position: relative;
+      &::after{
+         z-index: -5;
+         content: '';
+         position: absolute;
+         width: 40%;
+         height: 30px;
+         bottom: -2px;
+
+         margin-left: auto;
+         margin-right: auto;
+         left: 0;
+         right: 0;
+         text-align: center;
+         text-align: center;
+
+         border-radius: 1px;
+         border-bottom: 2px solid #000;
+         border-width: 2px 0px;
+      }
    }
 
    @media screen and (max-width: 850px) {
@@ -109,10 +180,15 @@
          }
       }
    }
+
 }
 
-// .header__underline{
-//    //! Для сторінок shop, product ... (НА HEADER НЕ ВКЛЮЧАТИ)
-//    border-bottom: 2px solid #D8D8D8;
-//    padding-bottom: 19px;
-// }
+.header__underline{
+   //! Для сторінок shop, product ... (НА HEADER НЕ ВКЛЮЧАТИ)
+   border: 1px solid #D8D8D8;
+   position: relative;
+   z-index: -10;
+   max-width: 1248px;
+   margin: 0 auto;
+}
+
