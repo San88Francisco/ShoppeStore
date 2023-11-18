@@ -115,9 +115,10 @@
 
    input[type="radio"]:checked+label {
       border: 2px solid $white-color;
-      background-color: $gray-color;
+      background: none ;
       width: 14px;
       height: 14px;
+      opacity: .7;
    }
 
    @media screen and (min-width:1460px) {
