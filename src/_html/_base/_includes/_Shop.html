@@ -42,9 +42,88 @@
    <hr class="header__underline">
 </header>
 <section class="Shop">
-   <article class="A">
-      f
-   </article>
+   
+ <div class="shop-block">
+         <aside class="A">
+            <!-- search input -->
+            <label for="search-input"></label>
+               <div class="input-div">
+                <input type="text" placeholder="Search..." id="search-input">
+               <img src="./assets/img/Shop_img/search-icon.svg" alt="">
+               </div>
+    
+            <!-- select section -->
+            <div class="select-container">
+               <select name="" id="" class="filter-list">
+                  <option value="0">Shop By</option>
+                  <option value="1">Gold</option>
+                  <option value="2">Silver</option>
+                  <option value="3">Aluminium</option>
+               </select>
+               <select name="" id="" class="filter-list">
+                  <option value="0">Sort By</option>
+                  <option value="1">Low-Higt</option>
+                  <option value="2">Higt-Low</option>
+                  <option value="3">New</option>
+               </select>
+            </div>
+    
+            <!-- slider section -->
+            <div class="price-filter">
+              <div class="slider-progress">
+                <div class="range-progress"></div>
+              </div>
+              <div class="range-input">
+                <input
+                  type="range"
+                  class="range-min"
+                  min="0"
+                  max="10000"
+                  value="2500"
+                />
+                <input
+                  type="range"
+                  class="range-max"
+                  min="0"
+                  max="10000"
+                  value="7500"
+                />
+              </div>
+              <div class="price-range">
+                <div class="price-range-summ">
+                  Price: $<span class="price-range-min">40</span> - $<span
+                    class="price-range-max"
+                    >180</span
+                  >
+                </div>
+                <div class="price-range-filter">Filter</div>
+              </div>
+            </div>
+            <!-- checkboxes section -->
+    
+            
+            <div class="for-button"> 
+               <p class="shop-bottoms">On sale</p>
+               <div>            
+                  <label class="toggle-switch">
+                     <input type="checkbox" />
+                     <span class="toggle round"></span>
+                   </label>
+               </div>
+             </div> 
+             <div class="for-button"> 
+               <p class="shop-bottoms">In stock</p>
+               <div>            
+                  <label class="toggle-switch">
+                     <input type="checkbox" />
+                     <span class="toggle round"></span>
+                   </label>
+               </div>
+    
+             </div> 
+    
+             
+         </aside>
    <article class="B">
       f
    </article>
