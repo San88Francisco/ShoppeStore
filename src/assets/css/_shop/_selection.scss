@@ -1,6 +1,6 @@
 .Shop {
   max-width: 1248px;
-  height: 500px;
+  height: 900px;
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
@@ -57,9 +57,37 @@
         min-width: 100%;
         transition: all 0.3s ease;
       }
-    }
-    .shop-latest__block:nth-child(1) {
-      .shop-latest__img {
+
+      // Class for "Sold" label
+
+      .add-sold {
+        position: relative;
+
+        &::before {
+          content: 'Sold out';
+          color: #fff;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 63px;
+          height: 24px;
+          border-radius: 4px;
+          font-family: DM Sans;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          background-color: $accent-color;
+          position: absolute;
+          top: 16px;
+          left: 16px;
+        }
+      }
+
+      // Class for "-%price%" label
+
+      .add-discount {
         position: relative;
 
         &::before {
@@ -84,37 +112,5 @@
         }
       }
     }
-    .shop-latest__block:nth-child(5) {
-      .shop-latest__img {
-        position: relative;
-
-        &::before {
-          content: 'Sold out';
-          color: #fff;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 63px;
-          height: 24px;
-          border-radius: 4px;
-          font-family: DM Sans;
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 20px;
-          background-color: $accent-color;
-          position: absolute;
-          top: 16px;
-          left: 16px;
-        }
-      }
-    }
-
-    //  .shop-latest-block:nth-child(5) {
-    //    ::before {
-    //      content: '';
-    //    }
-    //  }
   }
 }
