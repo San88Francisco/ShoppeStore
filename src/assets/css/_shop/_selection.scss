@@ -2,6 +2,8 @@
   max-width: 1248px;
   height: 500px;
   // border: 1px solid black;
+  height: 900px;
+  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -17,7 +19,8 @@ h1 {
 }
 .shop-block {
   display: flex;
-}
+  
+  
 .A {
   width: 303px;
 
@@ -230,3 +233,105 @@ h1 {
   }
 }
 
+.B {
+  width: 937px;
+
+  .shop-latest-blocks {
+    gap: 70px 24px;
+
+    .shop-latest__block {
+      .shop-latest__img {
+        position: relative;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+        }
+
+        .shop-latest_hover {
+          opacity: 0;
+          background-color: rgba(255, 255, 255, 0.5);
+          min-height: 45px;
+          min-width: 100%;
+          position: absolute;
+          bottom: 0;
+          padding: 0 30px 0 30px;
+          transition: all 0.4s ease;
+        }
+
+        &:hover .shop-latest_hover {
+          opacity: 1;
+        }
+
+        .shop-latest__heart {
+          width: 1.3em;
+          cursor: pointer;
+        }
+      }
+
+      .shop-latest_hover_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 45px;
+        min-width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      // Class for "Sold" label
+
+      .add-sold {
+        position: relative;
+
+        &::before {
+          content: 'Sold out';
+          color: #fff;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 63px;
+          height: 24px;
+          border-radius: 4px;
+          font-family: DM Sans;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          background-color: $accent-color;
+          position: absolute;
+          top: 16px;
+          left: 16px;
+        }
+      }
+
+      // Class for "-%price%" label
+
+      .add-discount {
+        position: relative;
+
+        &::before {
+          content: '- %21';
+          color: #fff;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 46px;
+          height: 24px;
+          border-radius: 3px;
+          font-family: DM Sans;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          background-color: $accent-color;
+          position: absolute;
+          top: 16px;
+          left: 16px;
+        }
+      }
+    }
+  }
+}
