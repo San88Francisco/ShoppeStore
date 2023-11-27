@@ -1,218 +1,235 @@
 .Shop {
-   max-width: 1248px;
-   height: 500px;
-   border: 1px solid black;
-   display: flex;
-   justify-content: space-between;
-   margin:  0 auto;
+  max-width: 1248px;
+  height: 500px;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 h1 {
-      font-family: DM Sans;
-      font-size: 33px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 43px;
-    
-      margin-bottom: 30px;
-    }
-    .shop-block {
-      display: flex;
-    }
+  font-family: DM Sans;
+  font-size: 33px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 43px;
+
+  margin-bottom: 30px;
+}
+.shop-block {
+  display: flex;
+}
 .A {
-   width: 303px;
-      // border: 1px solid #000;
-      .input-div{
-         position: relative;
-         width: 252px;
-      }
-      .input-div input{
-         width: 252px;
-         height: 43px;
-         border:  none;
-         border-bottom: 2px solid $light-gray-color;
-         margin-bottom: 11px;
-    
-         padding-right: 23px;
-      }
-      .input-div img {
-         position: absolute;
-         right: 9px;
-         top: 10px;
-      }
-      .select-container{   
-         display: flex;
-         flex-direction: column;
-         margin: 20px 0;
-      }
-      .select-container select {
-         width: 261px;
-         height: 53px;
-         outline: none;
-         border: 1px solid $light-gray-color;
-    
-         margin: 8px 0;
-         appearance: none;
-         background: url(../../assets/img/Shop_img/select-toggle.svg) no-repeat right;
-         cursor: pointer;
-         background-position: right 8px bottom 50%;
-         padding: 0 8px;
-    
-         option {
-         font-family: DM Sans;
-         font-size: 14px;
-         font-style: normal;
-         font-weight: 400;
-         line-height: 22px; 
-         }
-    
-      }     
-          .for-button{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 21px;
-            width: 260px;
-            .toggle-switch {
-               position: relative;
-               display: inline-block;
-               width: 33px;
-               height: 20px;
-             }
-             
-             /* Hide default HTML checkbox */
-             .toggle-switch input {
-               opacity: 0;
-               width: 0;
-               height: 0;
-             }
-             
-             /* The toggle */
-             .toggle {
-               position: absolute;
-               cursor: pointer;
-               top: 0;
-               left: 0;
-               right: 0;
-               bottom: 0;
-               background-color: $placeholder-color;
-               -webkit-transition: 0.4s;
-               transition: 0.4s;
-             }
-             
-             .toggle:before {
-               position: absolute;
-               content: "";
-               height: 14px;
-               width: 14px;
-               left: 10px;
-               top: 50%;
-               background-color: $white-color;
-               transform: translate(-50%, -50%);
-               transition: 0.4s;
-             }
-             
-             input:checked + .toggle {
-               background-color: rgba(180, 161, 134, 1);
-             }
-             
-             input:focus + .toggle {
-               box-shadow: 0 0 1px rgba(180, 161, 134, 1);
-             }
-             
-             input:checked + .toggle:before {
-               left: 24px;
-             }
-             
-             /* Rounded toggles */
-             .toggle.round {
-               border-radius: 34px;
-             }
-             
-             .toggle.round:before {
-               border-radius: 50%;
-             }
-          }
-         //  filter styles
-          .price-filter {
-            width: 260px;
-            background: $white-color;
-            border-radius: 10px;
-            margin: 39px 0;
-          }
-          
-          .price-range {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 8px;
-          }
-          .price-range-summ {
-            font-size: 14px;
-            font-weight: 400;
-            color: $placeholder-color;
-            line-height: 22px;
-          }
-          .price-range-min {
-          }
-          .price-range-max {
-          }
-          .price-range-filter {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 22px;
-            color: $accent-color;
-          }
-          
-          .slider-progress {
-            height: 2px;
-            border-radius: 5px;
-            background: $light-gray-color;
-            position: relative;
-          }
-          
-          .slider-progress .range-progress {
-            height: 2px;
-            left: 25%;
-            right: 25%;
-            position: absolute;
-            border-radius: 5px;
-            background: $black-color;
-          }
-          
-          .range-input {
-            position: relative;
-          }
-          
-          .range-input input {
-            position: absolute;
-            top: -3px;
-            height: 3px;
-            width: 100%;
-            background: none;
-            pointer-events: none;
-            cursor: pointer;
-            -webkit-appearance: none;
-          }
-          
-          input[type='range']::-webkit-slider-thumb {
-            height: 10px;
-            width: 2px;
-            border-radius: 10px;
-            pointer-events: auto;
-            -webkit-appearance: none;
-            background: $black-color;
-          }
-          
-          input[type='range']::-moz-range-thumb {
-            height: 10px;
-            width: 2px;
-            border-radius: 10px;
-            pointer-events: auto;
-            -moz-appearance: none;
-            background: $black-color;
-          }
+  width: 303px;
+
+  .input-div {
+    width: 261px;
+    position: relative;
+  }
+  .input-div input {
+    width: 261px;
+    height: 43px;
+    border: none;
+    border-bottom: 2px solid $light-gray-color;
+    margin-bottom: 11px;
+    padding-right: 23px;
+  }
+  .input-div img {
+    background: $white-color;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .select-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  .select-container select {
+    width: 261px;
+    height: 53px;
+    outline: none;
+    border: 1px solid $light-gray-color;
+    border-radius: 4px;
+    margin: 8px 0;
+    appearance: none;
+    background: url(../../assets/img/Shop_img/select-toggle.svg) no-repeat right;
+    cursor: pointer;
+    background-position: right 8px bottom 50%;
+    padding: 0 8px;
+
+    option {
+      font-family: DM Sans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      margin: 6px 12px;
+    }
+  }
+
+  .for-button {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 21px;
+    width: 260px;
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 33px;
+      height: 20px;
     }
 
+    /* Hide default HTML checkbox */
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The toggle */
+    .toggle {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $placeholder-color;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    .toggle:before {
+      position: absolute;
+      content: '';
+      height: 14px;
+      width: 14px;
+      left: 10px;
+      top: 50%;
+      background-color: $white-color;
+      transform: translate(-50%, -50%);
+      transition: 0.4s;
+    }
+
+    input:checked + .toggle {
+      background-color: rgba(180, 161, 134, 1);
+    }
+
+    input:focus + .toggle {
+      box-shadow: 0 0 1px rgba(180, 161, 134, 1);
+    }
+
+    input:checked + .toggle:before {
+      left: 24px;
+    }
+
+    /* Rounded toggles */
+    .toggle.round {
+      border-radius: 34px;
+    }
+
+    .toggle.round:before {
+      border-radius: 50%;
+    }
+  }
+  //  filter styles
+
+  .price-filter {
+    width: 260px;
+    background: $white-color;
+    border-radius: 10px;
+    margin: 30px 0;
+  }
+
+  .price-range {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .price-range-summ {
+    font-size: 14px;
+    font-weight: 400;
+    color: $placeholder-color;
+    line-height: 22px;
+  }
+
+  .price-range-filter {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: $accent-color;
+  }
+
+  .slider-progress {
+    height: 2px;
+    border-radius: 5px;
+    background: $light-gray-color;
+    position: relative;
+  }
+
+  .slider-progress .range-progress {
+    height: 2px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background: $black-color;
+  }
+
+  .range-input {
+    position: relative;
+  }
+
+  .range-input input {
+    position: absolute;
+    top: -3px;
+    height: 3px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+  /* Google, Safari */
+  input[type='range']::-webkit-slider-thumb {
+    height: 10px;
+    width: 2px;
+    border-radius: 10px;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background: $black-color;
+  }
+  /* Mozila */
+  input[type='range']::-moz-range-thumb {
+    height: 10px;
+    width: 2px;
+    border-radius: 10px;
+    pointer-events: auto;
+    -moz-appearance: none;
+    background: $black-color;
+  }
+  /* Opera */
+  input[type='range']::-o-slider-thumb {
+    height: 10px;
+    width: 2px;
+    border-radius: 10px;
+    pointer-events: auto;
+    background: $black-color;
+  }
+
+  /* Edge */
+  input[type='range']::-ms-thumb {
+    height: 10px;
+    width: 2px;
+    border-radius: 10px;
+    pointer-events: auto;
+    background: $black-color;
+  }
+}
 
 .B {
-   width: 937px;
-
+  width: 937px;
 }
