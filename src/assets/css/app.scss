@@ -1,17 +1,23 @@
+
 // Стилі та фонти
 @import "_base/mixins";
 @import "_base/tools";
 @import "_base/fonts";
+
+
 
 // Основні сторінки
 @import "./_home/main";
 @import "./_product/main";
 @import "./_shop/main";
 
-body {
-  padding: 0px 96px;
+
+body{
+   padding: 0px 96px;
 }
 
-.ff:nth-of-type(1) {
-  color: red;
+
+
+.ff:nth-of-type(1){
+   color: red;
 }
