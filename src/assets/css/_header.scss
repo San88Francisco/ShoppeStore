@@ -175,9 +175,12 @@
 }
 .header__underline{
    //! Для сторінок shop, product ... (НА HEADER НЕ ВКЛЮЧАТИ)
+   display: none;
    border: 1px solid #D8D8D8;
    position: relative;
    z-index: -10;
    max-width: 1248px;
    margin: 0 auto;
+   margin-bottom: 96px;
 }
+
