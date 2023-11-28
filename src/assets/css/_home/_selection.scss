@@ -191,9 +191,13 @@
             min-height: 70px;
             min-width: 100%;
             position: absolute;
-            bottom: 0;
+            bottom: 4px;
             padding: 0 30px 0 30px;
             transition: all 0.4s ease;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
          }
 
          &:hover .shop-latest_hover {
@@ -226,6 +230,7 @@
          a {
             border: none;
          }
+        
       }
    }
 
