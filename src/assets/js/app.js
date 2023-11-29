@@ -41,24 +41,24 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //Slider
 
-//Body
+//Price
 document.addEventListener("DOMContentLoaded", function () {
-  const blocks = document.querySelectorAll(".shop-latest__block");
-
-  blocks.forEach(function (block) {
-    const imgElement = block.querySelector(".shop-latest__heart");
-
-    let currentImage = "../../../assets/img/Home_img/Body/heart_bg.png";
-
-    imgElement.addEventListener("click", function () {
-      currentImage === "../../../assets/img/Home_img/Body/heart_bg.png"
-        ? (currentImage = "../../../assets/img/Home_img/Body/red_heart.png")
-        : (currentImage = "../../../assets/img/Home_img/Body/heart_bg.png");
-
-      imgElement.src = currentImage;
-    });
-  });
-});
+   const blocks = document.querySelectorAll(".shop-latest__block");
+ 
+   blocks.forEach(function (block) {
+     const imgElement = block.querySelector(".shop-latest__heart");
+ 
+     let currentImage = "../../../assets/img/Home_img/Body/heart_bg.png";
+ 
+     imgElement.addEventListener("click", function () {
+       currentImage === "../../../assets/img/Home_img/Body/heart_bg.png"
+         ? (currentImage = "../../../assets/img/Home_img/Body/red_heart.png")
+         : (currentImage = "../../../assets/img/Home_img/Body/heart_bg.png");
+ 
+       imgElement.src = currentImage;
+     });
+   });
+ });
 
 // Shop page Team B
 const discountElements = document.querySelectorAll(".shop-latest__block");
@@ -87,23 +87,7 @@ discountElements.forEach((el) => {
   }
 });
 
-// let priceWithDiscount = document.querySelector('.price-with-discount');
-// let priceWithDiscountValue = priceWithDiscount.textContent;
 
-// console.log(priceWithDiscountValue);
-// function getNumberPrice(str) {
-//   let numberPrice = parseFloat(str.slice(2).replace(',', '.'));
-//   const res = (numberPrice - numberPrice * contentValue)
-//     .toString()
-//     .replace('.', ',');
-//   return res;
-// }
-// console.log(getNumberPrice(priceWithDiscountValue));
-// priceWithDiscount.textContent = `$ ${getNumberPrice(priceWithDiscountValue)}`;
-
-//
-
-//Body
 
 
 
