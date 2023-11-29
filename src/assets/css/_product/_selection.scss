@@ -1,0 +1,28 @@
+.Product {
+   max-width: 1248px;
+   height: 100%;
+   border: 1px solid black;
+   margin: 0 auto;
+   margin-top: 5px;
+
+   // Відштовхуйтесь лише в середині блоку (padding: ;)
+   .a {
+      width: 100%;
+      height: 752px;
+      background-color: rgb(141, 121, 85);
+      border: 1px solid black;
+   }
+   .b {
+      width: 100%;
+      // В тебе там висота міняється 
+      height: 348px;
+      background-color: rgb(143, 96, 136);
+      border: 1px solid black;
+   }
+   .c {
+      width: 100%;
+      height: 804px;
+      background-color: rgb(62, 148, 68);
+      border: 1px solid black;
+   }
+}
