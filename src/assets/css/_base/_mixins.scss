@@ -1,4 +1,4 @@
-@import "./tools";
+@import './tools';
 
 @mixin price_text {
   color: $black-color;
@@ -32,7 +32,7 @@
 @mixin links_bottom_border {
   // When links is active
   a:active::after {
-    content: "";
+    content: '';
     display: block;
     margin-top: 17px;
     width: 39px;
