@@ -15,9 +15,9 @@
    .b {
       width: 100%;
       // В тебе там висота міняється 
-      height: 348px;
-      background-color: rgb(143, 96, 136);
-      border: 1px solid black;
+      .header__underline {
+         display: block;
+      }
    }
    .c {
       width: 100%;
@@ -26,3 +26,7 @@
       border: 1px solid black;
    }
 }
+  
+   
+   
+  
