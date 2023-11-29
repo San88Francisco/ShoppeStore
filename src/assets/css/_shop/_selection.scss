@@ -254,9 +254,13 @@
           min-height: 48px;
           min-width: 100%;
           position: absolute;
-          bottom: 0;
+          bottom: 4px;
           padding: 0 30px 0 30px;
           transition: all 0.4s ease;
+
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
 
         &:hover .shop-latest_hover {
@@ -276,6 +280,8 @@
         min-height: 45px;
         min-width: 100%;
         transition: all 0.3s ease;
+       
+        
       }
 
       // Class for "Sold" label
