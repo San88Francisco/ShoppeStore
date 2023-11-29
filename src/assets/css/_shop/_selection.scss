@@ -7,7 +7,9 @@
   margin: 0 auto;
 
   .A {
-    width: 303px;
+    width: 261px;
+    margin-right: 30px;
+    border: 5px dashed rgb(255, 217, 0);
 
     .input-div {
       width: 261px;
@@ -96,7 +98,7 @@
       }
 
       .toggle:before {
-        content: "";
+        content: '';
         width: 14px;
         height: 14px;
         position: absolute;
@@ -190,7 +192,7 @@
     }
 
     /* Google, Safari */
-    input[type="range"]::-webkit-slider-thumb {
+    input[type='range']::-webkit-slider-thumb {
       height: 10px;
       width: 2px;
       border-radius: 10px;
@@ -200,7 +202,7 @@
     }
 
     /* Mozila */
-    input[type="range"]::-moz-range-thumb {
+    input[type='range']::-moz-range-thumb {
       height: 10px;
       width: 2px;
       border-radius: 10px;
@@ -210,7 +212,7 @@
     }
 
     /* Opera */
-    input[type="range"]::-o-slider-thumb {
+    input[type='range']::-o-slider-thumb {
       height: 10px;
       width: 2px;
       border-radius: 10px;
@@ -219,7 +221,7 @@
     }
 
     /* Edge */
-    input[type="range"]::-ms-thumb {
+    input[type='range']::-ms-thumb {
       height: 10px;
       width: 2px;
       border-radius: 10px;
@@ -231,7 +233,10 @@
   .B {
     width: 937px;
 
-    gap: 70px 24px;
+    .shop-latest-blocks {
+      gap: 70px 24px;
+      font-family: DM Sans;
+    }
 
     .shop-latest__block {
       .shop-latest__img {
@@ -246,7 +251,7 @@
         .shop-latest_hover {
           opacity: 0;
           background-color: rgba(255, 255, 255, 0.5);
-          min-height: 45px;
+          min-height: 48px;
           min-width: 100%;
           position: absolute;
           bottom: 4px;
@@ -285,7 +290,7 @@
         position: relative;
 
         &::before {
-          content: "Sold out";
+          content: 'Sold out';
           color: #fff;
           text-align: center;
           display: flex;
@@ -312,7 +317,7 @@
         position: relative;
 
         &::before {
-          content: "- %21";
+          content: '- %21';
           color: #fff;
           text-align: center;
           display: flex;
@@ -332,6 +337,67 @@
           left: 16px;
           cursor: pointer;
         }
+      }
+
+      // Class for "Earring" label
+      .add-category {
+        position: relative;
+
+        &::before {
+          content: 'Earring';
+          padding: 0 5px;
+          color: #fff;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 46px;
+          height: 24px;
+          border-radius: 3px;
+          font-family: DM Sans;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          background-color: $black-color;
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          cursor: pointer;
+        }
+      }
+
+      // Class for "New" label
+      .add-new {
+        position: relative;
+
+        &::before {
+          content: 'New';
+          color: #000;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 46px;
+          height: 24px;
+          border-radius: 3px;
+          font-family: DM Sans;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          background-color: $white-color;
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          cursor: pointer;
+        }
+      }
+
+      .price-discount {
+        margin-right: 16px;
+        color: red;
+        text-decoration: line-through 1px;
       }
     }
   }
