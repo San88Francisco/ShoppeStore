@@ -1,3 +1,6 @@
+
+
+
 //Slider
 document.addEventListener('DOMContentLoaded', function () {
   const slider = document.querySelector('.slider');
@@ -174,3 +177,33 @@ document.addEventListener('DOMContentLoaded', () => {
   pageName !== 'home' ? (header__underline.style.display = 'block') : 0;
 });
 // ===HEADER===
+
+
+// ---PRODUCT INHER PAGE(description,b)---
+document.addEventListener('DOMContentLoaded', () => {
+  const infoTabPage = document.querySelectorAll('.info__tab-page')
+    infoTabPage.forEach((item)=>{
+      item.addEventListener('click', ()=>{
+        document.querySelector('.info_item1').classList.remove('info__tab__line')
+        document.querySelector('.info_item2').classList.remove('info__tab__line')
+        document.querySelector('.info_item3').classList.remove('info__tab__line')
+        if(item.classList[1].replace(/\D/g, "") === '1'){
+          item.classList.add('info__tab__line')
+          document.querySelector('.product__page1').style.display = 'block'
+          document.querySelector('.product__page2').style.display = 'none'
+          document.querySelector('.product__page3').style.display = 'none'
+        }else if(item.classList[1].replace(/\D/g, "") === '2'){
+          item.classList.add('info__tab__line')
+          document.querySelector('.product__page2').style.display = 'block'
+          document.querySelector('.product__page1').style.display = 'none'
+          document.querySelector('.product__page3').style.display = 'none'
+        }else if(item.classList[1].replace(/\D/g, "") === '3'){
+          item.classList.add('info__tab__line')
+          document.querySelector('.product__page3').style.display = 'grid'
+          document.querySelector('.product__page1').style.display = 'none'
+          document.querySelector('.product__page2').style.display = 'none'
+        }
+      })
+  })
+});
+// ===PRODUCT INHER PAGE(description,b)===

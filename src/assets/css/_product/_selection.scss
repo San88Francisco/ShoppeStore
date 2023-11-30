@@ -12,13 +12,119 @@
       background-color: rgb(141, 121, 85);
       border: 1px solid black;
    }
+
+
    .b {
       width: 100%;
       // В тебе там висота міняється 
       .header__underline {
          display: block;
+         margin-bottom: 40px;
+         border: none;
+         border-bottom: 1px solid #d8d8d8;
+      }
+      p, li, h3, h5 {
+         color: $black-color;
+         font-size: 16px;
+         line-height: 27px;
+         font-weight: 400;
+         font-family: DM sans;
+      }
+      .info__tab-pages ul {
+         display: flex;
+         justify-content: flex-start;
+         margin-bottom: 35px;
+         li{
+            margin-right: clamp(48px, 5vw, 96px);
+            h3{
+               color: $placeholder-color; 
+               font-size: 24px;
+               cursor: pointer;
+            }
+         } 
+         .info__tab__line {
+            color: $black-color;
+            position: relative;
+            &::after {
+              content: '';
+              transition: 50ms all ease-in-out;
+              width: 100%;
+              height: 31px;
+              position: absolute;
+              margin-left: auto;
+              margin-right: auto;
+              left: 0;
+              right: 0;
+              text-align: center;
+              border-radius: 1px;
+              border-bottom: 2px solid $black-color;
+              padding-bottom: 30px;
+            }
+          }
+      }
+      .product__page1 {
+         display: none;
+      }
+      .product__page2 {
+         display: none;
+         ul {
+            li {
+               margin-bottom: 20px;
+            }
+            .prduct__charapter{
+               color: $placeholder-color;
+            }
+         }
+      }
+      .product__page3 {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);;
+         grid-column-gap: 90px;
+         .reviews {
+            .header__underline {
+               margin-bottom: 25px;
+            }
+            .amount-reviews-title {
+               margin-bottom: 75px;
+               span{
+                  color: $black-color;
+                  font-size: 20px;
+               }
+            }
+            .reviews__block {
+               h3 span{
+                  margin-left: 15px;
+               }
+               .stars__amount{
+                  margin: 17px 0px 17px 0px;
+                  img{
+                     margin-right: 10px;
+                  }
+               }
+            }
+            h3 {
+               color: $black-color;
+               font-size: 20px;
+            }
+            p, span{
+               color: $placeholder-color;
+            }
+            p{
+               font-size: 16px;
+               margin-bottom: 40px;
+            }
+            span {
+               font-size: 14px;
+            }
+            
+         }
+         .add-reviews {
+
+         }
       }
    }
+
+
    .c {
       width: 100%;
       height: 804px;
