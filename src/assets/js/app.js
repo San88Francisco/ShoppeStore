@@ -175,7 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // ===HEADER===
 
-// ====Search====
+
+//! ====Search====
 document.querySelector('#search-input').oninput = function () {
    let val = this.value.trim().toLowerCase();
    let lettersItems = document.querySelectorAll('.shop-latest__name a');
@@ -193,7 +194,7 @@ document.querySelector('#search-input').oninput = function () {
       }
    });
 }
-// ====Search====
+//! ====Search====
 
 
 
