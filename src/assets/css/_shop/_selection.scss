@@ -7,6 +7,10 @@
       margin-bottom: 39px;
    }
 
+   #hide {
+      display: block;
+   }
+
    .shop-container {
       display: flex;
       justify-content: space-between;
@@ -439,8 +443,4 @@
          }
       }
    }
-}
-
-#hide {
-   display: block;
 }
