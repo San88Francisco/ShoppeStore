@@ -186,7 +186,7 @@ document.querySelector('#search-input').oninput = function () {
 
       if (val == '') {
          shopLatestBlock.style.display = 'block';
-         
+
       } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
          shopLatestBlock.style.display = 'block';
       } else {
