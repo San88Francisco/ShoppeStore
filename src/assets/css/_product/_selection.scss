@@ -15,6 +15,9 @@
 
 
    .b {
+      .product__info {
+        
+      }
       margin-bottom: 96px;
       width: 100%;
       // В тебе там висота міняється 
@@ -24,7 +27,7 @@
          border: none;
          border-bottom: 1px solid #d8d8d8;
       }
-      p, li, h3, h5 {
+      p, li, h3, h5, a {
          color: $black-color;
          font-size: 16px;
          line-height: 27px;
@@ -78,8 +81,9 @@
          }
       }
       .product__page3 {
+         display: none;
          .reviews__block{
-            display: none;
+            display: grid;
             grid-template-columns: repeat(2, 1fr);;
             grid-column-gap: 90px;
          }
