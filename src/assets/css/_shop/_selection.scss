@@ -1,12 +1,16 @@
 .Shop {
-  max-width: 1248px;
-  height: 1100px;
-  margin: 0 auto;
+   max-width: 1248px;
+   height: 1100px;
+   margin: 0 auto;
 
   h1 {
     margin-bottom: 39px;
   }
 
+   #hide {
+      display: block;
+   }
+  
   .shop-container {
     display: flex;
     justify-content: space-between;
@@ -423,6 +427,13 @@
         .add-new {
           position: relative;
 
+
+            .price-discount {
+               margin-right: 16px;
+               color: red;
+               text-decoration: line-through 1px;
+            }
+         }
           &::before {
             content: 'New';
             color: $black-color;
