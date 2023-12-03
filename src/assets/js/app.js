@@ -11,6 +11,7 @@ import './Product/Reviews'
 
 
 //! ====Search====
+
 document.querySelector('#search-input').oninput = function () {
    let val = this.value.trim().toLowerCase();
    let lettersItems = document.querySelectorAll('.shop-latest__name a');
