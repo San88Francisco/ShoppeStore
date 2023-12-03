@@ -33,7 +33,7 @@ window.onblur = function (event) {
   closeActiveDropdown(event.relatedTarget);
 };
 
-/* ||| Filter price - input range, "Shop page" ||| */
+/* ||| Filter price - input range, "Shop page" повзунок ||| */
 
 const rangeInput = document.querySelectorAll('.range-input input');
 const priceInput = document.querySelectorAll('.price-input input');
@@ -69,73 +69,94 @@ rangeInput.forEach((input) => {
   });
 });
 
-// /* ||| Filter price - logic ||| */
+/* ||| Filter price - logic ||| */
+btnFilter.addEventListener('click', () => {
+   const filteredData = allBlockData.filter((item) => {
+     const itemPrice = item.price.replace(
+       /[^\d]/g,
+       ''
+     ); /* забираємо пробіли та лишні знаки $ з  ціни */
+ 
+     return (
+       /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
+       +rangeInput[0].value * 100 <= +itemPrice &&
+       +rangeInput[1].value * 100 >= +itemPrice
+     );
+   });
+ 
+   /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
+   myTest(filteredData);
+ });
 
-// btnFilter.addEventListener('click', () => {
-//   const filteredData = allBlockData.filter((item) => {
-//     const itemPrice = item.price.replace(
-//       /[^\d]/g,
-//       ''
-//     ); /* забираємо пробіли та лишні знаки $ з  ціни */
 
-//     return (
-//       /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
-//       +rangeInput[0].value * 100 <= +itemPrice &&
-//       +rangeInput[1].value * 100 >= +itemPrice
-//     );
-//   });
+/* Доступаємося до всіх наших карток з товарами */
+const shopLatestBlocks = document.querySelectorAll('.shop-latest__block');
+/* Доступаємося до головного блоку де всі картки */
+const shopBlocks = document.querySelector('.shop-latest-blocks');
 
-//   /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
-//   myTest(filteredData);
-// });
+/* Отримуємо дані з кожного блоку в масиві */
+const allBlockData = [];
 
-// /* Доступаємося до всіх наших карток з товарами */
-// const shopLatestBlocks = document.querySelectorAll('.shop-latest__block');
-// /* Доступаємося до головного блоку де всі картки */
-// const shopBlocks = document.querySelector('.shop-latest-blocks');
+/** Тут ми створюємо наш масив з всіма данними з карток товарів */
+shopLatestBlocks.forEach((shopLatestBlock) => {
+  /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
+  const discountPrice = shopLatestBlock.querySelector(
+    '.shop-latest__price .discount'
+  );
+  const discountNull = discountPrice ? discountPrice : null;
 
-// /* Отримуємо дані з кожного блоку в масиві */
-// const allBlockData = [];
+  const discountFilter =
+    discountNull !== null
+      ? discountPrice
+      : shopLatestBlock.querySelector('.shop-latest__price a');
 
-// /** Тут ми створюємо наш масив з всіма данними з карток товарів */
-// shopLatestBlocks.forEach((shopLatestBlock) => {
-//   /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
-//   const discountPrice = shopLatestBlock.querySelector(
-//     '.shop-latest__price .discount'
-//   );
-//   const discountNull = discountPrice ? discountPrice : null;
+  const blockData = {
+    name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
+    price: discountFilter.innerText,
+    imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img').src,
+    addStyle: shopLatestBlock.firstElementChild.classList[1],
+  };
 
-//   const discountFilter =
-//     discountNull !== null
-//       ? discountPrice
-//       : shopLatestBlock.querySelector('.shop-latest__price a');
+  return allBlockData.push(blockData);
+});
 
-//   const blockData = {
-//     name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
-//     price: discountFilter.innerText,
-//     imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img').src,
-//     addStyle: shopLatestBlock.firstElementChild.classList[1],
-//   };
+const myTest = (filter) => {
+  shopLatestBlocks.forEach((item) => {
+    // Вертаємо всім display block, щоб всі блоки зявилися
+    item.style.display = 'block';
 
-//   return allBlockData.push(blockData);
-// });
+    let latestName = item.querySelector('.shop-latest__name a').innerText;
 
-// const myTest = (filter) => {
-//   shopLatestBlocks.forEach((item) => {
-//     // Вертаємо всім display block, щоб всі блоки зявилися
-//     item.style.display = 'block';
+    // Перевіряємо кожен елемент в filter
+    const match = filter.find((filterItem) => latestName === filterItem.name);
 
-//     let latestName = item.querySelector('.shop-latest__name a').innerText;
+    if (!match) {
+      // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
+      const block = item;
+      block.style.display = 'none';
+    }
+  });
+};
 
-//     // Перевіряємо кожен елемент в filter
-//     const match = filter.find((filterItem) => latestName === filterItem.name);
+// Filter price - logic, "Shop page"
 
-//     if (!match) {
-//       // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
-//       const block = item;
-//       block.style.display = 'none';
-//     }
-//   });
-// };
 
-// // Filter price - logic, "Shop page"
+// ====Search====
+document.querySelector('#search-input').oninput = function () {
+   let val = this.value.trim().toLowerCase();
+   let lettersItems = document.querySelectorAll('.shop-latest__name a');
+
+   lettersItems.forEach(function (e) {
+      const shopLatestBlock2 = e.closest('.shop-latest__block');
+
+      if (val == '') {
+         shopLatestBlock2.style.display = 'block';
+
+      } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
+         shopLatestBlock2.style.display = 'block';
+      } else {
+         shopLatestBlock2.style.display = 'none';
+      }
+   });
+}
+
