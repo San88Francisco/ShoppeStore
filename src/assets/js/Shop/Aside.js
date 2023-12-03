@@ -69,73 +69,73 @@ rangeInput.forEach((input) => {
   });
 });
 
-/* ||| Filter price - logic ||| */
+// /* ||| Filter price - logic ||| */
 
-btnFilter.addEventListener('click', () => {
-  const filteredData = allBlockData.filter((item) => {
-    const itemPrice = item.price.replace(
-      /[^\d]/g,
-      ''
-    ); /* забираємо пробіли та лишні знаки $ з  ціни */
+// btnFilter.addEventListener('click', () => {
+//   const filteredData = allBlockData.filter((item) => {
+//     const itemPrice = item.price.replace(
+//       /[^\d]/g,
+//       ''
+//     ); /* забираємо пробіли та лишні знаки $ з  ціни */
 
-    return (
-      /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
-      +rangeInput[0].value * 100 <= +itemPrice &&
-      +rangeInput[1].value * 100 >= +itemPrice
-    );
-  });
+//     return (
+//       /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
+//       +rangeInput[0].value * 100 <= +itemPrice &&
+//       +rangeInput[1].value * 100 >= +itemPrice
+//     );
+//   });
 
-  /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
-  myTest(filteredData);
-});
+//   /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
+//   myTest(filteredData);
+// });
 
-/* Доступаємося до всіх наших карток з товарами */
-const shopLatestBlocks = document.querySelectorAll('.shop-latest__block');
-/* Доступаємося до головного блоку де всі картки */
-const shopBlocks = document.querySelector('.shop-latest-blocks');
+// /* Доступаємося до всіх наших карток з товарами */
+// const shopLatestBlocks = document.querySelectorAll('.shop-latest__block');
+// /* Доступаємося до головного блоку де всі картки */
+// const shopBlocks = document.querySelector('.shop-latest-blocks');
 
-/* Отримуємо дані з кожного блоку в масиві */
-const allBlockData = [];
+// /* Отримуємо дані з кожного блоку в масиві */
+// const allBlockData = [];
 
-/** Тут ми створюємо наш масив з всіма данними з карток товарів */
-shopLatestBlocks.forEach((shopLatestBlock) => {
-  /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
-  const discountPrice = shopLatestBlock.querySelector(
-    '.shop-latest__price .discount'
-  );
-  const discountNull = discountPrice ? discountPrice : null;
+// /** Тут ми створюємо наш масив з всіма данними з карток товарів */
+// shopLatestBlocks.forEach((shopLatestBlock) => {
+//   /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
+//   const discountPrice = shopLatestBlock.querySelector(
+//     '.shop-latest__price .discount'
+//   );
+//   const discountNull = discountPrice ? discountPrice : null;
 
-  const discountFilter =
-    discountNull !== null
-      ? discountPrice
-      : shopLatestBlock.querySelector('.shop-latest__price a');
+//   const discountFilter =
+//     discountNull !== null
+//       ? discountPrice
+//       : shopLatestBlock.querySelector('.shop-latest__price a');
 
-  const blockData = {
-    name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
-    price: discountFilter.innerText,
-    imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img').src,
-    addStyle: shopLatestBlock.firstElementChild.classList[1],
-  };
+//   const blockData = {
+//     name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
+//     price: discountFilter.innerText,
+//     imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img').src,
+//     addStyle: shopLatestBlock.firstElementChild.classList[1],
+//   };
 
-  return allBlockData.push(blockData);
-});
+//   return allBlockData.push(blockData);
+// });
 
-const myTest = (filter) => {
-  shopLatestBlocks.forEach((item) => {
-    // Вертаємо всім display block, щоб всі блоки зявилися
-    item.style.display = 'block';
+// const myTest = (filter) => {
+//   shopLatestBlocks.forEach((item) => {
+//     // Вертаємо всім display block, щоб всі блоки зявилися
+//     item.style.display = 'block';
 
-    let latestName = item.querySelector('.shop-latest__name a').innerText;
+//     let latestName = item.querySelector('.shop-latest__name a').innerText;
 
-    // Перевіряємо кожен елемент в filter
-    const match = filter.find((filterItem) => latestName === filterItem.name);
+//     // Перевіряємо кожен елемент в filter
+//     const match = filter.find((filterItem) => latestName === filterItem.name);
 
-    if (!match) {
-      // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
-      const block = item;
-      block.style.display = 'none';
-    }
-  });
-};
+//     if (!match) {
+//       // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
+//       const block = item;
+//       block.style.display = 'none';
+//     }
+//   });
+// };
 
-// Filter price - logic, "Shop page"
+// // Filter price - logic, "Shop page"

@@ -11,8 +11,6 @@ import './Product/Reviews'
 
 
 
-//! ====Search====
-
 document.querySelector('#search-input').oninput = function () {
    let val = this.value.trim().toLowerCase();
    let lettersItems = document.querySelectorAll('.shop-latest__name a');
@@ -20,16 +18,16 @@ document.querySelector('#search-input').oninput = function () {
    lettersItems.forEach(function (e) {
       const shopLatestBlock = e.closest('.shop-latest__block');
 
-      if (val == '') {
+      if (val === '') {
          shopLatestBlock.style.display = 'block';
-
       } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
          shopLatestBlock.style.display = 'block';
       } else {
          shopLatestBlock.style.display = 'none';
       }
    });
-}
+};
+
 //! ====Search====
 
 
