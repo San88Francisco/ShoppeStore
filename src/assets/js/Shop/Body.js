@@ -20,7 +20,7 @@ discountElements.forEach((el) => {
     const h1value = parseFloat(h1.slice(2).replace(',', '.'));
     const disc = h1value - h1value * contentValue;
 
-    const discount = `<a href="#">$ ${disc}</a>`;
+    const discount = `<a href="#" class="discount">$ ${disc.toFixed(2)}</a>`;
     priceElement.insertAdjacentHTML('beforeend', discount);
   }
 });
