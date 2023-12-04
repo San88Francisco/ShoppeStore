@@ -364,10 +364,15 @@
                   border-bottom: 1px solid $placeholder-color;
                   margin-bottom: 50px;
                   padding: 7px 0px 15px;
+                  color: $black-color;
+                  font-family: DM Sans;
+                  font-size: 16px;
+                  font-weight: 400;
                }
             }
 
             .checkbox-to-save {
+               position: relative;
                margin-bottom: 50px;
 
                input {
@@ -375,10 +380,27 @@
                   width: 18px;
                   height: 18px;
                }
-
-               label {
+               #saveUserData {
+                  cursor: pointer;
+                  border-radius: 2px;
+                  position: absolute;
+                  opacity: 0;
+                  &:checked {
+                     opacity: 100;
+                  }
+               }
+               .fake-checkbox {
+                  display: inline-block;
+                  border: 1px solid $black-color;
+                  width: 18px;
+                  height: 18px;
+                  border-radius: 2px;
+               }
+               .fake-checkbox__lable {
                   position: relative;
-                  top: -3px;
+                  top: -4px;
+                  margin-left: 8px;
+
                }
             }
 
@@ -399,6 +421,7 @@
                   &::before {
                      content: url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg);
                      display: block;
+                     opacity: 0;
                   }
 
                   .stars-rating__items {
@@ -434,7 +457,6 @@
                      &::before {
                         content: url(../img/Product_img/svg/Vectorstar_null_background.svg);
                         display: block;
-                        transition: all .3s ease 0s;
                      }
                   }
 
@@ -448,11 +470,19 @@
 
             .submit__btn {
                button {
+                  transition: .2s all linear;
                   border: none;
                   background-color: $black-color;
+                  border: 2px solid $black-color;
                   border-radius: 5px;
                   padding: 15px 33px;
-
+                  &:hover, &:active{
+                     background-color: $white-color;
+                     border: 2px solid $black-color;
+                  }
+                  &:hover span, &:active span {
+                     color: $black-color;
+                  }
                   span {
                      color: $white-color;
                      font-weight: 700;
