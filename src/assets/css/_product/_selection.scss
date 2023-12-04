@@ -1,7 +1,6 @@
 .Product {
    max-width: 1248px;
    height: 100%;
-   border: 1px solid black;
    margin: 0 auto;
    margin-top: 5px;
 
@@ -10,7 +9,6 @@
       height: 752px;
       padding: 10px;
 
-      border: 1px solid black;
 
       .product--overview {
          display: flex;
@@ -84,13 +82,13 @@
                font-style: normal;
                font-weight: 400;
                line-height: 27px;
-               color: $dark-gray-color;
+               color: $placeholder-color;
             }
 
             .btn--row {
                display: flex;
                margin-bottom: 80px;
-               color: $dark-gray-color;
+               color: $placeholder-color;
 
                .change--amount {
                   display: flex;
@@ -98,14 +96,28 @@
                   justify-content: space-around;
                   width: 102px;
                   height: 53px;
-                  background-color: $gray-color;
+
+                  border-radius: 4px;
+                  background-color: $light-gray-color;
+
+                  .amount {
+                     width: 7px;
+                     position: relative;
+                  }
 
                   button {
+                     // width: 5px;
                      border: none;
                      padding: 18px 18px;
-                     background-color: $gray-color;
-                     color: $dark-gray-color;
+                     color: $placeholder-color;
                      cursor: pointer;
+                     background-color: $light-gray-color;
+
+                     transition: all .2s linear;
+                  }
+
+                  button:active {
+                     font-weight: bolder;
                   }
                }
 
@@ -122,10 +134,11 @@
                      border: 1px solid black;
                      border-radius: 5px;
 
+                     transition: 0.4s ease-in;
+
                      &:hover {
                         background-color: black;
                         color: white;
-                        transition: 0.4s linear;
                      }
 
                      // Selected class for button
@@ -146,6 +159,7 @@
                   width: 20px;
                   height: 20px;
                   margin-right: 40px;
+                  cursor: pointer;
                }
 
                .messengers {
@@ -157,15 +171,15 @@
                      display: inline-block;
 
                      padding: 0 10px;
-                     color: $dark-gray-color;
+                     color: $placeholder-color;
 
                      &:first-child {
                         margin-left: 20px;
                      }
 
                      &:hover {
-                        color: black;
-                        transition: 0.3s linear;
+                        color:$gray-color ;
+                        transition: 0.2s ease-in;
                      }
                   }
                }
