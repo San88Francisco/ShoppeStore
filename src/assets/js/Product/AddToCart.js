@@ -1,56 +1,64 @@
-// Product page Team A
-// Counter
-const btnDecrease = document.querySelector('.minus');
-const btnIncrease = document.querySelector('.plus');
-const numberOfShoppings = document.querySelector('.amount');
-let numberOfShoppingsValue = +numberOfShoppings.textContent;
+// Лічильник
+const btnDecrease = document.querySelector(".minus");
+const btnIncrease = document.querySelector(".plus");
+const numberOfShoppings = document.querySelector(".amount");
 
-btnIncrease.addEventListener('click', function () {
-   numberOfShoppings.textContent = `${(numberOfShoppingsValue += 1)}`;
-});
-btnDecrease.addEventListener('click', function () {
-   if (numberOfShoppingsValue === 1) return;
-   numberOfShoppings.textContent = `${(numberOfShoppingsValue -= 1)}`;
-});
-// Counter
+if (btnDecrease && btnIncrease && numberOfShoppings) {
+  let numberOfShoppingsValue = +numberOfShoppings.textContent;
 
-// Image selection
-const imageSelection = document.querySelector('.product--overview__pictures');
-const imageSelectionArray = imageSelection.querySelectorAll('img');
+  btnIncrease.addEventListener("click", function () {
+    numberOfShoppings.textContent = `${++numberOfShoppingsValue}`;
+  });
 
-imageSelectionArray.forEach((img, index) => {
-   let progressBarLine = document.querySelector('.progress-bar__line');
-   img.addEventListener('click', function () {
+  btnDecrease.addEventListener("click", function () {
+    if (numberOfShoppingsValue === 1) return;
+    numberOfShoppings.textContent = `${--numberOfShoppingsValue}`;
+  });
+}
+
+// Вибір картинок
+const imageSelection = document.querySelector(".product--overview__pictures");
+
+if (imageSelection) {
+  const imageSelectionArray = imageSelection.querySelectorAll("img");
+  const progressBarLine = document.querySelector(".progress-bar__line");
+
+  imageSelectionArray.forEach((img, index) => {
+    img.addEventListener("click", function () {
       imageSelectionArray.forEach((otherImg) => {
-         if (img.classList.contains('picture-big')) return;
-         else {
-            otherImg.style.border = 'none';
-         }
+        if (img.classList.contains("picture-big")) return;
+        otherImg.style.border = "none";
       });
-      if (img.classList.contains('picture-big')) return;
-      else {
-         img.style.border = '3px solid rgb(158, 158, 158)';
-         img.style.borderRadius = '5px';
-         let oldImage = document.querySelector('.picture-big');
 
-         oldImage.src = img.src;
-         img.src = oldImage.src;
+      if (img.classList.contains("picture-big")) return;
+
+      img.style.border = "3px solid rgb(158, 158, 158)";
+      img.style.borderRadius = "5px";
+
+      let oldImage = document.querySelector(".picture-big");
+      if (oldImage) {
+        oldImage.src = img.src;
       }
+
       const percentage = ((index + 1) / (imageSelectionArray.length - 1)) * 100;
       progressBarLine.style.width = `${percentage}%`;
-   });
-});
+    });
+  });
+}
 
-// Вкрав код вище
-const imgElement = document.querySelector('.product__heart');
-let currentImage = './assets/img/Home_img/Body/heart_bg.png';
-imgElement.addEventListener('click', function () {
-   currentImage === './assets/img/Home_img/Body/heart_bg.png'
-      ? (currentImage = './assets/img/Home_img/Body/red_heart.png')
-      : (currentImage = './assets/img/Home_img/Body/heart_bg.png');
+// Перемикач іконки серця
+const imgElement = document.querySelector(".product__heart");
 
-   imgElement.src = currentImage;
-});
-//
-// Image selection
-// Product page Team A
+if (imgElement) {
+  let currentImage = "./assets/img/Home_img/Body/heart_bg.png";
+
+  imgElement.addEventListener("click", function () {
+    currentImage =
+      currentImage === "./assets/img/Home_img/Body/heart_bg.png"
+        ? "./assets/img/Home_img/Body/red_heart.png"
+        : "./assets/img/Home_img/Body/heart_bg.png";
+
+    imgElement.src = currentImage;
+  });
+}
+// Перемикач іконки серця
