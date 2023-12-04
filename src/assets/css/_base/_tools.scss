@@ -6,7 +6,7 @@ $dark-gray-color: rgb(158, 158, 158);
 $gray-color: rgb(216, 216, 216);
 $light-gray-color: rgb(239, 239, 239);
 $errors-color: rgb(216, 39, 0);
-$placeholder-color: rgb(112,112,112);
+$placeholder-color: rgb(112, 112, 112);
 $transition-time: 300ms;
 
 * {
@@ -91,6 +91,6 @@ input {
     line-height: 1.85;
   }
   button {
-  border: 1px solid $dark-gray-color;
-}
+    border: 1px solid $dark-gray-color;
+  }
 }
