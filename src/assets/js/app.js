@@ -5,5 +5,7 @@ import "./Home/Body";
 import "./Shop/Body";
 import "./Shop/Aside";
 
-import "./Product/Reviews";
 import "./Product/AddToCart";
+import "./Product/Reviews";
+
+import "./Contact/ContactUs";
