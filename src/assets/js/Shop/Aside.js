@@ -36,64 +36,70 @@
 
 /* ||| Filter price - input range, "Shop page" повзунок ||| */
 
-const rangeInput = document.querySelectorAll(".range-input input");
-const priceInput = document.querySelectorAll(".price-input input");
-const priceSum = document.querySelectorAll(".price-range-summ span");
-const progress = document.querySelector(".slider-progress .range-progress");
-const btnFilter = document.querySelector(".price-range-filter");
+const rangeInput = document.querySelectorAll('.range-input input');
+const priceInput = document.querySelectorAll('.price-input input');
+const priceSum = document.querySelectorAll('.price-range-summ span');
+const progress = document.querySelector('.slider-progress .range-progress');
+const btnFilter = document.querySelector('.price-range-filter');
 
 let priceGap = 10;
 let maxRange = 180; // Змінено максимальне значення
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   rangeInput.forEach((input) => {
-    input.addEventListener("input", (e) => {
+    input.addEventListener('input', (e) => {
       let minVal = parseInt(rangeInput[0].value);
       let maxVal = parseInt(rangeInput[1].value);
 
       if (maxVal - minVal < priceGap) {
-        if (e.target.className === "range-min") {
+        if (e.target.className === 'range-min') {
           rangeInput[0].value = maxVal - priceGap;
           priceSum[0].innerText = `${rangeInput[0].value}`;
-          progress.style.left = (rangeInput[0].value / maxRange) * 100 + "%";
+          progress.style.left = (rangeInput[0].value / maxRange) * 100 + '%';
         } else {
           rangeInput[1].value = minVal + priceGap;
           priceSum[1].innerText = `${rangeInput[1].value}`;
           progress.style.right =
-            100 - (rangeInput[1].value / maxRange) * 100 + "%";
+            100 - (rangeInput[1].value / maxRange) * 100 + '%';
         }
       } else {
         priceSum[0].innerText = `${+minVal}`;
         priceSum[1].innerText = `${+maxVal}`;
-        progress.style.left = (minVal / maxRange) * 100 + "%";
-        progress.style.right = 100 - (maxVal / maxRange) * 100 + "%";
+        progress.style.left = (minVal / maxRange) * 100 + '%';
+        progress.style.right = 100 - (maxVal / maxRange) * 100 + '%';
       }
     });
   });
 
   /* ||| Filter price - logic ||| */
-  btnFilter.addEventListener("click", () => {
-    const filteredData = allBlockData.filter((item) => {
-      const itemPrice = item.price.replace(
-        /[^\d]/g,
-        ""
-      ); /* забираємо пробіли та лишні знаки $ з  ціни */
+  let debounceTimer; /** В цю змінну ми вставимо setTimeout, щоб можна було його обнуляти */
 
-      return (
-        /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
-        +rangeInput[0].value * 100 <= +itemPrice &&
-        +rangeInput[1].value * 100 >= +itemPrice
-      );
+  rangeInput.forEach((input) => {
+    input.addEventListener('mouseup', () => {
+      /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
+      clearTimeout(debounceTimer);
+
+      debounceTimer = setTimeout(() => {
+        const filteredData = allBlockData.filter((item) => {
+          const itemPrice = item.price.replace(
+            /[^\d]/g,
+            ''
+          ); /* забираємо пробіли та лишні знаки $ з  ціни */
+
+          return (
+            /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
+            +rangeInput[0].value * 100 <= +itemPrice &&
+            +rangeInput[1].value * 100 >= +itemPrice
+          );
+        });
+        /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
+        myTest(filteredData);
+      }, 2000);
     });
-
-    /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
-    myTest(filteredData);
   });
 
   /* Доступаємося до всіх наших карток з товарами */
-  const shopLatestBlocks = document.querySelectorAll(".shop-latest__block");
-  /* Доступаємося до головного блоку де всі картки */
-  const shopBlocks = document.querySelector(".shop-latest-blocks");
+  const shopLatestBlocks = document.querySelectorAll('.shop-latest__block');
 
   /* Отримуємо дані з кожного блоку в масиві */
   const allBlockData = [];
@@ -102,19 +108,19 @@ document.addEventListener("DOMContentLoaded", function () {
   shopLatestBlocks.forEach((shopLatestBlock) => {
     /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
     const discountPrice = shopLatestBlock.querySelector(
-      ".shop-latest__price .discount"
+      '.shop-latest__price .discount'
     );
     const discountNull = discountPrice ? discountPrice : null;
 
     const discountFilter =
       discountNull !== null
         ? discountPrice
-        : shopLatestBlock.querySelector(".shop-latest__price a");
+        : shopLatestBlock.querySelector('.shop-latest__price a');
 
     const blockData = {
-      name: shopLatestBlock.querySelector(".shop-latest__name a").innerText,
+      name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
       price: discountFilter.innerText,
-      imgProduct: shopLatestBlock.querySelector(".shop-latest__img a img").src,
+      imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img').src,
       addStyle: shopLatestBlock.firstElementChild.classList[1],
     };
 
@@ -124,9 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const myTest = (filter) => {
     shopLatestBlocks.forEach((item) => {
       // Вертаємо всім display block, щоб всі блоки зявилися
-      item.style.display = "block";
+      item.style.display = 'block';
 
-      let latestName = item.querySelector(".shop-latest__name a").innerText;
+      let latestName = item.querySelector('.shop-latest__name a').innerText;
 
       // Перевіряємо кожен елемент в filter
       const match = filter.find((filterItem) => latestName === filterItem.name);
@@ -134,27 +140,89 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!match) {
         // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
         const block = item;
-        block.style.display = "none";
+        block.style.display = 'none';
       }
     });
   };
 
   // Filter price - logic, "Shop page"
 
-  // ====Search====
-  document.querySelector("#search-input").oninput = function () {
-    let val = this.value.trim().toLowerCase();
-    let lettersItems = document.querySelectorAll(".shop-latest__name a");
+  // Filter - In Stock, "Shop page"
 
-    lettersItems.forEach(function (e) {
-      const shopLatestBlock2 = e.closest(".shop-latest__block");
+  const filterInSale = (filter) => {
+    console.log('filter:', filter);
+    shopLatestBlocks.forEach((item) => {
+      let latestName = item.firstElementChild.classList[1];
 
-      if (val == "") {
-        shopLatestBlock2.style.display = "block";
-      } else if (val !== "" && e.innerText.toLowerCase().includes(val)) {
-        shopLatestBlock2.style.display = "block";
+      // add-sold Перевіряємо чи є співпадіння з класом
+      if (filter === latestName) {
+        item.style.display = 'block';
       } else {
-        shopLatestBlock2.style.display = "none";
+        item.style.display = 'none';
+      }
+    });
+  };
+
+  const filterInStock = (filter) => {
+    console.log('filter:', filter);
+    shopLatestBlocks.forEach((item) => {
+      let latestName = item.firstElementChild.classList[1];
+
+      // add-sold Перевіряємо чи є співпадіння з класом
+      if (filter === latestName) {
+        // Отримуємо той блок, який не проходить фільтрацію In Stock і задаємо йому display none
+        // const block = item;
+        item.style.display = 'none';
+      }
+    });
+  };
+
+  const btnInSale = document.querySelector('.toggle-sale');
+  const btnInStock = document.querySelector('.toggle-stock');
+
+  /**Для лічильника в btnInStock*/
+  let checkedSale = true;
+  let checkedStock = true;
+
+  btnInSale.addEventListener('click', () => {
+    if (checkedSale) {
+      checkedSale = false;
+      console.log('checkedSale', checkedSale);
+      filterInSale('add-discount');
+    } else {
+      shopLatestBlocks.forEach((item) => (item.style.display = 'block'));
+      checkedSale = true;
+    }
+  });
+
+  btnInStock.addEventListener('click', () => {
+    if (checkedStock) {
+      checkedStock = false;
+      console.log('checkedStock', checkedStock);
+      filterInStock('add-sold');
+    } else {
+      shopLatestBlocks.forEach((item) => (item.style.display = 'block'));
+      checkedStock = true;
+    }
+  });
+
+  // Filter - In Stock, "Shop page"
+
+  // ====Search====
+  document.querySelector('#search-input').oninput = function () {
+    let val = this.value.trim().toLowerCase();
+    let lettersItems = document.querySelectorAll('.shop-latest__name a');
+
+    // Сюди передавати маив з price filter
+    lettersItems.forEach(function (e) {
+      const shopLatestBlock2 = e.closest('.shop-latest__block');
+
+      if (val == '') {
+        shopLatestBlock2.style.display = 'block';
+      } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
+        shopLatestBlock2.style.display = 'block';
+      } else {
+        shopLatestBlock2.style.display = 'none';
       }
     });
   };
