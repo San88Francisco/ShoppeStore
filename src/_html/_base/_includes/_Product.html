@@ -72,7 +72,7 @@
                   <h3 class="info__tab-page info_item2">Aditional information</h3>
                </li>
                <li>
-                  <h3 class="info__tab-page info_item3">Reviews(0)</h3>
+                  <h3 class="info__tab-page info_item3">Reviews(<span class="amount-reviews2">2</span>)</h3>
                </li>
             </ul>
          </div>
@@ -98,31 +98,23 @@
                </li>
             </ul>
          </div>
-         <div id="product__page1" class="product__page3 product__page">
+         <div id="product__page3" class="product__page3 product__page">
             <div class="reviews__block">
                <div class="reviews">
                   <h3 class="amount-reviews-title"><span class="amount-reviews">2</span> Reviews for lira earings</h3>
-                  <div class="review__block item1">
+                  <div class="review__block review__block_item1">
                      <h3>Scarlet withch <span class="review__date">6 May, 2020</span></h3>
                      <div class="stars__amount">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_black_background.svg" alt="star">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_black_background.svg" alt="star">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_black_background.svg" alt="star">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_null_background.svg" alt="star">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_null_background.svg" alt="star">
+                        <img src="./assets/img/Product_img/svg/starSvgFillthree.svg" alt="star">
                      </div>
                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                         tincidunt ut laoreet. </p>
                   </div>
                   <hr class="header__underline">
-                  <div class="review__block item2">
+                  <div class="review__block review__block_item2">
                      <h3>Scarlet withch <span class="review__date">6 May, 2020</span></h3>
                      <div class="stars__amount">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_black_background.svg" alt="star">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_black_background.svg" alt="star">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_black_background.svg" alt="star">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_null_background.svg" alt="star">
-                        <img src="./assets/img/Product_img/svg/Vectorstar_null_background.svg" alt="star">
+                        <img src="./assets/img/Product_img/svg/starSvgFillthree.svg" alt="star">
                      </div>
                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                         tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat.
@@ -134,41 +126,39 @@
                   <h3>Add a Review</h3>
                   <p class="add-reviews__text">Your email address will not be published. Required fields are marked *
                   </p>
-                  <form action="#" method="get">
+                  <form action="#" method="get" class="form" id="form">
                      <div class="add-reviews__inputs">
-                        <textarea name="UserComment" id="" cols="30" rows="5" placeholder="Your Review*"></textarea>
-                        <input name="UserName" type="text" placeholder="Enter your name*">
-                        <input name="UserMail" type="email" placeholder="Enter your Email*">
+                        <textarea name="UserComment" id="ReviewUserComment" cols="30" rows="5" placeholder="Your Review*" required></textarea>
+                        <input name="UserName" id="ReviewUserName" type="text" placeholder="Enter your name*" required>
+                        <input name="UserMail" id="ReviewUserMail" type="email" placeholder="Enter your Email*" required>
                         <div class="checkbox-to-save">
-                           <input type="checkbox" id="saveUserData">
-                           <label for="saveUserData"><span>Save my name, email, and website in this browser for the next
-                                 time I comment</span></label>
+                           <label><input type="checkbox" id="saveUserData"><span class="fake-checkbox"></span><span class="fake-checkbox__lable">Save my name, email, and website in this browser for the next time I comment</span></label>
                         </div>
                      </div>
                      <div class="add-rating">
                         <span>Your Rating*</span>
                         <div class="stars-rating">
                            <div class="stars-rating__items">
-                              <input type="radio" value="5" class="stars-rating__item" name="stars-rating"
+                              <input type="radio" value="5" class="stars-rating__item" name="starsRating"
                                  id="stars-rating__5">
                               <label for="stars-rating__5" class="stars-rating__label"></label>
-                              <input type="radio" value="4" class="stars-rating__item" name="stars-rating"
+                              <input type="radio" value="4" class="stars-rating__item" name="starsRating"
                                  id="stars-rating__4">
                               <label for="stars-rating__4" class="stars-rating__label"></label>
-                              <input type="radio" value="3" class="stars-rating__item" name="stars-rating"
+                              <input type="radio" value="3" class="stars-rating__item" name="starsRating"
                                  id="stars-rating__3">
                               <label for="stars-rating__3" class="stars-rating__label"></label>
-                              <input type="radio" value="2" class="stars-rating__item" name="stars-rating"
+                              <input type="radio" value="2" class="stars-rating__item" name="starsRating"
                                  id="stars-rating__2">
                               <label for="stars-rating__2" class="stars-rating__label"></label>
-                              <input type="radio" value="1" class="stars-rating__item" name="stars-rating"
+                              <input type="radio" value="1" class="stars-rating__item" name="starsRating"
                                  id="stars-rating__1">
                               <label for="stars-rating__1" class="stars-rating__label"></label>
                            </div>
                         </div>
                      </div>
                      <div class="submit__btn">
-                        <button type="submit"><span>Submit</span></button>
+                        <button type="submit" id="submitReviews"><span>Submit</span></button>
                      </div>
                   </form>
                </div>
