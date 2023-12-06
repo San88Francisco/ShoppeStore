@@ -1,0 +1,164 @@
+
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+
+.account {
+    width: 500px;
+    height: 621px;
+    margin: 0 auto;
+
+    h1{
+        font-family: DM Sans;
+        font-size: 33px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 43px;
+        text-align: center;
+    }
+    .exit-block{
+        background: var(--light-colors-light-gray-light, #EFEFEF);
+        width: 500px;
+        height: 60px;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        border-radius: 5px;
+        margin: 70px 0 130px;
+        .sign {
+            background: $white-color;
+            width: 50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+    
+        .register {
+            
+            width: 50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+    }
+    
+    form{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+       
+        hr{
+            background: #D8D8D8;
+            height: 1px;
+            width: 100%;
+            
+            
+           
+        }
+       
+        .mail-container{
+            display: flex;
+            position: relative;
+            width: 100%;
+            align-items: center;
+            .input_mail {
+            width: 100%;
+            height: 50px;
+            &:-webkit-autofill {
+                background-color: transparent;
+              }
+            }
+            .clear-icon_mail {
+                position: absolute;
+                right: 15px;
+                cursor: text;
+                opacity: 0;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                
+            }
+        
+            .input_mail:focus + .clear-icon_mail {
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+       
+        .password-container{
+            display: flex;
+            position: relative;
+            width: 100%;
+            align-items: center;
+            margin: 46px 0 0 0;
+            .input_pass {
+                width: 100%;
+                height: 50px;
+                
+            }
+
+            .clear-icon_pass {
+                position: absolute;
+                right: 15px;
+                cursor: text;
+                opacity: 0;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                
+            }
+    
+            .input_pass:focus +  .clear-icon_pass {
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+        
+
+        .checkbox-container{
+            display: flex;
+            align-items: center;
+            margin: 21px 0 0 0;
+        }
+
+        .input_checkbox {
+            margin: 0 8px 0 0;
+         
+
+        }
+
+       
+        
+        button{
+            width: 500px;
+            height: 53px;
+            border: none;
+            background: $black-color;
+            border-radius: 5px;
+    
+            color: $white-color;
+            font-family: DM Sans;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 53px;
+            text-align: center;
+
+            margin: 73px 0 13px 0;
+        }
+    
+        a{
+            font-family: DM Sans;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 27px;
+            margin: 0 auto;
+        }
+    }
+   
+}
