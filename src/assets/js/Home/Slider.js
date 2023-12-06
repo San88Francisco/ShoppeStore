@@ -1,4 +1,4 @@
-// Slider
+// myr
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".slider");
   const radioButtons = document.querySelectorAll(

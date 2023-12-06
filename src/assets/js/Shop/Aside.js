@@ -1,3 +1,4 @@
+// myr
 // const dropbtns = document.querySelectorAll(".dropdown .drop-btn");
 // const myDropdowns = document.querySelectorAll(".dropdown-content");
 // const rotateImg = document.querySelectorAll(".drop-btn img");
