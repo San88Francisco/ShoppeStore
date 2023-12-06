@@ -1,4 +1,4 @@
-// ---HEADER---
+// ---HEADERR---
 function setupHeader() {
   const pageName = document.title.toLowerCase().replace(/\s/g, "");
 
