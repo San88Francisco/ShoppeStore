@@ -3,7 +3,8 @@ import "./Home/Slider";
 import "./Home/Body";
 
 import "./Shop/Body";
-import "./Shop/Aside";
+import "./Shop/Filter";
+import "./Shop/SortBy";
 
 import "./Product/AddToCart";
 import "./Product/Reviews";
