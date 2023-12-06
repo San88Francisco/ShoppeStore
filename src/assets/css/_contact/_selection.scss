@@ -1,1 +1,110 @@
 // Вітаю Андрій тут твоє смісце роботи
+
+.contact {
+padding-top: 125px;
+		&__container {
+         max-width: 908px;
+margin: 0 auto;
+		}
+
+		&__block-header {
+         text-align: center;
+         &:not(:last-child) {
+            margin-bottom: 108px;
+         }
+		}
+
+		&__title {
+         &:not(:last-child) {
+            margin-bottom: 35px;
+         }
+		}
+
+		&__text {
+font-family: DM Sans;
+font-size: 20px;
+font-weight: 400;
+line-height: 130%; /* 26/20 */
+text-align: center;
+max-width: 561px;
+margin: 0 auto;
+		}
+
+		&__form {
+         display: flex;
+         flex-direction: column;
+		}
+
+		&__button {
+         background-color: #000000;
+         width: 500px;
+         height: 53px;
+         border-radius: 4px;
+         display: flex;
+         justify-content:center;
+         align-items: center;
+         color: #FFFFFF;
+         margin: 0 auto;
+         transition: all 0.3s;
+         &:hover {
+            transform: translate(0px, 2px);
+            color: #a49c9c;
+           cursor: pointer;
+         }
+		}
+}
+.form {
+
+		&__columns {
+         display: flex;
+         flex-direction: column;
+         gap: 94px;
+         &:not(:last-child) {
+            margin-bottom: 126px;
+         }
+		}
+}
+.columns-form {
+
+		&__column {
+         display: flex;
+         justify-content: space-between;
+         gap: 20px;
+         flex-wrap: wrap;
+         position: relative;
+		}
+
+		&__input {
+         width: 396px;
+         border-bottom: 1px solid #D8D8D8;
+         padding: 12px 0;
+		}
+
+		&__select {
+         max-width: 396px;
+         width: 100%;
+         border: none;
+         border-bottom: 1px solid #D8D8D8;
+          font-family: DM Sans;
+          font-size: 16px;
+          color: $placeholder-color;
+          font-weight: 400;
+          line-height: 168.75%; /* 27/16 */
+        
+		}
+}
+.input--message {
+   &:not(:last-child) {
+      margin-bottom: 96px;
+   }
+   border-bottom: 1px solid #D8D8D8;
+   padding: 0 0 44px 0;
+}
+.error-message {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   bottom: -20px;
+   font-size: 11px;
+   color: red;
+}

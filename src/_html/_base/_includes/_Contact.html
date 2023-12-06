@@ -1,5 +1,34 @@
 <section class="Contact">
-   <h1>
-      Вітаю Андрій тут твоє смісце роботи
-   </h1>
+   <div class="contact__container">
+      <div class="contact__block-header">
+         <h1 class="contact__title">Contact Us</h1>
+         <div class="contact__text">
+            Say Hello send us your thoughts about our products or share
+            your ideas with our Team!
+         </div>
+      </div>
+      <form name="main" action="#" class="contact__form form">
+         <div class="form__columns columns-form">
+            <div class="columns-form__column">
+               <input autocomplete="off" name="inputName" tabindex="1" type="text" class="columns-form__input input"
+                  placeholder="First name">
+               <input autocomplete="off" name="inputLastName" tabindex="2" type="text" class="columns-form__input input"
+                  placeholder="Last name">
+            </div>
+            <div class="columns-form__column">
+               <input autocomplete="off" name="inputEmail" tabindex="3" class="columns-form__input input"
+                  placeholder="Email">
+               <select tabindex="4" name="selectName" class="columns-form__select">
+                  <option selected value="Subject">Subject</option>
+                  <option value="Subject 2">Subject 2</option>
+                  <option value="Subject 3">Subject 3</option>
+                  <option value="Subject 4">Subject 4</option>
+               </select>
+            </div>
+         </div>
+         <input tabindex="5" autocomplete="off" type="text" name="messageInput" placeholder="Message"
+            class="contact__input input--message">
+         <button name="nameButton" type="submit" class="contact__button">SEND</button>
+      </form>
+   </div>
 </section>
