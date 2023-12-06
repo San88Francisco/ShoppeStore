@@ -1,4 +1,3 @@
-// singIn
 document.addEventListener("DOMContentLoaded", function () {
   // Переконайтеся, що елементи існують перед викликом addEventListener
   const clearIconMail = document.querySelector(".clear-icon_mail");
