@@ -6,14 +6,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputMail = document.querySelector(".input_mail");
   const inputPassword = document.querySelector(".input_pass");
 
-  if (clearIconMail && clearIconPassword && inputMail && inputPassword) {
-    // Додайте слухачів подій тільки якщо елементи знайдені
-    clearIconMail.addEventListener("click", function () {
-      inputMail.value = "";
+    const inputMail = document.querySelector('.input_mail');
+    const inputPassword = document.querySelector('.input_pass');
+  
+    clearIconMail.addEventListener('click', function () {
+      inputMail.value = '';
+    
     });
+    clearIconPassword.addEventListener('click', function () {
+        inputPassword.value = '';
+      });
 
-    clearIconPassword.addEventListener("click", function () {
-      inputPassword.value = "";
-    });
-  }
-});
+}); 
+
+console.log('good');
