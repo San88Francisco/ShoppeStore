@@ -1,7 +1,6 @@
 .Product {
    max-width: 1248px;
    height: 100%;
-   border: 1px solid black;
    margin: 0 auto;
    margin-top: 5px;
 
@@ -247,6 +246,9 @@
 
       .product__page1 {
          display: block;
+         p {
+            color: $placeholder-color;
+         }
       }
 
       .product__page2 {
@@ -275,7 +277,8 @@
 
          .reviews {
             grid-column: 1/2;
-
+            // overflow-y: scroll;
+            height: 700px;
             .header__underline {
                margin-bottom: 25px;
             }
