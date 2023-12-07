@@ -68,7 +68,7 @@ form.addEventListener('submit', (event) => {
    const nameInput = form.querySelector('input[name="inputName"]');
    const lastNameInput = form.querySelector('input[name="inputLastName"]');
    const emailInput = form.querySelector('input[name="inputEmail"]').value.trim();
-   const selectInput = form.querySelector('select[name="selectName"]').value.trim();
+   const selectInput = form.querySelector('.select-header').textContent.trim();
    const messageInput = form.querySelector('input[name="messageInput"]').value.trim();
 
    const user = new User(nameInput.value, lastNameInput.value, emailInput, selectInput, messageInput);
@@ -90,4 +90,67 @@ form.addEventListener('submit', (event) => {
       const errorMessages = form.querySelectorAll('.error-message');
       errorMessages.forEach(errorMessage => errorMessage.remove());
    }
+
 });
+
+
+// Прибираємо всі повідомлення про помилки при кліку на поде вводу
+form.addEventListener('click', (event) => {
+   const clickedElement = event.target;
+   if (clickedElement.tagName === 'INPUT' || clickedElement.tagName === 'SELECT') {
+      const errorMessages = form.querySelectorAll('.error-message');
+      errorMessages.forEach(errorMessage => errorMessage.remove());
+   }
+});
+
+// кнопка reset в полях вводу
+const inputFields = document.querySelectorAll('.columns-form__input');
+const inputButtons = document.querySelectorAll('.columns-form__button');
+const submitButton = document.querySelector('.contact__button');
+
+inputFields.forEach((inputField, index) => {
+   inputField.addEventListener('input', function () {
+      if (this.value.trim() !== '') {
+         inputButtons[index].style.display = 'block';
+      } else {
+         inputButtons[index].style.display = 'none';
+      }
+   });
+
+   inputButtons[index].addEventListener('click', function (event) {
+      event.preventDefault();
+      inputFields[index].value = '';
+      inputButtons[index].style.display = 'none';
+   });
+});
+
+submitButton.addEventListener('click', function () {
+   inputButtons.forEach((button) => {
+      button.style.display = 'none';
+   });
+});
+
+//
+
+const selectHeader = document.querySelector('.select-header');
+const selectOptions = document.querySelector('.select-options');
+
+selectHeader.addEventListener('click', function () {
+   selectOptions.style.display = (selectOptions.style.display === 'block') ? 'none' : 'block';
+});
+
+document.addEventListener('click', function (event) {
+   if (!selectHeader.contains(event.target)) {
+      selectOptions.style.display = 'none';
+   }
+});
+
+const selectItems = document.querySelectorAll('.select-options li');
+
+selectItems.forEach(item => {
+   item.addEventListener('click', function () {
+      selectHeader.textContent = this.textContent;
+      selectOptions.style.display = 'none';
+   });
+});
+

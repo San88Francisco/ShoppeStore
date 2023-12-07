@@ -10,20 +10,39 @@
       <form name="main" action="#" class="contact__form form">
          <div class="form__columns columns-form">
             <div class="columns-form__column">
-               <input autocomplete="off" name="inputName" tabindex="1" type="text" class="columns-form__input input"
-                  placeholder="First name">
-               <input autocomplete="off" name="inputLastName" tabindex="2" type="text" class="columns-form__input input"
-                  placeholder="Last name">
+               <div class="columns-form__body">
+                  <input autocomplete="off" name="inputName" tabindex="1" type="text" class="columns-form__input"
+                     placeholder="First name">
+                  <a href="" class="columns-form__button">
+                     <i class="fa-solid fa-circle-xmark"></i>
+                  </a>
+               </div>
+               <div class="columns-form__body">
+                  <input autocomplete="off" name="inputLastName" tabindex="2" type="text" class="columns-form__input"
+                     placeholder="Last name">
+                  <a href="" class="columns-form__button">
+                     <i class="fa-solid fa-circle-xmark"></i>
+                  </a>
+               </div>
             </div>
             <div class="columns-form__column">
-               <input autocomplete="off" name="inputEmail" tabindex="3" class="columns-form__input input"
-                  placeholder="Email">
-               <select tabindex="4" name="selectName" class="columns-form__select">
-                  <option selected value="Subject">Subject</option>
-                  <option value="Subject 2">Subject 2</option>
-                  <option value="Subject 3">Subject 3</option>
-                  <option value="Subject 4">Subject 4</option>
-               </select>
+               <div class="columns-form__body">
+                  <input autocomplete="off" name="inputEmail" tabindex="3" class="columns-form__input input"
+                     placeholder="Email">
+                  <a href="" class="columns-form__button columns-form__button-email">
+                     <i class="fa-solid fa-circle-xmark"></i>
+                  </a>
+               </div>
+               <div class="custom-select">
+                  <div class="select-header">Subject
+                     <img src="./assets/img/Contact_img/arrow.svg" alt="arrow">
+                  </div>
+                  <ul class="select-options">
+                     <li data-value="Subject 2" value="Subject 2">Subject 2</li>
+                     <li data-value="Subject 3" value="Subject 3">Subject 3</li>
+                     <li data-value="Subject 4" value="Subject 4">Subject 4</li>
+                  </ul>
+               </div>
             </div>
          </div>
          <input tabindex="5" autocomplete="off" type="text" name="messageInput" placeholder="Message"
@@ -32,3 +51,4 @@
       </form>
    </div>
 </section>
+<script src="https://kit.fontawesome.com/1f2bcb7d29.js" crossorigin="anonymous"></script>
