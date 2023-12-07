@@ -65,6 +65,7 @@
         cursor: pointer;
       }
 
+
       /* | DROPMENU SORT BY | */
 
       .select-container {
@@ -303,6 +304,7 @@
           pointer-events: auto;
           -moz-appearance: none;
           background: $accent-color;
+
         }
       }
 
@@ -352,6 +354,7 @@
             opacity: 1;
           }
 
+
           .shop-latest__heart {
             width: 1.5em;
             cursor: pointer;
@@ -374,6 +377,7 @@
 
           &::before {
             content: "Sold out";
+
             color: $white-color;
             text-align: center;
             display: flex;
@@ -658,3 +662,4 @@
      }
    }
  }
+
