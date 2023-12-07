@@ -1,34 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ||| Filter price - input range, "Shop page" повзунок ||| */
 
 document.addEventListener("DOMContentLoaded", function () {
