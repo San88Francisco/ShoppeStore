@@ -11,6 +11,29 @@
     display: block;
   }
 
+  .mobile-filter {
+    display: none;
+    margin: 0 0 16px 0;
+      cursor: pointer;
+    h2 {
+      font-size: 35px;
+      margin: 0 0 17px 0;
+    }
+    .mobile-filter_button {
+      display: flex;
+      gap: 10px;
+
+      p {
+        font-family: DM Sans;
+        color: $accent-color;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+  }
+
   .shop-container {
     display: flex;
     justify-content: space-between;
@@ -41,6 +64,7 @@
         padding: 5px;
         cursor: pointer;
       }
+
 
       /* | DROPMENU SORT BY | */
 
@@ -157,7 +181,7 @@
         }
 
         .toggle:before {
-          content: '';
+          content: "";
           width: 14px;
           height: 14px;
           position: absolute;
@@ -214,7 +238,21 @@
           font-weight: 400;
           line-height: 22px;
           letter-spacing: 0.5px;
+          cursor: pointer;
           color: $accent-color;
+          border: 1px solid $accent-color;
+          border-radius: 8px;
+          padding: 2px 4px;
+
+          &:hover {
+            background-color: $accent-color;
+            color: $white-color;
+          }
+
+          &:active {
+            opacity: 0.8;
+            transform: scale(0.95);
+          }
         }
 
         .slider-progress {
@@ -249,7 +287,7 @@
           }
         }
 
-        input[type='range']::-webkit-slider-thumb {
+        input[type="range"]::-webkit-slider-thumb {
           height: 15px;
           width: 15px;
           border-radius: 50%;
@@ -258,7 +296,7 @@
           background: $accent-color;
         }
 
-        input[type='range']::-moz-range-thumb {
+        input[type="range"]::-moz-range-thumb {
           height: 17px;
           width: 17px;
           border: none;
@@ -266,6 +304,7 @@
           pointer-events: auto;
           -moz-appearance: none;
           background: $accent-color;
+
         }
       }
 
@@ -315,6 +354,7 @@
             opacity: 1;
           }
 
+
           .shop-latest__heart {
             width: 1.5em;
             cursor: pointer;
@@ -336,7 +376,8 @@
           position: relative;
 
           &::before {
-            content: 'Sold out';
+            content: "Sold out";
+
             color: $white-color;
             text-align: center;
             display: flex;
@@ -363,7 +404,7 @@
           position: relative;
 
           &::before {
-            content: '- %21';
+            content: "- %21";
             color: $white-color;
             text-align: center;
             display: flex;
@@ -390,7 +431,7 @@
           position: relative;
 
           &::before {
-            content: 'Earring';
+            content: "Earring";
             padding: 0 5px;
             color: $white-color;
             text-align: center;
@@ -418,7 +459,7 @@
           position: relative;
 
           &::before {
-            content: 'New';
+            content: "New";
             color: $black-color;
             text-align: center;
             display: flex;
@@ -449,3 +490,176 @@
     }
   }
 }
+
+@media (max-width: 1100px) {
+  .Shop {
+    .shop-container {
+      .B {
+        .shop-latest__block {
+          .shop-latest__img {
+            .shop-latest_hover {
+              min-height: 35px;
+              padding: 0 20px 0 20px;
+            }
+            .shop-latest__heart {
+              width: 1.2em;
+              cursor: pointer;
+            }
+          }
+          .shop-latest_hover_container {
+            p {
+              font-size: 12.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .Shop {
+    .shop-container {
+      .B {
+        .shop-latest-blocks {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 20px 24px;
+          margin: 0 auto;
+        }
+
+        .shop-latest__block {
+          .shop-latest__img {
+            .shop-latest_hover {
+              min-height: 35px;
+              padding: 0 13px 0 13px;
+            }
+
+            .shop-latest__heart {
+              width: 1.2em;
+              cursor: pointer;
+            }
+          }
+          .shop-latest_hover_container {
+            min-height: 35px;
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .Shop {
+    .mobile-filter {
+      display: block;
+      
+         
+    }
+    h1 {
+      display: none;
+    }
+
+    .shop-container {
+      .A {
+        display: none;
+      }
+
+      .B {
+        .shop-latest-blocks {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 20px 24px;
+          margin: 0 auto;
+        }
+
+        .shop-latest__block {
+          .shop-latest__img {
+            .shop-latest_hover {
+              min-height: 40px;
+              padding: 0 20px 0 20px;
+            }
+
+            .shop-latest__heart {
+              width: 1em;
+              cursor: pointer;
+            }
+          }
+          .shop-latest_hover_container {
+            min-height: 40px;
+
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .shop-latest__name {
+            margin: 15px 0 8px 0;
+      
+            font-size: 15px;
+            
+         }
+      
+         .shop-latest__price {
+            font-size: 15px;
+         }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+   .Shop {
+
+     .shop-container {
+       .B {
+         .shop-latest-blocks {
+           
+           grid-template-columns: repeat(2, 1fr);
+          
+           gap: 20px 16px;
+          
+         }
+ 
+         .shop-latest__block {
+           .shop-latest__img {
+             .shop-latest_hover {
+               min-height: 35px;
+               padding: 0 10px 0 10px;
+             }
+ 
+             .shop-latest__heart {
+               width: 1em;
+             }
+           }
+           .shop-latest_hover_container {
+             min-height: 35px;
+ 
+             p {
+               font-size: 11px;
+             }
+           }
+ 
+           .shop-latest__name {
+             margin: 6px 0 4px 0;
+       
+             font-size: 14px;
+             
+          }
+       
+          .shop-latest__price {
+             font-size: 12px;
+          }
+         }
+       }
+     }
+   }
+ }
+
