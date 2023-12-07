@@ -225,7 +225,7 @@
             .price-range {
                display: flex;
                justify-content: space-between;
-               margin: 8px 0 21px 0;
+               margin: 16px 0 21px 0;
             }
 
             .price-range-summ {
@@ -240,21 +240,7 @@
                font-weight: 400;
                line-height: 22px;
                letter-spacing: 0.5px;
-               cursor: pointer;
                color: $accent-color;
-               border: 1px solid $accent-color;
-               border-radius: 8px;
-               padding: 2px 4px;
-
-               &:hover {
-                  background-color: $accent-color;
-                  color: $white-color;
-               }
-
-               &:active {
-                  opacity: 0.8;
-                  transform: scale(0.95);
-               }
             }
 
             .slider-progress {
@@ -371,6 +357,7 @@
                min-width: 100%;
                transition: all 0.3s ease;
             }
+
             .add-new,
             .add-discount,
             .add-category,
@@ -390,10 +377,13 @@
                   line-height: 20px;
                   position: absolute;
                   top: 16px;
-                  left: 16px;               }
+                  left: 16px;
+                  cursor: pointer;
+               }
             }
+
             // Class for "Sold" label
-            
+
             .add-sold {
                position: relative;
 
@@ -405,7 +395,7 @@
             }
 
             // Class for "-%price%" label
-            
+
             .add-discount {
                position: relative;
 
@@ -413,7 +403,7 @@
                   content: "- %21";
                   color: $white-color;
                   background-color: $accent-color;
-                 
+
                }
             }
 
@@ -426,7 +416,7 @@
                   background-color: $black-color;
                   color: $white-color;
                   padding: 0 5px;
-                  
+
                }
             }
 
@@ -438,7 +428,7 @@
                   content: "New";
                   color: $black-color;
                   background-color: $white-color;
-                  
+
 
                }
             }
