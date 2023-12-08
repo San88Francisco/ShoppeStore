@@ -89,6 +89,7 @@ blocksArr.forEach((el) => {
 });
 
 //local storage
+//llala
 function updateLocalStorageAndLinks(img, productName, productPrice) {
   const imgPath = img.src
     .replace('http://localhost:3000', '.')
