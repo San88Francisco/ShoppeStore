@@ -88,6 +88,7 @@ blocksArr.forEach((el) => {
   });
 });
 
+//local storage
 function updateLocalStorageAndLinks(img, productName, productPrice) {
   const imgPath = img.src
     .replace('http://localhost:3000', '.')
