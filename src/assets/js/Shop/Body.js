@@ -2,25 +2,24 @@
 const discountElements = document.querySelectorAll('.shop-latest__block');
 
 discountElements.forEach((el) => {
-  const addDiscountElement = el.firstElementChild;
+  const labelContainer = el.querySelector('.label-container');
 
-  if (addDiscountElement.classList.contains('add-discount')) {
+  if (labelContainer && labelContainer.querySelector('.add-discount')) {
     const priceElement = el.querySelector('.shop-latest__price');
     priceElement.firstElementChild.classList.add('price-discount');
 
     const h1 = priceElement.textContent.trim();
-    const contentValue =
-      parseFloat(
-        window
-          .getComputedStyle(addDiscountElement, '::before')
-          .getPropertyValue('content')
-          .replace(/["%-]/g, '')
-      ) / 100;
+    const discountValue =
+      (parseInt(el.querySelector('.add-discount').textContent) * -1) / 100;
+    console.log(parseInt(discountValue));
 
     const h1value = parseFloat(h1.slice(2).replace(',', '.'));
-    const disc = h1value - h1value * contentValue;
+    console.log(h1value);
+    const disc = h1value - h1value * discountValue;
 
-    const discount = `<a href="#" class="discount">$ ${disc.toFixed(2)}</a>`;
+    const discount = `<a href="#" class="discount">$ ${disc
+      .toFixed(2)
+      .replace('.', ',')}</a>`;
     priceElement.insertAdjacentHTML('beforeend', discount);
   }
 });
