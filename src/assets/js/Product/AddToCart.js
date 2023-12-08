@@ -68,20 +68,46 @@ const blocksArr = document.querySelectorAll('.shop-latest__block');
 
 blocksArr.forEach((el) => {
   let img = el.querySelector('.shop-latest__img img');
-  let productName = el.querySelector('.shop-latest__name a').textContent;
-  let productPrice = el.querySelector('.shop-latest__price a').textContent;
+  let productName = el.querySelector('.shop-latest__name a');
+  let productPrice = el.querySelector('.shop-latest__price a');
+  
 
+  // Add event listener to the image
   img.addEventListener('click', function (e) {
-    const imgPath = img.src
-      .replace('http://localhost:3000', '.')
-      .replace('%20', ' ');
-    localStorage.setItem('selectedImgPath', imgPath);
-    localStorage.setItem('selectedProductName', productName);
-    localStorage.setItem('selectedProductPrice', productPrice);
-    let link = el.querySelector('.shop-latest__img a');
-    link.href = 'http://localhost:3000/product.html';
+    updateLocalStorageAndLinks(img, productName, productPrice);
+  });
+
+  // Add event listener to the name
+  productName.addEventListener('click', function (e) {
+    updateLocalStorageAndLinks(img, productName, productPrice);
+  });
+
+  // Add event listener to the price
+  productPrice.addEventListener('click', function (e) {
+    updateLocalStorageAndLinks(img, productName, productPrice);
   });
 });
+
+//local storage
+//llala
+function updateLocalStorageAndLinks(img, productName, productPrice) {
+  const imgPath = img.src
+    .replace('http://localhost:3000', '.')
+    .replace('%20', ' ');
+  localStorage.setItem('selectedImgPath', imgPath);
+  localStorage.setItem('selectedProductName', productName.textContent);
+  localStorage.setItem('selectedProductPrice', productPrice.textContent);
+
+  let links = [
+    img.closest('.shop-latest__block').querySelector('.shop-latest__img a'),
+    img.closest('.shop-latest__block').querySelector('.shop-latest__name a'),
+    img.closest('.shop-latest__block').querySelector('.shop-latest__price a'),
+  ];
+
+  links.forEach((link) => {
+    link.href = 'http://localhost:3000/product.html';
+  });
+}
 
 // Трансформація сторінки від вибраного продукту в Шоп
 
