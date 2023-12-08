@@ -1,1 +1,188 @@
 // Вітаю Андрій тут твоє смісце роботи
+
+.contact {
+padding-top: 125px;
+		&__container {
+         max-width: 908px;
+margin: 0 auto;
+		}
+
+		&__block-header {
+         text-align: center;
+         &:not(:last-child) {
+            margin-bottom: 108px;
+         }
+		}
+
+		&__title {
+         &:not(:last-child) {
+            margin-bottom: 35px;
+         }
+		}
+
+		&__text {
+font-family: DM Sans;
+font-size: 20px;
+font-weight: 400;
+line-height: 130%; /* 26/20 */
+text-align: center;
+max-width: 561px;
+margin: 0 auto;
+		}
+
+		&__form {
+         display: flex;
+         flex-direction: column;
+		}
+
+		&__button {
+         background-color: #000000;
+         border: 1px solid #000000;
+         width: 500px;
+         height: 53px;
+         border-radius: 4px;
+         display: flex;
+         justify-content:center;
+         align-items: center;
+         color: #FFFFFF;
+         margin: 0 auto;
+         transition: all 0.3s;
+         &:hover {
+         background-color: $white-color;
+         color: $black-color;
+           cursor: pointer;
+         }
+		}
+}
+.form {
+
+		&__columns {
+         display: flex;
+         flex-direction: column;
+         gap: 94px;
+         &:not(:last-child) {
+            margin-bottom: 126px;
+         }
+		}
+}
+.columns-form {
+
+		&__column {
+         display: flex;
+         justify-content: space-between;
+         gap: 20px;
+         flex-wrap: wrap;
+         position: relative;
+		}
+      &__body {
+         position: relative;
+      }
+      
+         &__button {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            right: 3px;
+            bottom: 15px;
+            display: none;
+            & i {
+               color: $gray-color;
+               transition: color 0.3s;
+               &:hover {
+                  color: $dark-gray-color;
+               }
+            }
+            }
+           &__button-email {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            right: 3px;
+            top: 15px;
+           }
+         
+		&__input {
+         width: 396px;
+         border-bottom: 1px solid #D8D8D8;
+         padding: 12px 0;
+		}
+
+		.custom-select {
+         position: relative;
+         display: inline-block;
+         max-width: 396px;
+         width: 100%;
+         border: none;
+         border-bottom: 1px solid #D8D8D8;
+         font-family: DM Sans;
+         font-size: 16px;
+         color: rgb(112, 112, 112);
+         font-weight: 400;
+         line-height: 168.75%;
+       }
+       
+       .select-header {
+         padding: 10px;
+         cursor: pointer;
+         position: relative;
+         & img {
+            position: absolute;
+            width: 10px;
+            height: 5.66px;
+            right: 0;
+            bottom: 15px;
+         }
+       }
+       
+       .select-options {
+         display: none;
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+         color: #000000;
+         cursor: pointer;
+         font-weight: 400;
+         border-bottom: 1px solid #efefef;
+         line-height: 1.57;
+         text-align: left;
+         background-color: #fff;
+         margin-top: 10px;
+       }
+       
+       .select-options li {
+         height: 53px;
+         font-size: 14px;
+         border: 1px solid #efefef;
+         border-radius: 6px;
+         padding: 12px 16px;
+         transition: background-color 0.3s;
+       }
+       
+       .select-options li:hover {
+         background-color: $light-gray-color;
+       }
+       .select-options li:active {
+         background: $white-color;
+       }
+       .input--message {
+         &:not(:last-child) {
+            margin-bottom: 96px;
+         }
+         border-bottom: 1px solid #D8D8D8;
+         padding: 0 0 44px 0;
+      }
+      .error-message {
+         position: absolute;
+         width: 100%;
+         left: 0;
+         bottom: -20px;
+         color: #D82700;
+         font-family: "DM Sans";
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 10px;
+      }
+}
+
+
