@@ -84,3 +84,33 @@ blocksArr.forEach((el) => {
 });
 
 // Трансформація сторінки від вибраного продукту в Шоп
+
+
+// перехід по картинках від Shop до Product 
+document.addEventListener('DOMContentLoaded', function () {
+   // Get the stored imgPath, product name, and price from localStorage
+   const imgPath = localStorage.getItem('selectedImgPath');
+   const productName = localStorage.getItem('selectedProductName');
+   const productPrice = localStorage.getItem('selectedProductPrice');
+
+   console.log('Stored Image Path:', imgPath);
+   console.log('Stored Product Name:', productName);
+   console.log('Stored Product Price:', productPrice);
+
+   if (imgPath && productName && productPrice) {
+      // Оновдення фото
+      let imgChange = document.querySelectorAll('.product--overview__pictures img');
+      imgChange.forEach((img) => {
+         img.src = imgPath;
+      });
+
+      // Оновлення назви і ціни
+      document.querySelector('.product--overview__view h3').textContent = productName;
+      document.querySelector('.product--overview__view .price').textContent = productPrice;
+
+      // Видалення зі сховку
+      localStorage.removeItem('selectedImgPath');
+      localStorage.removeItem('selectedProductName');
+      localStorage.removeItem('selectedProductPrice');
+   }
+});
