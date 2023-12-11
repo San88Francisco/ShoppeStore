@@ -99,7 +99,6 @@ if (window.location.pathname.includes('/shop')) {
 
 
 
-      //* SortBy/ShopBy
       //* пошук категорій
       function sortShopBy(btn, className) {
          btn.addEventListener('click', () => {
