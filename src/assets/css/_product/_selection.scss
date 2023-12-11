@@ -57,6 +57,17 @@
             width: 700px;
             height: 600px;
             margin-left: 62px;
+            
+            h4 {
+               color: $accent-color;
+               font-family: DM Sans;
+            }
+
+            .price-discount {
+               margin-right: 16px;
+               color: $errors-color;
+               text-decoration: line-through 1px;
+             }
 
             h3 {
                padding-bottom: 26px;
