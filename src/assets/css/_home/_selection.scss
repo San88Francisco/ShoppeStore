@@ -42,7 +42,7 @@
          left: 38px;
          color: var(--light-colors-white-light, $white-color);
          font-family: DM Sans;
-         font-size: 33px;
+         font-size: clamp(26px,33px);
          font-style: normal;
          font-weight: 500;
          line-height: 43px;
@@ -56,7 +56,7 @@
          color: var(--light-colors-white-light, $white-color);
 
          font-family: DM Sans;
-         font-size: 26px;
+         font-size: clamp(26px,22px);
          font-style: normal;
          font-weight: 400;
          line-height: 35px;
@@ -245,5 +245,12 @@
       letter-spacing: 0em;
 
       color: $accent-color;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   .slide img{
+      max-width: 288px;
+      height: 354px;
    }
 }
