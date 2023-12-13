@@ -1,3 +1,69 @@
 <section class="cart__container">
   <h1>Товари</h1>
+  <aside class="cart-totals">
+    <h3>Cart totals</h3>
+    <div class="cart-totals__subtotal">
+      <h5>SUBTOTAL</h5>
+      <p>$ <span class="subtotal__price">65,00</span></p>
+    </div>
+    <div class="cart-totals__shipping">
+      <h5>SHIPPING</h5>
+      <div class="shipping__content">
+        <p>Shipping costs will be calculated once you have provided address.</p>
+        <div class="shipping__content__folder">
+          <h5>CALCULATE SHIPPING</h5>
+          <input type="checkbox" id="folder__checkbox">
+          <label for="folder__checkbox">
+          </label>
+          <div class="folder__content">
+           <form action="#" method="post">
+              <div class="selectYourCountry selectYourItem">
+                <p>SELECT A COUNTRY</p>
+                <input type="checkbox" id="selectYourCountry" class="input">
+                <label  for="selectYourCountry"></label>
+                <ul class="optionCountry optionItem">
+                  <li class="optionItemElement">Ukrain</li>
+                  <li class="optionItemElement">German</li>
+                  <li class="optionItemElement">UK</li>
+                  <li class="optionItemElement">USA</li>
+                </ul>
+              </div>
+              <div class="selectYourCity selectYourItem">
+                <p>CITY</p>
+                <input type="checkbox" id="selectYourCity" class="input">
+                <label for="selectYourCity"></label>
+                <ul class="optionCity optionItem">
+                  <li class="optionItemElement">Dnipro</li>
+                  <li class="optionItemElement">Kiyv</li>
+                  <li class="optionItemElement">Odesa</li>
+                  <li class="optionItemElement">Kharkiv</li>
+                </ul>
+              </div>
+              <div class="selectYourZip selectYourItem">
+                <p>POST CODE / ZIP</p>
+                <input type="checkbox" id="selectYourZip" class="input">
+                <label for="selectYourZip"></label>
+                <ul class="optionZip optionItem">
+                  <li class="optionItemElement">128020</li>
+                  <li class="optionItemElement">132020</li>
+                  <li class="optionItemElement">590022</li>
+                  <li class="optionItemElement">340500</li>
+                </ul>
+              </div>
+            </form>
+            <button>UPDATE TOTALS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-total__checkout">
+      <hr class="header__underline">
+      <div class="checkout__total-cost">
+        <h5>TOTAL</h5>
+        <p>$ <span class="total__price">87,00</span></p>
+      </div>
+      <button>PROCEED TO CHECKOUT</button>
+    </div>
+  </aside>
 </section>
+
