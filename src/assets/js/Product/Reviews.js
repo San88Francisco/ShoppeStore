@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=> {
    if(pageName = document.title.toLowerCase().replace(/\s/g, "") === 'product'){
+      document.querySelector('.name-reviews').textContent = document.querySelector('.product--overview__view').children[0].textContent
       document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
       document.querySelector('.amount-reviews2').innerHTML = document.querySelector('.reviews').children.length / 2
       let reviewsAmountADD = document.querySelector('.reviews').children.length / 2
@@ -14,10 +15,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
             productPages[index].style.display = 'grid';
          });
       });
-      console.log(localStorage.getItem(`items`));
-      if(localStorage.getItem(`items`) !== null){
+      if(localStorage.getItem(document.querySelector('.product--overview__view').children[0].textContent) !== null){
          const reviews = document.querySelector('.reviews')
-         reviews.innerHTML = localStorage.getItem(`items`)
+         reviews.innerHTML = localStorage.getItem(document.querySelector('.product--overview__view').children[0].textContent)
          console.log(reviewsAmountADD);
          document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
          document.querySelector('.amount-reviews2').innerHTML = document.querySelector('.reviews').children.length / 2
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
          
             //created stars
          
-            document.querySelector(`.review__block_item${reviewsAmountADD}`).insertAdjacentElement('afterend', hr)
-            hr.insertAdjacentElement('afterend',div)
+            document.querySelector(`.amount-reviews-title`).insertAdjacentElement('afterend', div)
+            div.insertAdjacentElement('afterend',hr)
             div.insertAdjacentElement('beforeend', h3)
             h3.insertAdjacentElement('beforeend', span)
             h3.insertAdjacentElement('afterend',starsRatingD)
@@ -78,6 +78,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
          }
          document.getElementById('form').addEventListener('submit', function(event) {
             event.preventDefault()
+            document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
+            document.querySelector('.amount-reviews2').innerHTML = document.querySelector('.reviews').children.length / 2
+            
+            if((document.querySelector('.reviews').children.length / 2) > 2){
+               document.querySelector('.reviews').style.overflowY = 'scroll'
+            }else {
+               document.querySelector('.reviews').style.overflow = 'none'
+            }
+
             let formObject = {};
             let formData = new FormData(event.target);
             formData.forEach(function(value, key){
@@ -97,7 +106,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             
             if(ReviewUserComment && ReviewUserName && ReviewUserMail && formObject.starsRating){
                addReviewBlock(ReviewUserComment, ReviewUserName, ReviewUserMail, formObject)
-               localStorage.setItem(`items`, document.querySelector(`.reviews`).innerHTML)
+               localStorage.setItem(document.querySelector('.product--overview__view').children[0].textContent, document.querySelector(`.reviews`).innerHTML)
             }else {
                alert('Please enter a rating')
             }
@@ -110,7 +119,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             ReviewUserMail.value = userSaveDatas.userMail
          }  
       })
-      if((document.querySelector('.reviews').children.length / 2) > 4){
+      if((document.querySelector('.reviews').children.length / 2) > 3){
          document.querySelector('.reviews').style.overflowY = 'scroll'
       }else {
          document.querySelector('.reviews').style.overflow = 'none'
