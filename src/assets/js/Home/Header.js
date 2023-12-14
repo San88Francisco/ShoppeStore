@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', setupHeader);
 /** Count Icon Header */
 
 const navCartCount = document.querySelector('.cart__count');
-let navCartValid = navCartCount;
-navCartValid = localStorage.getItem('countCart') || 0;
 
-if (navCartValid > 0 && navCartValid < 100) {
+let navCartValid = navCartCount;
+navCartValid = localStorage.getItem('totalCountCart') || 0;
+
+if (+navCartValid > 0 && +navCartValid < 100) {
   navCartCount.style.display = 'flex';
-  navCartCount.textContent = localStorage.getItem('countCart');
-} else if (navCartValid < 100 && navCartValid != 0) {
+  navCartCount.textContent = localStorage.getItem('totalCountCart');
+} else if (+navCartValid < 100 && +navCartValid != 0) {
   navCartCount.style.display = 'flex';
   navCartCount.textContent = '99';
-  console.log('2');
 }

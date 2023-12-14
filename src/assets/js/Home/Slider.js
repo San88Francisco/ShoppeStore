@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.querySelector(".slider");
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.querySelector('.slider');
   const radioButtons = document.querySelectorAll(
     '.radio-buttons input[type="radio"]'
   );
@@ -9,24 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
   if (slider) {
     radioButtons.forEach(function (radio, index) {
       if (radio) {
-        radio.addEventListener("change", function () {
+        radio.addEventListener('change', function () {
           changeSlide(index);
           clearInterval(intervalId);
         });
       }
     });
 
-    slider.addEventListener("mouseenter", function () {
+    slider.addEventListener('mouseenter', function () {
       clearInterval(intervalId);
     });
 
-    slider.addEventListener("mouseleave", function () {
+    slider.addEventListener('mouseleave', function () {
       intervalId = setInterval(autoSlide, 3500);
     });
   }
 
   function changeSlide(index) {
-    const slideWidth = document.querySelector(".slide")?.offsetWidth || 0;
+    const slideWidth = document.querySelector('.slide')?.offsetWidth || 0;
     if (slider) {
       slider.style.transform = `translateX(-${index * slideWidth}px)`;
       currentIndex = index;

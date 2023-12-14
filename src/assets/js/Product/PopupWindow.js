@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         popupWindow.style.opacity = '0';
         btnAddtoCart.disabled = false; // Знову включаємо кнопку
         btnAddtoCart.addEventListener('click', handleClick); // Додаємо обробник подій
-      }, 1000);
+      }, 3000);
     }
 
     btnAddtoCart.addEventListener('click', handleClick);
@@ -54,10 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
       const productName = document.querySelector(
         '.product--overview__view h3'
       ).textContent;
+      console.log('productInfo  productName:', productName);
       const productPrice = document.querySelector(
-        '.product--overview__view .price'
+        '.shop-latest__price a'
       ).textContent;
+      console.log('productInfo  productPrice:', productPrice);
       const productImg = document.querySelector('.picture-big').src;
+      console.log('productInfo  productImg:', productImg);
 
       // Перевіряємо, чи вже є продукт з такою назвою в кошику
       const existingProductIndex = allProductCart.findIndex(

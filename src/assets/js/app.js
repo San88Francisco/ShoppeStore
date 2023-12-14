@@ -10,7 +10,7 @@ import './Product/AddToCart';
 import './Product/Reviews';
 import './Product/PopupWindow';
 
-// import './Contact/ContactUs';
+import './Contact/ContactUs';
 
 import './Account/SingIn';
 import './Account/ResetPassword';
