@@ -13,3 +13,6 @@ import './Product/PopupWindow';
 // import './Contact/ContactUs';
 
 import './Account/SingIn';
+import './Account/ResetPassword';
+
+import './Cart/Option';

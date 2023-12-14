@@ -24,36 +24,6 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-
-          li:active {
-            position: relative;
-            &::after {
-              content: '';
-              transition: 50ms all ease-in-out;
-              width: 40%;
-              height: 30px;
-              position: absolute;
-              bottom: -2px;
-
-              margin-left: auto;
-              margin-right: auto;
-              left: 0;
-              right: 0;
-              text-align: center;
-              text-align: center;
-
-              border-radius: 1px;
-              border-bottom: 2px solid #000;
-              padding-bottom: 30px;
-              border-width: 2px 0px;
-            }
-          }
-          .ourstory:active {
-            &::after {
-              width: 55%;
-            }
-          }
-
           li {
             height: 45px;
           }
@@ -83,45 +53,6 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          .header_line:active {
-            position: relative;
-            &::after {
-              content: '';
-              transition: 50ms all ease-in-out;
-              width: 40%;
-              height: 30px;
-              position: absolute;
-              bottom: -2px;
-
-              margin-left: auto;
-              margin-right: auto;
-              left: 0;
-              right: 0;
-              text-align: center;
-              border-radius: 1px;
-              border-bottom: 2px solid #000;
-              padding-bottom: 30px;
-              border-width: 2px 0px;
-            }
-          }
-
-          .header_line_last:active {
-            position: relative;
-            &::after {
-              content: '';
-              transition: 50ms all ease-in-out;
-              width: 45%;
-              height: 30px;
-              position: absolute;
-              bottom: -2px;
-              right: 1px;
-              border-radius: 1px;
-              border-bottom: 2px solid #000;
-              padding-bottom: 30px;
-              border-width: 2px 0px;
-            }
-          }
-
           li {
             height: 45px;
           }
@@ -173,6 +104,28 @@
       margin-left: auto;
       margin-right: auto;
       left: 0;
+      right: 0;
+      text-align: center;
+      text-align: center;
+
+      border-radius: 1px;
+      border-bottom: 2px solid #000;
+      border-width: 2px 0px;
+    }
+  }
+  .act__last {
+    position: relative;
+    &::after {
+      z-index: -5;
+      content: '';
+      position: absolute;
+      width: 23px;
+      height: 30px;
+      bottom: -2px;
+
+      margin-left: auto;
+      margin-right: auto;
+      left: auto;
       right: 0;
       text-align: center;
       text-align: center;
