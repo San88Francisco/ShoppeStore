@@ -1,6 +1,7 @@
 import "./Home/Header";
 import "./Home/Slider";
 import "./Home/Body";
+import "./Home/Burger";
 
 import "./Shop/Body";
 import "./Shop/Filter";
