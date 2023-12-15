@@ -3,7 +3,7 @@ $font-weight: regular;
 $line-height: 1.68;
 
 footer {
-   margin-top: 100px;
+   flex: 0 0 auto;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -14,7 +14,6 @@ footer {
       height: 159px;
 
       border-top: 1px solid #d8d8d8;
-
       display: flex;
       justify-content: space-between;
       padding-top: 55px;
