@@ -40,7 +40,7 @@ button {
    font-size: 20px;
    font-weight: 400;
    line-height: 26px;
-   transition: all 0.5s ease-in-out;
+   transition: all 0.3s ease-in-out;
       }
    
       &__block {
@@ -82,6 +82,10 @@ button {
    font-weight: 400;
    line-height: 27px;
    text-align: center;
+   transition: color 0.3s;
+   &:hover {
+      color: rgba(112, 112, 112, 1);
+   }
       }
    }
    .form {
@@ -106,6 +110,21 @@ button {
          height: 15px;
          right: 3px;
          bottom: 15px;
+         display: none;
+         & i {
+            color: $gray-color;
+            transition: color 0.3s;
+            &:hover {
+               color: $dark-gray-color;
+            }
+         }
+      }
+      .button-repeat {
+         position: absolute;
+         width: 15px;
+         height: 15px;
+         right: 3px;
+         top: 15px;
          display: none;
          & i {
             color: $gray-color;
@@ -182,6 +201,7 @@ button {
       text-align: left;
       background-color: #fff;
       margin-top: 10px;
+      z-index: 2;
     }
     
     .select-options li {
@@ -211,5 +231,16 @@ button {
        {
          margin-bottom: 35px;
       }
+   }
+   .error-message {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -20px;
+      color: #D82700;
+      font-family: "DM Sans";
+   font-size: 10px;
+   font-weight: 400;
+   line-height: 10px;
    }
 }
