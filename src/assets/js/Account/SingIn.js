@@ -90,6 +90,8 @@ inputFields.forEach((inputField, index) => {
       event.preventDefault();
       inputFields[index].value = '';
       inputButtons[index].style.display = 'none';
+      let togglePasswordBtn = document.querySelector('.togglePasswordBtn');
+      togglePasswordBtn.style.display = 'none';
    });
 });
 
@@ -255,3 +257,34 @@ loginForm.addEventListener('submit', (event) => {
       return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
    }
 });
+
+//Функціонал позати пароль
+const allPass = document.querySelectorAll('.input--pass');
+
+allPass.forEach(passwordField => {
+   const togglePasswordBtn = document.createElement('button');
+   togglePasswordBtn.innerHTML = 'Show Password';
+   togglePasswordBtn.className = 'togglePasswordBtn';
+   passwordField.parentNode.insertBefore(togglePasswordBtn, passwordField.nextSibling);
+
+   passwordField.addEventListener('input', function () {
+      if (passwordField.value.trim() !== '') {
+         togglePasswordBtn.style.display = 'inline-block';
+      } else {
+         togglePasswordBtn.style.display = 'none';
+      }
+   });
+
+   togglePasswordBtn.addEventListener('click', function () {
+      if (passwordField.type === 'password') {
+         passwordField.type = 'text';
+         togglePasswordBtn.textContent = 'Hide Password';
+      } else {
+         passwordField.type = 'password';
+         togglePasswordBtn.textContent = 'Show Password';
+      }
+   });
+});
+
+
+

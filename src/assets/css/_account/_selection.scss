@@ -243,4 +243,21 @@ button {
    font-weight: 400;
    line-height: 10px;
    }
+   .togglePasswordBtn {
+      position: absolute;
+      width: 100px;
+      height: 40px;
+      right: 20px;
+      top: 0;
+      font-size: 8px;
+      border: none;
+      color: #707070;
+      transition: color 0.3s;
+      display: none;
+      @media (any-hover: hover){
+         &:hover{
+            color: #000000;
+         }
+      }
+   }
 }
