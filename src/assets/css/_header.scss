@@ -204,16 +204,17 @@
         z-index: 1;
         padding: 60px 20px 0 16px;
         transform: translate(150%);
-        background-color: transparent;
-        transition: transform 0.7s ease-in-out 0.2s, background-color 0.7s ease-in-out;
+        background-color: #fff;
+        transition: transform 0.7s ease-in-out 0.2s, background-color .9s ease-in-out;
 
         text-align: left;
         display: flex;
         gap: 24px;
+        overflow-y: auto;
 
         &.active {
           transform: translate(0);
-          animation: menu-bg 1s ease-in-out; // Apply the animation when active
+          animation: menu-bg 1.3s ease-in-out; // Apply the animation when active
           background-color: #fff; // Set the target background color
         }
         @keyframes menu-bg {
@@ -227,10 +228,10 @@
 
         .burger__header{
           transform: translate(0%);
-          transition: transform 0.8s ease-in-out 0.2s;
+          transition: transform 1.2s ease-in-out;
           &.active {
             transform: translate(0%);
-            animation: burger-header 0.8s ease-in-out 0.2s;
+            animation: burger-header 1.5s ease-in-out;
           }
           @keyframes burger-header {
             0% {
@@ -246,14 +247,14 @@
           flex-direction: column;
           gap: 24px;
           transform: translate(0%);
-          transition: transform 0.8s ease-in-out 0.2s;
+          transition: transform 1.5s ease-in-out ;
           &.active {
             transform: translate(0%);
-            animation: burger-item 0.8s ease-in-out 0.2s;
+            animation: burger-item 1.5s ease-in-out;
           }
           @keyframes burger-item {
             0% {
-              transform: translate(-250%);
+              transform: translate(250%);
             }
             100% {
               transform: translate(0%);
@@ -301,13 +302,14 @@
 
     .burger__footer {
       display: flex;
+      align-items: center;
       gap: 10px;
       transform: translate(0%);
       transition: transform 1s ease-in-out;
       &.active {
         transform: translate(0%);
-        animation: burger-item .9s ease-in-out 0.4s;
-      }
+        animation: burger-item 1.5s ease-in-out ;
+      } 
       
       p {
         font-family: DM Sans;
@@ -322,7 +324,7 @@
     
       &.active {
         transform: translate(0%);
-        animation: burger-item .9s ease-in-out 0.6s;
+        animation: burger-item 1.5s ease-in-out;
       }
     }
   }
