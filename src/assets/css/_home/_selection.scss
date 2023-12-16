@@ -34,19 +34,19 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 8px;
+      padding: 40px;
 
       h1 {
          color: var(--light-colors-white-light, $white-color);
          font-family: DM Sans;
-         font-size: clamp(26px,33px);
+         font-size: clamp(33px,26px);
          font-style: normal;
          font-weight: 500;
          line-height: 43px;
       }
 
       h2 {
-         margin-top: 10px;
+         margin-bottom: 48px;
          color: var(--light-colors-white-light, $white-color);
 
          font-family: DM Sans;
@@ -74,7 +74,7 @@
          font-weight: 700;
          line-height: normal;
          padding: 10px 20px;
-         margin-top: 40px;
+         margin-bottom: 225px;
          text-align: center;
 
          transition: all 0.3s ease-in-out;
@@ -263,6 +263,7 @@
    .slider_top .text_prod {
       display: flex;
       justify-content: flex-end;
+      padding: 8px;
    }
    h1 {
       height: 26px;
