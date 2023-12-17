@@ -16,3 +16,4 @@ import './Account/SingIn';
 import './Account/ResetPassword';
 
 import './Cart/Option';
+import './Cart/CartItem';

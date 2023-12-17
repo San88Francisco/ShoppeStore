@@ -1,20 +1,28 @@
 // Лічильник
-const btnDecrease = document.querySelector('.minus');
-const btnIncrease = document.querySelector('.plus');
-const numberOfShoppings = document.querySelector('.amount');
 
-if (btnDecrease && btnIncrease && numberOfShoppings) {
-  btnIncrease.addEventListener('click', function () {
-    let numberOfShoppingsValue = +numberOfShoppings.textContent;
-    numberOfShoppings.textContent = `${++numberOfShoppingsValue}`;
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  // Перевірка, чи ми на сторінці "Product"
+  if (window.location.pathname.includes('/product')) {
+    const btnDecrease = document.querySelector('.minus');
+    const btnIncrease = document.querySelector('.plus');
+    const numberOfShoppings = document.querySelector('.amount');
 
-  btnDecrease.addEventListener('click', function () {
-    let numberOfShoppingsValue = +numberOfShoppings.textContent;
-    if (numberOfShoppingsValue === 1) return;
-    numberOfShoppings.textContent = `${--numberOfShoppingsValue}`;
-  });
-}
+    if (btnDecrease && btnIncrease && numberOfShoppings) {
+      btnIncrease.addEventListener('click', function () {
+        let numberOfShoppingsValue = +numberOfShoppings.textContent;
+        numberOfShoppings.textContent = `${++numberOfShoppingsValue}`;
+      });
+
+      btnDecrease.addEventListener('click', function () {
+        let numberOfShoppingsValue = +numberOfShoppings.textContent;
+        if (numberOfShoppingsValue === 1) return;
+        numberOfShoppings.textContent = `${--numberOfShoppingsValue}`;
+      });
+    }
+  }
+
+  //
+});
 
 // Вибір картинок
 const imageSelection = document.querySelector('.product--overview__pictures');

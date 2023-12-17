@@ -22,13 +22,23 @@ document.addEventListener('DOMContentLoaded', setupHeader);
 
 const navCartCount = document.querySelector('.cart__count');
 
-let navCartValid = navCartCount;
-navCartValid = localStorage.getItem('totalCountCart') || 0;
+// Оновлення navCartCount на основі значення в localStorage
+function updateNavCartCount() {
+  let navCartValid = localStorage.getItem('totalCountCart') || 0;
 
-if (+navCartValid > 0 && +navCartValid < 100) {
-  navCartCount.style.display = 'flex';
-  navCartCount.textContent = localStorage.getItem('totalCountCart');
-} else if (+navCartValid < 100 && +navCartValid != 0) {
-  navCartCount.style.display = 'flex';
-  navCartCount.textContent = '99';
+  if (+navCartValid > 0 && +navCartValid < 100) {
+    navCartCount.style.display = 'flex';
+    navCartCount.textContent = localStorage.getItem('totalCountCart');
+  } else if (+navCartValid < 100 && +navCartValid != 0) {
+    navCartCount.style.display = 'flex';
+    navCartCount.textContent = '99';
+  } else {
+    navCartCount.style.display = 'none';
+  }
 }
+
+// Спробуйте оновити на початку для початкового стану
+updateNavCartCount();
+
+// Додайте подію 'storage', яка буде викликатися при зміні localStorage
+window.addEventListener('storage', updateNavCartCount);
