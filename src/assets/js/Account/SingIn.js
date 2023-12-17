@@ -166,13 +166,15 @@ class User {
          selectHeaderText.insertAdjacentHTML('afterend', '<div class="error-message">Please select your age</div>');
          return
       }
+      console.log(this);
+      localStorage.setItem(this.emailInput, JSON.stringify(this))
       alert(`Successful registration`)
       return true;
    }
 }
 
 const form = document.querySelector('form[name="FormRegister"]');
-let usersData = []; // Масив для зберігання даних користувачів
+
 
 form.addEventListener('submit', (event) => {
    event.preventDefault(); // Зупиняємо стандартну подію відправки форми
@@ -188,8 +190,8 @@ form.addEventListener('submit', (event) => {
    const validationResult = user.register();
    if (validationResult === true) {
       form.reset();
-      usersData.push(user);
-      console.log(usersData);
+      /*  usersData.push(user);
+        console.log(usersData);*/
 
       const errorMessages = form.querySelectorAll('.error-message');
       errorMessages.forEach(errorMessage => errorMessage.remove());
@@ -220,36 +222,50 @@ form.addEventListener('click', (event) => {
 });
 
 
-
-// Функціонал логування
+//вхід в систему
 const loginForm = document.querySelector('form[name="FormSingIn"]');
+
+let invalidLoginAttempts = 0;
 
 loginForm.addEventListener('submit', (event) => {
    event.preventDefault();
 
    const loginEmail = document.querySelector('.input--singin').value.trim();
    const loginPass = document.querySelector('.input--pass').value.trim();
+   const userData = localStorage.getItem(loginEmail)
 
-   let userFound = false; // Флаг, що позначає, чи був знайдений користувач
+   /*   let userFound = false; // Флаг, що позначає, чи був знайдений користувач
+   
+      for (let i = 0; i < usersData.length; i++) {
+         const currentUser = usersData[i];
+         const login = currentUser.emailInput;
+         const password = currentUser.passwordInput;
+   
+         if (loginEmail === login && loginPass === password) {
+            userFound = true;
+            break; // Якщо користувача знайдено, виходимо з циклу
+         }
+      }*/
 
-   for (let i = 0; i < usersData.length; i++) {
-      const currentUser = usersData[i];
-      const login = currentUser.emailInput;
-      const password = currentUser.passwordInput;
+   if (userData) {
+      const user = JSON.parse(userData)
+      console.log('✌️user --->', user);
 
-      if (loginEmail === login && loginPass === password) {
-         userFound = true;
-         break; // Якщо користувача знайдено, виходимо з циклу
+      if (user.passwordInput === loginPass) {
+         alert("You are signed in");
+         window.location.href = 'http://localhost:3000/index.html';
       }
-   }
 
-   if (userFound) {
-      alert("You are signed in");
-      window.location.href = 'http://localhost:3000/index.html';
    } else {
-      let loginElement = document.querySelector('.input--singin');
-      if (!emailTest(loginElement)) {
-         loginElement.insertAdjacentHTML('afterend', '<div class="error-message">Password or login is incorrect</div>');
+      invalidLoginAttempts++;
+
+      if (invalidLoginAttempts >= 3) {
+         window.location.href = 'password-recovery.html'; // Перенаправлення на сторінку відновлення паролю
+      } else {
+         let loginElement = document.querySelector('.input--singin');
+         if (!emailTest(loginElement)) {
+            loginElement.insertAdjacentHTML('afterend', '<div class="error-message">Password or login is incorrect</div>');
+         }
       }
    }
 
@@ -258,7 +274,8 @@ loginForm.addEventListener('submit', (event) => {
    }
 });
 
-//Функціонал позати пароль
+
+//Функціонал показати пароль
 const allPass = document.querySelectorAll('.input--pass');
 
 allPass.forEach(passwordField => {
