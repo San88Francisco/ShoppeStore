@@ -1,6 +1,6 @@
 .Shop {
   max-width: 1248px;
-  height: 1100px;
+  
   margin: 0 auto;
 
   h1 {
@@ -304,6 +304,7 @@
 
       #deBag_marginTop {
         margin-top: 0;
+        margin-bottom: 0;
       }
 
       .shop-latest-blocks {
@@ -547,6 +548,12 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 700px){
+  .Shop{
+    margin: 115px 0 0 0;
   }
 }
 

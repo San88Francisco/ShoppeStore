@@ -3,15 +3,18 @@ $font-weight: regular;
 $line-height: 1.68;
 
 footer {
-  margin-top: 100px;
+  margin-top: 72px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 0 27px 0;
+  overflow-y: auto;
+  
   .big-container {
     margin-bottom: 100px;
 
     width: 1248px;
-    height: 159px;
+    min-height: 159px;
 
     border-top: 1px solid #d8d8d8;
 
@@ -118,27 +121,27 @@ footer {
   // Mobile
   .mobile-container {
     display: none;
-    margin-bottom: 100px;
+   
 
     width: 1248px;
-    height: 159px;
+    min-height: 159px;
 
     border-top: 1px solid #d8d8d8;
 
     justify-content: space-between;
     flex-direction: column;
-    gap: 57px;
-    padding-top: 55px;
+    gap: 32px;
+  
 
     .footer-info {
       display: flex;
 
       justify-content: space-between;
       align-items: center;
-      height: 40px;
+      
 
-      padding-bottom: 13px;
-      margin-left: 10px;
+     
+     
       .info-list {
          display: flex;
          gap: 41px;
@@ -151,7 +154,7 @@ footer {
           line-height: $line-height;
 
           color: $placeholder-color;
-          height: 27px;
+          
         }
 
        
@@ -248,7 +251,7 @@ footer {
 
             .info-list{
                flex-direction: column;
-               gap: 15px;
+               gap: 14px;
             }
 
             .footer-input-block{
@@ -266,10 +269,9 @@ footer {
    footer{
      
       .mobile-container{
-         padding: 0 10px;
+         
          border: none;
-         position: relative;
-         bottom: -200px;
+        
         
       }
    }
@@ -282,7 +284,7 @@ footer {
          .footer-info{
             flex-direction: column-reverse;
             align-items: start;
-            gap: 20px;
+            gap: 40px;
             width: 100%;
             .footer-input-block{
                width: 100%;
@@ -303,8 +305,16 @@ footer {
                 }
               }
                .info-agree{
-                  display: block;
-                  margin: 11px 0 40px 0;
+                  display: flex;
+                  gap: 4px;
+                  align-items: center;
+                  margin: 11px 0 0 0;
+                  span{
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 20px;
+                  }
                }
             }
          }
@@ -317,19 +327,47 @@ footer {
       .mobile-container{
 
          .footer-info{
+          .info-list{
+           
+            gap: 6px;
+         }
             .footer-input-block{
               .footer-input{
                 .info-input::placeholder {
                  
-                  font-size: 14px;
+                  font-size: 12px;
                   
                 }
+                button{
+                  a{
+                    img{
+                      width: 15px;
+height: 5.247px;
+                    }
+                  }
+                }
               }
+              .info-agree{
+                display: flex;
+                gap: 4px;
+                align-items: center;
+                margin: 11px 0 0 0;
+                input{
+                  width: 13px;
+                  height: 13px;
+                }
+                span{
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 20px;
+                }
+             }
             }
             .info-list{
                .info-item{
                   a{
-                     font-size: 14px;
+                     font-size: 12px;
                   }
                 
                }
@@ -339,18 +377,21 @@ footer {
             display: flex;
             flex-direction: column-reverse;
             align-items: start;
-            gap: 20px;
-
+            gap: 36px;
+            .info-text{
+              font-size: 12px;
+            }
             
             .messengers{
                display: none;
+              
             }
 
             .follow{
                display: flex;
-               gap: 7px;
+              
                align-items: center;
-               margin: 32px 0 36px 0;
+              
                p{
                   font-size: 12px;
                   font-style: normal;
@@ -360,10 +401,16 @@ footer {
                hr{
                   width: 47px;
                   border: 1px solid #000;
+                  margin: 0 8px 0 16px;
                }
                .follow-icons{
                   display: flex;
-                  gap: 18px;
+                  gap: 16px;
+                  a{
+                    i{
+                      font-size: 16px;
+                    }
+                  }
                }
                
             }
