@@ -1,7 +1,8 @@
 .Shop {
-   max-width: 1248px;
-   height: 1100px;
-   margin: 0 auto;
+  max-width: 1248px;
+  
+  margin: 0 auto;
+
 
    h1 {
       margin-bottom: 39px;
@@ -193,9 +194,11 @@
                transition: 0.4s;
             }
 
-            input:checked+.toggle {
-               background-color: $accent-color;
-            }
+      #deBag_marginTop {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
 
             input:focus+.toggle {
                box-shadow: 0 0 1px $accent-color;
@@ -566,6 +569,12 @@
          }
       }
    }
+}
+
+@media (max-width: 700px){
+  .Shop{
+    margin: 115px 0 0 0;
+  }
 }
 
 @media (max-width: 680px) {
