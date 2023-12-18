@@ -308,6 +308,7 @@
 
          #deBag_marginTop {
             margin-top: 0;
+            margin-bottom: 0;
          }
 
          .shop-latest-blocks {
@@ -318,9 +319,9 @@
          .shop-latest__block {
             .shop-latest__img {
                position: relative;
-
+              
                img {
-                  width: 100%;
+                  max-width: 100%;
                   height: auto;
                   border-radius: 10px;
                }
@@ -624,18 +625,58 @@
 
 @media (max-width: 425px) {
    .Shop {
-      .B {
-         .shop-latest__block {
-
-            .add-new,
-            .add-discount,
-            .add-category,
-            .add-sold {
-               &::before {
-                  margin: -5px;
+      .shop-container{
+        .B {
+          .shop-latest{
+            .shop-latest-container{
+              .shop-latest-blocks{
+                .shop-latest__block {
+                  .shop-latest__img{
+                    .label-container{
+                      top: 8px;
+                      left: 8px;
+                      .add-new,
+                  .add-discount,
+                  .add-category,
+                  .add-sold,
+                  .category {
+                    width: 44px;
+                    height: 20px;
+                    font-size: 9px;
+                     &::before {
+                        margin: -5px;
+                     }
+                    
+                  }
+                    }
+                  }
+                  .add-new,
+                  .add-discount,
+                  .add-category,
+                  .add-sold {
+                     &::before {
+                        margin: -5px;
+                     }
+                     width: 30px;
+                  }
                }
+              }
             }
-         }
+          }
+          .shop-latest__block {
+ 
+             .add-new,
+             .add-discount,
+             .add-category,
+             .add-sold {
+                &::before {
+                   margin: -5px;
+                }
+                width: 30px;
+             }
+          }
+       }
       }
+      
    }
 }
