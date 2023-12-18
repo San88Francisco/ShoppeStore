@@ -33,6 +33,7 @@ margin: 0 auto;
 		&__form {
          display: flex;
          flex-direction: column;
+         padding-bottom: 154px;
 		}
 
 		&__button {
@@ -53,19 +54,26 @@ margin: 0 auto;
            cursor: pointer;
          }
 		}
-}
-.form {
-
-		&__columns {
-         display: flex;
-         flex-direction: column;
-         gap: 94px;
+      &__input {
          &:not(:last-child) {
-            margin-bottom: 126px;
+            margin-bottom: 96px;
          }
-		}
-}
-.columns-form {
+         border-bottom: 1px solid #D8D8D8;
+         padding: 0 0 44px 0;
+      }
+      .form {
+
+         &__columns {
+            display: flex;
+            flex-direction: column;
+            gap: 94px;
+            &:not(:last-child) {
+               margin-bottom: 126px;
+            }
+         }
+         
+   }
+   .columns-form {
 
 		&__column {
          display: flex;
@@ -165,13 +173,6 @@ margin: 0 auto;
        .select-options li:active {
          background: $white-color;
        }
-       .input--message {
-         &:not(:last-child) {
-            margin-bottom: 96px;
-         }
-         border-bottom: 1px solid #D8D8D8;
-         padding: 0 0 44px 0;
-      }
       .error-message {
          position: absolute;
          width: 100%;
@@ -184,5 +185,8 @@ margin: 0 auto;
       line-height: 10px;
       }
 }
+}
+
+
 
 

@@ -13,3 +13,4 @@ import "./Product/Reviews";
 import "./Contact/ContactUs";
 
 import "./Account/SingIn"; 
+import "./Account/ResetPassword"; 
