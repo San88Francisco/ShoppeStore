@@ -1,34 +1,103 @@
 <section class="account">
-    <h1>My account</h1>
-    <div class="exit-block">
-        <a class="sign" href="#">
-            <h3>Sign in</h3>
-        </a> 
-        <a class="register" href="#">
-            <h3>Register</h3>
-        </a>
-    </div>
-
-    <form action="#">
-        <div class="mail-container">
-            <input class="input_mail" type="email" name="UserMail" placeholder="Email">
-          
-            <img src="../../../assets/img/Account_img/icon.png" alt="" class="clear-icon_mail">
-        </div>
-        <hr>
-        <div class="password-container">
-            <input class="input_pass" type="password" name="userpass" placeholder="Password">
-            <img src="../../../assets/img/Account_img/icon.png" alt="" class="clear-icon_pass">
-        </div>
-      
-        <hr>
-        <div class="checkbox-container">
-            <input class="input_checkbox" type="checkbox" name="remember">
-           
-            <span>Remember me</span>
-        </div>
-        
-        <button>SIGN IN</button>
-        <a href="#">Have you forgotten your password?</a>
-    </form>
- </section>
+   <div class="account__container">
+      <div class="account__block-header">
+         <h1 class="account__title">My account</h1>
+      </div>
+      <div class="account__tabs tabs">
+         <nav class="tabs__items">
+            <a id="signInTab" tabindex="1" href="" class="tabs__item _active">Sign in</a>
+            <a id="registerTab" tabindex="2" href="" class="tabs__item">Register</a>
+         </nav>
+         <div class="tabs__body">
+            <div class="tabs__block block-tabs block-tabs--singIn opac">
+               <form name="FormSingIn" action="#" class="block-tabs__form form">
+                  <div class="form__body">
+                     <input autocomplete="off" name="EmailAccount" tabindex="3" class="form__input input--singin"
+                        placeholder="Email">
+                     <a href="" class="form__button">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                     </a>
+                  </div>
+                  <div class="form__body">
+                     <input autocomplete="off" name="inputPassword" tabindex="4" type="password"
+                        class="form__input input--pass" placeholder="Password">
+                     <a href="" class="form__button">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                     </a>
+                  </div>
+                  <div class="form__checkbox checkbox">
+                     <input autocomplete="off" type="checkbox" name="myCheckbox" class="checkbox__input"
+                        id="myCheckbox">
+                     <label for="myCheckbox">
+                        <span></span>
+                        Remember me
+                        <ins><i>Remember me</i></ins>
+                     </label>
+                  </div>
+                  <div class="block-tabs__buttons">
+                     <button name="nameButton" type="submit" class="block-tabs__button">SIGN IN</button>
+                     <a href="#" class="block-tabs__forget">Have you forgotten your password?</a>
+                  </div>
+               </form>
+            </div>
+            <div class="tabs__block block-tabs block-tabs--register">
+               <form name="FormRegister" action="#" class="block-tabs__form form">
+                  <div class="form__body">
+                     <input autocomplete="off" name="inputName" tabindex="1" type="text" class="form__input"
+                        placeholder="First name">
+                     <a href="" class="form__button">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                     </a>
+                  </div>
+                  <div class="form__body">
+                     <input autocomplete="off" name="inputLastName" tabindex="2" type="text" class="form__input"
+                        placeholder="Last name">
+                     <a href="" class="form__button">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                     </a>
+                  </div>
+                  <div class="custom-select">
+                     <div class="select-header">
+                        how old are you?
+                        <img src="./assets/img/Contact_img/arrow.svg" alt="arrow">
+                     </div>
+                     <ul class="select-options">
+                        <li data-value="5-15" value="5-15">5-15</li>
+                        <li data-value="15-25" value="15-25">15-25</li>
+                        <li data-value="25-40" value="25-40">25-40</li>
+                        <li data-value="40-60" value="40-60">40-60</li>
+                        <li data-value="60-90" value="60-90">60-90</li>
+                        <li data-value="90-150" value="90-150">90-150</li>
+                     </ul>
+                  </div>
+                  <div class="form__body">
+                     <input autocomplete="off" name="EmailAccount" tabindex="3" class="form__input input-email"
+                        placeholder="Email">
+                     <a href="" class="form__button">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                     </a>
+                  </div>
+                  <div class="form__body">
+                     <input autocomplete="off" name="inputPassword" tabindex="4" type="password"
+                        class="form__input input--pass" placeholder="Password">
+                     <a href="" class="form__button">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                     </a>
+                  </div>
+                  <div class="form__body">
+                     <input autocomplete="off" name="inputPasswordRepeat" tabindex="4" type="password"
+                        class="form__input input--pass input-last" placeholder="Repeat-password">
+                     <a href="" class="form__button button-repeat">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                     </a>
+                  </div>
+                  <div class="block-tabs__buttons">
+                     <button name="nameButton" type="submit" class="block-tabs__button">Register</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<script src="https://kit.fontawesome.com/1f2bcb7d29.js" crossorigin="anonymous"></script>
