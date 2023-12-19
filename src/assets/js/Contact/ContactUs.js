@@ -1,6 +1,5 @@
-//Провірка на правильність введення email
 if (window.location.pathname.includes('/contact')) {
-
+   //Провірка на правильність введення email
    document.addEventListener('DOMContentLoaded', function () {
       const form = document.querySelector('.contact__form');
       const emailInput = form.querySelector('input[name="inputEmail"]');
