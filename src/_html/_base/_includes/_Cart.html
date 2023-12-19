@@ -1,182 +1,34 @@
 <section class="cart">
+  <div class="popup__cart-delete popup">
+    <div class="popup__cart">
+      <p>Are you sure you want to delete this post?</p>
+      <div>
+        <button class="btn__white btn__popup-yes">Yes</button>
+        <button class="btn__white btn__popup-no">No</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup__cart-coupon popup">
+    <div class="popup__coupon">
+      <p class="popup__coupon-text"></p>
+    </div>
+  </div>
+
   <h1>Shopping Cart</h1>
+
+  <div class="empty__cart">
+    <div>
+      <img src="./assets/img/Cart_img//svg/empty-cart.svg" alt="empty-cart" />
+    </div>
+    <h2>Opss... the product is missing</h2>
+    <a class="btn__white" href="./shop.html">Select a product</a>
+  </div>
 
   <div class="cart__container">
     <div class="cart__block">
       <!--  -->
-      <div class="cart__block-item">
-        <div class="cart__item">
-          <div class="cart__item-info">
-            <div class="cart__item-img">
-              <img src="../../../assets/img/Home_img/Body/Img 01.png" alt="" />
-            </div>
-
-            <div class="cart__item-caption">
-              <h3 class="cart__item-title">Kaede Hair Pin Set Of 3</h3>
-              <p class="cart__item-subtitle">Black / Medium</p>
-              <p class="cart__item-price">
-                <span>$ 30,00</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="change--amount">
-            <button class="minus">-</button>
-            <span class="amount">1</span>
-            <button class="plus">+</button>
-          </div>
-          <img
-            class="cart__delete"
-            src="./assets/img/Cart_img/svg/delete.svg"
-            alt=""
-          />
-        </div>
-        <!-- <hr class="cart__underline" /> -->
-
-        <div class="cart__item">
-          <div class="cart__item-info">
-            <div class="cart__item-img">
-              <img src="../../../assets/img/Home_img/Body/Img 01.png" alt="" />
-            </div>
-
-            <div class="cart__item-caption">
-              <h3 class="cart__item-title">Lira Earrings</h3>
-              <p class="cart__item-subtitle">Black / Medium</p>
-              <p class="cart__item-price">
-                <span>$ 20,00</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="change--amount">
-            <button class="minus">-</button>
-            <span class="amount">1</span>
-            <button class="plus">+</button>
-          </div>
-          <img
-            class="cart__delete"
-            src="./assets/img/Cart_img/svg/delete.svg"
-            alt=""
-          />
-        </div>
-        <!-- <hr class="cart__underline" /> -->
-
-        <div class="cart__item">
-          <div class="cart__item-info">
-            <div class="cart__item-img">
-              <img src="../../../assets/img/Home_img/Body/Img 01.png" alt="" />
-            </div>
-
-            <div class="cart__item-caption">
-              <h3 class="cart__item-title">Yuki Hair Pin Set of 3</h3>
-              <p class="cart__item-subtitle">Black / Medium</p>
-              <p class="cart__item-price">
-                <span class="cart__price-discount">$ 30,00</span>
-                <span class="item__price">$ 21,70</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="change--amount">
-            <button class="minus">-</button>
-            <span class="amount">1</span>
-            <button class="plus">+</button>
-          </div>
-          <img
-            class="cart__delete"
-            src="./assets/img/Cart_img/svg/delete.svg"
-            alt=""
-          />
-        </div>
-        <!-- <hr class="cart__underline" /> -->
-
-        <div class="cart__item">
-          <div class="cart__item-info">
-            <div class="cart__item-img">
-              <img src="../../../assets/img/Home_img/Body/Img 01.png" alt="" />
-            </div>
-
-            <div class="cart__item-caption">
-              <h3 class="cart__item-title">Yuki Hair Pin Set of 3</h3>
-              <p class="cart__item-subtitle">Black / Medium</p>
-              <p class="cart__item-price">
-                <span class="cart__price-discount">$ 30,00</span>
-                <span class="item__price">$ 21,70</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="change--amount">
-            <button class="minus">-</button>
-            <span class="amount">1</span>
-            <button class="plus">+</button>
-          </div>
-          <img
-            class="cart__delete"
-            src="./assets/img/Cart_img/svg/delete.svg"
-            alt=""
-          />
-        </div>
-        <!-- <hr class="cart__underline" /> -->
-
-        <div class="cart__item">
-          <div class="cart__item-info">
-            <div class="cart__item-img">
-              <img src="../../../assets/img/Home_img/Body/Img 01.png" alt="" />
-            </div>
-
-            <div class="cart__item-caption">
-              <h3 class="cart__item-title">Yuki Hair Pin Set of 3</h3>
-              <p class="cart__item-subtitle">Black / Medium</p>
-              <p class="cart__item-price">
-                <span class="cart__price-discount">$ 30,00</span>
-                <span class="item__price">$ 21,70</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="change--amount">
-            <button class="minus">-</button>
-            <span class="amount">1</span>
-            <button class="plus">+</button>
-          </div>
-          <img
-            class="cart__delete"
-            src="./assets/img/Cart_img/svg/delete.svg"
-            alt=""
-          />
-        </div>
-        <!-- <hr class="cart__underline" /> -->
-
-        <div class="cart__item">
-          <div class="cart__item-info">
-            <div class="cart__item-img">
-              <img src="../../../assets/img/Home_img/Body/Img 01.png" alt="" />
-            </div>
-
-            <div class="cart__item-caption">
-              <h3 class="cart__item-title">Yuki Hair Pin Set of 3</h3>
-              <p class="cart__item-subtitle">Black / Medium</p>
-              <p class="cart__item-price">
-                <span class="cart__price-discount">$ 30,00</span>
-                <span class="item__price">$ 21,70</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="change--amount">
-            <button class="minus">-</button>
-            <span class="amount">1</span>
-            <button class="plus">+</button>
-          </div>
-          <img
-            class="cart__delete"
-            src="./assets/img/Cart_img/svg/delete.svg"
-            alt=""
-          />
-        </div>
-        <!-- <hr class="cart__underline" /> -->
-      </div>
+      <div class="cart__block-item"></div>
 
       <div class="cart__update">
         <button class="btn__update-cart btn__white">UPDATE CART</button>
@@ -191,7 +43,7 @@
       <h3>Cart totals</h3>
       <div class="cart-totals__subtotal">
         <h5>SUBTOTAL</h5>
-        <p>$ <span class="subtotal__price">65,00</span></p>
+        <p>$ <span class="subtotal__price"></span></p>
       </div>
       <div class="cart-totals__shipping">
         <h5>SHIPPING</h5>
@@ -248,9 +100,17 @@
       </div>
       <div class="cart-total__checkout">
         <hr class="header__underline" />
+        <div class="checkout__total-cost checkout__shipping">
+          <h5>SHIPPING</h5>
+          <p>$ <span class="price__shipping">20</span></p>
+        </div>
+        <div class="checkout__total-cost checkout__coupon">
+          <h5>DISCOUNT COUPON</h5>
+          <p><span class="price__discount"></span> %</p>
+        </div>
         <div class="checkout__total-cost">
           <h5>TOTAL</h5>
-          <p>$ <span class="total__price">87,00</span></p>
+          <p>$ <span class="total__price"></span></p>
         </div>
         <button class="btn__update-totals btn__black">
           PROCEED TO CHECKOUT

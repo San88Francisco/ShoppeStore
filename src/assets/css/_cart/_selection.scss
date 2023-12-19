@@ -4,9 +4,107 @@
   margin: 0 auto;
   margin-top: 5px;
 
+  .popup {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 100px;
+
+    .popup__coupon {
+      background-color: #fff;
+      max-width: 450px;
+      width: 100%;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #fff;
+      border-radius: 8px;
+      p {
+        @include price_text;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .popup__cart-delete {
+    display: none;
+    place-items: center;
+
+    .popup__cart {
+      background-color: #fff;
+      max-width: 450px;
+      width: 100%;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #fff;
+      border-radius: 8px;
+      p {
+        @include price_text;
+        font-size: 18px;
+      }
+
+      div {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .popup__cart-coupon {
+    display: none;
+    place-items: center;
+  }
+
   h1 {
     text-align: center;
     margin-bottom: 60px;
+  }
+
+  .empty__cart {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    // border: 2px solid $gray-color;
+    border-radius: 6px;
+    padding: 20px 10px;
+
+    h2 {
+      margin: 24px 0;
+    }
+
+    a {
+      width: 158px;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 5px;
+    }
+
+    div {
+      max-width: 200px;
+      height: 200px;
+
+      img {
+        width: 100%;
+      }
+    }
   }
 
   .btn__white {
@@ -115,6 +213,7 @@
           .amount {
             width: 7px;
             position: relative;
+            color: $placeholder-color;
           }
 
           button {
@@ -410,6 +509,16 @@
           color: $black-color;
           font-size: 16px;
           font-weight: 700;
+        }
+      }
+
+      .checkout__shipping,
+      .checkout__coupon {
+        margin-bottom: 8px;
+      }
+      .checkout__coupon {
+        p {
+          color: red;
         }
       }
     }

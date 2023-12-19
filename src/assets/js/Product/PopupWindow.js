@@ -27,25 +27,27 @@ document.addEventListener('DOMContentLoaded', function () {
       popupWindow.style.transition = 'opacity 0.3s ease-in-out';
 
       // Перевірка для правильного відображення загальної кількості товарів в кошику
-      console.log(totalCountCart);
+      // console.log(totalCountCart);
       console.log(totalCountCart === '0');
-      if (totalCountCart === '0') {
+      if (totalCountCart === '0' || !totalCountCart) {
         // Якщо в кошику пусто, це означає що перше значення буде яке ми виберемо в amount
         totalCountCart = +amountAddCart.textContent;
-        console.log('totalCountCart:', totalCountCart);
+        // console.log('totalCountCart:', totalCountCart);
         navCartCount.style.display = 'flex';
-        console.log('+amountAddCart', +amountAddCart.textContent);
+        // console.log('+amountAddCart', +amountAddCart.textContent);
         navCartCount.textContent = +amountAddCart.textContent;
         // Записуємо перше значення totalCountCart в localStorage
         localStorage.setItem('totalCountCart', totalCountCart);
+        console.log('Перше');
       } else {
         // Якщо в localStorage вже є якась кількість, тоді ми просто додаємо amount і totalCountCart
-        console.log('+amountAddCart', +amountAddCart.textContent);
+        // console.log('+amountAddCart', +amountAddCart.textContent);
         totalCountCart =
           parseInt(totalCountCart) + parseInt(amountAddCart.textContent);
-        console.log(totalCountCart);
+        // console.log(totalCountCart);
         navCartCount.textContent = totalCountCart;
         localStorage.setItem('totalCountCart', totalCountCart);
+        console.log('Друге');
       }
       // Якщо в кошику більше 99 товарів, ми завжди будемо відображати 99
       if (totalCountCart > 100) {
@@ -95,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Якщо знайдено, змінюємо amount для існуючого продукту
       if (existingProductIndex !== -1) {
+        console.log('existingProductIndex', existingProductIndex);
         allProductCart[existingProductIndex].count += amount;
       } else {
         // Якщо не знайдено, додаємо новий об'єкт до масиву
@@ -107,10 +110,12 @@ document.addEventListener('DOMContentLoaded', function () {
           imgProduct: productImg,
           count: amount,
         };
+        // console.log(newProduct);
         allProductCart.push(newProduct);
       }
 
       // Зберігаємо оновлений масив у localStorage
+      // console.log(allProductCart);
       localStorage.setItem('allProductCart', JSON.stringify(allProductCart));
     };
   }
