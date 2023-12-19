@@ -3,15 +3,12 @@ $font-weight: regular;
 $line-height: 1.68;
 
 footer {
-  margin-top: 72px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 27px 0;
-  overflow-y: auto;
-  
-  .big-container {
-    margin-bottom: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   .big-container {
+      margin-bottom: 100px;
+
 
 
     width: 1248px;
