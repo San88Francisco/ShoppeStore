@@ -16,3 +16,5 @@ import "./Account/SingIn";
 import "./Account/ResetPassword"; 
 
 import "./Blog/Main-blog"; 
+
+import "./MyAccount/MyAccountMain"; 
