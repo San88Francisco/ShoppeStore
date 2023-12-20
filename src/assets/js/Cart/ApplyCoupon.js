@@ -30,7 +30,6 @@ export const applyCoupon = () => {
       (item) => item === inputCoupon.value.toLowerCase()
     );
     // Якщо в res є наш купон, воно його знайде
-    console.log(res);
 
     switch (res) {
       case '2024':

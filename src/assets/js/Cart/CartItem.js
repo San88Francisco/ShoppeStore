@@ -53,11 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (window.location.pathname.includes('/cart')) {
     // Отримуємо дотуп до головного блоку з товарами
     const cartBlockItem = document.querySelector('.cart__block-item');
-    console.log('cartBlockItem:', cartBlockItem);
     let cartAllProduct =
       JSON.parse(localStorage.getItem('allProductCart')) || [];
 
-    console.log('cartAllProduct:', cartAllProduct);
     // Запускаємо спочатку перевірку чи є щось в кошику, якщо немає відображаємо emptyCartWindow
     emptyCartWindow(cartAllProduct);
 
@@ -119,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const onBtnPopupNoClick = () => {
-      console.log('btnPopupNo');
       popupDelete.style.display = 'none';
     };
 
@@ -132,8 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Перевіряємо, чи вже є продукт з такою назвою в кошику
     const deleteItem = (cartItemDelete, cartItemAmount) => {
-      console.log('cartItemAmount:', cartItemAmount);
-      console.log('cartItemDelete:', cartItemDelete);
       const totalCount = localStorage.getItem('totalCountCart');
 
       // Шукаємо відповідний товар в сховищу і перезаписуємо його в новий масив
