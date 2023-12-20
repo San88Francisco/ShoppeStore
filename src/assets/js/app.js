@@ -13,6 +13,8 @@ import "./Product/Reviews";
 import "./Contact/ContactUs";
 
 import "./Account/SingIn"; 
-import "./Account/ResetPassword";
+import "./Account/ResetPassword"; 
+
+import "./Blog/Main-blog"; 
 
 import "./MyAccount/MyAccountMain"; 
