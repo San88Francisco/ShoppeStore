@@ -1,7 +1,8 @@
 .Shop {
    max-width: 1248px;
-   height: 1100px;
+   min-height: 1100px;
    margin: 0 auto;
+
 
    h1 {
       margin-bottom: 39px;
@@ -305,6 +306,7 @@
 
          #deBag_marginTop {
             margin-top: 0;
+            margin-bottom: 0px;
          }
 
          .shop-latest-blocks {
@@ -569,8 +571,15 @@
    }
 }
 
+@media (max-width: 700px){
+   .Shop{
+      padding: 115px 0 0 0;
+   }
+}
+
 @media (max-width: 680px) {
    .Shop {
+     
       .shop-container {
          .B {
             .shop-latest-blocks {

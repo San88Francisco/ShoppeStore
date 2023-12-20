@@ -1,13 +1,13 @@
 function setupHeader() {
   const pageName = document.title.toLowerCase().replace(/\s/g, "");
-  if (pageName === "home") return;
+ 
 
   const burger__underline = document.querySelector(".burger__underline");
   burger__underline.style.display = "none";
 
   const headerAElement = document.querySelector(`.burger__link_${pageName}`);
   headerAElement?.classList.add("burg");
-  pageName !== "home" && (burger__underline.style.display = "none");
+  
 }
 
 document.addEventListener("DOMContentLoaded", setupHeader);
@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", setupHeader);
 document.addEventListener("DOMContentLoaded", function () {
   const checkbox = document.querySelector(".checkbox");
   const menuItems = document.querySelector(".menu-items");
+  menuItems.style.display = "none";
+
   const burgerItems = document.querySelectorAll(".burger-menu__item");
   const burgerHeader = document.querySelector(".burger__header");
   const burgerFooter = document.querySelector(".burger__footer");
@@ -33,5 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
     burgerLogout.classList.toggle("active");
     burgerHeader.classList.toggle("active");
     burgerLine.classList.toggle("active");
+    if(menuItems.classList.contains("active")){
+      menuItems.style.display = "flex";
+    } else{
+      setTimeout(() => {
+        menuItems.style.display = "none";
+      }, 1800);
+    }
   });
 });
