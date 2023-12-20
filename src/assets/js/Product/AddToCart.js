@@ -1,20 +1,28 @@
 // Лічильник
-const btnDecrease = document.querySelector('.minus');
-const btnIncrease = document.querySelector('.plus');
-const numberOfShoppings = document.querySelector('.amount');
 
-if (btnDecrease && btnIncrease && numberOfShoppings) {
-  let numberOfShoppingsValue = +numberOfShoppings.textContent;
+document.addEventListener('DOMContentLoaded', function () {
+  // Перевірка, чи ми на сторінці "Product"
+  if (window.location.pathname.includes('/product')) {
+    const btnDecrease = document.querySelector('.minus');
+    const btnIncrease = document.querySelector('.plus');
+    const numberOfShoppings = document.querySelector('.amount');
 
-  btnIncrease.addEventListener('click', function () {
-    numberOfShoppings.textContent = `${++numberOfShoppingsValue}`;
-  });
+    if (btnDecrease && btnIncrease && numberOfShoppings) {
+      btnIncrease.addEventListener('click', function () {
+        let numberOfShoppingsValue = +numberOfShoppings.textContent;
+        numberOfShoppings.textContent = `${++numberOfShoppingsValue}`;
+      });
 
-  btnDecrease.addEventListener('click', function () {
-    if (numberOfShoppingsValue === 1) return;
-    numberOfShoppings.textContent = `${--numberOfShoppingsValue}`;
-  });
-}
+      btnDecrease.addEventListener('click', function () {
+        let numberOfShoppingsValue = +numberOfShoppings.textContent;
+        if (numberOfShoppingsValue === 1) return;
+        numberOfShoppings.textContent = `${--numberOfShoppingsValue}`;
+      });
+    }
+  }
+
+  //
+});
 
 // Вибір картинок
 const imageSelection = document.querySelector('.product--overview__pictures');
@@ -72,11 +80,11 @@ blocksArr.forEach((el) => {
   let productPrice = el.querySelector('.shop-latest__price a');
   let heart = el.querySelector('.shop-latest__heart');
   let discount = el.querySelector('.shop-latest__price').outerHTML;
-  let discountLink = el.querySelector('.shop-latest__price .discount')
+  let discountLink = el.querySelector('.shop-latest__price .discount');
 
   // Add event listener to the image
   img.addEventListener('click', function (e) {
-    updateLocalStorageAndLinks(img, productName, productPrice,heart,discount) ;
+    updateLocalStorageAndLinks(img, productName, productPrice, heart, discount);
   });
 
   // Add event listener to the name
@@ -89,23 +97,34 @@ blocksArr.forEach((el) => {
     updateLocalStorageAndLinks(img, productName, productPrice, heart, discount);
   });
   if (discountLink) {
-    discountLink.addEventListener('click', function(e){
-    updateLocalStorageAndLinks(img, productName, productPrice, heart, discount);
-  });
+    discountLink.addEventListener('click', function (e) {
+      updateLocalStorageAndLinks(
+        img,
+        productName,
+        productPrice,
+        heart,
+        discount
+      );
+    });
   }
-
 });
 
 //local storage
 //llala
-function updateLocalStorageAndLinks(img, productName, productPrice, heart, discount) {
+function updateLocalStorageAndLinks(
+  img,
+  productName,
+  productPrice,
+  heart,
+  discount
+) {
   const imgPath = img.src
     .replace('http://localhost:3000', '.')
     .replace('%20', ' ');
   localStorage.setItem('selectedImgPath', imgPath);
   localStorage.setItem('selectedProductName', productName.textContent);
   localStorage.setItem('selectedProductPrice', productPrice.textContent);
-  localStorage.setItem('selectedHeart',heart.src);
+  localStorage.setItem('selectedHeart', heart.src);
   localStorage.setItem('selectedDiscount', discount);
 
   let links = [
@@ -113,8 +132,16 @@ function updateLocalStorageAndLinks(img, productName, productPrice, heart, disco
     img.closest('.shop-latest__block').querySelector('.shop-latest__name a'),
     img.closest('.shop-latest__block').querySelector('.shop-latest__price a'),
   ];
-  if (img.closest('.shop-latest__block').querySelector('.shop-latest__price .discount')) {
-    links.push(img.closest('.shop-latest__block').querySelector('.shop-latest__price .discount'));
+  if (
+    img
+      .closest('.shop-latest__block')
+      .querySelector('.shop-latest__price .discount')
+  ) {
+    links.push(
+      img
+        .closest('.shop-latest__block')
+        .querySelector('.shop-latest__price .discount')
+    );
   }
 
   links.forEach((link) => {
@@ -124,34 +151,38 @@ function updateLocalStorageAndLinks(img, productName, productPrice, heart, disco
 
 // Трансформація сторінки від вибраного продукту в Шоп
 
-
-// перехід по картинках від Shop до Product 
+// перехід по картинках від Shop до Product
 document.addEventListener('DOMContentLoaded', function () {
-   // Get the stored imgPath, product name, and price from localStorage
-   const imgPath = localStorage.getItem('selectedImgPath');
-   const productName = localStorage.getItem('selectedProductName');
-   const productPrice = localStorage.getItem('selectedProductPrice');
-   const heart = localStorage.getItem('selectedHeart');
-   const discount = localStorage.getItem('selectedDiscount');
+  // Get the stored imgPath, product name, and price from localStorage
+  const imgPath = localStorage.getItem('selectedImgPath');
+  const productName = localStorage.getItem('selectedProductName');
+  const productPrice = localStorage.getItem('selectedProductPrice');
+  const heart = localStorage.getItem('selectedHeart');
+  const discount = localStorage.getItem('selectedDiscount');
 
-   if (imgPath && productName && productPrice) {
-      // Оновдення фото
-      let imgChange = document.querySelectorAll('.product--overview__pictures img');
-      imgChange.forEach((img) => {
-         img.src = imgPath;
-      });
+  if (imgPath && productName && productPrice) {
+    // Оновдення фото
+    let imgChange = document.querySelectorAll(
+      '.product--overview__pictures img'
+    );
+    imgChange.forEach((img) => {
+      img.src = imgPath;
+    });
 
-      // Оновлення назви і ціни
-      document.querySelector('.product--overview__view h3').textContent = productName;
-      document.querySelector('.product--overview__view .price').textContent = productPrice;
-      document.querySelector('.icons--row .product__heart').src = heart;
-      document.querySelector('.product--overview__view .price').outerHTML = discount;
+    // Оновлення назви і ціни
+    document.querySelector('.product--overview__view h3').textContent =
+      productName;
+    document.querySelector('.product--overview__view .price').textContent =
+      productPrice;
+    document.querySelector('.icons--row .product__heart').src = heart;
+    document.querySelector('.product--overview__view .price').outerHTML =
+      discount;
 
-      // Видалення зі сховку
-      localStorage.removeItem('selectedImgPath');
-      localStorage.removeItem('selectedProductName');
-      localStorage.removeItem('selectedProductPrice');
-      localStorage.removeItem('selectedHeart');
-      localStorage.removeItem('selectedDiscount');
-   }
+    // Видалення зі сховку
+    localStorage.removeItem('selectedImgPath');
+    localStorage.removeItem('selectedProductName');
+    localStorage.removeItem('selectedProductPrice');
+    localStorage.removeItem('selectedHeart');
+    localStorage.removeItem('selectedDiscount');
+  }
 });
