@@ -1,20 +1,24 @@
-import "./Home/Header";
-import "./Home/Slider";
-import "./Home/Body";
-import "./Home/Burger";
+import './Home/Header';
+import './Home/Slider';
+import './Home/Body';
+import './Home/Burger';
 
-import "./Shop/Body";
-import "./Shop/Filter";
-import "./Shop/SortBy";
+import './Shop/Body';
+import './Shop/Filter';
+import './Shop/SortBy';
 
-import "./Product/AddToCart";
-import "./Product/Reviews";
+import './Product/AddToCart';
+import './Product/Reviews';
+import './Product/PopupWindow';
 
-import "./Contact/ContactUs";
+import './Cart/Option';
+import './Cart/CartItem';
 
-import "./Account/SingIn"; 
-import "./Account/ResetPassword"; 
+import './Contact/ContactUs';
 
-import "./Blog/Main-blog"; 
+import './Account/SingIn';
+import './Account/ResetPassword';
 
-import "./MyAccount/MyAccountMain"; 
+import './Blog/Main-blog';
+
+import './MyAccount/MyAccountMain';
