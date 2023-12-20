@@ -2,6 +2,7 @@ import './Home/Header';
 import './Home/Slider';
 import './Home/Body';
 
+
 import './Shop/Body';
 import './Shop/Filter';
 import './Shop/SortBy';
@@ -17,3 +18,4 @@ import './Account/ResetPassword';
 
 import './Cart/Option';
 import './Cart/CartItem';
+

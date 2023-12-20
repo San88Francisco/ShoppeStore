@@ -1,4 +1,3 @@
-//Провірка на правильність введення email
 if (window.location.pathname.includes('/contact')) {
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.contact__form');
@@ -16,6 +15,7 @@ if (window.location.pathname.includes('/contact')) {
         event.preventDefault();
       } else {
         hideError();
+
       }
     });
 

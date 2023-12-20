@@ -3,6 +3,7 @@
   height: 1100px;
   margin: 0 auto;
 
+
   h1 {
     margin-bottom: 39px;
   }
@@ -294,8 +295,6 @@
         }
       }
 
-      //  Filter input range styles
-    }
 
     /*  ||| B ||| */
 
@@ -433,6 +432,7 @@
         position: relative;
       }
 
+
       .price-discount {
         margin-right: 16px;
         color: $errors-color;
@@ -568,6 +568,12 @@
   }
 }
 
+@media (max-width: 700px){
+  .Shop{
+    margin: 115px 0 0 0;
+  }
+}
+
 @media (max-width: 680px) {
   .Shop {
     .shop-container {
@@ -629,3 +635,4 @@
     }
   }
 }
+
