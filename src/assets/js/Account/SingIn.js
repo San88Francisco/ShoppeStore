@@ -297,19 +297,17 @@ if (window.location.pathname.includes("/account")) {
           window.location.href = "http://localhost:3000/index.html";
         }
       } else {
-        invalidLoginAttempts++;
+         invalidLoginAttempts++;
 
-        if (invalidLoginAttempts >= 3) {
-          window.location.href = "password-recovery.html"; // Перенаправлення на сторінку відновлення паролю
-        } else {
-          let loginElement = document.querySelector(".input--singin");
-          if (!emailTest(loginElement)) {
-            loginElement.insertAdjacentHTML(
-              "afterend",
-              '<div class="error-message">Password or login is incorrect</div>'
-            );
-          }
-        }
+         if (invalidLoginAttempts >= 3) {
+            window.location.href = 'http://localhost:3002/reset-password.htmlg'; // Перенаправлення на сторінку відновлення паролю
+         } else {
+            let loginElement = document.querySelector('.input--singin');
+            if (!emailTest(loginElement)) {
+               loginElement.insertAdjacentHTML('afterend', '<div class="error-message">Password or login is incorrect</div>');
+            }
+         }
+
       }
 
       function emailTest(input) {
