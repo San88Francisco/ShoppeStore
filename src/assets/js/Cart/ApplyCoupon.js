@@ -29,7 +29,7 @@ export const applyCoupon = () => {
     const res = couponCart.find(
       (item) => item === inputCoupon.value.toLowerCase()
     );
-    // Якщо в res є наш купон, воно його знайде
+    // Якщо в res є наш купон, воно його знайде!!
 
     switch (res) {
       case '2024':
