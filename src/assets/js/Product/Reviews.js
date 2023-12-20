@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             }
          }
          document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault()
+            // event.preventDefault()
             document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
             document.querySelector('.amount-reviews2').innerHTML = document.querySelector('.reviews').children.length / 2
             
