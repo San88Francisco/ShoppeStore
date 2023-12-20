@@ -16,7 +16,7 @@
 
     .popup__coupon {
       background-color: #fff;
-      max-width: 450px;
+      max-width: 550px;
       width: 100%;
       height: 150px;
       display: flex;
@@ -25,6 +25,8 @@
       align-items: center;
       border: 1px solid #fff;
       border-radius: 8px;
+      padding: 0px 20px;
+
       p {
         @include price_text;
         font-size: 18px;
@@ -144,7 +146,7 @@
 }
 
 .cart__container {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
 
@@ -260,14 +262,31 @@
       }
 
       .cart__coupon {
-        // border: 1px solid rgb(180, 177, 11);
         display: flex;
         justify-content: space-between;
         gap: 20px;
+        position: relative;
 
         .input__coupon {
           width: 336px;
           border-bottom: 2px solid $gray-color;
+        }
+
+        .hint__coupon {
+          display: none;
+          background-color: #fdffea;
+          position: absolute;
+          top: 54px;
+          left: 10px;
+          z-index: 1;
+          border-radius: 15px;
+          padding: 10px;
+
+          li {
+            font-size: 16px;
+            line-height: 24px;
+            color: $placeholder-color;
+          }
         }
 
         .btn__coupon {
@@ -285,7 +304,6 @@
   /* |||||| */
 
   .cart-totals {
-    // border: 2px solid rgb(0, 255, 21);
     width: 580px;
     padding: 40px 60px;
 
@@ -510,6 +528,12 @@
           font-size: 16px;
           font-weight: 700;
         }
+
+        .total__price-discount {
+          text-decoration: line-through;
+          color: red;
+          margin-right: 10px;
+        }
       }
 
       .checkout__shipping,
@@ -517,6 +541,8 @@
         margin-bottom: 8px;
       }
       .checkout__coupon {
+        display: none;
+
         p {
           color: red;
         }

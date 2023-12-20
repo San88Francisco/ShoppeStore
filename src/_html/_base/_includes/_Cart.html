@@ -34,6 +34,14 @@
         <button class="btn__update-cart btn__white">UPDATE CART</button>
         <div class="cart__coupon">
           <input class="input__coupon" type="text" placeholder="Coupon Code" />
+          <ul class="hint__coupon">
+            <li>"2024"</li>
+            <li>"14 лютого"</li>
+            <li>"8 березня"</li>
+            <li>"San Francisco"</li>
+            <li>"Dota"</li>
+            <li>"Minecraft"</li>
+          </ul>
           <button class="btn__coupon btn__black">APPLY COUPON</button>
         </div>
       </div>
@@ -106,11 +114,14 @@
         </div>
         <div class="checkout__total-cost checkout__coupon">
           <h5>DISCOUNT COUPON</h5>
-          <p><span class="price__discount"></span> %</p>
+          <p><span class="price__discount">0</span> %</p>
         </div>
         <div class="checkout__total-cost">
           <h5>TOTAL</h5>
-          <p>$ <span class="total__price"></span></p>
+          <p>
+            <span class="total__price"></span
+            ><span class="new__total-price"></span>
+          </p>
         </div>
         <button class="btn__update-totals btn__black">
           PROCEED TO CHECKOUT
