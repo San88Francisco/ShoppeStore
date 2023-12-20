@@ -11,9 +11,7 @@
     width: 100%;
     height: 752px;
     padding: 10px;
-    @media screen and (min-width: 320px) and (max-width: 420px) {
-      margin-top: 65px;
-    }
+
     .product--overview {
       display: flex;
       font-family: DM Sans;
@@ -21,33 +19,16 @@
       .product--overview__pictures {
         width: 700px;
 
-        @media screen and (min-width: 320px) and (max-width: 420px) {
-          width: 100%;
-          overflow: hidden;
-          position: relative;
-        }
         .picture-container {
           display: grid;
           grid-template-columns: 120px;
           gap: 40px;
           position: relative;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            display: flex;
-            gap: 0;
-            width: 400%; /* Adjust based on the number of images */
-            transition: transform 0.5s ease;
-            overflow-x: scroll;
-            height: auto;
-          }
+
           img {
             width: 120px;
             height: 120px;
             cursor: pointer;
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              width: 25%;
-              flex-shrink: 0;
-              height: 347px;
-            }
           }
 
           .picture-big {
@@ -58,10 +39,6 @@
             grid-column-end: 5;
             grid-row-start: 1;
             grid-row-end: 5;
-
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              display: none;
-            }
           }
         }
 
@@ -73,9 +50,7 @@
           position: absolute;
           bottom: -20px;
           z-index: 1;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            display: none;
-          }
+
           .progress-bar__line {
             background-color: $dark-gray-color;
             height: 2px;
@@ -85,15 +60,7 @@
         }
         .progress-bar-mob {
           display: none;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            display: block;
-            bottom: 0px;
-            width: 100%;
-            margin-left: 0;
-            height: 3px;
-            background-color: #d8d8d8;
-            position: relative;
-          }
+
           .progress-bar__line {
             background-color: $dark-gray-color;
             height: 2px;
@@ -108,16 +75,9 @@
         width: 700px;
         height: 600px;
         margin-left: 62px;
-        @media screen and (min-width: 320px) and (max-width: 420px) {
-          width: 400%;
-          height: 138px;
-          margin-left: 0;
-        }
+
         .fa-share-alt {
           display: none;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            display: block;
-          }
         }
 
         h3 {
@@ -221,7 +181,6 @@
           @media screen and (min-width: 320px) and (max-width: 420px) {
             display: none;
           }
-
           .product__heart {
             width: 20px;
             height: 20px;
@@ -268,42 +227,13 @@
   .b {
     margin-bottom: 96px;
     width: 100%;
-    @media screen and (min-width: 320px) and (max-width: 420px) {
-      width: 100%;
-    }
-    .panel {
-      p {
-        @media screen and (min-width: 320px) and (max-width: 420px) {
-          margin-bottom: 12px;
-        }
-        ul {
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
+
     // В тебе там висота міняється
     .header__underline {
       display: none;
       margin-bottom: 40px;
       border: none;
       border-bottom: 1px solid #d8d8d8;
-      @media screen and (min-width: 320px) and (max-width: 420px) {
-        display: block;
-        width: 95%;
-        margin: 0;
-        &:first-child {
-          display: block;
-          margin-bottom: 10px;
-          border: none;
-          border-bottom: 1px solid #d8d8d8;
-        }
-        &:nth-child(2) {
-          display: block;
-          border-bottom: 1px solid #d8d8d8;
-        }
-      }
     }
 
     p,
@@ -316,12 +246,6 @@
       line-height: 27px;
       font-weight: 400;
       font-family: DM sans;
-      @media screen and (min-width: 320px) and (max-width: 420px) {
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-      }
     }
 
     .info__tab-pages ul {
@@ -329,9 +253,7 @@
 
       justify-content: flex-start;
       margin-bottom: 35px;
-      @media screen and (min-width: 320px) and (max-width: 420px) {
-        margin-bottom: 12px;
-      }
+
       li {
         margin-right: clamp(48px, 5vw, 96px);
         margin-bottom: 20px;
@@ -340,21 +262,10 @@
           color: $placeholder-color;
           font-size: 24px;
           cursor: pointer;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 20px;
-          }
         }
         i {
           display: none;
           font-size: 12px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            display: block;
-            transition: 0.4s;
-            rotate: 0deg;
-          }
         }
       }
 
@@ -387,9 +298,7 @@
     .product__page1,
     .panel {
       display: none;
-      @media screen and (min-width: 320px) and (max-width: 420px) {
-        margin-right: 15px;
-      }
+
       p {
         color: $placeholder-color;
       }
@@ -417,18 +326,12 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 90px;
-        @media screen and (min-width: 320px) and (max-width: 420px) {
-          display: flex;
-          flex-direction: column;
-        }
       }
 
       .reviews {
         grid-column: 1/2;
         word-wrap: break-word;
-        @media screen and (min-width: 320px) and (max-width: 420px) {
-          height: 100%;
-        }
+
         &::-webkit-scrollbar {
           width: 10px;
         }
@@ -445,16 +348,11 @@
         height: 700px;
         .header__underline {
           margin-bottom: 25px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            display: block;
-          }
         }
 
         .amount-reviews-title {
           margin-bottom: 75px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            margin-bottom: 20px;
-          }
+
           span {
             color: $black-color;
             font-size: 20px;
@@ -468,18 +366,12 @@
 
           .stars__amount {
             margin: 17px 0px 17px 0px;
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              margin: 8px 0;
-            }
           }
         }
 
         h3 {
           color: $black-color;
           font-size: 20px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            font-size: 14px;
-          }
         }
 
         p,
@@ -490,10 +382,6 @@
         p {
           font-size: 16px;
           margin-bottom: 40px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            font-size: 12px;
-            margin-bottom: 10px;
-          }
         }
 
         span {
@@ -503,17 +391,11 @@
 
       .add-reviews {
         grid-column: 2/3;
-        @media screen and (min-width: 320px) and (max-width: 420px) {
-          margin-right: 17px;
-        }
 
         h3 {
           color: $black-color;
           font-size: 20px;
           margin-bottom: 10px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            font-size: 14px;
-          }
         }
 
         p,
@@ -529,10 +411,6 @@
         textarea::placeholder {
           font-size: 16px;
           margin-bottom: 40px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            font-size: 12px;
-            margin-bottom: 10px;
-          }
         }
 
         span {
@@ -541,9 +419,6 @@
 
         .add-reviews__text {
           margin-bottom: 50px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            margin-bottom: 10px;
-          }
         }
 
         .add-reviews__inputs {
@@ -562,20 +437,12 @@
             font-family: DM Sans;
             font-size: 16px;
             font-weight: 400;
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              margin-bottom: 16px;
-              width: 100%;
-            }
           }
         }
 
         .checkbox-to-save {
           position: relative;
           margin-bottom: 50px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            margin-bottom: 20px;
-            width: 100%;
-          }
 
           input {
             margin-bottom: 0px;
@@ -602,17 +469,12 @@
             position: relative;
             top: -4px;
             margin-left: 8px;
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              font-size: 12px;
-            }
           }
         }
 
         .add-rating {
           margin-bottom: 50px;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            margin-bottom: 24px;
-          }
+
           span {
             display: block;
             margin-bottom: 15px;
@@ -700,9 +562,6 @@
               font-weight: 700;
               line-height: 20px;
             }
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              padding: 8px 22px;
-            }
           }
         }
       }
@@ -710,31 +569,8 @@
   }
 
   .c {
-    @media screen and (min-width: 320px) and (max-width: 420px) {
-      width: 100%;
-      overflow: hidden;
-      margin: 0 30px 0 50px;
-    }
     .mobile-continue {
       display: none;
-      @media screen and (min-width: 320px) and (max-width: 420px) {
-        width: 95%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 72px;
-        margin-top: 37px;
-        span {
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 20px;
-          color: $accent-color;
-        }
-        i {
-          font-size: 12px;
-        }
-      }
     }
 
     .similar__title {
@@ -744,26 +580,14 @@
       font-style: normal;
       font-weight: 400;
       line-height: 35px;
-      @media screen and (min-width: 320px) and (max-width: 420px) {
-        margin: 0 0 13px 0;
-        font-size: 16px;
-      }
     }
 
     .shop-latest-blocks {
       display: flex;
       gap: 54px;
       font-family: DM Sans;
-      @media screen and (min-width: 320px) and (max-width: 420px) {
-        gap: 10px;
-
-        transition: transform 0.5s ease;
-      }
 
       .shop-latest__block {
-        @media screen and (min-width: 320px) and (max-width: 420px) {
-        }
-
         .shop-latest__img {
           position: relative;
 
@@ -771,10 +595,6 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              width: 136px;
-              height: 136px;
-            }
           }
 
           .shop-latest_hover {
@@ -790,11 +610,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              height: 22px;
-              min-width: 100%;
-              padding: 0 15px;
-            }
           }
 
           &:hover .shop-latest_hover {
@@ -804,10 +619,6 @@
           .shop-latest__heart {
             width: 1.5em;
             cursor: pointer;
-            @media screen and (min-width: 320px) and (max-width: 420px) {
-              width: 1em;
-              height: 1em;
-            }
           }
         }
 
@@ -838,12 +649,6 @@
           line-height: 26px;
           letter-spacing: 0em;
           color: #000;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            font-size: 16px;
-            margin: 0;
-            line-height: 20px;
-            overflow: hidden;
-          }
         }
 
         .shop-latest__price {
@@ -853,9 +658,6 @@
           letter-spacing: 0em;
 
           color: $accent-color;
-          @media screen and (min-width: 320px) and (max-width: 420px) {
-            font-size: 14px;
-          }
         }
       }
     }
@@ -877,24 +679,61 @@
       width: 100%;
       height: 100%;
       padding: 10px;
-
+      margin-top: 65px;
       .product--overview {
         display: flex;
         flex-direction: column;
         font-family: DM Sans;
         width: 100%;
         .product--overview__pictures {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
           .picture-big {
-            width: 100%;
-            height: 320px;
             display: none;
+          }
+          .picture-container {
+            display: flex;
+            gap: 0;
+            width: 400%; /* Adjust based on the number of images */
+            transition: transform 0.5s ease;
+            overflow-x: scroll;
+            height: auto;
+            img {
+              width: 25%;
+              flex-shrink: 0;
+              height: 347px;
+            }
+          }
+          .progress-bar {
+            display: none;
+          }
+          .progress-bar-mob {
+            display: block;
+            bottom: 0px;
+            width: 100%;
+            margin-left: 0;
+            height: 3px;
+            background-color: #d8d8d8;
+            position: relative;
+
+            .progress-bar__line {
+              background-color: $dark-gray-color;
+              height: 2px;
+              width: 25%;
+              margin-left: 0;
+              transition: width 0.5s ease;
+            }
           }
         }
 
         .product--overview__view {
           width: 100%;
           height: 100%;
-
+          margin-left: 0;
+          .fa-share-alt {
+            display: block;
+          }
           h3 {
             margin-top: 44px;
             padding-bottom: 12px;
@@ -1065,19 +904,43 @@
       width: 100%;
       margin-left: 20px;
       // В тебе там висота міняється
+      .panel {
+        p {
+          @media screen and (min-width: 320px) and (max-width: 420px) {
+            margin-bottom: 12px;
+          }
+          ul {
+            @media screen and (min-width: 320px) and (max-width: 420px) {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
 
+      .header__underline {
+        display: block;
+        width: 95%;
+        margin: 0;
+        &:first-child {
+          display: block;
+          margin-bottom: 10px;
+          border: none;
+          border-bottom: 1px solid #d8d8d8;
+        }
+        &:nth-child(2) {
+          display: block;
+          border-bottom: 1px solid #d8d8d8;
+        }
+      }
       p,
       li,
       h3,
       h5,
       a {
-        width: 100%;
-        color: $black-color;
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
         line-height: 20px;
-        font-family: DM sans;
       }
       p {
         font-size: 11px;
@@ -1091,19 +954,22 @@
 
         li {
           margin-right: clamp(48px, 5vw, 96px);
-          margin-bottom: 10px;
+          margin-bottom: 12px;
           width: 95%;
           display: flex;
           justify-content: space-between;
           align-items: center;
           h3 {
             color: $placeholder-color;
-            font-size: 12px;
-            cursor: pointer;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
           }
           i {
             display: block;
-            font-size: 12px;
+            transition: 0.4s;
+            rotate: 0deg;
           }
         }
 
@@ -1129,6 +995,10 @@
           }
         }
       }
+      .product__page1,
+      .panel {
+        margin-right: 15px;
+      }
 
       .panel {
         padding: 0 18px;
@@ -1138,6 +1008,305 @@
 
         p {
           max-height: 100%;
+        }
+      }
+
+      .product__page3,
+      .panel {
+        .reviews__block {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .reviews {
+          height: 100%;
+
+          .header__underline {
+            display: none;
+          }
+
+          .amount-reviews-title {
+            margin-bottom: 20px;
+            span {
+              color: $black-color;
+              font-size: 20px;
+            }
+          }
+
+          .review__block {
+            border-top: 1px solid #d8d8d8;
+            padding-top: 8px;
+            .stars__amount {
+              margin: 8px 0;
+            }
+          }
+
+          h3 {
+            color: $black-color;
+            font-size: 14px;
+          }
+
+          p,
+          span {
+            color: $placeholder-color;
+          }
+
+          p {
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+        .add-reviews {
+          margin-right: 17px;
+
+          h3 {
+            font-size: 14px;
+          }
+
+          p,
+          span,
+          input::placeholder,
+          textarea::placeholder {
+            font-family: DM sans;
+            color: $placeholder-color;
+          }
+
+          p,
+          input::placeholder,
+          textarea::placeholder {
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+
+          .add-reviews__text {
+            margin-bottom: 10px;
+          }
+
+          .add-reviews__inputs {
+            display: flex;
+            flex-direction: column;
+
+            input,
+            textarea {
+              margin-bottom: 16px;
+              width: 100%;
+            }
+          }
+
+          .checkbox-to-save {
+            position: relative;
+            margin-bottom: 20px;
+            width: 100%;
+
+            input {
+              margin-bottom: 0px;
+              width: 18px;
+              height: 18px;
+            }
+            #saveUserData {
+              cursor: pointer;
+              border-radius: 2px;
+              position: absolute;
+              opacity: 0;
+              &:checked {
+                opacity: 100;
+              }
+            }
+            .fake-checkbox {
+              display: inline-block;
+              border: 1px solid $black-color;
+              width: 18px;
+              height: 18px;
+              border-radius: 2px;
+            }
+            .fake-checkbox__lable {
+              font-size: 12px;
+            }
+          }
+
+          .add-rating {
+            margin-bottom: 10px;
+            span {
+              display: block;
+              margin-bottom: 15px;
+            }
+
+            .stars-rating {
+              position: relative;
+              left: -3px;
+              font-size: 0px;
+              display: inline-block;
+
+              &::before {
+                content: url(../img/Product_img/svg/Vectorstar_null_background.svg)
+                  url(../img/Product_img/svg/Vectorstar_null_background.svg)
+                  url(../img/Product_img/svg/Vectorstar_null_background.svg)
+                  url(../img/Product_img/svg/Vectorstar_null_background.svg)
+                  url(../img/Product_img/svg/Vectorstar_null_background.svg);
+                display: block;
+                opacity: 0;
+              }
+
+              .stars-rating__items {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0%;
+                left: 0%;
+                display: flex;
+                flex-direction: row-reverse;
+                overflow: hidden;
+              }
+
+              .stars-rating__item {
+                position: absolute;
+                width: 0%;
+                height: 0%;
+                top: 0%;
+                left: 0%;
+                opacity: 0;
+                visibility: hidden;
+              }
+
+              .stars-rating__item:checked,
+              .stars-rating__item:checked ~ .stars-rating__label {
+                content: url(../img/Product_img/svg/Vectorstar_black_background.svg);
+              }
+
+              .stars-rating__label {
+                flex: 0 0 20%;
+                cursor: pointer;
+
+                &::before {
+                  content: url(../img/Product_img/svg/Vectorstar_null_background.svg);
+                  display: block;
+                }
+              }
+
+              .stars-rating__label:hover,
+              .stars-rating__label:hover ~ .stars-rating__label,
+              .stars-rating__label:checked ~ .stars-rating__label:hover {
+                content: url(../img/Product_img/svg/Vectorstar_black_background.svg);
+              }
+            }
+          }
+
+          .submit__btn {
+            button {
+              padding: 8px 22px;
+            }
+          }
+        }
+      }
+    }
+    .c {
+      width: 100%;
+      overflow: hidden;
+      margin: 0 30px 0 50px;
+
+      .mobile-continue {
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 72px;
+        margin-top: 37px;
+        span {
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          color: $accent-color;
+        }
+        i {
+          font-size: 12px;
+        }
+      }
+
+      .similar__title {
+        margin: 0 0 13px 0;
+        font-size: 16px;
+      }
+
+      .shop-latest-blocks {
+        gap: 10px;
+
+        transition: transform 0.5s ease;
+
+        .shop-latest__block {
+          .shop-latest__img {
+            position: relative;
+
+            img {
+              width: 136px;
+              height: 136px;
+              border-radius: 10px;
+            }
+
+            .shop-latest_hover {
+              opacity: 0;
+              background-color: rgba(255, 255, 255, 0.5);
+              height: 22px;
+              min-width: 100%;
+              position: absolute;
+              bottom: 4px;
+              padding: 0 15px;
+              transition: all 0.4s ease;
+
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            &:hover .shop-latest_hover {
+              opacity: 1;
+            }
+
+            .shop-latest__heart {
+              width: 1em;
+              height: 1em;
+            }
+          }
+
+          .shop-latest_hover_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 70px;
+            min-width: 100%;
+            transition: all 0.3s ease;
+
+            p {
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              text-transform: uppercase;
+            }
+
+            a {
+              border: none;
+            }
+          }
+
+          .shop-latest__name {
+            font-size: 16px;
+            margin: 0;
+            line-height: 20px;
+            overflow: hidden;
+          }
+
+          .shop-latest__price {
+            font-size: 14px;
+          }
         }
       }
     }
