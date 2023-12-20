@@ -93,7 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
           diff > 0
             ? Math.max(0, currentIndex - 1)
             : Math.min(radioButtons.length - 1, currentIndex + 1);
+
       }
+   }
 
       changeSlide(currentIndex);
     }
@@ -126,4 +128,5 @@ document.addEventListener('DOMContentLoaded', function () {
   if (slider) {
     intervalId = setInterval(autoSlide, 3500);
   }
+
 });

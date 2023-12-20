@@ -8,6 +8,7 @@ function setupHeader() {
   const headerAElement = document.querySelector(`.burger__link_${pageName}`);
   headerAElement?.classList.add('burg');
   pageName !== 'home' && (burger__underline.style.display = 'none');
+
 }
 
 document.addEventListener('DOMContentLoaded', setupHeader);
@@ -33,5 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
     burgerLogout.classList.toggle('active');
     burgerHeader.classList.toggle('active');
     burgerLine.classList.toggle('active');
+
   });
 });
