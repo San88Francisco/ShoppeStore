@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
                changeSlide(index);
                clearInterval(intervalId);
             });
+
          }
       });
 
