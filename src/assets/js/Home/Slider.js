@@ -39,13 +39,17 @@ document.addEventListener('DOMContentLoaded', function () {
       isDragging = true;
       touchStartX = event.touches[0].clientX;
    }
-
    function touchMoveHandler(event) {
       if (isDragging) {
          touchMoveX = event.touches[0].clientX;
          const diff = touchMoveX - touchStartX;
-         currentTranslate += diff;
-         setPositionX(slider, currentTranslate);
+         const newPosition = currentTranslate + diff;
+
+         // Заборонити перетягування слайдера за межі 768px
+         if (newPosition <= 0 && newPosition >= -768) {
+            currentTranslate = newPosition;
+            setPositionX(slider, currentTranslate);
+         }
       }
    }
 
