@@ -3,6 +3,9 @@
 @import "_base/tools";
 @import "_base/fonts";
 
+//preload
+@import "./_home/preload";
+
 // Основні сторінки
 @import "./_home/main";
 @import "./_product/main";
@@ -10,13 +13,12 @@
 @import "./_contact/main";
 @import "./_account/main";
 @import "./_reset-password/main";
-@import './_cart/main';
 @import "./_blog/main";
 @import "./_help/main";
 
-
 body {
   padding: 0px 26px;
+
 }
 @media(max-width: 1000px){
   body{
@@ -25,13 +27,11 @@ body {
 }
 
 
-
-@media(max-width: 460px){
-  body{
+@media (max-width: 460px) {
+  body {
     padding: 0px 16px;
   }
 }
-
 
 .ff:nth-of-type(1) {
   color: red;
