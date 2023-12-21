@@ -358,6 +358,7 @@
           margin-bottom: 40px;
           h5 {
             display: inline-block;
+            cursor: pointer;
           }
           label {
             cursor: pointer;
@@ -405,6 +406,7 @@
             width: 100%;
             padding-bottom: 15px;
             margin-bottom: 25px;
+            cursor: pointer;
             p {
               display: inline-block;
               margin-bottom: 0px;
@@ -478,6 +480,8 @@
             #selectYourCountry:checked ~ .optionCountry {
               display: block;
             }
+
+            
           }
 
           .selectYourCity {

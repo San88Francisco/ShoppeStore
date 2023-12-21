@@ -1,23 +1,25 @@
 document.addEventListener('DOMContentLoaded',() => {
 
    //! search
-   if(document.querySelector('#search-input') !== null){
-      document.querySelector('#search-input').oninput = function () {
-         let val = this.value.trim().toLowerCase();
-         let lettersItems = document.querySelectorAll('.blog__card__name');
-   
-         lettersItems.forEach(function (e) {
-           const shopLatestBlock2 = e.closest('.content__cards');
-   
-           if (val == '') {
-             shopLatestBlock2.style.display = 'block';
-           } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
-             shopLatestBlock2.style.display = 'block';
-           } else {
-             shopLatestBlock2.style.display = 'none';
-           }
-         });
-      };
+   if(document.title.toLowerCase().replace(/\s/g, "") === 'blog'){
+      if(document.querySelector('#search-input') !== null){
+         document.querySelector('#search-input').oninput = function () {
+            let val = this.value.trim().toLowerCase();
+            let lettersItems = document.querySelectorAll('.blog__card__name');
+      
+            lettersItems.forEach(function (e) {
+              const shopLatestBlock2 = e.closest('.content__cards');
+      
+              if (val == '') {
+                shopLatestBlock2.style.display = 'block';
+              } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
+                shopLatestBlock2.style.display = 'block';
+              } else {
+                shopLatestBlock2.style.display = 'none';
+              }
+            });
+         };
+      }
    }
 
 
