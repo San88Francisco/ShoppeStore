@@ -11,26 +11,16 @@
 @import "./_account/main";
 @import "./_reset-password/main";
 @import './_cart/main';
-
 @import "./_blog/main";
+@import "./_help/main";
 
 
 body {
-  padding: 0px 96px;
+  padding: 0px 26px;
   
  
 }
-@media(max-width: 1000px){
-  body{
-    padding: 0px 70px;
-  }
-}
 
-@media(max-width: 860px){
-  body{
-    padding: 0px 50px;
-  }
-}
 
 @media(max-width: 460px){
   body{
