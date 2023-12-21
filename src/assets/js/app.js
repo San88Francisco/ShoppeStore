@@ -9,11 +9,15 @@ import "./Shop/SortBy";
 
 import "./Product/AddToCart";
 import "./Product/Reviews";
+import './Product/PopupWindow';
 
 import "./Contact/ContactUs";
 
 import "./Account/SingIn"; 
 import "./Account/ResetPassword"; 
+
+import './Cart/Option';
+import './Cart/CartItem';
 
 import "./Blog/Main-blog"; 
 
