@@ -9,30 +9,30 @@ function setupHeader() {
   header__underline.style.display = "block";
 
   const headerAElement = document.querySelector(`.header_link_${pageName}`);
-  headerAElement !== null ? headerAElement.classList.add("act") : 0
-  pageName === 'account' &&  headerAElement !== null ? headerAElement.classList.add("act__last") : 0
+  headerAElement !== null ? headerAElement.classList.add("act") : 0;
+  pageName === "account" && headerAElement !== null
+    ? headerAElement.classList.add("act__last")
+    : 0;
   pageName !== "home" ? (header__underline.style.display = "block") : 0;
-
 }
-
 
 document.addEventListener("DOMContentLoaded", setupHeader);
 
 /** Count Icon Header */
 
-const navCartCount = document.querySelector('.cart__count');
+const navCartCount = document.querySelector(".cart__count");
 
 // Оновлення navCartCount на основі значення в localStorage
 function updateNavCartCount() {
-  let navCartValid = localStorage.getItem('totalCountCart') || 0;
+  let navCartValid = localStorage.getItem("totalCountCart") || 0;
 
   if (+navCartValid > 0) {
-    navCartCount.style.display = 'flex';
-    navCartCount.textContent = localStorage.getItem('totalCountCart');
-    console.log('1');
-  }  else {
-    console.log('3');
-    navCartCount.style.display = 'none';
+    navCartCount.style.display = "flex";
+    navCartCount.textContent = localStorage.getItem("totalCountCart");
+    console.log("1");
+  } else {
+    console.log("3");
+    navCartCount.style.display = "none";
   }
 }
 
@@ -40,4 +40,4 @@ function updateNavCartCount() {
 updateNavCartCount();
 
 // Додайте подію 'storage', яка буде викликатися при зміні localStorage
-window.addEventListener('storage', updateNavCartCount);
+window.addEventListener("storage", updateNavCartCount);
