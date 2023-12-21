@@ -137,35 +137,49 @@ if (window.location.pathname.includes('/account')) {
             this.selectHeaderText = selectHeaderText;
          }
          register() {
+            const existingErrorMessage = form.querySelector('.error-message');
             if (this.nameInput.trim().length < 2) {
                const nameError = form.querySelector('input[name="inputName"]');
-               nameError.insertAdjacentHTML('afterend', '<div class="error-message">Please enter at least 2 characters</div>');
+               if (!existingErrorMessage) {
+                  nameError.insertAdjacentHTML('afterend', '<div class="error-message">Please enter at least 2 characters</div>');
+               }
                return
             }
 
             if (this.lastNameInput.trim().length < 2) {
                const lastNameError = form.querySelector('input[name="inputLastName"]');
-               lastNameError.insertAdjacentHTML('afterend', '<div class="error-message">Please enter at least 2 characters</div>');
-               return
+               // Перевіряємо, чи є вже відображена помилка цього виду
+               if (!existingErrorMessage) {
+                  lastNameError.insertAdjacentHTML('afterend', '<div class="error-message">Please enter at least 2 characters</div>');
+               }
+               return;
             }
             if (this.passwordInput.trim() !== this.repeatPasswordInput) {
                const theSamepassword = form.querySelector('input[name="inputPassword"]');
-               theSamepassword.insertAdjacentHTML('afterend', '<div class="error-message">your passwords are different</div>');
+               if (!existingErrorMessage) {
+                  theSamepassword.insertAdjacentHTML('afterend', '<div class="error-message">your passwords are different</div>');
+               }
                return
             }
             if (this.passwordInput.length < 8) {
                const theSamepassword = form.querySelector('input[name="inputPassword"]');
-               theSamepassword.insertAdjacentHTML('afterend', '<div class="error-message">The password must be at least 8 characters long</div>');
+               if (!existingErrorMessage) {
+                  theSamepassword.insertAdjacentHTML('afterend', '<div class="error-message">The password must be at least 8 characters long</div>');
+               }
                return
             }
             if (!/[a-zA-Z]/.test(this.passwordInput)) {
                const theSamepassword = form.querySelector('input[name="inputPassword"]');
-               theSamepassword.insertAdjacentHTML('afterend', '<div class="error-message">Password must contain at least one letter</div>');
+               if (!existingErrorMessage) {
+                  theSamepassword.insertAdjacentHTML('afterend', '<div class="error-message">Password must contain at least one letter</div>');
+               }
                return
             }
             if (this.selectHeaderText === 'how old are you?') {
                const selectHeaderText = document.querySelector('.select-header');
-               selectHeaderText.insertAdjacentHTML('afterend', '<div class="error-message">Please select your age</div>');
+               if (!existingErrorMessage) {
+                  selectHeaderText.insertAdjacentHTML('afterend', '<div class="error-message">Please select your age</div>');
+               }
                return
             }
             console.log(this);
