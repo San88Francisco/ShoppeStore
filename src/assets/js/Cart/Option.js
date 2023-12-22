@@ -1,26 +1,58 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Product"
   if (window.location.pathname.includes('/cart')) {
-    const optionItem = document.querySelectorAll('.optionItemElement');
-    optionItem.forEach((item) => {
-      item.addEventListener('click', () => {
-        item.parentElement.parentElement.children[0].textContent =
-          item.textContent;
-        item.parentElement.parentElement.children[1].checked = false;
-      });
-    });
 
-    const input = document.querySelectorAll('.input');
-    input.forEach((item) => {
-      item.addEventListener('change', () => {
-        input.forEach((items) => {
-          if (items !== item) {
-            items.checked = false;
-          }
-        });
-      });
-    });
+    // const shippingContentFolder = document.querySelector('.shipping__content__folder');
+    // shippingContentFolder.addEventListener('click', () => {
+    //   if(shippingContentFolder.children[1].checked === false){
+    //     shippingContentFolder.children[1].checked = true
+    //   }else {
+    //     shippingContentFolder.children[1].checked = false
+    //   }
+    // })
+
+    const shippingContentFolder = document.querySelector('.shipping__content__folder');
+    console.log(shippingContentFolder.children[0]);
+    shippingContentFolder.children[0].addEventListener('click', () => {
+      if(shippingContentFolder.children[0].parentElement.children[1].checked === false){
+        shippingContentFolder.children[0].parentElement.children[1].checked = true
+      }else {
+        shippingContentFolder.children[0].parentElement.children[1].checked = false
+      }
+    })
+
+    const selectYourItem = document.querySelectorAll('.selectYourItem');
+    selectYourItem.forEach(itemClick => {
+      itemClick.addEventListener('click', () => {
+        if(itemClick.children[1].checked === false){
+          itemClick.children[1].checked = true
+          const input = document.querySelectorAll('.input')
+          input.forEach(item => {
+            if(item !== itemClick.children[1]){
+              item.checked = false
+            }
+          })
+          const optionItem = document.querySelectorAll('.optionItemElement');
+          optionItem.forEach((item) => {
+            item.addEventListener('click', () => {
+              item.parentElement.parentElement.children[0].textContent = item.textContent;
+            })
+          })
+        }else{
+          itemClick.children[1].checked = false
+        }
+      })
+      itemClick.children[1].checked = false
+    })
   }
-
-  //
 });
+
+
+// const shippingContentFolder = document.querySelector('.shipping__content__folder');
+// shippingContentFolder.children[0].forEach(itemFolderClick => {
+//   itemFolderClick.addEventListener('click', () => {
+//     if(itemFolderClick.parentElement.children[1].checked === false){
+//       itemFolderClick.parentElement.children[1].checked = true
+//     }
+//   })
+// })
