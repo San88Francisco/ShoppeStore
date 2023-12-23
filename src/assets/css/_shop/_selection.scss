@@ -1,8 +1,6 @@
 .Shop {
-  max-width: 1248px;
-  
-  margin: 0 auto;
-
+   max-width: 1248px;
+   margin: 0 auto;
 
    h1 {
       margin-bottom: 39px;
@@ -194,11 +192,9 @@
                transition: 0.4s;
             }
 
-      #deBag_marginTop {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
+            input:checked+.toggle {
+               background-color: $accent-color;
+            }
 
             input:focus+.toggle {
                box-shadow: 0 0 1px $accent-color;
@@ -308,7 +304,6 @@
 
          #deBag_marginTop {
             margin-top: 0;
-            margin-bottom: 0;
          }
 
          .shop-latest-blocks {
@@ -319,9 +314,9 @@
          .shop-latest__block {
             .shop-latest__img {
                position: relative;
-              
+
                img {
-                  max-width: 100%;
+                  width: 100%;
                   height: auto;
                   border-radius: 10px;
                }
@@ -446,7 +441,9 @@
    }
 }
 
+
 @media (max-width: 1100px) {
+   
    .Shop {
       .shop-container {
          .B {
@@ -454,7 +451,6 @@
                .shop-latest__img {
                   .shop-latest_hover {
                      min-height: 35px;
-                     padding: 0 20px 0 20px;
                   }
 
                   .shop-latest__heart {
@@ -490,7 +486,6 @@
                .shop-latest__img {
                   .shop-latest_hover {
                      min-height: 35px;
-                     padding: 0 13px 0 13px;
                   }
 
                   .shop-latest__heart {
@@ -572,10 +567,11 @@
    }
 }
 
-@media (max-width: 700px){
-  .Shop{
-    margin: 115px 0 0 0;
-  }
+@media (max-width: 700px) {
+   .Shop {
+   margin-top: 120px;
+
+   }
 }
 
 @media (max-width: 680px) {
@@ -625,58 +621,50 @@
 
 @media (max-width: 425px) {
    .Shop {
-      .shop-container{
-        .B {
-          .shop-latest{
-            .shop-latest-container{
-              .shop-latest-blocks{
-                .shop-latest__block {
-                  .shop-latest__img{
-                    .label-container{
-                      top: 8px;
-                      left: 8px;
-                      .add-new,
-                  .add-discount,
-                  .add-category,
-                  .add-sold,
-                  .category {
-                    width: 44px;
-                    height: 20px;
-                    font-size: 9px;
-                     &::before {
-                        margin: -5px;
+      .shop-container {
+         .B {
+            .shop-latest {
+               .shop-latest-container {
+                  .shop-latest-blocks {
+                     .shop-latest__block {
+                        .shop-latest__img {
+                           .label-container {
+                              top: 8px;
+                              left: 8px;
+
+                              .add-new,
+                              .add-discount,
+                              .add-category,
+                              .add-sold,
+                              .category {
+                                 width: 43px;
+                                 height: 20px;
+                                 font-size: 9px;
+
+                                 &::before {
+                                    margin: -5px;
+                                 }
+
+                              }
+                           }
+                        }
+
+                        .add-new,
+                        .add-discount,
+                        .add-category,
+                        .add-sold {
+                           &::before {
+                              margin: -5px;
+                           }
+
+                           width: 30px;
+                        }
+
                      }
-                    
-                  }
-                    }
-                  }
-                  .add-new,
-                  .add-discount,
-                  .add-category,
-                  .add-sold {
-                     &::before {
-                        margin: -5px;
-                     }
-                     width: 30px;
                   }
                }
-              }
             }
-          }
-          .shop-latest__block {
- 
-             .add-new,
-             .add-discount,
-             .add-category,
-             .add-sold {
-                &::before {
-                   margin: -5px;
-                }
-                width: 30px;
-             }
-          }
-       }
+         }
       }
-      
    }
 }
