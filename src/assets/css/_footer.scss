@@ -6,6 +6,7 @@ footer {
    display: flex;
    justify-content: center;
    align-items: center;
+   margin: 250px 0 0 0;
    .big-container {
       margin-bottom: 100px;
 
@@ -319,6 +320,12 @@ footer {
          }
       }
    }
+}
+@media (max-width: 860px){
+  footer{
+    margin: 70px 0 0 0;
+    padding: 0 0 27px 0;
+  }
 }
 
 @media(max-width: 750px){
