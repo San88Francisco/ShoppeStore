@@ -4,13 +4,13 @@ const btnIncrease = document.querySelector('.plus');
 const numberOfShoppings = document.querySelector('.amount');
 
 if (btnDecrease && btnIncrease && numberOfShoppings) {
-  let numberOfShoppingsValue = +numberOfShoppings.textContent;
-
   btnIncrease.addEventListener('click', function () {
+    let numberOfShoppingsValue = +numberOfShoppings.textContent;
     numberOfShoppings.textContent = `${++numberOfShoppingsValue}`;
   });
 
   btnDecrease.addEventListener('click', function () {
+    let numberOfShoppingsValue = +numberOfShoppings.textContent;
     if (numberOfShoppingsValue === 1) return;
     numberOfShoppings.textContent = `${--numberOfShoppingsValue}`;
   });

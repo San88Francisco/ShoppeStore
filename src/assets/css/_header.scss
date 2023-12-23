@@ -13,6 +13,7 @@
 
 
 
+
    .shop-latest_hover_container {
       display: none;
    }
@@ -151,6 +152,7 @@
          }
       }
 
+
       // Burger
       .navbar {
          min-width: 100%;
@@ -228,6 +230,7 @@
                transform-origin: 0% 0%;
                transition: transform 0.4s ease-in-out;
             }
+
 
             .line2 {
                transition: transform 0.2s ease-in-out;
@@ -471,6 +474,7 @@
          border-radius: 1px;
          border-bottom: 2px solid #000;
          border-width: 2px 0px;
+
       }
    }
 
@@ -523,6 +527,7 @@
          margin-top: 15px;
       }
 
+
       .header__underline {
          border: none;
          margin-bottom: 16px;
@@ -542,6 +547,7 @@
                .navbar__user {
                   display: none;
                }
+
 
                .navbar {
                   display: block;
@@ -573,6 +579,7 @@
 
                               .search__input {
                                  width: 540px;
+
                                  font-size: 16px;
                                  font-style: normal;
                                  font-weight: 400;

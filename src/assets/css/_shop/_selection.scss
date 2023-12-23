@@ -1,6 +1,7 @@
 .Shop {
    max-width: 1248px;
    min-height: 1100px;
+
    margin: 0 auto;
 
 
@@ -446,6 +447,7 @@
 
 
 @media (max-width: 1100px) {
+   
    .Shop {
       .shop-container {
          .B {
@@ -453,7 +455,6 @@
                .shop-latest__img {
                   .shop-latest_hover {
                      min-height: 35px;
-                     padding: 0 20px 0 20px;
                   }
 
                   .shop-latest__heart {
@@ -489,7 +490,6 @@
                .shop-latest__img {
                   .shop-latest_hover {
                      min-height: 35px;
-                     padding: 0 13px 0 13px;
                   }
 
                   .shop-latest__heart {
@@ -574,6 +574,7 @@
 @media (max-width: 700px){
    .Shop{
       padding: 115px 0 0 0;
+
    }
 }
 
@@ -672,4 +673,3 @@
       }
    }
 }
-

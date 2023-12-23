@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
    const menuItems = document.querySelector(".menu-items");
    menuItems.style.display = "none";
 
+
    const burgerItems = document.querySelectorAll(".burger-menu__item");
    const burgerHeader = document.querySelector(".burger__header");
    const burgerFooter = document.querySelector(".burger__footer");
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuItems.style.display = "none";
          }, 1800);
       }
+
    });
 });
 
