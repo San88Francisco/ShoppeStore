@@ -1,0 +1,38 @@
+.checkout__pages {
+  max-width: 1248px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 250px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .checkout__container{
+    display: flex;
+
+    .checkout__block-name {
+      border: 1px solid red;
+      width: 50%;
+
+
+    }
+
+
+
+
+
+
+    .checkout__block-order {
+      background-color: #EFEFEF;
+      border: 1px solid yellow;
+      width: 50%;
+
+    }
+  }
+  
+  
+
+}
