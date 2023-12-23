@@ -361,11 +361,7 @@
    }
 }
 
-@media screen and (max-width: 700px) {
-   .slider_top {
-      margin-top: 120px;
-   }
-}
+
 
 @media screen and (max-width: 650px) {
    .slider_top {
@@ -419,7 +415,7 @@
 
 @media screen and (max-width: 370px) {
    .slider_top {
-      margin-top: 110px;
+
       .text_prod {
          margin-left: 7px;
          margin-top: 55%;
@@ -445,6 +441,7 @@
          }
 
       }
+
       label {
          display: inline-block;
          width: 7px;

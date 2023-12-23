@@ -1,3 +1,5 @@
+import "./Home/Preload";
+
 import "./Home/Header";
 import "./Home/Slider";
 import "./Home/Body";
@@ -9,12 +11,16 @@ import "./Shop/SortBy";
 
 import "./Product/AddToCart";
 import "./Product/Reviews";
+import "./Product/PopupWindow";
 
 import "./Contact/ContactUs";
 
-import "./Account/SingIn"; 
-import "./Account/ResetPassword"; 
+import "./Account/SingIn";
+import "./Account/ResetPassword";
 
-import "./Blog/Main-blog"; 
+import "./Cart/Option";
+import "./Cart/CartItem";
 
-import "./MyAccount/MyAccountMain"; 
+import "./Blog/Main-blog";
+
+import "./MyAccount/MyAccountMain";
