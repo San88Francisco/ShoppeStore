@@ -5,7 +5,8 @@ import "./Home/Slider";
 import "./Home/Body";
 import "./Home/Burger";
 
-import "./Shop/Body";
+// import "./Shop/Body";
+import "./Shop/Discount"
 import "./Shop/Filter";
 import "./Shop/SortBy";
 
