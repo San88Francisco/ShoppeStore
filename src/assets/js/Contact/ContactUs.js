@@ -154,5 +154,33 @@ if (window.location.pathname.includes('/contact')) {
          selectOptions.style.display = 'none';
       });
    });
+
+   //прибираємо текст з заголовка на мобілці
+   const titleText = document.querySelector('.contact__block-header');
+
+   function deleteText() {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth < 500) {
+         titleText.innerHTML = '<h1 class="contact__title">Contact</h1>';
+      } else {
+         titleText.innerHTML = `
+         <div class="contact__block-header">
+         <h1 class="contact__title">Contact Us</h1>
+         <div class="contact__text">
+            Say Hello send us your thoughts about our products or share
+            your ideas with our Team!
+         </div>
+      </div>
+         `;
+      }
+   }
+
+   // Викликаємо функцію deleteText після завантаження сторінки
+   deleteText();
+
+   // Викликаємо функцію deleteText при зміні розміру вікна
+   window.addEventListener('resize', deleteText);
+
 }
 

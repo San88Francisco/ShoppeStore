@@ -16,12 +16,16 @@
 @import "./_blog/main";
 @import "./_help/main";
 @import "./_cart/main";
+@import "./_my-account/main";
+
 
 body {
-  padding: 0px 26px;
+  padding: 0px 16px;
+  
+ 
 
 }
-@media(max-width: 1000px){
+/*@media(max-width: 1000px){
   body{
     padding: 0px 30px;
   }
@@ -32,7 +36,7 @@ body {
   body {
     padding: 0px 16px;
   }
-}
+}*/
 
 .ff:nth-of-type(1) {
   color: red;

@@ -1,4 +1,9 @@
 // ---HEADER---
+const userSignIn = localStorage.getItem('userSignIn')
+if(userSignIn !== null){
+  document.querySelector('.account__href').setAttribute('href','./my-account.html')
+}
+
 function setupHeader() {
   const pageName = document.title.toLowerCase().replace(/\s/g, "");
 
@@ -10,8 +15,7 @@ function setupHeader() {
 
   const headerAElement = document.querySelector(`.header_link_${pageName}`);
   headerAElement !== null ? headerAElement.classList.add("act") : 0
-  pageName === 'account' &&  headerAElement !== null ? headerAElement.classList.add("act__last") : 0
-  console.log(headerAElement);
+  pageName === 'account' || pageName === 'myaccount' &&  headerAElement !== null ? headerAElement.classList.add("act__last") : 0
 
   pageName !== "home" ? (header__underline.style.display = "block") : 0;
 }
@@ -29,9 +33,9 @@ function updateNavCartCount() {
   if (+navCartValid > 0) {
     navCartCount.style.display = "flex";
     navCartCount.textContent = localStorage.getItem("totalCountCart");
-    console.log("1");
+    // console.log("1");
   } else {
-    console.log("3");
+    // console.log("3");
     navCartCount.style.display = "none";
   }
 }

@@ -1,16 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Product"
   if (window.location.pathname.includes('/cart')) {
-
-    // const shippingContentFolder = document.querySelector('.shipping__content__folder');
-    // shippingContentFolder.addEventListener('click', () => {
-    //   if(shippingContentFolder.children[1].checked === false){
-    //     shippingContentFolder.children[1].checked = true
-    //   }else {
-    //     shippingContentFolder.children[1].checked = false
-    //   }
-    // })
-
     const shippingContentFolder = document.querySelector('.shipping__content__folder');
     console.log(shippingContentFolder.children[0]);
     shippingContentFolder.children[0].addEventListener('click', () => {
@@ -46,13 +36,3 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 });
-
-
-// const shippingContentFolder = document.querySelector('.shipping__content__folder');
-// shippingContentFolder.children[0].forEach(itemFolderClick => {
-//   itemFolderClick.addEventListener('click', () => {
-//     if(itemFolderClick.parentElement.children[1].checked === false){
-//       itemFolderClick.parentElement.children[1].checked = true
-//     }
-//   })
-// })
