@@ -37,7 +37,6 @@ if (window.location.pathname.includes('/my-account')) {
       addAddress.classList.add('none')
       document.querySelector('.bill-registr').style.display = 'block'
    })
-
    //folder code
    const selectYourItem = document.querySelectorAll('.selectYourItem');
    selectYourItem.forEach(itemClick => {

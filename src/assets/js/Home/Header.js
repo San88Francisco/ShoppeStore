@@ -1,4 +1,9 @@
 // ---HEADER---
+const userSignIn = localStorage.getItem('userSignIn')
+if(userSignIn !== null){
+  document.querySelector('.account__href').setAttribute('href','./my-account.html')
+}
+
 function setupHeader() {
   const pageName = document.title.toLowerCase().replace(/\s/g, "");
 

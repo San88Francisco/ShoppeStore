@@ -294,6 +294,7 @@ if (window.location.pathname.includes("/account")) {
 
         if (user.passwordInput === loginPass) {
           alert("You are signed in");
+          localStorage.setItem('userSignIn', loginEmail)
           window.location.href = "http://localhost:3000/index.html";
         }
       } else {
