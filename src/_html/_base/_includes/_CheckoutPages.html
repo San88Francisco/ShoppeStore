@@ -3,27 +3,37 @@
     <div class="checkout__container">
         <div class="checkout__block-name">
             <h2>Checkout</h2>
-            <div>
-                <div>
-                    <input type="text" placeholder="First name *">
-                    <input type="text" placeholder="last name *">
-                </div>
-                <input type="text" placeholder="Company Name">
-                <input type="text" placeholder="Country *">
-                <input type="text" placeholder="Street Address *">
-                <input type="text" placeholder="Postcode / ZIP *">
-                <input type="text" placeholder="Town / City *">
-                <input type="text" placeholder="Phone *">
-                <input type="email" placeholder="Email *">
+            <div class="checkout__name">
+                <input type="text" placeholder="First name *">
+                <input type="text" placeholder="last name *">
             </div>
-            <div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">Create an acoount?</label>
+            <input type="text" placeholder="Company Name">
+            <input type="text" placeholder="Country *">
+            <input type="text" placeholder="Street Address *">
+            <input type="text" placeholder="Postcode / ZIP *">
+            <input type="text" placeholder="Town / City *">
+            <input type="text" placeholder="Phone *">
+            <input type="email" placeholder="Email *">
+
+            <div class="checkout__checkbox-create">
+                
+                <div class="">
+                    <input type="checkbox" name="" class="checkboxAcount">
+                    <!-- <label for="">Create an acoount?</label> -->
+                    <label for="myCheckbox">
+                        <span></span>
+                        Create an acoount?
+                        <ins><i>Create an acoount?</i></ins>
+                    </label>
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">Ship to a different address?</label>
+                    <input type="checkbox" name="" class="checkboxAddress">
+                    <!-- <label for="">Ship to a different address?</label> -->
+                    <label for="myCheckbox">
+                        <span></span>
+                        Ship to a different address?
+                        <ins><i>Ship to a different address?</i></ins>
+                    </label>
                 </div>
             </div>
             <input type="text" placeholder="Order notes">

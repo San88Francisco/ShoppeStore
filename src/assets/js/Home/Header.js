@@ -11,7 +11,6 @@ function setupHeader() {
   const headerAElement = document.querySelector(`.header_link_${pageName}`);
   headerAElement !== null ? headerAElement.classList.add("act") : 0
   pageName === 'account' &&  headerAElement !== null ? headerAElement.classList.add("act__last") : 0
-  console.log(headerAElement);
 
   pageName !== "home" ? (header__underline.style.display = "block") : 0;
 }
@@ -29,9 +28,7 @@ function updateNavCartCount() {
   if (+navCartValid > 0) {
     navCartCount.style.display = "flex";
     navCartCount.textContent = localStorage.getItem("totalCountCart");
-    console.log("1");
   } else {
-    console.log("3");
     navCartCount.style.display = "none";
   }
 }
