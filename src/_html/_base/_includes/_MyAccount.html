@@ -112,13 +112,43 @@
             </table>
          </div>
       </div>
-      <div class="targetOf-addresses">
+      <div class="targetOf-addresses targetOf-addBill">
          <p>The following addresses will be used on the checkout page by default.</p>
          <div class="my-address">
             <div class="add-my-bill">
                <h3>Billing address</h3>
-               <p class="do-sth">ADD</p>
-               <p class="you-not-have-address">You have not set up this type of address yet.</p>
+               <div class="user-not-have-bill">
+                  <p class="do-sth" id="addAddress">ADD</p>
+                  <p class="you-not-have-address">You have not set up this type of address yet.</p>
+               </div>
+               <div class="bill-registr">
+                  <form action="post">
+                     <div class="bill-user-name">
+                        <input type="text" placeholder="First name *">
+                        <input type="text" placeholder="last name *">
+                     </div>
+                     <input type="text" placeholder="Company Name">
+
+                     <div class="selectYourCountry selectYourItem">
+                        <p>Country *</p>
+                        <input type="checkbox" id="selectYourCountry" class="input" />
+                        <label for="selectYourCountry"></label>
+                        <ul class="optionCountry optionItem">
+                          <li class="optionItemElement">Ukrain</li>
+                          <li class="optionItemElement">German</li>
+                          <li class="optionItemElement">UK</li>
+                          <li class="optionItemElement">USA</li>
+                        </ul>
+                     </div>
+
+                     <input type="text" placeholder="Street Address *">
+                     <input type="text" placeholder="Postcode / ZIP *">
+                     <input type="text" placeholder="Town / City *">
+                     <input type="text" placeholder="Phone *">
+                     <input type="text" placeholder="Email *">
+                  </form>
+                  <button type="submit" class="btn__black"><span>SAVE CHANGES</span></button>
+               </div>
             </div>
             <div class="add-my-adress">
                <h3>Shipping address</h3>
