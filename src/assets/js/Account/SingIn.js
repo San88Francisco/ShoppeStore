@@ -276,9 +276,14 @@ if (window.location.pathname.includes("/account")) {
          const loginPass = document.querySelector(".input--pass").value.trim();
          const userData = localStorage.getItem(loginEmail);
 
-         if (userData) {
-            const user = JSON.parse(userData);
-            console.log("✌️user --->", user);
+        if (user.passwordInput === loginPass) {
+          alert("You are signed in");
+          localStorage.setItem('userSignIn', loginEmail)
+          window.location.href = "http://localhost:3000/index.html";
+        }
+      } else {
+         invalidLoginAttempts++;
+
 
             if (user.passwordInput === loginPass) {
                alert("You are signed in");
