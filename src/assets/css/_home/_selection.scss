@@ -415,7 +415,7 @@
 
 @media screen and (max-width: 370px) {
    .slider_top {
-
+     
       .text_prod {
          margin-left: 7px;
          margin-top: 55%;
@@ -441,7 +441,6 @@
          }
 
       }
-
       label {
          display: inline-block;
          width: 7px;
@@ -451,6 +450,7 @@
          cursor: pointer;
          background-color: $light-gray-color;
       }
+
 
       input[type='radio']:checked+label {
          border: 2px solid $white-color;
