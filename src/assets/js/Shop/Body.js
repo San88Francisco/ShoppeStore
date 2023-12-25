@@ -1,11 +1,12 @@
 const startProduct = (data) => {
   console.log(" data:", data);
   const shopLatestBlocks = document.querySelector('.shop-latest-blocks')
-  console.log("shopLatestBlocks:", shopLatestBlocks)
+  
+  shopLatestBlocks.innerHTML = ""
 
-  data.map(({id, amount, category, composition, imageUrl, name, price, priceDiscount, typeProduct}) => {
-    console.log(imageUrl);
-    shopLatestBlocks.innerHTML = `
+  data.map(({id, amount, category, categoryName, composition, imageUrl, name, price, priceDiscount, typeProduct, typeClass}) => {
+
+    shopLatestBlocks.innerHTML += `
     <div id="hide" class="shop-latest__block">
       <div class="shop-latest__img">
         <a href="./product.html"><img src="${imageUrl}" alt="" /></a>
@@ -19,8 +20,8 @@ const startProduct = (data) => {
             </div>
         </div>
         <div class="label-container">
-            <div class="add-sold">${category}</div>
-
+            <div class="${category}">${categoryName}</div>
+            <div class="${typeClass}">${typeProduct}</div>
         </div>
       </div>
       <h3 class="shop-latest__name"><a href="#">Lira Earrings</a></h3>
