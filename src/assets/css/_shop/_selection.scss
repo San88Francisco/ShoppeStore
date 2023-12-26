@@ -317,6 +317,10 @@
             .shop-latest__img {
                position: relative;
 
+               .productVariant {
+                  display: none;
+               }
+
                img {
                   width: 100%;
                   height: auto;

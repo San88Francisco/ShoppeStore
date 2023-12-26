@@ -1,8 +1,8 @@
 /* ||| Filter price - input range, "Shop page" повзунок ||| */
 
-document.addEventListener('DOMContentLoaded', function () {
+if (window.location.pathname.includes('/shop')) {
+  document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Shop"
-  if (window.location.pathname.includes('/shop')) {
     const rangeInput = document.querySelectorAll('.range-input input');
     const priceSum = document.querySelectorAll('.price-range-summ span');
     const progress = document.querySelector('.slider-progress .range-progress');
@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       /* Доступаємося до всіх наших карток з товарами */
-      const shopLatestBlocks = document.querySelectorAll('.shop-latest__block');
+      const shopLatestBlocks = Array.from(
+        document.querySelectorAll('.shop-latest__block')
+      );
 
       /* Отримуємо дані з кожного блоку в масиві */
       const allBlockData = [];
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
           item.style.display = 'block';
 
           let latestName = item.querySelector('.shop-latest__name a').innerText;
+          console.log('latestName:', latestName);
 
           // Перевіряємо кожен елемент в filter
           const match = filter.find(
@@ -132,69 +135,74 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       };
     });
-  }
-});
 
-/** ||| Filter - In Stock, "Shop page" ||| */
-const shopLatestBlocks = document.querySelectorAll('.shop-latest__block');
+    /** ||| Filter - In Stock, "Shop page" ||| */
+    const shopLatestBlocks = Array.from(
+      document.querySelectorAll('.shop-latest__block')
+    );
 
-const filterInSale = (filter) => {
-  shopLatestBlocks.forEach((item) => {
-    let latestName = item.firstElementChild.classList[1];
-    item.style.display = 'none';
+    const filterInSale = (filter) => {
+      shopLatestBlocks.forEach((item) => {
+        let latestName = item.firstElementChild.classList[0];
+        item.style.display = 'none';
 
-    // add-sold Перевіряємо чи є співпадіння з класом
-    if (filter === latestName) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-};
-
-const filterInStock = (filter) => {
-  shopLatestBlocks.forEach((item) => {
-    let latestName = item.firstElementChild.classList[1];
-    item.style.display = 'block';
-    // add-sold Перевіряємо чи є співпадіння з класом
-    if (filter === latestName) {
-      // Отримуємо той блок, який не проходить фільтрацію In Stock і задаємо йому display none
-      item.style.display = 'none';
-    }
-  });
-};
-
-const btnInSale = document.querySelector('.toggle-sale');
-const btnInStock = document.querySelector('.toggle-stock');
-const checkboxes = document.querySelectorAll(
-  '.toggle-switch input[type="checkbox"]'
-);
-
-// Додаємо обробник подій для кожного checkbox
-checkboxes.forEach((checkbox) => {
-  const toggleInput = checkbox.classList;
-
-  checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      // Якщо обраний один з чекбоксів, вимикаємо інший checkbox
-      checkboxes.forEach((otherCheckbox) => {
-        if (otherCheckbox !== checkbox) {
-          otherCheckbox.checked = false;
-          // Перевірка. Взалежності від вибраного checkbox буде перевірка його класа і тоді запуск самої функції на фільтрування
-          if (toggleInput[0] === 'toggle-sale') {
-            filterInSale('add-discount');
-          }
-          if (toggleInput[0] === 'toggle-stock') {
-            filterInStock('add-sold');
-          }
+        // add-sold Перевіряємо чи є співпадіння з класом
+        if (filter === latestName) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
         }
       });
-    } else {
-      shopLatestBlocks.forEach((item) => (item.style.display = 'block'));
-      // Якщо вимкнутий чекбокс тоді забезпечуємо можливість вибору будь-якого checkbox
-      checkboxes.forEach((otherCheckbox) => {
-        otherCheckbox.disabled = false;
+    };
+
+    const filterInStock = (filter) => {
+      shopLatestBlocks.forEach((item) => {
+        console.log('item:', item);
+        let latestName = item.firstElementChild.classList[0];
+        console.log(' latestName:', latestName);
+
+        item.style.display = 'block';
+        // add-sold Перевіряємо чи є співпадіння з класом
+        if (filter === latestName) {
+          // Отримуємо той блок, який не проходить фільтрацію In Stock і задаємо йому display none
+          item.style.display = 'none';
+        }
       });
-    }
+    };
+
+    const btnInSale = document.querySelector('.toggle-sale');
+    const btnInStock = document.querySelector('.toggle-stock');
+    const checkboxes = document.querySelectorAll(
+      '.toggle-switch input[type="checkbox"]'
+    );
+
+    // Додаємо обробник подій для кожного checkbox
+    checkboxes.forEach((checkbox) => {
+      const toggleInput = checkbox.classList;
+
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          // Якщо обраний один з чекбоксів, вимикаємо інший checkbox
+          checkboxes.forEach((otherCheckbox) => {
+            if (otherCheckbox !== checkbox) {
+              otherCheckbox.checked = false;
+              // Перевірка. Взалежності від вибраного checkbox буде перевірка його класа і тоді запуск самої функції на фільтрування
+              if (toggleInput[0] === 'toggle-sale') {
+                filterInSale('add-discount');
+              }
+              if (toggleInput[0] === 'toggle-stock') {
+                filterInStock('add-sold');
+              }
+            }
+          });
+        } else {
+          shopLatestBlocks.forEach((item) => (item.style.display = 'block'));
+          // Якщо вимкнутий чекбокс тоді забезпечуємо можливість вибору будь-якого checkbox
+          checkboxes.forEach((otherCheckbox) => {
+            otherCheckbox.disabled = false;
+          });
+        }
+      });
+    });
   });
-});
+}

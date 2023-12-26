@@ -1,5 +1,6 @@
 //ShopHeart
-document.addEventListener("DOMContentLoaded", function () {
+
+export const heartLogic = () => {
   const blocks = document.querySelectorAll(".shop-latest__block");
 
   blocks.forEach(function (block) {
@@ -15,4 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
       imgElement.src = currentImage;
     });
   });
-});
+}
+
+heartLogic();
+
+const fetchData = async () => {
+  try {
+        const response = await fetch('https://650f314454d18aabfe99ec68.mockapi.io/cart');
+        const data = await response.json();
+        // Обробка отриманих даних
+        // console.log(data);
+        localStorage.setItem('allProduct', JSON.stringify(data));
+        
+        return data;
+    } catch (error) {
+        alert(error.message);
+        console.error(error);
+    }
+}
+
+fetchData()
