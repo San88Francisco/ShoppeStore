@@ -1,5 +1,11 @@
 // ---HEADER---
 function setupHeader() {
+
+  const userSignIn = localStorage.getItem('userSignIn')
+  if(userSignIn !== null){
+    document.querySelector('.account__href').setAttribute('href','./my-account.html')
+  }
+
   const pageName = document.title.toLowerCase().replace(/\s/g, "");
 
   // Виходимо, якщо сторінка "home"
