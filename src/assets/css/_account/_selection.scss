@@ -12,6 +12,18 @@ padding-bottom: 247px;
       &:not(:last-child) {
          margin-bottom: 64px;
       }
+            //mobile
+            @media (max-width: 700.98px){
+               &:not(:last-child) {
+                  margin-bottom: 40px;
+               }
+            }
+                //mobile small
+                @media (max-width: 467.98px){
+                  &:not(:last-child) {
+                     margin-bottom: 24px;
+                  }
+               }
    }
 
    &__title {
@@ -24,11 +36,36 @@ padding-bottom: 247px;
          background-color: $light-gray-color;
          padding: 5px;
          display: flex;
+         gap: 14px;
          justify-content: space-between;
          border-radius: 8px;
          &:not(:last-child) {
             margin-bottom: 126px;
          }
+             //mobile
+             @media (max-width: 700.98px){
+               height: 45px;
+               padding: 3.5px;
+               &:not(:last-child) {
+                  margin-bottom: 87px;
+               }
+            }
+               //mobile small
+               @media (max-width: 467.98px){
+                  padding: 3px;
+                  height: 38px;
+                  &:not(:last-child) {
+                     margin-bottom: 92px;
+                  }
+               }
+                  //mobile small
+                  @media (max-width: 340.98px){
+                     padding: 2px;
+                     height: 32px;
+                     &:not(:last-child) {
+                        margin-bottom: 87px;
+                     }
+                  }
       }
    
       &__item {
@@ -41,6 +78,19 @@ padding-bottom: 247px;
    font-weight: 400;
    line-height: 26px;
    transition: all 0.3s ease-in-out;
+        //mobile
+        @media (max-width: 700.98px){
+        font-size: 16px;
+      }
+            //mobile small
+            @media (max-width: 467.98px){
+             font-size: 14px;
+            }
+               //mobile small
+               @media (max-width: 350.98px){
+                 // width: 134px;
+                  font-size: 12px;
+               }
       }
    
       &__block {
@@ -57,8 +107,9 @@ padding-bottom: 247px;
       &__button {
          background-color: #000000;
          border: 1px solid #000000;
-         width: 500px;
+         width: 100%;
          height: 53px;
+         font-size: 16px;
          border-radius: 4px;
          display: flex;
          justify-content:center;
@@ -72,7 +123,18 @@ padding-bottom: 247px;
            cursor: pointer;
          }
          &:not(:last-child) {
-            margin-bottom: 13px;
+            margin-bottom: 16px;
+         }
+         //mobile
+         @media (max-width: 700.98px){
+            height: 40px;
+            font-size: 14px;
+         }
+
+            //mobile small
+         @media (max-width: 467.98px){
+              height: 32px;
+              font-size: 12px;
          }
       }
    
@@ -86,6 +148,16 @@ padding-bottom: 247px;
    &:hover {
       color: rgba(112, 112, 112, 1);
    }
+     //mobile
+     @media (max-width: 700.98px){
+   font-size: 14px;
+   line-height: 23px;
+   }
+      //mobile small
+      @media (max-width: 467.98px){
+         font-size: 12px;
+         line-height: 20px;
+         }
       }
    }
    .form {
@@ -93,15 +165,44 @@ padding-bottom: 247px;
       &__body {
          position: relative;
          &:not(:last-child) {
-            margin-bottom: 34px;
+            margin-bottom: 46px;
          }
+      }
+      .body--last {
+           //mobile
+     @media (max-width: 700.98px){
+      &:not(:last-child) {
+         margin-bottom: 30px;
+      }
+      }
       }
    
       &__input {
          border-bottom: 1px solid #D8D8D8;
          padding: 12px 0;
          width: 100%;
-        
+         &::placeholder {
+            font-family: DM Sans;
+            font-size: 16px;
+            color: #707070;
+            font-weight: 400;
+         //Tablet
+          @media (max-width: 700.98px){
+                    font-size: 14px;
+            }
+        //Mobile small
+         @media (max-width: 467.98px){
+                   font-size: 12px;
+         }  
+         }
+         @media (max-width: 700.98px){
+            padding: 8px 0;
+              font-size: 14px; 
+         }
+         @media (max-width: 467.98px){
+            padding: 5px 0;
+              font-size: 12px; 
+         }
       }
    
       &__button {
@@ -118,6 +219,17 @@ padding-bottom: 247px;
                color: $dark-gray-color;
             }
          }
+                //Tablet
+                @media (max-width: 700.98px){
+                  font-size: 14px;
+                   bottom: 10px;
+
+              }
+             //Mobile small
+             @media (max-width: 467.98px){
+               font-size: 12px;
+               bottom: 5px;
+           } 
       }
       .button-repeat {
          position: absolute;
@@ -133,11 +245,22 @@ padding-bottom: 247px;
                color: $dark-gray-color;
             }
          }
+                 //Tablet
+                 @media (max-width: 700.98px){
+                  font-size: 14px;
+                   top: 10px;
+
+              }
+             //Mobile small
+             @media (max-width: 467.98px){
+               font-size: 12px;
+               top: 7px;
+           } 
       }
    }
    
    .checkbox {
-      margin-top: -19px;
+      margin-top: -40px;
       input[type='checkbox']{ height: 0; width: 0; }
 
       input[type='checkbox'] + label{
@@ -194,8 +317,8 @@ padding-bottom: 247px;
       input[type='checkbox']:checked + label > span:before{
         content: "";
         position: absolute;
-        top: .4em;
-        left: .2em;
+        top: .42em;
+        left: .15em;
         border-right: 3px solid transparent;
         border-bottom: 3px solid transparent;
         transform: rotate(45deg);
@@ -236,6 +359,20 @@ padding-bottom: 247px;
       &:not(:last-child) {
          margin-bottom: 69px;
       }
+         //mobile
+     @media (max-width: 700.98px){
+      &:not(:last-child) {
+         margin-bottom: 30px;
+         font-size: 14px;
+      }
+      }
+          //mobile
+     @media (max-width: 467.98px){
+      &:not(:last-child) {
+         margin-bottom: 16px;
+         font-size: 12px;
+      }
+      }
    }
 
    .block-tabs--register {
@@ -261,13 +398,35 @@ padding-bottom: 247px;
      padding: 12px 0;
       cursor: pointer;
       position: relative;
+      height: 43.2px;
+      display: flex;
+      align-items: center;
       & img {
          position: absolute;
          width: 10px;
          height: 5.66px;
          right: 0;
+         bottom: 21px;
+           //mobile
+            @media (max-width: 700.98px){
          bottom: 15px;
+           }
+            //mobile small
+            @media (max-width: 700.98px){
+               bottom: 9px;
+                 }
       }
+           //mobile
+           @media (max-width: 700.98px){
+            max-height: 33.6px;
+            font-size: 14px;
+           
+        }
+       //Mobile small
+       @media (max-width: 467.98px){
+         max-height: 24.4px;
+         font-size: 12px;
+     } 
    }
    .select-options {
       display: none;
@@ -328,19 +487,47 @@ padding-bottom: 247px;
    .togglePasswordBtn {
       position: absolute;
       width: 100px;
-      height: 40px;
+      height: 10px;
       right: 20px;
-      top: 0;
+      top: 17px;
       font-size: 8px;
       border: none;
       color: #707070;
       transition: color 0.3s;
       display: none;
+      background: none;
+      input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none;
+}
+              //Tablet
+              @media (max-width: 700.98px){
+               top: 11px;
+           }
+          //Mobile small
+          @media (max-width: 467.98px){
+            top: 7px;
+        } 
       @media (any-hover: hover){
          &:hover{
             color: #000000;
          }
       }
    }
+         //mobile
+         @media (max-width: 700.98px){
+           padding-top: 124px;
+           padding-bottom: 130px;
+         }
+           //mobile small
+           @media (max-width: 467.98px){
+            padding-bottom: 92px;
+          }
+          .input-email {
+           margin-top: 11px;
+          }
 }
 
