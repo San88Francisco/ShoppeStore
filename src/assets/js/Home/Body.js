@@ -20,12 +20,13 @@ export const heartLogic = () => {
 
 heartLogic();
 
+// Функція яка бере наші данні з бек-енду
 const fetchData = async () => {
   try {
         const response = await fetch('https://650f314454d18aabfe99ec68.mockapi.io/cart');
-        const data = await response.json();
         // Обробка отриманих даних
-        // console.log(data);
+        const data = await response.json();
+        // Записуємо данні в локальне сховище
         localStorage.setItem('allProduct', JSON.stringify(data));
         
         return data;

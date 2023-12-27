@@ -1,19 +1,26 @@
-import { discount } from "./Discount";
-import { heartLogic } from "../Home/Body";
-import { addToCart2 } from "../Product/AddToCart2";
+import { discount } from './Discount';
+import { heartLogic } from '../Home/Body';
 
 document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Product"
   if (window.location.pathname.includes('/shop')) {
-      
-      const item = JSON.parse(localStorage.getItem('allProduct'))
+    const item = JSON.parse(localStorage.getItem('allProduct'));
 
-      const shopLatestBlocks = document.querySelector('.shop-latest-blocks')
-      
-      shopLatestBlocks.innerHTML = "";
+    const shopLatestBlocks = document.querySelector('.shop-latest-blocks');
 
-      item.map(({category, categoryClass, typeProduct, typeClass, imageUrl, name, price, productVariant}) => {
-    
+    // Запускаємо map з масивом обєктів наших товарів та відображаємо весь товар
+    // В середені map через деструктуризацію виймаємо всі ключі з нашого обєкту item
+    item.map(
+      ({
+        category,
+        categoryClass,
+        typeProduct,
+        typeClass,
+        imageUrl,
+        name,
+        price,
+        productVariant,
+      }) => {
         shopLatestBlocks.innerHTML += `
         <div id="hide" class="shop-latest__block">
           <div class="shop-latest__img">
@@ -38,15 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
           </h4>
         </div>
     
-        `
-      })
+        `;
+      }
+    );
 
-      discount();
-      heartLogic();
-      // addToCart2(item);
-
-    }
-
+    // Запускаємо функцію із знижкою
+    discount();
+    // Запускаємо функцію із товаром що сподобався (сердечко)
+    heartLogic();
   }
-);
-
+});

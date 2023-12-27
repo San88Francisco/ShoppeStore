@@ -170,8 +170,6 @@ if (window.location.pathname.includes('/shop')) {
       });
     };
 
-    const btnInSale = document.querySelector('.toggle-sale');
-    const btnInStock = document.querySelector('.toggle-stock');
     const checkboxes = document.querySelectorAll(
       '.toggle-switch input[type="checkbox"]'
     );
