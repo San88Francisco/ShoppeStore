@@ -15,10 +15,10 @@
     gap: 80px;
 
     .checkout__block-name {
-      border: 1px solid red;
+      // border: 1px solid red;
       display: flex;
       flex-direction: column;
-      width: 30%;
+      width: 50%;
       padding: 10px;
 
       input {
@@ -162,7 +162,7 @@
       background-color: #EFEFEF;
       border: 1px solid yellow;
       width: 50%;
-      padding: 37px 59px;
+
     }
   }
   
