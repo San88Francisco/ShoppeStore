@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Product"
   if (window.location.pathname.includes('/cart')) {
     const shippingContentFolder = document.querySelector('.shipping__content__folder');
+    console.log(shippingContentFolder.children[0]);
     shippingContentFolder.children[0].addEventListener('click', () => {
       if(shippingContentFolder.children[0].parentElement.children[1].checked === false){
         shippingContentFolder.children[0].parentElement.children[1].checked = true
