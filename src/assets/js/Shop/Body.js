@@ -1,23 +1,57 @@
-// Shop page Team B
-const discountElements = document.querySelectorAll('.shop-latest__block');
+import { discount } from './Discount';
+import { heartLogic } from '../Home/Body';
 
-discountElements.forEach((el) => {
-  const labelContainer = el.querySelector('.label-container');
+document.addEventListener('DOMContentLoaded', function () {
+  // Перевірка, чи ми на сторінці "Product"
+  if (window.location.pathname.includes('/shop')) {
+    const item = JSON.parse(localStorage.getItem('allProduct'));
 
-  if (labelContainer && labelContainer.querySelector('.add-discount')) {
-    const priceElement = el.querySelector('.shop-latest__price');
-    priceElement.firstElementChild.classList.add('price-discount');
+    const shopLatestBlocks = document.querySelector('.shop-latest-blocks');
 
-    const h1 = priceElement.textContent.trim();
-    const discountValue =
-      (parseInt(el.querySelector('.add-discount').textContent) * -1) / 100;
+    // Запускаємо map з масивом обєктів наших товарів та відображаємо весь товар
+    // В середені map через деструктуризацію виймаємо всі ключі з нашого обєкту item
+    item.map(
+      ({
+        category,
+        categoryClass,
+        typeProduct,
+        typeClass,
+        imageUrl,
+        name,
+        price,
+        productVariant,
+      }) => {
+        shopLatestBlocks.innerHTML += `
+        <div id="hide" class="shop-latest__block">
+          <div class="shop-latest__img">
+            <a href="./product.html"><img src="${imageUrl}" alt="" /></a>
+            <p class="productVariant">${productVariant}</p>
+            <div class="shop-latest_hover">
+                <div class="shop-latest_hover_container">
+                  <a href="">
+                      <p>ADD TO CART</p>
+                  </a>
+                  <img class="shop-latest__heart" src="./assets/img/Home_img/Body/heart_bg.png" alt="" />
+                </div>
+            </div>
+            <div class="label-container">
+                <div class="${categoryClass} category">${category}</div>
+                <div class="${typeClass} category">${typeProduct}</div>
+            </div>
+          </div>
+          <h3 class="shop-latest__name"><a href="#">${name}</a></h3>
+          <h4 class="shop-latest__price">
+            <a href="#">$ ${price},00</a>
+          </h4>
+        </div>
+    
+        `;
+      }
+    );
 
-    const h1value = parseFloat(h1.slice(2).replace(',', '.'));
-    const disc = h1value - h1value * discountValue;
-
-    const discount = `<a href="#" class="discount">$ ${disc
-      .toFixed(2)
-      .replace('.', ',')}</a>`;
-    priceElement.insertAdjacentHTML('beforeend', discount);
+    // Запускаємо функцію із знижкою
+    discount();
+    // Запускаємо функцію із товаром що сподобався (сердечко)
+    heartLogic();
   }
 });

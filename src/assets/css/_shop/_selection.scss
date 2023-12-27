@@ -315,8 +315,14 @@
          }
 
          .shop-latest__block {
+            // border: 1px solid red;
+
             .shop-latest__img {
                position: relative;
+
+               .productVariant {
+                  display: none;
+               }
 
                img {
                   width: 100%;
@@ -371,13 +377,13 @@
                }
 
                .label-container {
-                  position: absolute;
+                  // border: 1px solid red;
                   display: flex;
-
+                  flex-wrap: wrap;
                   position: absolute;
                   top: 16px;
                   left: 16px;
-                  width: 100%;
+                  // width: 100%;
 
                   div {
                      &:first-child {
@@ -402,16 +408,17 @@
 
             //* Class for "category" label
             // <div class="add-earrings category">Earrings</div>
-            // <div class="add-rings category">Rings</div>
+            // <div class="add-brooch category">Brooch</div>
             // <div class="add-bracelets category">Bracelets</div>
             // <div class="add-pendants category">Pendants</div>
 
             // <div class="add-popular category">Popular</div>
             // <div class="add-new category">New</div>
+            // <div class="add-discount category">Sold Out</div>
             // <div class="add-sold category">Sold Out</div>
 
             .add-earrings,
-            .add-rings,
+            .add-brooch,
             .add-bracelets,
             .add-pendants {
                background-color: $black-color;
