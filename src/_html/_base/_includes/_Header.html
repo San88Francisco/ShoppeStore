@@ -12,28 +12,29 @@
 
          <nav>
             <div class="navbar__page">
-               <ul>
+               <ul class="header_none">
                   <li class="header_link_shop header_link_product"><a href="./shop.html">Shop</a></li>
                   <li class="header_link_blog"><a href="./blog.html">Blog</a></li>
-                  <li class="ourstory header_link_ourstory"><a href="#">Our Story</a></li>
+                  <li class="ourstory header_link_ourstory"><a href="./our-story.html" class="">Our Story</a></li>
                </ul>
             </div>
 
             <div class="navbar__user">
                <ul>
-                  <li class="header_line  l">
+                  <li class="header_line header_none">
                      <a href="#">
-                        <img src="./assets/img/Home_img/header/search.png" alt="" />
+                        <img src="./assets/img/Home_img/header/search.svg" alt="" />
                      </a>
                   </li>
-                  <li class="header_line cart_block ">
-                     <a href="#">
-                        <img src="./assets/img/Home_img/header/shop.png" alt="" />
+                  <li class="header_line header_link_cart header_none">
+                     <a href="./cart.html">
+                        <img src="./assets/img/Home_img/header/shop.svg" alt="" />
+                        <span class="cart__count"></span>
                      </a>
                   </li>
-                  <li class="header_line_last l">
+                  <li class="header_line_last header_link_account header_none">
                      <a href="./account.html">
-                        <img src="./assets/img/Home_img/header/user.png" alt="" />
+                        <img src="./assets/img/Home_img/header/user.svg" alt="" />
                      </a>
                   </li>
                </ul>
@@ -67,25 +68,25 @@
                      <ul class="burger-list">
                         <li class="burger-menu__item "><a class="burger__link_home" href="./index.html">Home</a></li>
                         <li class="burger-menu__item"><a class="burger__link_shop" href="./shop.html">Shop</a></li>
-                        <li class="burger-menu__item"><a class="burger__link_" href="#">About</a></li>
-                        <li class="burger-menu__item"><a class="burger__link_" href="#">Blog</a></li>
-                        <li class="burger-menu__item"><a class="burger__link_" href="#">Help</a></li>
-                        <li class="burger-menu__item"><a class="burger__link_contact" href="./contact.html">Contact</a>
+                        <li class="burger-menu__item"><a class="burger__link_ourstory" href="./our-story.html">About</a>
                         </li>
-                        <li class="burger-menu__item"><a class="burger__link_" href="#">Search</a></li>
+                        <li class="burger-menu__item"><a class="burger__link_blog" href="./blog.html">Blog</a></li>
+                        <li class="burger-menu__item"><a class="burger__link_help" href="./help.html" class="">Help</a>
+                        </li>
+                        <li class="burger-menu__item"><a class="burger__link_contact" href="./contact.html"
+                              class="">Contact</a></li>
+                        <li class="burger-menu__item"><a class="burger__link_" href="#" class="">Search</a></li>
                      </ul>
 
-                     <div id="search-shop-container"></div>
-
                      <hr class="burger-line" />
-                     <div class="burger__footer">
-                        <a class="burger__footer" href="">
+                     <div>
+                        <a class="burger__footer" href="./account.html">
                            <img src="./assets/img/Home_img/header/user.png" alt="" />
-                           <p>My account</p>
+                           <p class=" burger__link_account">My account</p>
                         </a>
                      </div>
-                     <div class="burger__logout burger__footer">
-                        <a class="burger__footer" href="">
+                     <div class="burger__logout">
+                        <a class="burger__footer" href="#">
                            <img src="./assets/img/Home_img/header/logou.png" height="22px" width="22px" alt="" />
                            <p>Logout</p>
                         </a>

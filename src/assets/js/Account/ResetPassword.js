@@ -60,4 +60,36 @@ if (window.location.pathname.includes('/reset-password')) {
          errorMessage.style.display = 'none';
       }
    });
+   //прибираємо текст з заголовка на мобілці
+   let titleText = document.querySelector('.reset-password__block-header');
+
+   function deleteText() {
+      let screenWidth = window.innerWidth;
+
+      if (screenWidth < 500) {
+         titleText.innerHTML = `
+         <div class="reset-password__block-header">
+         <h1 class="reset-password__title">Lost password</h1>
+         <div class="reset-password__text">
+            If you've forgotten your password, enter your e-mail address and we'll send you an e-mail
+         </div>
+      </div>
+         `;
+      } else {
+         titleText.innerHTML = `
+         <div class="reset-password__block-header">
+         <h1 class="reset-password__title">Have you Forgotten Your Password ?</h1>
+         <div class="reset-password__text">
+            If you've forgotten your password, enter your e-mail address and we'll send you an e-mail
+         </div>
+      </div>
+           `;
+      }
+   }
+
+   // Викликаємо функцію deleteText після завантаження сторінки
+   deleteText();
+
+   // Викликаємо функцію deleteText при зміні розміру вікна
+   window.addEventListener('resize', deleteText);
 }

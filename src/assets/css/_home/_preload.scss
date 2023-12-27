@@ -1,0 +1,72 @@
+// Preload
+.preload {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: $black-color;
+   z-index: 10;
+   display: grid;
+   place-content: center;
+   justify-items: center;
+   transition: 500ms ease;
+}
+
+.preload>* {
+   transition: 1000ms ease;
+}
+
+.preload.loaded>* {
+   opacity: 0;
+}
+
+.preload.loaded {
+   transition-delay: 250ms;
+   transform: translateY(100%);
+}
+
+.preload .text-preload {
+   font-family: "Allerta Stencil", sans-serif;
+   background-image: linear-gradient(90deg,
+         transparent 0% 16.66%,
+         $accent-color 33.33% 50%,
+         transparent 66.66% 75%);
+   background-size: 500%;
+   font-size: calc(4rem + 3vw);
+   font-weight: 400;
+   line-height: 1em;
+   text-transform: uppercase;
+   letter-spacing: 16px;
+   padding-inline-start: 16px;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-stroke: 0.5px $accent-color;
+   animation: loadingText linear 2s infinite;
+}
+
+@keyframes loadingText {
+   0% {
+      background-position: 100%;
+   }
+
+   100% {
+      background-position: 0%;
+   }
+}
+
+.underline {
+   width: 100%;
+   height: 1px;
+   background-color: $accent-color;
+   margin: 10px 0;
+}
+
+.under-text-preload {
+   font-family: "Allerta Stencil", sans-serif;
+   font-size: 20px;
+   color: $white-color;
+   letter-spacing: 39px;
+   margin-left: auto;
+}
