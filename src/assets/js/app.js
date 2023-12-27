@@ -25,6 +25,8 @@ import "./Account/ResetPassword";
 import "./Cart/Option";
 import "./Cart/CartItem";
 
+import "./CheckoutPages/CheckoutPages"
+
 import "./Blog/Main-blog";
 
 import "./MyAccount/MyAccountMain";
