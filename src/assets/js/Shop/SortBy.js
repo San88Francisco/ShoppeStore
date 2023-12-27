@@ -52,7 +52,7 @@ if (window.location.pathname.includes('/shop')) {
       function sortExpensiveCheapest(btnSort) {
          // Створення масиву з елементів .shop-latest__block та їх цін
          const blocksArray = [...document.querySelectorAll('.shop-latest__block')];
-         console.log('✌️blocksArray --->', blocksArray);
+         console.log(" blocksArray:", blocksArray)
          const pricesArray = Array.from(shopLatestPrice).map((elem) => {
             const sortT = elem.textContent;
             return parseFloat(sortT.replace(/\$/g, ''));
@@ -103,6 +103,7 @@ if (window.location.pathname.includes('/shop')) {
       function sortShopBy(btn, className) {
          btn.addEventListener('click', () => {
             const hideElements = document.querySelectorAll('#hide');
+            console.log("hideElements:", hideElements)
 
             hideElements.forEach((hideElement) => {
                const categoryName = hideElement.querySelectorAll(`.${className}`);
