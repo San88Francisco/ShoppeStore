@@ -120,10 +120,12 @@ if (window.location.pathname.includes('/shop')) {
       // ====Search====
       document.querySelector('#search-input').oninput = function () {
         let val = this.value.trim().toLowerCase();
-        let lettersItems = document.querySelectorAll('.shop-latest__name a');
+console.log('✌️val --->', val);
+           let lettersItems = document.querySelectorAll('.shop-latest__name a');
 
         lettersItems.forEach(function (e) {
           const shopLatestBlock2 = e.closest('.shop-latest__block');
+console.log('✌️shopLatestBlock2 --->', shopLatestBlock2);
 
           if (val == '') {
             shopLatestBlock2.style.display = 'block';
