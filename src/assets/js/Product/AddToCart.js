@@ -50,19 +50,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Перенос на сторінку Продукту
 
-  const blocksArr = Array.from(
-    document.querySelectorAll('.shop-latest__block')
-  );
+  const blocksArr = [];
 
-  // Створюємо наші елементи які перенесуться на сторінку product
-  blocksArr.forEach((el) => {
-    let img = el.querySelector('.shop-latest__img img');
-    let productName = el.querySelector('.shop-latest__name a');
-    let productPrice = el.querySelector('.shop-latest__price a');
-    let heart = el.querySelector('.shop-latest__heart');
-    let discount = el.querySelector('.shop-latest__price').outerHTML;
-    let discountLink = el.querySelector('.shop-latest__price .discount');
-    let productVariant = el.querySelector('.productVariant');
+    blocksArr.forEach((el) => {
+    let leart = el.querySelector('.shop-latest__img img');
+    let leart = el.querySelector('.shop-latest__name a');
+    let leart = el.querySelector('.shop-latest__price a');
+    let leart = el.querySelector('.shop-latest__heart');
+    let leart = el.querySelector('.shop-latest__price').outerHTML;
+    let leart = el.querySelector('.shop-latest__price .discount');
+    let leart = el.querySelector('.productVariant');
 
     // Додано прослуховувач подій до зображення
     img.addEventListener('click', function (e) {
@@ -114,6 +111,72 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
+
+  
+  // const blocksArr = Array.from(
+  //   document.querySelectorAll('.shop-latest__block')
+  // );
+
+  // Створюємо наші елементи які перенесуться на сторінку product
+  // blocksArr.forEach((el) => {
+  //   let img = el.querySelector('.shop-latest__img img');
+  //   let productName = el.querySelector('.shop-latest__name a');
+  //   let productPrice = el.querySelector('.shop-latest__price a');
+  //   let heart = el.querySelector('.shop-latest__heart');
+  //   let discount = el.querySelector('.shop-latest__price').outerHTML;
+  //   let discountLink = el.querySelector('.shop-latest__price .discount');
+  //   let productVariant = el.querySelector('.productVariant');
+
+  //   // Додано прослуховувач подій до зображення
+  //   img.addEventListener('click', function (e) {
+  //     updateLocalStorageAndLinks(
+  //       img,
+  //       productName,
+  //       productPrice,
+  //       heart,
+  //       discount,
+  //       productVariant
+  //     );
+  //   });
+
+  //   // Додано прослуховувач подій до назви
+  //   productName.addEventListener('click', function (e) {
+  //     updateLocalStorageAndLinks(
+  //       img,
+  //       productName,
+  //       productPrice,
+  //       heart,
+  //       discount,
+  //       productVariant
+  //     );
+  //   });
+
+  //   // Додано прослуховувач подій до ціни
+  //   productPrice.addEventListener('click', function (e) {
+  //     updateLocalStorageAndLinks(
+  //       img,
+  //       productName,
+  //       productPrice,
+  //       heart,
+  //       discount,
+  //       productVariant
+  //     );
+  //   });
+    
+  //   // Перевірка чи є знижка
+  //   if (discountLink) {
+  //     discountLink.addEventListener('click', function (e) {
+  //       updateLocalStorageAndLinks(
+  //         img,
+  //         productName,
+  //         productPrice,
+  //         heart,
+  //         discount,
+  //         productVariant
+  //       );
+  //     });
+  //   }
+  // });
 
   //local storage
   function updateLocalStorageAndLinks(
