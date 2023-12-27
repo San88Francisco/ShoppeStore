@@ -67,7 +67,7 @@
       </div>
    </article>
 
-   
+
    <article class="b">
       <div class="product__info">
          <div class="info__tab-pages">
@@ -108,7 +108,8 @@
          <div id="product__page3" class="product__page3 product__page">
             <div class="reviews__block">
                <div class="reviews">
-                  <h3 class="amount-reviews-title"><span class="amount-reviews">2</span> Reviews for <span class="name-reviews">lira earings</span></h3>
+                  <h3 class="amount-reviews-title"><span class="amount-reviews">2</span> Reviews for <span
+                        class="name-reviews">lira earings</span></h3>
                   <div class="review__block review__block_item1">
                      <h3>Scarlet withch <span class="review__date">6 May, 2020</span></h3>
                      <div class="stars__amount">
@@ -141,9 +142,15 @@
                         <input name="UserMail" id="ReviewUserMail" type="email" placeholder="Enter your Email*"
                            required>
                         <div class="checkbox-to-save">
-                           <label><input type="checkbox" id="saveUserData"><span class="fake-checkbox"></span><span
-                                 class="fake-checkbox__lable">Save my name, email, and website in this browser for the
-                                 next time I comment</span></label>
+                           <input autocomplete="off" type="checkbox" name="myCheckbox" class="checkbox__input"
+                              id="myCheckbox">
+                           <label for="myCheckbox">
+                              <span></span>
+                              Save my name, email, and website in this browser for the
+                              next time I comment
+                              <ins><i>Save my name, email, and website in this browser for the
+                                    next time I comment</i></ins>
+                           </label>
                         </div>
                      </div>
                      <div class="add-rating">
@@ -248,6 +255,6 @@
 
 <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 <script>
-  
+
 </script>
 </section>

@@ -1,10 +1,14 @@
-// Вітаю Андрій тут твоє смісце роботи
 
 .contact {
-padding-top: 125px;
+   @media (max-width: 700.98px){
+      padding-top: 135px; 
+   }
 		&__container {
          max-width: 908px;
 margin: 0 auto;
+@media (max-width: 852.98px){
+     max-width: 500px;
+}
 		}
 
 		&__block-header {
@@ -12,11 +16,22 @@ margin: 0 auto;
          &:not(:last-child) {
             margin-bottom: 108px;
          }
+         @media (max-width: 499.98px){
+              text-align: left;
+              &:not(:last-child) {
+               margin-bottom: 62px;
+            }
+         }
 		}
 
 		&__title {
+         font-size: 33px;
+         line-height: 130.30303%; /* 43/33 */
          &:not(:last-child) {
             margin-bottom: 35px;
+         }
+         @media (max-width: 499.98px){
+            font-size: 20px;
          }
 		}
 
@@ -39,7 +54,7 @@ margin: 0 auto;
 		&__button {
          background-color: #000000;
          border: 1px solid #000000;
-         width: 500px;
+         width: 100%;
          height: 53px;
          border-radius: 4px;
          display: flex;
@@ -48,6 +63,7 @@ margin: 0 auto;
          color: #FFFFFF;
          margin: 0 auto;
          transition: all 0.3s;
+         overflow: hidden;
          &:hover {
          background-color: $white-color;
          color: $black-color;
@@ -55,11 +71,45 @@ margin: 0 auto;
          }
 		}
       &__input {
+         &::placeholder {
+            font-family: DM Sans;
+            font-size: 16px;
+            color: #707070;
+            font-weight: 400;
+         //Tablet
+          @media (max-width: 852.98px){
+                    font-size: 14px;
+            }
+        //Mobile small
+         @media (max-width: 467.98px){
+                   font-size: 12px;
+         }  
+         }
+         font-family: DM Sans;
+         font-size: 16px;
+         color: #707070;
+         font-weight: 400;
          &:not(:last-child) {
             margin-bottom: 96px;
          }
          border-bottom: 1px solid #D8D8D8;
          padding: 0 0 44px 0;
+            //Mobile
+            @media (max-width: 852.98px){
+               padding: 0 0 65px 0;
+               width: 100%;
+               margin: 0 auto;
+               font-size: 14px;
+               &:not(:last-child) {
+                  margin-bottom: 40px;
+               }
+          }
+          @media (max-width: 467.98px){
+            font-size: 12px;
+            &:not(:last-child) {
+               margin-bottom: 24px;
+            }
+       }
       }
       .form {
 
@@ -70,20 +120,40 @@ margin: 0 auto;
             &:not(:last-child) {
                margin-bottom: 126px;
             }
+             //Tablet
+          @media (max-width: 852.98px){
+            gap: 47px;
+            &:not(:last-child) {
+               margin-bottom: 100px;
+            }
+       }
+          //Mobile
+          @media (max-width: 700.98px){
+            &:not(:last-child) {
+               margin-bottom: 47px;
+            }
+       }
          }
          
    }
    .columns-form {
-
 		&__column {
          display: flex;
          justify-content: space-between;
-         gap: 20px;
+         column-gap: 29px;
          flex-wrap: wrap;
          position: relative;
+          //Tablet
+ @media (max-width: 852.98px){
+   justify-content: center;
+   row-gap: 47px;
+   }
 		}
       &__body {
          position: relative;
+         @media (max-width: 852.98px){
+         width: 100%;
+         }
       }
       
          &__button {
@@ -91,7 +161,7 @@ margin: 0 auto;
             width: 15px;
             height: 15px;
             right: 3px;
-            bottom: 15px;
+            bottom: 18px;
             display: none;
             & i {
                color: $gray-color;
@@ -100,6 +170,17 @@ margin: 0 auto;
                   color: $dark-gray-color;
                }
             }
+                //Tablet
+                @media (max-width: 700.98px){
+                  font-size: 14px;
+                   bottom: 12px;
+
+              }
+             //Mobile small
+             @media (max-width: 467.98px){
+               font-size: 12px;
+               bottom: 7px;
+           } 
             }
            &__button-email {
             position: absolute;
@@ -107,12 +188,58 @@ margin: 0 auto;
             height: 15px;
             right: 3px;
             top: 15px;
+              //Tablet
+              @media (max-width: 700.98px){
+               font-size: 14px;
+                top: 12px;
+
+           }
+          //Mobile small
+          @media (max-width: 467.98px){
+            font-size: 12px;
+            top: 9px;
+        } 
            }
          
 		&__input {
-         width: 396px;
          border-bottom: 1px solid #D8D8D8;
          padding: 12px 0;
+         font-size: 16px;
+         line-height: 168.75%;
+         &::placeholder {
+            font-family: DM Sans;
+            font-size: 16px;
+            color: #707070;
+            font-weight: 400;
+            line-height: 168.75%;
+              //Tablet
+         @media (max-width: 852.98px){
+            font-size: 14px;
+            }
+                 //Mobile small
+       @media (max-width: 467.98px){
+         font-size: 12px;
+     }  
+         }
+         //Tablet
+         @media (min-width: 852.98px){
+         width: 396px;
+         }
+         //Tablet
+         @media (max-width: 852.98px){
+            width: 100%;
+            font-size: 14px;
+            }
+            //Mobile
+            @media (max-width: 700.98px){
+               padding: 8px 0;
+                 font-size: 14px; 
+            }
+            //Mobile small
+            @media (max-width: 467.98px){
+               padding: 5px 0;
+                 font-size: 12px; 
+            }  
 		}
 
 		.custom-select {
@@ -124,22 +251,39 @@ margin: 0 auto;
          border-bottom: 1px solid #D8D8D8;
          font-family: DM Sans;
          font-size: 16px;
-         color: rgb(112, 112, 112);
+         color: #707070;
          font-weight: 400;
          line-height: 168.75%;
+        
+          //Tablet
+          @media (max-width: 852.98px){
+           max-width: 500px;
+           margin: 0 auto;
+       }
+       
        }
        
        .select-header {
-         padding: 10px;
+         padding: 10px 0;
          cursor: pointer;
+         line-height: 168.75%;
          position: relative;
          & img {
             position: absolute;
             width: 10px;
             height: 5.66px;
             right: 0;
-            bottom: 15px;
+         bottom: 19px;
+            
          }
+              //Tablet
+              @media (max-width: 852.98px){
+               font-size: 14px;
+           }
+          //Mobile small
+          @media (max-width: 467.98px){
+            font-size: 12px;
+        }  
        }
        
        .select-options {
