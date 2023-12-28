@@ -15,9 +15,13 @@
 //       redirectTo404();
 //    }
 
+    // const redirectTo404 = () => {
+    //     window.location.href = PAGE_NOT_FOUND;
+    // }
+// });
+
+
 //    function redirectTo404() {
 //       window.location.href = PAGE_NOT_FOUND;
 //    }
-// });
-
 
