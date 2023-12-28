@@ -53,27 +53,29 @@ document.addEventListener('DOMContentLoaded', () => {
                   document.querySelector(`.${lastCheckedPage.classList[0]}__content`).style.display = 'none'
                   lastCheckedPage.classList.remove('act_page')
 
-                  //! search
-                  if(document.title.toLowerCase().replace(/\s/g, "") === 'blog'){
-                     if(document.querySelector('#search-input') !== null){
-                        document.querySelector('#search-input').oninput = function () {
-                           let val = this.value.trim().toLowerCase();
-                           let lettersItems = document.querySelectorAll('.blog__card__name');
-                        
-                           lettersItems.forEach(function (e) {
-                             const shopLatestBlock2 = e.closest('.content__cards');
-                           
-                             if (val == '') {
-                               shopLatestBlock2.style.display = 'block';
-                             } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
-                               shopLatestBlock2.style.display = 'block';
-                             } else {
-                               shopLatestBlock2.style.display = 'none';
-                             }
-                           });
-                        };
-                     }
-                  }
+   //! search
+   if(document.title.toLowerCase().replace(/\s/g, "") === 'blog'){
+      if(document.querySelector('#search-input') !== null){
+         document.querySelector('#search-input').oninput = function () {
+            let val = this.value.trim().toLowerCase();
+            let lettersItems = document.querySelectorAll('.blog__card__name');
+      
+            lettersItems.forEach(function (e) {
+              const shopLatestBlock2 = e.closest('.content__cards');
+      
+              if (val == '') {
+                shopLatestBlock2.style.display = 'block';
+              } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
+                shopLatestBlock2.style.display = 'block';
+              } else {
+                shopLatestBlock2.style.display = 'none';
+              }
+            });
+         };
+      }
+   }
+
+
                   // знаходимо першу сторінку і кнопку, якщо наступної немає
                   const firstPage = document.querySelector('.page__block1__content')
                   const firstButton = document.querySelector('.page__block1')
@@ -85,15 +87,5 @@ document.addEventListener('DOMContentLoaded', () => {
             })
          })
       }
-      const categoriesFolder = document.querySelector('.mobile-blog_categories')
-      const categoriesBtn = document.querySelector('.mobile-categories_button')
-      categoriesBtn.addEventListener('click', ()=> {
-         if(categoriesFolder.style.display === 'none'){
-            categoriesFolder.style.display = 'block'
-         }else{
-            categoriesFolder.style.display = 'none'
-         }
-      })
    }
 })
-
