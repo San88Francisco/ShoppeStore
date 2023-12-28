@@ -153,5 +153,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Запускаємо функцію з купонами
     applyCoupon();
     //
+
+    const btn__checkout = document.querySelector('.btn__checkout-cart');
+    btn__checkout.addEventListener('click', () => {
+      console.log('Good');
+      window.location.href = 'http://localhost:3000/checkout-pages.html';
+    })
   }
 });

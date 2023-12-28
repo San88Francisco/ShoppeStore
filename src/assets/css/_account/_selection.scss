@@ -317,8 +317,8 @@ padding-bottom: 247px;
       input[type='checkbox']:checked + label > span:before{
         content: "";
         position: absolute;
-        top: .4em;
-        left: .2em;
+        top: .42em;
+        left: .15em;
         border-right: 3px solid transparent;
         border-bottom: 3px solid transparent;
         transform: rotate(45deg);
@@ -374,6 +374,7 @@ padding-bottom: 247px;
       }
       }
    }
+
    .block-tabs--register {
       display: none;
    
@@ -494,6 +495,14 @@ padding-bottom: 247px;
       color: #707070;
       transition: color 0.3s;
       display: none;
+      background: none;
+      input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none;
+}
               //Tablet
               @media (max-width: 700.98px){
                top: 11px;

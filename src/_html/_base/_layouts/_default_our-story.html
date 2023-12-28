@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" {% if htmlClass %} class="{{ htmlClass }}" {% endif %}>
 
 <head>
    <meta charset="UTF-8">
@@ -13,11 +13,9 @@
 <body {% if bodyClass %}class="{{ bodyClass }}" {% endif %}>
    {% include "_html/_base/_includes/_Header.html" %}
    <div class="page-wrapper" id="pageWrapper">
-      {% include "_html/_base/_includes/_Help.html" %}
+      {% include "_html/_base/_includes/_OurStory.html" %}
    </div>
    {% include "_html/_base/_includes/_Footer.html" %}
-
-
    <script src="assets/js/app.min.js"></script>
 </body>
 

@@ -357,8 +357,16 @@
         .shipping__content__folder {
           margin-bottom: 40px;
           h5 {
+            position: relative;
             display: inline-block;
             cursor: pointer;
+            &::after{
+              content: 'ㅤㅤㅤㅤㅤㅤㅤ';
+              font-size: 14px;
+              position: absolute;
+              top: 0px;
+              right: -100px;
+            }
           }
           label {
             cursor: pointer;
