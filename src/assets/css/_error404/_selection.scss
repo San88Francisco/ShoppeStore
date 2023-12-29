@@ -1,3 +1,101 @@
 .error{
-   background-color: black;
+   margin-top: 50px;
+   div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   h1 {
+      margin-bottom: 24px;
+   }
+   p {
+      max-width: 436px;
+      color: #707070;
+      text-align: center;
+
+      font-family: DM Sans;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+   }
+   a {
+      margin-top: 64px;
+      width: 187px;
+      height: 53px;
+      border-radius: 4px;
+      border: 1px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+   }   
+   }
+  
+}
+@media screen and (max-width: 900px) {
+   .error404 {
+      .error {
+         padding-bottom: 150px;
+         div {
+            h1 {
+               margin-bottom: 30px;
+               font-size: 25px;
+            }
+            p {
+               margin: 10px;
+               font-size: 18px;
+               line-height: 0px;
+            }
+            a {
+            margin-top: 50px;
+            width: 150px;
+            height: 50px;
+            font-size: 14px;
+         }   
+         }
+      }
+   footer {
+      margin: 0;
+   }
+}
+   }
+
+@media screen and (max-width: 700px) {
+   .error404 {
+      .header {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         margin-top: 15px;
+      }
+      .header__link {
+         display: none;
+      }
+      .error {
+         margin-top: 100px;
+         div {
+            h1 {
+               margin: 0;
+               font-size: 22px;
+            }
+            p {
+               margin: 10px 0 24px 0;
+               font-size: 16px;
+               line-height: 10px;
+            }
+            a {
+            margin-top: 0;
+            width: 115px;
+            height: 32px;
+            font-size: 12px;
+         }   
+         }
+      }
+      footer {
+         // visibility: hidden;
+         display: none;
+      }
+   }
 }
