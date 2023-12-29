@@ -1,19 +1,22 @@
-const replyInput = document.querySelectorAll('.replyInput');
-replyInput.forEach(item => {
-    item.addEventListener('input', () => {
-        const inputValue = item.value.trim(); 
-        if (inputValue.length > 0) {
-            const thisDelText = item.parentElement.children[1].children[0]
-            thisDelText.style.opacity = '1';
-            thisDelText.addEventListener('click', ()=>{
-               item.value = ''
+const clearAllInput = () => {
+   const replyInput = document.querySelectorAll('.replyInput');
+   replyInput.forEach(item => {
+       item.addEventListener('input', () => {
+           const inputValue = item.value.trim(); 
+           if (inputValue.length > 0) {
+               const thisDelText = item.parentElement.children[1].children[0]
+               thisDelText.style.opacity = '1';
+               thisDelText.addEventListener('click', ()=>{
+                  item.value = ''
+                  item.parentElement.children[1].children[0].style.opacity = '0';
+               })
+            } else {
                item.parentElement.children[1].children[0].style.opacity = '0';
-            })
-         } else {
-            item.parentElement.children[1].children[0].style.opacity = '0';
-        }
-    });
-});
+           }
+       });
+   });
+}
+
 
 const commentsStatic = [
    {
@@ -39,10 +42,8 @@ const commentsStatic = [
 const getComments = () => {
    const localComment = localStorage.getItem('FashionComent')
    if(localComment !== null){
-      console.log(1);
       return JSON.parse(localComment)
    }else {
-      console.log(2);
       return commentsStatic
    }
 }
@@ -105,13 +106,11 @@ const addComment = (replyId) =>{
       if(userContent.length < 1) return alert('Enter your Comment*')
 
       const replyCheckbox = document.querySelector('.replyCheckbox')
-      console.log(replyCheckbox.checked === true);
       if(replyCheckbox.checked === true){
          localStorage.setItem('replyAutoComplite', JSON.stringify({userName: userName, userMail: userMail,}))
       }
-      console.log(replyIdNow);
+
       if(replyIdNow !== undefined){
-         console.log(comentsNow[+replyIdNow -1]);
          comentsNow[+replyIdNow -1].usersAnswers.push({
             isUser: true,
             userName: userName,
@@ -204,8 +203,13 @@ const drawComments = (comments) => {
 }
 
 
-drawComments(getComments())
-autoComplite()
-replyBtnClick()
-addComment()
 
+document.addEventListener('DOMContentLoaded', () => {
+   if (window.location.pathname.includes('/blog-addopt')) {
+      clearAllInput()
+      drawComments(getComments())
+      autoComplite()
+      replyBtnClick()
+      addComment()
+   }
+})

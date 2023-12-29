@@ -92,6 +92,11 @@
             }
             img{
                width: 100%;
+               &:hover{
+                  transition: .2s all linear;
+                  filter:brightness(104%)  grayscale(15%);
+
+               }
             }
             .card__date{
                margin-top: 20px;
