@@ -70,6 +70,67 @@
             </div>
          </div>
          <hr class="header__underline">
+         <div class="leave-reply">
+            <h5>Leave a reply</h5>
+            <p>Your email address will not be published. Required fields are marked *</p>
+            <form name="FormLeaveReply" action="#" class="block-tabs__form form">
+               <div class="form__body">
+                  <input required name="userName" tabindex="1" type="text" class="leave-reply__input replyInput" placeholder="Enter your name*">
+                  <span class="delText"><img src="../../../assets/img/BlogAddopt_img/svg/delText.svg" alt="img"></span>
+               </div>
+               <div class="form__body">
+                  <input required name="userEmail" tabindex="2" class="leave-reply__input replyInput" placeholder="Enter your Email*">
+                  <span class="delText"><img src="../../../assets/img/BlogAddopt_img/svg/delText.svg" alt="img"></span>
+               </div>
+               <div class="form__body">
+                  <input name="userWebsite" tabindex="3" type="text" class="leave-reply__input replyInput" placeholder="Enter your Website">
+                  <span class="delText"><img src="../../../assets/img/BlogAddopt_img/svg/delText.svg" alt="img"></span>
+               </div>
+               <div class="form__checkbox checkbox">
+                  <input autocomplete="off" type="checkbox" name="myCheckbox" class="checkbox__input replyCheckbox"
+                     id="myCheckbox">
+                  <label for="myCheckbox">
+                     <span></span>
+                     Save my name, email, and website in this browser for the next time I comment
+                     <ins><i>Save my name, email, and website in this browser for the next time I comment</i></ins>
+                  </label>
+               </div>
+               <div class="form__body">
+                  <textarea required name="userContent" tabindex="4" type="text" class="leave-reply__input replyInput" placeholder="Your Comment*" cols="30" rows="5"></textarea>
+                  <span class="delText"><img src="../../../assets/img/BlogAddopt_img/svg/delText.svg" alt="img"></span>
+               </div>
+            </form>
+            <button type="submit" class="btn__black" id="addReply"><span>SAVE CHANGES</span></button>
+         </div>
+         <div class="blog-reply">
+            <h2>Comments(<span class="nuberOfComents">3</span>)</h2>
+            <div class="coments-block"></div>
+
+            <template id="mainComments">
+               <div class="mainComments">
+                  <img class="userImg" src="./assets/img/BlogAddopt_img/userOne.png" alt="img">
+                  <div class="userInfo">
+                     <h3 class="userName"></h3><span class="userDate"></span>
+                     <span class="replyToComment"><img src="./assets/img/BlogAddopt_img/svg/Vector.svg" alt="img"> Reply</span>
+                  </div>
+                  <p class="userContent"></p>
+                  <div class="usersAnswers"></div>
+                  <hr class="header__underline">
+               </div>
+            </template>
+
+            <template id="addoptComments">
+               <div class="userAnswer">
+                  <img class="userImg" src="./assets/img/BlogAddopt_img/userTwo.png" alt="img">
+                  <div class="userInfo">
+                     <h3 class="userName"></h3><span class="userDate"></span>
+                     <span class="replyToComment"><img src="./assets/img/BlogAddopt_img/svg/Vector.svg" alt="img"> Reply</span>
+                  </div>
+                  <p class="userContent"></p>
+               </div>
+            </template>
+
+         </div>
       </div>
    </div>
 </section>
