@@ -14,6 +14,7 @@
     display: flex;
     gap: 80px;
 
+    // Block left
     .checkout__block-name {
       border: 1px solid red;
       display: flex;
@@ -40,7 +41,7 @@
 
       }
 
-      .checkout__checkbox-create {
+      .checkout__checkbox-create { 
 
         div {
           max-width: fit-content;
@@ -154,15 +155,37 @@
     }
 
 
-
-
-
-
+    // Block right
     .checkout__block-order {
       background-color: #EFEFEF;
       border: 1px solid yellow;
       width: 50%;
       padding: 37px 59px;
+      @include sub_title_text;
+
+      .block__order {
+
+        &:first-child > div {
+          border-bottom: 1px solid $gray-color;
+          padding-bottom: 10px;
+        }
+
+        div {
+          margin-bottom: 25px;
+        }
+
+        .block__order-item {
+          color: $placeholder-color;
+
+          &:last-child > div > span {
+            border: 1px solid red;
+            margin-bottom: 0;  // Якщо вам потрібно зняти знизу межі
+          }
+
+        }
+
+
+      }
     }
   }
   
