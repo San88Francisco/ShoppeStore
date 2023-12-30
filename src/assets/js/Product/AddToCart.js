@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const percentage =
-               (((index + 1) / (imageSelectionArray.length - 1)) * 100) - 25;
+               (((index + 1) / (imageSelectionArray.length - 4)) * 100) - 25;
             progressBarLine.style.marginLeft = `${percentage}%`;
          });
       });
