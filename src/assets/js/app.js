@@ -12,6 +12,7 @@ import "./Shop/SortBy";
 
 import "./Product/AddToCart";
 import "./Product/Reviews";
+// import "./Product/Reviews2";
 import "./Product/PopupWindow";
 import "./Product/SliderProductMain";
 import "./Product/SliderProductSecond";
@@ -30,3 +31,4 @@ import "./Blog/Main-blog";
 
 import "./MyAccount/MyAccountMain";
 
+import "./Error/Error404";
