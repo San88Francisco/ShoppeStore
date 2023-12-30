@@ -30,6 +30,16 @@
       align-items: center;
       font-size: 16px;
    }   
+   a:hover {
+      background-color: #000;
+      color: #fff;
+      transition: 0.4s;
+   }
+   a:active {
+      background-color: #000;
+      color: #fff;
+      transition: 0.4s;
+   }
    }
   
 }
