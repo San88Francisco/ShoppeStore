@@ -1,5 +1,11 @@
 // ---HEADER---
 function setupHeader() {
+
+  const userSignIn = localStorage.getItem('userSignIn')
+  if(userSignIn !== null){
+    document.querySelector('.account__href').setAttribute('href','./my-account.html')
+  }
+
   const pageName = document.title.toLowerCase().replace(/\s/g, "");
 
   // Виходимо, якщо сторінка "home"
@@ -11,6 +17,8 @@ function setupHeader() {
   const headerAElement = document.querySelector(`.header_link_${pageName}`);
   headerAElement !== null ? headerAElement.classList.add("act") : 0
   pageName === 'account' &&  headerAElement !== null ? headerAElement.classList.add("act__last") : 0
+  console.log(headerAElement);
+  pageName === 'myaccount' &&  headerAElement !== null ? headerAElement.classList.add("act__last") : 0
 
   pageName !== "home" ? (header__underline.style.display = "block") : 0;
 }
