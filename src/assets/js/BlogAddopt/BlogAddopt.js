@@ -4,14 +4,15 @@ const clearAllInput = () => {
        item.addEventListener('input', () => {
            const inputValue = item.value.trim(); 
            if (inputValue.length > 0) {
-               const thisDelText = item.parentElement.children[1].children[0]
+               const thisDelText = item.parentElement.children[2].children[0]
                thisDelText.style.opacity = '1';
+               item.parentElement.children[1].style.display = 'none'
                thisDelText.addEventListener('click', ()=>{
                   item.value = ''
-                  item.parentElement.children[1].children[0].style.opacity = '0';
+                  item.parentElement.children[2].children[0].style.opacity = '0';
                })
             } else {
-               item.parentElement.children[1].children[0].style.opacity = '0';
+               item.parentElement.children[2].children[0].style.opacity = '0';
            }
        });
    });
@@ -39,6 +40,23 @@ const commentsStatic = [
    },
 ]
 
+const moveToReplay = () => {
+   const userLink = document.querySelectorAll('.userLink')
+   userLink.forEach(item => {
+      item.addEventListener('click', ()=> {
+         const hrefToUser = item.getAttribute('href')
+         const userElement = document.getElementsByName(`${hrefToUser}`)[0]
+         userElement.scrollIntoView();
+         window.scrollBy(0, -(screen.height / 100 * 40));
+         userElement.parentElement.children[0].style.backgroundColor = 'rgb(216, 216, 216)'
+         setTimeout(function() {
+            userElement.parentElement.children[0].style.background = 'none'
+          }, 1000);
+      })
+   })
+}
+
+
 const getComments = () => {
    const localComment = localStorage.getItem('FashionComent')
    if(localComment !== null){
@@ -49,14 +67,24 @@ const getComments = () => {
 }
 
 const autoComplite = () => {
-   const Date = localStorage.getItem('replyAutoComplite')
-   const ParseDate = Date !== null ? JSON.parse(Date) : null
-
    const userName = document.getElementsByName('userName')[0]
    const userMail = document.getElementsByName('userEmail')[0]
-
-   userName.value = ParseDate.userName
-   userMail.value = ParseDate.userMail
+   const userIsSignIn = localStorage.getItem('userSignIn')
+   const parseSignInDate = userIsSignIn !== null ? userIsSignIn : null
+   if(parseSignInDate !== null){
+      const userData = JSON.parse(localStorage.getItem(parseSignInDate))
+      userName.value = `${userData.nameInput} ${userData.lastNameInput}`
+      userMail.value = userData.emailInput
+      const a = document.querySelectorAll('#userNotSign')
+      a.forEach(item => item.style.display = 'none')
+   }else {
+      const Date = localStorage.getItem('replyAutoComplite')
+      const ParseDate = Date !== null ? JSON.parse(Date) : null
+      if(ParseDate !== null){
+         userName.value = ParseDate.userName
+         userMail.value = ParseDate.userMail
+      }
+   }
 }
 
 let replyIdNow = undefined
@@ -65,10 +93,9 @@ const replyBtnClick = ()=> {
    const replyBtn = document.querySelectorAll('.replyToComment')
    replyBtn.forEach(item => {
       item.addEventListener('click',()=>{
-         console.log(item.style.marginRight !== '20px');
-         selectUser = item.parentElement.children[0].textContent
+         selectUser = item
+         console.log(selectUser.getAttribute('name'));
          if(item.style.marginRight !== '-20px'){
-            console.log('2');
             replyBtn.forEach(item => {
                item.style.marginRight = '0px'
                item.style.fontSize = '13px'
@@ -91,10 +118,10 @@ const addComment = (replyId) =>{
    const submitBtn = document.querySelector('#addReply')
    submitBtn.addEventListener('click', ()=> {
 
-      const userName = document.getElementsByName('userName')[0].value
-      const userMail = document.getElementsByName('userEmail')[0].value
+      const userName = document.getElementsByName('userName')[0]
+      const userMail = document.getElementsByName('userEmail')[0]
       const userWebsite = document.getElementsByName('userWebsite')[0].value
-      const userContent = document.getElementsByName('userContent')[0].value
+      const userContent = document.getElementsByName('userContent')[0]
 
       const d = new Date();
       const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -103,35 +130,42 @@ const addComment = (replyId) =>{
       const year = d.getFullYear();
       const nowDate = day + " " + month + ", " + year
 
-      if(userName.length < 1) return alert('Enter your name*')
-      if(userMail.length < 1) return alert('Enter your Email*')
-      if(userContent.length < 1) return alert('Enter your Comment*')
+      
 
+      if(userName.value.length < 1 || userMail.value.length < 1 || userContent.value.length < 1){
+         if(userName.value.length < 1) userName.parentElement.children[1].style.display = 'block'
+         if(userMail.value.length < 1) userMail.parentElement.children[1].style.display = 'block'
+         if(userContent.value.length < 1) userContent.parentElement.children[1].style.display = 'block'
+         return
+      }
       const replyCheckbox = document.querySelector('.replyCheckbox')
       if(replyCheckbox.checked === true){
          localStorage.setItem('replyAutoComplite', JSON.stringify({userName: userName, userMail: userMail,}))
       }
 
       if(replyIdNow !== undefined){
-         comentsNow[+replyIdNow -1].usersAnswers.unshift({
+         console.log(comentsNow[+replyIdNow -1]);
+         comentsNow[+replyIdNow -1].usersAnswers.push({
             isUser: true,
-            userName: userName,
+            userName: userName.value,
             userDate: nowDate,
-            userContent: `<a class='userLink'>@${selectUser}</a>  ${userContent}`,
+            userContent: `<a class='userLink' href='${selectUser.getAttribute('name')}'>@${selectUser.parentElement.children[0].textContent}</a>  ${userContent.value}`,
          })
       }else {
          comentsNow.unshift({
             isUser: true,
-            userName: userName,
+            userName: userName.value,
             userDate: nowDate,
-            userContent: userContent,
+            userContent: userContent.value,
             usersAnswers:[],
          })
       }
 
       localStorage.setItem('FashionComent',JSON.stringify(comentsNow))
       drawComments(getComments())
+      replyIdNow = undefined
       replyBtnClick()
+      moveToReplay()
    })
 }
 
@@ -148,7 +182,8 @@ const drawComments = (comments) => {
    let nuberOfComents = 0
    for(i = 0; i <= comments.length - 1; i++){
       nuberOfComents++
-      
+      let blockCount = i + 1
+
       const clone = document.importNode(mainTample.content, true);
 
       const userImg = clone.querySelector('.userImg')
@@ -168,7 +203,7 @@ const drawComments = (comments) => {
 
       const replyBtn = clone.querySelector('.replyToComment')
       replyBtn.setAttribute('id', i + 1)
-
+      replyBtn.setAttribute('name', `#${i + 1}`)
       if (comments[i].usersAnswers !== undefined) {
          const usersAnswers = clone.querySelector('.usersAnswers')
 
@@ -190,6 +225,7 @@ const drawComments = (comments) => {
 
             const replyBtn = answerClone.querySelector('.replyToComment')
             replyBtn.setAttribute('id', i + 1)
+            replyBtn.setAttribute('name', `#${blockCount}.${r + 1}`)
 
             usersAnswers.appendChild(answerClone);
          }
@@ -212,6 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
       drawComments(getComments())
       autoComplite()
       replyBtnClick()
+      moveToReplay()
       addComment()
    }
 })

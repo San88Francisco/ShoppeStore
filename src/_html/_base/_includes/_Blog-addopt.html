@@ -1,6 +1,6 @@
 <section class="blog-addopt">
    <aside class="blog-addopt__navbar">
-      <div class="blog__search">
+      <div class="blog__search" name="top2">
          <label for="search-input"></label>
          <div class="input-div">
             <input type="text" placeholder="Search..." id="search-input" />
@@ -72,18 +72,21 @@
          <hr class="header__underline">
          <div class="leave-reply">
             <h5>Leave a reply</h5>
-            <p>Your email address will not be published. Required fields are marked *</p>
+            <p id="userNotSign">Your email address will not be published. Required fields are marked *</p>
             <form name="FormLeaveReply" action="#" class="block-tabs__form form">
-               <div class="form__body">
+               <div class="form__body" id="userNotSign">
                   <input required name="userName" tabindex="1" type="text" class="leave-reply__input replyInput" placeholder="Enter your name*">
+                  <p id="isNotFulling">Enter your name*</p>
                   <span class="delText"><img src="../../../assets/img/BlogAddopt_img/svg/delText.svg" alt="img"></span>
                </div>
-               <div class="form__body">
+               <div class="form__body" id="userNotSign">
                   <input required name="userEmail" tabindex="2" class="leave-reply__input replyInput" placeholder="Enter your Email*">
+                  <p id="isNotFulling">Enter your Email*</p>
                   <span class="delText"><img src="../../../assets/img/BlogAddopt_img/svg/delText.svg" alt="img"></span>
                </div>
-               <div class="form__body">
+               <div class="form__body" id="userNotSign">
                   <input name="userWebsite" tabindex="3" type="text" class="leave-reply__input replyInput" placeholder="Enter your Website">
+                  <p id="isNotFulling"></p>
                   <span class="delText"><img src="../../../assets/img/BlogAddopt_img/svg/delText.svg" alt="img"></span>
                </div>
                <div class="form__checkbox checkbox">
@@ -92,11 +95,11 @@
                   <label for="myCheckbox">
                      <span></span>
                      Save my name, email, and website in this browser for the next time I comment
-                     <ins><i>Save my name, email, and website in this browser for the next time I comment</i></ins>
                   </label>
                </div>
                <div class="form__body">
                   <textarea required name="userContent" tabindex="4" type="text" class="leave-reply__input replyInput" placeholder="Your Comment*" cols="30" rows="5"></textarea>
+                  <p id="isNotFulling">Enter your Comment*</p>
                   <span class="delText"><img src="../../../assets/img/BlogAddopt_img/svg/delText.svg" alt="img"></span>
                </div>
             </form>
