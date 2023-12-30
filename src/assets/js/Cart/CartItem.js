@@ -152,12 +152,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Запускаємо функцію з купонами
     applyCoupon();
-    //
 
+    // Перехід на Checkout Pages
     const btn__checkout = document.querySelector('.btn__checkout-cart');
     btn__checkout.addEventListener('click', () => {
+      checkoutPages();
+    });
+
+    const checkoutPages = () => {
+      const subTotal = document.querySelector('.subtotal__price');
+      const totalPrice = document.querySelector('.total__price');
+      const newTotalPrice = document.querySelector('.new__total-price');
+      const priceShipping = document.querySelector('.price__shipping');
+      const priceCoupon = document.querySelector('.price__discount');
+      let cartAllProduct = JSON.parse(localStorage.getItem('allProductCart'));
+
       console.log('Good');
-      window.location.href = 'http://localhost:3000/checkout-pages.html';
-    })
+      console.log('Sub Total', subTotal.textContent);
+      console.log('Total', totalPrice.textContent);
+      console.log('New Total', newTotalPrice.textContent);
+      console.log('Shipping', priceShipping.textContent);
+      console.log('Coupon', priceCoupon.textContent);
+      console.log('ProductCart', cartAllProduct);
+      // window.location.href = 'http://localhost:3000/checkout-pages.html';
+    };
   }
 });

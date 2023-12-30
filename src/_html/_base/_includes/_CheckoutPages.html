@@ -28,7 +28,6 @@
                 </div>
                 <div>
                     <input type="checkbox" name="" class="checkboxAddress">
-                    <!-- <label for="">Ship to a different address?</label> -->
                     <label for="myCheckbox">
                         <span></span>
                         Ship to a different address?
@@ -75,22 +74,26 @@
                 </div>
             </div>
 
-            <div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">Direct bank transfer</label>
+            <div class="checkout__checkbox-payment">
+                
+                <div class="radio__block">
+                    <input type="radio" class="input__payment" id="radioBankTransfer" name="payment" value="Direct bank transfer" />
+                    <label class="radio__label" for="radioBankTransfer">Direct bank transfer</label>
                 </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">Ship to a different address?</label>
+                
+                <div class="radio__block">
+                    <input type="radio" class="input__payment" id="radioCheck" name="payment" value="Check payments" />
+                    <label class="radio__label" for="radioCheck">Check payments</label>
                 </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">Cash on delivery</label>
+            
+                <div class="radio__block">
+                    <input type="radio" class="input__payment" id="radioDelivery" name="payment" value="Cash on delivery" />
+                    <label class="radio__label" for="radioDelivery">Cash on delivery</label>
                 </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">PayPal </label>
+
+                <div class="radio__block">
+                    <input type="radio" class="input__payment" id="radioPaypal" name="payment" value="PayPal" />
+                    <label class="radio__label" for="radioPaypal">PayPal</label>
                 </div>
             </div>
         </div>

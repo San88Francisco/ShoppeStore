@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
     btnIncrease.addEventListener('click', function () {
       let numberOfShoppingsValue = +numberOfShoppings.textContent;
       numberOfShoppings.textContent = `${++numberOfShoppingsValue}`;
+      if (numberOfShoppingsValue === 100) {
+        return numberOfShoppings.textContent = `${--numberOfShoppingsValue}`;
+      }
     });
 
     btnDecrease.addEventListener('click', function () {
