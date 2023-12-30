@@ -59,14 +59,16 @@ const autoComplite = () => {
    userMail.value = ParseDate.userMail
 }
 
-let replyIdNow
+let replyIdNow = undefined
 let selectUser
 const replyBtnClick = ()=> {
    const replyBtn = document.querySelectorAll('.replyToComment')
    replyBtn.forEach(item => {
       item.addEventListener('click',()=>{
+         console.log(item.style.marginRight !== '20px');
          selectUser = item.parentElement.children[0].textContent
-         if(item.style.marginRight === '0px'){
+         if(item.style.marginRight !== '-20px'){
+            console.log('2');
             replyBtn.forEach(item => {
                item.style.marginRight = '0px'
                item.style.fontSize = '13px'
@@ -111,14 +113,14 @@ const addComment = (replyId) =>{
       }
 
       if(replyIdNow !== undefined){
-         comentsNow[+replyIdNow -1].usersAnswers.push({
+         comentsNow[+replyIdNow -1].usersAnswers.unshift({
             isUser: true,
             userName: userName,
             userDate: nowDate,
             userContent: `<a class='userLink'>@${selectUser}</a>  ${userContent}`,
          })
       }else {
-         comentsNow.push({
+         comentsNow.unshift({
             isUser: true,
             userName: userName,
             userDate: nowDate,
