@@ -1,5 +1,5 @@
 .my-account {
-   width: 1240px;
+   max-width: 1240px;
    margin: 0 auto;
    padding-bottom: 200px;
    font-family: DM Sans;
@@ -156,6 +156,47 @@
                }
             }
          }
+      }
+      .mobile-account__order{
+         display: none;
+         table{
+           margin: 39px 0 0 0;
+            
+            tbody{
+              
+               tr{
+                  border: none;
+                  
+                  td{
+                     padding: 12px 0;
+                     font-family: DM Sans;
+                     font-size: 16px;
+                     font-style: normal;
+                     font-weight: 400;
+                     line-height: 20px;
+                     color: #000;
+                     &:last-child{
+                        color: #707070;
+                        text-align: right;
+                     }
+                     .do-sth{
+                        font-weight: 400;
+                     }
+                  }
+
+                 &:last-child{
+                  border-bottom: 1px solid $gray-color;
+                  td{
+                    padding: 12px 0 39px 0;
+                  }
+                 
+                 
+                 }
+               }
+            }
+           
+         }
+
       }
 
       .do-sth {
@@ -382,6 +423,201 @@
             margin-bottom: 40px;
             font-size: 12px;
             color: $placeholder-color;
+         }
+      }
+   }
+}
+
+@media (max-width: 910px){
+   .my-account{
+      .myAccount__navigation{
+         ul{
+            li{
+               a{
+                  font-size: 16px;
+                  &::after{
+                     height: 28px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 780px){
+      .my-account{
+         .myAccount__tabPage{
+            .targetOf-addBill{
+               .my-address{
+                  grid-template-columns: none;
+                  grid-gap: 5px; 
+               }
+            }
+            .account__order{
+               display: none;
+            }
+            .mobile-account__order{
+               display: block;
+            }
+         }
+      }
+}
+
+@media (max-width: 650px){
+   .my-account{
+      padding: 0 0 26px 0;
+      
+      .targetOf-dashboard{
+         font-size: 20px;
+         padding: 0 0 24px 0;
+      }
+      .myAccount__navigation{
+         ul{
+            li{
+               a{
+                  font-size: 16px;
+               }
+            }
+         }
+      }
+      .myAccount__tabPage{
+         .targetOf-dashboard{
+            p, span{
+               font-size: 12px;
+            }
+            
+         }
+         .targetOf-orders{
+            .alert-not-ofer{
+               padding: 10px 0 10px 16px;
+               flex-direction: column;
+               gap: 8px;
+               p{
+                  font-size: 12px;
+                  a{
+                     font-weight: 400;    
+                  }
+               }
+            }
+         }
+         .targetOf-orders, .targetOf-downloads {
+            .alert-not-address{
+               padding: 10px 0 10px 16px;
+               flex-direction: column;
+               gap: 8px;
+               p{
+                  font-size: 12px;
+                  a{
+                     font-weight: 400;    
+                  }
+               }
+            }
+            .mobile-account__order{
+               table{
+                  tbody{
+                     tr{
+                        td{
+                           font-size: 12px;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+
+         .targetOf-addBill{
+            p{
+               font-size: 12px;
+            }
+            .my-address{
+               
+               .add-my-bill, .add-my-adress{
+                  h3{
+                     font-size: 16px;
+                     padding-bottom: 18px;
+                  }
+                  .do-sth{
+                     font-size: 16px;
+                     padding-bottom: 16px;
+                  }
+                  .you-not-have-address{
+                     font-size: 12px;
+                     color: #707070;
+                  }
+
+                  .bill-registr{
+                    margin: 0 0 52px 0;
+                     form{
+                        input{
+                           padding: 5px 0;
+                        }
+                        input::placeholder{
+                           font-size: 12px; 
+                        }
+                       
+                     }
+                     button{
+                        width: 100%;
+                        padding: 6px 0;
+                        display: flex;
+                        justify-content: center;
+                        span{
+                           font-size: 12px;
+                           font-style: normal;
+                           font-weight: 400;
+                           line-height: 20px;
+                        }
+                       
+                     }
+                  }
+
+                  .bill-user-name{
+                     display: block;
+                     .bill-user-name_del{
+                        display: none;
+                     }      
+                  }
+                  
+                  
+               }
+            }
+            
+         }
+
+      }
+      .targetOf-accountDetails{
+         h1{
+            display: none;
+         }
+         form{
+            input::placeholder{
+               font-size: 12px; 
+            }
+            h3{
+               font-size: 16px;
+            }
+         }
+        
+      }
+   }
+}
+
+@media(max-width: 500px){
+   .my-account{
+      .targetOf-accountDetails{
+         button{
+            display: flex;
+            justify-content: center;
+            padding: 6px 0;
+            width: 100%;
+            span{
+               font-family: DM Sans;
+               font-size: 12px;
+               font-style: normal;
+               font-weight: 400;
+               line-height: 20px;
+            }
          }
       }
    }
