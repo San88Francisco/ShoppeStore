@@ -526,9 +526,10 @@
             }
          }
 
-         .targetOf-addBill{
+         .targetOf-addBill, .targetOf-addresses{
             p{
                font-size: 12px;
+               padding: 0 0 23px 0;
             }
             .my-address{
                
@@ -547,21 +548,33 @@
                   }
 
                   .bill-registr{
-                    margin: 0 0 52px 0;
+                    margin: 0 0 48px 0;
                      form{
                         input{
                            padding: 5px 0;
+                           margin-bottom: 18px;
+                           &:last-child{
+                              margin-bottom: 39px;
+                           }
                         }
                         input::placeholder{
                            font-size: 12px; 
                         }
                        
+                        .selectYourItem{
+                           padding-bottom: 2px;
+                           margin-bottom: 23px;
+                           label{
+                              margin: -3px 0 0px 0;
+                           }
+                        }
                      }
                      button{
                         width: 100%;
                         padding: 6px 0;
                         display: flex;
                         justify-content: center;
+                       
                         span{
                            font-size: 12px;
                            font-style: normal;
@@ -591,6 +604,13 @@
             display: none;
          }
          form{
+            input{
+               padding: 5px 0;
+               margin-bottom: 48px;
+               &:last-child{
+                  margin-bottom: 39px;
+               }
+            }
             input::placeholder{
                font-size: 12px; 
             }
