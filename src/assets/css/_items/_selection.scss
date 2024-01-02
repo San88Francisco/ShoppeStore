@@ -230,18 +230,20 @@
                         }
                      }
       
-                     .shop-latest_hover_container p {
-                        font-size: 12px!important;
+                     .shop-latest_hover_container{
+                        p {
+                        font-size: 12px;
+                     } 
                      }
       
-                     .shop-latest__name {
-                        margin: 6px 0 4px 0;
-      
-                        font-size: 12px;
+                     .shop-latest__name{
+                        margin: 0;     
+                        font-size: 14px;
                      }
       
                      .shop-latest__price {
-                        font-size: 12px;
+                        font-size: 14px;
+                        line-height: 18px;
                      }
                   }
                }
@@ -259,10 +261,17 @@
                      }
                         .shop-latest-blocks {
                            .shop-latest__block {
-                              .shop-latest__img {
-                                 .shop-latest_hover_container p {
+                              .shop-latest__name {
                                     font-size: 10px;
                                  }
+                                 .shop-latest__price {
+                                    font-size: 12px;
+                                 }
+                              .shop-latest__img {
+                                 .shop-latest_hover_container p {
+                                    font-size: 9px!important;
+                                 }
+
                                  .label-container {
                                     top: 8px;
                                     left: 8px;

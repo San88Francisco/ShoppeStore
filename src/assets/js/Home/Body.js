@@ -17,8 +17,6 @@ export const heartLogic = () => {
   });
 }
 
-heartLogic();
-
 // Функція яка бере наші данні з бек-енду
 const fetchData = async () => {
   try {
@@ -35,28 +33,28 @@ const fetchData = async () => {
     }
 }
 
-fetchData()
+export const loadProductsHome = async () => {
+  const item = JSON.parse(localStorage.getItem('allProduct'));
 
-
-export const loadProductsHome = () => {
-const item = JSON.parse(localStorage.getItem('allProduct'));
+  const contents = item ? item : await fetchData();
 
 const shopLatestBlocks = document.querySelector('.shop-latest-blocks');
 
 // Запускаємо map з масивом обєктів наших товарів та відображаємо весь товар
 // В середені map через деструктуризацію виймаємо всі ключі з нашого обєкту item
-item.map(
-  ({
-    category,
-    categoryClass,
-    typeProduct,
-    typeClass,
-    imageUrl,
-    name,
-    price,
-    productVariant,
-  }) => {
-    shopLatestBlocks.innerHTML += `
+contents &&
+  contents.map(
+    ({
+      category,
+      categoryClass,
+      typeProduct,
+      typeClass,
+      imageUrl,
+      name,
+      price,
+      productVariant,
+    }) => {
+      shopLatestBlocks.innerHTML += `
     <div id="hide" class="shop-latest__block">
       <div class="shop-latest__img">
         <a href="./product.html"><img src="${imageUrl}" alt="" /></a>
@@ -81,8 +79,8 @@ item.map(
     </div>
 
     `;
-  }
-);
+    }
+  );
 }
 
 // Запускаємо функцію із товаром що сподобався (сердечко)
