@@ -1,58 +1,60 @@
-document.addEventListener('DOMContentLoaded', function () {
-   // Ваш скрипт тут
-   const globalSearchInput = document.querySelector('#global-search');
+class Items {
+   constructor(imageUrl, name, category, categoryClass, price, productVariant, typeClass, typeProduct) {
+      this.imageUrl = imageUrl;
+      this.name = name;
+      this.category = category;
+      this.categoryClass = categoryClass;
+      this.price = price;
+      this.productVariant = productVariant;
+      this.typeClass = typeClass;
+      this.typeProduct = typeProduct;
+   }
 
-   globalSearchInput.addEventListener('input', function () {
-      let val = this.value.trim().toLowerCase();
-      console.log('✌️val --->', val);
+   addClassInNav() {
+      const blockItem = document.querySelector('#block-item');
+      console.log('✌️blockItem --->', blockItem);
 
-      const sections = document.querySelectorAll('section')
+      const container = document.createElement('div');
+      container.id = 'container-items-search-burger';
+      container.innerHTML = `
+         <img src="${this.imageUrl}" alt="${this.name}">
+         <h1>${this.name}</h1>
+         <h2>${this.productVariant}</h2>
+         <p>$ ${this.price}</p>
+         <h5>${this.category}</h5>
+      `;
 
-      sections.forEach(section => {
-         section.style.display = val === '' ? 'block' : 'none';
+      blockItem.appendChild(container);
+
+      // Ваш скрипт тут
+      const globalSearchInput = document.querySelector('#global-search');
+      const thisName = this.name.toLowerCase();
+
+      globalSearchInput.addEventListener('input', function () {
+         let val = this.value.trim().toLowerCase();
+         // console.log('✌️val --->', val);
+
+         if (val == '') {
+            container.style.display = 'none';
+            // console.log('true');
+         } else if (thisName.includes(val)) {
+            container.style.display = 'block';
+            // console.log('true2');
+         } else {
+            container.style.display = 'none';
+            // console.log('true3');
+         }
       });
-   });
+   }
+}
 
-   // шукаємо в localStorage наші items
+document.addEventListener('DOMContentLoaded', function () {
    const allProductString = localStorage.getItem('allProduct');
 
-   //перевірка чи є items
    if (allProductString) {
-      // розпаковуємо 
       const parseItems = JSON.parse(allProductString);
       console.log('✌️parseItems --->', parseItems);
 
-      class Items {
-         constructor(imageUrl, name, category, categoryClass, price, productVariant, typeClass, typeProduct) {
-            this.imageUrl = imageUrl;
-            this.name = name;
-            this.category = category;
-            this.categoryClass = categoryClass;
-            this.price = price;
-            this.productVariant = productVariant;
-            this.typeClass = typeClass;
-            this.typeProduct = typeProduct;
-         }
-
-         addClassInNav() {
-            const blockItem = document.querySelector('#block-item');
-            console.log('✌️blockItem --->', blockItem);
-
-            blockItem.insertAdjacentHTML(
-               'beforeend', // Додавання HTML в кінець #block-item
-               String.raw`
-               <div>
-                  <img src="${this.imageUrl}" alt="${this.name}">
-                  <h1>${this.name}</h1>
-                  <h2>${this.productVariant}</h2>
-                  <p>$ ${this.price}</p>
-                  <h5>${this.category}</h5>
-               </div>`
-            );
-         }
-      }
-
-      // Ітеруємося по масиву parseItems та створюємо екземпляри Items
       parseItems.forEach(item => {
          const itemsInstance = new Items(
             item.imageUrl,
@@ -67,9 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
          itemsInstance.addClassInNav();
       });
-
    } else {
-      // Вставити вміст або створити новий елемент для виведення повідомлення
       console.log('немає items');
    }
 });
