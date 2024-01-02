@@ -31,3 +31,4 @@ import "./Blog/Main-blog";
 
 import "./MyAccount/MyAccountMain";
 
+import "./Error/Error404";
