@@ -144,12 +144,13 @@ const addComment = (replyId) =>{
       }
 
       if(replyIdNow !== undefined){
-         console.log(comentsNow[+replyIdNow -1]);
+         console.log(selectUser.getAttribute('name').split('#')[1] % 1 == 0);
+         let isSecondUser = selectUser.getAttribute('name').split('#')[1] % 1 === 0 ? '' : `<a class='userLink' href='${selectUser.getAttribute('name')}'>@${selectUser.parentElement.children[0].textContent}</a>    `
          comentsNow[+replyIdNow -1].usersAnswers.push({
             isUser: true,
             userName: userName.value,
             userDate: nowDate,
-            userContent: `<a class='userLink' href='${selectUser.getAttribute('name')}'>@${selectUser.parentElement.children[0].textContent}</a>  ${userContent.value}`,
+            userContent: `${isSecondUser}${userContent.value}`,
          })
       }else {
          comentsNow.unshift({
