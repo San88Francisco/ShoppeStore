@@ -1,7 +1,6 @@
 header {
    padding: 0 0 10px 0;
    z-index: 7;
-   border: 1px solid black;
 }
 
 #global-background-linear-gradient {
@@ -14,24 +13,21 @@ header {
 }
 
 #global-nav-search-for-input {
+   display: none;
    // display: none;
-   
    max-width: 670px;
-   height: 100%;
    // margin: 0 25px;
    position: relative;
-   border: 1px solid black;
 
    left: 0;
    z-index: 8;
 
    #block-item {
       width: 100%;
-      height: 100%;
-
-      div {
+      // height: 100%;
+      
+      #container-items-search-burger {
          height: 140px;
-         border: 1px solid black;
 
 
          img {
@@ -45,8 +41,7 @@ header {
             color: $black-color;
 
             font-family: DM Sans;
-            font-size: 12px;
-            font-style: normal;
+            font-size: 14px;
             font-weight: 400;
             line-height: 20px;
          }
@@ -54,12 +49,16 @@ header {
          h2,
          p {
             color: $dark-gray-color;
-
             font-family: DM Sans;
             font-size: 12px;
             font-style: normal;
             font-weight: 400;
             line-height: 20px;
+         }
+         h5{
+            color: $placeholder-color;
+            text-transform: capitalize;
+            font-size: 12px;
          }
 
       }

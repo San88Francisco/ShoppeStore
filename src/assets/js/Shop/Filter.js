@@ -124,7 +124,6 @@ if (window.location.pathname.includes('/shop')) {
 
         lettersItems.forEach(function (e) {
           const shopLatestBlock2 = e.closest('.shop-latest__block');
-console.log('✌️shopLatestBlock2 --->', shopLatestBlock2);
 
           if (val == '') {
             shopLatestBlock2.style.display = 'block';
