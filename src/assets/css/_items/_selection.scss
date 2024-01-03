@@ -34,7 +34,8 @@
          }
 
          .shop-latest__heart {
-            width: 1.5em;
+            width: 24px;
+            height: 24px;
             cursor: pointer;
          }
 
@@ -159,7 +160,7 @@
    }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 870px) {
          .shop-latest {
             .shop-latest-blocks {
                display: grid;
@@ -177,13 +178,13 @@
                   }
 
                   .shop-latest__heart {
-                     width: 1em;
-                     cursor: pointer;
+                     width: 22px;
+                     height: 22px;
                   }
                }
 
                .shop-latest_hover_container {
-                  min-height: 40px;
+                  min-height: 30px;
 
                   p {
                      font-size: 12px!important;
@@ -226,7 +227,8 @@
                         }
       
                         .shop-latest__heart {
-                           width: 1em;
+                           width: 24px;
+                           height: 24px;
                         }
                      }
       

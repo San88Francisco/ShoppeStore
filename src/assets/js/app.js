@@ -7,7 +7,7 @@ import "./Home/Burger";
 import "./Home/ItemsLoad";
 
 
-import "./Shop/Body";
+// import "./Shop/Body";
 import "./Shop/Discount"
 import "./Shop/Filter";
 import "./Shop/SortBy";
