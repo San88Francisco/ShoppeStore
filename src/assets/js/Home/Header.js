@@ -46,3 +46,18 @@ updateNavCartCount();
 
 // Додайте подію 'storage', яка буде викликатися при зміні localStorage
 window.addEventListener("storage", updateNavCartCount);
+
+(() => document.addEventListener('DOMContentLoaded', () => {
+	const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+	const checkboxTheme = document.querySelector('.theme-button input');
+
+	const toggleDarkMode = (state) => {
+		document.documentElement.classList.toggle("dark", state);
+		checkboxTheme.checked = state;
+		console.log(useDark);
+	}
+
+	toggleDarkMode(useDark.matches);
+	useDark.onchange = ({ matches }) => toggleDarkMode(matches);
+	checkboxTheme.onchange = ({ target }) => toggleDarkMode(target.checked);
+}))();

@@ -9,6 +9,17 @@ $errors-color: rgb(216, 39, 0);
 $placeholder-color: rgb(112,112,112);
 $transition-time: 300ms;
 
+:root {
+	--background-page-color: #fff;
+	--white-color: rgb(255, 255, 255);
+	--base-transition: .3s ease-in-out;
+}
+
+.dark {
+	--background-page-color: #111;
+	--white-color: rgb(0, 0, 0);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +29,9 @@ $transition-time: 300ms;
 body {
   font-family: sans-serif;
   height: 100vh;
-  background-color: $white-color;
+  background-color: var(--white-color);
+	padding: 0 16px;
+	transition: background-color var(--base-transition);
 }
 
 a {
@@ -28,7 +41,7 @@ a {
 
 button {
   border: 2px solid $dark-gray-color;
-  background: $white-color;
+  background: var(--white-color);
 }
 
 ul {
