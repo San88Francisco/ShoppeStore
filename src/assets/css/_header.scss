@@ -465,34 +465,39 @@ header {
 }
 
 .search-block {
-   display: none;
+   display: flex;
    align-items: center;
    gap: 8px;
    border-radius: 5px;
-   width: 100%;
-   background: $light-gray-color;
+   max-width: 1248px;
+   background: #efefef;
    height: 32px;
    padding: 0 10px;
    margin: 17px 0 0 0;
-
+   justify-content: flex-start;
+   flex-direction: row;
+   position: absolute;
+   top: 100px;
    img {
       width: 15px;
       height: 15px;
       cursor: pointer;
+      margin: 0 10px;
    }
 
-   form {
-      height: 22px;
+   input {
+      cursor: pointer;
+      height: 100%;
+      background: $light-gray-color;
+   }
 
-      .search__input {
-         font-size: 16px;
-         font-style: normal;
-         font-weight: 400;
-         line-height: 22px;
-         height: 22px;
-         background: none;
+   @media (max-width: 700px) {
+      input {
+         width: 92%;
+
       }
    }
+
 }
 
 .side-menu {
@@ -544,9 +549,7 @@ header {
          }
       }
 
-      .search-block {
-         display: flex;
-      }
+
    }
 }
 
@@ -583,7 +586,7 @@ header {
    max-width: 670px;
    position: relative;
    left: 0;
-   z-index: 8;
+   z-index: 3;
 
    #block-item {
       width: 100%;
@@ -631,6 +634,7 @@ header {
       transform: translateY(-20px);
       opacity: 0;
    }
+
    to {
       transform: translateY(0);
       opacity: 1;
@@ -638,11 +642,3 @@ header {
 }
 
 
-@media (min-width: 700px) {
-
-   #global-nav-search-for-input,
-   #block-item {
-      display: none;
-   }
-   
-}
