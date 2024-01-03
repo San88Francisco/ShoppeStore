@@ -170,7 +170,7 @@
       transition: all 0.3s;
 
       &:hover {
-         background-color: $white-color;
+         background-color: var(--white-color);
          color: $black-color;
          cursor: pointer;
       }

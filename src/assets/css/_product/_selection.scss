@@ -649,7 +649,7 @@
 
                   &:hover,
                   &:active {
-                     background-color: $white-color;
+                     background-color: var(--white-color);
                      border: 2px solid $black-color;
                   }
 
@@ -659,7 +659,7 @@
                   }
 
                   span {
-                     color: $white-color;
+                     color: var(--white-color);
                      font-weight: 700;
                      line-height: 20px;
                   }

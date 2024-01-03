@@ -99,14 +99,14 @@
 
       // Class for "Sold" label
       .add-sold {
-         color: $white-color;
+         color: var(--white-color);
          background-color: $accent-color;
       }
 
       // Class for "-%price%" label
       .add-discount,
       .add-popular {
-         color: $white-color;
+         color: var(--white-color);
          background-color: $accent-color;
       }
 
@@ -126,12 +126,12 @@
       .add-bracelets,
       .add-pendants {
          background-color: $black-color;
-         color: $white-color;
+         color: var(--white-color);
       }
 
       // Class for "New" label
       .add-new {
-         background-color: $white-color;
+         background-color: var(--white-color);
          color: $black-color;
       }
    }

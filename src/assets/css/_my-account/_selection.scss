@@ -96,13 +96,13 @@
       align-items: center;
 
       span {
-         color: $white-color;
+         color: var(--white-color);
          font-weight: 700;
       }
 
       &:hover {
          transition: .2s all linear;
-         background-color: $white-color;
+         background-color: var(--white-color);
 
          span {
             transition: .2s all linear;
@@ -268,7 +268,7 @@
                      display: none;
                      position: absolute;
                      width: 100%;
-                     background-color: $white-color;
+                     background-color: var(--white-color);
                      z-index: 2;
                      border: 1px solid $gray-color;
                      border-radius: 5px;
@@ -292,7 +292,7 @@
                      li {
                         color: $black-color;
                         display: block;
-                        background-color: $white-color;
+                        background-color: var(--white-color);
                         padding: 5px;
                         width: 100%;
                         border-bottom: 1px solid $gray-color;

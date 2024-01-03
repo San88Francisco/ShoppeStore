@@ -65,7 +65,7 @@ margin: 0 auto;
          transition: all 0.3s;
          overflow: hidden;
          &:hover {
-         background-color: $white-color;
+         background-color: var(--white-color);
          color: $black-color;
            cursor: pointer;
          }
@@ -315,7 +315,7 @@ margin: 0 auto;
          background-color: $light-gray-color;
        }
        .select-options li:active {
-         background: $white-color;
+         background: var(--white-color);
        }
       .error-message {
          position: absolute;

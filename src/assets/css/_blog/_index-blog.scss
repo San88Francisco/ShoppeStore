@@ -37,7 +37,7 @@
             padding-right: 23px;
          }
          .input-div img {
-            background: $white-color;
+            background: var(--white-color);
             position: absolute;
             right: 0px;
             top: 5px;
@@ -147,7 +147,7 @@
             transition: .2s all linear;
             background-color: $black-color; 
             p{
-             color: $white-color;
+             color: var(--white-color);
             }
          }
       }

@@ -135,7 +135,7 @@ button {
          transition: all 0.3s;
 
          &:hover {
-            background-color: $white-color;
+            background-color: var(--white-color);
             color: $black-color;
             cursor: pointer;
          }
@@ -530,7 +530,7 @@ button {
    }
 
    .select-options li:active {
-      background: $white-color;
+      background: var(--white-color);
    }
 
    ._active {
