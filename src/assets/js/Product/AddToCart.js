@@ -31,16 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
                otherImg.style.border = 'none';
             });
 
-            if (img.classList.contains('picture-big')) return;
-
-            img.style.border = '3px solid rgb(158, 158, 158)';
-            img.style.borderRadius = '5px';
-
-            let oldImage = document.querySelector('.picture-big');
-            if (oldImage) {
-               oldImage.src = img.src;
-            }
-
             const percentage =
                (((index + 1) / (imageSelectionArray.length - 4)) * 100) - 25;
             progressBarLine.style.marginLeft = `${percentage}%`;
