@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ meta_description }}" />
+    <link rel="stylesheet" type="text/css" href="assets/css/app.min.css" />
+    <link
+      rel="icon"
+      href="./assets/img/Home_img/header/SH.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body {% if bodyClass %}class="{{ bodyClass }}" {% endif %}>
+    {% include "_html/_base/_includes/_Header.html" %}
+    <div class="page-wrapper" id="pageWrapper">
+      {% include "_html/_base/_includes/_OrderConfirmation.html" %}
+    </div>
+    {% include "_html/_base/_includes/_Footer.html" %}
+
+    <script src="assets/js/app.min.js"></script>
+  </body>
+</html>

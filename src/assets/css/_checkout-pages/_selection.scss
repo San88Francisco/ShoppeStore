@@ -5,21 +5,25 @@
   margin-top: 5px;
   margin-bottom: 250px;
 
-  h1 {
-    text-align: center;
-    margin-bottom: 60px;
   }
 
-  .checkout__container{
-    display: flex;
-    gap: 80px;
+.checkout__container{
+  display: flex;
+  gap: 80px;
+  @include sub_title_text;
 
-    // Block left
-    .checkout__block-name {
-      border: 1px solid red;
+  h2 {
+    margin-bottom: 25px;
+  }
+
+  // Block left
+  .checkout__block-name {
+    width: 50%;
+
+    .checkout__name-info {
+      // border: 1px solid red;
       display: flex;
       flex-direction: column;
-      width: 50%;
       padding: 10px;
 
       input {
@@ -29,32 +33,32 @@
         padding: 6px 0px;
         margin-bottom: 25px;
       }
-
+  
       .checkout__name {
         display: flex;
         gap: 40px;
-
+  
         input {
           max-width: 270px;
           width: 100%;
         }
-
+  
       }
-
+  
       .checkout__checkbox-create { 
-
+  
         div {
           max-width: fit-content;
           margin-bottom: 25px;
           
           &:not(:last-child) {
             margin-bottom: 0px;
-         }
-
+          }
+  
           input {
             margin: 0;
           }
-
+  
           input[type='checkbox']{ height: 0; width: 0; }
     
           input[type='checkbox'] + label{
@@ -149,19 +153,20 @@
               transform: translate3d(0,-.5em,0) rotate(45deg);
             }
           }
-       }
+        }
       }
-
     }
 
+  }
 
-    // Block right
-    .checkout__block-order {
+  // Block right
+  .checkout__block-order {
+    width: 50%;
+
+    .checkout__order-info {
+      // border: 1px solid yellow;
       background-color: #EFEFEF;
-      border: 1px solid yellow;
-      width: 50%;
       padding: 37px 59px;
-      @include sub_title_text;
 
       .block__order {
 
@@ -179,11 +184,23 @@
         .block__order-item {
           color: $placeholder-color;
           flex-direction: column;
+          
+          div {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            
 
-          &:last-child > div > span {
-            border: 1px solid red;
-            margin-bottom: 0;  // Якщо вам потрібно зняти знизу межі
+            p {
+              &:nth-child(2) {
+                text-align: center;
+              }
+
+              &:nth-child(3) {
+                text-align: right;
+              }
+            }
           }
+          
 
         }
 
@@ -202,6 +219,7 @@
       }
 
       .checkout__checkbox-payment { 
+        margin-bottom: 45px;
 
         .radio__block {
           margin-bottom: 18px;
@@ -257,13 +275,64 @@
                 }
               }
             }
+
+            
+          }
+
+          .label__paypal {
+            position: relative;
+
+            &::after {
+              content: '';
+              background-image: url('../../../assets/img/svg/paypal.svg');
+              // background-position: center;
+              background-size: cover;
+              display: block;
+              width: 13px;
+              height: 16px;
+              position: absolute;
+              top: 0px;
+              right: -18px;
+            }
+          }
+
+          .nuances__payment{
+            display: none;
+            font-size: 12px;
+            line-height: 20px;
+            color: $placeholder-color;
+            margin: 20px 0;
+          }
+
+          .nuances__1 {
+            display: block;
           }
         }
 
       }
 
-     }
+      .btn__place-order {
+        transition: 0.2s all linear;
+        background-color: $black-color;
+        border: 1px solid $black-color;
+        color: $white-color;
+        border-radius: 4px;
+        width: 100%;
+        padding: 15px 0px;
+        font-family: DM Sans;
+        font-size: 16px;
+        font-weight: 700;
+        &:hover {
+          transition: 0.2s all linear;
+          background-color: $white-color;
+          border: 1px solid $black-color;
+          color: $black-color;
+        }
+      }
+
+    }
 
   }
-  
+
 }
+  

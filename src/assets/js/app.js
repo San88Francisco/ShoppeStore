@@ -25,6 +25,7 @@ import "./Cart/Option";
 import "./Cart/CartItem";
 
 import "./CheckoutPages/CheckoutPages"
+import "./OrderConfirmation/OrderConfirmation"
 
 import "./Blog/Main-blog";
 

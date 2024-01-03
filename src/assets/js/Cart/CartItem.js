@@ -160,21 +160,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const checkoutPages = () => {
-      const subTotal = document.querySelector('.subtotal__price');
-      const totalPrice = document.querySelector('.total__price');
-      const newTotalPrice = document.querySelector('.new__total-price');
-      const priceShipping = document.querySelector('.price__shipping');
-      const priceCoupon = document.querySelector('.price__discount');
-      let cartAllProduct = JSON.parse(localStorage.getItem('allProductCart'));
+      const subTotal = document.querySelector('.subtotal__price').textContent;
+      const totalPrice = document.querySelector('.total__price').textContent;
+      const newTotalPrice =
+        document.querySelector('.new__total-price').textContent;
+      const priceShipping =
+        document.querySelector('.price__shipping').textContent;
+      const priceCoupon =
+        document.querySelector('.price__discount').textContent;
+      const cartAllProduct = JSON.parse(localStorage.getItem('allProductCart'));
+      const itemToCheckout = [];
+      const itemInfo = [];
 
-      console.log('Good');
-      console.log('Sub Total', subTotal.textContent);
-      console.log('Total', totalPrice.textContent);
-      console.log('New Total', newTotalPrice.textContent);
-      console.log('Shipping', priceShipping.textContent);
-      console.log('Coupon', priceCoupon.textContent);
-      console.log('ProductCart', cartAllProduct);
-      // window.location.href = 'http://localhost:3000/checkout-pages.html';
+      cartAllProduct.forEach((item) => {
+        const priceDiscount = item.discountPrice || item.price;
+        const totalPriceItem = item.count * parseFloat(priceDiscount.replace('$', '').replace(',', '.'));
+
+        const blockData = {
+          name: item.name,
+          price: totalPriceItem,
+          count: item.count
+        };
+
+        return itemToCheckout.push(blockData);
+      });
+
+      const blockData = {
+        subTotal: subTotal,
+        totalPrice: totalPrice.replace('$', '').replace(',', '.').trim(),
+        newTotalPrice: newTotalPrice,
+        shipping: priceShipping,
+        coupon: priceCoupon,
+      };
+
+      itemInfo.push(blockData);
+      console.log("itemInfo", itemInfo);
+
+      const checkoutInfo = {
+        item: itemToCheckout,
+        info: itemInfo,
+      };
+
+      localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
+
+      window.location.href = 'http://localhost:3000/checkout-pages.html';
     };
   }
 });
