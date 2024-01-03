@@ -1,8 +1,11 @@
-import { loadProductsHome, heartLogic } from './Body';
-document.addEventListener('DOMContentLoaded', function () {
-    // Перевірка, чи ми на сторінці "Product"
-    if (window.location.pathname.includes('/')) {
-        loadProductsHome();
-        heartLogic();
-    }
-})
+// import { loadProductsHome} from './Body';
+// document.addEventListener('DOMContentLoaded', function () {
+//     // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ "Product"
+//     if (
+//       window.location.pathname === "/index.html" ||
+//       window.location.pathname === "/shop.html" ||
+//       window.location.pathname === "/"
+//     ) {
+//       loadProductsHome();
+//     }
+// })
