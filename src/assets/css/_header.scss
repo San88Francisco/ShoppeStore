@@ -1,6 +1,6 @@
 header {
    max-width: 1248px;
-   height: 149px;
+   height: 49px;
    padding: 0 0 10px 0;
    z-index: 7;
 
@@ -466,59 +466,72 @@ header {
    display: none;
 }
 
-.search-block {
+.background-block-input {
    max-width: 1250px;
-   display: flex;
-   align-items: center;
-   gap: 8px;
-   border-radius: 5px;
-   background-color: #efefef;
-   height: 32px;
-   padding: 0 10px;
-   justify-content: flex-start;
-   flex-direction: row;
+   height: 50px;
+   margin-bottom: 40px;
    margin: 0 auto;
-   margin-top: -92px;
 
-   img {
-      width: 15px;
-      height: 15px;
-      cursor: pointer;
-      margin: 0 10px;
-   }
-
-   input {
-      cursor: pointer;
+   .search-block-global {
       width: 100%;
-      height: 100%;
-      background: $light-gray-color;
-   }
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 5px;
+      background-color: #efefef;
+      height: 32px;
+      padding: 0 10px;
+      justify-content: flex-start;
+      flex-direction: row;
 
-   @media (max-width: 700px) {
-      input {
-         width: 92%;
-
+      img {
+         width: 15px;
+         height: 15px;
+         cursor: pointer;
+         margin: 0 10px;
       }
-   }
 
+      input {
+         cursor: pointer;
+         width: 100%;
+         height: 100%;
+         background: $light-gray-color;
+      }
+
+
+   }
 }
-#icon-search-global{
+
+#icon-search-global {
    cursor: pointer;
 }
+
 #container-global-search {
    max-height: 0;
    overflow: hidden;
    transition: max-height 0.5s ease-in-out;
+
+   @media (max-width: 700px) {
+      max-height: 200px;
+   }
+}
+
+@media (min-width: 700px) {
+   #container-global-search {
+      max-height: 0;
+   }
 }
 
 #container-global-search.active {
    max-height: 200px;
 }
 
-
 .side-menu {
    display: none;
 }
+
+
+
 
 
 
@@ -541,8 +554,6 @@ header {
          margin-bottom: 24px;
          display: block;
       }
-
-
 
       .header {
          .header__link {
@@ -572,6 +583,8 @@ header {
 
    }
 }
+
+
 
 @media (max-width: 460px) {
    header {
@@ -603,41 +616,53 @@ header {
 
 #global-nav-search-for-input {
    display: none;
-   max-width: 670px;
+   max-width: 1248px;
    position: relative;
    left: 0;
    z-index: 3;
+   margin: 0 auto;
 
    #block-item {
-      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
 
       #container-items-search-burger {
-         height: 140px;
+         height: 100%;
          animation: slideIn 0.8s ease-in-out;
+         padding: 15px;
 
          img {
-            width: 120px;
+            width: 180px;
             border-radius: 5px;
             float: left;
             margin-right: 5%;
          }
 
          h1 {
-            color: $black-color;
+            color: var(--Light-Colors-Black---Light, #000);
+
+            /* 20px - Heading 3 */
             font-family: DM Sans;
-            font-size: 14px;
+            font-size: 20px;
+            font-style: normal;
             font-weight: 400;
-            line-height: 20px;
+            line-height: 26px;
+            /* 130% */
          }
 
          h2,
          p {
-            color: $dark-gray-color;
+            color: var(--Light-Colors-Dark-gray---Light, #707070);
+
+            /* 16px - Heading 5 */
             font-family: DM Sans;
-            font-size: 12px;
+            font-size: 16px;
             font-style: normal;
             font-weight: 400;
-            line-height: 20px;
+            line-height: 27px;
+            /* 168.75% */
          }
 
          h5 {
@@ -648,6 +673,43 @@ header {
       }
    }
 }
+
+// #container-items-search-burger {
+//    border: 1px solid black;
+//    height: 140px;
+//    animation: slideIn 0.8s ease-in-out;
+
+//    img {
+//       width: 120px;
+//       border-radius: 5px;
+//       float: left;
+//       margin-right: 5%;
+//    }
+
+//    h1 {
+//       color: $black-color;
+//       font-family: DM Sans;
+//       font-size: 14px;
+//       font-weight: 400;
+//       line-height: 20px;
+//    }
+
+//    h2,
+//    p {
+//       color: $dark-gray-color;
+//       font-family: DM Sans;
+//       font-size: 12px;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: 20px;
+//    }
+
+//    h5 {
+//       color: $placeholder-color;
+//       text-transform: capitalize;
+//       font-size: 12px;
+//    }
+// }
 
 @keyframes slideIn {
    from {
