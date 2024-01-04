@@ -68,12 +68,10 @@
          }
          ul li{
             margin-bottom: 10px;
-            a{
-               font-size: 16px;
-               line-height: 27px;
-               color: $placeholder-color;
-               cursor: pointer;
-            }
+            font-size: 16px;
+            line-height: 27px;
+            color: $placeholder-color;
+            cursor: pointer;
          }
       }
    }

@@ -4,6 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
       //! search
       if (document.querySelector('#search-input') !== null) {
          document.querySelector('#search-input').oninput = function () {
+            const numberOfSelectPage = document.querySelector('.act_page').classList[0].replace(/[^+\d]/g, '')
+            const cardsBlock = document.querySelectorAll('.blog__cards__content')
+            const searchBlockItem = document.querySelector('.searchBlock')
+            let searchBlock = ''
+            cardsBlock.forEach(item => {
+               searchBlock += item.innerHTML
+               item.style.display = 'none'
+            })
+            searchBlockItem.style.display = 'grid'
+            searchBlockItem.innerHTML = searchBlock
+
             let val = this.value.trim().toLowerCase();
             let lettersItems = document.querySelectorAll('.blog__card__name');
 
@@ -12,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                if (val == '') {
                   shopLatestBlock2.style.display = 'block';
+
+                  const firstPage = document.querySelector(`.page__block${numberOfSelectPage}__content`)
+                  firstPage.style.display = 'grid'
+        
+                  searchBlockItem.innerHTML = ''
                } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
                   shopLatestBlock2.style.display = 'block';
                } else {
@@ -94,6 +110,85 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriesFolder.style.display = 'none'
          }
       })
+
+      const sortByCategories = (item) => {
+         if(item.classList.contains('selectCategories') === false){
+            categoriesItem.forEach(item =>{
+               item.style.color = 'rgb(112,112,112)'
+               item.classList.remove('selectCategories')
+            })
+            item.style.color = 'black'
+            item.classList.add('selectCategories')
+
+            let val = item.textContent.trim().toLowerCase();
+            let lettersItems = document.querySelectorAll('#blogCategories');
+            lettersItems.forEach(function (e) {
+               const shopLatestBlock2 = e.closest('.content__cards');
+         
+               if (val == '') {
+                  shopLatestBlock2.style.display = 'block';
+               } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
+                  shopLatestBlock2.style.display = 'block';
+               } else {
+                  shopLatestBlock2.style.display = 'none';
+               }
+            });
+            
+         }else{
+            item.style.color = 'rgb(112,112,112)'
+            item.classList.remove('selectCategories')
+
+            let lettersItems = document.querySelectorAll('#blogCategories');
+            lettersItems.forEach(function (e) {
+               const shopLatestBlock2 = e.closest('.content__cards');
+               shopLatestBlock2.style.display = 'block';
+            });
+         }
+      }
+
+      const categoriesItem = document.querySelectorAll('#categoriesBtns')
+      categoriesItem.forEach(item =>{
+         item.addEventListener('click',()=>{     
+            sortByCategories(item)
+         })
+      })
+
+      const nowSelectCategories = localStorage.getItem('nowSelectCategories')
+      if(nowSelectCategories !== null){
+         const selectItem = document.querySelectorAll(`.categories__${nowSelectCategories.toLocaleLowerCase()}`)
+         selectItem.forEach(item => {
+            item.classList.add('selectCategories')
+            item.style.color = 'black'
+         })
+     
+         let val = nowSelectCategories.trim().toLowerCase();
+         let lettersItems = document.querySelectorAll('#blogCategories');
+         lettersItems.forEach(function (e) {
+            const shopLatestBlock2 = e.closest('.content__cards');
+      
+            if (val == '') {
+               shopLatestBlock2.style.display = 'block';
+            } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
+               shopLatestBlock2.style.display = 'block';
+            } else {
+               shopLatestBlock2.style.display = 'none';
+            }
+         });
+
+         setTimeout(function() {
+            localStorage.removeItem('nowSelectCategories')
+          }, 1000);
+      }
+
+      const clickToAddoptPage = document.querySelectorAll('#clickToAddoptPage')
+      clickToAddoptPage.forEach(item => {
+         item.addEventListener('click', ()=>{
+            const getSelectNowPost = item.getAttribute('data-post-number')
+            localStorage.setItem('selectedPostNow', getSelectNowPost)
+         })
+      })
    }
 })
+
+
 

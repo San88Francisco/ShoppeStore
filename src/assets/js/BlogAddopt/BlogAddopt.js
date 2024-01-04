@@ -40,6 +40,59 @@ const commentsStatic = [
    },
 ]
 
+const pagePostContents = [
+   {
+      postAughtor: 'ANNY JOHNSON',
+      postDate: 'October 8,2020',
+      postName: 'Fast Fashion, And Faster Fashion',
+      postImg: './assets/img/BlogAddopt_img/main.png',
+   },
+   {
+      postAughtor: 'LILY MILLER',
+      postDate: 'January 15, 2023',
+      postName: 'Fast Lane Fashion for Trendsetters',
+      postImg: './assets/img/BlogAddopt_img/02blog_card.png',
+   },   
+   {
+      postAughtor: 'EMMA MARTIN',
+      postDate: 'March 22, 2021',
+      postName: 'Where Style Meets Speed',
+      postImg: './assets/img/BlogAddopt_img/03blog_card.png',
+   },   
+   {
+      postAughtor: 'OLIVIA WILLIAMS',
+      postDate: 'May 5, 2022',
+      postName: 'Tailored for the Modern Maverick',
+      postImg: './assets/img/BlogAddopt_img/04blog_card.png',
+   },   
+   {
+      postAughtor: 'SOPHIE DAVIS',
+      postDate: 'August 10, 2024',
+      postName: 'Elevate Your Wardrobe Rapidly',
+      postImg: './assets/img/BlogAddopt_img/03blog_card.png',
+   },   
+   {
+      postAughtor: 'GRACE BROWN',
+      postDate: 'September 18, 2021',
+      postName: 'Unleashing Fashion Momentum',
+      postImg: './assets/img/BlogAddopt_img/04blog_card.png',
+   },   
+   {
+      postAughtor: 'ELLA WHITE',
+      postDate: 'November 2, 2023',
+      postName: 'Dive into the World of Faster Trends',
+      postImg: './assets/img/BlogAddopt_img/main.png',
+   },   
+   {
+      postAughtor: 'AVERY THOMPSON',
+      postDate: 'December 7, 2020',
+      postName: 'Your Fast Fashion Destination',
+      postImg: './assets/img/BlogAddopt_img/02blog_card.png',
+   },
+]
+
+
+
 const moveToReplay = () => {
    const userLink = document.querySelectorAll('.userLink')
    userLink.forEach(item => {
@@ -58,7 +111,8 @@ const moveToReplay = () => {
 
 
 const getComments = () => {
-   const localComment = localStorage.getItem('FashionComent')
+   const getLocalPostId = localStorage.getItem('selectedPostNow') !== null ? localStorage.getItem('selectedPostNow') : 1
+   const localComment = localStorage.getItem(`PostOfPage${getLocalPostId}`)
    if(localComment !== null){
       return JSON.parse(localComment)
    }else {
@@ -94,7 +148,6 @@ const replyBtnClick = ()=> {
    replyBtn.forEach(item => {
       item.addEventListener('click',()=>{
          selectUser = item
-         console.log(selectUser.getAttribute('name'));
          if(item.style.marginRight !== '-20px'){
             replyBtn.forEach(item => {
                item.style.marginRight = '0px'
@@ -140,11 +193,10 @@ const addComment = (replyId) =>{
       }
       const replyCheckbox = document.querySelector('.replyCheckbox')
       if(replyCheckbox.checked === true){
-         localStorage.setItem('replyAutoComplite', JSON.stringify({userName: userName, userMail: userMail,}))
+         localStorage.setItem('replyAutoComplite', JSON.stringify({userName: userName.value, userMail: userMail.value,}))
       }
 
       if(replyIdNow !== undefined){
-         console.log(selectUser.getAttribute('name').split('#')[1] % 1 == 0);
          let isSecondUser = selectUser.getAttribute('name').split('#')[1] % 1 === 0 ? '' : `<a class='userLink' href='${selectUser.getAttribute('name')}'>@${selectUser.parentElement.children[0].textContent}</a>    `
          comentsNow[+replyIdNow -1].usersAnswers.push({
             isUser: true,
@@ -162,7 +214,8 @@ const addComment = (replyId) =>{
          })
       }
 
-      localStorage.setItem('FashionComent',JSON.stringify(comentsNow))
+      const getLocalPostId = localStorage.getItem('selectedPostNow') !== null ? localStorage.getItem('selectedPostNow') : 1
+      localStorage.setItem(`PostOfPage${getLocalPostId}`,JSON.stringify(comentsNow))
       drawComments(getComments())
       replyIdNow = undefined
       replyBtnClick()
@@ -241,10 +294,36 @@ const drawComments = (comments) => {
    commentsCount.textContent = nuberOfComents
 }
 
+const generatePage = () => {
+   const getLocalPostId = localStorage.getItem('selectedPostNow') !== null ? localStorage.getItem('selectedPostNow') : 1
+   
+   const blogImage = document.querySelector('#blogImage')
+   blogImage.setAttribute('src', pagePostContents[getLocalPostId -1].postImg)
+
+   const blogName = document.querySelector('#blogName')
+   blogName.textContent = pagePostContents[getLocalPostId -1].postName
+
+   const blogDate = document.querySelector('#blogDate')
+   blogDate.textContent = pagePostContents[getLocalPostId -1].postDate
+
+   const blogAuthor = document.querySelector('.blog__author')
+   blogAuthor.textContent = pagePostContents[getLocalPostId -1].postAughtor
+}
+
+const navigationBarLogical = () => {
+   const categoriesItem = document.querySelectorAll('#categoriesBtns')
+   categoriesItem.forEach(item =>{
+      item.addEventListener('click',()=>{     
+         localStorage.setItem('nowSelectCategories', item.textContent)
+      })
+   })
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
    if (window.location.pathname.includes('/blog-addopt')) {
+      navigationBarLogical()
+      generatePage()
       clearAllInput()
       drawComments(getComments())
       autoComplite()
