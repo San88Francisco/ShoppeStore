@@ -1,5 +1,5 @@
 const PAGES = ["index", "shop", "blog", "cart", "account", "contact", "checkout-pages",
-   "help", "my-account", "our-story", "product", "reset-password", ""]; // Додайте імена всіх існуючих сторінок
+   "help", "my-account", "our-story", "product", "reset-password", "blog-addopt", ""]; // Додайте імена всіх існуючих сторінок
 const PAGE_NOT_FOUND = "error404.html";
 
 document.addEventListener("DOMContentLoaded", function () {
