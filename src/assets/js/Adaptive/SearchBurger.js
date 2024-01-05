@@ -22,6 +22,9 @@ class Items {
          <p>$ ${this.price}</p>
          <h5>${this.typeProduct}</h5>
       `;
+        container.addEventListener('click', () => {
+         console.log('Клік на container-items-search-burger');
+      });
       return container;
    }
 
