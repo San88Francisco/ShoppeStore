@@ -36,4 +36,6 @@ import "./MyAccount/MyAccountMain";
 
 import "./Error/Error404";
 
+import "./BlogAddopt/BlogAddopt";
+
 import "./Adaptive/SearchBurger";
