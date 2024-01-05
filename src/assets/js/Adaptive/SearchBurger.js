@@ -1,6 +1,10 @@
+const parseItems = JSON.parse(localStorage.getItem('allProduct'));
+console.log('✌️parseItems --->', parseItems);
+
+
 // Клас для представлення продуктів
 class Items {
-   constructor(imageUrl, name, category, categoryClass, price, productVariant, typeClass, typeProduct) {
+   constructor(imageUrl, name, category, categoryClass, price, productVariant, typeClass, typeProduct, id) {
       this.imageUrl = imageUrl;
       this.name = name;
       this.category = category;
@@ -9,6 +13,7 @@ class Items {
       this.productVariant = productVariant;
       this.typeClass = typeClass;
       this.typeProduct = typeProduct;
+      this.id = id;
    }
 
    // Створення HTML-контейнера для продукту
@@ -22,9 +27,19 @@ class Items {
          <p>$ ${this.price}</p>
          <h5>${this.typeProduct}</h5>
       `;
-        container.addEventListener('click', () => {
-         console.log('Клік на container-items-search-burger');
+      container.addEventListener('click', () => {
+         const itemProduct = parseItems.find((item) => this.id === item.id);
+         console.log("itemProduct:", itemProduct)
+
+         localStorage.setItem('selectedImgPath', itemProduct.imageUrl);
+         localStorage.setItem('selectedProductName', itemProduct.name);
+         localStorage.setItem('selectedProductPrice', itemProduct.price);
+         localStorage.setItem('selectedHeart', 'http://localhost:3000/assets/img/Home_img/Body/heart_bg.png');
+         localStorage.setItem('selectedDiscount', itemProduct.category);
+         localStorage.setItem('selectVariant', itemProduct.productVariant);
+         window.location.href = 'http://localhost:3000/product.html';
       });
+
       return container;
    }
 
@@ -74,10 +89,8 @@ class Items {
 
 // Функція для обробки подій DOMContentLoaded
 function handleDOMContentLoaded() {
-   const allProductString = localStorage.getItem('allProduct');
 
-   if (allProductString) {
-      const parseItems = JSON.parse(allProductString);
+   if (parseItems) {
 
       parseItems.forEach(item => {
          const itemsInstance = new Items(
@@ -88,7 +101,8 @@ function handleDOMContentLoaded() {
             item.price,
             item.productVariant,
             item.typeClass,
-            item.typeProduct
+            item.typeProduct,
+            item.id
          );
 
          itemsInstance.addClassInNav();
