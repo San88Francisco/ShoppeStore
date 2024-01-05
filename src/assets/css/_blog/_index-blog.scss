@@ -68,12 +68,10 @@
          }
          ul li{
             margin-bottom: 10px;
-            a{
-               font-size: 16px;
-               line-height: 27px;
-               color: $placeholder-color;
-               cursor: pointer;
-            }
+            font-size: 16px;
+            line-height: 27px;
+            color: $placeholder-color;
+            cursor: pointer;
          }
       }
    }
@@ -92,6 +90,11 @@
             }
             img{
                width: 100%;
+               &:hover{
+                  transition: .2s all linear;
+                  filter:brightness(104%)  grayscale(17%);
+
+               }
             }
             .card__date{
                margin-top: 20px;
