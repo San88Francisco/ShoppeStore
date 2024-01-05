@@ -8,7 +8,6 @@ import "./Home/ItemsLoad";
 import "./Home/SearchGlobalInput";
 
 
-// import "./Shop/Body";
 import "./Shop/Discount"
 import "./Shop/Filter";
 import "./Shop/SortBy";

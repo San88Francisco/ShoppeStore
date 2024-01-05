@@ -488,7 +488,7 @@ header {
          width: 15px;
          height: 15px;
          cursor: pointer;
-         margin: 0 10px;
+
       }
 
       input {
@@ -654,15 +654,18 @@ header {
 
          h2,
          p {
-            color: var(--Light-Colors-Dark-gray---Light, #707070);
-
-            /* 16px - Heading 5 */
-            font-family: DM Sans;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 27px;
+            
             /* 168.75% */
+         }
+
+         p {
+            color: $errors-color;
+            font-size: 16px;
+            font-weight: 500;
+
+            span {
+               color: $accent-color;
+            }
          }
 
          h5 {
@@ -674,42 +677,7 @@ header {
    }
 }
 
-// #container-items-search-burger {
-//    border: 1px solid black;
-//    height: 140px;
-//    animation: slideIn 0.8s ease-in-out;
 
-//    img {
-//       width: 120px;
-//       border-radius: 5px;
-//       float: left;
-//       margin-right: 5%;
-//    }
-
-//    h1 {
-//       color: $black-color;
-//       font-family: DM Sans;
-//       font-size: 14px;
-//       font-weight: 400;
-//       line-height: 20px;
-//    }
-
-//    h2,
-//    p {
-//       color: $dark-gray-color;
-//       font-family: DM Sans;
-//       font-size: 12px;
-//       font-style: normal;
-//       font-weight: 400;
-//       line-height: 20px;
-//    }
-
-//    h5 {
-//       color: $placeholder-color;
-//       text-transform: capitalize;
-//       font-size: 12px;
-//    }
-// }
 
 @keyframes slideIn {
    from {
