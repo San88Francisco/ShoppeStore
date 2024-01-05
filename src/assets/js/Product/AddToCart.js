@@ -188,6 +188,36 @@ document.addEventListener('DOMContentLoaded', function () {
         discount;
       document.querySelector('.productValue').textContent = productVariant;
     }
-
   }
 });
+
+
+const productHeart = document.querySelector(".product__heart");
+const similiarItem = document.querySelector(".product-latest-blocks");
+
+const BASE_URL = "../../../assets/img/Home_img/Body/heart_bg.png";
+const ACTIVE_HEART_URL = "../../../assets/img/Home_img/Body/red_heart.png";
+
+productHeart &&
+  productHeart.addEventListener("click", (e) => {
+    const targetHeart = e.target.closest(".product__heart");
+
+    if (targetHeart) {
+      targetHeart.id = targetHeart.id === "default" ? "active" : "default";
+      targetHeart.src =
+        targetHeart.id === "default" ? BASE_URL : ACTIVE_HEART_URL;
+    }
+  });
+
+  similiarItem &&
+    similiarItem.addEventListener("click", (e) => {
+      console.log("da");
+      const targetHeart = e.target.closest(".shop-latest__heart");
+
+      if (targetHeart) {
+        targetHeart.id = targetHeart.id === "default" ? "active" : "default";
+        targetHeart.src =
+          targetHeart.id === "default" ? BASE_URL : ACTIVE_HEART_URL;
+      }
+    });
+
