@@ -2,11 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
    if (window.location.pathname.includes('/blog')) {
 
       //! search
-      if (document.querySelector('#search-input') !== null) {
-         document.querySelector('#search-input').oninput = function () {
+      const searchInput = document.querySelector('#search-input')
+      window.onload = function() {
+         localStorage.getItem('inputIsSelect') === 'true' ? searchInput.focus() : 0
+         setTimeout(function() {
+            localStorage.removeItem('inputIsSelect')
+          }, 1000);
+      }
+      if (searchInput !== null) {
+         searchInput.oninput = function () {
             const numberOfSelectPage = document.querySelector('.act_page').classList[0].replace(/[^+\d]/g, '')
             const cardsBlock = document.querySelectorAll('.blog__cards__content')
             const searchBlockItem = document.querySelector('.searchBlock')
+
+            searchBlockItem.innerHTML = ' '
+            searchBlockItem.style.display = 'none'
+
             let searchBlock = ''
             cardsBlock.forEach(item => {
                searchBlock += item.innerHTML
@@ -15,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             searchBlockItem.style.display = 'grid'
             searchBlockItem.innerHTML = searchBlock
 
+            document.querySelector('.blog__cards__pages').style.display = 'none'
             let val = this.value.trim().toLowerCase();
             let lettersItems = document.querySelectorAll('.blog__card__name');
 
@@ -24,10 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
                if (val == '') {
                   shopLatestBlock2.style.display = 'block';
 
-                  const firstPage = document.querySelector(`.page__block${numberOfSelectPage}__content`)
-                  firstPage.style.display = 'grid'
+                  const thisPage = document.querySelector(`.page__block${numberOfSelectPage}__content`)
+                  thisPage.style.display = 'grid'
         
-                  searchBlockItem.innerHTML = ''
+                  searchBlockItem.innerHTML = ' '
+                  searchBlockItem.style.display = 'none'
+
+                  document.querySelector('.blog__cards__pages').style.display = 'flex'
                } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
                   shopLatestBlock2.style.display = 'block';
                } else {
@@ -44,7 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
          cardButtons.forEach(item => {
             item.addEventListener('click', () => {
                //? у разі нажаття на кнопки з цифрами
+               const searchBlockItem = document.querySelector('.searchBlock')
                if (item.classList.contains('cards__pages__arrow') === false) {
+                  searchBlockItem.innerHTML = ' '
+                  searchBlockItem.style.display = 'none'
+
                   // знаходимо елемент який був перед натисканням на кнопку
                   const lastCheckedPage = document.querySelector('.act_page')
 
@@ -58,6 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
                } else {
                   //? при нажатті на стрілку
 
+                  searchBlockItem.innerHTML = ' '
+                  searchBlockItem.style.display = 'none'
+
                   // знаходимо елемент який був перед натисканням на кнопку
                   const lastCheckedPage = document.querySelector('.act_page')
 
@@ -69,27 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   document.querySelector(`.${lastCheckedPage.classList[0]}__content`).style.display = 'none'
                   lastCheckedPage.classList.remove('act_page')
 
-                  //! search
-                  if(document.title.toLowerCase().replace(/\s/g, "") === 'blog'){
-                     if(document.querySelector('#search-input') !== null){
-                        document.querySelector('#search-input').oninput = function () {
-                           let val = this.value.trim().toLowerCase();
-                           let lettersItems = document.querySelectorAll('.blog__card__name');
-                        
-                           lettersItems.forEach(function (e) {
-                             const shopLatestBlock2 = e.closest('.content__cards');
-                           
-                             if (val == '') {
-                               shopLatestBlock2.style.display = 'block';
-                             } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
-                               shopLatestBlock2.style.display = 'block';
-                             } else {
-                               shopLatestBlock2.style.display = 'none';
-                             }
-                           });
-                        };
-                     }
-                  }
                   // знаходимо першу сторінку і кнопку, якщо наступної немає
                   const firstPage = document.querySelector('.page__block1__content')
                   const firstButton = document.querySelector('.page__block1')
@@ -133,7 +134,22 @@ document.addEventListener('DOMContentLoaded', () => {
                   shopLatestBlock2.style.display = 'none';
                }
             });
-            
+
+            const cardsBlock = document.querySelectorAll('.blog__cards__content')
+            const searchBlockItem = document.querySelector('.searchBlock')
+
+            searchBlockItem.innerHTML = ' '
+            searchBlockItem.style.display = 'none'
+
+            let searchBlock = ''
+            cardsBlock.forEach(item => {
+               searchBlock += item.innerHTML
+               item.style.display = 'none'
+            })
+            searchBlockItem.style.display = 'grid'
+            searchBlockItem.innerHTML = searchBlock
+
+            document.querySelector('.blog__cards__pages').style.display = 'none'
          }else{
             item.style.color = 'rgb(112,112,112)'
             item.classList.remove('selectCategories')
@@ -143,6 +159,16 @@ document.addEventListener('DOMContentLoaded', () => {
                const shopLatestBlock2 = e.closest('.content__cards');
                shopLatestBlock2.style.display = 'block';
             });
+            
+            const searchBlockItem = document.querySelector('.searchBlock')
+            const numberOfSelectPage = document.querySelector('.act_page').classList[0].replace(/[^+\d]/g, '')
+            const thisPage = document.querySelector(`.page__block${numberOfSelectPage}__content`)
+            thisPage.style.display = 'grid'
+   
+            searchBlockItem.innerHTML = ' '
+            searchBlockItem.style.display = 'none'
+
+            document.querySelector('.blog__cards__pages').style.display = 'flex'
          }
       }
 

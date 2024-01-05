@@ -99,7 +99,7 @@ const moveToReplay = () => {
       item.addEventListener('click', ()=> {
          const hrefToUser = item.getAttribute('href')
          const userElement = document.getElementsByName(`${hrefToUser}`)[0]
-         userElement.scrollIntoView();
+         userElement.scrollIntoView()
          window.scrollBy(0, -(screen.height / 100 * 40));
          userElement.parentElement.children[0].style.backgroundColor = 'rgb(216, 216, 216)'
          setTimeout(function() {
@@ -319,6 +319,13 @@ const navigationBarLogical = () => {
    })
 }
 
+const searchItemsFromAddopt = () => {
+   document.querySelector('#search-input-addopt').addEventListener('click', () => {
+      document.location.href = "./blog.html";
+      localStorage.setItem('inputIsSelect', true)
+   })
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
    if (window.location.pathname.includes('/blog-addopt')) {
@@ -330,5 +337,6 @@ document.addEventListener('DOMContentLoaded', () => {
       replyBtnClick()
       moveToReplay()
       addComment()
+      searchItemsFromAddopt()
    }
 })
