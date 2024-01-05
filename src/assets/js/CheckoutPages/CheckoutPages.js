@@ -1,6 +1,5 @@
 const checkboxCreate = document.querySelectorAll('.checkout__checkbox-create div');
 const checkboxChecked = document.querySelectorAll('.checkout__checkbox-create input');
-console.log("checkboxChecked:", checkboxChecked)
 
 
 checkboxCreate.forEach((checked,index) => {
