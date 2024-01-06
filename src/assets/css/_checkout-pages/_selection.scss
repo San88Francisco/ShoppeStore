@@ -4,10 +4,9 @@
   margin: 0 auto;
   margin-top: 5px;
   margin-bottom: 250px;
-
 }
 
-.checkout__container{
+.checkout__container {
   display: flex;
   gap: 80px;
   @include sub_title_text;
@@ -16,11 +15,14 @@
     margin-bottom: 39px;
   }
 
-    .checkout__block-name {
-      border: 1px solid red;
+  // Block left
+  .checkout__block-name {
+    width: 50%;
+
+    .checkout__name-info {
+      // border: 1px solid red;
       display: flex;
       flex-direction: column;
-      width: 30%;
       padding: 10px;
 
       input {
@@ -30,42 +32,43 @@
         padding: 6px 0px;
         margin-bottom: 25px;
       }
-  
+
       .checkout__name {
         display: flex;
         gap: 40px;
-  
+
         input {
           max-width: 270px;
           width: 100%;
         }
-  
       }
-  
-      .checkout__checkbox-create { 
-  
+
+      .checkout__checkbox-create {
         div {
           max-width: fit-content;
           margin-bottom: 25px;
-          
+
           &:not(:last-child) {
             margin-bottom: 0px;
           }
-  
+
           input {
             margin: 0;
           }
-  
-          input[type='checkbox']{ height: 0; width: 0; }
-    
-          input[type='checkbox'] + label{
+
+          input[type='checkbox'] {
+            height: 0;
+            width: 0;
+          }
+
+          input[type='checkbox'] + label {
             position: relative;
             display: flex;
             align-items: center;
             color: #707070;
-            transition: color 250ms cubic-bezier(.4,.0,.23,1);
+            transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
           }
-          input[type='checkbox'] + label > ins{
+          input[type='checkbox'] + label > ins {
             position: absolute;
             display: block;
             bottom: 0;
@@ -74,15 +77,15 @@
             width: 100%;
             overflow: hidden;
             text-decoration: none;
-            transition: height 300ms cubic-bezier(.4,.0,.23,1);
+            transition: height 300ms cubic-bezier(0.4, 0, 0.23, 1);
           }
-          input[type='checkbox'] + label > ins > i{
+          input[type='checkbox'] + label > ins > i {
             position: absolute;
             bottom: 0;
             font-style: normal;
-            color:#707070;
+            color: #707070;
           }
-          input[type='checkbox'] + label > span{
+          input[type='checkbox'] + label > span {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -92,68 +95,72 @@
             background: transparent;
             border: 2px solid #707070;
             border-radius: 2px;
-            cursor: pointer;  
-            transition: all 250ms cubic-bezier(.4,.0,.23,1);
+            cursor: pointer;
+            transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
           }
-          
-          input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
+
+          input[type='checkbox'] + label:hover,
+          input[type='checkbox']:focus + label {
             color: #000000;
           }
-          input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
+          input[type='checkbox'] + label:hover > span,
+          input[type='checkbox']:focus + label > span {
             background: #fff;
           }
-          input[type='checkbox']:checked + label > ins{ height: 100%; }
-          
-          input[type='checkbox']:checked + label > span{
-            border: .5em solid#707070;
-            animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+          input[type='checkbox']:checked + label > ins {
+            height: 100%;
           }
-          input[type='checkbox']:checked + label > span:before{
-            content: "";
+
+          input[type='checkbox']:checked + label > span {
+            border: 0.5em solid#707070;
+            animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
+          }
+          input[type='checkbox']:checked + label > span:before {
+            content: '';
             position: absolute;
-            top: .4em;
-            left: .150em;
+            top: 0.4em;
+            left: 0.15em;
             border-right: 3px solid transparent;
             border-bottom: 3px solid transparent;
             transform: rotate(45deg);
             transform-origin: 0% 100%;
-            animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+            animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1)
+              forwards;
           }
-          
-          @keyframes shrink-bounce{
-            0%{
+
+          @keyframes shrink-bounce {
+            0% {
               transform: scale(1);
             }
-            33%{    
-              transform: scale(.85);
+            33% {
+              transform: scale(0.85);
             }
-            100%{
-              transform: scale(1);    
+            100% {
+              transform: scale(1);
             }
           }
-          @keyframes checkbox-check{
-            0%{
+          @keyframes checkbox-check {
+            0% {
               width: 0;
               height: 0;
               border-color: #fff;
-              transform: translate3d(0,0,0) rotate(45deg);
+              transform: translate3d(0, 0, 0) rotate(45deg);
             }
-            33%{
-              width: .2em;
+            33% {
+              width: 0.2em;
               height: 0;
-              transform: translate3d(0,0,0) rotate(45deg);
+              transform: translate3d(0, 0, 0) rotate(45deg);
             }
-            100%{    
-              width: .2em;
-              height: .5em;    
+            100% {
+              width: 0.2em;
+              height: 0.5em;
               border-color: #fff;
-              transform: translate3d(0,-.5em,0) rotate(45deg);
+              transform: translate3d(0, -0.5em, 0) rotate(45deg);
             }
           }
         }
       }
     }
-
   }
 
   // Block right
@@ -162,13 +169,159 @@
 
     .checkout__order-info {
       // border: 1px solid yellow;
-      background-color: #EFEFEF;
-      border: 1px solid yellow;
-      width: 50%;
+      background-color: #efefef;
       padding: 37px 59px;
+
+      .block__order {
+        &:first-child > div {
+          border-bottom: 1px solid $gray-color;
+          padding-bottom: 10px;
+        }
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 25px;
+        }
+
+        .block__order-item {
+          color: $placeholder-color;
+          flex-direction: column;
+
+          div {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+
+            p {
+              &:nth-child(2) {
+                text-align: center;
+              }
+
+              &:nth-child(3) {
+                text-align: right;
+              }
+            }
+          }
+        }
+
+        .order__subtotal {
+          color: $placeholder-color;
+        }
+        .order__shipping {
+          color: $placeholder-color;
+        }
+
+        .order__block-total {
+          font-weight: 700;
+          line-height: 20px;
+        }
+      }
+
+      .checkout__checkbox-payment {
+        margin-bottom: 45px;
+
+        .radio__block {
+          margin-bottom: 18px;
+
+          input[type='radio'] {
+            position: absolute;
+            opacity: 0;
+
+            + .radio__label {
+              cursor: pointer;
+
+              &:before {
+                content: '';
+                border-radius: 100%;
+                border: 2px solid darken(#000, 25%);
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: 3px;
+                margin-right: 8px;
+                vertical-align: top;
+                text-align: center;
+                transition: all 250ms ease;
+              }
+            }
+
+            &:checked {
+              + .radio__label {
+                &:before {
+                  background-color: #000;
+                  box-shadow: inset 0 0 0 4px #f4f4f4;
+                }
+              }
+            }
+
+            &:focus {
+              + .radio__label {
+                &:before {
+                  outline: none;
+                  border-color: #000;
+                }
+              }
+            }
+
+            + .radio__label {
+              &:empty {
+                &:before {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+
+          .label__paypal {
+            position: relative;
+
+            &::after {
+              content: '';
+              background-image: url('../../../assets/img/svg/paypal.svg');
+              // background-position: center;
+              background-size: cover;
+              display: block;
+              width: 13px;
+              height: 16px;
+              position: absolute;
+              top: 0px;
+              right: -18px;
+            }
+          }
+
+          .nuances__payment {
+            display: none;
+            font-size: 12px;
+            line-height: 20px;
+            color: $placeholder-color;
+            margin: 20px 0;
+          }
+
+          .nuances__1 {
+            display: block;
+          }
+        }
+      }
+
+      .btn__place-order {
+        transition: 0.2s all linear;
+        background-color: $black-color;
+        border: 1px solid $black-color;
+        color: $white-color;
+        border-radius: 4px;
+        width: 100%;
+        padding: 15px 0px;
+        font-family: DM Sans;
+        font-size: 16px;
+        font-weight: 700;
+        &:hover {
+          transition: 0.2s all linear;
+          background-color: $white-color;
+          border: 1px solid $black-color;
+          color: $black-color;
+        }
+      }
     }
   }
-  
-  
-
 }

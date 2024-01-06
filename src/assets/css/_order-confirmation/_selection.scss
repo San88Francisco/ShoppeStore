@@ -2,13 +2,13 @@
   max-width: 1248px;
   height: 100%;
   margin: 0 auto;
-  margin-top: 5px;
+  margin-top: 50px;
   margin-bottom: 250px;
   position: relative;
 
   .order__window-block {
     position: absolute;
-    top: -111px;
+    top: -102px;
     background: $light-gray-color;
     width: 100%;
     height: 68px;
@@ -20,15 +20,14 @@
     padding: 24px;
 
     p {
-       display: flex;
-       align-items: center;
+      display: flex;
+      align-items: center;
 
-       img {
-          margin-right: 10px;
-       }
+      img {
+        margin-right: 10px;
+      }
     }
- }
-
+  }
 
   .order__block-name {
     width: 50%;
@@ -42,8 +41,8 @@
         width: 50%;
         // border: 2px solid green;
       }
-    
-      .order__details-right{
+
+      .order__details-right {
         width: 50%;
         // border: 2px solid rgb(148, 148, 31);
       }
@@ -62,6 +61,3 @@
     }
   }
 }
-
-
-
