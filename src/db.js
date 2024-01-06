@@ -56,7 +56,7 @@
   },
   {
     "id": 5,
-    "name": "Lira Earrings",
+    "name": "Elysian Hair Earrings",
     "typeProduct": "Pendants",
     "typeClass": "add-pendants",
     "category": "-15%",
