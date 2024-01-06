@@ -39,10 +39,8 @@ class Items {
          <img src="${this.imageUrl}" alt="${this.name}">
          <h1>${this.name}</h1>
          <h2>${this.productVariant}</h2>
-         <p id='priceItem' class='${priceDiscount !== undefined ? 'discounted' : 'regular'}'>$ ${this.price}
-          </p>
-          <span>${priceDiscount ? '$ ' : ''}${priceDiscount || ''}</span>
-
+         <p id='priceItem' class='${priceDiscount !== undefined ? 'discounted' : 'regular'}'>$ ${this.price}</p>
+         <span>${priceDiscount ? '$ ' : ''}${priceDiscount || ''}</span>
          `;
 
 
@@ -54,9 +52,12 @@ class Items {
 
          localStorage.setItem('selectedImgPath', itemProduct.imageUrl);
          localStorage.setItem('selectedProductName', itemProduct.name);
-         localStorage.setItem('selectedProductPrice', itemProduct.price);
+         localStorage.setItem('selectedProductPrice', itemProduct.priceDiscount);
          localStorage.setItem('selectedHeart', 'http://localhost:3000/assets/img/Home_img/Body/heart_bg.png');
-         localStorage.setItem('selectedDiscount', itemProduct.category);
+         localStorage.setItem('selectedDiscount', `
+         <h4 class="shop-latest__price">
+         <a href="#"id='priceItem' class="${priceDiscount !== undefined ? 'discounted' : 'regular'}">$ ${this.price}</a>
+         <a href="#" class="discount">${priceDiscount ? '$ ' : ''}${priceDiscount || ''}</a></h4>`);
          localStorage.setItem('selectVariant', itemProduct.productVariant);
          window.location.href = 'http://localhost:3000/product.html';
       });
