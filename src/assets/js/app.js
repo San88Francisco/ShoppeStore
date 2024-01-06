@@ -4,8 +4,9 @@ import './Home/Header';
 import './Home/Slider';
 import './Home/Body';
 import './Home/Burger';
+import './Home/ItemsLoad';
+import './Home/SearchGlobalInput';
 
-import './Shop/Body';
 import './Shop/Discount';
 import './Shop/Filter';
 import './Shop/SortBy';
@@ -30,3 +31,8 @@ import './OrderConfirmation/OrderConfirmation';
 import './Blog/Main-blog';
 
 import './MyAccount/MyAccountMain';
+import './Error/Error404';
+
+import './BlogAddopt/BlogAddopt';
+
+import './Adaptive/SearchBurger';

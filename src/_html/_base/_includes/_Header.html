@@ -22,9 +22,7 @@
             <div class="navbar__user">
                <ul>
                   <li class="header_line header_none">
-                     <a href="#">
-                        <img src="./assets/img/Home_img/header/search.svg" alt="" />
-                     </a>
+                     <img id="icon-search-global" src="./assets/img/Home_img/header/search.svg" alt="" />
                   </li>
                   <li class="header_line header_link_cart header_none">
                      <a href="./cart.html">
@@ -32,8 +30,8 @@
                         <span class="cart__count"></span>
                      </a>
                   </li>
-                  <li class="header_line_last header_link_account header_none">
-                     <a href="./account.html">
+                  <li class="header_line_last header_link_account header_none header_link_myaccount">
+                     <a href="./account.html" class="account__href">
                         <img src="./assets/img/Home_img/header/user.svg" alt="" />
                      </a>
                   </li>
@@ -94,23 +92,23 @@
                   </div>
                </div>
             </div>
-
-
          </nav>
-
-
-
-
       </div>
    </div>
-   <!-- Mobile search -->
-   <div class="search-block">
-      <img src="./assets/img/Home_img/header/search.png" alt="" />
-      <form action="">
-         <input class="search__input" type="text" placeholder="Search" />
-      </form>
-   </div>
+
    <hr class="header__underline" />
    <hr class="burger__underline" />
 
 </header>
+<nav class="background-block-input">
+   <div id="container-global-search" class="search-block-global">
+      <img src="./assets/img/Home_img/header/search.png" alt="" />
+      <input id="global-search" class="search__input" type="text" placeholder="Search" />
+   </div>
+</nav>
+
+
+<nav id="global-nav-search-for-input">
+   <div id="block-item">
+   </div>
+</nav>
