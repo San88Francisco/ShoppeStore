@@ -1,5 +1,5 @@
 .my-account {
-   width: 1240px;
+   max-width: 1240px;
    margin: 0 auto;
    padding-bottom: 200px;
    font-family: DM Sans;
@@ -11,28 +11,27 @@
       color: $black-color;
       font-size: 33px;
       font-weight: 500;
-      line-height: 43px;
+      line-height: 130.30303%; /* 43/33 */
       text-align: center;
       padding-bottom: 65px;
    }
 
    p {
       font-size: 16px;
-      line-height: 27px;
+      line-height: 168.75%; /* 27/16 */
    }
 
    nav {
       ul {
          display: flex;
-         justify-content: start;
-
+         justify-content: space-between;
+         max-width: 825px;
+         
          li {
             font-size: 20px;
-            line-height: 26px;
+            line-height: 130%; /* 26/20 */
             color: $placeholder-color;
-            padding-right: 50px;
             padding-bottom: 35px;
-
             .act {
                color: $black-color;
                position: relative;
@@ -55,7 +54,10 @@
                   top: 32px;
                   border-radius: 1px;
                   border-bottom: 2px solid #000;
-                  border-width: 2px 0px;
+                  border-width: 2px 0px; 
+               }
+               &:first-child::after {
+                  top: 31px;
                }
             }
          }
@@ -383,6 +385,61 @@
             font-size: 12px;
             color: $placeholder-color;
          }
+      }
+   }
+   @media (max-width: 1023.98px){
+      h1 {
+         font-size: 27px;
+         line-height: 130.30303%; /* 43/33 */
+         padding-bottom: 40px;
+      }
+      nav {
+         ul {
+         
+            li {
+               font-size: 18px;
+               padding-bottom: 35px;
+               .act {
+                  &::after {
+                     height: 30px;
+                     bottom: -2px;
+                     top: 32px;
+                  
+                  }
+                  &:first-child::after {
+                     top: 29px;
+                  }
+               }
+            }
+         }
+   
+         .header__underline {
+            display: block;
+            margin-bottom: 40px;
+         }
+      }
+   }
+   @media (max-width: 700.98px){
+      h1 {
+         font-size: 24px;
+         line-height: 130.30303%; /* 43/33 */
+         padding-bottom: 35px;
+      }
+      p {
+         font-size: 14px;
+      }
+      li {
+         font-size: 18px;
+      }
+   }
+   @media (max-width: 467.98px){
+      h1 {
+         font-size: 20px;
+         line-height: 130.30303%; /* 43/33 */
+         padding-bottom: 24px;
+      }
+      p {
+         font-size: 12px;
       }
    }
 }
