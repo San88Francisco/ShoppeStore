@@ -20,7 +20,6 @@
     width: 50%;
 
     .checkout__name-info {
-      // border: 1px solid red;
       display: flex;
       flex-direction: column;
       padding: 10px;
@@ -168,7 +167,6 @@
     width: 50%;
 
     .checkout__order-info {
-      // border: 1px solid yellow;
       background-color: #efefef;
       padding: 37px 59px;
 
@@ -279,7 +277,6 @@
             &::after {
               content: '';
               background-image: url('../../../assets/img/svg/paypal.svg');
-              // background-position: center;
               background-size: cover;
               display: block;
               width: 13px;
