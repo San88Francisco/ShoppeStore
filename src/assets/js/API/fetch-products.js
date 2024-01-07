@@ -1,5 +1,9 @@
 export const fetchData = async () => {
   try {
+  
+    // Чистимо localStorage allProduct і потім перезаписуємо заново продукти, щоб були нові
+    localStorage.removeItem('allProduct');
+
     const response = await fetch(
       "https://650f314454d18aabfe99ec68.mockapi.io/cart"
     );
