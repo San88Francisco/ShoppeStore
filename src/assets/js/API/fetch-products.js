@@ -1,16 +1,12 @@
 export const fetchData = async () => {
   try {
-  
-    // Чистимо localStorage allProduct і потім перезаписуємо заново продукти, щоб були нові
-    localStorage.removeItem('allProduct');
-
     const response = await fetch(
-      "https://650f314454d18aabfe99ec68.mockapi.io/cart"
+      'https://650f314454d18aabfe99ec68.mockapi.io/cart'
     );
     // Обробка отриманих даних
     const data = await response.json();
     // Записуємо данні в локальне сховище
-    localStorage.setItem("allProduct", JSON.stringify(data));
+    localStorage.setItem('allProduct', JSON.stringify(data));
 
     return data;
   } catch (error) {

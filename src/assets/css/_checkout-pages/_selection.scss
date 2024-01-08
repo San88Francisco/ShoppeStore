@@ -42,6 +42,10 @@
         }
       }
 
+      .order__field {
+        display: block;
+      }
+
       .checkout__checkbox-create {
         div {
           min-width: 228px;
@@ -49,7 +53,6 @@
 
           &:not(:last-child) {
             margin-bottom: 0px;
-
           }
 
           input {
