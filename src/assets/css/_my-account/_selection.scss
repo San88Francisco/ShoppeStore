@@ -70,11 +70,14 @@
          & i {
             font-size: 10px;
             padding-bottom: 16px;
+            color: #D8D8D8;
            
          }
          display: none;
       }
-     
+     .go i{
+      color: #000000;
+     }
    }
 
    .myAccount__tabPage> :not(:nth-child(1)) {
@@ -332,7 +335,7 @@
                   label {
                      cursor: pointer;
                      display: inline-block;
-                    //float: right;
+                    float: right;
                      margin-top: auto;
                      margin-left: auto;
                      transition: 0.2s all linear;
@@ -541,6 +544,7 @@
             padding-bottom: 32px;
          }
          .my-address {
+            grid-gap: 30px;
             & h3 {
                font-size: 18px;
                padding-bottom: 18px;
@@ -548,6 +552,23 @@
             & p {
                padding-bottom: 0;
             }
+            .add-my-bill {
+               .bill-registr{
+                  & form {
+                     .bill-user-name {
+                        grid-template-columns: auto;
+                        grid-gap: 0;
+                     }
+                     & input {
+                        margin-bottom: 28px;
+                        &::placeholder {
+                           font-size: 12px;
+                        }
+                     }
+                  }
+               }
+            }
+            
          }
         
       }
