@@ -63,68 +63,70 @@ if (window.location.pathname.includes('/my-account')) {
    })
 
    // add to underline for element
-   const underlineLine = document.querySelector('.underline-header__line');
-   const navLinks = document.querySelectorAll('.myAccount__navigation ul li a');
-
-   function updateLineOnSliderScroll() {
-      const activeLink = document.querySelector('.myAccount__navigation ul li a.act');
-      // const underlineLine = document.querySelector('.underline-header__line');
-      const screenWidth = window.innerWidth;
-
-      if (activeLink && underlineLine) {
-         const activeLinkWidth = activeLink.getBoundingClientRect().width;
-         const activeLinkOffsetLeft = activeLink.getBoundingClientRect().left - document.querySelector('.myAccount__navigation').getBoundingClientRect().left;
-
-         underlineLine.style.width = `${activeLinkWidth}px`;
-
-         if (screenWidth > 700) {
-            underlineLine.style.transform = `translateX(${activeLinkOffsetLeft}px)`;
-         } else {
-            underlineLine.style.transform = `translateX(${activeLinkOffsetLeft - 13.59}px)`;
-         }
-      }
-   }
-   function updateLinePosition(activeLink) {
-      const activeLinkWidth = activeLink.getBoundingClientRect().width;
-      const activeLinkOffsetLeft = activeLink.getBoundingClientRect().left - document.querySelector('.myAccount__navigation').getBoundingClientRect().left;
-
-      underlineLine.style.width = `${activeLinkWidth}px`;
-      const screenWidth = window.innerWidth;
-      if (screenWidth > 700) {
-         underlineLine.style.transform = `translateX(${activeLinkOffsetLeft}px)`;
-      } else {
-         underlineLine.style.transform = `translateX(${activeLinkOffsetLeft - 13.59}px)`;
-      }
-   }
-
-   navLinks.forEach(link => {
-      link.addEventListener('click', function (event) {
-         event.preventDefault();
-
-         // Помітити активний елемент
-         navLinks.forEach(link => link.classList.remove('act'));
-         link.classList.add('act');
-
-         updateLinePosition(this);
-      });
-   });
-
-   window.addEventListener('resize', function () {
-      const activeLink = document.querySelector('.myAccount__navigation ul li a.act');
-      if (activeLink) {
-         updateLinePosition(activeLink);
-      }
-   });
-
-   const sliderContainer = document.querySelector('.slider-container');
-   sliderContainer.addEventListener('scroll', () => {
-      updateLineOnSliderScroll();
-   });
+   /*  const underlineLine = document.querySelector('.underline-header__line');
+     const navLinks = document.querySelectorAll('.myAccount__navigation ul li a');
+  
+     function updateLineOnSliderScroll() {
+        const activeLink = document.querySelector('.myAccount__navigation ul li a.act');
+        // const underlineLine = document.querySelector('.underline-header__line');
+        const screenWidth = window.innerWidth;
+  
+        if (activeLink && underlineLine) {
+           const activeLinkWidth = activeLink.getBoundingClientRect().width;
+           const activeLinkOffsetLeft = activeLink.getBoundingClientRect().left - document.querySelector('.myAccount__navigation').getBoundingClientRect().left;
+  
+           underlineLine.style.width = `${activeLinkWidth}px`;
+  
+           if (screenWidth > 700) {
+              underlineLine.style.transform = `translateX(${activeLinkOffsetLeft}px)`;
+           } else {
+              underlineLine.style.transform = `translateX(${activeLinkOffsetLeft - 13.59}px)`;
+           }
+        }
+     }
+     function updateLinePosition(activeLink) {
+        const activeLinkWidth = activeLink.getBoundingClientRect().width;
+        const activeLinkOffsetLeft = activeLink.getBoundingClientRect().left - document.querySelector('.myAccount__navigation').getBoundingClientRect().left;
+  
+        underlineLine.style.width = `${activeLinkWidth}px`;
+        const screenWidth = window.innerWidth;
+        if (screenWidth > 700) {
+           underlineLine.style.transform = `translateX(${activeLinkOffsetLeft}px)`;
+        } else {
+           underlineLine.style.transform = `translateX(${activeLinkOffsetLeft - 13.59}px)`;
+        }
+     }
+  
+     navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+           event.preventDefault();
+  
+           // Помітити активний елемент
+           navLinks.forEach(link => link.classList.remove('act'));
+           link.classList.add('act');
+  
+           updateLinePosition(this);
+        });
+     });
+  
+     window.addEventListener('resize', function () {
+        const activeLink = document.querySelector('.myAccount__navigation ul li a.act');
+        if (activeLink) {
+           updateLinePosition(activeLink);
+        }
+     });
+  
+     const sliderContainer = document.querySelector('.slider-container');
+     sliderContainer.addEventListener('scroll', () => {
+        updateLineOnSliderScroll();
+     });*/
 
 
 
    const prevButton = document.querySelector('.prev');
    const nextButton = document.querySelector('.next');
+   const sliderContainer = document.querySelector('.slider-container');
+
 
 
    prevButton.addEventListener('click', () => {

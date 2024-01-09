@@ -47,6 +47,22 @@
             .act {
                color: $black-color;
                position: relative;
+               &::after {
+                  content: "";
+               transition: 50ms all ease-in-out;
+               z-index: 5;
+               width: 100%;
+               height: 31px;
+               position: absolute;
+               margin-left: auto;
+               margin-right: auto;
+               left: 0;
+               right: 0;
+               text-align: center;
+               border-radius: 1px;
+               border-bottom: 2px solid black;
+               padding-bottom: 30px;
+               }    
             }
          }
       }
@@ -54,15 +70,10 @@
       .header__underline {
          display: block;
          margin-bottom: 40px;
-         border: none;
          background-color: #D8D8D8;
-         overflow: hidden;
-      }
-      .underline-header__line {
-         width: 100px;
-         background-color: #000;
-         height: 1px;
-         transition: all 0.3s;
+         position: relative;
+         z-index: 1;
+
       }
       .prev,
       .next {
@@ -433,6 +444,11 @@
             li {
                font-size: 18px;
                padding-bottom: 35px;
+               .act{
+                  &::after {
+                     padding-bottom: 27px;
+                  }
+               }
             }
          }
          .header__underline {
