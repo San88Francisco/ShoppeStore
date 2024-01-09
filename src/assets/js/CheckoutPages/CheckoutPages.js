@@ -1,6 +1,5 @@
 import { placeOrder } from './PlaceOrder';
 import { orderItemViev } from './OrderItemViev';
-import { validationInfo } from './ValidationInfo';
 
 document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Product"
@@ -52,8 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    validationInfo();
     const btnPlaceOrder = document.querySelector('.btn__place-order');
-    btnPlaceOrder.addEventListener('click', () => placeOrder(paymentMethod));
+    btnPlaceOrder.addEventListener('click', (e) => {
+      e.preventDefault();
+      placeOrder(paymentMethod);
+    });
   }
 });

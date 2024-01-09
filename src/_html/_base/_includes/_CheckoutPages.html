@@ -1,51 +1,76 @@
 <section class="checkout__pages">
-  <div class="checkout__container">
+  <!-- action="http://localhost:3000/order-confirmation.html" -->
+  <form class="checkout__container">
     <div class="checkout__block-name">
       <h2>Billing Details</h2>
 
       <div class="checkout__name-info">
         <div class="checkout__name">
-          <input
-            class="order__field input__first-name"
-            type="text"
-            placeholder="First name *"
-          />
-          <input
-            class="order__field input__last-name"
-            type="text"
-            placeholder="last name *"
-          />
+          <div class="order__form-info">
+            <input
+              class="order__field input__first-name"
+              type="text"
+              placeholder="First name *"
+            />
+            <span class="order__error-name">Please enter name</span>
+          </div>
+          <div class="order__form-info">
+            <input
+              class="order__field input__last-name"
+              type="text"
+              placeholder="last name *"
+            />
+            <span class="order__error">Введіть призвище</span>
+          </div>
         </div>
-        <input
-          class="order__field input__country"
-          type="text"
-          placeholder="Country *"
-        />
-        <input
-          class="order__field input__street-address"
-          type="text"
-          placeholder="Street Address *"
-        />
-        <input
-          class="order__field input__postcode"
-          type="text"
-          placeholder="Postcode / ZIP *"
-        />
-        <input
-          class="order__field input__city"
-          type="text"
-          placeholder="Town / City *"
-        />
-        <input
-          class="order__field input__phone"
-          type="text"
-          placeholder="Phone *"
-        />
-        <input
-          class="order__field input__email"
-          type="email"
-          placeholder="Email *"
-        />
+        <div class="order__form-info">
+          <input
+            class="order__field input__country"
+            type="text"
+            placeholder="Country *"
+          />
+          <span class="order__error">Введіть країну</span>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__city"
+            type="text"
+            placeholder="Town / City *"
+          />
+          <span class="order__error">Введіть місто</span>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__street-address"
+            type="text"
+            placeholder="Street Address *"
+          />
+          <span class="order__error">Введіть адресу</span>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__postcode"
+            type="number"
+            placeholder="Postcode / ZIP *"
+          />
+          <span class="order__error">Введіть індекс</span>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__phone"
+            type="number"
+            placeholder="Phone *"
+          />
+          <span class="order__error">Введіть номер телефону</span>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__email"
+            type="email"
+            placeholder="Email *"
+          />
+          <span class="order__error">Введіть email</span>
+        </div>
 
         <div class="checkout__checkbox-create">
           <div class="">
@@ -84,17 +109,17 @@
           </div>
           <div class="block__order-item">
             <!-- <div>
-                            <span>Lira Earrings</span>
-                            <span> 1pc. / $64</span>
-                        </div>
-                        <div>
-                            <span>Ollie Earrings</span>
-                            <span>$10</span>
-                        </div>
-                        <div>
-                            <span>Kaede Hair Pin</span>
-                            <span>$10</span>
-                        </div> -->
+              <span>Lira Earrings</span>
+              <span> 1pc. / $64</span>
+            </div>
+            <div>
+                <span>Ollie Earrings</span>
+                <span>$10</span>
+            </div>
+            <div>
+                <span>Kaede Hair Pin</span>
+                <span>$10</span>
+            </div> -->
           </div>
           <div class="order__block-subtotal">
             <span>SUBTOTAL</span>
@@ -183,8 +208,8 @@
           </div>
         </div>
 
-        <button class="btn__place-order">PLACE ORDER</button>
+        <button type="submit" class="btn__place-order">PLACE ORDER</button>
       </div>
     </div>
-  </div>
+  </form>
 </section>
