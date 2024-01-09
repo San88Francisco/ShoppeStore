@@ -1,26 +1,29 @@
 <section class="checkout__pages">
   <!-- action="http://localhost:3000/order-confirmation.html" -->
-  <form class="checkout__container">
+  <form class="checkout__container" name="checkout__container">
     <div class="checkout__block-name">
       <h2>Billing Details</h2>
 
       <div class="checkout__name-info">
+        <button type="submit" class="btn__place-order">PLACE ORDER</button>
         <div class="checkout__name">
           <div class="order__form-info">
             <input
               class="order__field input__first-name"
               type="text"
               placeholder="First name *"
+              data-reg="^[a-zA-Z]{2,}$"
             />
-            <span class="order__error-name">Please enter name</span>
+            <label class="order__error-name">Please enter name</label>
           </div>
           <div class="order__form-info">
             <input
               class="order__field input__last-name"
               type="text"
               placeholder="last name *"
+              data-reg="^[a-zA-Z]{2,}$"
             />
-            <span class="order__error">Введіть призвище</span>
+            <label class="order__error">Введіть призвище</label>
           </div>
         </div>
         <div class="order__form-info">
@@ -28,48 +31,54 @@
             class="order__field input__country"
             type="text"
             placeholder="Country *"
+            data-reg="^[a-zA-Z]{2,}$"
           />
-          <span class="order__error">Введіть країну</span>
+          <label class="order__error">Введіть країну</label>
         </div>
         <div class="order__form-info">
           <input
             class="order__field input__city"
             type="text"
             placeholder="Town / City *"
+            data-reg="^[a-zA-Z]{2,}$"
           />
-          <span class="order__error">Введіть місто</span>
+          <label class="order__error">Введіть місто</label>
         </div>
         <div class="order__form-info">
           <input
             class="order__field input__street-address"
             type="text"
             placeholder="Street Address *"
+            data-reg="^[a-zA-Z]{2,}$"
           />
-          <span class="order__error">Введіть адресу</span>
+          <label class="order__error">Введіть адресу</label>
         </div>
         <div class="order__form-info">
           <input
             class="order__field input__postcode"
             type="number"
             placeholder="Postcode / ZIP *"
+            data-reg="^\d{5}$"
           />
-          <span class="order__error">Введіть індекс</span>
+          <label class="order__error">Введіть індекс</label>
         </div>
         <div class="order__form-info">
           <input
             class="order__field input__phone"
             type="number"
             placeholder="Phone *"
+            data-reg="^38\d{10}$"
           />
-          <span class="order__error">Введіть номер телефону</span>
+          <label class="order__error">Введіть номер телефону</label>
         </div>
         <div class="order__form-info">
           <input
             class="order__field input__email"
             type="email"
             placeholder="Email *"
+            data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
           />
-          <span class="order__error">Введіть email</span>
+          <label class="order__error">Введіть email</label>
         </div>
 
         <div class="checkout__checkbox-create">
@@ -208,7 +217,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn__place-order">PLACE ORDER</button>
+        <!-- <button type="submit" class="btn__place-order">PLACE ORDER</button> -->
       </div>
     </div>
   </form>

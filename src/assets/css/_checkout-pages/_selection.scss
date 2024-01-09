@@ -35,8 +35,8 @@
       .order__form-info {
         position: relative;
 
-        span {
-          opacity: 0;
+        label {
+          opacity: 1;
           position: absolute;
           width: 100%;
           left: 0;
@@ -346,6 +346,30 @@
           color: $black-color;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .checkout__container {
+    flex-wrap: wrap;
+
+    .checkout__block-name {
+      width: 100%;
+
+      input {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .checkout__name {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .checkout__block-order {
+      width: 100%;
     }
   }
 }
