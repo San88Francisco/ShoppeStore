@@ -8,11 +8,11 @@
    <article class="a" id="article-change">
       <div class="product--overview">
          <div class="product--overview__pictures">
-            <img src="./assets/img/Product_img/Img 01 copy.png" alt="" />
-            <img src="./assets/img/Product_img/Img 01 copy.png" alt="" />
-            <img src="./assets/img/Product_img/Img 01 copy.png" alt="" />
-            <img src="./assets/img/Product_img/Img 01 copy.png" alt="" />
-            <img src="./assets/img/Product_img/Img 01 copy.png" alt="" class="picture-big" />
+            <img src="./assets/img/Product_img/Img 01 copy.png" alt="img" />
+            <img src="./assets/img/Product_img/Img 01 copy.png" alt="img" />
+            <img src="./assets/img/Product_img/Img 01 copy.png" alt="img" />
+            <img src="./assets/img/Product_img/Img 01 copy.png" alt="img" />
+            <img src="./assets/img/Product_img/Img 01 copy.png" alt="img" class="picture-big" />
             <div class="progress-bar" id="progress-bar">
                <div class="progress-bar__line"></div>
             </div>
@@ -20,7 +20,12 @@
          <div class="product--overview__view">
             <h3>Lira Earrings</h3>
             <div class="price">$ 20,00</div>
-            <p>
+            <span class="share-post">
+               <a href="#">
+                  <img src="./assets/img/Product_img/svg/share.svg" alt="img">
+               </a>
+            </span>
+            <p class="product__desktop-text">
                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet
                fugit ab pariatur eum hic nulla, nemo vero impedit! Sit illum impedit
                cupiditate sequi aliquam odit voluptatum exercitationem! Ipsam,
@@ -63,13 +68,37 @@
                   <font color="#000">Category:</font><span class="productValue">Fashion, Style</span>
                </p>
             </div>
+            <div class="product__mobile-text">
+               <input type="checkbox" id="showMoreTextProduct">
+               <label class="product__view-more" for="showMoreTextProduct">View more <img class="viwe-more-arrow" src="./assets/img/Product_img/svg/arrow.svg" alt="arrow"></label>
+               <p class="mobile-text">Lorem ipsum dolor sit amet, consectetur adipisce elit. Aliquam placerat ...</p>
+               <p class="mobile__add-text">Lorem ipsum dolor sit amet, consectetur adipisce elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. </p>
+            </div>
          </div>
       </div>
    </article>
 
 
    <article class="b">
+      <hr class="header__underline none">
       <div class="product__info">
+         <div class="info-mobile__tab-pages">
+            <div class="page1-folder pages-folder">
+               <input type="checkbox" id="page1__input" class="pages-folder-checkbox" data-page-nuber="1">
+               <label for="page1__input">Description <img src="./assets/img/Product_img/svg/arrow.svg" alt="img"></label>
+               <div class="page1__content page__contents"></div>
+            </div>
+            <div class="page2-folder pages-folder">
+               <input type="checkbox" id="page2__input" class="pages-folder-checkbox" data-page-nuber="2">
+               <label for="page2__input">Additional information <img src="./assets/img/Product_img/svg/arrow.svg" alt="img"></label>
+               <div class="page2__content page__contents"></div>
+            </div>
+            <div class="page3-folder pages-folder">
+               <input type="checkbox" id="page3__input" class="pages-folder-checkbox" data-page-nuber="3">
+               <label for="page3__input">Reviews(<span class="amount-reviews2">2</span>) <img src="./assets/img/Product_img/svg/arrow.svg" alt="img"></label>
+               <div class="page3__content page__contents"></div>
+            </div>
+         </div>
          <div class="info__tab-pages">
             <ul>
                <li>
@@ -148,8 +177,6 @@
                               <span></span>
                               Save my name, email, and website in this browser for the
                               next time I comment
-                              <ins><i>Save my name, email, and website in this browser for the
-                                    next time I comment</i></ins>
                            </label>
                         </div>
                      </div>
@@ -183,9 +210,10 @@
             </div>
          </div>
       </div>
+      <hr class="header__underline none">
    </article>
 
-   <article class="c">
+   <article class="c ">
       <!-- Similar Items -->
       <h2 class="similar__title">Similar Items</h2>
       <div class="product-latest-blocks">
