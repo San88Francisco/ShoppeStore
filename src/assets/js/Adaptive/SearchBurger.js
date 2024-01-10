@@ -1,4 +1,8 @@
 const parseItems = JSON.parse(localStorage.getItem('allProduct'));
+const globalSearch = document.querySelector('#global-nav-search-for-input');
+const backgroundBlockInput = document.querySelector('.background-block-input');
+
+
 
 
 // Клас для представлення продуктів
@@ -80,7 +84,6 @@ class Items {
    // Налаштування обробників подій
    setupEventListeners(container) {
       const globalSearchInput = document.querySelector('#global-search');
-      const globalSearch = document.querySelector('#global-nav-search-for-input');
       const sections = document.querySelectorAll('section');
 
       const thisName = this.name.toLowerCase();
@@ -131,9 +134,14 @@ function handleDOMContentLoaded() {
          );
 
          itemsInstance.addClassInNav();
+
       });
    } else {
+      console.log('немає Items');
    }
+   productDisplayNone()
+   listenerSearchIDa()
+
 }
 
 // Виклик функції після завантаження DOM
@@ -145,4 +153,15 @@ function listenerSearchIDa() {
       event.preventDefault();
    });
 }
-listenerSearchIDa()
+
+function productDisplayNone() {
+   // Отримуємо поточну URL сторінки
+   const currentURL = window.location.href;
+   
+   // Перевіряємо, чи знаходимося на сторінці "product" і розмір екрану менше 700
+   if (currentURL.includes("product") && window.innerWidth < 700) {
+      backgroundBlockInput.style.display = 'none';
+   
+      console.log("Ми на сторінці 'product' і розмір екрану менше 700");
+   }
+}
