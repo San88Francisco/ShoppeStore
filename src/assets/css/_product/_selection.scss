@@ -6,6 +6,7 @@
   position: relative;
 
   .cart__window-block {
+    z-index: 10;
     position: absolute;
     @media screen and (min-width: 700px) {
       top: -96px; 
@@ -23,16 +24,11 @@
     p {
       display: flex;
       align-items: center;
-      // margin: 20px;
-
       img {
         margin-right: 10px;
       }
     }
-
-
   }
-
 
   .a {
     width: 100%;
@@ -42,13 +38,48 @@
       display: flex;
       font-family: DM Sans;
 
+      .swiper-container {
+        display: none;
+        overflow: hidden;
+        width: 100%;
+        padding-bottom: 25px;
+        .swiper-wrapper {
+          display: flex;
+          transition: transform 0.3s ease;
+          padding-bottom: 15px;
+          .swiper-slide {
+            box-sizing: border-box;
+            flex: 0 0 100%;
+            max-width: 100%;
+            img{
+              display: block;
+              width: 100%;
+              height: clamp(300px,100vw,800px);
+              
+            }
+          }
+        }
+        .progress-bar-mobile {
+          width: 90%;
+          height: 2px;
+          background-color: #d8d8d8;
+          position: absolute;
+          .progress-bar-mobile__line {
+            background-color: $dark-gray-color;
+            height: 2px;
+            width: 0%;
+            position: relative;
+          }
+        }
+      }
+
       .product--overview__pictures {
         display: grid;
-        grid-template-rows: repeat(6, 1fr); //!<-----= 5fr =-------
+        grid-template-rows: repeat(6, 1fr); 
         grid-template-columns: repeat(5, 1fr);
         gap: clamp(30px,2%,40px);
         position: relative;
-
+        
         img {
           width: clamp(96px,8vw,120px);
           height: auto;
@@ -928,6 +959,12 @@
    .Product{
       .a{
          .product--overview{
+            .swiper-container {
+              display: block;
+            }
+            .product--overview__pictures{
+              display: none;
+            }
             .product--overview__pictures{
                width: 100%;
                img{
@@ -1001,6 +1038,11 @@
       .a{
          padding: 0px 0px;
          .product--overview{
+            .swiper-container {
+              .progress-bar-mobile {
+                width: 100%;
+              }
+            }
             .product--overview__view{
                padding: 0px;
                .btn--row{
