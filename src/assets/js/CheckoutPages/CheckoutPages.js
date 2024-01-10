@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    // Логіка відображення наших товарів і ціни в правому блоці checkout-pages
+    // Логіка відображення наших товарів і ціни в правому блоці checkout-pages !
     orderItemViev();
 
     // Знаходимо всі наші чекбокси з вибором оплати
