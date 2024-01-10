@@ -1,7 +1,9 @@
 import { clearOrderCart } from './ClearOrderCart';
 import { saveOrder } from './SaveOrder';
 
+// paymentMethod приходить мектод вибраної оплати
 export const placeOrder = (paymentMethod) => {
+  // Створюємо всі input де в нас будуть значення
   const inputFirstName = document.querySelector('.input__first-name').value;
   const inputLastName = document.querySelector('.input__last-name').value;
   const inputCountry = document.querySelector('.input__country').value;
@@ -12,6 +14,7 @@ export const placeOrder = (paymentMethod) => {
   const inputEmail = document.querySelector('.input__email').value;
   const inputOrderNotes = document.querySelector('.input__order-notes').value;
 
+  // Створюємо обєкт з нашими данними
   const blockData = {
     name: inputFirstName,
     lastName: inputLastName,
@@ -25,8 +28,12 @@ export const placeOrder = (paymentMethod) => {
     paymentMethod: paymentMethod,
   };
 
+  // Зберігаємо інофрмацію клієнта в userOrderInfo
   localStorage.setItem('userOrderInfo', JSON.stringify(blockData));
+  // Функція запису замовлень
   saveOrder();
+  // Функція очистки кошику
   clearOrderCart();
+  // Перехід на order-confirmation
   window.location.href = 'http://localhost:3000/order-confirmation.html';
 };

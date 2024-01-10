@@ -1,11 +1,11 @@
 export const orderItemViev = () => {
+  // Логіка відображення наших товарів і ціни в правому блоці checkout-pages
   const blockOrderItem = document.querySelector('.block__order-item');
   const orderSubTotal = document.querySelector('.order__subtotal');
   const orderShipping = document.querySelector('.order__shipping');
   const orderTotal = document.querySelector('.order__total');
 
   const { info, item } = JSON.parse(localStorage.getItem('checkoutInfo'));
-  // console.log("info:", ...info)
 
   item.map(({ name, price, count }) => {
     blockOrderItem.innerHTML += `

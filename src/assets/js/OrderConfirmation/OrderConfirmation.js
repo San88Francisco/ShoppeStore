@@ -10,14 +10,18 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('userOrderInfo:', userOrderInfo);
 
     if (!userOrderInfo) {
-      // Якщо немає інформації, перенаправлення на іншу сторінку або виведення повідомлення
-      window.location.href = 'http://localhost:3000/error404.html'; // Замініть шлях на той, який вам потрібен
+      // Якщо userOrderInfo пустий, перенаправлення на error404
+      window.location.href = 'http://localhost:3000/error404.html';
     }
 
+    // Відображення вспливаючого вікна
     popupOrder();
+    // Виводить інформацію про данні користувача
     orderInfo();
+    //  Відображає зроблене замовлення та ціну
     orderItemViev();
 
+    // Автовидалення checkoutInfo і userOrderInfo, щоб після перезагрузки сторінки, order-confirmation не відображався
     setTimeout(() => {
       localStorage.removeItem('checkoutInfo');
       localStorage.removeItem('userOrderInfo');

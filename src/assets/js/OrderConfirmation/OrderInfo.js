@@ -1,6 +1,5 @@
 export const orderInfo = () => {
   const checkoutInfo = JSON.parse(localStorage.getItem('userOrderInfo'));
-  console.log('  checkoutInfo:', checkoutInfo);
   const date = new Date();
   const currentDate = date.toLocaleDateString('en-US', {
     month: 'long',
@@ -8,9 +7,10 @@ export const orderInfo = () => {
     year: 'numeric',
   });
 
-  const dateSeconds = Math.floor(date.getTime() / 10000);
+  // Беремо всі замовлення та їх довжину (length) і задаємо в номер замовлення. Якщо замовлень ще не було, задаємо 0 .
+  const numberOrder = JSON.parse(localStorage.getItem('allOrders')) || 0;
 
-  document.querySelector('.order__number').textContent = dateSeconds;
+  document.querySelector('.order__number').textContent = numberOrder.length;
   document.querySelector('.order__email').textContent = checkoutInfo.email;
   document.querySelector('.order__payment').textContent =
     checkoutInfo.paymentMethod;
@@ -26,6 +26,4 @@ export const orderInfo = () => {
     checkoutInfo.postcode;
   document.querySelector('.order__contact-phone').textContent =
     checkoutInfo.phone;
-
-  // localStorage.removeItem('userOrderInfo');
 };
