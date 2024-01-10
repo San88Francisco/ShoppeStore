@@ -51,11 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    placeOrder();
     const btnPlaceOrder = document.querySelector('.btn__place-order');
     btnPlaceOrder.addEventListener('click', (elem) => {
       // elem.preventDefault();
-      placeOrder(paymentMethod, elem);
+      placeOrder(paymentMethod);
     });
   }
 });
