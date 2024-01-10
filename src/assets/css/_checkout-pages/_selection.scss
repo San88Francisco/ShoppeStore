@@ -26,6 +26,7 @@
 
       input {
         max-width: 580px;
+        width: 100%;
         border-bottom: 1px solid $gray-color;
         @include sub_title_text;
         padding: 6px 0px;
@@ -36,7 +37,7 @@
         position: relative;
 
         label {
-          opacity: 1;
+          opacity: 0;
           position: absolute;
           width: 100%;
           left: 0;
@@ -53,9 +54,13 @@
         display: flex;
         gap: 40px;
 
-        input {
-          max-width: 270px;
+        .order__form-info {
           width: 100%;
+
+          input {
+            max-width: 270px;
+            width: 100%;
+          }
         }
       }
 
@@ -350,7 +355,7 @@
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
   .checkout__container {
     flex-wrap: wrap;
 
@@ -365,6 +370,13 @@
       .checkout__name {
         display: flex;
         flex-direction: column;
+        gap: 0px !important;
+
+        .order__form-info {
+          input {
+            max-width: 100% !important;
+          }
+        }
       }
     }
 

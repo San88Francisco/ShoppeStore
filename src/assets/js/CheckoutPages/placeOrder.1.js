@@ -2,10 +2,8 @@ import { clearOrderCart } from './ClearOrderCart';
 import { saveOrder } from './SaveOrder';
 
 export const placeOrder = (paymentMethod, elem) => {
-  console.log(elem);
-
-  const checkoutNameInfo = document.querySelector('.checkout__container');
-  console.log('checkoutNameInfo:', checkoutNameInfo);
+  // console.log(elem);
+  const checkoutNameInfo = document.querySelector('.checkout__name-info');
 
   const inputFirstName = document.querySelector('.input__first-name').value;
   const inputLastName = document.querySelector('.input__last-name').value;
@@ -43,7 +41,7 @@ export const placeOrder = (paymentMethod, elem) => {
   let isTrue = 0;
 
   if (!inputFirstName) {
-    // console.log(elem);
+    console.log('1');
     orderFieldName.style.opacity = '1';
   } else {
     orderFieldName.style.opacity = '0';
@@ -51,7 +49,7 @@ export const placeOrder = (paymentMethod, elem) => {
   }
 
   if (!inputLastName) {
-    // console.log('2');
+    console.log('2');
     orderFieldLastName.style.opacity = '1';
   } else {
     orderFieldLastName.style.opacity = '0';
@@ -59,7 +57,7 @@ export const placeOrder = (paymentMethod, elem) => {
   }
 
   if (!inputCountry) {
-    // console.log('3');
+    console.log('3');
     orderFieldCountry.style.opacity = '1';
   } else {
     orderFieldCountry.style.opacity = '0';
@@ -67,7 +65,7 @@ export const placeOrder = (paymentMethod, elem) => {
   }
 
   if (!inputCity) {
-    // console.log('6');
+    console.log('6');
     orderFieldCity.style.opacity = '1';
   } else {
     orderFieldCity.style.opacity = '0';
@@ -75,7 +73,7 @@ export const placeOrder = (paymentMethod, elem) => {
   }
 
   if (!inputStreet) {
-    // console.log('4');
+    console.log('4');
     orderFieldAddress.style.opacity = '1';
   } else {
     orderFieldAddress.style.opacity = '0';
@@ -83,7 +81,7 @@ export const placeOrder = (paymentMethod, elem) => {
   }
 
   if (!inputPostcode) {
-    // console.log('5');
+    console.log('5');
     orderFieldZip.style.opacity = '1';
   } else {
     orderFieldZip.style.opacity = '0';
@@ -91,7 +89,7 @@ export const placeOrder = (paymentMethod, elem) => {
   }
 
   if (!inputPhone) {
-    // console.log('7');
+    console.log('7');
     orderFieldPhone.style.opacity = '1';
   } else {
     orderFieldPhone.style.opacity = '0';
@@ -99,7 +97,7 @@ export const placeOrder = (paymentMethod, elem) => {
   }
 
   if (!inputEmail) {
-    // console.log('8');
+    console.log('8');
     orderFieldEmail.style.opacity = '1';
   } else {
     orderFieldEmail.style.opacity = '0';
@@ -120,56 +118,3 @@ export const placeOrder = (paymentMethod, elem) => {
     }
   }
 };
-
-// Чернетка на потім, НЕ ВИДАЛЯТИ !.
-// Leasstret - це мій не дороблений код, хочу пізніше до нього повернутися !
-// const form = document.forms['checkout__container'];
-//   const inputArr = Array.from(form);
-//   const validInputArr = [];
-//   const isAllValid = [];
-
-//   const inputHandler = ({ target }) => {
-//     if (target.hasAttribute('data-reg')) {
-//       inputCheck(target);
-//       console.log('target:', target);
-//     }
-//   };
-
-//   form.addEventListener('input', inputHandler);
-
-//   inputArr.forEach((element) => {
-//     if (element.hasAttribute('data-reg')) {
-//       element.setAttribute('is-valid', 0);
-//       validInputArr.push(element);
-//     }
-//   });
-
-//   const inputCheck = (element) => {
-//     console.log('element', element);
-//     const inputValue = element.value;
-//     const inputReg = element.getAttribute('data-reg');
-//     const reg = new RegExp(inputReg);
-
-//     if (reg.test(inputValue)) {
-//       element.style.border = '2px solid rgb(0,196,0)';
-//       element.setAttribute('is-valid', 1);
-//     } else {
-//       element.style.border = '2px solid rgb(255,0,0)';
-//       console.log(element);
-//       element.setAttribute('is-valid', 0);
-//     }
-//   };
-
-//   validInputArr.forEach((element) => {
-//     isAllValid.push(element.getAttribute('is-valid'));
-//   });
-
-//   const isValid = isAllValid.reduce((acc, current) => {
-//     return acc && current;
-//   });
-
-//   if (elem) {
-//     if (!Boolean(Number(isValid))) {
-//       elem.preventDefault();
-//     }
-//   }

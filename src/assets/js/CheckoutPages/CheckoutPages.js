@@ -1,4 +1,4 @@
-import { placeOrder } from './PlaceOrder';
+import { placeOrder } from './placeOrder.1';
 import { orderItemViev } from './OrderItemViev';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -51,10 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
+    placeOrder();
     const btnPlaceOrder = document.querySelector('.btn__place-order');
-    btnPlaceOrder.addEventListener('click', (e) => {
-      e.preventDefault();
-      placeOrder(paymentMethod);
+    btnPlaceOrder.addEventListener('click', (elem) => {
+      // elem.preventDefault();
+      placeOrder(paymentMethod, elem);
     });
   }
 });
