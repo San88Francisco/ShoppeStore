@@ -45,3 +45,12 @@ updateNavCartCount();
 
 // Додайте подію 'storage', яка буде викликатися при зміні localStorage
 window.addEventListener("storage", updateNavCartCount);
+
+
+
+const burger = document.querySelector('.burger');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+});
+ 
