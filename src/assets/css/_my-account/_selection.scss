@@ -432,6 +432,12 @@
          }
       }
    }
+
+
+
+
+
+
    @media (max-width: 1023.98px){
       h1 {
          font-size: 27px;
@@ -517,17 +523,24 @@
       }
       nav {
          ul {
+            //border-bottom: 1px solid #D8D8D8;
+            height: 32px;
             width: 100%;
             gap: 24px;
             flex-wrap: nowrap;
             li {
                font-size: 16px;
-               padding-bottom: 16px;
+               padding: 0;
+               .act::after {
+                  padding-bottom: 0;
+               }
             }
             overflow: hidden;
+           // margin-bottom: 16px;
+            //padding-bottom: 18px;
          }
          .header__underline {
-            display: block;
+          //  display: none;
             margin: 0 13.59px 40px 13.59px;
          }
       }
@@ -535,6 +548,7 @@
          .prev,
          .next {
             display: block; /* Показуємо кнопки */
+            padding-bottom: 35px;
          }
          transition: all 0.3s;
       }
