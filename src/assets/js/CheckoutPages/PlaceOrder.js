@@ -32,7 +32,7 @@ export const placeOrder = (paymentMethod) => {
   localStorage.setItem('userOrderInfo', JSON.stringify(blockData));
   // Функція запису замовлень
   saveOrder();
-  // Функція очистки кошику
+  // Функція очистки кошику !
   clearOrderCart();
   // Перехід на order-confirmation
   window.location.href = 'http://localhost:3000/order-confirmation.html';
