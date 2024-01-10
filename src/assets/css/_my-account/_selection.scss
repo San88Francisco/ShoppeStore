@@ -212,6 +212,47 @@
             }
          }
       }
+      .mobile-account__order{
+         display: none;
+         table{
+           margin: 39px 0 0 0;
+            
+            tbody{
+              
+               tr{
+                  border: none;
+                  
+                  td{
+                     padding: 12px 0;
+                     font-family: DM Sans;
+                     font-size: 16px;
+                     font-style: normal;
+                     font-weight: 400;
+                     line-height: 20px;
+                     color: #000;
+                     &:last-child{
+                        color: #707070;
+                        text-align: right;
+                     }
+                     .do-sth{
+                        font-weight: 400;
+                     }
+                  }
+
+                 &:last-child{
+                  border-bottom: 1px solid $gray-color;
+                  td{
+                    padding: 12px 0 39px 0;
+                  }
+                 
+                 
+                 }
+               }
+            }
+           
+         }
+
+      }
 
       .do-sth {
          font-weight: 700;
