@@ -1,34 +1,44 @@
 <section class="my-account">
    <h1 class="targetOf-dashboard">My Account</h1>
    <nav class="myAccount__navigation">
-      <ul>
-         <li>
-            <a href="#" class="click-dashboard addClass-act act">Dashboard</a>
-         </li>
-         <li>
-            <a href="#" class="click-orders addClass-act">Orders</a>
-         </li>
-         <li>
-            <a href="#" class="click-downloads addClass-act">Downloads</a>
-         </li>
-         <li>
-            <a href="#" class="click-addresses addClass-act">Addresses</a>
-         </li>
-         <li>
-            <a href="#" class="click-accountDetails addClass-act">Account details</a>
-         </li>
-         <li>
-            <a href="#" class="click-logout addClass-act">Logout</a>
-         </li>
-      </ul>
-      <hr class="header__underline">
+      <div class="slider">
+         <button class="prev">
+            <i class="fa-solid fa-chevron-left"></i>
+         </button>
+         <ul class="slider-container">
+            <li>
+               <a href="#" class="click-dashboard addClass-act act ">Dashboard</a>
+            </li>
+            <li>
+               <a href="#" class="click-orders addClass-act ">Orders</a>
+            </li>
+            <li>
+               <a href="#" class="click-downloads addClass-act ">Downloads</a>
+            </li>
+            <li>
+               <a href="#" class="click-addresses addClass-act ">Addresses</a>
+            </li>
+            <li>
+               <a href="#" class="click-accountDetails addClass-act ">Account details</a>
+            </li>
+            <li>
+               <a href="#" class="click-logout addClass-act ">Logout</a>
+            </li>
+         </ul>
+         <button class="next go">
+            <i class="fa-solid fa-chevron-right"></i>
+         </button>
+      </div>
+      <hr class="header__underline ">
    </nav>
    <div class="myAccount__tabPage">
       <div class="targetOf-dashboard">
          <p>Hello Vitatheme (not Vitatheme? <span class="do-sth">Log out</span>)</p>
-         <p>From your account dashboard you can view your <span class="do-sth">recent orders</span>, manage your <span class="do-sth">shipping and billing addresses</span>, and edit your <span class="do-sth">password and account details.</span></p>
+         <p>From your account dashboard you can view your <span class="do-sth">recent orders</span>, manage your <span
+               class="do-sth">shipping and billing addresses</span>, and edit your <span class="do-sth">password and
+               account details.</span></p>
       </div>
-      <div class="targetOf-orders">
+      <div class="targetOf-orders ">
          <div class="alert-not-ofer">
             <p>No order has been made yet.</p>
             <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>
@@ -67,7 +77,6 @@
                      <td><span class="do-sth">View Order</span></td>
                   </tr>
                </tbody>
-            </table>
          </div>
       </div>
       <div class="targetOf-downloads">
@@ -92,21 +101,21 @@
                      <td>October 8,2021</td>
                      <td>Delivered</td>
                      <td>$ 105</td>
-                     <td><span class="do-sth">View Order  |  Download</span></td>
+                     <td><span class="do-sth">View Order | Download</span></td>
                   </tr>
                   <tr>
                      <td>943980998990</td>
                      <td>October 8,2021</td>
                      <td>Processing</td>
                      <td>$ 100</td>
-                     <td><span class="do-sth">View Order  |  Download</span></td>
+                     <td><span class="do-sth">View Order | Download</span></td>
                   </tr>
                   <tr>
                      <td>879980998990</td>
                      <td>October 8,2021</td>
                      <td>Delivered</td>
                      <td>$ 65</td>
-                     <td><span class="do-sth">View Order  |  Download</span></td>
+                     <td><span class="do-sth">View Order | Download</span></td>
                   </tr>
                </tbody>
             </table>
@@ -134,10 +143,10 @@
                         <input type="checkbox" id="selectYourCountry" class="input" />
                         <label for="selectYourCountry"></label>
                         <ul class="optionCountry optionItem">
-                          <li class="optionItemElement">Ukrain</li>
-                          <li class="optionItemElement">German</li>
-                          <li class="optionItemElement">UK</li>
-                          <li class="optionItemElement">USA</li>
+                           <li class="optionItemElement">Ukrain</li>
+                           <li class="optionItemElement">German</li>
+                           <li class="optionItemElement">UK</li>
+                           <li class="optionItemElement">USA</li>
                         </ul>
                      </div>
 
@@ -158,7 +167,7 @@
          </div>
       </div>
       <div class="targetOf-accountDetails">
-         <h1>Account details</h1>
+         <h2>Account details</h2>
          <form action="post">
             <input type="text" placeholder="First name*">
             <input type="text" placeholder="Last name*">
@@ -174,3 +183,4 @@
       </div>
    </div>
 </section>
+<script src="https://kit.fontawesome.com/1f2bcb7d29.js" crossorigin="anonymous"></script>

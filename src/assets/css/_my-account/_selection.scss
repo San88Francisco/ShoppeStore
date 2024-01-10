@@ -1,7 +1,7 @@
 .my-account {
-   width: 1240px;
+   max-width: 1240px;
    margin: 0 auto;
-   padding-bottom: 200px;
+   padding-bottom: 205px;
    font-family: DM Sans;
    font-weight: 400;
    line-height: 26px;
@@ -11,52 +11,58 @@
       color: $black-color;
       font-size: 33px;
       font-weight: 500;
-      line-height: 43px;
+      line-height: 130.30303%; /* 43/33 */
       text-align: center;
       padding-bottom: 65px;
    }
 
    p {
       font-size: 16px;
-      line-height: 27px;
+      line-height: 168.75%; /* 27/16 */
    }
 
    nav {
+      .slider {
+         display: flex;
+         gap: 7.34px;
+         align-items: center;
+      }
       ul {
          display: flex;
-         justify-content: start;
-
+         justify-content: space-between;
+         max-width: 825px;
+         gap: 49px; /* простір між елементами */
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   
          li {
             font-size: 20px;
-            line-height: 26px;
+            line-height: 130%; /* 26/20 */
             color: $placeholder-color;
-            padding-right: 50px;
             padding-bottom: 35px;
+            flex: 0 0 auto; 
+   transition: all 0.3s;
 
             .act {
                color: $black-color;
                position: relative;
-
                &::after {
-                  z-index: -5;
                   content: "";
-                  position: absolute;
-                  width: 100%;
-                  height: 30px;
-                  bottom: -2px;
-
-                  margin-left: auto;
-                  margin-right: auto;
-                  left: 0;
-                  right: 0;
-                  text-align: center;
-                  text-align: center;
-
-                  top: 32px;
-                  border-radius: 1px;
-                  border-bottom: 2px solid #000;
-                  border-width: 2px 0px;
-               }
+               transition: 50ms all ease-in-out;
+               z-index: 5;
+               width: 100%;
+               height: 31px;
+               position: absolute;
+               margin-left: auto;
+               margin-right: auto;
+               left: 0;
+               right: 0;
+               text-align: center;
+               border-radius: 1px;
+               border-bottom: 2px solid black;
+               padding-bottom: 30px;
+               }    
             }
          }
       }
@@ -64,7 +70,25 @@
       .header__underline {
          display: block;
          margin-bottom: 40px;
+         background-color: #D8D8D8;
+         position: relative;
+         z-index: 1;
+
       }
+      .prev,
+      .next {
+         border: none;
+         & i {
+            font-size: 10px;
+            padding-bottom: 16px;
+            color: #D8D8D8;
+           
+         }
+         display: none;
+      }
+     .go i{
+      color: #000000;
+     }
    }
 
    .myAccount__tabPage> :not(:nth-child(1)) {
@@ -137,6 +161,14 @@
          td {
             width: 20%;
             padding: 15px 0px;
+            @media (max-width: 1023.98px){  
+               font-size: 14px;
+               }
+               @media (max-width: 700.98px){
+                  padding: 10px 0px;  
+                  font-size: 12px;
+                  text-align: center;
+                  }
          }
 
          thead {
@@ -152,7 +184,15 @@
                   color: $placeholder-color;
                   font-size: 16px;
                   font-weight: 400;
-                  line-height: 27px;
+                  line-height: 168.75%; /* 27/16 */
+                  @media (max-width: 1023.98px){
+                  padding: 20px 0px;  
+                  font-size: 14px;
+                  }
+                  @media (max-width: 700.98px){
+                     padding: 15px 0px;  
+                     font-size: 12px;
+                     }
                }
             }
          }
@@ -306,7 +346,7 @@
                   label {
                      cursor: pointer;
                      display: inline-block;
-                     float: right;
+                    float: right;
                      margin-top: auto;
                      margin-left: auto;
                      transition: 0.2s all linear;
@@ -349,7 +389,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      & h2 {
+         color: $black-color;
+         font-size: 33px;
+         font-weight: 500;
+         line-height: 130.30303%; /* 43/33 */
+         text-align: center;
+         padding-bottom: 65px;
+      }
       form {
          input {
             display: block;
@@ -358,7 +405,7 @@
             width: 100%;
             font-size: 14px;
             font-weight: 400;
-            line-height: 22px;
+            line-height: 157.142857%; /* 22/14 */
             color: $placeholder-color;
             margin-bottom: 40px;
 
@@ -373,8 +420,8 @@
 
          h3 {
             font-weight: 700;
-            margin-bottom: 40px;
-            margin-top: 50px;
+            margin-bottom: 45gipx;
+            margin-top: 45px;
          }
 
          p {
@@ -382,6 +429,314 @@
             margin-bottom: 40px;
             font-size: 12px;
             color: $placeholder-color;
+         }
+      }
+   }
+
+
+
+
+
+
+   @media (max-width: 1023.98px){
+      h1 {
+         font-size: 27px;
+         line-height: 130.30303%; /* 43/33 */
+         padding-bottom: 40px;
+      }
+      nav {
+         ul {
+         gap: 30px;
+            li {
+               font-size: 18px;
+               padding-bottom: 35px;
+               .act{
+                  &::after {
+                     padding-bottom: 27px;
+                  }
+               }
+            }
+         }
+         .header__underline {
+            display: block;
+            margin-bottom: 40px;
+         }
+      }
+      .alert-not-ofer {
+         line-height: 166.666667%; /* 20/12 */
+         & p {
+            font-size: 14px;
+         }
+         & a {
+            font-size: 14px;
+         }
+      }
+      .alert-not-address {
+         line-height: 166.666667%; /* 20/12 */
+         & p {
+            font-size: 14px;
+         }
+         & a {
+            font-size: 14px;
+         }
+      }
+      .targetOf-accountDetails {
+       
+         & h2 {
+            font-size: 27px;
+            line-height: 130.30303%; /* 43/33 */
+            padding-bottom: 40px;
+         }
+         form {
+            input {
+             
+               padding: 9px 0;
+               font-size: 14px;
+               margin-bottom: 40px;
+            }
+   
+            h3 {
+               font-weight: 600;
+               font-size: 18px;
+            }
+   
+            p {
+               margin-top: -32px;
+               margin-bottom: 30px;
+            }
+         }
+      }
+   }
+  
+   @media (max-width: 700.98px){
+      .my-account {
+         padding-bottom: 96px;
+      }
+      h1 {
+         font-size: 24px;
+         line-height: 130.30303%; /* 43/33 */
+         padding-bottom: 35px;
+         padding-top: 21px;
+      }
+      p {
+         font-size: 14px;
+      }
+      nav {
+         ul {
+            //border-bottom: 1px solid #D8D8D8;
+            height: 32px;
+            width: 100%;
+            gap: 24px;
+            flex-wrap: nowrap;
+            li {
+               font-size: 16px;
+               padding: 0;
+               .act::after {
+                  padding-bottom: 0;
+               }
+            }
+            overflow: hidden;
+           // margin-bottom: 16px;
+            //padding-bottom: 18px;
+         }
+         .header__underline {
+          //  display: none;
+            margin: 0 13.59px 40px 13.59px;
+         }
+      }
+      .slider {
+         .prev,
+         .next {
+            display: block; /* Показуємо кнопки */
+            padding-bottom: 35px;
+         }
+         transition: all 0.3s;
+      }
+      .alert-not-ofer {
+         & p {
+            font-size: 12px;
+         }
+         & a {
+            font-size: 12px;
+         }
+      }
+      .alert-not-address {
+         & p {
+            font-size: 12px;
+         }
+         & a {
+            font-size: 12px;
+         }
+      }
+      .targetOf-addresses {
+         & p {
+            font-size: 14px;
+            padding-bottom: 32px;
+         }
+         .my-address {
+            grid-gap: 30px;
+            & h3 {
+               font-size: 18px;
+               padding-bottom: 18px;
+            }
+            & p {
+               padding-bottom: 0;
+            }
+            .add-my-bill {
+               .bill-registr{
+                  & form {
+                     .bill-user-name {
+                        grid-template-columns: auto;
+                        grid-gap: 0;
+                     }
+                     & input {
+                        margin-bottom: 28px;
+                        &::placeholder {
+                           font-size: 12px;
+                        }
+                     }
+                  }
+               }
+            }
+            
+         }
+        
+      }
+      .btn__black {
+  
+         padding: 10px 160px;
+ 
+         span {
+       
+            font-weight: 500;
+         }
+      }
+      .targetOf-accountDetails {
+       
+         & h2 {
+            font-size: 24px;
+         line-height: 130.30303%; /* 43/33 */
+         padding-bottom: 35px;
+         padding-top: 21px;
+         }
+         form {
+            input {
+             
+               padding: 7px 0;
+               font-size: 12px;
+            }
+   
+            h3 {
+               font-weight: 500;
+               font-size: 16px;
+            }
+   
+            p {
+               margin-top: -32px;
+               margin-bottom: 30px;
+            }
+         }
+      }
+   }
+   @media (max-width: 554.98px){
+      table {
+         display: none;
+      }
+   }
+   @media (max-width: 467.98px){
+      h1 {
+         font-size: 20px;
+         line-height: 130.30303%; /* 43/33 */
+         padding-bottom: 24px;
+      }
+      .targetOf-dashboard {
+        
+         p {
+            padding-bottom: 15px;
+         font-size: 12px;
+         }
+      }
+      .alert-not-ofer {
+       flex-direction: column;
+       gap: 8px;
+       padding: 10px 0px 10px 16px;
+      }
+      .alert-not-address {
+         flex-direction: column;
+         gap: 8px;
+         padding: 10px 0px 10px 16px;
+      }
+      .targetOf-addresses {
+         & p {
+            font-size: 12px;
+            padding-bottom: 24px;
+         }
+         .my-address {
+            grid-template-columns: auto;
+            grid-gap: 48px;
+            & h3 {
+               font-size: 16px;
+            }
+            & p {
+               font-size: 12px;
+            }
+            .user-not-have-bill {
+               .do-sth {
+                  font-size: 16px;
+               }
+               .you-not-have-address {
+                  font-size: 12px;
+               }
+            }
+            .add-my-adress {
+               .do-sth {
+                  font-size: 16px;
+               }
+               .you-not-have-address {
+                  font-size: 12px;
+               }
+            }
+         }
+        
+      }
+      .btn__black {
+  
+         padding: 0;
+         width: 100%;
+         height: 32px;
+         justify-content: center;
+ 
+         span {
+       
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 166.666667%; /* 20/12 */
+         }
+      }
+      .targetOf-accountDetails {
+       
+         & h2 {
+ display: none;
+         }
+         form {
+            input {
+               padding: 5px 0;
+               margin-bottom: 48px;
+               &::placeholder {
+                  font-size: 12px;
+                  line-height: 20px;
+               }
+            }
+           
+            h3 {
+               font-weight: 400;
+               font-size: 16px;
+            }
+   
+            p {
+               margin-top: 40px;
+               margin-bottom: 25px;
+            }
          }
       }
    }
