@@ -1,96 +1,175 @@
 <section class="checkout__pages">
-    <h1>Checkout</h1>
-    <div class="checkout__container">
-        <div class="checkout__block-name">
-            <h2>Checkout</h2>
-            <div class="checkout__name">
-                <input type="text" placeholder="First name *">
-                <input type="text" placeholder="last name *">
-            </div>
-            <input type="text" placeholder="Company Name">
-            <input type="text" placeholder="Country *">
-            <input type="text" placeholder="Street Address *">
-            <input type="text" placeholder="Postcode / ZIP *">
-            <input type="text" placeholder="Town / City *">
-            <input type="text" placeholder="Phone *">
-            <input type="email" placeholder="Email *">
+  <div class="checkout__container">
+    <div class="checkout__block-name">
+      <h2>Billing Details</h2>
 
-            <div class="checkout__checkbox-create">
-                
-                <div class="">
-                    <input type="checkbox" name="" class="checkboxAcount">
-                    <!-- <label for="">Create an acoount?</label> -->
-                    <label for="myCheckbox">
-                        <span></span>
-                        Create an acoount?
-                        <ins><i>Create an acoount?</i></ins>
-                    </label>
-                </div>
-                <div>
-                    <input type="checkbox" name="" class="checkboxAddress">
-                    <!-- <label for="">Ship to a different address?</label> -->
-                    <label for="myCheckbox">
-                        <span></span>
-                        Ship to a different address?
-                        <ins><i>Ship to a different address?</i></ins>
-                    </label>
-                </div>
-            </div>
-            <input type="text" placeholder="Order notes">
+      <div class="checkout__name-info">
+        <div class="checkout__name">
+          <input
+            class="input__first-name"
+            type="text"
+            placeholder="First name *"
+          />
+          <input
+            class="input__last-name"
+            type="text"
+            placeholder="last name *"
+          />
         </div>
+        <input class="input__country" type="text" placeholder="Country *" />
+        <input
+          class="input__street-address"
+          type="text"
+          placeholder="Street Address *"
+        />
+        <input
+          class="input__postcode"
+          type="text"
+          placeholder="Postcode / ZIP *"
+        />
+        <input class="input__city" type="text" placeholder="Town / City *" />
+        <input class="input__phone" type="text" placeholder="Phone *" />
+        <input class="input__email" type="email" placeholder="Email *" />
 
-
-
-        <div class="checkout__block-order">
-            <div>
-                <div>
-                    <span>PRODUCT</span>
-                    <span>TOTAL</span>
-                </div>
-                <div>
-                    <span>Lira Earrings </span>
-                    <span>$64</span>
-                </div>
-                <div>
-                    <span>Ollie Earrings</span>
-                    <span>$10</span>
-                </div>
-                <div>
-                    <span>Kaede Hair Pin</span>
-                    <span>$10</span>
-                </div>
-                <div>
-                    <span>SUBTOTAL</span>
-                    <span>$85</span>
-                </div>
-                <div>
-                    <span>SHIPPING</span>
-                    <span>Free shipping</span>
-                </div>
-                <div>
-                    <span>TOTAL</span>
-                    <span>$85</span>
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">Direct bank transfer</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">Ship to a different address?</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">Cash on delivery</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label for="">PayPal </label>
-                </div>
-            </div>
+        <div class="checkout__checkbox-create">
+          <div class="">
+            <input type="checkbox" name="" class="checkboxAcount" />
+            <!-- <label for="">Create an acoount?</label> -->
+            <label for="myCheckbox">
+              <span></span>
+              Create an acoount?
+              <ins><i>Create an acoount?</i></ins>
+            </label>
+          </div>
+          <div>
+            <input type="checkbox" name="" class="checkboxAddress" />
+            <label for="myCheckbox">
+              <span></span>
+              Ship to a different address?
+              <ins><i>Ship to a different address?</i></ins>
+            </label>
+          </div>
         </div>
+        <input
+          class="input__order-notes"
+          type="text"
+          placeholder="Order notes"
+        />
+      </div>
     </div>
+
+    <div class="checkout__block-order">
+      <h2>Your Order</h2>
+
+      <div class="checkout__order-info">
+        <div class="block__order">
+          <div class="block__order-title">
+            <span>PRODUCT</span>
+            <span>TOTAL</span>
+          </div>
+          <div class="block__order-item">
+            <!-- <div>
+                            <span>Lira Earrings</span>
+                            <span> 1pc. / $64</span>
+                        </div>
+                        <div>
+                            <span>Ollie Earrings</span>
+                            <span>$10</span>
+                        </div>
+                        <div>
+                            <span>Kaede Hair Pin</span>
+                            <span>$10</span>
+                        </div> -->
+          </div>
+          <div class="order__block-subtotal">
+            <span>SUBTOTAL</span>
+            <span class="order__subtotal"></span>
+          </div>
+          <div class="order__block-shipping">
+            <span>SHIPPING</span>
+            <span class="order__shipping"></span>
+          </div>
+          <div class="order__block-total">
+            <span>TOTAL</span>
+            <span class="order__total"></span>
+          </div>
+        </div>
+
+        <div class="checkout__checkbox-payment">
+          <div class="radio__block">
+            <input
+              type="radio"
+              class="input__payment"
+              id="radioBankTransfer"
+              name="payment"
+              value="Direct bank transfer"
+              checked
+            />
+            <label class="radio__label" for="radioBankTransfer"
+              >Direct bank transfer</label
+            >
+            <p class="nuances__payment nuances__1">
+              Make your payment directly into our bank account. Please use your
+              Order ID as the payment reference. Your order will not be shipped
+              until the funds have cleared in our account
+            </p>
+          </div>
+
+          <div class="radio__block">
+            <input
+              type="radio"
+              class="input__payment"
+              id="radioCheck"
+              name="payment"
+              value="Check payments"
+            />
+            <label class="radio__label" for="radioCheck">Check payments</label>
+            <p class="nuances__payment nuances__2">
+              Check payments dolor ipsum sit amet consectetur adipisicing elit.
+              Hic culpa sunt reiciendis aliquid amet quod iste! Sint velit
+              quaerat cum?
+            </p>
+          </div>
+
+          <div class="radio__block">
+            <input
+              type="radio"
+              class="input__payment"
+              id="radioDelivery"
+              name="payment"
+              value="Cash on delivery"
+            />
+            <label class="radio__label" for="radioDelivery"
+              >Cash on delivery</label
+            >
+            <p class="nuances__payment nuances__3">
+              Cash on delivery, ipsum sit amet consectetur adipisicing elit.
+              Pariatur, eaque. Minus, aut harum. At voluptatum reiciendis ullam
+              recusandae?
+            </p>
+          </div>
+
+          <div class="radio__block">
+            <input
+              type="radio"
+              class="input__payment"
+              id="radioPaypal"
+              name="payment"
+              value="PayPal"
+            />
+            <label class="radio__label label__paypal" for="radioPaypal"
+              >PayPal
+              <!-- <img src="../../../assets/img/svg/paypal.svg" alt="paypal img"> -->
+            </label>
+            <p class="nuances__payment nuances__4">
+              PayPal consectetur ipsum dolor sit Lorem adipisicing elit.
+              Consequatur dolor ipsam illo, sit dolores quis?
+            </p>
+          </div>
+        </div>
+
+        <button class="btn__place-order">PLACE ORDER</button>
+      </div>
+    </div>
+  </div>
 </section>

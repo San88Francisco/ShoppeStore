@@ -1,4 +1,4 @@
-// Функція яка створює наші
+// Функція яка відображає наші товари
 
 export const loadCartItems = (cartAllProduct, cartBlockItem) => {
   cartBlockItem.innerHTML = '';

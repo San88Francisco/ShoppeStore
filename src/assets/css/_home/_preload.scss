@@ -70,3 +70,15 @@
    letter-spacing: 39px;
    margin-left: auto;
 }
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+   .preload .text-preload {
+      font-size: calc(2rem + 3vw);
+   }
+
+   .under-text-preload {
+      font-size: 16px;
+      letter-spacing: 10px;
+   }
+}

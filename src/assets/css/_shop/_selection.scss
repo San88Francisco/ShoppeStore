@@ -313,176 +313,15 @@
             gap: 70px 24px;
             font-family: DM Sans;
          }
-
-         .shop-latest__block {
-            // border: 1px solid red;
-
-            .shop-latest__img {
-               position: relative;
-
-               .productVariant {
-                  display: none;
-               }
-
-               img {
-                  width: 100%;
-                  height: auto;
-                  border-radius: 10px;
-               }
-
-               .shop-latest_hover {
-                  opacity: 0;
-                  background-color: rgba(255, 255, 255, 0.5);
-                  min-height: 48px;
-                  min-width: 100%;
-                  position: absolute;
-                  bottom: 4px;
-                  padding: 0 30px 0 30px;
-                  transition: all 0.4s ease;
-
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-               }
-
-               &:hover .shop-latest_hover {
-                  opacity: 1;
-               }
-
-               .shop-latest__heart {
-                  width: 1.5em;
-                  cursor: pointer;
-               }
-
-               .add-new,
-               .add-discount,
-               .category,
-               .add-sold {
-                  text-align: center;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  width: 63px;
-                  height: 24px;
-                  border-radius: 4px;
-                  font-family: DM Sans;
-                  font-size: 13px;
-                  font-style: normal;
-                  font-weight: 500;
-                  line-height: 20px;
-
-                  top: 16px;
-                  left: 16px;
-                  cursor: pointer;
-               }
-
-               .label-container {
-                  // border: 1px solid red;
-                  display: flex;
-                  flex-wrap: wrap;
-                  position: absolute;
-                  top: 16px;
-                  left: 16px;
-                  // width: 100%;
-
-                  div {
-                     &:first-child {
-                        margin-right: 10px;
-                     }
-                  }
-               }
-            }
-
-            // Class for "Sold" label
-            .add-sold {
-               color: $white-color;
-               background-color: $accent-color;
-            }
-
-            // Class for "-%price%" label
-            .add-discount,
-            .add-popular {
-               color: $white-color;
-               background-color: $accent-color;
-            }
-
-            //* Class for "category" label
-            // <div class="add-earrings category">Earrings</div>
-            // <div class="add-brooch category">Brooch</div>
-            // <div class="add-bracelets category">Bracelets</div>
-            // <div class="add-pendants category">Pendants</div>
-
-            // <div class="add-popular category">Popular</div>
-            // <div class="add-new category">New</div>
-            // <div class="add-discount category">Sold Out</div>
-            // <div class="add-sold category">Sold Out</div>
-
-            .add-earrings,
-            .add-brooch,
-            .add-bracelets,
-            .add-pendants {
-               background-color: $black-color;
-               color: $white-color;
-            }
-
-            // Class for "New" label
-            .add-new {
-               background-color: $white-color;
-               color: $black-color;
-            }
+         .shop-latest_hover {
+            min-height: 48px;
          }
-
-         .shop-latest_hover_container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 45px;
-            min-width: 100%;
-            transition: all 0.3s ease;
-            position: relative;
-         }
-
-         .price-discount {
-            margin-right: 16px;
-            color: $errors-color;
-            text-decoration: line-through 1px;
-         }
-      }
-   }
-}
-
-
-@media (max-width: 1100px) {
-   .Shop {
-      .shop-container {
-         .B {
-            .shop-latest__block {
-               .shop-latest__img {
-                  .shop-latest_hover {
-                     min-height: 35px;
-                     padding: 0 20px 0 20px;
-                  }
-
-                  .shop-latest__heart {
-                     width: 1.2em;
-                     cursor: pointer;
-                  }
-               }
-
-               .shop-latest_hover_container {
-                  p {
-                     font-size: 12.5px;
-                  }
-               }
-            }
-         }
-      }
    }
 }
 
 @media (max-width: 1000px) {
-   .Shop {
-      .shop-container {
+   // .Shop {
+   //    .shop-container {
          .B {
             .shop-latest-blocks {
                display: grid;
@@ -506,7 +345,7 @@
                }
 
                .shop-latest_hover_container {
-                  min-height: 35px;
+                  min-height: 48px;
 
                   p {
                      font-size: 14px;
@@ -515,11 +354,11 @@
             }
          }
       }
-   }
-}
+   // }
+// }
 
 @media (max-width: 860px) {
-   .Shop {
+   // .Shop {
       .mobile-filter {
          display: block;
       }
@@ -532,145 +371,9 @@
          .A {
             display: none;
          }
-
-         .B {
-            .shop-latest-blocks {
-               display: grid;
-               grid-template-columns: repeat(3, 1fr);
-               grid-template-rows: repeat(2, 1fr);
-               gap: 20px 24px;
-               margin: 0 auto;
-            }
-
-            .shop-latest__block {
-               .shop-latest__img {
-                  .shop-latest_hover {
-                     min-height: 40px;
-                     padding: 0 20px 0 20px;
-                  }
-
-                  .shop-latest__heart {
-                     width: 1em;
-                     cursor: pointer;
-                  }
-               }
-
-               .shop-latest_hover_container {
-                  min-height: 40px;
-
-                  p {
-                     font-size: 12px;
-                  }
-               }
-
-               .shop-latest__name {
-                  margin: 15px 0 8px 0;
-
-                  font-size: 15px;
-               }
-
-               .shop-latest__price {
-                  font-size: 15px;
-               }
             }
          }
       }
-   }
-}
+   // }
 
-@media (max-width: 680px) {
-   .Shop {
-     
-      .shop-container {
-         .B {
-            .shop-latest-blocks {
-               grid-template-columns: repeat(2, 1fr);
-
-               gap: 20px 16px;
-            }
-
-            .shop-latest__block {
-               .shop-latest__img {
-                  .shop-latest_hover {
-                     min-height: 35px;
-                     padding: 0 10px 0 10px;
-                  }
-
-                  .shop-latest__heart {
-                     width: 1em;
-                  }
-               }
-
-               .shop-latest_hover_container {
-                  min-height: 35px;
-
-                  p {
-                     font-size: 11px;
-                  }
-               }
-
-               .shop-latest__name {
-                  margin: 6px 0 4px 0;
-
-                  font-size: 14px;
-               }
-
-               .shop-latest__price {
-                  font-size: 12px;
-               }
-            }
-         }
-      }
-   }
-}
-
-@media (max-width: 425px) {
-   .Shop {
-      .shop-container {
-         .B {
-            .shop-latest {
-               .shop-latest-container {
-                  .shop-latest-blocks {
-                     .shop-latest__block {
-                        .shop-latest__img {
-                           .label-container {
-                              top: 8px;
-                              left: 8px;
-
-                              .add-new,
-                              .add-discount,
-                              .add-category,
-                              .add-sold,
-                              .category {
-                                 width: 43px;
-                                 height: 20px;
-                                 font-size: 9px;
-
-                                 &::before {
-                                    margin: -5px;
-                                 }
-
-                              }
-                           }
-                        }
-
-                        .add-new,
-                        .add-discount,
-                        .add-category,
-                        .add-sold {
-                           &::before {
-                              margin: -5px;
-                           }
-
-                           width: 30px;
-                        }
-
-                     }
-                  }
-               }
-            }
-         }
-      }
-   }
-}
 

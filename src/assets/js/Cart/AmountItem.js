@@ -11,6 +11,10 @@ export const amountItem = () => {
     btnIncrease.forEach((button, index) => {
       button.addEventListener('click', () => {
         let numberOfShoppingsValue = +numberOfShoppings[index].textContent;
+        // Якщо в кошику вибрано товара більше 99, тоді зупиняємо функцію. Таким чином максимально буде 99 товарів
+        if (numberOfShoppingsValue === 99) {
+          return;
+        }
         numberOfShoppings[index].textContent = `${++numberOfShoppingsValue}`;
       });
     });
