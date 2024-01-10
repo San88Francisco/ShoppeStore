@@ -157,9 +157,9 @@ if (window.location.pathname.includes('/shop')) {
 
     const filterInStock = (filter) => {
       shopLatestBlocks.forEach((item) => {
-        console.log('item:', item);
+        // console.log('item:', item);
         let latestName = item.firstElementChild.classList[0];
-        console.log(' latestName:', latestName);
+        // console.log(' latestName:', latestName);
 
         item.style.display = 'block';
         // add-sold Перевіряємо чи є співпадіння з класом

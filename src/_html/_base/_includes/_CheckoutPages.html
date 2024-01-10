@@ -1,40 +1,88 @@
 <section class="checkout__pages">
-  <div class="checkout__container">
+  <!-- action="http://localhost:3000/order-confirmation.html" -->
+  <form class="checkout__container" name="checkout__container">
     <div class="checkout__block-name">
       <h2>Billing Details</h2>
 
       <div class="checkout__name-info">
         <div class="checkout__name">
-          <input
-            class="input__first-name"
-            type="text"
-            placeholder="First name *"
-          />
-          <input
-            class="input__last-name"
-            type="text"
-            placeholder="last name *"
-          />
+          <div class="order__form-info">
+            <input
+              class="order__field input__first-name"
+              type="text"
+              placeholder="First name *"
+              data-reg="^[a-zA-Z]{2,}$"
+            />
+            <label class="order__error-name">Please enter name</label>
+          </div>
+          <div class="order__form-info">
+            <input
+              class="order__field input__last-name"
+              type="text"
+              placeholder="last name *"
+              data-reg="^[a-zA-Z]{2,}$"
+            />
+            <label class="order__error-lastName">Введіть призвище</label>
+          </div>
         </div>
-        <input class="input__country" type="text" placeholder="Country *" />
-        <input
-          class="input__street-address"
-          type="text"
-          placeholder="Street Address *"
-        />
-        <input
-          class="input__postcode"
-          type="text"
-          placeholder="Postcode / ZIP *"
-        />
-        <input class="input__city" type="text" placeholder="Town / City *" />
-        <input class="input__phone" type="text" placeholder="Phone *" />
-        <input class="input__email" type="email" placeholder="Email *" />
+        <div class="order__form-info">
+          <input
+            class="order__field input__country"
+            type="text"
+            placeholder="Country *"
+            data-reg="^[a-zA-Z]{2,}$"
+          />
+          <label class="order__error-country">Введіть країну</label>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__city"
+            type="text"
+            placeholder="Town / City *"
+            data-reg="^[a-zA-Z]{2,}$"
+          />
+          <label class="order__error-city">Введіть місто</label>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__street-address"
+            type="text"
+            placeholder="Street Address *"
+            data-reg="^[a-zA-Z]{2,}$"
+          />
+          <label class="order__error-address">Введіть адресу</label>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__postcode"
+            type="number"
+            placeholder="Postcode / ZIP *"
+            data-reg="^\d{5}$"
+          />
+          <label class="order__error-zip">Введіть індекс</label>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__phone"
+            type="number"
+            placeholder="Phone *"
+            data-reg="^38\d{10}$"
+          />
+          <label class="order__error-phone">Введіть номер телефону</label>
+        </div>
+        <div class="order__form-info">
+          <input
+            class="order__field input__email"
+            type="email"
+            placeholder="Email *"
+            data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
+          />
+          <label class="order__error-email">Введіть email</label>
+        </div>
 
         <div class="checkout__checkbox-create">
           <div class="">
             <input type="checkbox" name="" class="checkboxAcount" />
-            <!-- <label for="">Create an acoount?</label> -->
             <label for="myCheckbox">
               <span></span>
               Create an acoount?
@@ -69,17 +117,17 @@
           </div>
           <div class="block__order-item">
             <!-- <div>
-                            <span>Lira Earrings</span>
-                            <span> 1pc. / $64</span>
-                        </div>
-                        <div>
-                            <span>Ollie Earrings</span>
-                            <span>$10</span>
-                        </div>
-                        <div>
-                            <span>Kaede Hair Pin</span>
-                            <span>$10</span>
-                        </div> -->
+              <span>Lira Earrings</span>
+              <span> 1pc. / $64</span>
+            </div>
+            <div>
+                <span>Ollie Earrings</span>
+                <span>$10</span>
+            </div>
+            <div>
+                <span>Kaede Hair Pin</span>
+                <span>$10</span>
+            </div> -->
           </div>
           <div class="order__block-subtotal">
             <span>SUBTOTAL</span>
@@ -168,8 +216,8 @@
           </div>
         </div>
 
-        <button class="btn__place-order">PLACE ORDER</button>
+        <button type="submit" class="btn__place-order">PLACE ORDER</button>
       </div>
     </div>
-  </div>
+  </form>
 </section>
