@@ -29,13 +29,27 @@ export const loadCartItems = (cartAllProduct, cartBlockItem) => {
                   >`
                   }
                 </p>
+               
               </div>
               </div>
             </a>
-    
+           
+
             <div class="change--amount">
               <button class="minus">-</button>
+             
               <span class="amount">${item.count}</span>
+              
+              <div class="change--amount change--amount_tel">
+                <button class=" plus_tel">
+                <img src="../../../assets/img/Cart_img/svg/arrow_tel.svg" alt="">
+                </button>
+                <button class=" minus_tel">
+                <img src="../../../assets/img/Cart_img/svg/arrow_tel.svg" alt="">
+                </button>
+                
+              </div>
+
               <button class="plus">+</button>
             </div>
             <img
