@@ -32,10 +32,15 @@
                         <span class="cart__count"></span>
                      </a>
                   </li>
-                  <li class="header_line_last header_link_account header_none header_link_myaccount">
-                     <a href="./account.html" class="account__href">
+                  <li class="dropdown header_line_last header_link_account header_none header_link_myaccount">
+                     <a href="#" class="dropbtn account__href" id="accountToggle">
                         <img src="./assets/img/Home_img/header/user.svg" alt="" />
                      </a>
+                     <div class="dropdown-content account-dropdown" id="accountDropdown">
+                        <a href="./account.html">Sing In</a>
+                        <a href="./account.html " style="display:none">My account</a>
+                        <a href="#" id="logout" style="display:none">Sign Out</a>
+                     </div>
                   </li>
                </ul>
             </div>
