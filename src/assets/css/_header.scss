@@ -21,6 +21,70 @@ header {
       }
    }
 
+   /* Загальні стилі для бургер-меню */
+   .burger-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 1000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .burger-nav h1 {
+      font-size: 24px;
+      margin: 10px 0;
+   }
+
+   .burger-nav a {
+      text-decoration: none;
+      color: #333;
+   }
+
+   /* Сховати бургер-меню за замовчуванням */
+   #check:not(:checked)+.burger-nav {
+      display: none;
+   }
+
+   /* Показати бургер-меню, коли чекбокс відмічений */
+   #check:checked+.burger-nav {
+      display: flex;
+   }
+
+   /* Стилі для бургер-кнопки */
+   #burber-botton {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+   }
+
+   #burber-botton span {
+      width: 30px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      display: block;
+      transition: 0.4s;
+   }
+
+   /* Зробіть іконку креста при натисканні на бургер-кнопку */
+   #check:checked+#burber-botton span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+   }
+
+   #check:checked+#burber-botton span:nth-child(2) {
+      opacity: 0;
+   }
+
+   #check:checked+#burber-botton span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+   }
+
    ul {
       width: 400px;
       height: 50px;
@@ -32,6 +96,8 @@ header {
       font-style: normal;
       font-weight: 400;
       line-height: 27px;
+
+
 
       img {
          margin-top: 10px;
@@ -98,54 +164,54 @@ header {
    }
 }
 
-@media(max-width: 600px) {
+/* Додайте стилі для респонсивного дизайну */
+@media (max-width: 600px) {
    header {
-      margin-top: 16px;
-
-      ul {
-         flex-direction: row;
-         align-items: center;
-         justify-content: flex-end;
-
-         li {
-            display: none;
-         }
-
-         .active-cart-visual {
-            display: block;
-            margin: 0 20px 5px 0;
-            z-index: 9;
-         }
-
-         label {
-            display: flex;
-            align-items: flex-end;
-         }
-      }
-      .burger-nav.hidden{
-         left: 500px;
-      }
-      .burger-nav {
-         width: 100%;
-         height: 100%;
-         padding: 20px;
-         background-color: white;
-         position: absolute;
-         border: 1px solid black;
-         z-index: 8;
-         inset: 0;
-         transition: left 0.5s ease-in-out;
-
-        
-
-         h1,
-         hr {
-            position: relative;
-
-         }
-      }
+     margin-top: 16px;
+ 
+     ul {
+       flex-direction: row;
+       align-items: center;
+       justify-content: flex-end;
+ 
+       li {
+         display: none;
+       }
+ 
+       .active-cart-visual {
+         display: block;
+         margin: 0 20px 5px 0;
+         z-index: 9;
+       }
+ 
+       label {
+         display: flex;
+         align-items: flex-end;
+       }
+     }
+ 
+     .burger-nav {
+       width: 100%;
+       height: 100%;
+       padding: 20px;
+       background-color: white;
+       position: absolute;
+       border: 1px solid black;
+       z-index: 8;
+       inset: 0;
+       transition: all 0.5s ease-in-out;
+ 
+       .active-hiddin {
+         left: 600px;
+       }
+ 
+       h1,
+       hr {
+         position: relative;
+       }
+     }
    }
-}
+ }
 
 // .header {
 //    display: grid;
