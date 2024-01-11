@@ -1,4 +1,5 @@
-import { updateAccountLinksVisibility } from "../Account/SingIn.js"; // Шлях до вашого файлу з функцією
+import { updateAccountLinksVisibility } from "../Account/SingIn.js";
+import { handleUserSignIn } from "../Account/SingIn.js";
 
 const PAGES = [
   "index",
@@ -31,7 +32,19 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!pageExists && !is404Page) {
     redirectTo404();
   } else {
-    updateAccountLinksVisibility(); // Тепер ви можете викликати імпортовану функцію
+    updateAccountLinksVisibility();
+
+    const { redirectToLoginPage, handleLogout, userSignedIn } =
+      handleUserSignIn();
+
+    if (currentPage === "my-account" && !userSignedIn) {
+      redirectToLoginPage();
+    }
+
+    const logoutLink = document.getElementById("logout");
+    if (logoutLink) {
+      logoutLink.addEventListener("click", handleLogout);
+    }
   }
 
   function redirectTo404() {

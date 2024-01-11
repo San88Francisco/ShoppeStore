@@ -22,6 +22,26 @@ export function updateAccountLinksVisibility() {
   }
 }
 
+export function handleUserSignIn() {
+  const userSignedIn = localStorage.getItem("userSignIn");
+
+  function redirectToLoginPage() {
+    window.location.href = "./account.html";
+  }
+
+  function handleLogout(event) {
+    event.preventDefault();
+    localStorage.removeItem("userSignIn");
+    redirectToLoginPage();
+  }
+
+  return {
+    redirectToLoginPage,
+    handleLogout,
+    userSignedIn,
+  };
+}
+
 if (window.location.pathname.includes("/account")) {
   document.addEventListener("DOMContentLoaded", async function () {
     // Отримуємо посилання на потрібні елементи DOM
