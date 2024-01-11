@@ -579,6 +579,13 @@
             gap: 25px;
           }
         }
+        .cart__update{
+          .cart__coupon{
+            .btn__coupon{
+              width: 195px;
+            }
+          }
+         }
       }
     }
   }
@@ -592,7 +599,7 @@
 
       .cart__block{
         width: 100%;
-        padding: 0 30px;
+        padding: 0;
         .cart__block-item {
           .cart__item{
             .change--amount{
@@ -604,8 +611,11 @@
         }
         .cart__update{
           .cart__coupon{
+            .btn__coupon{
+              width: 165px;
+            }
             .input__coupon{
-              width: 100%;
+              width: 73%;
             }
           }
         }
@@ -616,13 +626,33 @@
         margin: 40px 0 0 0;
         background: #EFEFEF;
         border-radius: 5px;
-        width: 80%;
+        width: 100%;
       }
 
     }
   }
 }
+@media(max-width: 700px){
+  .cart{
+    .cart__container{
+      .cart__block{
+        .cart__update{
+          .cart__coupon{
+            .btn__coupon{
+              width: 168px;
+            }
+            .input__coupon{
+              width: 69%;
+            }
+          }
+        }
+      }
+     
+    
 
+    }
+  }
+}
 
 @media(max-width: 650px){
   .cart{
@@ -672,12 +702,44 @@
         display: none;
        }
        .cart__update{
+        width: 97.5%;
         .cart__coupon{
           gap: 24px;
         }
-        .btn__update-cart{
-          width: 100%;
-        }
+        
+         
+          .btn__update-cart{
+            width: 100%;
+            margin-bottom: 48px;
+            padding: 10px 0px;
+            font-size: 14px;
+            font-weight: 500;
+          }
+          .cart__coupon{
+            flex-direction: column;
+            
+            .btn__coupon{
+              width: 100%;
+              gap: 30px;
+              padding: 10px 0px;
+              font-size: 14px;
+              font-weight: 500;
+             
+            }
+            .input__coupon{
+                padding: 0 0 12px 0;
+                font-size: 14px;
+                width: 100%;
+               
+                &::placeholder{
+                  font-size: 14px;
+                }
+            }
+            .hint__coupon{
+              top: 39px;
+            }
+          }
+         
        
        }
        .cart__block-item{
@@ -826,37 +888,7 @@
       }
       .cart__block{
       padding: 0;
-       .cart__update{
-        width: 97.5%;
-        .btn__update-cart{
-          margin-bottom: 48px;
-          padding: 10px 0px;
-          font-size: 14px;
-          font-weight: 500;
-        }
-        .cart__coupon{
-          flex-direction: column;
-          
-          .btn__coupon{
-            width: 100%;
-            gap: 30px;
-            padding: 10px 0px;
-            font-size: 14px;
-            font-weight: 500;
-           
-          }
-          .input__coupon{
-              padding: 0 0 12px 0;
-              font-size: 14px;
-              &::placeholder{
-                font-size: 14px;
-              }
-          }
-          .hint__coupon{
-            top: 39px;
-          }
-        }
-       }
+       
        .cart__block-item{
         .cart__item{
           .cart__delete{
