@@ -704,6 +704,8 @@
               padding: 2px;
               img{
                 width: 8px;
+                position: relative;
+                bottom: 2px;
               }
             }
            
@@ -862,7 +864,7 @@
             width: 10px;
           }
           .cart__item-info{
-            gap: 8px;
+            gap: 7px;
             .cart__item-caption{
               .cart__item-price{
                 line-height: 20px;
@@ -945,7 +947,7 @@
               
               .cart__item-price{
                 .cart__price-discount{
-                  margin-right: 2px;
+                  margin-right: 0px;
                 }
               }
             }
