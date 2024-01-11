@@ -1,4 +1,4 @@
-nav {
+header {
    max-width: 1248px;
    height: 49px;
    border: 1px solid black;
@@ -15,7 +15,7 @@ nav {
       align-items: center;
       justify-content: space-between;
 
-      & :nth-child(4) {
+      &:nth-child(4) {
          font-weight: 200;
          font-size: 20px;
       }
@@ -45,30 +45,30 @@ nav {
          width: 30px;
          height: 45px;
          cursor: pointer;
-         margin-top: 20px;
+         margin-top: 18px;
+         z-index: 10;
       }
 
       label span {
          background: #000;
          border-radius: 10px;
-         height: 1.5px;
+         height: 2px;
          margin: 3px 0;
          transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
       }
 
       span:nth-of-type(1) {
-         width: 50%;
+         width: 80%;
 
       }
 
       span:nth-of-type(2) {
-         width: 82%;
+         width: 80%;
       }
 
       span:nth-of-type(3) {
-         width: 75%;
-
+         width: 50%;
       }
 
       input[type="checkbox"] {
@@ -78,13 +78,13 @@ nav {
 
       input[type="checkbox"]:checked~span:nth-of-type(1) {
          transform-origin: bottom;
-         transform: rotatez(47deg) translate(4px, 0px)
+         transform: rotatez(45deg) translate(5px, 4px)
       }
 
       input[type="checkbox"]:checked~span:nth-of-type(2) {
 
          transform-origin: top;
-         transform: rotatez(-47deg)translate(1px, 0px)
+         transform: rotatez(-45deg)translate(1px, 0px)
       }
 
 
@@ -92,13 +92,14 @@ nav {
 
          transform-origin: bottom;
          width: 50%;
-         transform: translate(8px, -6px) rotatez(47deg);
+         height: 1.5px;
+         transform: translate(-2px, -7.5px) rotatez(45deg);
       }
    }
 }
 
 @media(max-width: 600px) {
-   nav {
+   header {
       margin-top: 16px;
 
       ul {
@@ -113,10 +114,34 @@ nav {
          .active-cart-visual {
             display: block;
             margin: 0 20px 5px 0;
+            z-index: 9;
          }
 
          label {
             display: flex;
+            align-items: flex-end;
+         }
+      }
+      .burger-nav.hidden{
+         left: 500px;
+      }
+      .burger-nav {
+         width: 100%;
+         height: 100%;
+         padding: 20px;
+         background-color: white;
+         position: absolute;
+         border: 1px solid black;
+         z-index: 8;
+         inset: 0;
+         transition: left 0.5s ease-in-out;
+
+        
+
+         h1,
+         hr {
+            position: relative;
+
          }
       }
    }

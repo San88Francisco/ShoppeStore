@@ -1,4 +1,4 @@
-<nav>
+<header>
    <div class="header__logo">
       <a href="./index.html">
          <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
@@ -26,8 +26,8 @@
             <img src="./assets/img/Home_img/header/user.svg" alt="" />
          </a>
       </li>
-      <!-- nav-burger -->
-      <label for="check">
+      <!-- button-burger -->
+      <label id="burber-botton" for="check">
          <input type="checkbox" id="check" />
          <span></span>
          <span></span>
@@ -35,7 +35,29 @@
       </label>
    </ul>
    
-</nav>
+   <div class="burger-nav">
+      <div class="header__logo">
+         <a href="./index.html">
+            <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
+         </a>
+      </div>
+
+      <h1><a href="">home</a></h1>
+      <h1><a href="">shop</a></h1>
+      <h1><a href="">about</a></h1>
+      <h1><a href="">blog</a></h1>
+      <h1><a href="">help</a></h1>
+      <h1><a href="">contact</a></h1>
+      <h1><a href="">search</a></h1>
+      <hr>
+      <h1><a href="">my account</a></h1>
+      <h1><a href="">logout</a></h1>
+   </div>
+</header>
+
+<!--! conect search global -->
+{% include "_html/_base/_includes/_Search-global.html" %}
+
 
 
 
