@@ -183,3 +183,7 @@ header {
 .account-dropdown a:hover {
   background-color: #f0f0f0;
 }
+
+#accountDropdownWrapper.active .account-dropdown {
+  display: block;
+}
