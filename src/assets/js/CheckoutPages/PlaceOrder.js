@@ -14,6 +14,13 @@ export const placeOrder = (paymentMethod) => {
   const inputEmail = document.querySelector('.input__email').value;
   const inputOrderNotes = document.querySelector('.input__order-notes').value;
 
+  const date = new Date();
+  const currentDate = date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
   // Створюємо обєкт з нашими данними
   const blockData = {
     name: inputFirstName,
@@ -26,6 +33,7 @@ export const placeOrder = (paymentMethod) => {
     email: inputEmail,
     orderNotes: inputOrderNotes,
     paymentMethod: paymentMethod,
+    date: currentDate,
   };
 
   // Зберігаємо інофрмацію клієнта в userOrderInfo

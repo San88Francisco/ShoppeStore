@@ -6,6 +6,8 @@ export const orderItemViev = () => {
   const orderTotal = document.querySelector('.order__total');
 
   const { info, item } = JSON.parse(localStorage.getItem('checkoutInfo'));
+  console.log('  info:', info);
+  console.log('  item:', item);
 
   item.map(({ name, price, count }) => {
     blockOrderItem.innerHTML += `
