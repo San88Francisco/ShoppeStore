@@ -82,8 +82,7 @@
             <div class="product__mobile-text">
                <input type="checkbox" id="showMoreTextProduct">
                <label class="product__view-more" for="showMoreTextProduct">View more <img class="viwe-more-arrow" src="./assets/img/Product_img/svg/arrow.svg" alt="arrow"></label>
-               <p class="mobile-text">Lorem ipsum dolor sit amet, consectetur adipisce elit. Aliquam placerat ...</p>
-               <p class="mobile__add-text">Lorem ipsum dolor sit amet, consectetur adipisce elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. </p>
+               <p class="mobile-text">Lorem ipsum dolor sit amet, consectetur adipisce elit. Aliquam placerat<span class="viweSmall"> ... </span><span class="viweMore">, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. </span></p>
             </div>
          </div>
       </div>
@@ -124,12 +123,12 @@
             </ul>
          </div>
          <hr class="header__underline">
-         <div id="product__page1" class="product__page1 product__page">
+         <div id="product__page1" class="product__page1 product__page" data-is-page-select="true">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit,
                sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis
                consequat sed eu felis. Nunc sed porta augue. Morbi porta tempor odio, in molestie diam bibendum sed.</p>
          </div>
-         <div id="product__page2" class="product__page2 product__page">
+         <div id="product__page2" class="product__page2 product__page" data-is-page-select="false">
             <ul>
                <li>
                   <h5>Weight: <span class="prduct__charapter">0.3 kg</span></h5>
@@ -145,7 +144,7 @@
                </li>
             </ul>
          </div>
-         <div id="product__page3" class="product__page3 product__page">
+         <div id="product__page3" class="product__page3 product__page" data-is-page-select="false">
             <div class="reviews__block">
                <div class="reviews">
                   <h3 class="amount-reviews-title"><span class="amount-reviews">2</span> Reviews for <span
@@ -182,7 +181,7 @@
                         <input name="UserMail" id="ReviewUserMail" type="email" placeholder="Enter your Email*"
                            required>
                         <div class="checkbox-to-save">
-                           <input autocomplete="off" type="checkbox" name="myCheckbox" class="checkbox__input"
+                           <input autocomplete="off" type="checkbox" name="myCheckbox" class="checkbox__input saveUserData"
                               id="myCheckbox">
                            <label for="myCheckbox">
                               <span></span>
@@ -289,7 +288,9 @@
          </div>
       </div>
    </article>
-
+   <div class="contine-shoping__btn">
+      <a href="./shop.html">Continue shopping <img src="../../../assets/img/Product_img/svg/arrow.svg" alt="img"></a>
+   </div>
 </section>
 
 <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
