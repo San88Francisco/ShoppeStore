@@ -15,7 +15,7 @@ footer {
     width: 1248px;
     min-height: 159px;
 
-    border-top: 1px solid #d8d8d8;
+    border-top: 1px solid $gray-color;
 
     display: flex;
     justify-content: space-between;
@@ -78,7 +78,7 @@ footer {
         display: flex;
         justify-content: space-between;
         height: 40px;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid $black-color;
         padding-bottom: 13px;
         margin-left: 10px;
       }
@@ -98,18 +98,18 @@ footer {
 
     .info-item:hover,
     .info-item:active {
-      color: #000;
+      color: $black-color;
       transition: 0.3s;
     }
 
     .fa {
       font-size: 19px;
-      color: #707070;
+      color: $placeholder-color;
     }
 
     .fa:hover,
     .fa:active {
-      color: #000;
+      color: $black-color;
       transition: 0.3s;
     }
 
@@ -126,7 +126,7 @@ footer {
     width: 1248px;
     min-height: 159px;
 
-    border-top: 1px solid #d8d8d8;
+    border-top: 1px solid $gray-color;
 
     justify-content: space-between;
     flex-direction: column;
@@ -161,7 +161,7 @@ footer {
 
         .info-item:hover,
         .info-item:active {
-          color: #000;
+          color: $black-color;
           transition: 0.3s;
         }
       }
@@ -170,7 +170,7 @@ footer {
         padding: 0 0 6px 0;
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid $black-color;
       }
       .info-input {
         width: 396px;
@@ -222,12 +222,12 @@ footer {
 
     .fa {
       font-size: 19px;
-      color: #707070;
+      color: $placeholder-color;
     }
 
     .fa:hover,
     .fa:active {
-      color: #000;
+      color: $black-color;
       transition: 0.3s;
     }
 
@@ -401,7 +401,7 @@ height: 5.247px;
                }
                hr{
                   width: 47px;
-                  border: 1px solid #000;
+                  border: 1px solid $black-color;
                   margin: 0 8px 0 16px;
                }
                .follow-icons{

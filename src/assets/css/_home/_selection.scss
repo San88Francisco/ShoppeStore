@@ -12,6 +12,7 @@
       overflow: hidden;
       max-height: 646px;
       border-radius: 15px;
+    
    }
 
    .slider {
@@ -70,7 +71,7 @@
          flex-shrink: 0;
          border-radius: 6px;
          border: 2px solid var(--light-colors-white-light, $white-color);
-         color: #fff;
+         color: $white-color;
          font-family: DM Sans;
          font-size: 20px;
          font-style: normal;
@@ -196,7 +197,7 @@
       font-weight: 400;
       line-height: 26px;
       letter-spacing: 0em;
-      color: #000;
+      color: $black-color;
    }
 
    .shop-latest__price {
@@ -360,7 +361,7 @@
             width: 112px;
             height: 32px;
             border-radius: 4px;
-            border: 1px solid var(--Light-Colors-White---Light, #FFF);
+            border: 1px solid var(--Light-Colors-White---Light, $white-color);
             font-size: 10px;
             line-height: 12px;
 

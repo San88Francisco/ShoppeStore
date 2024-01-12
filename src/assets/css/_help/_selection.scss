@@ -9,7 +9,7 @@
          padding: 0 16px;
       }
       .help{
-      // border: 1px solid #000;
+      // border: 1px solid $black-color;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -30,13 +30,13 @@
       display: flex;
       // width: 100%;
       justify-content: space-between;
-      border-bottom: 1px solid #d8d8d8;
+      border-bottom: 1px solid $gray-color;
       padding-top: 30px;
       height: 60px;
       align-items: center;
       padding-left: 16px;
       padding-right: 16px;
-      // border: 1px solid #000;
+      // border: 1px solid $black-color;
       div {
          margin-bottom: 22px;
          display: flex;
@@ -55,7 +55,7 @@
       }
    }
    a:active {
-         background-color: #efefef;
+         background-color: $light-gray-color;
    }
    }
       
@@ -73,10 +73,10 @@
          display: flex;
          justify-content: center;
          align-items: center;
-         border: 1px solid #000;
+         border: 1px solid $black-color;
          &:focus{
-            background-color: #000;
-            color: #fff;
+            background-color: $black-color;
+            color: $white-color;
          }
          }
 

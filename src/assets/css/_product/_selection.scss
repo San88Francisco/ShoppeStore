@@ -84,7 +84,7 @@
             .progress-bar-mobile {
                width: 90%;
                height: 2px;
-               background-color: #d8d8d8;
+               background-color: $gray-color;
                position: absolute;
 
                .progress-bar-mobile__line {
@@ -121,7 +121,7 @@
             .progress-bar {
                width: clamp(432px, 40vw, 540px);
                height: 2px;
-               background-color: #d8d8d8;
+               background-color: $gray-color;
                position: absolute;
                left: clamp(128px, 10.3vw, 150px);
                top: clamp(500px, 46vw, 625px);
@@ -227,20 +227,20 @@
                      font-weight: 700;
                      line-height: normal;
                      cursor: pointer;
-                     border: 1px solid black;
+                     border: 1px solid $black-color;
                      border-radius: 5px;
 
                      transition: 0.4s ease-in;
 
                      &:hover {
-                        background-color: black;
-                        color: white;
+                        background-color: $black-color;
+                        color: $white-color;
                      }
 
                      // Selected class for button
                      .selected {
-                        background-color: black;
-                        color: white;
+                        background-color: $black-color;
+                        color: $white-color;
                      }
                   }
                }
@@ -309,7 +309,7 @@
          display: block;
          margin-bottom: 40px;
          border: none;
-         border-bottom: 1px solid #d8d8d8;
+         border-bottom: 1px solid $gray-color;
       }
 
 
@@ -414,13 +414,13 @@
             }
 
             &::-webkit-scrollbar-track {
-               background-color: #f5f5f5;
+               background-color: $light-gray-color;
             }
 
             &::-webkit-scrollbar-thumb {
                background-color: $placeholder-color;
                border-radius: 20px;
-               border: 3px solid #f5f5f5;
+               border: 3px solid $light-gray-color;
             }
 
             .header__underline {
@@ -531,7 +531,7 @@
                   width: 600px;
                   margin: 0.6em 0;
                   align-items: center;
-                  color: #707070;
+                  color: $placeholder-color;
                   transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
                }
 
@@ -552,7 +552,7 @@
                   font-size: 16px;
                   top: 0;
                   font-style: normal;
-                  color: #707070;
+                  color: $placeholder-color;
                }
 
                input[type='checkbox']+label>span {
@@ -565,7 +565,7 @@
                   font-size: 16px;
                   padding: 6px;
                   background: transparent;
-                  border: 2px solid #707070;
+                  border: 2px solid $placeholder-color;
                   border-radius: 2px;
                   cursor: pointer;
                   transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
@@ -573,12 +573,12 @@
 
                input[type='checkbox']+label:hover,
                input[type='checkbox']:focus+label {
-                  color: #000000;
+                  color: $black-color;
                }
 
                input[type='checkbox']+label:hover>span,
                input[type='checkbox']:focus+label>span {
-                  background: #fff;
+                  background: $white-color;
                }
 
                input[type='checkbox']:checked+label>ins {
@@ -586,7 +586,7 @@
                }
 
                input[type='checkbox']:checked+label>span {
-                  border: 0.5em solid#707070;
+                  border: 0.5em solid$placeholder-color;
                   animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
                   padding: 0px;
                }
@@ -621,7 +621,7 @@
                   0% {
                      width: 0;
                      height: 0;
-                     border-color: #fff;
+                     border-color: $white-color;
                      transform: translate3d(0, 0, 0) rotate(45deg);
                   }
 
@@ -634,7 +634,7 @@
                   100% {
                      width: 0.2em;
                      height: 0.5em;
-                     border-color: #fff;
+                     border-color: $white-color;
                      transform: translate3d(0, -0.5em, 0) rotate(45deg);
                   }
                }
@@ -766,7 +766,7 @@
 
                .shop-latest_hover {
                   opacity: 0;
-                  background-color: rgba(255, 255, 255, 0.5);
+                  background-color: $white-color-rgba;
                   min-height: 48px;
                   min-width: 100%;
                   position: absolute;
@@ -817,7 +817,7 @@
                font-weight: 400;
                line-height: 26px;
                letter-spacing: 0em;
-               color: #000;
+               color: $black-color;
             }
 
             .shop-latest__price {

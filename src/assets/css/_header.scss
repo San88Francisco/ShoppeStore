@@ -17,7 +17,7 @@ header {
 
     .cart__count {
       display: none;
-      background: #fff;
+      background: $white-color;
       position: absolute;
       left: 11px;
       top: -17px;
@@ -140,7 +140,7 @@ header {
     min-width: 160px;
     right: 0;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: $white-color;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
   }
@@ -149,7 +149,7 @@ header {
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: #333;
+    color: $dropdown-gray-color;
     border-radius: 0 0 10px 10px;
     transition: background-color 0.3s;
   }
@@ -170,7 +170,7 @@ header {
   }
 
   .account-dropdown a:hover {
-    background-color: #f0f0f0;
+    background-color: $light-gray-color;
   }
 
   #accountDropdownWrapper.active .account-dropdown {

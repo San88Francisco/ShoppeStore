@@ -246,7 +246,7 @@
                #isNotFulling{
                   position: absolute;
                   display: none;
-                  color: #D82700;
+                  color: $errors-color;
                   font-size: 10px;
                   line-height: 10px;
                   margin: 0px;
@@ -256,7 +256,7 @@
                   textarea{
                      // padding-bottom: 60px;
                      border: 0px;
-                     border-bottom: 1px solid #D8D8D8;
+                     border-bottom: 1px solid $gray-color;
                      width: 100%;
                      resize: none;
                      font-size: 16px;
@@ -276,13 +276,13 @@
                }
                
                .leave-reply__input {
-                  border-bottom: 1px solid #D8D8D8;
+                  border-bottom: 1px solid $gray-color;
                   padding: 12px 0;
                   width: 100%;
                   &::placeholder {
                      font-family: DM Sans;
                      font-size: 16px;
-                     color: #707070;
+                     color: $placeholder-color;
                      font-weight: 400;
                      //Tablet
                      @media (max-width: 700.98px){
@@ -340,7 +340,7 @@
                  display: flex;
                  margin: .6em 0;
                  align-items: center;
-                 color: #707070;
+                 color: $placeholder-color;
                  transition: color 250ms cubic-bezier(.4,.0,.23,1);
                }
                input[type='checkbox'] + label > ins{
@@ -352,13 +352,13 @@
                  width: 100%;
                  overflow: hidden;
                  text-decoration: none;
-                 transition: height 300ms cubic-bezier(.4,.0,.23,1);
+                 transition: height $transition-time cubic-bezier(.4,.0,.23,1);
                }
                input[type='checkbox'] + label > ins > i{
                  position: absolute;
                  bottom: 0;
                  font-style: normal;
-                 color:#707070;
+                 color:$placeholder-color;
                }
                input[type='checkbox'] + label > span{
                  display: flex;
@@ -369,26 +369,26 @@
                  height: 16px;
                  padding: 6px;
                  background: transparent;
-                 border: 2px solid #707070;
+                 border: 2px solid $placeholder-color;
                  border-radius: 2px;
                  cursor: pointer;  
                  transition: all 250ms cubic-bezier(.4,.0,.23,1);
                }
                
                input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
-                 color: #000000;
+                 color: $black-color;
                }
                input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
-                 background: #fff;
+                 background: $white-color;
                }
                input[type='checkbox']:checked + label {
                   font-style: normal;
                   font-weight: 500;
-                  color:#707070;
+                  color:$placeholder-color;
                }
                
                input[type='checkbox']:checked + label > span{
-                 border: .5em solid#707070;
+                 border: .5em solid$placeholder-color;
                  animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
                  padding: 0px;
                }
@@ -419,7 +419,7 @@
                  0%{
                    width: 0;
                    height: 0;
-                   border-color: #fff;
+                   border-color: $white-color;
                    transform: translate3d(0,0,0) rotate(45deg);
                  }
                  33%{
@@ -430,7 +430,7 @@
                  100%{    
                    width: .2em;
                    height: .5em;    
-                   border-color: #fff;
+                   border-color: $white-color;
                    transform: translate3d(0,-.5em,0) rotate(45deg);
                  }
                }
