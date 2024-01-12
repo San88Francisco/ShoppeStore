@@ -66,7 +66,7 @@
             right: 0;
             text-align: center;
             border-radius: 1px;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid $black-color;
             padding-bottom: 30px;
           }
         }
@@ -76,7 +76,7 @@
     .header__underline {
       display: block;
       margin-bottom: 40px;
-      background-color: #000000;
+      background-color: $black-color;
       position: relative;
       z-index: 1;
     }
@@ -88,14 +88,14 @@
       & i {
         font-size: 10px;
         padding-bottom: 16px;
-        color: #d8d8d8;
+        color: $gray-color;
       }
 
       display: none;
     }
 
     .go i {
-      color: #000000;
+      color: $black-color;
     }
   }
 
@@ -243,9 +243,9 @@
               font-style: normal;
               font-weight: 400;
               line-height: 20px;
-              color: #000;
+              color: $black-color;
               &:last-child {
-                color: #707070;
+                color: $placeholder-color;
                 text-align: right;
               }
               .do-sth {
@@ -386,13 +386,13 @@
               }
 
               &::-webkit-scrollbar-track {
-                background-color: #f5f5f5;
+                background-color: $light-gray-color;
               }
 
               &::-webkit-scrollbar-thumb {
                 background-color: $placeholder-color;
                 border-radius: 20px;
-                border: 3px solid #f5f5f5;
+                border: 3px solid $light-gray-color;
               }
 
               li {
@@ -503,7 +503,7 @@
   }
 
   .targetOf-logout {
-    border: 1px solid red;
+    border: 1px solid $errors-color;
   }
 
   @media (max-width: 1023.98px) {
