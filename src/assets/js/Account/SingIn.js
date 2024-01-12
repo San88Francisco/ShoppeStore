@@ -320,7 +320,7 @@ if (window.location.pathname.includes("/account")) {
       }
     });
 
-    //вхід в систему
+    // Вхід в систему
     const loginForm = document.querySelector('form[name="FormSingIn"]');
 
     let invalidLoginAttempts = 0;
@@ -345,7 +345,7 @@ if (window.location.pathname.includes("/account")) {
         invalidLoginAttempts++;
 
         if (invalidLoginAttempts >= 3) {
-          window.location.href = "http://localhost:3002/reset-password.htmlg"; // Перенаправлення на сторінку відновлення паролю
+          window.location.href = "http://localhost:3000/reset-password.html"; // Перенаправлення на сторінку відновлення паролю
         } else {
           let loginElement = document.querySelector(".input--singin");
           if (!emailTest(loginElement)) {
@@ -357,12 +357,16 @@ if (window.location.pathname.includes("/account")) {
         }
       }
 
-      function emailTest(input) {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(
-          input.value
-        );
-      }
+      updateAccountLinksVisibility(); // Оновлюємо відображення посилань на акаунт
     });
+
+    // Функція для перевірки правильності email
+    function emailTest(input) {
+      return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+
+    // Викликаємо функцію для оновлення відображення посилань при завантаженні сторінки
+    updateAccountLinksVisibility();
 
     //Функціонал показати пароль
     const allPass = document.querySelectorAll(".input--pass");
