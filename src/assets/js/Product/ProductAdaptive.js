@@ -1,4 +1,23 @@
 const addaptiveTabMenu = () => {
+
+   const productPage = document.querySelectorAll('.product__page')
+   window.addEventListener('resize',()=> {
+      const nowScreenWidth = window.innerWidth
+      if(nowScreenWidth <= 425){
+         productPage.forEach(item => {
+            item.style.display = 'none'
+         })
+      } 
+      if(nowScreenWidth > 425){
+         productPage.forEach(item => {
+            const isPageSelect = item.getAttribute('data-is-page-select')
+            if(isPageSelect === 'true'){
+               item.style.display = 'grid'
+            }
+         })
+      }
+   })
+
    const pagesFolderCheckbox = document.querySelectorAll('.pages-folder-checkbox')
    pagesFolderCheckbox.forEach(item => {
       item.addEventListener('input', ()=> {
@@ -72,9 +91,7 @@ const addaptiveProductSliser = () => {
      swiperWrapper.style.transform = `translateX(${currentTranslate}%)`;
      swiperWrapper.setAttribute('data-slides-num', currentIndex + 1)
      const mobileProgresBar = document.querySelector('.progress-bar-mobile__line')
-     const sectionOfProgres = [0,0,33.333,66.333]
-      if(currentIndex !== 0) mobileProgresBar.style.width = `33.333%`
-      if(currentIndex === 0) mobileProgresBar.style.width = `0%`
+     const sectionOfProgres = [0,25,50,75]
       mobileProgresBar.style.left = `${sectionOfProgres[currentIndex]}%`
    }
    
