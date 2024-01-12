@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //
     const btnAddtoCart = document.querySelector('.add-to-cart');
     const popupWindow = document.querySelector('.cart__window-block');
-    const headerUnderline = document.querySelector('.header__underline');
+    const headerUnderline = document.querySelector('header');
     const amountAddCart = document.querySelector('.amount');
     const navCartCount = document.querySelector('.cart__count');
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btnAddtoCart.removeEventListener('click', handleClick);
       btnAddtoCart.disabled = true;
       // Задаємо стилі для popupWindow і headerUnderline
-      headerUnderline.style.border = '1px solid #A18A68';
+      headerUnderline.style.borderBottom = '1.5px solid #A18A68';
       headerUnderline.style.transition = 'border 0.3s ease-in-out';
       popupWindow.style.visibility = 'visible';
       popupWindow.style.opacity = 1;
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Функція яка через 5 секунд приховає popupWindow та підправить стилі з headerUnderline
       setTimeout(() => {
-        headerUnderline.style.border = '1px solid #d8d8d8';
+        headerUnderline.style.borderBottom = '1.5px solid #d8d8d8';
         popupWindow.style.opacity = '0';
         btnAddtoCart.disabled = false; // Знову включаємо кнопку
 
@@ -119,6 +119,4 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.setItem('allProductCart', JSON.stringify(allProductCart));
     };
   }
-
-  //
 });

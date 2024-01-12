@@ -9,7 +9,7 @@
     z-index: 10;
     position: absolute;
     @media screen and (min-width: 700px) {
-      top: -96px; 
+      top: -110px; 
     }
     background: $light-gray-color;
     width: 100%;
@@ -104,7 +104,7 @@
           top: clamp(500px,46vw,625px);
 
           .progress-bar__line {
-            background-color: $dark-gray-color;
+            background-color: $accent-color;
             height: 2px;
             width: 0%;
           }
