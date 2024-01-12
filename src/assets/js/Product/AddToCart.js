@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (img.classList.contains('picture-big')) return;
 
-        img.style.border = '3px solid rgb(158, 158, 158)';
+        img.style.border = "1.3px solid rgb(161, 138, 104)";
         img.style.borderRadius = '5px';
 
         let oldImage = document.querySelector('.picture-big');
