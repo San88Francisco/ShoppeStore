@@ -64,7 +64,7 @@
 
             .swiper-wrapper {
                display: flex;
-               transition: transform 0.3s ease;
+               transition: transform $transition-time ease;
                padding-bottom: 15px;
 
                .swiper-slide {
@@ -275,8 +275,8 @@
                      }
 
                      &:hover {
-                        color: $gray-color;
-                        transition: 0.2s ease-in;
+                        color: $black-color;
+                        transition: $transition-time ease-in;
                      }
                   }
                }
@@ -544,7 +544,7 @@
                   width: 100%;
                   overflow: hidden;
                   text-decoration: none;
-                  transition: height 300ms cubic-bezier(0.4, 0, 0.23, 1);
+                  transition: height $transition-time cubic-bezier(0.4, 0, 0.23, 1);
                }
 
                input[type='checkbox']+label>ins>i {
@@ -795,7 +795,7 @@
                align-items: center;
                min-height: 70px;
                min-width: 100%;
-               transition: all 0.3s ease;
+               transition: all $transition-time ease;
 
                p {
                   font-size: 16px;
@@ -1254,7 +1254,7 @@
 
                      img {
                         float: right;
-                        transition: .3s all linear;
+                        transition: $transition-time all linear;
                         width: 7px;
                         transform: rotate(90deg);
                      }
@@ -1262,7 +1262,7 @@
 
                   input:checked~label {
                      img {
-                        transition: .3s all linear;
+                        transition: $transition-time all linear;
                         transform: rotate(-90deg);
                      }
                   }
