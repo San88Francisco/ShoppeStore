@@ -1,59 +1,37 @@
-// // ---HEADER---
-// function setupHeader() {
+// фун для підчеркування сторінок
+(function () {
+   const hrefPags = location.href;
+   const menuLinks = document.querySelectorAll('.decstop-nav li');
 
-//   const userSignIn = localStorage.getItem('userSignIn')
-//   if(userSignIn !== null){
-//     document.querySelector('.account__href').setAttribute('href','./my-account.html')
-//   }
+   console.log('✌️hrefPags --->', hrefPags);
 
-//   const pageName = document.title.toLowerCase().replace(/\s/g, "");
+   const header = document.querySelector('header');
 
-//   // Виходимо, якщо сторінка "home"
-//   if (pageName === "home") return;
+   // Об'єкт для визначення відповідних індексів елементів меню
+   const pageMapping = {
+      'index': -1,       // Вказуємо -1 для сторінки "index", щоб не встановлювати клас
+      'shop': 0,
+      'blog': 1,
+      'our-story': 2,
+      'cart': 5,
+      'account': 6
+   };
 
-//   const header__underline = document.querySelector(".header__underline");
-//   header__underline.style.display = "block";
-
-//   const headerAElement = document.querySelector(`.header_link_${pageName}`);
-//   headerAElement !== null ? headerAElement.classList.add("act") : 0
-//   pageName === 'account' &&  headerAElement !== null ? headerAElement.classList.add("act__last") : 0
-//   pageName === 'myaccount' &&  headerAElement !== null ? headerAElement.classList.add("act__last") : 0
-
-//   pageName !== "home" ? (header__underline.style.display = "block") : 0;
-// }
-
-// document.addEventListener("DOMContentLoaded", setupHeader);
-
-// /** Count Icon Header */
-
-// const navCartCount = document.querySelector(".cart__count");
-
-// // Оновлення navCartCount на основі значення в localStorage
-// function updateNavCartCount() {
-//   let navCartValid = localStorage.getItem("totalCountCart") || 0;
-
-//   if (+navCartValid > 0) {
-//     navCartCount.style.display = "flex";
-//     navCartCount.textContent = localStorage.getItem("totalCountCart");
-//   } else {
-//     navCartCount.style.display = "none";
-//   }
-// }
-
-// // Спробуйте оновити на початку для початкового стану
-// updateNavCartCount();
-
-// // Додайте подію 'storage', яка буде викликатися при зміні localStorage
-// window.addEventListener("storage", updateNavCartCount);
-
-
-
-// const burger = document.querySelector('.burger');
-
-// burger.addEventListener('click', () => {
-//   burger.classList.toggle('active');
-// });
-
-
-
- 
+   // Перевірка чи частину URL містить ключі з pageMapping
+   switch (true) {
+      case hrefPags.includes('index'):
+         header.style.borderBottom = 'none';
+         break;
+      case Object.keys(pageMapping).some(key => hrefPags.includes(key)):
+         header.style.borderBottom = '1.5px solid #D8D8D8';
+         const currentPage = Object.keys(pageMapping).find(key => hrefPags.includes(key));
+         const typeIndex = pageMapping[currentPage];
+         if (typeIndex >= 0) {
+            const type = menuLinks[typeIndex];
+            type.classList.add('active-header-li');
+         }
+         break;
+      default:
+         console.error('Такої сторінки немає');
+   }
+})();
