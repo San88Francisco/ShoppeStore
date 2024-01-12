@@ -532,7 +532,6 @@
       .alert-not-ofer {
          line-height: 166.666667%;
 
-         /* 20/12 */
          & p {
             font-size: 14px;
          }
@@ -545,7 +544,6 @@
       .alert-not-address {
          line-height: 166.666667%;
 
-         /* 20/12 */
          & p {
             font-size: 14px;
          }
@@ -638,23 +636,17 @@
       }
 
       .alert-not-ofer {
-         & p {
+         & p,a {
             font-size: 12px;
          }
 
-         & a {
-            font-size: 12px;
-         }
       }
 
       .alert-not-address {
-         & p {
+         & p,a {
             font-size: 12px;
          }
 
-         & a {
-            font-size: 12px;
-         }
       }
 
       .targetOf-addresses {

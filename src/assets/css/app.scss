@@ -24,6 +24,9 @@
 @import "./_blog-addopt/main";
 @import "./_items/main";
 
+@import "./global-search";
+@import "./header";
+@import "./footer";
 body {
   padding: 0px 16px;
 }

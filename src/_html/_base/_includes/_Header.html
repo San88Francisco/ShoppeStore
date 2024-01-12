@@ -1,109 +1,66 @@
 <header>
-   <div class="header">
+   <div class="header__logo">
+      <a href="./index.html">
+         <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
+      </a>
+   </div>
 
+   <ul class="decstop-nav">
+      <li><a href="./shop.html">Shop</a></li>
+      <li><a href="./blog.html">Blog</a></li>
+      <li><a href="./our-story.html" class="">Our Story</a></li>
+      <li>|</li>
+      <li>
+         <a href="#" id="search-link">
+            <img id="icon-search-global" src="./assets/img/Home_img/header/search.svg" alt="" />
+         </a>
+      </li>
+      <li class="active-cart-visual header_link_cart">
+         <a href="./cart.html">
+            <img src="./assets/img/Home_img/header/shop.svg" alt="" />
+            <span class="cart__count"></span>
+         </a>
+      </li>
+      <li>
+         <a href="./account.html" class="account__href">
+            <img src="./assets/img/Home_img/header/user.svg" alt="" />
+         </a>
+      </li>
 
-      <div class="header__logo">
+      <!-- button-burger -->
+      <label id="burber-botton" for="check">
+         <input type="checkbox" id="check" />
+         <span></span>
+         <span></span>
+         <span></span>
+      </label>
+
+   </ul>
+
+   <ul class="burger-nav">
+      <li class="header__logo">
          <a href="./index.html">
             <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
          </a>
-      </div>
-      <div class="header__link">
+      </li>
 
-
-         <nav>
-            <div class="navbar__page">
-               <ul class="header_none">
-                  <li class="header_link_shop header_link_product"><a href="./shop.html">Shop</a></li>
-                  <li class="header_link_blog"><a href="./blog.html">Blog</a></li>
-                  <li class="ourstory header_link_ourstory"><a href="./our-story.html" class="">Our Story</a></li>
-               </ul>
-            </div>
-
-            <div class="navbar__user">
-               <ul>
-                  <li class="header_line header_none">
-                     <a href="#" id="search-link">
-                        <img id="icon-search-global" src="./assets/img/Home_img/header/search.svg" alt="" />
-                     </a>
-                  </li>
-                  <li class="header_line header_link_cart header_none">
-                     <a href="./cart.html">
-                        <img src="./assets/img/Home_img/header/shop.svg" alt="" />
-                        <span class="cart__count"></span>
-                     </a>
-                  </li>
-                  <li class="header_line_last header_link_account header_none header_link_myaccount">
-                     <a href="./account.html" class="account__href">
-                        <img src="./assets/img/Home_img/header/user.svg" alt="" />
-                     </a>
-                  </li>
-               </ul>
-            </div>
-
-            <div class="navbar">
-
-               <div class="container nav-container">
-                  <input class="checkbox" type="checkbox">
-                  <div class="hamburger-lines">
-                     <span class="line line1"></span>
-                     <span class="line line2"></span>
-                     <span class="line line3"></span>
-                  </div>
-
-
-                  <div class="menu-items">
-                     <div class="burger__header">
-                        <div class="header__logo">
-                           <a href="./index.html">
-                              <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
-                           </a>
-                        </div>
-                     </div>
-                     <ul class="burger-list">
-                        <li class="burger-menu__item "><a class="burger__link_home" href="./index.html">Home</a></li>
-                        <li class="burger-menu__item"><a class="burger__link_shop" href="./shop.html">Shop</a></li>
-                        <li class="burger-menu__item"><a class="burger__link_ourstory" href="./our-story.html">About</a>
-                        </li>
-                        <li class="burger-menu__item"><a class="burger__link_blog" href="./blog.html">Blog</a></li>
-                        <li class="burger-menu__item"><a class="burger__link_help" href="./help.html" class="">Help</a>
-                        </li>
-                        <li class="burger-menu__item"><a class="burger__link_contact" href="./contact.html"
-                              class="">Contact</a></li>
-                     </ul>
-
-                     <hr class="burger-line" />
-                     <div>
-                        <a class="burger__footer" href="./account.html">
-                           <img src="./assets/img/Home_img/header/user.png" alt="" />
-                           <p class=" burger__link_account">My account</p>
-                        </a>
-                     </div>
-                     <div class="burger__logout">
-                        <a class="burger__footer" href="#">
-                           <img src="./assets/img/Home_img/header/logou.png" height="22px" width="22px" alt="" />
-                           <p>Logout</p>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </nav>
-      </div>
-   </div>
-
-   <hr class="header__underline" />
-   <hr class="burger__underline" />
-
+      <li><a href="">home</a></li>
+      <li><a href="">shop</a></li>
+      <li><a href="">about</a></li>
+      <li><a href="">blog</a></li>
+      <li><a href="">help</a></li>
+      <li><a href="">contact</a></li>
+      <li><a href="">search</a></li>
+      <hr>
+      <li><a href="">my account</a></li>
+      <li><a href="">logout</a></li>
+   </ul>
 </header>
-<nav class="background-block-input">
-   <div id="container-global-search" class="search-block-global">
-      <img src="./assets/img/Home_img/header/search.png" alt="" />
-      <input id="global-search" class="search__input" type="text" placeholder="Search" />
-   </div>
-</nav>
+
+<!--! conect search global -->
+{% include "_html/_base/_includes/_Search-global.html" %}
 
 
-<nav id="global-nav-search-for-input">
-   <div id="block-item">
-   </div>
-</nav>
+
+
+
