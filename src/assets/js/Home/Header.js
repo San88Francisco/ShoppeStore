@@ -11,6 +11,7 @@
    const pageMapping = {
       'index': -1,       // Вказуємо -1 для сторінки "index", щоб не встановлювати клас
       'shop': 0,
+      'product': 0,
       'blog': 1,
       'our-story': 2,
       'cart': 5,
