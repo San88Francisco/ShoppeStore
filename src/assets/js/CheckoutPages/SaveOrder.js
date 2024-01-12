@@ -8,8 +8,8 @@ export const saveOrder = () => {
   // Через деструктуризацію виймаємо наш checkoutInfo. Ці значення ми записуємо в CartItem
   const { info, item } = JSON.parse(localStorage.getItem('checkoutInfo'));
 
-  // Створюємо змінну яка буде слугувати нам задавання ID (номер) замовлення
-  const orderNumber = allOrders.length;
+  // Створюємо змінну яка буде слугувати нам задавання ID (номер) замовлення.
+  let orderNumber = allOrders.length + 1;
 
   const blockOrder = {
     orderId: orderNumber,

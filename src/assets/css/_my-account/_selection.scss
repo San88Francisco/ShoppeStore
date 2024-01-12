@@ -1,13 +1,461 @@
 .my-account {
-   max-width: 1240px;
-   margin: 0 auto;
-   padding-bottom: 205px;
-   font-family: DM Sans;
-   font-weight: 400;
-   line-height: 26px;
-   color: $black-color;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-bottom: 205px;
+  font-family: DM Sans;
+  font-weight: 400;
+  line-height: 26px;
+  color: $black-color;
 
-   h1 {
+  h1 {
+    color: $black-color;
+    font-size: 33px;
+    font-weight: 500;
+    line-height: 130.30303%;
+    /* 43/33 */
+    text-align: center;
+    padding-bottom: 65px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 168.75%;
+    /* 27/16 */
+  }
+
+  nav {
+    .slider {
+      display: flex;
+      gap: 7.34px;
+      align-items: center;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      max-width: 825px;
+      gap: 49px;
+      /* простір між елементами */
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 20px;
+        line-height: 130%;
+        /* 26/20 */
+        color: $placeholder-color;
+        padding-bottom: 35px;
+        flex: 0 0 auto;
+        transition: all 0.3s;
+
+        .act {
+          color: $black-color;
+          position: relative;
+
+          &::after {
+            content: '';
+            transition: 50ms all ease-in-out;
+            z-index: 5;
+            width: 100%;
+            height: 31px;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            border-radius: 1px;
+            border-bottom: 2px solid black;
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+
+    .header__underline {
+      display: block;
+      margin-bottom: 40px;
+      background-color: #000000;
+      position: relative;
+      z-index: 1;
+    }
+
+    .prev,
+    .next {
+      border: none;
+
+      & i {
+        font-size: 10px;
+        padding-bottom: 16px;
+        color: #d8d8d8;
+      }
+
+      display: none;
+    }
+
+    .go i {
+      color: #000000;
+    }
+  }
+
+  .myAccount__tabPage > :not(:nth-child(1)) {
+    display: none;
+  }
+
+  .do-sth {
+    color: $accent-color;
+    cursor: pointer;
+  }
+
+  .targetOf-dashboard {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      padding-bottom: 20px;
+    }
+  }
+
+  .btn__black {
+    transition: 0.2s all linear;
+    background-color: $black-color;
+    border: 1px solid $black-color;
+    border-radius: 5px;
+    padding: 16px 175px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+    span {
+      color: $white-color;
+      font-weight: 700;
+    }
+
+    &:hover {
+      transition: 0.2s all linear;
+      background-color: $white-color;
+
+      span {
+        transition: 0.2s all linear;
+        color: $black-color;
+      }
+    }
+  }
+
+  .alert-not-ofer,
+  .alert-not-address {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-top: 2px solid $accent-color;
+    background-color: rgba(161, 138, 104, 0.1);
+
+    .do-sth {
+      font-weight: 700;
+    }
+  }
+
+  .targetOf-orders,
+  .targetOf-downloads {
+    display: flex;
+    flex-direction: column;
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+
+      td {
+        width: 20%;
+        padding: 15px 0px;
+
+        @media (max-width: 1023.98px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 700.98px) {
+          padding: 10px 0px;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+
+      thead {
+        border-bottom: 1px solid $black-color;
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid $gray-color;
+          border-collapse: collapse;
+
+          td {
+            padding: 25px 0px;
+            color: $placeholder-color;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 168.75%;
+            border-collapse: collapse;
+
+            /* 27/16 */
+            @media (max-width: 1023.98px) {
+              padding: 20px 0px;
+              font-size: 14px;
+            }
+
+            @media (max-width: 700.98px) {
+              padding: 15px 0px;
+              font-size: 12px;
+            }
+          }
+
+          .td__action-link {
+            div {
+              // border: 1px solid red;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 5px;
+
+              hr {
+                background-color: $placeholder-color;
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .mobile-account__order {
+      display: none;
+      table {
+        margin: 39px 0 0 0;
+
+        tbody {
+          tr {
+            border: none;
+
+            td {
+              padding: 12px 0;
+              font-family: DM Sans;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 20px;
+              color: #000;
+              &:last-child {
+                color: #707070;
+                text-align: right;
+              }
+              .do-sth {
+                font-weight: 400;
+              }
+            }
+
+            &:last-child {
+              border-bottom: 1px solid $gray-color;
+              td {
+                padding: 12px 0 39px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .do-sth {
+      font-weight: 700;
+    }
+  }
+
+  .targetOf-addresses {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      padding-bottom: 45px;
+    }
+
+    .my-address {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 75px;
+
+      h3 {
+        font-size: 20px;
+        padding-bottom: 25px;
+      }
+
+      .do-sth {
+        display: inline-block;
+        font-weight: 700;
+        padding-bottom: 15px;
+      }
+
+      .you-not-have-address {
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      .none {
+        display: none;
+
+        & + .you-not-have-address {
+          display: none;
+        }
+      }
+
+      .bill-registr {
+        display: none;
+
+        form {
+          input {
+            display: block;
+            border-bottom: 1px solid $gray-color;
+            padding: 12px 0;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            color: $placeholder-color;
+            margin-bottom: 40px;
+
+            &::placeholder {
+              font-size: 15px;
+              font-weight: 400;
+              line-height: 22px;
+              color: $placeholder-color;
+              margin-bottom: 40px;
+            }
+          }
+
+          .bill-user-name {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+          }
+
+          .selectYourItem {
+            position: relative;
+            margin-top: 25px;
+            border-bottom: 1px solid $gray-color;
+            font-family: DM Sans;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 20px;
+            color: $placeholder-color;
+            text-transform: uppercase;
+            display: block;
+            width: 100%;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            cursor: pointer;
+
+            p {
+              text-transform: none;
+              display: inline-block;
+              margin-bottom: 0px;
+              padding-bottom: 0px;
+            }
+
+            input {
+              display: none;
+            }
+
+            label {
+              transform: rotate(180deg);
+              display: inline-block;
+              position: relative;
+              bottom: -11px;
+            }
+
+            .optionItem {
+              display: none;
+              position: absolute;
+              width: 100%;
+              background-color: $white-color;
+              z-index: 2;
+              border: 1px solid $gray-color;
+              border-radius: 5px;
+              height: 100px;
+              overflow-y: scroll;
+
+              &::-webkit-scrollbar {
+                width: 10px;
+              }
+
+              &::-webkit-scrollbar-track {
+                background-color: #f5f5f5;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                background-color: $placeholder-color;
+                border-radius: 20px;
+                border: 3px solid #f5f5f5;
+              }
+
+              li {
+                color: $black-color;
+                display: block;
+                background-color: $white-color;
+                padding: 5px;
+                width: 100%;
+                border-bottom: 1px solid $gray-color;
+
+                &:nth-last-child(1) {
+                  border-bottom: none;
+                }
+              }
+            }
+
+            label {
+              cursor: pointer;
+              display: inline-block;
+              float: right;
+              margin-top: auto;
+              margin-left: auto;
+              transition: 0.2s all linear;
+
+              &::after {
+                transition: 0.2s all linear;
+                content: url(../img/MyAccount_img/arrow_up.svg);
+              }
+            }
+          }
+
+          .selectYourCountry {
+            #selectYourCountry:checked ~ label {
+              transition: 0.2s all linear;
+              transform: rotate(0deg);
+              position: relative;
+              top: 8px;
+            }
+
+            #selectYourCountry {
+              transition: 0.2s all linear;
+              display: none;
+            }
+
+            #selectYourCountry:checked ~ .optionCountry {
+              display: block;
+            }
+          }
+        }
+
+        .btn__black {
+          padding: 16px 45px;
+        }
+      }
+    }
+  }
+
+  .targetOf-accountDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h2 {
       color: $black-color;
       font-size: 33px;
       font-weight: 500;
@@ -15,847 +463,390 @@
       /* 43/33 */
       text-align: center;
       padding-bottom: 65px;
-   }
+    }
 
-   p {
-      font-size: 16px;
-      line-height: 168.75%;
-      /* 27/16 */
-   }
+    form {
+      input {
+        display: block;
+        border-bottom: 1px solid $gray-color;
+        padding: 12px 0;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 157.142857%;
+        /* 22/14 */
+        color: $placeholder-color;
+        margin-bottom: 40px;
 
-   nav {
-      .slider {
-         display: flex;
-         gap: 7.34px;
-         align-items: center;
+        &::placeholder {
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 22px;
+          color: $placeholder-color;
+          margin-bottom: 40px;
+        }
       }
 
+      h3 {
+        font-weight: 700;
+        margin-bottom: 45gipx;
+        margin-top: 45px;
+      }
+
+      p {
+        margin-top: -35px;
+        margin-bottom: 40px;
+        font-size: 12px;
+        color: $placeholder-color;
+      }
+    }
+  }
+
+  .targetOf-logout {
+    border: 1px solid red;
+  }
+
+  @media (max-width: 1023.98px) {
+    h1 {
+      font-size: 27px;
+      line-height: 130.30303%;
+      /* 43/33 */
+      padding-bottom: 40px;
+    }
+
+    nav {
       ul {
-         display: flex;
-         justify-content: space-between;
-         max-width: 825px;
-         gap: 49px;
-         /* простір між елементами */
-         list-style: none;
-         padding: 0;
-         margin: 0;
+        gap: 30px;
 
-         li {
-            font-size: 20px;
-            line-height: 130%;
-            /* 26/20 */
-            color: $placeholder-color;
-            padding-bottom: 35px;
-            flex: 0 0 auto;
-            transition: all 0.3s;
+        li {
+          font-size: 18px;
+          padding-bottom: 35px;
 
-            .act {
-               color: $black-color;
-               position: relative;
-
-               &::after {
-                  content: "";
-                  transition: 50ms all ease-in-out;
-                  z-index: 5;
-                  width: 100%;
-                  height: 31px;
-                  position: absolute;
-                  margin-left: auto;
-                  margin-right: auto;
-                  left: 0;
-                  right: 0;
-                  text-align: center;
-                  border-radius: 1px;
-                  border-bottom: 2px solid black;
-                  padding-bottom: 30px;
-               }
+          .act {
+            &::after {
+              padding-bottom: 27px;
             }
-         }
+          }
+        }
       }
 
       .header__underline {
-         display: block;
-         margin-bottom: 40px;
-         background-color: #000000;
-         position: relative;
-         z-index: 1;
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
 
+    .alert-not-ofer {
+      line-height: 166.666667%;
+
+      /* 20/12 */
+      & p {
+        font-size: 14px;
       }
 
-      .prev,
-      .next {
-         border: none;
+      & a {
+        font-size: 14px;
+      }
+    }
 
-         & i {
-            font-size: 10px;
-            padding-bottom: 16px;
-            color: #D8D8D8;
+    .alert-not-address {
+      line-height: 166.666667%;
 
-         }
-
-         display: none;
+      /* 20/12 */
+      & p {
+        font-size: 14px;
       }
 
-      .go i {
-         color: #000000;
+      & a {
+        font-size: 14px;
       }
-   }
+    }
 
-   .myAccount__tabPage> :not(:nth-child(1)) {
-      display: none;
-   }
-
-   .do-sth {
-      color: $accent-color;
-      cursor: pointer;
-   }
-
-   .targetOf-dashboard {
-      display: flex;
-      flex-direction: column;
-
-      p {
-         padding-bottom: 20px;
-      }
-   }
-
-   .btn__black {
-      transition: .2s all linear;
-      background-color: $black-color;
-      border: 1px solid $black-color;
-      border-radius: 5px;
-      padding: 16px 175px;
-      display: flex;
-      justify-self: center;
-      align-items: center;
-
-      span {
-         color: $white-color;
-         font-weight: 700;
-      }
-
-      &:hover {
-         transition: .2s all linear;
-         background-color: $white-color;
-
-         span {
-            transition: .2s all linear;
-            color: $black-color;
-         }
-      }
-   }
-
-   .alert-not-ofer,
-   .alert-not-address {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 40px;
-      border-top: 2px solid $accent-color;
-      background-color: rgba(161, 138, 104, 0.1);
-
-      .do-sth {
-         font-weight: 700;
-      }
-   }
-
-   .targetOf-orders,
-   .targetOf-downloads {
-      display: flex;
-      flex-direction: column;
-
-      table {
-         border-collapse: collapse;
-         width: 100%;
-
-         td {
-            width: 20%;
-            padding: 15px 0px;
-
-            @media (max-width: 1023.98px) {
-               font-size: 14px;
-            }
-
-            @media (max-width: 700.98px) {
-               padding: 10px 0px;
-               font-size: 12px;
-               text-align: center;
-            }
-         }
-
-         thead {
-            border-bottom: 1px solid $black-color;
-         }
-
-         tbody {
-            tr {
-               border-bottom: 1px solid $gray-color;
-
-               td {
-                  padding: 25px 0px;
-                  color: $placeholder-color;
-                  font-size: 16px;
-                  font-weight: 400;
-                  line-height: 168.75%;
-
-                  /* 27/16 */
-                  @media (max-width: 1023.98px) {
-                     padding: 20px 0px;
-                     font-size: 14px;
-                  }
-
-                  @media (max-width: 700.98px) {
-                     padding: 15px 0px;
-                     font-size: 12px;
-                  }
-               }
-            }
-         }
-      }
-      .mobile-account__order{
-         display: none;
-         table{
-           margin: 39px 0 0 0;
-            
-            tbody{
-              
-               tr{
-                  border: none;
-                  
-                  td{
-                     padding: 12px 0;
-                     font-family: DM Sans;
-                     font-size: 16px;
-                     font-style: normal;
-                     font-weight: 400;
-                     line-height: 20px;
-                     color: #000;
-                     &:last-child{
-                        color: #707070;
-                        text-align: right;
-                     }
-                     .do-sth{
-                        font-weight: 400;
-                     }
-                  }
-
-                 &:last-child{
-                  border-bottom: 1px solid $gray-color;
-                  td{
-                    padding: 12px 0 39px 0;
-                  }
-                 
-                 
-                 }
-               }
-            }
-           
-         }
-
-      }
-
-      .do-sth {
-         font-weight: 700;
-      }
-   }
-
-   .targetOf-addresses {
-      display: flex;
-      flex-direction: column;
-
-      p {
-         padding-bottom: 45px;
-      }
-
-      .my-address {
-         display: grid;
-         grid-template-columns: 1fr 1fr;
-         grid-gap: 75px;
-
-         h3 {
-            font-size: 20px;
-            padding-bottom: 25px;
-         }
-
-         .do-sth {
-            display: inline-block;
-            font-weight: 700;
-            padding-bottom: 15px;
-         }
-
-         .you-not-have-address {
-            font-size: 14px;
-            line-height: 22px
-         }
-
-         .none {
-            display: none;
-
-            &+.you-not-have-address {
-               display: none;
-            }
-         }
-
-         .bill-registr {
-            display: none;
-
-            form {
-               input {
-                  display: block;
-                  border-bottom: 1px solid $gray-color;
-                  padding: 12px 0;
-                  width: 100%;
-                  font-size: 14px;
-                  font-weight: 400;
-                  line-height: 22px;
-                  color: $placeholder-color;
-                  margin-bottom: 40px;
-
-                  &::placeholder {
-                     font-size: 15px;
-                     font-weight: 400;
-                     line-height: 22px;
-                     color: $placeholder-color;
-                     margin-bottom: 40px;
-                  }
-               }
-
-               .bill-user-name {
-                  display: grid;
-                  grid-template-columns: 1fr 1fr;
-                  grid-gap: 40px;
-               }
-
-               .selectYourItem {
-                  position: relative;
-                  margin-top: 25px;
-                  border-bottom: 1px solid $gray-color;
-                  font-family: DM Sans;
-                  font-size: 12px;
-                  font-weight: 400;
-                  line-height: 20px;
-                  color: $placeholder-color;
-                  text-transform: uppercase;
-                  display: block;
-                  width: 100%;
-                  padding-bottom: 12px;
-                  margin-bottom: 25px;
-                  cursor: pointer;
-
-                  p {
-                     text-transform: none;
-                     display: inline-block;
-                     margin-bottom: 0px;
-                     padding-bottom: 0px;
-                  }
-
-                  input {
-                     display: none;
-                  }
-
-                  label {
-                     transform: rotate(180deg);
-                     display: inline-block;
-                     position: relative;
-                     bottom: -11px;
-                  }
-
-                  .optionItem {
-                     display: none;
-                     position: absolute;
-                     width: 100%;
-                     background-color: $white-color;
-                     z-index: 2;
-                     border: 1px solid $gray-color;
-                     border-radius: 5px;
-                     height: 100px;
-                     overflow-y: scroll;
-
-                     &::-webkit-scrollbar {
-                        width: 10px;
-                     }
-
-                     &::-webkit-scrollbar-track {
-                        background-color: #f5f5f5;
-                     }
-
-                     &::-webkit-scrollbar-thumb {
-                        background-color: $placeholder-color;
-                        border-radius: 20px;
-                        border: 3px solid #f5f5f5;
-                     }
-
-                     li {
-                        color: $black-color;
-                        display: block;
-                        background-color: $white-color;
-                        padding: 5px;
-                        width: 100%;
-                        border-bottom: 1px solid $gray-color;
-
-
-                        &:nth-last-child(1) {
-                           border-bottom: none;
-                        }
-                     }
-                  }
-
-                  label {
-                     cursor: pointer;
-                     display: inline-block;
-                     float: right;
-                     margin-top: auto;
-                     margin-left: auto;
-                     transition: 0.2s all linear;
-
-                     &::after {
-                        transition: 0.2s all linear;
-                        content: url(../img/MyAccount_img/arrow_up.svg);
-
-                     }
-                  }
-               }
-
-               .selectYourCountry {
-                  #selectYourCountry:checked~label {
-                     transition: 0.2s all linear;
-                     transform: rotate(0deg);
-                     position: relative;
-                     top: 8px;
-                  }
-
-                  #selectYourCountry {
-                     transition: 0.2s all linear;
-                     display: none;
-                  }
-
-                  #selectYourCountry:checked~.optionCountry {
-                     display: block;
-                  }
-               }
-            }
-
-            .btn__black {
-               padding: 16px 45px;
-            }
-         }
-      }
-   }
-
-   .targetOf-accountDetails {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
+    .targetOf-accountDetails {
       & h2 {
-         color: $black-color;
-         font-size: 33px;
-         font-weight: 500;
-         line-height: 130.30303%;
-         /* 43/33 */
-         text-align: center;
-         padding-bottom: 65px;
+        font-size: 27px;
+        line-height: 130.30303%;
+        /* 43/33 */
+        padding-bottom: 40px;
       }
 
       form {
-         input {
-            display: block;
-            border-bottom: 1px solid $gray-color;
-            padding: 12px 0;
-            width: 100%;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 157.142857%;
-            /* 22/14 */
-            color: $placeholder-color;
-            margin-bottom: 40px;
+        input {
+          padding: 9px 0;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
 
-            &::placeholder {
-               font-size: 15px;
-               font-weight: 400;
-               line-height: 22px;
-               color: $placeholder-color;
-               margin-bottom: 40px;
+        h3 {
+          font-weight: 600;
+          font-size: 18px;
+        }
+
+        p {
+          margin-top: -32px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 700.98px) {
+    .header__underline {
+      max-width: 620px;
+      position: relative;
+      bottom: 10px;
+      margin: 0 15px;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 130.30303%;
+      /* 43/33 */
+      padding-bottom: 35px;
+      padding-top: 21px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    nav {
+      ul {
+        gap: 30px;
+        overflow: hidden;
+
+        li {
+          font-size: 18px;
+          padding-bottom: 38px;
+
+          .act {
+            &::after {
+              padding-bottom: 20px;
             }
-         }
-
-         h3 {
-            font-weight: 700;
-            margin-bottom: 45gipx;
-            margin-top: 45px;
-         }
-
-         p {
-            margin-top: -35px;
-            margin-bottom: 40px;
-            font-size: 12px;
-            color: $placeholder-color;
-         }
+          }
+        }
       }
-   }
+    }
 
-
-
-
-
-
-   @media (max-width: 1023.98px) {
-      h1 {
-         font-size: 27px;
-         line-height: 130.30303%;
-         /* 43/33 */
-         padding-bottom: 40px;
+    .slider {
+      .prev,
+      .next {
+        display: block;
+        /* Показуємо кнопки */
+        padding-bottom: 22px;
       }
 
-      nav {
-         ul {
-            gap: 30px;
+      transition: all 0.3s;
+    }
 
-            li {
-               font-size: 18px;
-               padding-bottom: 35px;
+    .alert-not-ofer {
+      & p {
+        font-size: 12px;
+      }
 
-               .act {
-                  &::after {
-                     padding-bottom: 27px;
-                  }
-               }
+      & a {
+        font-size: 12px;
+      }
+    }
+
+    .alert-not-address {
+      & p {
+        font-size: 12px;
+      }
+
+      & a {
+        font-size: 12px;
+      }
+    }
+
+    .targetOf-addresses {
+      & p {
+        font-size: 14px;
+        padding-bottom: 32px;
+      }
+
+      .my-address {
+        grid-gap: 30px;
+
+        & h3 {
+          font-size: 18px;
+          padding-bottom: 18px;
+        }
+
+        & p {
+          padding-bottom: 0;
+        }
+
+        .add-my-bill {
+          .bill-registr {
+            & form {
+              .bill-user-name {
+                grid-template-columns: auto;
+                grid-gap: 0;
+              }
+
+              & input {
+                margin-bottom: 28px;
+
+                &::placeholder {
+                  font-size: 12px;
+                }
+              }
             }
-         }
+          }
+        }
+      }
+    }
 
-         .header__underline {
-            display: block;
-            margin-bottom: 40px;
-         }
+    .btn__black {
+      padding: 10px 160px;
+
+      span {
+        font-weight: 500;
+      }
+    }
+
+    .targetOf-accountDetails {
+      & h2 {
+        font-size: 24px;
+        line-height: 130.30303%;
+        /* 43/33 */
+        padding-bottom: 35px;
+        padding-top: 21px;
       }
 
-      .alert-not-ofer {
-         line-height: 166.666667%;
+      form {
+        input {
+          padding: 7px 0;
+          font-size: 12px;
+        }
 
-         /* 20/12 */
-         & p {
-            font-size: 14px;
-         }
+        h3 {
+          font-weight: 500;
+          font-size: 16px;
+        }
 
-         & a {
-            font-size: 14px;
-         }
+        p {
+          margin-top: -32px;
+          margin-bottom: 30px;
+        }
       }
+    }
+  }
 
-      .alert-not-address {
-         line-height: 166.666667%;
+  @media (max-width: 554.98px) {
+    table {
+      display: none;
+    }
+  }
 
-         /* 20/12 */
-         & p {
-            font-size: 14px;
-         }
+  @media (max-width: 467.98px) {
+    h1 {
+      font-size: 20px;
+      line-height: 130.30303%;
+      /* 43/33 */
+      padding-bottom: 24px;
+    }
 
-         & a {
-            font-size: 14px;
-         }
-      }
-
-      .targetOf-accountDetails {
-
-         & h2 {
-            font-size: 27px;
-            line-height: 130.30303%;
-            /* 43/33 */
-            padding-bottom: 40px;
-         }
-
-         form {
-            input {
-
-               padding: 9px 0;
-               font-size: 14px;
-               margin-bottom: 40px;
-            }
-
-            h3 {
-               font-weight: 600;
-               font-size: 18px;
-            }
-
-            p {
-               margin-top: -32px;
-               margin-bottom: 30px;
-            }
-         }
-      }
-   }
-
-   @media (max-width: 700.98px) {
-      .header__underline {
-         max-width: 620px;
-         position: relative;
-         bottom: 10px;
-         margin: 0 15px;
-
-      }
-
-      h1 {
-         font-size: 24px;
-         line-height: 130.30303%;
-         /* 43/33 */
-         padding-bottom: 35px;
-         padding-top: 21px;
-      }
-
+    .targetOf-dashboard {
       p {
-         font-size: 14px;
+        padding-bottom: 15px;
+        font-size: 12px;
+      }
+    }
+
+    .alert-not-ofer {
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px 0px 10px 16px;
+    }
+
+    .alert-not-address {
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px 0px 10px 16px;
+    }
+
+    .targetOf-addresses {
+      & p {
+        font-size: 12px;
+        padding-bottom: 24px;
       }
 
-      nav {
-         ul {
-            gap: 30px;
-            overflow: hidden;
+      .my-address {
+        grid-template-columns: auto;
+        grid-gap: 48px;
 
-            li {
-               font-size: 18px;
-               padding-bottom: 38px;
+        & h3 {
+          font-size: 16px;
+        }
 
-               .act {
-                  &::after {
-                     padding-bottom: 20px;
-                  }
-               }
-            }
+        & p {
+          font-size: 12px;
+        }
 
-         }
-      }
+        .user-not-have-bill {
+          .do-sth {
+            font-size: 16px;
+          }
 
-      .slider {
-
-         .prev,
-         .next {
-            display: block;
-            /* Показуємо кнопки */
-            padding-bottom: 22px;
-         }
-
-         transition: all 0.3s;
-      }
-
-      .alert-not-ofer {
-         & p {
+          .you-not-have-address {
             font-size: 12px;
-         }
+          }
+        }
 
-         & a {
+        .add-my-adress {
+          .do-sth {
+            font-size: 16px;
+          }
+
+          .you-not-have-address {
             font-size: 12px;
-         }
+          }
+        }
+      }
+    }
+
+    .btn__black {
+      padding: 0;
+      width: 100%;
+      height: 32px;
+      justify-content: center;
+
+      span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 166.666667%;
+        /* 20/12 */
+      }
+    }
+
+    .targetOf-accountDetails {
+      & h2 {
+        display: none;
       }
 
-      .alert-not-address {
-         & p {
+      form {
+        input {
+          padding: 5px 0;
+          margin-bottom: 48px;
+
+          &::placeholder {
             font-size: 12px;
-         }
+            line-height: 20px;
+          }
+        }
 
-         & a {
-            font-size: 12px;
-         }
+        h3 {
+          font-weight: 400;
+          font-size: 16px;
+        }
+
+        p {
+          margin-top: 40px;
+          margin-bottom: 25px;
+        }
       }
-
-      .targetOf-addresses {
-         & p {
-            font-size: 14px;
-            padding-bottom: 32px;
-         }
-
-         .my-address {
-            grid-gap: 30px;
-
-            & h3 {
-               font-size: 18px;
-               padding-bottom: 18px;
-            }
-
-            & p {
-               padding-bottom: 0;
-            }
-
-            .add-my-bill {
-               .bill-registr {
-                  & form {
-                     .bill-user-name {
-                        grid-template-columns: auto;
-                        grid-gap: 0;
-                     }
-
-                     & input {
-                        margin-bottom: 28px;
-
-                        &::placeholder {
-                           font-size: 12px;
-                        }
-                     }
-                  }
-               }
-            }
-
-         }
-
-      }
-
-      .btn__black {
-
-         padding: 10px 160px;
-
-         span {
-
-            font-weight: 500;
-         }
-      }
-
-      .targetOf-accountDetails {
-
-         & h2 {
-            font-size: 24px;
-            line-height: 130.30303%;
-            /* 43/33 */
-            padding-bottom: 35px;
-            padding-top: 21px;
-         }
-
-         form {
-            input {
-
-               padding: 7px 0;
-               font-size: 12px;
-            }
-
-            h3 {
-               font-weight: 500;
-               font-size: 16px;
-            }
-
-            p {
-               margin-top: -32px;
-               margin-bottom: 30px;
-            }
-         }
-      }
-   }
-
-   @media (max-width: 554.98px) {
-      table {
-         display: none;
-      }
-   }
-
-   @media (max-width: 467.98px) {
-      h1 {
-         font-size: 20px;
-         line-height: 130.30303%;
-         /* 43/33 */
-         padding-bottom: 24px;
-      }
-
-      .targetOf-dashboard {
-
-         p {
-            padding-bottom: 15px;
-            font-size: 12px;
-         }
-      } 
-
-      .alert-not-ofer {
-         flex-direction: column;
-         gap: 8px;
-         padding: 10px 0px 10px 16px;
-      }
-
-      .alert-not-address {
-         flex-direction: column;
-         gap: 8px;
-         padding: 10px 0px 10px 16px;
-      }
-
-      .targetOf-addresses {
-         & p {
-            font-size: 12px;
-            padding-bottom: 24px;
-         }
-
-         .my-address {
-            grid-template-columns: auto;
-            grid-gap: 48px;
-
-            & h3 {
-               font-size: 16px;
-            }
-
-            & p {
-               font-size: 12px;
-            }
-
-            .user-not-have-bill {
-               .do-sth {
-                  font-size: 16px;
-               }
-
-               .you-not-have-address {
-                  font-size: 12px;
-               }
-            }
-
-            .add-my-adress {
-               .do-sth {
-                  font-size: 16px;
-               }
-
-               .you-not-have-address {
-                  font-size: 12px;
-               }
-            }
-         }
-
-      }
-
-      .btn__black {
-
-         padding: 0;
-         width: 100%;
-         height: 32px;
-         justify-content: center;
-
-         span {
-
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 166.666667%;
-            /* 20/12 */
-         }
-      }
-
-      .targetOf-accountDetails {
-
-         & h2 {
-            display: none;
-         }
-
-         form {
-            input {
-               padding: 5px 0;
-               margin-bottom: 48px;
-
-               &::placeholder {
-                  font-size: 12px;
-                  line-height: 20px;
-               }
-            }
-
-            h3 {
-               font-weight: 400;
-               font-size: 16px;
-            }
-
-            p {
-               margin-top: 40px;
-               margin-bottom: 25px;
-            }
-         }
-      }
-   }
+    }
+  }
 }
