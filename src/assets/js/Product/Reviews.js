@@ -11,8 +11,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
          item.addEventListener('click', () => {
             tabButtons.forEach(btn => btn.classList.remove('info__tab__line'));
             item.classList.add('info__tab__line');
-            productPages.forEach(page => page.style.display = 'none');
+            productPages.forEach(page => {
+               page.style.display = 'none'
+               page.setAttribute('data-is-page-select','false')
+            });
             productPages[index].style.display = 'grid';
+            productPages[index].setAttribute('data-is-page-select','true')
          });
       });
       if(localStorage.getItem(document.querySelector('.product--overview__view').children[0].textContent) !== null){
@@ -20,11 +24,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
          reviews.innerHTML = localStorage.getItem(document.querySelector('.product--overview__view').children[0].textContent)
          console.log(reviewsAmountADD);
          document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
-         document.querySelector('.amount-reviews2').innerHTML = document.querySelector('.reviews').children.length / 2
+         document.querySelectorAll('.amount-reviews2').forEach(item => {
+            item.innerHTML = document.querySelector('.reviews').children.length / 2
+         })
       }
 
       const submitReviews = document.querySelector('#submitReviews')
-      const saveUserData = document.querySelector('#saveUserData')
+      const saveUserData = document.querySelector('.saveUserData')
+
       saveUserData.addEventListener('click', () => saveUserData.classList.toggle('checked'))
          const addReviewBlock = (ReviewUserComment, ReviewUserName, ReviewUserMail, formObject) => {
             const hr = document.createElement('hr')
@@ -93,7 +100,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
               formObject[key] = value;
             });
           
-            console.log(formObject.starsRating);
+
             const ReviewUserComment = document.querySelector('#ReviewUserComment').value
             const ReviewUserName = document.querySelector('#ReviewUserName').value
             const ReviewUserMail = document.querySelector('#ReviewUserMail').value
@@ -102,8 +109,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                userName: ReviewUserName,
                userMail: ReviewUserMail,
             }
-            saveUserData.className === 'checked' ? localStorage.setItem('UserReviewData', JSON.stringify(userSaveDatas)) : 0
-            
+            saveUserData.classList[2] === 'checked' ? localStorage.setItem('UserReviewData', JSON.stringify(userSaveDatas)) : 0
             if(ReviewUserComment && ReviewUserName && ReviewUserMail && formObject.starsRating){
                addReviewBlock(ReviewUserComment, ReviewUserName, ReviewUserMail, formObject)
                localStorage.setItem(document.querySelector('.product--overview__view').children[0].textContent, document.querySelector(`.reviews`).innerHTML)
