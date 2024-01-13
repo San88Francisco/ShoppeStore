@@ -13,7 +13,7 @@
 
       p {
          max-width: 436px;
-         color: #707070;
+         color: $placeholder-color;
          text-align: center;
 
          font-family: DM Sans;
@@ -28,7 +28,7 @@
          width: 187px;
          height: 53px;
          border-radius: 4px;
-         border: 1px solid #000;
+         border: 1px solid $black-color;
          display: flex;
          justify-content: center;
          align-items: center;
@@ -37,13 +37,13 @@
       }
 
       a:hover {
-         background-color: #000;
-         color: #fff;
+         background-color: $black-color;
+         color: $white-color;
       }
 
       a:active {
-         background-color: #000;
-         color: #fff;
+         background-color: $black-color;
+         color: $white-color;
       }
    }
 
