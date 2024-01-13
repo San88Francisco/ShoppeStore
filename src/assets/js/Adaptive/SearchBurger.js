@@ -2,9 +2,6 @@ const parseItems = JSON.parse(localStorage.getItem('allProduct'));
 const globalSearch = document.querySelector('#global-nav-search-for-input');
 const backgroundBlockInput = document.querySelector('.background-block-input');
 
-
-
-
 // Клас для представлення продуктів
 class Items {
    constructor(imageUrl, name, category, categoryClass, price, productVariant, typeClass, typeProduct, id) {
@@ -32,13 +29,9 @@ class Items {
          const priceMath = (this.price * parsedDiscount) / 100;
          priceDiscount = this.price - priceMath;
          const priceItem = document.querySelector('#priceItem')
-
-
       }
 
-
       container.id = 'container-items-search-burger';
-
       container.innerHTML = `
          <img src="${this.imageUrl}" alt="${this.name}">
          <h1>${this.name}</h1>
@@ -46,9 +39,6 @@ class Items {
          <p id='priceItem' class='${priceDiscount !== undefined ? 'discounted' : 'regular'}'>$ ${this.price}</p>
          <span>${priceDiscount ? '$ ' : ''}${priceDiscount || ''}</span>
          `;
-
-
-
 
       container.addEventListener('click', () => {
          const itemProduct = parseItems.find((item) => this.id === item.id);
@@ -68,9 +58,6 @@ class Items {
       return container;
    }
 
-
-
-
    // Додавання продукту до навігації
    addClassInNav() {
       const blockItem = document.querySelector('#block-item');
@@ -83,6 +70,8 @@ class Items {
 
    // Налаштування обробників подій
    setupEventListeners(container) {
+      const blockItem = document.querySelector('#block-item');
+
       const globalSearchInput = document.querySelector('#global-search');
       const sections = document.querySelectorAll('section');
 
@@ -92,17 +81,41 @@ class Items {
 
       globalSearchInput.addEventListener('input', function () {
          let val = this.value.trim().toLowerCase();
+         const notFound = document.querySelector('.container-not-found-search');
+         const itemsContainers = document.querySelectorAll('#container-items-search-burger');
 
-         if (val == '') {
-            container.style.display = 'none';
-            noneAndBlockSections('block');
+         let foundItems = false;
 
-         } else if (thisName.includes(val) || thisTypeProduct.includes(val) || thisProductVariant.includes(val)) {
-            container.style.display = 'block';
+         itemsContainers.forEach(container => {
+            const thisName = container.querySelector('h1').textContent.toLowerCase();
+            const thisTypeProduct = container.querySelector('h2').textContent.toLowerCase();
+            const thisProductVariant = container.querySelector('#priceItem').textContent.toLowerCase();
+            if (val == '') {
+               notFound.style.display = 'none';
+               container.style.display = 'none';
+               return
+            }
+            if (thisName.includes(val) || thisTypeProduct.includes(val) || thisProductVariant.includes(val)) {
+               container.style.display = 'block';
+               foundItems = true;
+            } else {
+               container.style.display = 'none';
+            }
+         });
+
+         if (foundItems) {
             globalSearch.style.display = 'block';
             noneAndBlockSections('none');
+            notFound.style.display = 'none';
          } else {
+            globalSearch.style.display = 'none';
+            noneAndBlockSections('none');
+            notFound.style.display = 'flex';
+         }
+         if (val === '') {
             container.style.display = 'none';
+            noneAndBlockSections('block');
+            notFound.style.display = 'none';
          }
       });
 
@@ -117,9 +130,7 @@ class Items {
 
 // Функція для обробки подій DOMContentLoaded
 function handleDOMContentLoaded() {
-
    if (parseItems) {
-
       parseItems.forEach(item => {
          const itemsInstance = new Items(
             item.imageUrl,
@@ -132,10 +143,9 @@ function handleDOMContentLoaded() {
             item.typeProduct,
             item.id
          );
-
          itemsInstance.addClassInNav();
-
       });
+
    } else {
       console.log('немає Items');
    }
@@ -157,11 +167,9 @@ function listenerSearchIDa() {
 function productDisplayNone() {
    // Отримуємо поточну URL сторінки
    const currentURL = window.location.href;
-   
+
    // Перевіряємо, чи знаходимося на сторінці "product" і розмір екрану менше 700
    if (currentURL.includes("product") && window.innerWidth < 700) {
       backgroundBlockInput.style.display = 'none';
-   
-      console.log("Ми на сторінці 'product' і розмір екрану менше 700");
    }
 }
