@@ -4,54 +4,12 @@ button {
 
 .account {
    padding-bottom: 247px;
-   position: relative;
-   padding-top: 20px;
-   max-width: 1248px;
-   margin: 0 auto;
+
    &__container {
       max-width: 500px;
       margin: 0 auto;
    }
-   .cart__window-account {
-      z-index: 10;
-      position: absolute;
-      max-width: 1248px;
-      background: $light-gray-color;
-      width: 100%;
-      height: 56px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      //display: none;
-      padding: 24px;
-  margin-top: -86px;
- 
-  transition: all 1s;
-      p {
-        display: flex;
-        align-items: center;
-        img {
-          margin-right: 10px;
-          width: 20px;
-          height: 20px;
-        }
-      }
-      & div {
-         letter-spacing: 1.5px;
-         color: $errors-color;
-      }
-      @media (max-width: 700.98px){
-         width: 100%;
-         align-items: stretch;
-      & p {
-         font-size: 14px;
-         @media (max-width: 548.98px){
-              font-size: 12px;
-         }
-      }
-      }
-    }
-  
+
    &__block-header {
       &:not(:last-child) {
          margin-bottom: 64px;
@@ -586,7 +544,7 @@ button {
 
    .input-last {
       &:not(:last-child) {
-        margin-bottom: 0;
+         margin-bottom: 35px;
       }
    }
 
@@ -614,6 +572,16 @@ button {
       transition: color 0.3s;
       display: none;
       background: none;
+
+      input[type="password"]::-ms-reveal,
+      input[type="password"]::-ms-clear {
+         display: none;
+      }
+
+      input[type="password"]::-webkit-credentials-auto-fill-button {
+         display: none;
+      }
+
       //Tablet
       @media (max-width: 700.98px) {
          top: 11px;
@@ -644,16 +612,5 @@ button {
 
    .input-email {
       margin-top: 11px;
-   }
-   input[type="password"]::-ms-reveal,
-   input[type="password"]::-ms-clear {
-      display: none !important;
-   }
-
-   input[type="password"]::-webkit-credentials-auto-fill-button {
-      display: none;
-   }
-   .buttons-register {
-      margin-top: 80px;
    }
 }
