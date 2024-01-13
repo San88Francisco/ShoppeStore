@@ -14,7 +14,7 @@ button {
    }
    .cart__window-account {
       z-index: 10;
-      position: fixed;
+      position: absolute;
       max-width: 1248px;
       background: $light-gray-color;
       width: 100%;
@@ -22,11 +22,11 @@ button {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      display: none;
+      //display: none;
       padding: 24px;
   margin-top: -86px;
  
-  transition: all 0.6s;
+  transition: all 1s;
       p {
         display: flex;
         align-items: center;
@@ -586,7 +586,7 @@ button {
 
    .input-last {
       &:not(:last-child) {
-         margin-bottom: 35px;
+        margin-bottom: 0;
       }
    }
 
@@ -652,5 +652,8 @@ button {
 
    input[type="password"]::-webkit-credentials-auto-fill-button {
       display: none;
+   }
+   .buttons-register {
+      margin-top: 80px;
    }
 }
