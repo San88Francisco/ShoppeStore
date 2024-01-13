@@ -263,7 +263,7 @@
                   width: 170px;
                   height: 20px;
                   border-left: 1px solid $dark-gray-color;
-
+                  user-select: none;
                   li {
                      display: inline-block;
 
@@ -273,10 +273,11 @@
                      &:first-child {
                         margin-left: 20px;
                      }
-
-                     &:hover {
-                        color: $black-color;
-                        transition: $transition-time ease-in;
+                     i{
+                        &:hover {
+                           color: $black-color;
+                           transition: $transition-time ease-in;
+                        }
                      }
                   }
                }
