@@ -2,41 +2,48 @@ if (window.location.pathname.includes('/shop')) {
    document.addEventListener('DOMContentLoaded', function () {
 
       // Випадання кнопок sortBy and shopBy
-      const dropbtns = document.querySelectorAll(".dropdown .drop-btn");
-      const myDropdowns = document.querySelectorAll(".dropdown-content");
+      const shopByBtn = document.getElementById("shopByBtn");
+      const sortByBtn = document.getElementById("sortByBtn");
+      const shopByDropdown = document.getElementById("shopByDropdown");
+      const sortByDropdown = document.getElementById("sortByDropdown");
       const rotateImg = document.querySelectorAll(".drop-btn img");
-
+      
       let activeDropdown = null;
       let activeRotateImg = null;
-
+      
       function closeActiveDropdown(target) {
-         if (activeDropdown && target !== activeDropdown.previousElementSibling) {
-            activeDropdown.classList.remove("show");
-            activeRotateImg.classList.remove("dropbtn-icon-rotate");
-            activeDropdown = null;
-            activeRotateImg = null;
-         }
+          if (activeDropdown && target !== activeDropdown.previousElementSibling) {
+              activeDropdown.classList.remove("show");
+              activeRotateImg.classList.remove("dropbtn-icon-rotate");
+              activeDropdown = null;
+              activeRotateImg = null;
+          }
       }
-
-      dropbtns.forEach((dropbtn, index) => {
-         if (dropbtn) {
-            dropbtn.addEventListener("click", () => {
-               closeActiveDropdown(dropbtn);
-               myDropdowns[index].classList.toggle("show");
-               rotateImg[index].classList.toggle("dropbtn-icon-rotate");
-               activeDropdown = myDropdowns[index];
-               activeRotateImg = rotateImg[index];
-            });
-         }
+      
+      shopByBtn.addEventListener("click", () => {
+          closeActiveDropdown(shopByBtn);
+          shopByDropdown.classList.toggle("show");
+          rotateImg[0].classList.toggle("dropbtn-icon-rotate");
+          activeDropdown = shopByDropdown;
+          activeRotateImg = rotateImg[0];
       });
-
+      
+      sortByBtn.addEventListener("click", () => {
+          closeActiveDropdown(sortByBtn);
+          sortByDropdown.classList.toggle("show");
+          rotateImg[1].classList.toggle("dropbtn-icon-rotate");
+          activeDropdown = sortByDropdown;
+          activeRotateImg = rotateImg[1];
+      });
+      
       window.onclick = function (event) {
-         closeActiveDropdown(event.target);
+          closeActiveDropdown(event.target);
       };
-
+      
       window.onblur = function (event) {
-         closeActiveDropdown(event.relatedTarget);
+          closeActiveDropdown(event.relatedTarget);
       };
+      
 
 
 
