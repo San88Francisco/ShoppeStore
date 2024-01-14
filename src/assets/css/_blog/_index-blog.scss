@@ -77,6 +77,9 @@
    }
    .blog__contents{
       grid-column: 4/13;
+      .main-block{
+         display: none;
+      }
       .blog__cards__content{
          display: grid;
          grid-template-columns: repeat(2, 1fr);
@@ -146,6 +149,12 @@
                color: $black-color;
             }
          }
+         .cards__pages__arrow-back{
+            display: none;
+            img{
+               transform: rotate(180deg);
+            }
+         }
          .act_page{
             transition: .2s all linear;
             background-color: $black-color; 
@@ -154,12 +163,15 @@
             }
          }
       }
+      .none{
+         display: none;
+      }
    }
 }
 
 @media (max-width: 992px){
    .blog{
-      margin-top: -70px;
+      margin-top: -10px;
       .blog__navbar{
          grid-column: 1/13;
          .mobile-categories_button{
@@ -197,7 +209,7 @@
 
 @media (max-width: 700px){
    .blog{
-      margin-top: 0px;
+      margin-top: 20px;
       .blog__contents{
          .blog__cards__content{
             grid-gap: 20px;
