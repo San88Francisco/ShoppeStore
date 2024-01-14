@@ -2,15 +2,15 @@
    <!-- Mobile -->
    <div class="mobile-filter">
       <h2>Shop</h2>
-      <div class="mobile-filter_button">
-         <img src="../../../assets/img/Shop_img/filter.png" alt="">
-         <p>Filters</p>
-      </div>
+   </div>
+   <div class="mobile-filter_button">
+      <img src="./assets/img/Shop_img/filter.png" alt="">
+      <p>Filters</p>
    </div>
 
    <h1>Shop The Latest</h1>
    <div class="shop-container">
-      <aside class="A">
+      <aside class="filter-menu">
 
          <!-- search input -->
          <label for="search-input"></label>
@@ -19,108 +19,83 @@
             <img src="./assets/img/Shop_img/search-icon.svg" alt="" />
          </div>
 
-         <!-- select section -->
-         <div class="select-container">
-            <div class="dropdown">
-               <button type="button" class="drop-btn" id="shopByBtn">
-                  Shop By
-                  <img class="" src="./assets/img/svg/toggle.svg" />
-               </button>
-               <div id="shopByDropdown" class="dropdown-content">
-                  <button type="button" id="bnt-earrings">Earrings</button>
-                  <button type="button" id="btn-rings">Rings</button>
-                  <button type="button" id="btn-bracelets">Bracelets</button>
-                  <button type="button" id="btn-pendants">Pendants</button>
+        <div class="container-sort-btns">
+            <!-- select section -->
+            <div class="select-container">
+               <div class="dropdown">
+                  <button type="button" class="drop-btn" id="shopByBtn">
+                     Shop By
+                     <img class="" src="./assets/img/svg/toggle.svg" />
+                  </button>
+                  <div id="shopByDropdown" class="dropdown-content">
+                     <button type="button" id="bnt-earrings">Earrings</button>
+                     <button type="button" id="btn-rings">Rings</button>
+                     <button type="button" id="btn-bracelets">Bracelets</button>
+                     <button type="button" id="btn-pendants">Pendants</button>
+                  </div>
+               </div>
+               <div class="dropdown">
+                  <button type="button" class="drop-btn" id="sortByBtn">
+                     Sort By<img class="" src="./assets/img/svg/toggle.svg" alt="toggle-icon" />
+                  </button>
+                  <div id="sortByDropdown" class="dropdown-content">
+                     <button type="button" id="btn-cheapest">Cheapest</button>
+                     <button type="button" id="btn-expensive">Expensive</button>
+                     <button type="button" id="btn-popular">Popular</button>
+                     <button type="button" id="btn-new">New</button>
+                     <button type="button" id="btn-discounts">Discounts</button>
+                  </div>
                </div>
             </div>
-            <div class="dropdown">
-               <button type="button" class="drop-btn" id="sortByBtn">
-                  Sort By<img class="" src="./assets/img/svg/toggle.svg" alt="toggle-icon" />
-               </button>
-               <div id="sortByDropdown" class="dropdown-content">
-                  <button type="button" id="btn-cheapest">Cheapest</button>
-                  <button type="button" id="btn-expensive">Expensive</button>
-                  <button type="button" id="btn-popular">Popular</button>
-                  <button type="button" id="btn-new">New</button>
-                  <button type="button" id="btn-discounts">Discounts</button>
+   
+            <div class="container-filter">
+   
+               <!-- slider section -->
+               <div class="price-filter">
+                  <div class="slider-progress">
+                     <div class="range-progress"></div>
+                  </div>
+                  <div class="range-input">
+                     <input step="5" type="range" class="range-min" min="0" max="180" value="0" />
+                     <input step="5" type="range" class="range-max" min="0" max="180" value="180" />
+                  </div>
+                  <div class="price-range">
+                     <div class="price-range-summ">
+                        Price: $<span class="price-range-min">0</span> - $<span class="price-range-max">180</span>
+                     </div>
+                     <div class="price-range-filter">Filter</div>
+                  </div>
+               </div>
+   
+   
+               <!-- checkboxes section -->
+               <div class="for-button">
+                  <p class="shop-bottoms">On sale</p>
+                  <div>
+                     <label class="toggle-switch">
+                        <input class="toggle-sale" data-category="add-discount" type="checkbox" />
+                        <span class="toggle round"></span>
+                     </label>
+                  </div>
+               </div>
+               <div class="for-button">
+                  <p class="shop-bottoms">In stock</p>
+                  <div>
+                     <label class="toggle-switch">
+                        <input class="toggle-stock" type="checkbox" />
+                        <span class="toggle round"></span>
+                     </label>
+                  </div>
                </div>
             </div>
-         </div>
+        </div>
 
-
-         <!-- slider section -->
-
-         <div class="price-filter">
-            <div class="slider-progress">
-               <div class="range-progress"></div>
-            </div>
-            <div class="range-input">
-               <input step="5" type="range" class="range-min" min="0" max="180" value="0" />
-               <input step="5" type="range" class="range-max" min="0" max="180" value="180" />
-            </div>
-            <div class="price-range">
-               <div class="price-range-summ">
-                  Price: $<span class="price-range-min">0</span> - $<span class="price-range-max">180</span>
-               </div>
-               <div class="price-range-filter">Filter</div>
-            </div>
-         </div>
-
-         <!-- slider section -->
-
-         <!-- checkboxes section -->
-
-         <div class="for-button">
-            <p class="shop-bottoms">On sale</p>
-            <div>
-               <label class="toggle-switch">
-                  <input class="toggle-sale" data-category="add-discount" type="checkbox" />
-                  <span class="toggle round"></span>
-               </label>
-            </div>
-         </div>
-         <div class="for-button">
-            <p class="shop-bottoms">In stock</p>
-            <div>
-               <label class="toggle-switch">
-                  <input class="toggle-stock" type="checkbox" />
-                  <span class="toggle round"></span>
-               </label>
-            </div>
-         </div>
       </aside>
-      <article class="B">
+      <article class="conteiner-items">
          <!-- Shop The Latest -->
          <div id="deBag_marginTop" class="shop-latest">
             <div class="shop-latest-container">
                <div class="shop-latest-blocks">
-                  <!-- Block 1 -->
-
-                  <!-- <div id="hide" class="shop-latest__block">
-                     <div class="shop-latest__img">
-                        <a href=""><img src="./assets/img/Home_img/Body/Img 03.png" alt="" /></a>
- 
-                        <div class="shop-latest_hover">
-                           <div class="shop-latest_hover_container">
-                              <a href="">
-                                 <p>ADD TO CART</p>
-                              </a>
-                              <img class="shop-latest__heart" src="./assets/img/Home_img/Body/heart_bg.png" alt="" />
-                           </div>
- 
-                        </div>
-                        <div class="label-container">
- 
-                           <div class="add-discount">-21%</div>
-                        </div>
-                     </div>
- 
-                     <h3 class="shop-latest__name">
-                        <a href="#">Kaede Hair Pin Set of 3</a>
-                     </h3>
-                     <h4 class="shop-latest__price"><a href="#">$ 30,00</a></h4>
-                  </div> -->
-
                </div>
             </div>
          </div>

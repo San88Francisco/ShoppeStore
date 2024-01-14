@@ -7,43 +7,43 @@ if (window.location.pathname.includes('/shop')) {
       const shopByDropdown = document.getElementById("shopByDropdown");
       const sortByDropdown = document.getElementById("sortByDropdown");
       const rotateImg = document.querySelectorAll(".drop-btn img");
-      
+
       let activeDropdown = null;
       let activeRotateImg = null;
-      
+
       function closeActiveDropdown(target) {
-          if (activeDropdown && target !== activeDropdown.previousElementSibling) {
-              activeDropdown.classList.remove("show");
-              activeRotateImg.classList.remove("dropbtn-icon-rotate");
-              activeDropdown = null;
-              activeRotateImg = null;
-          }
+         if (activeDropdown && target !== activeDropdown.previousElementSibling) {
+            activeDropdown.classList.remove("show");
+            activeRotateImg.classList.remove("dropbtn-icon-rotate");
+            activeDropdown = null;
+            activeRotateImg = null;
+         }
       }
-      
+
       shopByBtn.addEventListener("click", () => {
-          closeActiveDropdown(shopByBtn);
-          shopByDropdown.classList.toggle("show");
-          rotateImg[0].classList.toggle("dropbtn-icon-rotate");
-          activeDropdown = shopByDropdown;
-          activeRotateImg = rotateImg[0];
+         closeActiveDropdown(shopByBtn);
+         shopByDropdown.classList.toggle("show");
+         rotateImg[0].classList.toggle("dropbtn-icon-rotate");
+         activeDropdown = shopByDropdown;
+         activeRotateImg = rotateImg[0];
       });
-      
+
       sortByBtn.addEventListener("click", () => {
-          closeActiveDropdown(sortByBtn);
-          sortByDropdown.classList.toggle("show");
-          rotateImg[1].classList.toggle("dropbtn-icon-rotate");
-          activeDropdown = sortByDropdown;
-          activeRotateImg = rotateImg[1];
+         closeActiveDropdown(sortByBtn);
+         sortByDropdown.classList.toggle("show");
+         rotateImg[1].classList.toggle("dropbtn-icon-rotate");
+         activeDropdown = sortByDropdown;
+         activeRotateImg = rotateImg[1];
       });
-      
+
       window.onclick = function (event) {
-          closeActiveDropdown(event.target);
+         closeActiveDropdown(event.target);
       };
-      
+
       window.onblur = function (event) {
-          closeActiveDropdown(event.relatedTarget);
+         closeActiveDropdown(event.relatedTarget);
       };
-      
+
 
 
 
@@ -200,6 +200,11 @@ if (window.location.pathname.includes('/shop')) {
          });
       });
 
-   });
+      const mobileFilterButton = document.querySelector('.mobile-filter_button')
+      const asideMenu = document.querySelector('aside')
 
+      mobileFilterButton.addEventListener('click', () => {
+         asideMenu.classList.toggle('active-filter-shop');
+      })
+   });
 }

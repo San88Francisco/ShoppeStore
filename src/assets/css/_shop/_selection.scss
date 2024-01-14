@@ -14,44 +14,58 @@
 
    .mobile-filter {
       display: none;
-      margin: 0 0 16px 0;
       cursor: pointer;
 
       h2 {
          font-size: 35px;
-         margin: 0 0 17px 0;
+         margin: 0 0 10px 0;
       }
 
-      .mobile-filter_button {
-         display: flex;
-         gap: 10px;
+   }
 
-         p {
-            font-family: DM Sans;
-            color: $accent-color;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 20px;
-         }
+   .mobile-filter_button {
+      display: none;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      p {
+         font-family: DM Sans;
+         color: $accent-color;
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 20px;
       }
    }
 
    .shop-container {
+
       display: flex;
       justify-content: space-between;
+      gap: 30px;
 
-      .A {
+
+
+
+      .filter-menu {
+         max-height: 0;
+         opacity: 0;
+
          width: 261px;
-         margin-right: 30px;
+         transition: max-height 0.8s ease-in-out;
+
+         &.active-filter-shop {
+            max-height: 500px;
+            animation: animationDropWindow 0.6s ease-out;
+            opacity: 1;
+         }
 
          .input-div {
-            width: 261px;
             position: relative;
          }
 
          .input-div input {
-            width: 261px;
+            width: 260px;
             height: 43px;
             border: none;
             border-bottom: 2px solid $light-gray-color;
@@ -95,7 +109,7 @@
                background: $white-color;
                border: 1px solid $light-gray-color;
                border-radius: 6px;
-               width: 261px;
+               width: 100%;
                height: 53px;
                padding: 16px;
                cursor: pointer;
@@ -115,8 +129,11 @@
             }
 
             .dropdown-content {
+               width: 100%;
+
                button {
-                  width: 261px;
+                  // width: 260px;
+                  width: 100%;
                   height: 53px;
                   padding: 12px 16px;
                   display: block;
@@ -153,7 +170,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 21px;
-            width: 260px;
+            width: 100%;
 
             .toggle-switch {
                position: relative;
@@ -297,11 +314,68 @@
 
          //  Filter input range styles
       }
-     
-      /*  ||| B ||| */
 
-      .B {
-         width: 937px;
+      @media (max-width: 860px) {
+         flex-direction: column;
+
+         .filter-menu {
+            width: 100%;
+
+            .input-div input {
+               width: 100%;
+            }
+
+            .container-sort-btns {
+               display: flex;
+               justify-content: space-between;
+               gap: 20px;
+               padding: 0 10px;
+
+               .select-container {
+                  width: 50%;
+
+                  .dropdown-content {
+                     button {
+                        width: 100%;
+                     }
+                  }
+               }
+
+               .container-filter {
+                  width: 50%;
+                  margin-top: 45px;
+               }
+            }
+
+
+
+         }
+      }
+
+      @media (max-width: 600px) {
+         .filter-menu {
+            width: 100%;
+            padding: 0 5px;
+
+            .container-sort-btns {
+               flex-direction: column;
+               gap: 0;
+
+               .select-container {
+                  width: 100%;
+               }
+
+               .container-filter {
+                  width: 100%;
+                  margin-top: 0px;
+                  margin-bottom: 20px;
+               }
+            }
+         }
+      }
+
+
+      .conteiner-items {
          height: 100%;
 
          #deBag_marginTop {
@@ -313,68 +387,62 @@
             gap: 70px 24px;
             font-family: DM Sans;
          }
+
          .shop-latest_hover {
             min-height: 48px;
          }
+      }
    }
-}
 
-@media (max-width: 1000px) {
-   // .Shop {
-   //    .shop-container {
-         .B {
-            .shop-latest-blocks {
-               display: grid;
-               grid-template-columns: repeat(2, 1fr);
-               grid-template-rows: repeat(2, 1fr);
-               gap: 60px 24px;
-               margin: 0 auto;
-            }
+   @media (max-width: 1000px) {
 
-            .shop-latest__block {
-               .shop-latest__img {
-                  .shop-latest_hover {
-                     min-height: 35px;
-                     padding: 0 13px 0 13px;
-                  }
+      // .Shop {
+      //    .shop-container {
+      .conteiner-items {
+         .shop-latest-blocks {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 60px 24px;
+            margin: 0 auto;
+         }
 
-                  .shop-latest__heart {
-                     width: 1.2em;
-                     height: 1.2rem;
-                     cursor: pointer;
-                  }
+         .shop-latest__block {
+            .shop-latest__img {
+               .shop-latest_hover {
+                  min-height: 35px;
+                  padding: 0 13px 0 13px;
                }
 
-               .shop-latest_hover_container {
-                  min-height: 48px;
+               .shop-latest__heart {
+                  width: 1.2em;
+                  height: 1.2rem;
+                  cursor: pointer;
+               }
+            }
 
-                  p {
-                     font-size: 14px;
-                  }
+            .shop-latest_hover_container {
+               min-height: 48px;
+
+               p {
+                  font-size: 14px;
                }
             }
          }
       }
-   // }
-// }
+   }
 
-@media (max-width: 860px) {
-   // .Shop {
-      .mobile-filter {
-         display: block;
+
+   @media (max-width: 860px) {
+
+      // .Shop {
+      .mobile-filter,
+      .mobile-filter_button {
+         display: flex;
       }
 
       h1 {
          display: none;
       }
-
-      .shop-container {
-         .A {
-            display: none;
-         }
-            }
-         }
-      }
-   // }
-
-
+   }
+}

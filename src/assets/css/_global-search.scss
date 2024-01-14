@@ -74,7 +74,7 @@
 
       #container-items-search-burger {
          height: 100%;
-         animation: slideIn 0.8s ease-in-out;
+         animation: animationDropWindow 0.8s ease-in-out;
          padding: 15px;
 
          img,
@@ -128,18 +128,6 @@
    }
 
 
-
-   @keyframes slideIn {
-      from {
-         transform: translateY(-20px);
-         opacity: 0;
-      }
-
-      to {
-         transform: translateY(0);
-         opacity: 1;
-      }
-   }
 }
 
 .discounted {
