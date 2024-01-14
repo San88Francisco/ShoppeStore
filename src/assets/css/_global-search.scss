@@ -232,17 +232,17 @@
 }
 
 .container-not-found-search {
-   width: 650px;
-   height: 380px;
+   display: none;
+   max-width: 700px;
    margin: 0 auto;
-   padding: 90px 50px;
+   padding: 90px 50px 200px 50px;
    display: none;
    margin-bottom: -80px;
+
 
    img {
       width: 200px;
       height: 200px;
-      fill: $accent-color;
    }
 
    & :nth-child(2) {
@@ -259,6 +259,42 @@
          margin-left: 10px;
          font-size: 23px;
          color: $dark-gray-color;
+      }
+   }
+
+   @media (max-width: 645px) {
+      justify-content: center;
+      padding: 90px 0 200px 0;
+
+      img {
+         width: 150px;
+         height: 150px;
+      }
+
+      & :nth-child(2) {
+         line-height: 40px;
+
+         h1 {
+            font-size: 28px;
+         }
+
+         p {
+            margin-left: 10px;
+            font-size: 18px;
+         }
+      }
+   }
+
+   @media (max-width: 450px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0 200px 0;
+      img {
+         width: 100px;
+         height: 100px;
+         position: relative;
+         left: 50px;
+         top: 40px;
       }
    }
 }
