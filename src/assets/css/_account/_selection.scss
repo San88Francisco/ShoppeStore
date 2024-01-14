@@ -164,7 +164,7 @@ button {
       &__button {
          @include black-btn;
          height: 53px;
-         font-size: 16px;
+       
          margin: 0 auto;
          transition: all 0.3s;
          &:not(:last-child) {
