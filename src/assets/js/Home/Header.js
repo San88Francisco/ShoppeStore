@@ -60,8 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
     shop: 0,
     product: 0,
     blog: 1,
-    'our-story': 2,
+    our: 2,
     cart: 5,
+    checkout: 5,
+    confirmation: 5,
     account: 6,
   };
 

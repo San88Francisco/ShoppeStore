@@ -232,15 +232,17 @@
 }
 
 .container-not-found-search {
-   width: 600px;
+   width: 650px;
    height: 380px;
    margin: 0 auto;
    padding: 90px 50px;
    display: none;
    margin-bottom: -80px;
 
-   i {
-      font-size: 180px;
+   img {
+      width: 200px;
+      height: 200px;
+      fill: $accent-color;
    }
 
    & :nth-child(2) {

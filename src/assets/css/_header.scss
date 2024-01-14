@@ -257,7 +257,7 @@ header {
          background: $white-color;
          position: absolute;
          left: 11px;
-         top: -6px;
+         top: -7px;
          min-width: 20px;
          height: 20px;
          flex-direction: row;
@@ -269,6 +269,7 @@ header {
          font-weight: 600;
          color: $black-color;
          padding: 2px;
+         padding-bottom: 1px;
       }
    }
 
