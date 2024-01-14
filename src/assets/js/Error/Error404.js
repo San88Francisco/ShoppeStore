@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const { redirectToLoginPage, handleLogout, userSignedIn } =
       handleUserSignIn();
 
+    const signInLinkPhone = document.getElementById("signInLink");
+    const logoutLinkPhone = document.getElementById("logoutLink");
+
     if (currentPage === "my-account" && !userSignedIn) {
       redirectToLoginPage();
     }
@@ -45,6 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (logoutLink) {
       logoutLink.addEventListener("click", handleLogout);
     }
+
+    signInLinkPhone.addEventListener("click", function (event) {
+      event.preventDefault();
+      redirectToLoginPage();
+    });
+
+    logoutLinkPhone.addEventListener("click", handleLogout);
   }
 
   function redirectTo404() {

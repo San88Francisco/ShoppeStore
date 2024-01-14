@@ -1,4 +1,11 @@
 <section class="account">
+   <div id="errorWindow" class="cart__window-account">
+      <p><i class="fa-solid fa-circle-xmark" style="color: #d82700;"></i>Error! The password is not correct</p>
+      <div class="window__link">2 attempts left</div>
+   </div>
+   <div id="registerWindow" class="cart__window-account">
+      <p><img src="./assets/img/Cart_img/svg/checked.svg" alt="cheked">Successful registration!</p>
+   </div>
    <div class="account__container">
       <div class="account__block-header">
          <h1 class="account__title">My account</h1>
@@ -14,7 +21,7 @@
                   <div class="form__body">
                      <input autocomplete="off" name="EmailAccount" tabindex="3" class="form__input input--singin"
                         placeholder="Email">
-                     <a href="" class="form__button">
+                     <a href="#" class="form__button">
                         <i class="fa-solid fa-circle-xmark"></i>
                      </a>
                   </div>
@@ -92,7 +99,7 @@
                         <i class="fa-solid fa-circle-xmark"></i>
                      </a>
                   </div>
-                  <div class="block-tabs__buttons">
+                  <div class="block-tabs__buttons buttons-register">
                      <button name="nameButton" type="submit" class="block-tabs__button">Register</button>
                   </div>
                </form>

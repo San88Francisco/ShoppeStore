@@ -52,23 +52,12 @@ margin: 0 auto;
 		}
 
 		&__button {
-         background-color: $black-color;
-         border: 1px solid $black-color;
-         width: 100%;
+         @include black-btn;
          height: 53px;
-         border-radius: 4px;
-         display: flex;
-         justify-content:center;
-         align-items: center;
-         color: $white-color;
          margin: 0 auto;
-         transition: all 0.3s;
          overflow: hidden;
-         &:hover {
-         background-color: $white-color;
-         color: $black-color;
-           cursor: pointer;
-         }
+         font-weight: 400;
+        
 		}
       &__input {
          &::placeholder {

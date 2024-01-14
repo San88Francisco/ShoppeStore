@@ -9,16 +9,28 @@ export function updateAccountLinksVisibility() {
   );
   const signOutLink = document.querySelector("#accountDropdown #logout");
 
+  /** Burger account logisctics */
+  const signInLinkPhone = document.getElementById("signInLink");
+  const myAccountPhone = document.getElementById("myAccountContainer");
+  const logoutPhone = document.getElementById("logoutContainer");
+
   if (userSignedIn) {
     // Користувач увійшов в систему
     signInLink.style.display = "none"; // Приховати Sign In
     myAccountLink.style.display = "block"; // Показати My account
     signOutLink.style.display = "block"; // Показати Sign Out
+
+    signInLinkPhone.style.display = "none";
+    myAccountPhone.style.display = "block";
+    logoutPhone.style.display = "block";
   } else {
     // Користувач не увійшов в систему
     signInLink.style.display = "block"; // Показати Sign In
     myAccountLink.style.display = "none"; // Приховати My account
     signOutLink.style.display = "none"; // Приховати Sign Out
+
+    myAccountPhone.style.display = "none"; // Показати My account
+    logoutPhone.style.display = "none";
   }
 }
 
@@ -84,39 +96,39 @@ if (window.location.pathname.includes("/account")) {
 
     //первірка на правильність введення емаіл
     const forms = document.querySelectorAll(".block-tabs__form");
-
-    forms.forEach(function (form) {
-      const emailInput = form.querySelector('input[name="EmailAccount"]');
-      const errorMessage = document.createElement("div");
-      errorMessage.classList.add("error-message");
-      errorMessage.style.display = "none";
-
-      form.addEventListener("submit", function (event) {
-        const email = emailInput.value;
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailRegex.test(email)) {
-          displayError(emailInput, "Please enter a valid email!");
-          event.preventDefault();
-        } else {
-          hideError();
-        }
-      });
-
-      emailInput.addEventListener("focus", function () {
-        hideError();
-      });
-
-      function displayError(element, message) {
-        errorMessage.textContent = message;
-        element.parentNode.appendChild(errorMessage);
-        errorMessage.style.display = "block";
-      }
-
-      function hideError() {
-        errorMessage.style.display = "none";
-      }
-    });
+    /*
+            forms.forEach(function (form) {
+               const emailInput = form.querySelector('input[name="EmailAccount"]');
+               const errorMessage = document.createElement("div");
+               errorMessage.classList.add("error-message");
+               errorMessage.style.display = "none";
+      
+               form.addEventListener("submit", function (event) {
+                  const email = emailInput.value;
+                  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+                  if (!emailRegex.test(email)) {
+                     displayError(emailInput, "Please enter a valid email!");
+                     event.preventDefault();
+                  } else {
+                     hideError();
+                  }
+               });
+               
+                        emailInput.addEventListener("focus", function () {
+                           hideError();
+                        });
+               
+                        function displayError(element, message) {
+                           errorMessage.textContent = message;
+                           element.parentNode.appendChild(errorMessage);
+                           errorMessage.style.display = "block";
+                        }
+               
+                        function hideError() {
+                           errorMessage.style.display = "none";
+                        }
+            });*/
 
     // кнопка reset в полях вводу
     const inputFields = document.querySelectorAll(".form__input");
@@ -190,66 +202,134 @@ if (window.location.pathname.includes("/account")) {
         this.selectHeaderText = selectHeaderText;
       }
       register() {
-        if (this.nameInput.trim().length < 2) {
-          const nameError = form.querySelector('input[name="inputName"]');
-          nameError.insertAdjacentHTML(
-            "afterend",
-            '<div class="error-message">Please enter at least 2 characters</div>'
-          );
-          return;
-        }
+        const emailError = form.querySelector('input[name="EmailAccount"]');
+        const email = emailError.value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const existingErrorMessage = form.querySelector(".error-message");
+        if (
+          this.nameInput.trim().length < 2 ||
+          this.lastNameInput.trim().length < 2 ||
+          !emailRegex.test(email) ||
+          this.passwordInput.length < 8 ||
+          this.selectHeaderText === "How old are you?" ||
+          this.repeatPasswordInput.length < 8 ||
+          !/[a-zA-Z]/.test(this.passwordInput) ||
+          this.passwordInput.trim() !== this.repeatPasswordInput
+        ) {
+          if (this.nameInput.trim().length < 2) {
+            const nameError = form.querySelector('input[name="inputName"]');
+            if (!existingErrorMessage) {
+              nameError.insertAdjacentHTML(
+                "afterend",
+                '<div class="error-message">Please enter at least 2 characters</div>'
+              );
+            }
+          }
 
-        if (this.lastNameInput.trim().length < 2) {
-          const lastNameError = form.querySelector(
-            'input[name="inputLastName"]'
-          );
-          lastNameError.insertAdjacentHTML(
-            "afterend",
-            '<div class="error-message">Please enter at least 2 characters</div>'
-          );
-          return;
-        }
-        if (this.passwordInput.trim() !== this.repeatPasswordInput) {
-          const theSamepassword = form.querySelector(
-            'input[name="inputPassword"]'
-          );
-          theSamepassword.insertAdjacentHTML(
-            "afterend",
-            '<div class="error-message">your passwords are different</div>'
-          );
-          return;
-        }
-        if (this.passwordInput.length < 8) {
-          const theSamepassword = form.querySelector(
-            'input[name="inputPassword"]'
-          );
-          theSamepassword.insertAdjacentHTML(
-            "afterend",
-            '<div class="error-message">The password must be at least 8 characters long</div>'
-          );
-          return;
-        }
-        if (!/[a-zA-Z]/.test(this.passwordInput)) {
-          const theSamepassword = form.querySelector(
-            'input[name="inputPassword"]'
-          );
-          theSamepassword.insertAdjacentHTML(
-            "afterend",
-            '<div class="error-message">Password must contain at least one letter</div>'
-          );
-          return;
-        }
-        if (this.selectHeaderText === "how old are you?") {
-          const selectHeaderText = document.querySelector(".select-header");
-          selectHeaderText.insertAdjacentHTML(
-            "afterend",
-            '<div class="error-message">Please select your age</div>'
-          );
+          if (this.lastNameInput.trim().length < 2) {
+            const lastNameError = form.querySelector(
+              'input[name="inputLastName"]'
+            );
+            // Перевіряємо, чи є вже відображена помилка цього виду
+            if (!existingErrorMessage) {
+              lastNameError.insertAdjacentHTML(
+                "afterend",
+                '<div class="error-message">Please enter at least 2 characters</div>'
+              );
+            }
+          }
+          if (this.selectHeaderText === "How old are you?") {
+            const selectHeaderText = document.querySelector(".select-header");
+            if (!existingErrorMessage) {
+              selectHeaderText.insertAdjacentHTML(
+                "afterend",
+                '<div class="error-message">Please select your age</div>'
+              );
+            }
+          }
+          if (!emailRegex.test(email)) {
+            if (!existingErrorMessage) {
+              emailError.insertAdjacentHTML(
+                "afterend",
+                '<div class="error-message">Please enter a valid email!</div>'
+              );
+            }
+          }
+          if (this.passwordInput.length < 8) {
+            const theSamepassword = form.querySelector(
+              'input[name="inputPassword"]'
+            );
+            if (!existingErrorMessage) {
+              theSamepassword.insertAdjacentHTML(
+                "afterend",
+                '<div class="error-message">The password must be at least 8 characters long</div>'
+              );
+            }
+          } else {
+            if (this.passwordInput.trim() !== this.repeatPasswordInput) {
+              const theSamepassword = form.querySelector(
+                'input[name="inputPassword"]'
+              );
+              if (!existingErrorMessage) {
+                theSamepassword.insertAdjacentHTML(
+                  "afterend",
+                  '<div class="error-message">your passwords are different</div>'
+                );
+              }
+              return;
+            }
+            if (!/[a-zA-Z]/.test(this.passwordInput)) {
+              const theSamepassword = form.querySelector(
+                'input[name="inputPassword"]'
+              );
+              if (!existingErrorMessage) {
+                theSamepassword.insertAdjacentHTML(
+                  "afterend",
+                  '<div class="error-message">Password must contain at least one letter</div>'
+                );
+              }
+              return;
+            }
+          }
+          if (this.repeatPasswordInput.length < 8) {
+            const SamepasswordRepeat = form.querySelector(
+              'input[name="inputPasswordRepeat"]'
+            );
+            if (!existingErrorMessage) {
+              SamepasswordRepeat.insertAdjacentHTML(
+                "afterend",
+                '<div class="error-message">The password must be at least 8 characters long</div>'
+              );
+            }
+          } else {
+            if (!/[a-zA-Z]/.test(this.repeatPasswordInput)) {
+              const SamepasswordRepeat = form.querySelector(
+                'input[name="inputPasswordRepeat"]'
+              );
+              if (!existingErrorMessage) {
+                SamepasswordRepeat.insertAdjacentHTML(
+                  "afterend",
+                  '<div class="error-message">Password must contain at least one letter</div>'
+                );
+              }
+              return;
+            }
+          }
           return;
         }
         console.log(this);
         localStorage.setItem(this.emailInput, JSON.stringify(this));
-        alert(`Successful registration`);
+        const registerWindow = document.getElementById("registerWindow");
+        const headerLine = document.querySelector("header");
+        registerWindow.style.display = "flex";
+        headerLine.style.borderBottom = "1.5px solid #A18A68";
+        setTimeout(function () {
+          registerWindow.style.opacity = "0";
+          headerLine.style.borderBottom = "1.5px solid rgb(216, 216, 216)";
+        }, 800);
+        setTimeout(function () {
+          registerWindow.style.display = "none";
+        }, 1100);
         return true;
       }
     }
@@ -274,9 +354,10 @@ if (window.location.pathname.includes("/account")) {
       const repeatPasswordInput = form
         .querySelector('input[name="inputPasswordRepeat"]')
         .value.trim();
-      const selectHeaderText = document
+      const selectHeaderText = form
         .querySelector(".select-header")
         .textContent.trim();
+      console.log(selectHeaderText);
 
       const user = new User(
         nameInput,
@@ -322,51 +403,123 @@ if (window.location.pathname.includes("/account")) {
 
     // Вхід в систему
     const loginForm = document.querySelector('form[name="FormSingIn"]');
+    const loginElement = document.querySelector(".input--singin");
+    const passElement = document.querySelector(".input--pass");
 
     let invalidLoginAttempts = 0;
+    let user;
 
     loginForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      const loginEmail = document.querySelector(".input--singin").value.trim();
-      const loginPass = document.querySelector(".input--pass").value.trim();
+      const loginEmail = loginElement.value.trim();
+      const loginPass = passElement.value.trim();
       const userData = localStorage.getItem(loginEmail);
 
-      if (userData) {
-        const user = JSON.parse(userData);
-        console.log("✌️user --->", user);
-
-        if (user.passwordInput === loginPass) {
-          alert("You are signed in");
-          localStorage.setItem("userSignIn", loginEmail);
-          window.location.href = "http://localhost:3000/index.html";
+      function displayErrorMessage(element, message) {
+        const existingErrorMessage = loginForm.querySelector(".error-message");
+        if (existingErrorMessage) {
+          existingErrorMessage.remove();
         }
-      } else {
-        invalidLoginAttempts++;
+        element.insertAdjacentHTML(
+          "afterend",
+          `<div class="error-message">${message}</div>`
+        );
+      }
 
-        if (invalidLoginAttempts >= 3) {
-          window.location.href = "http://localhost:3000/reset-password.html"; // Перенаправлення на сторінку відновлення паролю
-        } else {
-          let loginElement = document.querySelector(".input--singin");
-          if (!emailTest(loginElement)) {
-            loginElement.insertAdjacentHTML(
-              "afterend",
-              '<div class="error-message">Password or login is incorrect</div>'
-            );
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      if (
+        !loginEmail.trim() ||
+        !validateEmail(loginEmail) ||
+        loginPass.length < 8
+      ) {
+        if (!loginEmail.trim()) {
+          displayErrorMessage(loginElement, "Login cannot be empty");
+          return;
+        }
+        if (!validateEmail(loginEmail)) {
+          displayErrorMessage(loginElement, "Login is incorrect");
+        }
+        if (loginPass.length < 8) {
+          displayErrorMessage(
+            passElement,
+            "The password must be at least 8 characters long"
+          );
+          return;
+        }
+        return;
+      }
+
+      // Решта вашого коду для перевірки наявності користувача, порівняння пароля, тощо.
+
+      updateAccountLinksVisibility();
+
+      if (validateEmail(loginEmail) && loginPass.length >= 8) {
+        // Перевірка наявності користувача та інші операції
+        if (userData) {
+          user = JSON.parse(userData);
+          console.log("✌️user --->", user);
+
+          if (user.passwordInput === loginPass) {
+            //alert("You are signed in");
+            localStorage.setItem("userSignIn", loginEmail);
+            const windwSingIn = document.getElementById("registerWindow");
+            const headerLine = document.querySelector("header");
+            windwSingIn.innerHTML =
+              '<p><img src="./assets/img/Cart_img/svg/checked.svg" alt="cheked">You are sing in!</p>';
+            windwSingIn.style.display = "flex";
+            headerLine.style.borderBottom = "solid 1.5px #A18A68";
+            setTimeout(function () {
+              windwSingIn.style.opacity = "0";
+              headerLine.style.borderBottom = "solid 1.5px rgb(216, 216, 216)";
+            }, 500);
+            setTimeout(function () {
+              window.location.href = "http://localhost:3000/index.html";
+            }, 1500);
+          } else {
+            invalidLoginAttempts++;
+            displayErrorMessage(passElement, "The password is incorrect");
+            const errorWindow = document.getElementById("errorWindow");
+            const headerLine = document.querySelector("header");
+            errorWindow.style.display = "flex";
+            headerLine.style.borderBottom = "solid 1.5px #D82700";
+
+            if (invalidLoginAttempts == 2) {
+              const Atempts = document.querySelector(".window__link");
+              Atempts.innerHTML = "1 attempts left";
+            } else if (invalidLoginAttempts > 2) {
+              const Atempts = document.querySelector(".window__link");
+              const errorWindow = document.getElementById("errorWindow");
+              const headerLine = document.querySelector("header");
+
+              Atempts.innerHTML = "no more attempts";
+              setTimeout(function () {
+                errorWindow.style.opacity = "0";
+                headerLine.style.borderBottom =
+                  "solid 1.5px rgb(216, 216, 216)";
+              });
+              setTimeout(function () {
+                window.location.href =
+                  "http://localhost:3000/reset-password.html"; // Перенаправлення на сторінку відновлення паролю
+              }, 1500);
+            }
           }
+        } else {
+          // Логіка для випадку, коли користувача не існує
+          displayErrorMessage(loginElement, "User not found");
         }
       }
 
-      updateAccountLinksVisibility(); // Оновлюємо відображення посилань на акаунт
+      updateAccountLinksVisibility();
     });
 
     // Функція для перевірки правильності email
     function emailTest(input) {
-      return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
     }
-
-    // Викликаємо функцію для оновлення відображення посилань при завантаженні сторінки
-    updateAccountLinksVisibility();
 
     //Функціонал показати пароль
     const allPass = document.querySelectorAll(".input--pass");

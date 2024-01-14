@@ -223,18 +223,14 @@
                   button {
                      padding: 16px clamp(40px, 4vw, 100px);
                      font-size: 16px;
-                     font-style: normal;
-                     font-weight: 700;
-                     line-height: normal;
+                     
                      cursor: pointer;
-                     border: 1px solid $black-color;
-                     border-radius: 5px;
+                     @include white-btn;
 
                      transition: 0.4s ease-in;
 
                      &:hover {
-                        background-color: $black-color;
-                        color: $white-color;
+                        transition: 0.4s all linear;
                      }
 
                      // Selected class for button
@@ -263,7 +259,7 @@
                   width: 170px;
                   height: 20px;
                   border-left: 1px solid $dark-gray-color;
-
+                  user-select: none;
                   li {
                      display: inline-block;
 
@@ -273,10 +269,11 @@
                      &:first-child {
                         margin-left: 20px;
                      }
-
-                     &:hover {
-                        color: $black-color;
-                        transition: $transition-time ease-in;
+                     i{
+                        &:hover {
+                           color: $black-color;
+                           transition: $transition-time ease-in;
+                        }
                      }
                   }
                }
@@ -706,13 +703,10 @@
 
             .submit__btn {
                button {
-                  transition: 0.2s all linear;
-                  border: none;
-                  background-color: $black-color;
+                 @include black-btn;
                   border: 2px solid $black-color;
-                  border-radius: 5px;
                   padding: 15px 33px;
-
+                  width: auto;
                   &:hover,
                   &:active {
                      background-color: $white-color;
@@ -724,9 +718,7 @@
                      color: $black-color;
                   }
 
-                  span {
-                     color: $white-color;
-                     font-weight: 700;
+                  span {  
                      line-height: 20px;
                   }
                }
