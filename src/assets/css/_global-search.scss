@@ -230,3 +230,33 @@
       }
    }
 }
+
+.container-not-found-search {
+   width: 600px;
+   height: 380px;
+   margin: 0 auto;
+   padding: 90px 50px;
+   display: none;
+   margin-bottom: -80px;
+
+   i {
+      font-size: 180px;
+   }
+
+   & :nth-child(2) {
+      font-family: DM Sans;
+      font-weight: 500;
+      line-height: 50px;
+
+      h1 {
+         font-size: 33px;
+         color: $black-color;
+      }
+
+      p {
+         margin-left: 10px;
+         font-size: 23px;
+         color: $dark-gray-color;
+      }
+   }
+}
