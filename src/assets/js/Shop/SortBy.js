@@ -200,9 +200,9 @@ if (window.location.pathname.includes('/shop')) {
          });
       });
 
+      // анімація випадання Aside
       const mobileFilterButton = document.querySelector('.mobile-filter_button')
       const asideMenu = document.querySelector('aside')
-
       mobileFilterButton.addEventListener('click', () => {
          asideMenu.classList.toggle('active-filter-shop');
       })
