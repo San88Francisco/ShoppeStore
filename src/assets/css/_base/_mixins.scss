@@ -55,6 +55,68 @@
   border-radius: 8px;
 }
 
+
+@mixin black-btn{
+  
+  transition: 0.2s all linear;
+    background-color: $black-color;
+    border: 1px solid $black-color;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white-color;
+    width: 100%;
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    span {
+      color: $white-color;
+      font-weight: 700;
+   }
+    &:hover {
+      transition: 0.2s all linear;
+      background-color: $white-color;
+      color: $black-color;
+      cursor: pointer;
+      span {
+        transition: 0.2s all linear;
+        color: $black-color;
+      }
+    }
+}
+@mixin white-btn{
+  transition: 0.2s all linear;
+    background-color: $white-color;
+    border: 1px solid $black-color;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $black-color;
+    width: 100%;
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    span {
+      color: $black-color;
+      font-weight: 700;
+   }
+    &:hover {
+      transition: 0.2s all linear;
+      background-color: $black-color;
+      color: $white-color;
+      span {
+        transition: 0.2s all linear;
+        color: $white-color;
+      }
+    }
+}  
+
 @media screen and (max-width: 320px) {
   .img__jewerly {
     @include img_jewelry(136px, 136px); // Example using classname (mobile)

@@ -223,18 +223,14 @@
                   button {
                      padding: 16px clamp(40px, 4vw, 100px);
                      font-size: 16px;
-                     font-style: normal;
-                     font-weight: 700;
-                     line-height: normal;
+                     
                      cursor: pointer;
-                     border: 1px solid $black-color;
-                     border-radius: 5px;
+                     @include white-btn;
 
                      transition: 0.4s ease-in;
 
                      &:hover {
-                        background-color: $black-color;
-                        color: $white-color;
+                        transition: 0.4s all linear;
                      }
 
                      // Selected class for button
@@ -707,13 +703,10 @@
 
             .submit__btn {
                button {
-                  transition: 0.2s all linear;
-                  border: none;
-                  background-color: $black-color;
+                 @include black-btn;
                   border: 2px solid $black-color;
-                  border-radius: 5px;
                   padding: 15px 33px;
-
+                  width: auto;
                   &:hover,
                   &:active {
                      background-color: $white-color;
@@ -725,9 +718,7 @@
                      color: $black-color;
                   }
 
-                  span {
-                     color: $white-color;
-                     font-weight: 700;
+                  span {  
                      line-height: 20px;
                   }
                }

@@ -306,29 +306,9 @@
             }
 
             .btn__black {
-               transition: .2s all linear;
-               background-color: $black-color;
-               border: 1px solid $black-color;
-               border-radius: 5px;
+               @include black-btn;
                padding: 16px 35px;
-               display: flex;
-               justify-self: center;
-               align-items: center;
-         
-               span {
-                  color: $white-color;
-                  font-weight: 700;
-               }
-         
-               &:hover {
-                  transition: .2s all linear;
-                  background-color: $white-color;
-         
-                  span {
-                     transition: .2s all linear;
-                     color: $black-color;
-                  }
-               }
+               
             }
             
             .checkbox {
