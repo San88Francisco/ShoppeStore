@@ -18,7 +18,7 @@
 
       h2 {
          font-size: 35px;
-         margin: 0 0 10px 0;
+         margin: 0 0 10px 0 !important;
       }
 
    }
@@ -49,7 +49,8 @@
 
       .filter-menu {
          width: 261px;
-
+         height: 100%;
+         // z-index: 6;
 
          .input-div {
             position: relative;
