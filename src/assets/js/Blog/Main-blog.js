@@ -1,3 +1,5 @@
+import { animationDropBox } from '../Global/GlobalFunctions';
+
 document.addEventListener('DOMContentLoaded', () => {
    if (window.location.pathname.includes('/blog')) {
 
@@ -217,16 +219,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
          })
       }
-
-      const categoriesFolder = document.querySelector('.mobile-blog_categories')
-      const categoriesBtn = document.querySelector('.mobile-categories_button')
-      categoriesBtn.addEventListener('click', ()=> {
-         if(categoriesFolder.style.display === 'none'){
-            categoriesFolder.style.display = 'block'
-         }else{
-            categoriesFolder.style.display = 'none'
-         }
-      })
+      animationDropBox('.mobile-categories_button','.mobile-blog_categories')
+      
 
       const sortByCategories = (item) => {
          if(item.classList.contains('selectCategories') === false){

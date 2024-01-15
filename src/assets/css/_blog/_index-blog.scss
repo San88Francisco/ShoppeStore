@@ -46,8 +46,10 @@
          }
       }
       .mobile-blog_categories{
-         display: none;
-         padding: 10px 0pc 0px 10px;
+            padding: 10px 0pc 0px 10px;
+            @include animatedHideShow;
+
+
          ul li{
             margin-bottom: 6px;
             a{

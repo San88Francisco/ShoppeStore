@@ -426,16 +426,8 @@
 
    @media (max-width: 860px) {
       .filter-menu {
-         max-height: 0;
-         opacity: 0;
+         @include animatedHideShow;
 
-         transition: max-height 0.8s ease-in-out;
-
-         &.active-filter-shop {
-            max-height: 500px;
-            animation: animationDropWindow 0.6s ease-out;
-            opacity: 1;
-         }
       }
 
       // .Shop {
