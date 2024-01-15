@@ -12,7 +12,7 @@ export const orderViev = () => {
   const accountOrderTbody = document.querySelector('.account__order-tbody');
 
   if (orderVievItem.length >= 1) {
-    console.log('Працює 1');
+    // console.log('Працює 1');
     const html = `
       <tr>
         <td>ORDER NUMBER</td>
@@ -24,7 +24,7 @@ export const orderViev = () => {
       `;
     accountOrderThead.insertAdjacentHTML('beforeend', html);
   } else {
-    console.log('Працює 2');
+    // console.log('Працює 2');
     targetOfOrders.innerHTML = `
       <div class="alert-not-ofer">
         <p>No order has been made yet.</p>
