@@ -1,39 +1,36 @@
 <section class="blog">
    <h1>Blog</h1>
    <aside class="blog__navbar">
-      <div class="blog__search">
-         <label for="search-input"></label>
-         <div class="input-div">
-            <input type="text" placeholder="Search..." id="search-input" />
-            <img src="./assets/img/Shop_img/search-icon.svg" alt="" />
-         </div>
-      </div>
+
+      
       <div class="mobile-categories_button">
          <img src="../../../assets/img/Shop_img/filter.png" alt="">
          <p>Categories</p>
       </div>
       <div class="mobile-blog_categories">
-         <ul>
-            <li id="categoriesBtns" class="categories__fashion">Fashion</li>
-            <li id="categoriesBtns" class="categories__style">Style</li>
-            <li id="categoriesBtns" class="categories__accessories">Accessories</li>
-            <li id="categoriesBtns" class="categories__season">Season</li>
-         </ul>
+         <div class="blog__search">
+            <label for="search-input"></label>
+            <div class="input-div">
+               <input type="text" placeholder="Search..." id="search-input" />
+               <img src="./assets/img/Shop_img/search-icon.svg" alt="" />
+            </div>
+         </div>
+         <div class="blog_categories">
+            <h4>Categories</h4>
+            <ul>
+               <li id="categoriesBtns" class="categories__fashion">Fashion</li>
+               <li id="categoriesBtns" class="categories__style">Style</li>
+               <li id="categoriesBtns" class="categories__accessories">Accessories</li>
+               <li id="categoriesBtns" class="categories__season">Season</li>
+            </ul>
+         </div>
       </div>
-      <div class="blog_categories">
-         <h4>Categories</h4>
-         <ul>
-            <li id="categoriesBtns" class="categories__fashion">Fashion</li>
-            <li id="categoriesBtns" class="categories__style">Style</li>
-            <li id="categoriesBtns" class="categories__accessories">Accessories</li>
-            <li id="categoriesBtns" class="categories__season">Season</li>
-         </ul>
-      </div>
+
    </aside>
    <div class="blog__contents">
       <div class="searchBlock blog__cards__content"></div>
-      <div class="blog__cards__content page__block1__content">
-         <div class="content__cards">
+      <div class="main-block">
+         <div class="content__cards" data-card-number="1">
             <div class="card__img">
                <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="1"><img src="./assets/img/Blog_img/01blog_card.png" alt="card_photo"></a>
             </div>
@@ -42,7 +39,7 @@
             <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... </p>
             <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="1">Read More</a>
          </div>
-         <div class="content__cards">
+         <div class="content__cards" data-card-number="2">
             <div class="card__img">
                <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="2"><img src="./assets/img/Blog_img/02blog_card.png" alt="card_photo"></a>
             </div>
@@ -51,7 +48,7 @@
             <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... </p>
             <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="2">Read More</a>
          </div>
-         <div class="content__cards">
+         <div class="content__cards" data-card-number="3">
             <div class="card__img">
                <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="3"><img src="./assets/img/Blog_img/03blog_card.png" alt="card_photo"></a>
             </div>
@@ -59,8 +56,8 @@
             <h3 class="blog__card__name">Top Springtime Fashion Picks</h3>
             <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... </p>
             <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="3">Read More</a>
-         </div>
-         <div class="content__cards">
+         </div> 
+         <div class="content__cards" data-card-number="4">
             <div class="card__img">
                <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="4"><img src="./assets/img/Blog_img/04blog_card.png" alt="card_photo"></a>
             </div>
@@ -69,9 +66,6 @@
             <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... </p>
             <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="4">Read More</a>
          </div>
-      </div>
-
-      <div class="blog__cards__content page__block2__content">
          <div class="content__cards">
             <div class="card__img">
                <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="5"><img src="./assets/img/Blog_img/03blog_card.png" alt="card_photo"></a>
@@ -109,53 +103,11 @@
             <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="8">Read More</a>
          </div>
       </div>
-
-            <div class="blog__cards__content page__block2__content">
-         <div class="content__cards">
-            <div class="card__img">
-               <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="5"><img src="./assets/img/Blog_img/03blog_card.png" alt="card_photo"></a>
-            </div>
-            <p class="card__date"><span id="blogCategories">Fashion</span> - August 10, 2024</p>
-            <h3 class="blog__card__name">Spring's Supreme Selections</h3>
-            <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... </p>
-            <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="5">Read More</a>
-         </div>
-         <div class="content__cards">
-            <div class="card__img">
-               <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="6"><img src="./assets/img/Blog_img/04blog_card.png" alt="card_photo"></a>
-            </div>
-            <p class="card__date"><span id="blogCategories">Accessories</span> - September 18, 2021</p>
-            <h3 class="blog__card__name">Premier Picks for Spring Fashion</h3>
-            <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... </p>
-            <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="6">Read More</a>
-         </div>
-         <div class="content__cards">
-            <div class="card__img">
-               <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="7"><img src="./assets/img/Blog_img/01blog_card.png" alt="card_photo"></a>
-            </div>
-            <p class="card__date"><span id="blogCategories">Season</span> - November 2, 2023</p>
-            <h3 class="blog__card__name">Selecting the Best of Spring Trends</h3>
-            <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... </p>
-            <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="7">Read More</a>
-         </div>
-         <div class="content__cards">
-            <div class="card__img">
-               <a href="./blog-addopt.html" id="clickToAddoptPage" data-post-number="8" ><img src="./assets/img/Blog_img/02blog_card.png" alt="card_photo"></a>
-            </div>
-            <p class="card__date"><span id="blogCategories">Season</span> - December 7, 2020</p>
-            <h3 class="blog__card__name">The Pinnacle Spring Style Trends</h3>
-            <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... </p>
-            <a href="./blog-addopt.html" class="card__read-more" id="clickToAddoptPage" data-post-number="8">Read More</a>
-         </div>
-      </div>
-
       <div class="blog__cards__pages">
-         <div class="page__block1 cards__pages act_page">
-            <p>1</p>
+         <div class="cards__pages cards__pages__arrow-back">
+            <img src="./assets/img/Blog_img/svg/arrow.svg" alt="arrow">
          </div>
-         <div class="page__block2 cards__pages">
-            <p>2</p>
-         </div>
+
          <div class="cards__pages cards__pages__arrow">
             <img src="./assets/img/Blog_img/svg/arrow.svg" alt="arrow">
          </div>

@@ -2,8 +2,8 @@
 .background-block-input {
    max-width: 1248px;
    height: 50px;
-   margin-bottom: 40px;
    margin: 0 auto;
+   margin-bottom: 40px;
 
    .search-block-global {
       width: 100%;
@@ -21,7 +21,6 @@
          width: 15px;
          height: 15px;
          cursor: pointer;
-
       }
 
       input {
@@ -38,7 +37,6 @@
 }
 
 #container-global-search {
-   max-height: 0;
    overflow: hidden;
    transition: max-height 0.5s ease-in-out;
 
@@ -51,12 +49,9 @@
    }
 }
 
-
 #container-global-search.active {
    max-height: 200px;
 }
-
-
 
 #global-nav-search-for-input {
    display: none;
@@ -74,7 +69,7 @@
 
       #container-items-search-burger {
          height: 100%;
-         animation: slideIn 0.8s ease-in-out;
+         animation: animationDropWindow 0.8s ease-in-out;
          padding: 15px;
 
          img,
@@ -113,7 +108,6 @@
             line-height: 26px;
          }
 
-
          p {
             display: inline;
             width: 50px;
@@ -123,21 +117,6 @@
          span {
             color: $accent-color;
          }
-
-      }
-   }
-
-
-
-   @keyframes slideIn {
-      from {
-         transform: translateY(-20px);
-         opacity: 0;
-      }
-
-      to {
-         transform: translateY(0);
-         opacity: 1;
       }
    }
 }
@@ -150,6 +129,7 @@
 .regular {
    color: $accent-color;
 }
+
 
 // глобільний пошук адаптив
 @media (max-width: 1135px) {
@@ -232,15 +212,17 @@
 }
 
 .container-not-found-search {
-   width: 600px;
-   height: 380px;
+   display: none;
+   max-width: 700px;
    margin: 0 auto;
-   padding: 90px 50px;
+   padding: 90px 50px 200px 50px;
    display: none;
    margin-bottom: -80px;
 
-   i {
-      font-size: 180px;
+
+   img {
+      width: 200px;
+      height: 200px;
    }
 
    & :nth-child(2) {
@@ -257,6 +239,42 @@
          margin-left: 10px;
          font-size: 23px;
          color: $dark-gray-color;
+      }
+   }
+
+   @media (max-width: 645px) {
+      justify-content: center;
+      padding: 90px 0 200px 0;
+
+      img {
+         width: 150px;
+         height: 150px;
+      }
+
+      & :nth-child(2) {
+         line-height: 40px;
+
+         h1 {
+            font-size: 28px;
+         }
+
+         p {
+            margin-left: 10px;
+            font-size: 18px;
+         }
+      }
+   }
+
+   @media (max-width: 450px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0 200px 0;
+      img {
+         width: 100px;
+         height: 100px;
+         position: relative;
+         left: 50px;
+         top: 40px;
       }
    }
 }

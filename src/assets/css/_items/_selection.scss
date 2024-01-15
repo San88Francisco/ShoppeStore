@@ -1,19 +1,16 @@
 .shop-latest {
-
    .shop-latest__block {
-      // border: 1px solid red;
-
       .shop-latest__img {
          position: relative;
-
-         .productVariant {
-            display: none;
-         }
 
          img {
             width: 100%;
             height: auto;
             border-radius: 10px;
+         }
+
+         .productVariant {
+            display: none;
          }
 
          .shop-latest_hover {
@@ -28,10 +25,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-         }
 
-         &:hover .shop-latest_hover {
-            opacity: 1;
+            &:hover {
+               opacity: 1;
+            }
          }
 
          .shop-latest__heart {
@@ -83,13 +80,11 @@
          }
 
          .label-container {
-            // border: 1px solid red;
             display: flex;
             flex-wrap: wrap;
             position: absolute;
             top: 16px;
             left: 16px;
-            // width: 100%;
 
             div {
                &:first-child {
@@ -97,63 +92,54 @@
                }
             }
          }
+
+         // Class for "Sold" label
+         .add-sold {
+            color: $white-color;
+            background-color: $accent-color;
+         }
+
+         // Class for "-%price%" label
+         .add-discount,
+         .add-popular {
+            color: $white-color;
+            background-color: $accent-color;
+         }
+
+         // Class for "category" label
+         .add-earrings,
+         .add-brooch,
+         .add-bracelets,
+         .add-pendants {
+            background-color: $black-color;
+            color: $white-color;
+         }
+
+         // Class for "New" label
+         .add-new {
+            background-color: $white-color;
+            color: $black-color;
+         }
       }
 
-      // Class for "Sold" label
-      .add-sold {
-         color: $white-color;
-         background-color: $accent-color;
+      .shop-latest_hover_container {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         min-height: 45px;
+         min-width: 100%;
+         transition: all 0.3s ease;
+         position: relative;
       }
 
-      // Class for "-%price%" label
-      .add-discount,
-      .add-popular {
-         color: $white-color;
-         background-color: $accent-color;
+      .price-discount {
+         margin-right: 16px;
+         color: $errors-color;
+         text-decoration: line-through 1px;
       }
-
-      //* Class for "category" label
-      // <div class="add-earrings category">Earrings</div>
-      // <div class="add-brooch category">Brooch</div>
-      // <div class="add-bracelets category">Bracelets</div>
-      // <div class="add-pendants category">Pendants</div>
-
-      // <div class="add-popular category">Popular</div>
-      // <div class="add-new category">New</div>
-      // <div class="add-discount category">Sold Out</div>
-      // <div class="add-sold category">Sold Out</div>
-
-      .add-earrings,
-      .add-brooch,
-      .add-bracelets,
-      .add-pendants {
-         background-color: $black-color;
-         color: $white-color;
-      }
-
-      // Class for "New" label
-      .add-new {
-         background-color: $white-color;
-         color: $black-color;
-      }
-   }
-
-   .shop-latest_hover_container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 45px;
-      min-width: 100%;
-      transition: all 0.3s ease;
-      position: relative;
-   }
-
-   .price-discount {
-      margin-right: 16px;
-      color: $errors-color;
-      text-decoration: line-through 1px;
    }
 }
+
 
 @media (max-width: 1000px) {
    .shop-latest {
@@ -188,7 +174,7 @@
             min-height: 30px;
 
             p {
-               font-size: 12px !important;
+               font-size: 14px !important;
             }
          }
 
@@ -237,17 +223,17 @@
 
          .shop-latest_hover_container {
             p {
-               font-size: 12px;
+               font-size: 14px;
             }
          }
 
          .shop-latest__name {
             margin: 0;
-            font-size: 14px;
+            font-size: 17px;
          }
 
          .shop-latest__price {
-            font-size: 14px;
+            font-size: 17px;
             line-height: 18px;
          }
       }
@@ -269,16 +255,19 @@
       .shop-latest-blocks {
          .shop-latest__block {
             .shop-latest__name {
-               font-size: 10px;
+               font-size: 14px;
             }
 
             .shop-latest__price {
-               font-size: 12px;
+               font-size: 14px;
             }
 
             .shop-latest__img {
-               .shop-latest_hover_container p {
-                  font-size: 9px !important;
+               .shop-latest_hover_container {
+                  p {
+
+                     font-size: 12px !important;
+                  }
                }
 
                .label-container {
@@ -290,9 +279,9 @@
                   .add-category,
                   .add-sold,
                   .category {
-                     width: 43px;
+                     width: 55px;
                      height: 20px;
-                     font-size: 9px;
+                     font-size: 12px;
 
                      &::before {
                         margin: -5px;

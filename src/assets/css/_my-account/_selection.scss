@@ -118,29 +118,9 @@
   }
 
   .btn__black {
-    transition: 0.2s all linear;
-    background-color: $black-color;
-    border: 1px solid $black-color;
-    border-radius: 5px;
+    @include black-btn;
+    width: auto;
     padding: 16px 175px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      color: $white-color;
-      font-weight: 700;
-    }
-
-    &:hover {
-      transition: 0.2s all linear;
-      background-color: $white-color;
-
-      span {
-        transition: 0.2s all linear;
-        color: $black-color;
-      }
-    }
   }
 
   .alert-not-ofer,
