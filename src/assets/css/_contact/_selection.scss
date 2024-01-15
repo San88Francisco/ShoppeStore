@@ -1,63 +1,59 @@
 
 .contact {
-   @media (max-width: 700.98px){
-      padding-top: 135px; 
-   }
-		&__container {
-         max-width: 908px;
-margin: 0 auto;
-@media (max-width: 852.98px){
-     max-width: 500px;
-}
-		}
+	&__container {
+      max-width: 908px;
+      margin: 0 auto;
+      @media (max-width: 852.98px){
+         max-width: 500px;
+      }
+	}
 
-		&__block-header {
-         text-align: center;
-         &:not(:last-child) {
-            margin-bottom: 108px;
+	&__block-header {
+      text-align: center;
+      &:not(:last-child) {
+         margin-bottom: 108px;
+      }
+      @media (max-width: 499.98px){
+            text-align: left;
+            &:not(:last-child) {
+            margin-bottom: clamp(30px,4vw,62px);
          }
-         @media (max-width: 499.98px){
-              text-align: left;
-              &:not(:last-child) {
-               margin-bottom: 62px;
-            }
-         }
-		}
+      }
+	}
 
-		&__title {
-         font-size: 33px;
-         line-height: 130.30303%; /* 43/33 */
-         &:not(:last-child) {
-            margin-bottom: 35px;
-         }
-         @media (max-width: 499.98px){
-            font-size: 20px;
-         }
-		}
+	&__title {
+      font-size: 33px;
+      line-height: 130.30303%; /* 43/33 */
+      &:not(:last-child) {
+         margin-bottom: 35px;
+      }
+      @media (max-width: 499.98px){
+         font-size: 20px;
+      }
+	}
 
 		&__text {
-font-family: DM Sans;
-font-size: 20px;
-font-weight: 400;
-line-height: 130%; /* 26/20 */
-text-align: center;
-max-width: 561px;
-margin: 0 auto;
+         font-family: DM Sans;
+         font-size: 20px;
+         font-weight: 400;
+         line-height: 130%; /* 26/20 */
+         text-align: center;
+         max-width: 561px;
+         margin: 0 auto;
 		}
 
 		&__form {
          display: flex;
          flex-direction: column;
-         padding-bottom: 154px;
+         padding-bottom: clamp(54px,4vw,154px);
 		}
 
 		&__button {
          @include black-btn;
          height: 53px;
          margin: 0 auto;
-         overflow: hidden;
-         font-weight: 400;
-        
+         font-weight: 700;
+         max-width: 500px;
 		}
       &__input {
          &::placeholder {
@@ -65,14 +61,14 @@ margin: 0 auto;
             font-size: 16px;
             color: $placeholder-color;
             font-weight: 400;
-         //Tablet
-          @media (max-width: 852.98px){
-                    font-size: 14px;
+            //Tablet
+            @media (max-width: 852.98px){
+               font-size: 14px;
             }
-        //Mobile small
-         @media (max-width: 467.98px){
-                   font-size: 12px;
-         }  
+            //Mobile small
+            @media (max-width: 467.98px){
+               font-size: 12px;
+            }  
          }
          font-family: DM Sans;
          font-size: 16px;
@@ -98,8 +94,8 @@ margin: 0 auto;
             &:not(:last-child) {
                margin-bottom: 24px;
             }
-       }
       }
+   }
       .form {
 
          &__columns {
@@ -110,18 +106,18 @@ margin: 0 auto;
                margin-bottom: 126px;
             }
              //Tablet
-          @media (max-width: 852.98px){
-            gap: 47px;
-            &:not(:last-child) {
-               margin-bottom: 100px;
+            @media (max-width: 852.98px){
+               gap: 47px;
+               &:not(:last-child) {
+                  margin-bottom: 100px;
+               }
             }
-       }
           //Mobile
-          @media (max-width: 700.98px){
-            &:not(:last-child) {
-               margin-bottom: 47px;
+            @media (max-width: 700.98px){
+               &:not(:last-child) {
+                  margin-bottom: 47px;
+               }
             }
-       }
          }
          
    }
@@ -133,63 +129,62 @@ margin: 0 auto;
          flex-wrap: wrap;
          position: relative;
           //Tablet
- @media (max-width: 852.98px){
-   justify-content: center;
-   row-gap: 47px;
-   }
+         @media (max-width: 852.98px){
+           justify-content: center;
+           row-gap: 47px;
+         }
 		}
       &__body {
          position: relative;
          @media (max-width: 852.98px){
-         width: 100%;
+            width: 100%;
          }
       }
-      
-         &__button {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            right: 3px;
-            bottom: 18px;
-            display: none;
-            & i {
-               color: $gray-color;
-               transition: color 0.3s;
-               &:hover {
-                  color: $dark-gray-color;
-               }
-            }
-                //Tablet
-                @media (max-width: 700.98px){
-                  font-size: 14px;
-                   bottom: 12px;
 
-              }
-             //Mobile small
-             @media (max-width: 467.98px){
-               font-size: 12px;
-               bottom: 7px;
-           } 
+      &__button {
+         position: absolute;
+         width: 15px;
+         height: 15px;
+         right: 3px;
+         bottom: 18px;
+         display: none;
+         & i {
+            color: $gray-color;
+            transition: color 0.3s;
+            &:hover {
+               color: $dark-gray-color;
             }
-           &__button-email {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            right: 3px;
-            top: 15px;
+         }
+             //Tablet
+         @media (max-width: 700.98px){
+            font-size: 14px;
+            bottom: 12px;
+
+         }
+          //Mobile small
+          @media (max-width: 467.98px){
+            font-size: 12px;
+            bottom: 7px;
+         } 
+      }
+      &__button-email {
+         position: absolute;
+         width: 15px;
+         height: 15px;
+         right: 3px;
+         top: 15px;
               //Tablet
-              @media (max-width: 700.98px){
-               font-size: 14px;
-                top: 12px;
+         @media (max-width: 700.98px){
+            font-size: 14px;
+            top: 12px;
 
-           }
+         }
           //Mobile small
           @media (max-width: 467.98px){
             font-size: 12px;
             top: 9px;
-        } 
-           }
-         
+         } 
+      }
 		&__input {
          border-bottom: 1px solid $gray-color;
          padding: 12px 0;
@@ -202,33 +197,33 @@ margin: 0 auto;
             font-weight: 400;
             line-height: 168.75%;
               //Tablet
-         @media (max-width: 852.98px){
-            font-size: 14px;
+            @media (max-width: 852.98px){
+               font-size: 14px;
             }
                  //Mobile small
-       @media (max-width: 467.98px){
-         font-size: 12px;
-     }  
+            @media (max-width: 467.98px){
+               font-size: 12px;
+            }  
          }
          //Tablet
          @media (min-width: 852.98px){
-         width: 396px;
+            width: 396px;
          }
          //Tablet
          @media (max-width: 852.98px){
             width: 100%;
             font-size: 14px;
-            }
-            //Mobile
-            @media (max-width: 700.98px){
-               padding: 8px 0;
-                 font-size: 14px; 
-            }
-            //Mobile small
-            @media (max-width: 467.98px){
-               padding: 5px 0;
-                 font-size: 12px; 
-            }  
+         }
+         //Mobile
+         @media (max-width: 700.98px){
+            padding: 8px 0;
+            font-size: 14px; 
+         }
+         //Mobile small
+         @media (max-width: 467.98px){
+            padding: 5px 0;
+            font-size: 12px; 
+         }  
 		}
 
 		.custom-select {
@@ -245,11 +240,10 @@ margin: 0 auto;
          line-height: 168.75%;
         
           //Tablet
-          @media (max-width: 852.98px){
+         @media (max-width: 852.98px){
            max-width: 500px;
            margin: 0 auto;
-       }
-       
+         }
        }
        
        .select-header {
@@ -262,17 +256,16 @@ margin: 0 auto;
             width: 10px;
             height: 5.66px;
             right: 0;
-         bottom: 19px;
-            
+            bottom: 19px;
          }
               //Tablet
-              @media (max-width: 852.98px){
-               font-size: 14px;
-           }
+         @media (max-width: 852.98px){
+            font-size: 14px;
+         }
           //Mobile small
-          @media (max-width: 467.98px){
+         @media (max-width: 467.98px){
             font-size: 12px;
-        }  
+         }  
        }
        
        .select-options {
@@ -313,11 +306,11 @@ margin: 0 auto;
          bottom: -20px;
          color: $errors-color;
          font-family: "DM Sans";
-      font-size: 10px;
-      font-weight: 400;
-      line-height: 10px;
+         font-size: 10px;
+         font-weight: 400;
+         line-height: 10px;
       }
-}
+   }
 }
 
 

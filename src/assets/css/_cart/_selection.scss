@@ -518,13 +518,16 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 45px;
+        margin-top: 20px;
         p {
           font-family: DM Sans;
           color: $black-color;
           font-size: 16px;
           font-weight: 700;
         }
-
+        h5{
+          font-weight: 700;
+        }
         .total__price-discount {
           text-decoration: line-through;
           color: $errors-color;
