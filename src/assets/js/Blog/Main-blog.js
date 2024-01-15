@@ -50,19 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
       creatPagesOfBlock('.main-block')
 
       //! search
-      const searchInput = document.querySelector('#search-input')
-      window.onload = function() {
-         localStorage.getItem('inputIsSelect') === 'true' ? searchInput.focus() : 0
-         setTimeout(function() {
-            localStorage.removeItem('inputIsSelect')
-          }, 1000);
-      }
+      const searchInput = document.querySelector('#search-input') 
       const searchTheItem = () => {
          if (searchInput !== null) {
             const numberOfSelectPage = document.querySelector('.act_page').classList[0].replace(/[^+\d]/g, '')
             const cardsBlock = document.querySelectorAll('.blog__cards__content')
             const searchBlockItem = document.querySelector('.searchBlock')
-            
+            if (searchBlockItem.innerHTML === '') {
+               searchBlockItem.style.marginBottom ='0px'
+            }
             searchInput.oninput = function () {
             
                let val = this.value.trim().toLowerCase();
