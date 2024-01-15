@@ -188,7 +188,7 @@
             min-height: 30px;
 
             p {
-               font-size: 12px !important;
+               font-size: 14px !important;
             }
          }
 
@@ -237,17 +237,17 @@
 
          .shop-latest_hover_container {
             p {
-               font-size: 12px;
+               font-size: 14px;
             }
          }
 
          .shop-latest__name {
             margin: 0;
-            font-size: 14px;
+            font-size: 17px;
          }
 
          .shop-latest__price {
-            font-size: 14px;
+            font-size: 17px;
             line-height: 18px;
          }
       }
@@ -269,16 +269,19 @@
       .shop-latest-blocks {
          .shop-latest__block {
             .shop-latest__name {
-               font-size: 10px;
+               font-size: 14px;
             }
 
             .shop-latest__price {
-               font-size: 12px;
+               font-size: 14px;
             }
 
             .shop-latest__img {
-               .shop-latest_hover_container p {
-                  font-size: 9px !important;
+               .shop-latest_hover_container  {
+                  p{
+
+                     font-size: 12px !important;
+                  }
                }
 
                .label-container {
@@ -290,10 +293,9 @@
                   .add-category,
                   .add-sold,
                   .category {
-                     width: 43px;
+                     width: 55px;
                      height: 20px;
-                     font-size: 9px;
-
+                     font-size: 12px;
                      &::before {
                         margin: -5px;
                      }
