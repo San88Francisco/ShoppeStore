@@ -1,6 +1,5 @@
 header {
   max-width: 1248px;
-  height: 53px;
   margin: 0 auto;
   margin-top: 64px;
   margin-bottom: 16px;
@@ -453,8 +452,9 @@ header {
 
       .active-cart-visual {
         display: block;
-        margin: 0 20px 5px 0;
+        margin: 5px 20px 5px 0;
         z-index: 9;
+        
       }
 
       label {
