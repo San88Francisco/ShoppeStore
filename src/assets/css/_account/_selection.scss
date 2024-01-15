@@ -23,10 +23,11 @@ button {
       justify-content: space-between;
       align-items: center;
       display: none;
-      padding: 24px;
-  margin-top: -86px;
+      padding: 5px clamp(0px,1vw,24px);
+      margin-top: -126px;
+      flex-wrap: wrap;
  
-  transition: all 1s;
+      transition: all 1s;
       p {
         display: flex;
         align-items: center;
@@ -41,7 +42,8 @@ button {
       }
       @media (max-width: 700.98px){
          width: 100%;
-         align-items: stretch;
+         align-items: center;
+         margin-top: -136px;
       & p {
          font-size: 14px;
          @media (max-width: 548.98px){
@@ -585,6 +587,7 @@ button {
       font-size: 10px;
       font-weight: 400;
       line-height: 10px;
+
    }
 
    .togglePasswordBtn {
@@ -640,5 +643,17 @@ button {
    }
    .buttons-register {
       margin-top: 80px;
+   }
+}
+
+
+@media screen and (max-width: 400px) {
+   .account {
+      .cart__window-account {
+         flex-direction: column;
+         .window__link {
+            font-size: 14px;
+         }
+      }
    }
 }

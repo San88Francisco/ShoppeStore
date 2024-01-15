@@ -48,7 +48,7 @@ body {
 
 .Scroll_js_right {
    opacity: 0;
-   filter: blur(2px);
+   filter: blur(1px);
    transform: translateX(-15%);
    transition: filter 2s ease, transform 1.4s ease;
 }
@@ -60,10 +60,9 @@ body {
 }
 
 .Scroll_js_up {
-   overflow: hidden;
    opacity: 0;
-   filter: blur(2px);
-   transform: translateY(-50%);
+   filter: blur(1px);
+   transform: translateY(-30%);
    transition: filter 2s ease, transform 1.4s ease;
 }
 

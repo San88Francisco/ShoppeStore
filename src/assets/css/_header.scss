@@ -44,7 +44,7 @@ header {
       width: 100%;
       flex-direction: column;
       position: fixed;
-      bottom: 0;
+      top: 0;
       left: 0;
 
       z-index: 1;
@@ -62,6 +62,7 @@ header {
         transform: translate(0);
         animation: menu-bg 0.9s ease-in-out; // Apply the animation when active
         background-color: #fff; // Set the target background color
+        display: flex;
       }
 
       @keyframes menu-bg {
@@ -291,6 +292,8 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 7;
 
     &:nth-child(4) {
       font-weight: 200;
