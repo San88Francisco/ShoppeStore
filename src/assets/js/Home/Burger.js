@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const checkbox = document.querySelector(".button-burger");
   const menuItems = document.querySelector(".menu-items");
 
+
   const burgerItems = document.querySelectorAll(".burger-menu__item");
   const burgerSignIn = document.querySelector(".burger__signIn");
   const burgerMyAccount = document.querySelector(".burger__myAccount");
@@ -21,15 +22,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const burgerFooter = document.querySelector(".burger__footer");
   const burgerLogout = document.querySelector(".burger__logout");
   const burgerLine = document.querySelector(".burger-line");
+  
 
   checkbox.addEventListener("click", function () {
     this.classList.toggle("active");
     menuItems.classList.toggle("active");
+   
+    
+   
 
     if (menuItems.classList.contains("active")) {
       body.style.overflowY = "hidden";
+      menuItems.style.display = "flex"
     } else {
       body.style.overflowY = "auto";
+      setTimeout(function () {
+        menuItems.style.display = "none"
+      }, 700);
+    
     }
 
     burgerItems.forEach((item) => {
