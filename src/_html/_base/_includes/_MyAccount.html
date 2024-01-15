@@ -271,6 +271,7 @@
           This will be how your name will be displayed in the account section
           and in reviews.
         </p>
+        <input type="text" placeholder="Phone*" />
         <input type="text" placeholder="Email address*" />
         <h3>Password change</h3>
         <input
@@ -288,7 +289,68 @@
       </button>
     </div>
     <div class="targetOf-logout">
-      <div class="my__profile-user"></div>
+      <div class="targetOf__my-profile">
+        <div class="my__profile-info">
+          <div class="my__profile-avatar">
+            <img
+              src="../../../assets/img/Home_img/header/user.svg"
+              alt="user-svg"
+            />
+          </div>
+
+          <hr />
+
+          <ul class="my__profile-user">
+            <li class="">
+              <span>Name :</span>
+              <span class="user__first-name">Ivan</span>
+            </li>
+            <li class="">
+              <span>Last Name :</span>
+              <span class="user__last-name">Yakovchuk</span>
+            </li>
+            <li class="">
+              <span>Email :</span>
+              <span class="user__email-name">name@gmail.com</span>
+            </li>
+            <li class="">
+              <span>Account name :</span>
+              <span class="user__display-name">Kvothe</span>
+            </li>
+            <li class="">
+              <span>Date of creation :</span>
+              <span class="user__date-creation">13.01.2024</span>
+            </li>
+            <li class="">
+              <span>Phone :</span>
+              <span class="user__mobile">+380961234455</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="my__profile-address">
+        <div>
+          <h2>My address</h2>
+          <button class="profile__address-btn btn__profile">
+            Edit address
+          </button>
+        </div>
+        <ul>
+          <li>Ivan</li>
+          <li>Yakovchuk</li>
+          <li>Google</li>
+          <li>Ukraine</li>
+          <li>Promislova 4</li>
+          <li>33020</li>
+          <li>Rivne</li>
+          <li>+380961234567</li>
+          <li>Email</li>
+        </ul>
+      </div>
+      <div class="user__editing-btn">
+        <button class="profile__edit-btn btn__profile">Edit address</button>
+        <button class="profile__delete-btn btn__profile">Delete profile</button>
+      </div>
     </div>
   </div>
 </section>
