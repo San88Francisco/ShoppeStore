@@ -630,6 +630,30 @@
     
 
     }
+    .empty__cart {
+      
+      h2 {
+        text-align: center; 
+        font-size: 18px;
+      }
+  
+      a {
+        width: 158px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 8px;
+        font-size: 14px;
+      }
+  
+      div {
+        max-width: 80px;
+        height: 80px;
+  
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -649,6 +673,8 @@
       font-size: 20px;
     
     }
+
+    
     .cart__container{
       align-items: start;
       .cart-totals{
