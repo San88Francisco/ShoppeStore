@@ -2,8 +2,8 @@
 .background-block-input {
    max-width: 1248px;
    height: 50px;
-   margin-bottom: 40px;
    margin: 0 auto;
+   margin-bottom: 40px;
 
    .search-block-global {
       width: 100%;
@@ -21,7 +21,6 @@
          width: 15px;
          height: 15px;
          cursor: pointer;
-
       }
 
       input {
@@ -50,12 +49,9 @@
    }
 }
 
-
 #container-global-search.active {
    max-height: 200px;
 }
-
-
 
 #global-nav-search-for-input {
    display: none;
@@ -112,7 +108,6 @@
             line-height: 26px;
          }
 
-
          p {
             display: inline;
             width: 50px;
@@ -122,11 +117,8 @@
          span {
             color: $accent-color;
          }
-
       }
    }
-
-
 }
 
 .discounted {
@@ -137,6 +129,7 @@
 .regular {
    color: $accent-color;
 }
+
 
 // глобільний пошук адаптив
 @media (max-width: 1135px) {

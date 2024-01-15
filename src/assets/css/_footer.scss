@@ -1,6 +1,4 @@
-$font-size-text: 16px;
-$font-weight: regular;
-$line-height: 1.68;
+
 
 footer {
    display: flex;
@@ -350,7 +348,7 @@ footer {
                .footer-input {
                   .info-input::placeholder {
 
-                     font-size: 14px;
+                     font-size: 12px;
 
                   }
 
@@ -376,7 +374,7 @@ footer {
                   }
 
                   span {
-                     font-size: 14px;
+                     font-size: 12px;
                      font-style: normal;
                      font-weight: 400;
                      line-height: 20px;
@@ -387,7 +385,7 @@ footer {
             .info-list {
                .info-item {
                   a {
-                     font-size: 14px;
+                     font-size: 12px;
                   }
 
                }
@@ -401,7 +399,7 @@ footer {
             gap: 36px;
 
             .info-text {
-               font-size: 14px;
+               font-size: 12px;
             }
 
             .messengers {
@@ -415,7 +413,7 @@ footer {
                align-items: center;
 
                p {
-                  font-size: 14px;
+                  font-size: 12px;
                   font-style: normal;
                   font-weight: 400;
                   line-height: 20px;
