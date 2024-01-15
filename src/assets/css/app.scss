@@ -46,3 +46,29 @@ body {
    }
 }
 
+.Scroll_js_right {
+   opacity: 0;
+   filter: blur(2px);
+   transform: translateX(-5%);
+   transition: filter 2s ease, transform 1.4s ease;
+}
+
+.Scroll_js_right.show {
+   opacity: 1;
+   filter: blur(0);
+   transform: translateX(0);
+}
+
+.Scroll_js_up {
+   overflow: hidden;
+   opacity: 0;
+   filter: blur(2px);
+   transform: translateY(-50%);
+   transition: filter 2s ease, transform 1.4s ease;
+}
+
+.Scroll_js_up.show {
+   opacity: 1;
+   filter: blur(0);
+   transform: translateY(0);
+}
