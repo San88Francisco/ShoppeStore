@@ -1,122 +1,84 @@
 <section class="checkout__pages">
-  <!-- action="http://localhost:3000/order-confirmation.html" -->
-  <form class="checkout__container" name="checkout__container">
-    <div class="checkout__block-name">
-      <h2>Billing Details</h2>
+   <!-- action="http://localhost:3000/order-confirmation.html" -->
+   <form class="checkout__container" name="checkout__container">
+      <div class="checkout__block-name">
+         <h2>Billing Details</h2>
 
-      <div class="checkout__name-info">
-        <div class="checkout__name">
-          <div class="order__form-info">
-            <input
-              class="order__field input__first-name"
-              type="text"
-              placeholder="First name *"
-              data-reg="^[a-zA-Z]{2,}$"
-            />
-            <label class="order__error-name">Please enter name</label>
-          </div>
-          <div class="order__form-info">
-            <input
-              class="order__field input__last-name"
-              type="text"
-              placeholder="last name *"
-              data-reg="^[a-zA-Z]{2,}$"
-            />
-            <label class="order__error-lastName">Введіть призвище</label>
-          </div>
-        </div>
-        <div class="order__form-info">
-          <input
-            class="order__field input__country"
-            type="text"
-            placeholder="Country *"
-            data-reg="^[a-zA-Z]{2,}$"
-          />
-          <label class="order__error-country">Введіть країну</label>
-        </div>
-        <div class="order__form-info">
-          <input
-            class="order__field input__city"
-            type="text"
-            placeholder="Town / City *"
-            data-reg="^[a-zA-Z]{2,}$"
-          />
-          <label class="order__error-city">Введіть місто</label>
-        </div>
-        <div class="order__form-info">
-          <input
-            class="order__field input__street-address"
-            type="text"
-            placeholder="Street Address *"
-            data-reg="^[a-zA-Z]{2,}$"
-          />
-          <label class="order__error-address">Введіть адресу</label>
-        </div>
-        <div class="order__form-info">
-          <input
-            class="order__field input__postcode"
-            type="number"
-            placeholder="Postcode / ZIP *"
-            data-reg="^\d{5}$"
-          />
-          <label class="order__error-zip">Введіть індекс</label>
-        </div>
-        <div class="order__form-info">
-          <input
-            class="order__field input__phone"
-            type="number"
-            placeholder="Phone *"
-            data-reg="^38\d{10}$"
-          />
-          <label class="order__error-phone">Введіть номер телефону</label>
-        </div>
-        <div class="order__form-info">
-          <input
-            class="order__field input__email"
-            type="email"
-            placeholder="Email *"
-            data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
-          />
-          <label class="order__error-email">Введіть email</label>
-        </div>
+         <div class="checkout__name-info">
+            <div class="checkout__name">
+               <div class="order__form-info">
+                  <input class="order__field input__first-name" type="text" placeholder="First name *"
+                     data-reg="^[a-zA-Z]{2,}$" />
+                  <label class="order__error-name">Please enter name</label>
+               </div>
+               <div class="order__form-info">
+                  <input class="order__field input__last-name" type="text" placeholder="last name *"
+                     data-reg="^[a-zA-Z]{2,}$" />
+                  <label class="order__error-lastName">Enter your last name</label>
+               </div>
+            </div>
+            <div class="order__form-info">
+               <input class="order__field input__country" type="text" placeholder="Country *"
+                  data-reg="^[a-zA-Z]{2,}$" />
+               <label class="order__error-country">Please enter a country</label>
+            </div>
+            <div class="order__form-info">
+               <input class="order__field input__city" type="text" placeholder="Town / City *"
+                  data-reg="^[a-zA-Z]{2,}$" />
+               <label class="order__error-city">Please enter the city</label>
+            </div>
+            <div class="order__form-info">
+               <input class="order__field input__street-address" type="text" placeholder="Street Address *"
+                  data-reg="^[a-zA-Z]{2,}$" />
+               <label class="order__error-address">Please enter an address</label>
+            </div>
+            <div class="order__form-info">
+               <input class="order__field input__postcode" type="tel" placeholder="Postcode / ZIP *" />
+               <label class="order__error-zip">Incorrect index, please enter an index</label>
+            </div>
+            <div class="order__form-info">
+               <input class="order__field input__phone" type="tel" placeholder="Phone *" data-reg="^38\d{10}$" />
+               <label class="order__error-phone">Incorrect phone number, please enter a phone number</label>
+            </div>
+            <div class="order__form-info">
+               <input class="order__field input__email" type="email" placeholder="Email *"
+                  data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" />
+               <label class="order__error-email">Incorrect email, please enter email</label>
+            </div>
 
-        <div class="checkout__checkbox-create">
-          <div class="">
-            <input type="checkbox" name="" class="checkboxAcount" />
-            <label for="myCheckbox">
-              <span></span>
-              Create an acoount?
-              <ins><i>Create an acoount?</i></ins>
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" name="" class="checkboxAddress" />
-            <label for="myCheckbox">
-              <span></span>
-              Ship to a different address?
-              <ins><i>Ship to a different address?</i></ins>
-            </label>
-          </div>
-        </div>
-        <input
-          class="input__order-notes"
-          type="text"
-          placeholder="Order notes"
-        />
+            <div class="checkout__checkbox-create">
+               <div class="">
+                  <input type="checkbox" name="" class="checkboxAcount" />
+                  <label for="myCheckbox">
+                     <span></span>
+                     Create an acoount?
+                     <ins><i>Create an acoount?</i></ins>
+                  </label>
+               </div>
+               <div>
+                  <input type="checkbox" name="" class="checkboxAddress" />
+                  <label for="myCheckbox">
+                     <span></span>
+                     Ship to a different address?
+                     <ins><i>Ship to a different address?</i></ins>
+                  </label>
+               </div>
+            </div>
+            <input class="input__order-notes" type="text" placeholder="Order notes" />
+         </div>
       </div>
-    </div>
 
-    <div class="checkout__block-order">
-      <h2>Your Order</h2>
+      <div class="checkout__block-order">
+         <h2>Your Order</h2>
 
-      <div class="checkout__order-info">
-        <div class="block__order">
-          <div class="block__order-title">
-            <span>PRODUCT</span>
-            <span>TOTAL</span>
-          </div>
-          <div class="block__order-item">
-            <!-- <div>
+         <div class="checkout__order-info">
+            <div class="block__order">
+               <div class="block__order-title">
+                  <span>PRODUCT</span>
+                  <span>TOTAL</span>
+               </div>
+               <div class="block__order-item">
+                  <!-- <div>
               <span>Lira Earrings</span>
               <span> 1pc. / $64</span>
             </div>
@@ -128,96 +90,68 @@
                 <span>Kaede Hair Pin</span>
                 <span>$10</span>
             </div> -->
-          </div>
-          <div class="order__block-subtotal">
-            <span>SUBTOTAL</span>
-            <span class="order__subtotal"></span>
-          </div>
-          <div class="order__block-shipping">
-            <span>SHIPPING</span>
-            <span class="order__shipping"></span>
-          </div>
-          <div class="order__block-total">
-            <span>TOTAL</span>
-            <span class="order__total"></span>
-          </div>
-        </div>
+               </div>
+               <div class="order__block-subtotal">
+                  <span>SUBTOTAL</span>
+                  <span class="order__subtotal"></span>
+               </div>
+               <div class="order__block-shipping">
+                  <span>SHIPPING</span>
+                  <span class="order__shipping"></span>
+               </div>
+               <div class="order__block-total">
+                  <span>TOTAL</span>
+                  <span class="order__total"></span>
+               </div>
+            </div>
 
-        <div class="checkout__checkbox-payment">
-          <div class="radio__block">
-            <input
-              type="radio"
-              class="input__payment"
-              id="radioBankTransfer"
-              name="payment"
-              value="Direct bank transfer"
-              checked
-            />
-            <label class="radio__label" for="radioBankTransfer"
-              >Direct bank transfer</label
-            >
-            <p class="nuances__payment nuances__1">
-              Make your payment directly into our bank account. Please use your
-              Order ID as the payment reference. Your order will not be shipped
-              until the funds have cleared in our account
-            </p>
-          </div>
+            <div class="checkout__checkbox-payment">
+               <div class="radio__block">
+                  <input type="radio" class="input__payment" id="radioBankTransfer" name="payment"
+                     value="Direct bank transfer" checked />
+                  <label class="radio__label" for="radioBankTransfer">Direct bank transfer</label>
+                  <p class="nuances__payment nuances__1">
+                     Make your payment directly into our bank account. Please use your
+                     Order ID as the payment reference. Your order will not be shipped
+                     until the funds have cleared in our account
+                  </p>
+               </div>
 
-          <div class="radio__block">
-            <input
-              type="radio"
-              class="input__payment"
-              id="radioCheck"
-              name="payment"
-              value="Check payments"
-            />
-            <label class="radio__label" for="radioCheck">Check payments</label>
-            <p class="nuances__payment nuances__2">
-              Check payments dolor ipsum sit amet consectetur adipisicing elit.
-              Hic culpa sunt reiciendis aliquid amet quod iste! Sint velit
-              quaerat cum?
-            </p>
-          </div>
+               <div class="radio__block">
+                  <input type="radio" class="input__payment" id="radioCheck" name="payment" value="Check payments" />
+                  <label class="radio__label" for="radioCheck">Check payments</label>
+                  <p class="nuances__payment nuances__2">
+                     Check payments dolor ipsum sit amet consectetur adipisicing elit.
+                     Hic culpa sunt reiciendis aliquid amet quod iste! Sint velit
+                     quaerat cum?
+                  </p>
+               </div>
 
-          <div class="radio__block">
-            <input
-              type="radio"
-              class="input__payment"
-              id="radioDelivery"
-              name="payment"
-              value="Cash on delivery"
-            />
-            <label class="radio__label" for="radioDelivery"
-              >Cash on delivery</label
-            >
-            <p class="nuances__payment nuances__3">
-              Cash on delivery, ipsum sit amet consectetur adipisicing elit.
-              Pariatur, eaque. Minus, aut harum. At voluptatum reiciendis ullam
-              recusandae?
-            </p>
-          </div>
+               <div class="radio__block">
+                  <input type="radio" class="input__payment" id="radioDelivery" name="payment"
+                     value="Cash on delivery" />
+                  <label class="radio__label" for="radioDelivery">Cash on delivery</label>
+                  <p class="nuances__payment nuances__3">
+                     Cash on delivery, ipsum sit amet consectetur adipisicing elit.
+                     Pariatur, eaque. Minus, aut harum. At voluptatum reiciendis ullam
+                     recusandae?
+                  </p>
+               </div>
 
-          <div class="radio__block">
-            <input
-              type="radio"
-              class="input__payment"
-              id="radioPaypal"
-              name="payment"
-              value="PayPal"
-            />
-            <label class="radio__label label__paypal" for="radioPaypal"
-              >PayPal
-              <!-- <img src="../../../assets/img/svg/paypal.svg" alt="paypal img"> -->
-            </label>
-            <p class="nuances__payment nuances__4">
-              PayPal consectetur ipsum dolor sit Lorem adipisicing elit.
-              Consequatur dolor ipsam illo, sit dolores quis?
-            </p>
-          </div>
-        </div>
+               <div class="radio__block">
+                  <input type="radio" class="input__payment" id="radioPaypal" name="payment" value="PayPal" />
+                  <label class="radio__label label__paypal" for="radioPaypal">PayPal
+                     <!-- <img src="../../../assets/img/svg/paypal.svg" alt="paypal img"> -->
+                  </label>
+                  <p class="nuances__payment nuances__4">
+                     PayPal consectetur ipsum dolor sit Lorem adipisicing elit.
+                     Consequatur dolor ipsam illo, sit dolores quis?
+                  </p>
+               </div>
+            </div>
 
-        <button type="submit" class="btn__place-order">PLACE ORDER</button>
+            <button type="submit" class="btn__place-order">PLACE ORDER</button>
+         </div>
       </div>
-    </div>
-  </form>
+   </form>
 </section>
