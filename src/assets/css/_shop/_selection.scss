@@ -384,6 +384,53 @@
             min-height: 48px;
          }
       }
+      .conteiner-items{
+         .shop-latest-container{
+            .navigation-bar{
+               margin-top: 100px;
+               display: flex;
+               justify-content: center;
+               .cards__pages{
+                  transition: .2s all linear;
+                  cursor: pointer;
+                  border: 1px solid $gray-color;
+                  border-radius: 4px;
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin: 5px;
+                  p{
+                     font-size: 14px;
+                     line-height: 22px;
+                     color: $black-color;
+                  }
+               }
+               #pagination-info{
+                  display: flex;
+                  align-items: center;
+                  font-family: DM Sans;
+                  font-size: 14px;
+                  line-height: 22px;
+                  color: $black-color;
+               }
+               .cards__pages__arrow-back{
+                  display: none;
+                  img{
+                     transform: rotate(180deg);
+                  }
+               }
+               .act_page{
+                  transition: .2s all linear;
+                  background-color: $black-color; 
+                  p{
+                   color: $white-color;
+                  }
+               }
+            }
+         }
+      }
    }
 
    @media (max-width: 1000px) {
