@@ -54,12 +54,7 @@ export const placeOrder = (paymentMethod) => {
       date: currentDate,
    };
 
-   // Зберігаємо інофрмацію клієнта в userOrderInfo
-   localStorage.setItem('userOrderInfo', JSON.stringify(blockData));
-   // Функція запису замовлень
-   saveOrder();
-   // Функція очистки кошику !
-   clearOrderCart();
+
 
 
 
@@ -117,6 +112,12 @@ export const placeOrder = (paymentMethod) => {
          isValid = false; // Встановлюємо isValid в false, якщо є помилка
       } else {
          window.location.href = 'http://localhost:3000/order-confirmation.html';
+         // Зберігаємо інофрмацію клієнта в userOrderInfo
+         localStorage.setItem('userOrderInfo', JSON.stringify(blockData));
+         // Функція запису замовлень
+         saveOrder();
+         // Функція очистки кошику !
+         clearOrderCart();
       };
 
       if (isValid) {
