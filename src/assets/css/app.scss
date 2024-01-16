@@ -53,11 +53,11 @@ body {
    transition: filter 1s ease, transform 1s ease;
 }
 
-.Scroll_js_right.show {
-   opacity: 1;
-   filter: blur(0);
-   transform: translateX(0);
-}
+// .Scroll_js_right.show {
+//    opacity: 1;
+//    filter: blur(0);
+//    transform: translateX(0);
+// }
 
 .Scroll_js_up {
    opacity: 0;
@@ -66,8 +66,8 @@ body {
    transition: filter 1s ease, transform 1s ease;
 }
 
-.Scroll_js_up.show {
-   opacity: 1;
-   filter: blur(0);
-   transform: translateY(0);
-}
+// .Scroll_js_up.show {
+//    opacity: 1;
+//    filter: blur(0);
+//    transform: translateY(0);
+// }
