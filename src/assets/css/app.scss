@@ -49,7 +49,7 @@ body {
 .Scroll_js_right {
    opacity: 0;
    filter: blur(1px);
-   transform: translateX(-15%);
+   transform: translateX(-5%);
    transition: filter 2s ease, transform 1.4s ease;
 }
 
