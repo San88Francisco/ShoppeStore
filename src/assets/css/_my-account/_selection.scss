@@ -28,6 +28,7 @@
       display: flex;
       gap: 7.34px;
       align-items: center;
+
     }
 
     ul {
@@ -78,7 +79,7 @@
       margin-bottom: 40px;
       background-color: $black-color;
       position: relative;
-      z-index: 1;
+      z-index: -1;
     }
 
     .prev,
@@ -483,7 +484,147 @@
   }
 
   .targetOf-logout {
-    border: 1px solid $errors-color;
+    // border: 1px solid $errors-color;
+    display: flex;
+    flex-direction: column;
+
+    .targetOf__my-profile {
+      width: 100%;
+
+      .my__profile-info {
+        // border: 1px solid rgb(39, 83, 177);
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        // border-bottom: 1px solid $placeholder-color;
+        padding: 10px;
+        margin-bottom: 50px;
+
+        hr {
+          background: $placeholder-color;
+          width: 1px;
+          height: 200px;
+          // border: 1px solid $placeholder-color;
+        }
+
+        .my__profile-avatar {
+          max-width: 250px;
+          width: 100%;
+          // box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
+          padding: 5px;
+
+          img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .my__profile-user {
+          // border: 1px solid green;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          width: 100%;
+          grid-column-gap: 25px;
+          padding: 0px 10px;
+
+          li {
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            // box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
+            padding: 5px 10px;
+
+            span {
+              color: $placeholder-color;
+
+              &:nth-child(2) {
+                // width: 150px;
+                color: $black-color;
+                font-size: 18px;
+                font-weight: 500;
+                padding-bottom: 5px;
+                border-bottom: 0.5px solid $placeholder-color;
+              }
+            }
+          }
+
+          .user__first-name {
+          }
+          .user__last-name {
+          }
+          .user__email-name {
+          }
+          .user__display-name {
+          }
+          .user__date-creation {
+          }
+        }
+      }
+    }
+
+    .my__profile-address {
+      // margin: 0 auto;
+      margin-bottom: 40px;
+      width: 50%;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .profile__address-btn {
+          width: 150px;
+        }
+      }
+
+      ul {
+        li {
+          border-bottom: 1px solid $gray-color;
+          padding: 10px 0px;
+          width: 100%;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 22px;
+          color: $placeholder-color;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .user__editing-btn {
+      // border: 1px solid red;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn__profile {
+      width: 100%;
+      background-color: $white-color;
+      border: 1px solid $black-color;
+      border-radius: 4px;
+      color: $black-color;
+      font-family: DM Sans;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px 15px;
+      transition: 0.2s all linear;
+
+      &:hover {
+        transition: 0.2s all linear;
+        background-color: $black-color;
+        border: 1px solid $black-color;
+        color: $white-color;
+      }
+    }
   }
 
   @media (max-width: 1023.98px) {
