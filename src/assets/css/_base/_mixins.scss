@@ -138,31 +138,31 @@
 
 
 // Анімація випадачих блоків
-// @mixin animatedHideShow {
-//    max-height: 0;
-//    opacity: 0;
-//    visibility: hidden;
-//    pointer-events: none;
+@mixin animatedHideShow {
+   max-height: 0;
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
 
-//    transition: all 0.7s ease-in-out, ;
+   transition: all 0.7s ease-in-out, ;
 
-//    &.active-filter-shop {
-//       max-height: 500px;
-//       animation: animationDropWindow 0.7s ease-out;
-//       opacity: 1;
-//       visibility: visible;
-//       pointer-events: auto;
-//    }
-// }
+   &.active-filter-shop {
+      max-height: 500px;
+      animation: animationDropWindow 0.7s ease-out;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+   }
+}
 
-// @keyframes animationDropWindow {
-//    from {
-//       transform: translateY(-20px);
-//       opacity: 0;
-//    }
+@keyframes animationDropWindow {
+   from {
+      transform: translateY(-20px);
+      opacity: 0;
+   }
 
-//    to {
-//       transform: translateY(0);
-//       opacity: 1;
-//    }
-// }
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
