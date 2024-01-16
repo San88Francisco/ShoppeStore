@@ -220,18 +220,21 @@
           <div class="bill-registr">
             <form action="post">
               <div class="bill-user-name">
-                <input type="text" placeholder="First name *" />
                 <input
-                  class="bill-user-name_del"
+                  class="address__first-name"
                   type="text"
-                  placeholder="last name *"
+                  placeholder="First name *"
+                />
+                <input
+                  class="address__last-name bill-user-name_del"
+                  type="text"
+                  placeholder="Last name *"
                 />
               </div>
-              <input type="text" placeholder="Company Name" />
 
-              <div class="selectYourCountry selectYourItem">
+              <!-- <div class="selectYourCountry selectYourItem">
                 <p>Country *</p>
-                <input type="checkbox" id="selectYourCountry" class="input" />
+                <input class="" type="checkbox" id="selectYourCountry" class="input" />
                 <label for="selectYourCountry"></label>
                 <ul class="optionCountry optionItem">
                   <li class="optionItemElement">Ukraine</li>
@@ -239,15 +242,32 @@
                   <li class="optionItemElement">UK</li>
                   <li class="optionItemElement">USA</li>
                 </ul>
-              </div>
+              </div> -->
 
-              <input type="text" placeholder="Street Address *" />
-              <input type="text" placeholder="Postcode / ZIP *" />
-              <input type="text" placeholder="Town / City *" />
-              <input type="text" placeholder="Phone *" />
-              <input type="text" placeholder="Email *" />
+              <input
+                class="address__country"
+                type="text"
+                placeholder="Country *"
+              />
+              <input
+                class="address__street"
+                type="text"
+                placeholder="Street Address *"
+              />
+              <input
+                class="address__postcode"
+                type="text"
+                placeholder="Postcode / ZIP *"
+              />
+              <input
+                class="address__city"
+                type="text"
+                placeholder="Town / City *"
+              />
+              <input class="address__phone" type="text" placeholder="Phone *" />
+              <input class="address__email" type="text" placeholder="Email *" />
             </form>
-            <button type="submit" class="btn__black">
+            <button type="submit" class="btn__address-edit btn__black">
               <span>SAVE CHANGES</span>
             </button>
           </div>
@@ -323,7 +343,7 @@
             </li>
             <li class="">
               <span>Phone :</span>
-              <span class="user__mobile">+380961234455</span>
+              <span class="user__phone">+380961234455</span>
             </li>
           </ul>
         </div>
@@ -348,7 +368,7 @@
         </ul>
       </div>
       <div class="user__editing-btn">
-        <button class="profile__edit-btn btn__profile">Edit address</button>
+        <button class="profile__edit-btn btn__profile">Edit profile</button>
         <button class="profile__delete-btn btn__profile">Delete profile</button>
       </div>
     </div>

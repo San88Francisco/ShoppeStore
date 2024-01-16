@@ -500,7 +500,7 @@
         gap: 20px;
         // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         // border-bottom: 1px solid $placeholder-color;
-        padding: 10px;
+        // padding: 10px;
         margin-bottom: 50px;
 
         hr {
@@ -553,17 +553,6 @@
               }
             }
           }
-
-          .user__first-name {
-          }
-          .user__last-name {
-          }
-          .user__email-name {
-          }
-          .user__display-name {
-          }
-          .user__date-creation {
-          }
         }
       }
     }
@@ -572,6 +561,7 @@
       // margin: 0 auto;
       margin-bottom: 40px;
       width: 50%;
+      padding: 15px;
 
       div {
         display: flex;

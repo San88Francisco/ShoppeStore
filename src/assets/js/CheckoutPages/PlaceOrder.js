@@ -14,6 +14,15 @@ export const placeOrder = (paymentMethod) => {
   const inputEmail = document.querySelector('.input__email').value;
   const inputOrderNotes = document.querySelector('.input__order-notes').value;
 
+  const userInfo = JSON.parse(localStorage.getItem('userOrderInfo')) || false;
+  console.log("userInfo:", userInfo)
+
+
+  if (userInfo) {
+    console.log('userInfo',userInfo);
+  }
+
+
   const date = new Date();
   const currentDate = date.toLocaleDateString('en-US', {
     month: 'long',

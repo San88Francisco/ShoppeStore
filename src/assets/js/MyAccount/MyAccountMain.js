@@ -33,7 +33,6 @@ if (window.location.pathname.includes('/my-account')) {
             .match(/\baddClass-\w+\b/g)
             .join(' ');
           const eventClickIndex = eventClickName.split('addClass-').join('');
-          //  console.log(itemTarget);
           targetGroup.forEach(
             (targetItem) => (targetItem.style.display = 'none')
           );
@@ -42,6 +41,7 @@ if (window.location.pathname.includes('/my-account')) {
           );
           itemTarget.forEach((item) => (item.style.display = 'flex'));
           item.classList.add(eventClickIndex);
+          // console.log(' eventClickIndex:', eventClickIndex);
         });
       });
     }
