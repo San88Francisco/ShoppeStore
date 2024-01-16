@@ -139,10 +139,61 @@ const renderPage = (page, contents) => {
   discount();
 };
 
-const renderPaginationInfo = (page, totalPages) => {
-  const paginationInfo = document.getElementById("pagination-info");
-  paginationInfo.textContent = `Page ${page} of ${totalPages}`;
-};
+
+const generateBtn = (countBlock) => {
+  for(let i = 1; i <= countBlock; i++){
+    const lastPageBtn = document.querySelector('.lastPageBtn')
+    const div = document.createElement('div')
+    const p = document.createElement('p')
+    div.classList.add(`cards__pages`)
+    div.setAttribute('data-index-Of-Btn',i)
+    i === 1 ? div.classList.add('act_page') : 0
+    p.textContent = i
+    lastPageBtn.insertAdjacentElement('beforebegin',div)
+    div.insertAdjacentElement('afterbegin',p)
+  }
+}
+
+const clickToInotherPage = (contents,totalPages) => {
+  const cardsPages = document.querySelectorAll('.cards__pages')
+  cardsPages.forEach(item => {
+    item.addEventListener('click', ()=> {
+      const indexOfBtn = item.getAttribute('data-index-Of-Btn')
+      const actPage = document.querySelector('.act_page')
+      const nuberOfNowPage = parseFloat(actPage.getAttribute('data-index-Of-Btn'))
+      const nextActPage = parseFloat(item.getAttribute('data-index-Of-Btn'))
+      const arrowBack = document.querySelector('.cards__pages__arrow-back')
+      if(indexOfBtn !== 'tab-btn'){
+        renderPage(indexOfBtn, contents);
+        document.querySelector('.act_page').classList.remove('act_page')
+        item.classList.add('act_page')
+        nextActPage !== 1 ? arrowBack.style.display = 'flex' : arrowBack.style.display = 'none'
+      }else{
+        const tabTo = item.getAttribute('data-tab-to')
+        if(tabTo === 'forward'){
+          if(nuberOfNowPage !== totalPages){
+            renderPage(nuberOfNowPage + 1, contents);
+            const nextElememt = document.querySelector(`[data-index-Of-Btn="${nuberOfNowPage + 1}"]`)
+            nextElememt.classList.add('act_page')
+            arrowBack.style.display = 'flex'
+          }else{
+            renderPage(1, contents)
+            const nextElememt = document.querySelector(`[data-index-Of-Btn="1"]`)
+            nextElememt.classList.add('act_page')
+            arrowBack.style.display = 'none'
+          }
+          actPage.classList.remove('act_page')
+        }else{
+          renderPage(nuberOfNowPage - 1, contents);
+          actPage.classList.remove('act_page')
+          const nextElememt = document.querySelector(`[data-index-Of-Btn="${nuberOfNowPage - 1}"]`)
+          nextElememt.classList.add('act_page')
+          nuberOfNowPage - 1 !== 1 ? arrowBack.style.display = 'flex' : arrowBack.style.display = 'none'
+        }
+      }
+    })
+  })
+}
 
 const renderProducts = async () => {
   const item = JSON.parse(localStorage.getItem("allProduct"));
@@ -151,26 +202,9 @@ const renderProducts = async () => {
   if (contents) {
     const totalPages = Math.ceil(contents.length / itemsPerPage);
     renderPage(currentPage, contents);
-    renderPaginationInfo(currentPage, totalPages);
-
-    const nextPageButton = document.getElementById("next-page");
-    nextPageButton.addEventListener("click", () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderPage(currentPage, contents);
-        renderPaginationInfo(currentPage, totalPages);
-      }
-    });
-
-    const prevPageButton = document.getElementById("prev-page");
-    prevPageButton.addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderPage(currentPage, contents);
-        renderPaginationInfo(currentPage, totalPages);
-      }
-    });
+    generateBtn(totalPages)
+    clickToInotherPage(contents,totalPages)
   }
-};
+}
 
 renderProducts();

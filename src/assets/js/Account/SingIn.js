@@ -487,10 +487,6 @@ if (window.location.pathname.includes("/account")) {
             errorWindow.style.display = "flex";
             headerLine.style.borderBottom = "solid 1.5px #D82700";
 
-            setTimeout(()=> {
-              errorWindow.style.display = 'none'
-            },4000)
-
             if (invalidLoginAttempts == 2) {
               const Atempts = document.querySelector(".window__link");
               Atempts.innerHTML = "1 attempts left";
@@ -500,13 +496,11 @@ if (window.location.pathname.includes("/account")) {
               const headerLine = document.querySelector("header");
 
               Atempts.innerHTML = "no more attempts";
-              setTimeout(() => {
+              setTimeout(function () {
                 errorWindow.style.opacity = "0";
                 headerLine.style.borderBottom =
                   "solid 1.5px rgb(216, 216, 216)";
-                  console.log('d');
               });
-
               setTimeout(function () {
                 window.location.href =
                   "http://localhost:3000/reset-password.html"; // Перенаправлення на сторінку відновлення паролю
