@@ -1,6 +1,5 @@
 export const downloadView = () => {
   const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
-  // console.log('orderVievItem:', orderVievItem);
 
   // Наш основний блок Orders
   const targetOfDownloads = document.querySelector('.targetOf-downloads');
@@ -16,7 +15,6 @@ export const downloadView = () => {
   );
 
   if (orderVievItem.length >= 1) {
-    // console.log('Працює 1');
     const html = `
             <tr>
               <td>ORDER NUMBER</td>
@@ -28,7 +26,6 @@ export const downloadView = () => {
             `;
     accountDownloadsThead.insertAdjacentHTML('beforeend', html);
   } else {
-    // console.log('Працює 2');
     targetOfDownloads.innerHTML = `
             <div class="alert-not-address">
               <p>No downloads available yet.</p>

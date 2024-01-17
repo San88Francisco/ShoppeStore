@@ -759,6 +759,12 @@
          padding: 0px clamp(5px,4vw,25px);
          display: flex;
          flex-direction: column;
+         &:nth-child(1){
+            padding-left: 0px;
+         }
+         &:last-child{
+            padding-right: 0px;
+         }
          .shop-latest__img {
             position: relative;
             img {
@@ -777,7 +783,7 @@
                min-width: 100%;
                position: absolute;
                bottom: 4px;
-               padding: 0 30px 0 30px;
+               padding: 10px 30px;
                transition: all 0.4s ease;
    
                display: flex;

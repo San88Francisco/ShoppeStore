@@ -38,7 +38,6 @@ const addaptiveTabMenu = () => {
          contentFolder.innerHTML = folderContent.innerHTML
          contentFolder.style.display = 'block'
          numberOfContent === '3' ? contentFolder.children[0].style.display = 'grid' : 0
-         console.log(contentFolder);
       })
    })
 }

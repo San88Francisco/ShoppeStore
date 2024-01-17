@@ -1,5 +1,4 @@
 export const myProfile = () => {
-  //   console.log('good');
   //   user__first - name;
   //   user__last - name;
   //   user__email - name;

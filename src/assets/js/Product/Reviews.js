@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
       if(localStorage.getItem(document.querySelector('.product--overview__view').children[0].textContent) !== null){
          const reviews = document.querySelector('.reviews')
          reviews.innerHTML = localStorage.getItem(document.querySelector('.product--overview__view').children[0].textContent)
-         console.log(reviewsAmountADD);
          document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
          document.querySelectorAll('.amount-reviews2').forEach(item => {
             item.innerHTML = document.querySelector('.reviews').children.length / 2
