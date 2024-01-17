@@ -740,55 +740,74 @@
          font-weight: 400;
          line-height: 35px;
       }
-
-      .product-latest-blocks {
+      .product-latest-blocks{
          display: flex;
-         gap: 54px;
-         font-family: DM Sans;
-
-         .shop-latest__block {
-            .shop-latest__img {
-               position: relative;
-
-               img {
-                  width: clamp(220px, 29vw, 380px);
-                  height: auto;
-                  border-radius: 10px;
-               }
-
-               .shop-latest_hover {
-                  opacity: 0;
-                  background-color: $white-color-rgba;
-                  min-height: 48px;
-                  min-width: 100%;
-                  position: absolute;
-                  bottom: 4px;
-                  padding: 0 30px 0 30px;
-                  transition: all 0.4s ease;
-
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-               }
-
-               &:hover .shop-latest_hover {
+         overflow-x: scroll;
+         &::-webkit-scrollbar,
+         &::-webkit-scrollbar-button,
+         &::-webkit-scrollbar-thumb,
+         &::-webkit-scrollbar-track{
+            display: none;
+         }
+         .shop-latest__block{
+            .shop-latest__name{
+               margin: clamp(10px,1vw,25px) 0px clamp(5px,1vw,15px) 0px;
+            }
+         }
+      }
+      .shop-latest__block {
+         padding: 0px clamp(5px,4vw,25px);
+         display: flex;
+         flex-direction: column;
+         &:nth-child(1){
+            padding-left: 0px;
+         }
+         &:last-child{
+            padding-right: 0px;
+         }
+         .shop-latest__img {
+            position: relative;
+            img {
+               width: clamp(250px,32vw,365px);
+               height: auto;
+               border-radius: 10px;
+            }
+   
+            .productVariant {
+               display: none;
+            }
+   
+            .shop-latest_hover {
+               opacity: 0;
+               background-color: $white-color-rgba;
+               min-width: 100%;
+               position: absolute;
+               bottom: 4px;
+               padding: 10px 30px;
+               transition: all 0.4s ease;
+   
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+   
+               &:hover {
                   opacity: 1;
                }
-
-               .shop-latest__heart {
-                  width: 1.5em;
-                  cursor: pointer;
-               }
             }
-
+   
+            .shop-latest__heart {
+               width: 24px;
+               height: 24px;
+               cursor: pointer;
+            }
+   
             .shop-latest_hover_container {
                display: flex;
                justify-content: space-between;
                align-items: center;
-               min-height: 70px;
                min-width: 100%;
-               transition: all $transition-time ease;
-
+               transition: all 0.3s ease;
+   
                p {
                   font-size: 16px;
                   font-style: normal;
@@ -796,30 +815,93 @@
                   line-height: normal;
                   text-transform: uppercase;
                }
-
+   
                a {
                   border: none;
                }
             }
-
-            .shop-latest__name {
-               margin: 24px 0 16px 0;
-
-               font-size: 20px;
-               font-weight: 400;
-               line-height: 26px;
-               letter-spacing: 0em;
+   
+            .add-new,
+            .add-discount,
+            .category,
+            .add-sold {
+               text-align: center;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               width: 63px;
+               height: 24px;
+               border-radius: 4px;
+               font-family: DM Sans;
+               font-size: 13px;
+               font-style: normal;
+               font-weight: 500;
+               line-height: 20px;
+   
+               top: 16px;
+               left: 16px;
+               cursor: pointer;
+            }
+   
+            .label-container {
+               display: flex;
+               flex-wrap: wrap;
+               position: absolute;
+               top: 16px;
+               left: 16px;
+   
+               div {
+                  &:first-child {
+                     margin-right: 10px;
+                  }
+               }
+            }
+   
+            // Class for "Sold" label
+            .add-sold {
+               color: $white-color;
+               background-color: $accent-color;
+            }
+   
+            // Class for "-%price%" label
+            .add-discount,
+            .add-popular {
+               color: $white-color;
+               background-color: $accent-color;
+            }
+   
+            // Class for "category" label
+            .add-earrings,
+            .add-brooch,
+            .add-bracelets,
+            .add-pendants {
+               background-color: $black-color;
+               color: $white-color;
+            }
+   
+            // Class for "New" label
+            .add-new {
+               background-color: $white-color;
                color: $black-color;
             }
 
-            .shop-latest__price {
-               font-size: 20px;
-               font-weight: 500;
-               line-height: 26px;
-               letter-spacing: 0em;
 
-               color: $accent-color;
-            }
+         }
+   
+         .shop-latest_hover_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 45px;
+            min-width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+         }
+   
+         .price-discount {
+            margin-right: 16px;
+            color: $errors-color;
+            text-decoration: line-through 1px;
          }
       }
    }

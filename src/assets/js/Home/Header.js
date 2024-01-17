@@ -50,8 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const hrefPags = location.href;
   const menuLinks = document.querySelectorAll('.decstop-nav li');
 
-  console.log('✌️hrefPags --->', hrefPags);
-
   const header = document.querySelector('header');
 
   // Об'єкт для визначення відповідних індексів елементів меню

@@ -317,7 +317,6 @@ if (window.location.pathname.includes("/account")) {
           }
           return;
         }
-        console.log(this);
         localStorage.setItem(this.emailInput, JSON.stringify(this));
         const registerWindow = document.getElementById("registerWindow");
         const headerLine = document.querySelector("header");
@@ -357,7 +356,6 @@ if (window.location.pathname.includes("/account")) {
       const selectHeaderText = form
         .querySelector(".select-header")
         .textContent.trim();
-      console.log(selectHeaderText);
 
       const user = new User(
         nameInput,
@@ -461,7 +459,6 @@ if (window.location.pathname.includes("/account")) {
         // Перевірка наявності користувача та інші операції
         if (userData) {
           user = JSON.parse(userData);
-          console.log("✌️user --->", user);
 
           if (user.passwordInput === loginPass) {
             //alert("You are signed in");

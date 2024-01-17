@@ -28,19 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     this.classList.toggle("active");
     menuItems.classList.toggle("active");
    
-    
-   
 
-    if (menuItems.classList.contains("active")) {
-      body.style.overflowY = "hidden";
-      menuItems.style.display = "flex"
-    } else {
-      body.style.overflowY = "auto";
-      setTimeout(function () {
-        menuItems.style.display = "none"
-      }, 700);
     
-    }
+  
 
     burgerItems.forEach((item) => {
       item.classList.toggle("active");

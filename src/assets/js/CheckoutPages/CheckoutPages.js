@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
                   // Якщо вибраний чекбокс відповідає вибраному index, тоді задаємо цю логіку
                   nuancesPayment[index].style.display = 'block';
                   paymentMethod = radioInput.value;
-                  // console.log('paymentMethod:', paymentMethod);
                   break;
                default:
                   break;

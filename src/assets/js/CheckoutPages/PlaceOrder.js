@@ -63,7 +63,6 @@ export const placeOrder = (paymentMethod) => {
       const latinLettersRegex = /^[a-zA-Z]+$/;
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       let isValid = true;
-      console.log(isValid);
 
       if (
          !latinLettersRegex.test(inputFirstName) ||
@@ -78,7 +77,6 @@ export const placeOrder = (paymentMethod) => {
          if (!latinLettersRegex.test(inputFirstName)) {
             const errorName = document.querySelector('.order__error-name');
             errorName.style.opacity = '1';
-            console.log(isValid);
          }
          if (!latinLettersRegex.test(inputLastName)) {
             const errorNameLast = document.querySelector('.order__error-lastName');
@@ -122,7 +120,6 @@ export const placeOrder = (paymentMethod) => {
 
       if (isValid) {
          // Всі перевірки пройшли без помилок
-         console.log('work');
       }
    }
 

@@ -940,6 +940,30 @@
       }
       
     }
+    .empty__cart {
+      
+      h2 {
+        text-align: center; 
+        font-size: 18px;
+      }
+  
+      a {
+        width: 138px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 8px;
+        font-size: 12px;
+      }
+  
+      div {
+        max-width: 60px;
+        height: 60px;
+  
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 

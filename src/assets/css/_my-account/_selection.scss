@@ -193,7 +193,6 @@
 
           .td__action-link {
             div {
-              // border: 1px solid red;
               display: flex;
               justify-content: space-between;
               align-items: center;
@@ -441,7 +440,6 @@
       font-size: 33px;
       font-weight: 500;
       line-height: 130.30303%;
-      /* 43/33 */
       text-align: center;
       padding-bottom: 65px;
     }
@@ -484,7 +482,6 @@
   }
 
   .targetOf-logout {
-    // border: 1px solid $errors-color;
     display: flex;
     flex-direction: column;
 
@@ -492,15 +489,12 @@
       width: 100%;
 
       .my__profile-info {
-        // border: 1px solid rgb(39, 83, 177);
         position: relative;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
-        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        // border-bottom: 1px solid $placeholder-color;
         padding: 10px;
         margin-bottom: 50px;
 
@@ -508,13 +502,12 @@
           background: $placeholder-color;
           width: 1px;
           height: 200px;
-          // border: 1px solid $placeholder-color;
         }
 
         .my__profile-avatar {
           max-width: 250px;
           width: 100%;
-          // box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
+       
           padding: 5px;
 
           img {
@@ -526,7 +519,6 @@
         }
 
         .my__profile-user {
-          // border: 1px solid green;
           display: grid;
           grid-template-columns: 1fr 1fr;
           width: 100%;
@@ -534,18 +526,15 @@
           padding: 0px 10px;
 
           li {
-            // border: 1px solid red;
             display: flex;
             flex-direction: column;
             font-size: 14px;
-            // box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
             padding: 5px 10px;
 
             span {
               color: $placeholder-color;
 
               &:nth-child(2) {
-                // width: 150px;
                 color: $black-color;
                 font-size: 18px;
                 font-weight: 500;
@@ -554,23 +543,11 @@
               }
             }
           }
-
-          .user__first-name {
-          }
-          .user__last-name {
-          }
-          .user__email-name {
-          }
-          .user__display-name {
-          }
-          .user__date-creation {
-          }
         }
       }
     }
 
     .my__profile-address {
-      // margin: 0 auto;
       margin-bottom: 40px;
       width: 50%;
 
@@ -599,7 +576,6 @@
     }
 
     .user__editing-btn {
-      // border: 1px solid red;
       width: 50%;
       display: flex;
       justify-content: center;
@@ -626,12 +602,43 @@
       }
     }
   }
+.mobile {
+display: flex;
+justify-content: space-between;
+  padding-bottom: 39px;
+  border-bottom: 1px solid $gray-color;
+   &__title-text, &__value-text {
+      &:not(:last-child) {
+         margin-bottom: 24px;
+      }
+      font-family: DM Sans;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 166.666667%; 
+   }
+   &__title-text {
+      color: $black-color;
+     
+   }
+   &__value-text {
+      text-align: right;
+     color: $placeholder-color;
+     &:last-child {
+      color: $accent-color;
+      & .value-border {
+         padding-right: 12px;
+         margin-right: 12px;
+         border-right: 1px solid $black-color;
+      }
+   }
+   }
+   display: none;
+}
 
   @media (max-width: 1023.98px) {
     h1 {
       font-size: 27px;
       line-height: 130.30303%;
-      /* 43/33 */
       padding-bottom: 40px;
     }
 
@@ -823,7 +830,6 @@
       & h2 {
         font-size: 24px;
         line-height: 130.30303%;
-        /* 43/33 */
         padding-bottom: 35px;
         padding-top: 21px;
       }
@@ -851,13 +857,15 @@
     table {
       display: none;
     }
+    .mobile {
+     display: flex;
+   }
   }
 
   @media (max-width: 467.98px) {
     h1 {
       font-size: 20px;
       line-height: 130.30303%;
-      /* 43/33 */
       padding-bottom: 24px;
     }
 
@@ -930,7 +938,6 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 166.666667%;
-        /* 20/12 */
       }
     }
 
@@ -961,5 +968,12 @@
         }
       }
     }
+  }
+  @media (max-width: 400px){
+   .mobile {
+         &__title-text, &__value-text {
+            font-size: 12px;
+         }
+      }
   }
 }

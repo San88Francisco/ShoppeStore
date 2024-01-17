@@ -3,7 +3,6 @@ export const orderInfo = () => {
 
   // Беремо всі замовлення та їх довжину (length) і задаємо в номер замовлення. Якщо замовлень ще не було, задаємо 0 .
   const numberOrder = JSON.parse(localStorage.getItem('allOrders'));
-  console.log(' numberOrder:', numberOrder.length);
 
   document.querySelector('.order__number').textContent = numberOrder.length;
   document.querySelector('.order__email').textContent = checkoutInfo.email;

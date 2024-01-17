@@ -11,6 +11,5 @@ export const fetchData = async () => {
     return data;
   } catch (error) {
     alert(error.message);
-    console.error(error);
   }
 };

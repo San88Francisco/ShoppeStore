@@ -194,7 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
       };
 
       itemInfo.push(blockData);
-      console.log("itemInfo", itemInfo);
 
       const checkoutInfo = {
         item: itemToCheckout,

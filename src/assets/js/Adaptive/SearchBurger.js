@@ -146,9 +146,7 @@ function handleDOMContentLoaded() {
          itemsInstance.addClassInNav();
       });
 
-   } else {
-      console.log('немає Items');
-   }
+   } 
    productDisplayNone()
    listenerSearchIDa()
 
