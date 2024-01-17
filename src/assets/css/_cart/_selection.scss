@@ -612,6 +612,22 @@
       }
 
     }
+    .empty__cart {
+
+      h2 {
+        text-align: center; 
+        font-size: 20px;
+      }
+  
+      div {
+        max-width: 140px;
+        height: 140px;
+  
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 @media(max-width: 700px){
@@ -651,10 +667,6 @@
       div {
         max-width: 80px;
         height: 80px;
-  
-        img {
-          width: 100%;
-        }
       }
     }
   }
@@ -949,19 +961,12 @@
   
       a {
         width: 138px;
-        text-align: center;
-        text-transform: uppercase;
-        padding: 8px;
         font-size: 12px;
       }
   
       div {
         max-width: 60px;
         height: 60px;
-  
-        img {
-          width: 100%;
-        }
       }
     }
   }
