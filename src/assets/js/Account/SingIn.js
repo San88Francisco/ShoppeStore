@@ -1,49 +1,49 @@
 // header - Оновлює відображення посилань на акаунт в залежності від входу в систему
 export function updateAccountLinksVisibility() {
-  const userSignedIn = localStorage.getItem('userSignIn');
+  const userSignedIn = localStorage.getItem("userSignIn");
   const signInLink = document.querySelector(
     '#accountDropdown a[href="./account.html"]'
   );
   const myAccountLink = document.querySelector(
     '#accountDropdown a[href="./my-account.html"]'
   );
-  const signOutLink = document.querySelector('#accountDropdown #logout');
+  const signOutLink = document.querySelector("#accountDropdown #logout");
 
   /** Burger account logisctics */
-  const signInLinkPhone = document.getElementById('signInLink');
-  const myAccountPhone = document.getElementById('myAccountContainer');
-  const logoutPhone = document.getElementById('logoutContainer');
+  const signInLinkPhone = document.getElementById("signInLink");
+  const myAccountPhone = document.getElementById("myAccountContainer");
+  const logoutPhone = document.getElementById("logoutContainer");
 
   if (userSignedIn) {
     // Користувач увійшов в систему
-    signInLink.style.display = 'none'; // Приховати Sign In
-    myAccountLink.style.display = 'block'; // Показати My account
-    signOutLink.style.display = 'block'; // Показати Sign Out
+    signInLink.style.display = "none"; // Приховати Sign In
+    myAccountLink.style.display = "block"; // Показати My account
+    signOutLink.style.display = "block"; // Показати Sign Out
 
-    signInLinkPhone.style.display = 'none';
-    myAccountPhone.style.display = 'block';
-    logoutPhone.style.display = 'block';
+    signInLinkPhone.style.display = "none";
+    myAccountPhone.style.display = "block";
+    logoutPhone.style.display = "block";
   } else {
     // Користувач не увійшов в систему
-    signInLink.style.display = 'block'; // Показати Sign In
-    myAccountLink.style.display = 'none'; // Приховати My account
-    signOutLink.style.display = 'none'; // Приховати Sign Out
+    signInLink.style.display = "block"; // Показати Sign In
+    myAccountLink.style.display = "none"; // Приховати My account
+    signOutLink.style.display = "none"; // Приховати Sign Out
 
-    myAccountPhone.style.display = 'none'; // Показати My account
-    logoutPhone.style.display = 'none';
+    myAccountPhone.style.display = "none"; // Показати My account
+    logoutPhone.style.display = "none";
   }
 }
 
 export function handleUserSignIn() {
-  const userSignedIn = localStorage.getItem('userSignIn');
+  const userSignedIn = localStorage.getItem("userSignIn");
 
   function redirectToLoginPage() {
-    window.location.href = './account.html';
+    window.location.href = "./account.html";
   }
 
   function handleLogout(event) {
     event.preventDefault();
-    localStorage.removeItem('userSignIn');
+    localStorage.removeItem("userSignIn");
     redirectToLoginPage();
   }
 
@@ -54,13 +54,13 @@ export function handleUserSignIn() {
   };
 }
 
-if (window.location.pathname.includes('/account')) {
-  document.addEventListener('DOMContentLoaded', async function () {
+if (window.location.pathname.includes("/account")) {
+  document.addEventListener("DOMContentLoaded", async function () {
     // Отримуємо посилання на потрібні елементи DOM
-    const signInTab = document.getElementById('signInTab');
-    const registerTab = document.getElementById('registerTab');
-    const signInBlock = document.querySelector('.block-tabs--singIn');
-    const registerBlock = document.querySelector('.block-tabs--register');
+    const signInTab = document.getElementById("signInTab");
+    const registerTab = document.getElementById("registerTab");
+    const signInBlock = document.querySelector(".block-tabs--singIn");
+    const registerBlock = document.querySelector(".block-tabs--register");
 
     // Функція для зміни активної вкладки та відображення блоків
     async function switchTabs(
@@ -69,33 +69,33 @@ if (window.location.pathname.includes('/account')) {
       activeBlock,
       inactiveBlock
     ) {
-      activeTab.classList.add('_active');
-      inactiveTab.classList.remove('_active');
-      activeBlock.style.display = 'block';
-      inactiveBlock.style.display = 'none';
+      activeTab.classList.add("_active");
+      inactiveTab.classList.remove("_active");
+      activeBlock.style.display = "block";
+      inactiveBlock.style.display = "none";
 
       await new Promise((resolve) => setTimeout(resolve, 500));
 
-      activeBlock.classList.add('opac');
-      inactiveBlock.classList.remove('opac'); // Видалення класу 'opac' з неактивного блоку одразу
+      activeBlock.classList.add("opac");
+      inactiveBlock.classList.remove("opac"); // Видалення класу 'opac' з неактивного блоку одразу
     }
 
     // Додаємо клас '_active' до елемента по замовчуванню
 
     // При кліку на вкладку "Sign in"
-    signInTab.addEventListener('click', async function (event) {
+    signInTab.addEventListener("click", async function (event) {
       event.preventDefault(); // Запобігаємо стандартному переходу за посиланням
       await switchTabs(signInTab, registerTab, signInBlock, registerBlock);
     });
 
     // При кліку на вкладку "Register"
-    registerTab.addEventListener('click', async function (event) {
+    registerTab.addEventListener("click", async function (event) {
       event.preventDefault(); // Запобігаємо стандартному переходу за посиланням
       await switchTabs(registerTab, signInTab, registerBlock, signInBlock);
     });
 
     //первірка на правильність введення емаіл
-    const forms = document.querySelectorAll('.block-tabs__form');
+    const forms = document.querySelectorAll(".block-tabs__form");
     /*
             forms.forEach(function (form) {
                const emailInput = form.querySelector('input[name="EmailAccount"]');
@@ -131,56 +131,56 @@ if (window.location.pathname.includes('/account')) {
             });*/
 
     // кнопка reset в полях вводу
-    const inputFields = document.querySelectorAll('.form__input');
-    const inputButtons = document.querySelectorAll('.form__button');
-    const submitButton = document.querySelector('.block-tabs__button');
+    const inputFields = document.querySelectorAll(".form__input");
+    const inputButtons = document.querySelectorAll(".form__button");
+    const submitButton = document.querySelector(".block-tabs__button");
 
     inputFields.forEach((inputField, index) => {
-      inputField.addEventListener('input', function () {
-        if (this.value.trim() !== '') {
-          inputButtons[index].style.display = 'block';
+      inputField.addEventListener("input", function () {
+        if (this.value.trim() !== "") {
+          inputButtons[index].style.display = "block";
         } else {
-          inputButtons[index].style.display = 'none';
+          inputButtons[index].style.display = "none";
         }
       });
 
-      inputButtons[index].addEventListener('click', function (event) {
+      inputButtons[index].addEventListener("click", function (event) {
         event.preventDefault();
-        inputFields[index].value = '';
-        inputButtons[index].style.display = 'none';
-        let togglePasswordBtn = document.querySelectorAll('.togglePasswordBtn');
+        inputFields[index].value = "";
+        inputButtons[index].style.display = "none";
+        let togglePasswordBtn = document.querySelectorAll(".togglePasswordBtn");
         togglePasswordBtn.forEach((item) => {
-          item.style.display = 'none';
+          item.style.display = "none";
         });
       });
     });
 
-    submitButton.addEventListener('click', function () {
+    submitButton.addEventListener("click", function () {
       inputButtons.forEach((button) => {
-        button.style.display = 'none';
+        button.style.display = "none";
       });
     });
 
-    const selectHeader = document.querySelector('.select-header');
-    const selectOptions = document.querySelector('.select-options');
+    const selectHeader = document.querySelector(".select-header");
+    const selectOptions = document.querySelector(".select-options");
 
-    selectHeader.addEventListener('click', function () {
+    selectHeader.addEventListener("click", function () {
       selectOptions.style.display =
-        selectOptions.style.display === 'block' ? 'none' : 'block';
+        selectOptions.style.display === "block" ? "none" : "block";
     });
 
-    document.addEventListener('click', function (event) {
+    document.addEventListener("click", function (event) {
       if (!selectHeader.contains(event.target)) {
-        selectOptions.style.display = 'none';
+        selectOptions.style.display = "none";
       }
     });
 
-    const selectItems = document.querySelectorAll('.select-options li');
+    const selectItems = document.querySelectorAll(".select-options li");
 
     selectItems.forEach((item) => {
-      item.addEventListener('click', function () {
+      item.addEventListener("click", function () {
         selectHeader.textContent = this.textContent;
-        selectOptions.style.display = 'none';
+        selectOptions.style.display = "none";
       });
     });
 
@@ -192,8 +192,7 @@ if (window.location.pathname.includes('/account')) {
         emailInput,
         passwordInput,
         repeatPasswordInput,
-        selectHeaderText,
-        dataCreation
+        selectHeaderText
       ) {
         this.nameInput = nameInput;
         this.lastNameInput = lastNameInput;
@@ -201,19 +200,18 @@ if (window.location.pathname.includes('/account')) {
         this.passwordInput = passwordInput;
         this.repeatPasswordInput = repeatPasswordInput;
         this.selectHeaderText = selectHeaderText;
-        this.dataCreation = dataCreation;
       }
       register() {
         const emailError = form.querySelector('input[name="EmailAccount"]');
         const email = emailError.value;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const existingErrorMessage = form.querySelector('.error-message');
+        const existingErrorMessage = form.querySelector(".error-message");
         if (
           this.nameInput.trim().length < 2 ||
           this.lastNameInput.trim().length < 2 ||
           !emailRegex.test(email) ||
           this.passwordInput.length < 8 ||
-          this.selectHeaderText === 'How old are you?' ||
+          this.selectHeaderText === "How old are you?" ||
           this.repeatPasswordInput.length < 8 ||
           !/[a-zA-Z]/.test(this.passwordInput) ||
           this.passwordInput.trim() !== this.repeatPasswordInput
@@ -222,7 +220,7 @@ if (window.location.pathname.includes('/account')) {
             const nameError = form.querySelector('input[name="inputName"]');
             if (!existingErrorMessage) {
               nameError.insertAdjacentHTML(
-                'afterend',
+                "afterend",
                 '<div class="error-message">Please enter at least 2 characters</div>'
               );
             }
@@ -235,16 +233,16 @@ if (window.location.pathname.includes('/account')) {
             // Перевіряємо, чи є вже відображена помилка цього виду
             if (!existingErrorMessage) {
               lastNameError.insertAdjacentHTML(
-                'afterend',
+                "afterend",
                 '<div class="error-message">Please enter at least 2 characters</div>'
               );
             }
           }
-          if (this.selectHeaderText === 'How old are you?') {
-            const selectHeaderText = document.querySelector('.select-header');
+          if (this.selectHeaderText === "How old are you?") {
+            const selectHeaderText = document.querySelector(".select-header");
             if (!existingErrorMessage) {
               selectHeaderText.insertAdjacentHTML(
-                'afterend',
+                "afterend",
                 '<div class="error-message">Please select your age</div>'
               );
             }
@@ -252,7 +250,7 @@ if (window.location.pathname.includes('/account')) {
           if (!emailRegex.test(email)) {
             if (!existingErrorMessage) {
               emailError.insertAdjacentHTML(
-                'afterend',
+                "afterend",
                 '<div class="error-message">Please enter a valid email!</div>'
               );
             }
@@ -263,7 +261,7 @@ if (window.location.pathname.includes('/account')) {
             );
             if (!existingErrorMessage) {
               theSamepassword.insertAdjacentHTML(
-                'afterend',
+                "afterend",
                 '<div class="error-message">The password must be at least 8 characters long</div>'
               );
             }
@@ -274,7 +272,7 @@ if (window.location.pathname.includes('/account')) {
               );
               if (!existingErrorMessage) {
                 theSamepassword.insertAdjacentHTML(
-                  'afterend',
+                  "afterend",
                   '<div class="error-message">your passwords are different</div>'
                 );
               }
@@ -286,7 +284,7 @@ if (window.location.pathname.includes('/account')) {
               );
               if (!existingErrorMessage) {
                 theSamepassword.insertAdjacentHTML(
-                  'afterend',
+                  "afterend",
                   '<div class="error-message">Password must contain at least one letter</div>'
                 );
               }
@@ -299,7 +297,7 @@ if (window.location.pathname.includes('/account')) {
             );
             if (!existingErrorMessage) {
               SamepasswordRepeat.insertAdjacentHTML(
-                'afterend',
+                "afterend",
                 '<div class="error-message">The password must be at least 8 characters long</div>'
               );
             }
@@ -310,30 +308,27 @@ if (window.location.pathname.includes('/account')) {
               );
               if (!existingErrorMessage) {
                 SamepasswordRepeat.insertAdjacentHTML(
-                  'afterend',
+                  "afterend",
                   '<div class="error-message">Password must contain at least one letter</div>'
                 );
               }
               return;
             }
           }
-
           return;
         }
         console.log(this);
-
         localStorage.setItem(this.emailInput, JSON.stringify(this));
-        localStorage.setItem('myProfile', JSON.stringify(this));
-        const registerWindow = document.getElementById('registerWindow');
-        const headerLine = document.querySelector('header');
-        registerWindow.style.display = 'flex';
-        headerLine.style.borderBottom = '1.5px solid #A18A68';
+        const registerWindow = document.getElementById("registerWindow");
+        const headerLine = document.querySelector("header");
+        registerWindow.style.display = "flex";
+        headerLine.style.borderBottom = "1.5px solid #A18A68";
         setTimeout(function () {
-          registerWindow.style.opacity = '0';
-          headerLine.style.borderBottom = '1.5px solid rgb(216, 216, 216)';
+          registerWindow.style.opacity = "0";
+          headerLine.style.borderBottom = "1.5px solid rgb(216, 216, 216)";
         }, 800);
         setTimeout(function () {
-          registerWindow.style.display = 'none';
+          registerWindow.style.display = "none";
         }, 1100);
         return true;
       }
@@ -341,7 +336,7 @@ if (window.location.pathname.includes('/account')) {
 
     const form = document.querySelector('form[name="FormRegister"]');
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener("submit", (event) => {
       event.preventDefault(); // Зупиняємо стандартну подію відправки форми
 
       const nameInput = form
@@ -360,16 +355,9 @@ if (window.location.pathname.includes('/account')) {
         .querySelector('input[name="inputPasswordRepeat"]')
         .value.trim();
       const selectHeaderText = form
-        .querySelector('.select-header')
+        .querySelector(".select-header")
         .textContent.trim();
       console.log(selectHeaderText);
-
-      const date = new Date();
-      const dataCreation = date.toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-      });
 
       const user = new User(
         nameInput,
@@ -377,52 +365,51 @@ if (window.location.pathname.includes('/account')) {
         emailInput,
         passwordInput,
         repeatPasswordInput,
-        selectHeaderText,
-        dataCreation
+        selectHeaderText
       );
       const validationResult = user.register();
       if (validationResult === true) {
         form.reset();
 
-        const errorMessages = form.querySelectorAll('.error-message');
+        const errorMessages = form.querySelectorAll(".error-message");
         errorMessages.forEach((errorMessage) => errorMessage.remove());
-        const register = document.getElementById('registerTab');
-        register.classList.remove('_active');
-        const singIn = document.getElementById('signInTab');
-        singIn.classList.add('_active');
+        const register = document.getElementById("registerTab");
+        register.classList.remove("_active");
+        const singIn = document.getElementById("signInTab");
+        singIn.classList.add("_active");
 
-        let signInBlock = document.querySelector('.block-tabs--singIn');
-        let registerBlock = document.querySelector('.block-tabs--register');
-        signInBlock.style.display = 'block';
-        registerBlock.style.display = 'none';
+        let signInBlock = document.querySelector(".block-tabs--singIn");
+        let registerBlock = document.querySelector(".block-tabs--register");
+        signInBlock.style.display = "block";
+        registerBlock.style.display = "none";
         setTimeout(() => {
-          signInBlock.classList.add('opac');
+          signInBlock.classList.add("opac");
         }, 0.3); // Застосувати зміни через 0.1 секунди (після з'явлення блоку)
-        registerBlock.classList.remove('opac'); // Видалення класу 'opac' з неактивного блоку одразу
+        registerBlock.classList.remove("opac"); // Видалення класу 'opac' з неактивного блоку одразу
       }
     });
 
     // Прибираємо всі повідомлення про помилки при кліку на поде вводу
-    form.addEventListener('click', (event) => {
+    form.addEventListener("click", (event) => {
       const clickedElement = event.target;
       if (
-        clickedElement.tagName === 'INPUT' ||
-        clickedElement.tagName === 'SELECT'
+        clickedElement.tagName === "INPUT" ||
+        clickedElement.tagName === "SELECT"
       ) {
-        const errorMessages = form.querySelectorAll('.error-message');
+        const errorMessages = form.querySelectorAll(".error-message");
         errorMessages.forEach((errorMessage) => errorMessage.remove());
       }
     });
 
     // Вхід в систему
     const loginForm = document.querySelector('form[name="FormSingIn"]');
-    const loginElement = document.querySelector('.input--singin');
-    const passElement = document.querySelector('.input--pass');
+    const loginElement = document.querySelector(".input--singin");
+    const passElement = document.querySelector(".input--pass");
 
     let invalidLoginAttempts = 0;
     let user;
 
-    loginForm.addEventListener('submit', (event) => {
+    loginForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
       const loginEmail = loginElement.value.trim();
@@ -430,12 +417,12 @@ if (window.location.pathname.includes('/account')) {
       const userData = localStorage.getItem(loginEmail);
 
       function displayErrorMessage(element, message) {
-        const existingErrorMessage = loginForm.querySelector('.error-message');
+        const existingErrorMessage = loginForm.querySelector(".error-message");
         if (existingErrorMessage) {
           existingErrorMessage.remove();
         }
         element.insertAdjacentHTML(
-          'afterend',
+          "afterend",
           `<div class="error-message">${message}</div>`
         );
       }
@@ -450,16 +437,16 @@ if (window.location.pathname.includes('/account')) {
         loginPass.length < 8
       ) {
         if (!loginEmail.trim()) {
-          displayErrorMessage(loginElement, 'Login cannot be empty');
+          displayErrorMessage(loginElement, "Login cannot be empty");
           return;
         }
         if (!validateEmail(loginEmail)) {
-          displayErrorMessage(loginElement, 'Login is incorrect');
+          displayErrorMessage(loginElement, "Login is incorrect");
         }
         if (loginPass.length < 8) {
           displayErrorMessage(
             passElement,
-            'The password must be at least 8 characters long'
+            "The password must be at least 8 characters long"
           );
           return;
         }
@@ -474,23 +461,23 @@ if (window.location.pathname.includes('/account')) {
         // Перевірка наявності користувача та інші операції
         if (userData) {
           user = JSON.parse(userData);
-          console.log('✌️user --->', user);
+          console.log("✌️user --->", user);
 
           if (user.passwordInput === loginPass) {
             //alert("You are signed in");
-            localStorage.setItem('userSignIn', loginEmail);
-            const windwSingIn = document.getElementById('registerWindow');
-            const headerLine = document.querySelector('header');
+            localStorage.setItem("userSignIn", loginEmail);
+            const windwSingIn = document.getElementById("registerWindow");
+            const headerLine = document.querySelector("header");
             windwSingIn.innerHTML =
               '<p><img src="./assets/img/Cart_img/svg/checked.svg" alt="cheked">You are sing in!</p>';
-            windwSingIn.style.display = 'flex';
-            headerLine.style.borderBottom = 'solid 1.5px #A18A68';
+            windwSingIn.style.display = "flex";
+            headerLine.style.borderBottom = "solid 1.5px #A18A68";
             setTimeout(function () {
-              windwSingIn.style.opacity = '0';
-              headerLine.style.borderBottom = 'solid 1.5px rgb(216, 216, 216)';
+              windwSingIn.style.opacity = "0";
+              headerLine.style.borderBottom = "solid 1.5px rgb(216, 216, 216)";
             }, 500);
             setTimeout(function () {
-              window.location.href = 'http://localhost:3000/index.html';
+              window.location.href = "http://localhost:3000/index.html";
             }, 1500);
           } else {
             invalidLoginAttempts++;
@@ -501,29 +488,28 @@ if (window.location.pathname.includes('/account')) {
             headerLine.style.borderBottom = "solid 1.5px #D82700";
 
             if (invalidLoginAttempts == 2) {
-              const Atempts = document.querySelector('.window__link');
-              Atempts.innerHTML = '1 attempts left';
+              const Atempts = document.querySelector(".window__link");
+              Atempts.innerHTML = "1 attempts left";
             } else if (invalidLoginAttempts > 2) {
-              const Atempts = document.querySelector('.window__link');
-              const errorWindow = document.getElementById('errorWindow');
-              const headerLine = document.querySelector('header');
+              const Atempts = document.querySelector(".window__link");
+              const errorWindow = document.getElementById("errorWindow");
+              const headerLine = document.querySelector("header");
 
               Atempts.innerHTML = "no more attempts";
               setTimeout(function () {
                 errorWindow.style.opacity = "0";
                 headerLine.style.borderBottom =
                   "solid 1.5px rgb(216, 216, 216)";
-                  console.log('d');
               });
               setTimeout(function () {
                 window.location.href =
-                  'http://localhost:3000/reset-password.html'; // Перенаправлення на сторінку відновлення паролю
+                  "http://localhost:3000/reset-password.html"; // Перенаправлення на сторінку відновлення паролю
               }, 1500);
             }
           }
         } else {
           // Логіка для випадку, коли користувача не існує
-          displayErrorMessage(loginElement, 'User not found');
+          displayErrorMessage(loginElement, "User not found");
         }
       }
 
@@ -536,33 +522,33 @@ if (window.location.pathname.includes('/account')) {
     }
 
     //Функціонал показати пароль
-    const allPass = document.querySelectorAll('.input--pass');
+    const allPass = document.querySelectorAll(".input--pass");
 
     allPass.forEach((passwordField) => {
-      const togglePasswordBtn = document.createElement('button');
-      togglePasswordBtn.innerHTML = 'Show Password';
-      togglePasswordBtn.className = 'togglePasswordBtn';
+      const togglePasswordBtn = document.createElement("button");
+      togglePasswordBtn.innerHTML = "Show Password";
+      togglePasswordBtn.className = "togglePasswordBtn";
       passwordField.parentNode.insertBefore(
         togglePasswordBtn,
         passwordField.nextSibling
       );
 
-      passwordField.addEventListener('input', function () {
-        if (passwordField.value.trim() !== '') {
-          togglePasswordBtn.style.display = 'inline-block';
+      passwordField.addEventListener("input", function () {
+        if (passwordField.value.trim() !== "") {
+          togglePasswordBtn.style.display = "inline-block";
         } else {
-          togglePasswordBtn.style.display = 'none';
+          togglePasswordBtn.style.display = "none";
         }
       });
 
-      togglePasswordBtn.addEventListener('click', function (event) {
+      togglePasswordBtn.addEventListener("click", function (event) {
         event.preventDefault();
-        if (passwordField.type === 'password') {
-          passwordField.type = 'text';
-          togglePasswordBtn.textContent = 'Hide Password';
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          togglePasswordBtn.textContent = "Hide Password";
         } else {
-          passwordField.type = 'password';
-          togglePasswordBtn.textContent = 'Show Password';
+          passwordField.type = "password";
+          togglePasswordBtn.textContent = "Show Password";
         }
       });
     });
