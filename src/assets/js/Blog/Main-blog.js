@@ -216,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
          })
       }
       animationDropBox('.mobile-categories_button','.mobile-blog_categories')
-      
 
       const sortByCategories = (item) => {
          if(item.classList.contains('selectCategories') === false){
@@ -233,7 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             lettersItems.forEach(function (e) {
                const shopLatestBlock2 = e.closest('.content__cards');
-               console.log();
                if (val == '') {
                   shopLatestBlock2.style.display = 'block';
                } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {

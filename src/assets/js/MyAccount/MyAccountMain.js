@@ -33,7 +33,6 @@ if (window.location.pathname.includes('/my-account')) {
                   .match(/\baddClass-\w+\b/g)
                   .join(' ');
                const eventClickIndex = eventClickName.split('addClass-').join('');
-               //  console.log(itemTarget);
                targetGroup.forEach(
                   (targetItem) => (targetItem.style.display = 'none')
                );

@@ -205,8 +205,6 @@ const addComment = (replyId) =>{
             userContent: `${isSecondUser}${userContent.value}`,
          })
       }else {
-         // setComentsPosition()
-         console.log('d');
          comentsNow.unshift({
             isUser: true,
             userName: userName.value,
@@ -239,8 +237,6 @@ const drawComments = (comments) => {
    const commentsCount = document.querySelector('.nuberOfComents')
    let nuberOfComents = 0
 
-
-   console.log(comentsNow.length - 2);
 
 
    for(i = 0; i <= comments.length - 1; i++){
@@ -304,14 +300,12 @@ const drawComments = (comments) => {
    commentsCount.textContent = nuberOfComents
 
    const userComents = document.querySelectorAll('.userLink')
-   console.log(userComents);
    userComents.forEach(item => {
       const userComentsPosition = item.getAttribute('href')
       const userNuberOfComent = parseFloat(userComentsPosition.replace('#',''))
       const perentPath = parseFloat(item.parentElement.parentElement.children[1].children[2].id) 
       const userRightPath = userNuberOfComent + (perentPath - parseInt(userNuberOfComent))
       item.setAttribute('href',`#${userRightPath}`)
-      console.log();
    })
 
 }

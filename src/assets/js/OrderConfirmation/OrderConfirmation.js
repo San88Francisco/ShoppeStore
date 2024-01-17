@@ -14,10 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const checkPopupOrder = localStorage.getItem('checkoutPopupOrder');
-    console.log('checkPopupOrder:', checkPopupOrder);
     // Відображення вспливаючого вікна
     if (checkPopupOrder == '1') {
-      console.log(checkPopupOrder);
       popupOrder();
     }
     // Виводить інформацію про данні користувача

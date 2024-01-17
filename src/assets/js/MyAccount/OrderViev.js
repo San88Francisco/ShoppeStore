@@ -1,6 +1,5 @@
 export const orderViev = () => {
   const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
-  // console.log('orderVievItem:', orderVievItem);
 
   // Наш основний блок Orders
   const targetOfOrders = document.querySelector('.targetOf-orders');
@@ -12,7 +11,6 @@ export const orderViev = () => {
   const accountOrderTbody = document.querySelector('.account__order-tbody');
 
   if (orderVievItem.length >= 1) {
-    // console.log('Працює 1');
     const html = `
       <tr>
         <td>ORDER NUMBER</td>
@@ -24,7 +22,6 @@ export const orderViev = () => {
       `;
     accountOrderThead.insertAdjacentHTML('beforeend', html);
   } else {
-    // console.log('Працює 2');
     targetOfOrders.innerHTML = `
       <div class="alert-not-ofer">
         <p>No order has been made yet.</p>
@@ -33,8 +30,6 @@ export const orderViev = () => {
     `;
   }
 
-  // console.log('accountOrderTbody:', accountOrderTbody);
-  //
 
   orderVievItem.forEach((order) => {
     const { orderId, orderInfo, userInfo } = order;
