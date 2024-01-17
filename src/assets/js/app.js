@@ -17,6 +17,7 @@ import './Product/PopupWindow';
 import './Product/SliderProductMain';
 import './Product/SliderProductSecond';
 import './Product/ProductAdaptive';
+import './Product/generateItems';
 
 import './Contact/ContactUs';
 

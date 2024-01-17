@@ -29,28 +29,28 @@
 @import "./footer";
 
 body {
-   padding: 0px 16px;
+  padding: 0px 16px;
 
-   &::-webkit-scrollbar {
-      width: 10px;
-   }
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
 
-   &::-webkit-scrollbar-track {
-      background-color: $light-gray-color;
-   }
+  &::-webkit-scrollbar-track {
+    background-color: $light-gray-color;
+  }
 
-   &::-webkit-scrollbar-thumb {
-      background-color: $placeholder-color;
-      border-radius: 20px;
-      border: 3px solid $light-gray-color;
-   }
+  &::-webkit-scrollbar-thumb {
+    background-color: $placeholder-color;
+    border-radius: 20px;
+    border: 3px solid $light-gray-color;
+  }
 }
 
 // .Scroll_js_right {
 //    opacity: 0;
 //    filter: blur(1px);
 //    transform: translateX(-5%);
-//    transition: filter 2s ease, transform 1.4s ease;
+//    transition: filter 1s ease, transform 1s ease;
 // }
 
 // .Scroll_js_right.show {
@@ -63,7 +63,7 @@ body {
 //    opacity: 0;
 //    filter: blur(1px);
 //    transform: translateY(-30%);
-//    transition: filter 2s ease, transform 1.4s ease;
+//    transition: filter 1s ease, transform 1s ease;
 // }
 
 // .Scroll_js_up.show {
