@@ -28,6 +28,7 @@
       display: flex;
       gap: 7.34px;
       align-items: center;
+
     }
 
     ul {
@@ -78,7 +79,7 @@
       margin-bottom: 40px;
       background-color: $black-color;
       position: relative;
-      z-index: 1;
+      z-index: -1;
     }
 
     .prev,
