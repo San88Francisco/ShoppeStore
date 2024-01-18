@@ -1,8 +1,8 @@
 export const orderInfo = () => {
-  const checkoutInfo = JSON.parse(localStorage.getItem('userOrderInfo'));
+  const checkoutInfo = JSON.parse(localStorage.getItem('userAddressInfo'));
 
   // Беремо всі замовлення та їх довжину (length) і задаємо в номер замовлення. Якщо замовлень ще не було, задаємо 0 .
-  const numberOrder = JSON.parse(localStorage.getItem('allOrders'));
+  const numberOrder = JSON.parse(localStorage.getItem('allOrders')) || '1';
   console.log(' numberOrder:', numberOrder.length);
 
   document.querySelector('.order__number').textContent = numberOrder.length;

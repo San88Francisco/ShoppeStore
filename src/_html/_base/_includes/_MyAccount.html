@@ -48,10 +48,10 @@
     <div class="targetOf-orders Scroll_js_right">
       <div class="account__order">
         <!-- тут наша таблиця Orders-->
-        <!-- <table class="account__order-table">
-               <thead class="account__order-thead"></thead>
-               <tbody class="account__order-tbody"></tbody>
-            </table> -->
+        <table class="account__order-table">
+          <thead class="account__order-thead"></thead>
+          <tbody class="account__order-tbody"></tbody>
+        </table> 
         <!-- тут наша таблиця -->
       </div>
       <div class="mobile-account__order">
@@ -280,6 +280,11 @@
                 placeholder="Country *"
               />
               <input
+                class="address__city"
+                type="text"
+                placeholder="Town / City *"
+              />
+              <input
                 class="address__street"
                 type="text"
                 placeholder="Street Address *"
@@ -288,11 +293,6 @@
                 class="address__postcode"
                 type="text"
                 placeholder="Postcode / ZIP *"
-              />
-              <input
-                class="address__city"
-                type="text"
-                placeholder="Town / City *"
               />
               <input class="address__phone" type="text" placeholder="Phone *" />
               <input class="address__email" type="text" placeholder="Email *" />
@@ -314,27 +314,27 @@
     <div class="targetOf-accountDetails">
       <h2>Account details</h2>
       <form action="post">
-        <input type="text" placeholder="First name*" />
-        <input type="text" placeholder="Last name*" />
-        <input type="text" placeholder="Display name*" />
+        <input class="account__details-firstName" type="text" placeholder="First name*" />
+        <input class="account__details-lastName" type="text" placeholder="Last name*" />
+        <input class="account__details-displayName" type="text" placeholder="Display name*" />
         <p>
           This will be how your name will be displayed in the account section
           and in reviews.
         </p>
-        <input type="text" placeholder="Phone*" />
-        <input type="text" placeholder="Email address*" />
+        <input class="account__details-phone" type="text" placeholder="Phone*" />
+        <input class="account__details-email" type="text" placeholder="Email address*" />
         <h3>Password change</h3>
-        <input
+        <input class="account__details-pass"
           type="text"
           placeholder="Current password (leave blank to leave unchanged)"
         />
-        <input
+        <input class="account__details-newPass"
           type="text"
           placeholder="New password (leave blank to leave unchanged)"
         />
-        <input type="text" placeholder="Confirm new password" />
+        <input class="account__confirm-pass" type="text" placeholder="Confirm new password" />
       </form>
-      <button type="submit" class="btn__black">
+      <button type="submit" class="save__account-details btn__black">
         <span>SAVE CHANGES</span>
       </button>
     </div>
@@ -353,27 +353,27 @@
           <ul class="my__profile-user">
             <li class="">
               <span>Name :</span>
-              <span class="user__first-name">Ivan</span>
+              <span class="user__first-name"></span>
             </li>
             <li class="">
               <span>Last Name :</span>
-              <span class="user__last-name">Yakovchuk</span>
+              <span class="user__last-name"></span>
             </li>
             <li class="">
               <span>Email :</span>
-              <span class="user__email-name">name@gmail.com</span>
+              <span class="user__email-name"></span>
             </li>
             <li class="">
               <span>Account name :</span>
-              <span class="user__display-name">Kvothe</span>
+              <span class="user__display-name"></span>
             </li>
             <li class="">
               <span>Date of creation :</span>
-              <span class="user__date-creation">13.01.2024</span>
+              <span class="user__date-creation"></span>
             </li>
             <li class="">
               <span>Phone :</span>
-              <span class="user__phone">+380961234455</span>
+              <span class="user__phone"></span>
             </li>
           </ul>
         </div>
@@ -385,16 +385,15 @@
             Edit address
           </button>
         </div>
-        <ul>
-          <li>Ivan</li>
-          <li>Yakovchuk</li>
-          <li>Google</li>
-          <li>Ukraine</li>
-          <li>Promislova 4</li>
-          <li>33020</li>
-          <li>Rivne</li>
-          <li>+380961234567</li>
-          <li>Email</li>
+        <ul class="profile__address-list">
+          <li class="profile__address-nane">Not specified</li>
+          <li class="profile__address-last">Not specified</li>
+          <li class="profile__address-country">Not specified</li>
+          <li class="profile__address-city">Not specified</li>
+          <li class="profile__address-street">Not specified 4</li>
+          <li class="profile__address-poscode">Not specified</li>
+          <li class="profile__address-phone">Not specified</li>
+          <li class="profile__address-email">Not specified</li>
         </ul>
       </div>
       <div class="user__editing-btn">

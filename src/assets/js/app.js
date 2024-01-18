@@ -38,4 +38,4 @@ import './Error/Error404';
 import './BlogAddopt/BlogAddopt';
 
 import './Adaptive/SearchBurger';
-console.log('hello');
+// console.log('hello');

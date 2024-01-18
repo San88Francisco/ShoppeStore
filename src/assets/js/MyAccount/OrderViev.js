@@ -1,6 +1,6 @@
 export const orderViev = () => {
   const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
-  // console.log('orderVievItem:', orderVievItem);
+  console.log('orderVievItem:', orderVievItem);
 
   // Наш основний блок Orders
   const targetOfOrders = document.querySelector('.targetOf-orders');

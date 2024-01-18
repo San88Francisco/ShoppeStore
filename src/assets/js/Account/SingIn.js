@@ -61,6 +61,12 @@ if (window.location.pathname.includes("/account")) {
     const registerTab = document.getElementById("registerTab");
     const signInBlock = document.querySelector(".block-tabs--singIn");
     const registerBlock = document.querySelector(".block-tabs--register");
+    const date = new Date();
+    const currentDate = date.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    });
 
     // Функція для зміни активної вкладки та відображення блоків
     async function switchTabs(
@@ -192,7 +198,9 @@ if (window.location.pathname.includes("/account")) {
         emailInput,
         passwordInput,
         repeatPasswordInput,
-        selectHeaderText
+        selectHeaderText,
+        dataCreation
+
       ) {
         this.nameInput = nameInput;
         this.lastNameInput = lastNameInput;
@@ -200,6 +208,7 @@ if (window.location.pathname.includes("/account")) {
         this.passwordInput = passwordInput;
         this.repeatPasswordInput = repeatPasswordInput;
         this.selectHeaderText = selectHeaderText;
+        this.dataCreation = dataCreation;
       }
       register() {
         const emailError = form.querySelector('input[name="EmailAccount"]');
@@ -319,6 +328,7 @@ if (window.location.pathname.includes("/account")) {
         }
         console.log(this);
         localStorage.setItem(this.emailInput, JSON.stringify(this));
+        localStorage.setItem('myProfile', JSON.stringify(this));
         const registerWindow = document.getElementById("registerWindow");
         const headerLine = document.querySelector("header");
         registerWindow.style.display = "flex";
@@ -358,6 +368,7 @@ if (window.location.pathname.includes("/account")) {
         .querySelector(".select-header")
         .textContent.trim();
       console.log(selectHeaderText);
+      const dataCreation = currentDate;
 
       const user = new User(
         nameInput,
@@ -365,7 +376,8 @@ if (window.location.pathname.includes("/account")) {
         emailInput,
         passwordInput,
         repeatPasswordInput,
-        selectHeaderText
+        selectHeaderText,
+        dataCreation
       );
       const validationResult = user.register();
       if (validationResult === true) {

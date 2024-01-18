@@ -1,13 +1,18 @@
+import { accountDetails } from './AccountDetails';
 import { addressEdit } from './AddressEdit';
+import { myAddress } from './MyProfileAddress';
 
 export const myProfile = () => {
-  //   console.log('good');
+  addressEdit();
+  myAddress();
+  accountDetails();
+
   const {
     nameInput,
     lastNameInput,
     emailInput,
     dataCreation,
-    accountName,
+    displayName,
     phone,
   } = JSON.parse(localStorage.getItem('myProfile'));
   // console.log('myProfile  profileInfo:', nameInput);
@@ -24,11 +29,10 @@ export const myProfile = () => {
   profileEmail.textContent = emailInput;
   profileDateCreation.textContent = dataCreation;
 
-  profileDisplayName.textContent = accountName ? accountName : 'Not specified';
+  profileDisplayName.textContent = displayName ? displayName : 'Not specified';
   profilePhone.textContent = phone ? phone : 'Not specified';
 
   const btnEditAddress = document.querySelector('.profile__address-btn');
-
   // Перехід з MyProfile на Address при кліку на кнопку edit address
   btnEditAddress.addEventListener('click', () => {
     const targetProfile = document.querySelector('.targetOf-logout');
@@ -40,5 +44,17 @@ export const myProfile = () => {
     targetProfile.style.display = 'none';
     targetAddress.style.display = 'flex';
   });
-  addressEdit();
+
+  const btnEditProfile = document.querySelector('.profile__edit-btn');
+  // Перехід з MyProfile на Account details при кліку на кнопку edit profile
+  btnEditProfile.addEventListener('click', () => {
+    const targetProfile = document.querySelector('.targetOf-logout');
+    const targetAddress = document.querySelector('.targetOf-accountDetails');
+    const clickLogout = document.querySelector('.click-logout');
+    const clickAddress = document.querySelector('.click-accountDetails');
+    clickLogout.classList.remove('act');
+    clickAddress.classList.add('act');
+    targetProfile.style.display = 'none';
+    targetAddress.style.display = 'flex';
+  });
 };

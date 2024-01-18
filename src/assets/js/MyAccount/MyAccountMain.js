@@ -3,10 +3,10 @@ import { myProfile } from './MyProfile';
 import { orderViev } from './OrderViev';
 
 if (window.location.pathname.includes('/my-account')) {
-  /* orderViev();
-    downloadView();
-    myProfile();
-  */
+  orderViev();
+  downloadView();
+  myProfile();
+
   const tabPageClickToTarget = () => {
     const click = document.querySelectorAll('[class*="click-"]');
     let thisClickGroup = [];
