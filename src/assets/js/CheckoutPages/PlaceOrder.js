@@ -135,5 +135,3 @@ export const placeOrder = (paymentMethod) => {
     });
   });
 };
-
-

@@ -211,7 +211,6 @@ productHeart &&
 
 similiarItem &&
   similiarItem.addEventListener('click', (e) => {
-    console.log('da');
     const targetHeart = e.target.closest('.shop-latest__heart');
 
     if (targetHeart) {

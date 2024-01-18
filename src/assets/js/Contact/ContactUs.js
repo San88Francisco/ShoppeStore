@@ -83,10 +83,8 @@ if (window.location.pathname.includes('/contact')) {
          const errorElement = form.querySelector(validationResult.element);
          errorElement.parentNode.appendChild(errorMessage);
       } else {
-         console.log('good');
          form.reset();
          clientsArray.push(user);
-         console.log(clientsArray);
 
          const errorMessages = form.querySelectorAll('.error-message');
          errorMessages.forEach(errorMessage => errorMessage.remove());

@@ -7,6 +7,7 @@ if (window.location.pathname.includes('/my-account')) {
   downloadView();
   myProfile();
 
+
   const tabPageClickToTarget = () => {
     const click = document.querySelectorAll('[class*="click-"]');
     let thisClickGroup = [];
@@ -28,6 +29,26 @@ if (window.location.pathname.includes('/my-account')) {
             `.targetOf-${itemIndex}`
           );
           const targetGroup = document.querySelectorAll('[class*="targetOf-"]');
+
+               const eventClickName = item.className
+                  .match(/\baddClass-\w+\b/g)
+                  .join(' ');
+               const eventClickIndex = eventClickName.split('addClass-').join('');
+               targetGroup.forEach(
+                  (targetItem) => (targetItem.style.display = 'none')
+               );
+               click.forEach((clearItem) =>
+                  clearItem.classList.remove(eventClickIndex)
+               );
+               itemTarget.forEach((item) => (item.style.display = 'flex'));
+               item.classList.add(eventClickIndex);
+            });
+         });
+      }
+   };
+   //function of tab page
+   tabPageClickToTarget();
+
 
           const eventClickName = item.className
             .match(/\baddClass-\w+\b/g)

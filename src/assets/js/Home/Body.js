@@ -212,9 +212,16 @@ const renderProducts = async () => {
 
   if (contents) {
     const totalPages = Math.ceil(contents.length / itemsPerPage);
-    renderPage(currentPage, contents);
-    generateBtn(totalPages);
-    clickToInotherPage(contents, totalPages);
+    if (
+      window.location.pathname.includes('/index') ||
+      window.location.pathname.includes('/shop')
+    ) {
+      renderPage(currentPage, contents);
+      if (window.location.pathname.includes('/shop')) {
+        generateBtn(totalPages);
+        clickToInotherPage(contents, totalPages);
+      }
+    }
   }
 };
 

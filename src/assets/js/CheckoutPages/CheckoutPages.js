@@ -77,9 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputEmail = document.querySelector('.input__email');
     const inputOrderNotes = document.querySelector('.input__order-notes').value;
 
-
-    
-
     const userAddressInfo =
       JSON.parse(localStorage.getItem('userAddressInfo')) || false;
     console.log('placeOrder  userAddressInfo:', userAddressInfo);
@@ -149,10 +146,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         let valueStreet = inputStreet.value;
-        console.log("valueStreet:", valueStreet)
+        console.log('valueStreet:', valueStreet);
 
-        
-        console.log("displayErrorCheckout  valueStreet:", valueStreet)
+        console.log('displayErrorCheckout  valueStreet:', valueStreet);
 
         if (
           !latinLettersRegex.test(inputFirstName.value) ||
@@ -200,9 +196,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const errorEmail = document.querySelector('.order__error-email');
             errorEmail.style.opacity = '1';
           }
-
         } else {
-          window.location.href = 'http://localhost:3000/order-confirmation.html';
+          window.location.href =
+            'http://localhost:3000/order-confirmation.html';
           // Зберігаємо інофрмацію клієнта в userOrderInfo
           localStorage.setItem('userAddressInfo', JSON.stringify(blockData));
           console.log('saveOrder');
@@ -211,7 +207,6 @@ document.addEventListener('DOMContentLoaded', function () {
           // Функція очистки кошику !
           clearOrderCart();
         }
-
       }
 
       displayErrorCheckout();
