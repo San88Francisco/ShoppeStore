@@ -1,10 +1,10 @@
 // Вспливаюче вікно
 export const popupOrder = () => {
   const popupWindow = document.querySelector('.order__window-block');
-  const headerUnderline = document.querySelector('.header__underline');
+  const headerUnderline = document.querySelector('header');
 
   // Задаємо стилі для popupWindow і headerUnderline
-  headerUnderline.style.border = '1px solid #A18A68';
+  headerUnderline.style.borderBottom = '1.5px solid #A18A68';
   headerUnderline.style.transition = 'border 0.3s ease-in-out';
   popupWindow.style.visibility = 'visible';
   popupWindow.style.opacity = 1;
