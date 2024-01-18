@@ -1,9 +1,10 @@
 export const saveOrder = () => {
   // Якщо вже маємо замовлення, тоді беремо їх, якщо замовлень немає, створюємо пустий масив
   const allOrders = JSON.parse(localStorage.getItem('allOrders')) || [];
+  console.log("saveOrder  allOrders:", allOrders)
 
   // Беремо інформацію користувача, записували її в placeOrder
-  const userInfo = JSON.parse(localStorage.getItem('userOrderInfo'));
+  const userInfo = JSON.parse(localStorage.getItem('userAddressInfo'));
 
   // Через деструктуризацію виймаємо наш checkoutInfo. Ці значення ми записуємо в CartItem
   const { info, item } = JSON.parse(localStorage.getItem('checkoutInfo'));

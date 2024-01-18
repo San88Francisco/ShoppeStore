@@ -28,7 +28,6 @@
       display: flex;
       gap: 7.34px;
       align-items: center;
-
     }
 
     ul {
@@ -495,7 +494,8 @@
         justify-content: space-between;
         align-items: center;
         gap: 20px;
-        padding: 10px;
+        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        // border-bottom: 1px solid $placeholder-color;
         margin-bottom: 50px;
 
         hr {
@@ -507,7 +507,7 @@
         .my__profile-avatar {
           max-width: 250px;
           width: 100%;
-       
+
           padding: 5px;
 
           img {
@@ -550,6 +550,7 @@
     .my__profile-address {
       margin-bottom: 40px;
       width: 50%;
+      padding: 15px;
 
       div {
         display: flex;
@@ -602,38 +603,38 @@
       }
     }
   }
-.mobile {
-display: flex;
-justify-content: space-between;
-  padding-bottom: 39px;
-  border-bottom: 1px solid $gray-color;
-   &__title-text, &__value-text {
+  .mobile {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 39px;
+    border-bottom: 1px solid $gray-color;
+    &__title-text,
+    &__value-text {
       &:not(:last-child) {
-         margin-bottom: 24px;
+        margin-bottom: 24px;
       }
       font-family: DM Sans;
       font-size: 14px;
       font-weight: 400;
-      line-height: 166.666667%; 
-   }
-   &__title-text {
+      line-height: 166.666667%;
+    }
+    &__title-text {
       color: $black-color;
-     
-   }
-   &__value-text {
+    }
+    &__value-text {
       text-align: right;
-     color: $placeholder-color;
-     &:last-child {
-      color: $accent-color;
-      & .value-border {
-         padding-right: 12px;
-         margin-right: 12px;
-         border-right: 1px solid $black-color;
+      color: $placeholder-color;
+      &:last-child {
+        color: $accent-color;
+        & .value-border {
+          padding-right: 12px;
+          margin-right: 12px;
+          border-right: 1px solid $black-color;
+        }
       }
-   }
-   }
-   display: none;
-}
+    }
+    display: none;
+  }
 
   @media (max-width: 1023.98px) {
     h1 {
@@ -853,13 +854,13 @@ justify-content: space-between;
     }
   }
 
-  @media (max-width: 554.98px) {
+  @media (max-width: 600px) {
     table {
       display: none;
     }
     .mobile {
-     display: flex;
-   }
+      display: flex;
+    }
   }
 
   @media (max-width: 467.98px) {
@@ -969,11 +970,12 @@ justify-content: space-between;
       }
     }
   }
-  @media (max-width: 400px){
-   .mobile {
-         &__title-text, &__value-text {
-            font-size: 12px;
-         }
+  @media (max-width: 400px) {
+    .mobile {
+      &__title-text,
+      &__value-text {
+        font-size: 12px;
       }
+    }
   }
 }

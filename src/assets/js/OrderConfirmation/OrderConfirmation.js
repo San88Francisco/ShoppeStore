@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи на сторінці ми order-confirmation
   if (window.location.pathname.includes('/order-confirmation')) {
     // Перевірка, чи є інформація в localStorage
-    const userOrderInfo = localStorage.getItem('userOrderInfo');
+    const checkoutInfo = localStorage.getItem('checkoutInfo');
 
-    if (!userOrderInfo) {
+    if (!checkoutInfo) {
       // Якщо userOrderInfo пустий, перенаправлення на error404
       window.location.href = 'http://localhost:3000/error404.html';
     }
@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
     //  Відображає зроблене замовлення та ціну
     orderItemViev();
 
-    // Автовидалення checkoutInfo і userOrderInfo, щоб після перезагрузки сторінки, order-confirmation не відображався
+    // Автовидалення checkoutInfo, щоб після перезагрузки сторінки, order-confirmation не відображався
     setTimeout(() => {
       localStorage.removeItem('checkoutInfo');
-      localStorage.removeItem('userOrderInfo');
-      localStorage.setItem('checkoutPopupOrder', 1);
+      // localStorage.setItem('checkoutPopupOrder', 1);
+      console.log('Працює');
     }, 2000);
   }
 });
