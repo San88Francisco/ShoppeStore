@@ -540,7 +540,7 @@ button {
       text-align: left;
       background-color: $white-color;
       margin-top: 10px;
-      z-index: 2;
+      z-index: 6;
    }
 
    .select-options li {
@@ -573,19 +573,6 @@ button {
       &:not(:last-child) {
         margin-bottom: 0;
       }
-   }
-
-   .error-message {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      bottom: -20px;
-      color: $errors-color;
-      font-family: "DM Sans";
-      font-size: 10px;
-      font-weight: 400;
-      line-height: 10px;
-
    }
 
    .togglePasswordBtn {

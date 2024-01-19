@@ -71,3 +71,17 @@ body {
 //    filter: blur(0);
 //    transform: translateY(0);
 // }
+// стилі для помилок
+.error-message {
+   position: absolute;
+   z-index: 5;
+   width: 100%;
+   left: 0;
+   bottom: -20px;
+   color: $errors-color;
+   font-family: "DM Sans";
+   font-size: 10px;
+   font-weight: 400;
+   line-height: 10px;
+
+}
