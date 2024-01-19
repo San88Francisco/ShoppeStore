@@ -342,6 +342,16 @@
         display: none;
 
         form {
+        .bill-user-name {
+         .input-wraper {
+           .error-message {
+            bottom: 20px;
+           }
+         }
+        }
+         .input-wraper {
+            position: relative;
+         }
           input {
             display: block;
             border-bottom: 1px solid $gray-color;
