@@ -49,24 +49,71 @@ export const orderViev = () => {
     accountOrderTbody.insertAdjacentHTML('beforeend', html);
   });
 
+  function handleResizeOrder() {
+    const screenWidth =
+      window.innerWidth || document.documentElement.clientWidth;
+
+    if (screenWidth < 600) {
+      const showMobileDownloads = document.querySelector('.order__mobile');
+      showMobileDownloads.innerHTML = '';
+
+      orderVievItem.forEach((order) => {
+        const { orderId, orderInfo, userInfo } = order;
+        showMobileDownloads.innerHTML += `
+        <div class="mobile__order-item">
+          <ul class="mobile__title">
+            <li class="mobile__title-text">ORDER NUMBER</li>
+            <li class="mobile__title-text">DATE</li>
+            <li class="mobile__title-text">STATUS</li>
+            <li class="mobile__title-text">TOTAL</li>
+            <li class="mobile__title-text">ACTIONS</li>
+          </ul>
+          <ul class="mobile__value">
+            <li class="mobile__value-text">${orderId}</li>
+            <li class="mobile__value-text">${userInfo.date}</li>
+            <li class="mobile__value-text">Delivered</li>
+            <li class="mobile__value-text">${orderInfo[0].totalPrice}</li>
+            <li class="mobile__value-text">
+              <a href="http://localhost:3000/order-confirmation.html" class="link__order-viev do-sth">
+                View Order
+              </a>
+            </li>
+          </ul>
+        </div>
+        `;
+      });
+
+      orderLink();
+    }
+  }
+
+  // Викликаємо функцію при завантаженні сторінки та при зміні розміру вікна
+  window.addEventListener('load', handleResizeOrder);
+  window.addEventListener('resize', handleResizeOrder);
+
   // href="http://localhost:3000/order-confirmation.html"
-  const vievOrderLink = document.querySelectorAll('.link__order-viev');
 
-  vievOrderLink.forEach((link, index) => {
-    link.addEventListener('click', () => {
-      const info = orderVievItem[index].orderInfo;
-      const item = orderVievItem[index].orderItem;
-      const checkoutInfo = {
-        item: item,
-        info: info,
-      };
+  const orderLink = () => {
+    const vievOrderLink = document.querySelectorAll('.link__order-viev');
 
-      localStorage.setItem(
-        'userOrderInfo',
-        JSON.stringify(orderVievItem[index].userInfo)
-      );
-      localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
-      localStorage.setItem('checkoutPopupOrder', 0);
+    vievOrderLink.forEach((link, index) => {
+      link.addEventListener('click', () => {
+        const info = orderVievItem[index].orderInfo;
+        const item = orderVievItem[index].orderItem;
+        const checkoutInfo = {
+          item: item,
+          info: info,
+        };
+
+        localStorage.setItem(
+          'userOrderInfo',
+          JSON.stringify(orderVievItem[index].userInfo)
+        );
+        localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
+        localStorage.setItem('checkoutPopupOrder', 0);
+      });
     });
-  });
+  };
+
+  orderLink();
 };

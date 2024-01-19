@@ -28,6 +28,8 @@ export const accountDetails = () => {
     myProfile.phone = detailsPhone.value;
     myProfile.emailInput = detailsFirstEmail.value;
 
+    console.log(myProfile.emailInput);
     localStorage.setItem('myProfile', JSON.stringify(myProfile));
+    localStorage.setItem('userSignIn', JSON.stringify(myProfile.emailInput));
   });
 };
