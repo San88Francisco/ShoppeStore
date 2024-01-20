@@ -711,11 +711,11 @@
                justify-content: space-between;
                align-items: center;
    
-               &:hover {
-                  opacity: 1;
-               }
+               
             }
-   
+            &:hover .shop-latest_hover{
+               opacity: 1;
+            }
             .shop-latest__heart {
                width: 24px;
                height: 24px;
