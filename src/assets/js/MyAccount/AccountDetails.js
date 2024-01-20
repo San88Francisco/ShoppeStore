@@ -31,13 +31,6 @@ export const accountDetails = () => {
       const isErrorMessage = detailsForm.querySelector('.error-message');
       let isValid = true;
 
-      function clearFieldError(field) {
-         let error = field.nextElementSibling;
-         if (error && error.classList.contains('error-message')) {
-            error.remove();
-         }
-      }
-
       function clearAllErrors() {
          const errors = detailsForm.querySelectorAll('.error-message');
          errors.forEach(error => error.remove());
@@ -49,7 +42,6 @@ export const accountDetails = () => {
       inputFields.forEach(input => {
          input.addEventListener('click', () => {
             clearAllErrors();
-            clearFieldError(input);
          });
       });
 
@@ -111,8 +103,6 @@ export const accountDetails = () => {
       if (isValid) {
          // Всі перевірки пройшли без помилок
          console.log('work');
-         // Скидаємо значення полів форми
-         detailsForm.reset();
       }
    }
 
@@ -127,12 +117,12 @@ export const accountDetails = () => {
          isValid = false;
       }
 
-      function clearFieldError(field) {
-         let error = field.nextElementSibling;
-         if (error && error.classList.contains('error-message')) {
-            error.remove();
-         }
-      }
+      /*   function clearFieldError(field) {
+            let error = field.nextElementSibling;
+            if (error && error.classList.contains('error-message')) {
+               error.remove();
+            }
+         }*/
 
       function clearAllErrors() {
          const errors = detailsForm.querySelectorAll('.error-message');
@@ -144,7 +134,6 @@ export const accountDetails = () => {
       inputFields.forEach(input => {
          input.addEventListener('click', () => {
             clearAllErrors();
-            clearFieldError(input);
          });
       });
 
@@ -188,7 +177,7 @@ export const accountDetails = () => {
          // Всі перевірки пройшли без помилок
          console.log('valid');
          // Скидаємо значення полів форми
-         detailsForm.reset();
+         // detailsForm.reset();
       }
    }
 
