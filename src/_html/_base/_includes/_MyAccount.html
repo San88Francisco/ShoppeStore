@@ -301,22 +301,38 @@
       </div>
       <div class="targetOf-accountDetails">
          <h2>Account details</h2>
-         <form action="post">
-            <input class="account__details-firstName" type="text" placeholder="First name*" />
-            <input class="account__details-lastName" type="text" placeholder="Last name*" />
-            <input class="account__details-displayName" type="text" placeholder="Display name*" />
+         <form class="details-form" action="post">
+            <div class="input-wraper">
+               <input class="account__details-firstName" type="text" placeholder="First name*" />
+            </div>
+            <div class="input-wraper">
+               <input class="account__details-lastName" type="text" placeholder="Last name*" />
+            </div>
+            <div class="input-wraper">
+               <input class="account__details-displayName" type="text" placeholder="Display name*" />
+            </div>
             <p>
                This will be how your name will be displayed in the account section
                and in reviews.
             </p>
-            <input class="account__details-phone" type="text" placeholder="Phone*" />
-            <input class="account__details-email" type="text" placeholder="Email address*" />
+            <div class="input-wraper">
+               <input class="account__details-phone" type="text" placeholder="Phone*" />
+            </div>
+            <div class="input-wraper">
+               <input class="account__details-email" type="text" placeholder="Email address*" />
+            </div>
             <h3>Password change</h3>
-            <input class="account__details-pass" type="text"
-               placeholder="Current password (leave blank to leave unchanged)" />
-            <input class="account__details-newPass" type="text"
-               placeholder="New password (leave blank to leave unchanged)" />
-            <input class="account__confirm-pass" type="text" placeholder="Confirm new password" />
+            <div class="input-wraper">
+               <input class="account__details-pass" type="text"
+                  placeholder="Current password (leave blank to leave unchanged)" />
+            </div>
+            <div class="input-wraper">
+               <input class="account__details-newPass" type="text"
+                  placeholder="New password (leave blank to leave unchanged)" />
+            </div>
+            <div class="input-wraper">
+               <input class="account__confirm-pass" type="text" placeholder="Confirm new password" />
+            </div>
          </form>
          <button type="submit" class="save__account-details btn__black">
             <span>SAVE CHANGES</span>
