@@ -4,8 +4,8 @@ import { discount } from "../Shop/Discount";
 document.addEventListener('DOMContentLoaded',()=> {
   if(window.location.pathname.includes('/product')){
     const shopLatestBlocks = document.querySelector(".shop-latest-blocks");
-    const BASE_URL = "../../../assets/img/Home_img/Body/heart_bg.png";
-    const ACTIVE_HEART_URL = "../../../assets/img/Home_img/Body/red_heart.png";
+    const BASE_URL = "./assets/img/Home_img/Body/heart_bg.png";
+    const ACTIVE_HEART_URL = "./assets/img/Home_img/Body/red_heart.png";
 
     shopLatestBlocks &&
       shopLatestBlocks.addEventListener("click", (e) => {
