@@ -325,7 +325,9 @@ if (window.location.pathname.includes('/account')) {
           }
           return;
         }
-        localStorage.setItem(this.emailInput, JSON.stringify(this));
+
+        // localStorage.setItem(this.emailInput, JSON.stringify(this));
+        // localStorage.setItem('Testing', JSON.stringify(this));
         localStorage.setItem('myProfile', JSON.stringify(this));
         const registerWindow = document.getElementById('registerWindow');
         const headerLine = document.querySelector('header');
@@ -424,7 +426,12 @@ if (window.location.pathname.includes('/account')) {
 
       const loginEmail = loginElement.value.trim();
       const loginPass = passElement.value.trim();
-      const userData = localStorage.getItem(loginEmail);
+      // const userData = localStorage.getItem(loginEmail);
+      // console.log(' userData:', userData);
+      const userData = localStorage.getItem('myProfile');
+      // console.log('loginForm.addEventListener  userData2:', userData2);
+      // const userData = userData2.emailInput;
+      console.log('userData:', userData);
 
       function displayErrorMessage(element, message) {
         const existingErrorMessage = loginForm.querySelector('.error-message');
@@ -471,6 +478,8 @@ if (window.location.pathname.includes('/account')) {
         // Перевірка наявності користувача та інші операції
         if (userData) {
           user = JSON.parse(userData);
+          // user = JSON.parse(myProfile);
+          console.log(' user:', user);
 
           if (user.passwordInput === loginPass) {
             //alert("You are signed in");

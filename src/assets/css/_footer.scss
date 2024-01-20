@@ -313,17 +313,68 @@ footer {
                   }
                }
 
-               .info-agree {
-                  display: flex;
-                  gap: 4px;
-                  align-items: center;
+               .info-agree{
+                  display: block;
                   margin: 11px 0 0 0;
-
-                  span {
-                     font-size: 14px;
-                     font-style: normal;
-                     font-weight: 400;
-                     line-height: 20px;
+               }
+               .checkbox {
+         
+                  input[type='checkbox']+label>span {
+                 
+                     @media (max-width: 564.98px){
+                        font-size: 12px;
+                        }
+                  }
+            label { 
+               @media (max-width: 749.98px){
+              transform: translate(-16.8px); 
+               }
+               @media (max-width: 388.98px){
+                  font-size: 12px;
+                  
+              }
+               & ins  {
+                  @media (max-width: 749.98px){
+                     transform: translate(-8px); 
+                      }
+                      @media (max-width: 388.98px){
+                          font-size: 12px;
+                     transform: translate(0px); 
+                      }
+               }
+            }
+                  input[type='checkbox']:checked+label>span:before {
+                     content: "";
+                     top: .42em;
+                     left: .15em;
+                     @media (max-width: 749.98px){
+                     top: .55em;
+                     left: .1em;
+                     }
+                     @media (max-width: 388.98px){
+                        top: .38em;
+                        left: .1em;
+                        }
+                  }
+                  
+                  &:not(:last-child) {
+                     margin-bottom: 69px;
+                  }
+            
+                  //mobile
+                  @media (max-width: 700.98px) {
+                     &:not(:last-child) {
+                        margin-bottom: 30px;
+                        font-size: 14px;
+                     }
+                  }
+            
+                  //mobile
+                  @media (max-width: 467.98px) {
+                     &:not(:last-child) {
+                        margin-bottom: 16px;
+                        font-size: 12px;
+                     }
                   }
                }
             }
