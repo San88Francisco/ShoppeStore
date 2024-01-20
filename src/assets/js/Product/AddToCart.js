@@ -195,8 +195,8 @@ document.addEventListener('DOMContentLoaded', function () {
 const productHeart = document.querySelector('.product__heart');
 const similiarItem = document.querySelector('.product-latest-blocks');
 
-const BASE_URL = '../../../assets/img/Home_img/Body/heart_bg.png';
-const ACTIVE_HEART_URL = '../../../assets/img/Home_img/Body/red_heart.png';
+const BASE_URL = './assets/img/Home_img/Body/heart_bg.png';
+const ACTIVE_HEART_URL = './assets/img/Home_img/Body/red_heart.png';
 
 productHeart &&
   productHeart.addEventListener('click', (e) => {

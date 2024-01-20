@@ -42,10 +42,10 @@ export const loadCartItems = (cartAllProduct, cartBlockItem) => {
               
               <div class="change--amount change--amount_tel">
                 <button class=" plus_tel">
-                <img src="../../../assets/img/Cart_img/svg/arrow_tel.svg" alt="">
+                <img src="./assets/img/Cart_img/svg/arrow_tel.svg" alt="">
                 </button>
                 <button class=" minus_tel">
-                <img src="../../../assets/img/Cart_img/svg/arrow_tel.svg" alt="">
+                <img src="./assets/img/Cart_img/svg/arrow_tel.svg" alt="">
                 </button>
                 
               </div>
