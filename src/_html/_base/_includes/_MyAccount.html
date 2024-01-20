@@ -1,161 +1,101 @@
 <section class="my-account">
-   <h1 class="targetOf-dashboard">My Account</h1>
-   <nav class="myAccount__navigation">
-      <div class="slider">
-         <button class="prev">
-            <i class="fa-solid fa-chevron-left"></i>
-         </button>
-         <ul class="slider-container Scroll_js_right">
-            <li>
-               <a href="#" class="click-dashboard addClass-act act">Dashboard</a>
-            </li>
-            <li>
-               <a href="#" class="click-orders addClass-act">Orders</a>
-            </li>
-            <li>
-               <a href="#" class="click-downloads addClass-act">Downloads</a>
-            </li>
-            <li>
-               <a href="#" class="click-addresses addClass-act">Addresses</a>
-            </li>
-            <li>
-               <a href="#" class="click-accountDetails addClass-act">Account details</a>
-            </li>
-            <li>
-               <a href="#" class="click-logout addClass-act">My profile</a>
-            </li>
-         </ul>
-         <button class="next go">
-            <i class="fa-solid fa-chevron-right"></i>
-         </button>
+  <div class="popup__profile-delete popup">
+    <div class="popup__profile">
+      <p>Are you sure you want to delete this post?</p>
+      <div>
+        <button class="btn__white btn__popup-yes">Yes</button>
+        <button class="btn__white btn__popup-no">No</button>
       </div>
-      <hr class="header__underline" />
-   </nav>
-   <div class="myAccount__tabPage">
-      <div class="targetOf-dashboard Scroll_js_right">
-         <p>
-            Hello Vitatheme (not Vitatheme? <span class="do-sth">Log out</span>)
-         </p>
-         <p>
-            From your account dashboard you can view your
-            <span class="do-sth">recent orders</span>, manage your
-            <span class="do-sth">shipping and billing addresses</span>, and edit
-            your <span class="do-sth">password and account details.</span>
-         </p>
+    </div>
+  </div>
+
+  <h1 class="targetOf-dashboard">My Account</h1>
+  <nav class="myAccount__navigation">
+    <div class="slider">
+      <button class="prev">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <ul class="slider-container Scroll_js_right">
+        <li>
+          <a href="#" class="click-dashboard addClass-act act">Dashboard</a>
+        </li>
+        <li>
+          <a href="#" class="click-orders addClass-act">Orders</a>
+        </li>
+        <li>
+          <a href="#" class="click-downloads addClass-act">Downloads</a>
+        </li>
+        <li>
+          <a href="#" class="click-addresses addClass-act">Addresses</a>
+        </li>
+        <li>
+          <a href="#" class="click-accountDetails addClass-act"
+            >Account details</a
+          >
+        </li>
+        <li>
+          <a href="#" class="click-logout addClass-act">My profile</a>
+        </li>
+      </ul>
+      <button class="next go">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+    <hr class="header__underline" />
+  </nav>
+  <div class="myAccount__tabPage">
+    <div class="targetOf-dashboard Scroll_js_right">
+      <p>
+        Hello Vitatheme (not Vitatheme? <span class="do-sth">Log out</span>)
+      </p>
+      <p>
+        From your account dashboard you can view your
+        <span class="do-sth">recent orders</span>, manage your
+        <span class="do-sth">shipping and billing addresses</span>, and edit
+        your <span class="do-sth">password and account details.</span>
+      </p>
+    </div>
+    <div class="targetOf-orders Scroll_js_right">
+      <div class="account__order">
+        <!-- тут наша таблиця Orders-->
+        <table class="account__order-table">
+          <thead class="account__order-thead"></thead>
+          <tbody class="account__order-tbody"></tbody>
+        </table>
+        <!-- тут наша таблиця -->
       </div>
-      <div class="targetOf-orders Scroll_js_right">
-         <div class="account__order">
-            <!-- тут наша таблиця Orders-->
-            <table class="account__order-table">
-               <thead class="account__order-thead"></thead>
-               <tbody class="account__order-tbody"></tbody>
-            </table>
-            <!-- тут наша таблиця -->
-         </div>
-         <div class="mobile-account__order">
-            <table>
-               <tbody>
-                  <tr>
-                     <td>ORDER NUMBER</td>
-                     <td>7643980998990</td>
-                  </tr>
-                  <tr>
-                     <td>DATE</td>
-                     <td>October 8,2021</td>
-                  </tr>
-                  <tr>
-                     <td>STATUS</td>
-                     <td>Delivered</td>
-                  </tr>
-                  <tr>
-                     <td>TOTAL</td>
-                     <td>$ 105</td>
-                  </tr>
-                  <tr>
-                     <td>ACTIONS</td>
-                     <td><span class="do-sth">View Order | Download</span></td>
-                  </tr>
-               </tbody>
-            </table>
-            <table>
-               <tbody>
-                  <tr>
-                     <td>ORDER NUMBER</td>
-                     <td>7643980998990</td>
-                  </tr>
-                  <tr>
-                     <td>DATE</td>
-                     <td>October 8,2021</td>
-                  </tr>
-                  <tr>
-                     <td>STATUS</td>
-                     <td>Delivered</td>
-                  </tr>
-                  <tr>
-                     <td>TOTAL</td>
-                     <td>$ 105</td>
-                  </tr>
-                  <tr>
-                     <td>ACTIONS</td>
-                     <td><span class="do-sth">View Order | Download</span></td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div class="order__mobile mobile">
-            <ul class="mobile__title">
-               <li class="mobile__title-text">ORDER NUMBER</li>
-               <li class="mobile__title-text">DATE</li>
-               <li class="mobile__title-text">STATUS</li>
-               <li class="mobile__title-text">TOTAL</li>
-               <li class="mobile__title-text">ACTIONS</li>
-            </ul>
-            <ul class="mobile__value">
-               <li class="mobile__value-text">7643980998990</li>
-               <li class="mobile__value-text">October 8,2021</li>
-               <li class="mobile__value-text">Delivered</li>
-               <li class="mobile__value-text">$ 105</li>
-               <li class="mobile__value-text"><a href="#">View Order</a></li>
-            </ul>
-         </div>
+      <div class="order__mobile mobile">
+        <!-- <ul class="mobile__title">
+          <li class="mobile__title-text">ORDER NUMBER</li>
+          <li class="mobile__title-text">DATE</li>
+          <li class="mobile__title-text">STATUS</li>
+          <li class="mobile__title-text">TOTAL</li>
+          <li class="mobile__title-text">ACTIONS</li>
+        </ul>
+        <ul class="mobile__value">
+          <li class="mobile__value-text">7643980998990</li>
+          <li class="mobile__value-text">October 8,2021</li>
+          <li class="mobile__value-text">Delivered</li>
+          <li class="mobile__value-text">$ 105</li>
+          <li class="mobile__value-text"><a href="#">View Order</a></li>
+        </ul> -->
       </div>
-      <div class="targetOf-downloads Scroll_js_right">
-         <!-- <div class="alert-not-address">
-        <p>No downloads available yet.</p>
-        <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>
-      </div> -->
-         <div class="downloads__mobile mobile">
-            <ul class="mobile__title">
-               <li class="mobile__title-text">ORDER NUMBER</li>
-               <li class="mobile__title-text">DATE</li>
-               <li class="mobile__title-text">STATUS</li>
-               <li class="mobile__title-text">TOTAL</li>
-               <li class="mobile__title-text">ACTIONS</li>
-            </ul>
-            <ul class="mobile__value">
-               <li class="mobile__value-text">7643980998990</li>
-               <li class="mobile__value-text">October 8,2021</li>
-               <li class="mobile__value-text">Delivered</li>
-               <li class="mobile__value-text">$ 105</li>
-               <li class="mobile__value-text">
-                  <a href="#" class="value-border">View Order</a><a href="#">Download</a>
-               </li>
-            </ul>
-         </div>
-         <div class="account__order">
-            <!-- тут наша таблиця Downloads -->
-            <table class="account__downloads-table">
-               <thead class="account__downloads-thead">
-                  <!-- <tr>
+    </div>
+    <div class="targetOf-downloads Scroll_js_right">
+      <div class="account__order">
+        <!-- тут наша таблиця Downloads -->
+        <table class="account__downloads-table">
+          <thead class="account__downloads-thead">
+            <!-- <tr>
               <td>ORDER NUMBER</td>
               <td>DATE</td>
               <td>STATUS</td>
               <td>TOTAL</td>
               <td>ACTIONS</td>
             </tr> -->
-               </thead>
-               <tbody class="account__downloads-tbody">
-                  <!-- <tr>
+          </thead>
+          <tbody class="account__downloads-tbody">
+            <!-- <tr>
               <td>7643980998990</td>
               <td>October 8,2021</td>
               <td>Delivered</td>
@@ -176,86 +116,63 @@
               <td>$ 65</td>
               <td><span class="do-sth">View Order | Download</span></td>
             </tr> -->
-               </tbody>
-            </table>
-         </div>
-
-         <div class="mobile-account__order">
-            <table>
-               <tbody>
-                  <tr>
-                     <td>ORDER NUMBER</td>
-                     <td>7643980998990</td>
-                  </tr>
-                  <tr>
-                     <td>DATE</td>
-                     <td>October 8,2021</td>
-                  </tr>
-                  <tr>
-                     <td>STATUS</td>
-                     <td>Delivered</td>
-                  </tr>
-                  <tr>
-                     <td>TOTAL</td>
-                     <td>$ 105</td>
-                  </tr>
-                  <tr>
-                     <td>ACTIONS</td>
-                     <td><span class="do-sth">View Order | Download</span></td>
-                  </tr>
-               </tbody>
-            </table>
-            <table>
-               <tbody>
-                  <tr>
-                     <td>ORDER NUMBER</td>
-                     <td>7643980998990</td>
-                  </tr>
-                  <tr>
-                     <td>DATE</td>
-                     <td>October 8,2021</td>
-                  </tr>
-                  <tr>
-                     <td>STATUS</td>
-                     <td>Delivered</td>
-                  </tr>
-                  <tr>
-                     <td>TOTAL</td>
-                     <td>$ 105</td>
-                  </tr>
-                  <tr>
-                     <td>ACTIONS</td>
-                     <td><span class="do-sth">View Order | Download</span></td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
+          </tbody>
+        </table>
       </div>
-      <div class="targetOf-addresses targetOf-addBill">
-         <p>
-            The following addresses will be used on the checkout page by default.
-         </p>
-         <div class="my-address">
-            <div class="add-my-bill">
-               <h3>Billing address</h3>
-               <div class="user-not-have-bill">
-                  <p class="do-sth" id="addAddress">ADD</p>
-                  <p class="you-not-have-address">
-                     You have not set up this type of address yet.
-                  </p>
-               </div>
-               <div class="bill-registr">
-                  <form class="adress-form" action="post">
-                     <div class="bill-user-name">
-                        <div class="input-wraper">
-                           <input class="address__first-name" type="text" placeholder="First name *" />
-                        </div>
-                        <div class="input-wraper">
-                           <input class="address__last-name bill-user-name_del" type="text" placeholder="Last name *" />
-                        </div>
-                     </div>
 
-                     <!-- <div class="selectYourCountry selectYourItem">
+      <div class="downloads__mobile mobile">
+        <!-- <ul class="mobile__title">
+          <li class="mobile__title-text">ORDER NUMBER</li>
+          <li class="mobile__title-text">DATE</li>
+          <li class="mobile__title-text">STATUS</li>
+          <li class="mobile__title-text">TOTAL</li>
+          <li class="mobile__title-text">ACTIONS</li>
+        </ul>
+        <ul class="mobile__value">
+          <li class="mobile__value-text">7643980998990</li>
+          <li class="mobile__value-text">October 8,2021</li>
+          <li class="mobile__value-text">Delivered</li>
+          <li class="mobile__value-text">$ 105</li>
+          <li class="mobile__value-text">
+            <a href="#" class="value-border">View Order</a
+            ><a href="#">Download</a>
+          </li>
+        </ul> -->
+      </div>
+    </div>
+    <div class="targetOf-addresses targetOf-addBill">
+      <p>
+        The following addresses will be used on the checkout page by default.
+      </p>
+      <div class="my-address">
+        <div class="add-my-bill">
+          <h3>Billing address</h3>
+          <div class="user-not-have-bill">
+            <p class="do-sth" id="addAddress">ADD</p>
+            <p class="you-not-have-address">
+              You have not set up this type of address yet.
+            </p>
+          </div>
+          <div class="bill-registr">
+            <form class="adress-form" action="">
+              <div class="bill-user-name">
+                <div class="input-wraper">
+                  <input
+                    class="address__first-name"
+                    type="text"
+                    placeholder="First name *"
+                  />
+                </div>
+                <div class="input-wraper">
+                  <input
+                    class="address__last-name bill-user-name_del"
+                    type="text"
+                    placeholder="Last name *"
+                  />
+                </div>
+              </div>
+
+              <!-- <div class="selectYourCountry selectYourItem">
                 <p>Country *</p>
                 <input class="" type="checkbox" id="selectYourCountry" class="input" />
                 <label for="selectYourCountry"></label>
@@ -266,122 +183,188 @@
                   <li class="optionItemElement">USA</li>
                 </ul>
               </div> -->
-                     <div class="input-wraper">
-                        <input class="address__country" type="text" placeholder="Country *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__city" type="text" placeholder="Town / City *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__street" type="text" placeholder="Street Address *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__postcode" type="text" placeholder="Postcode / ZIP *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__phone" type="text" placeholder="Phone *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__email" type="text" placeholder="Email *" />
-                     </div>
-                  </form>
-                  <button type="submit" class="btn__address-edit btn__black">
-                     <span>SAVE CHANGES</span>
-                  </button>
-               </div>
-            </div>
-            <div class="add-my-adress">
-               <h3>Shipping address</h3>
-               <p class="do-sth">ADD</p>
-               <p class="you-not-have-address">
-                  You have not set up this type of address yet.
-               </p>
-            </div>
-         </div>
+              <div class="input-wraper">
+                <input
+                  class="address__country"
+                  type="text"
+                  placeholder="Country *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__city"
+                  type="text"
+                  placeholder="Town / City *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__street"
+                  type="text"
+                  placeholder="Street Address *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__postcode"
+                  type="text"
+                  placeholder="Postcode / ZIP *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__phone"
+                  type="text"
+                  placeholder="Phone *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__email"
+                  type="text"
+                  placeholder="Email *"
+                />
+              </div>
+              <button type="submit" class="btn__address-edit btn__black">
+                <span>SAVE CHANGES</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- <div class="add-my-adress">
+          <h3>Shipping address</h3>
+          <p class="do-sth">ADD</p>
+          <p class="you-not-have-address">
+            You have not set up this type of address yet.
+          </p>
+        </div> -->
       </div>
-      <div class="targetOf-accountDetails">
-         <h2>Account details</h2>
-         <form action="post">
-            <input class="account__details-firstName" type="text" placeholder="First name*" />
-            <input class="account__details-lastName" type="text" placeholder="Last name*" />
-            <input class="account__details-displayName" type="text" placeholder="Display name*" />
-            <p>
-               This will be how your name will be displayed in the account section
-               and in reviews.
-            </p>
-            <input class="account__details-phone" type="text" placeholder="Phone*" />
-            <input class="account__details-email" type="text" placeholder="Email address*" />
-            <h3>Password change</h3>
-            <input class="account__details-pass" type="text"
-               placeholder="Current password (leave blank to leave unchanged)" />
-            <input class="account__details-newPass" type="text"
-               placeholder="New password (leave blank to leave unchanged)" />
-            <input class="account__confirm-pass" type="text" placeholder="Confirm new password" />
-         </form>
-         <button type="submit" class="save__account-details btn__black">
-            <span>SAVE CHANGES</span>
-         </button>
-      </div>
-      <div class="targetOf-logout">
-         <div class="targetOf__my-profile">
-            <div class="my__profile-info">
-               <div class="my__profile-avatar">
-                  <img src="../../../assets/img/Home_img/header/user.svg" alt="user-svg" />
-               </div>
+    </div>
+    <div class="targetOf-accountDetails">
+      <h2>Account details</h2>
+      <form action="">
+        <input
+          class="account__details-firstName"
+          type="text"
+          placeholder="First name*"
+        />
+        <input
+          class="account__details-lastName"
+          type="text"
+          placeholder="Last name*"
+        />
+        <input
+          class="account__details-displayName"
+          type="text"
+          placeholder="Display name*"
+        />
+        <p>
+          This will be how your name will be displayed in the account section
+          and in reviews.
+        </p>
+        <input
+          class="account__details-phone"
+          type="text"
+          placeholder="Phone*"
+        />
+        <input
+          class="account__details-email"
+          type="text"
+          placeholder="Email address*"
+        />
 
-               <hr />
+        <button type="submit" class="save__account-details btn__black">
+          <span>SAVE DETAILS</span>
+        </button>
 
-               <ul class="my__profile-user">
-                  <li class="">
-                     <span>Name :</span>
-                     <span class="user__first-name"></span>
-                  </li>
-                  <li class="">
-                     <span>Last Name :</span>
-                     <span class="user__last-name"></span>
-                  </li>
-                  <li class="">
-                     <span>Email :</span>
-                     <span class="user__email-name"></span>
-                  </li>
-                  <li class="">
-                     <span>Account name :</span>
-                     <span class="user__display-name"></span>
-                  </li>
-                  <li class="">
-                     <span>Date of creation :</span>
-                     <span class="user__date-creation"></span>
-                  </li>
-                  <li class="">
-                     <span>Phone :</span>
-                     <span class="user__phone"></span>
-                  </li>
-               </ul>
-            </div>
-         </div>
-         <div class="my__profile-address">
-            <div>
-               <h2>My address</h2>
-               <button class="profile__address-btn btn__profile">
-                  Edit address
-               </button>
-            </div>
-            <ul class="profile__address-list">
-               <li class="profile__address-nane">Not specified</li>
-               <li class="profile__address-last">Not specified</li>
-               <li class="profile__address-country">Not specified</li>
-               <li class="profile__address-city">Not specified</li>
-               <li class="profile__address-street">Not specified 4</li>
-               <li class="profile__address-poscode">Not specified</li>
-               <li class="profile__address-phone">Not specified</li>
-               <li class="profile__address-email">Not specified</li>
-            </ul>
-         </div>
-         <div class="user__editing-btn">
-            <button class="profile__edit-btn btn__profile">Edit profile</button>
-            <button class="profile__delete-btn btn__profile">Delete profile</button>
-         </div>
+        <h3>Password change</h3>
+        <input
+          class="account__details-pass"
+          type="text"
+          placeholder="Current password (leave blank to leave unchanged)"
+        />
+        <input
+          class="account__details-newPass"
+          type="text"
+          placeholder="New password (leave blank to leave unchanged)"
+        />
+        <input
+          class="account__confirm-pass"
+          type="text"
+          placeholder="Confirm new password"
+        />
+
+        <button type="submit" class="save__account-password btn__black">
+          <span>SAVE PASSWORD</span>
+        </button>
+      </form>
+    </div>
+    <div class="targetOf-logout">
+      <div class="targetOf__my-profile">
+        <div class="my__profile-info">
+          <div class="my__profile-avatar">
+            <img
+              src="../../../assets/img/Home_img/header/user.svg"
+              alt="user-svg"
+            />
+          </div>
+
+          <hr />
+
+          <ul class="my__profile-user">
+            <li class="">
+              <span>Name :</span>
+              <span class="user__first-name"></span>
+            </li>
+            <li class="">
+              <span>Last Name :</span>
+              <span class="user__last-name"></span>
+            </li>
+            <li class="">
+              <span>Email :</span>
+              <span class="user__email-name"></span>
+            </li>
+            <li class="">
+              <span>Account name :</span>
+              <span class="user__display-name"></span>
+            </li>
+            <li class="">
+              <span>Date of creation :</span>
+              <span class="user__date-creation"></span>
+            </li>
+            <li class="">
+              <span>Phone :</span>
+              <span class="user__phone"></span>
+            </li>
+          </ul>
+        </div>
       </div>
-   </div>
+      <div class="my__profile-address">
+        <div>
+          <h2>My address</h2>
+          <button class="profile__address-btn btn__profile">
+            Edit address
+          </button>
+        </div>
+        <ul class="profile__address-list">
+          <li class="profile__address-nane">Not specified</li>
+          <li class="profile__address-last">Not specified</li>
+          <li class="profile__address-country">Not specified</li>
+          <li class="profile__address-city">Not specified</li>
+          <li class="profile__address-street">Not specified 4</li>
+          <li class="profile__address-poscode">Not specified</li>
+          <li class="profile__address-phone">Not specified</li>
+          <li class="profile__address-email">Not specified</li>
+        </ul>
+      </div>
+      <div class="user__editing-btn">
+        <button class="profile__edit-btn btn__profile">Edit profile</button>
+        <button class="profile__delete-btn btn__profile">Delete profile</button>
+      </div>
+    </div>
+  </div>
 </section>
-<script src="https://kit.fontawesome.com/1f2bcb7d29.js" crossorigin="anonymous"></script>
+<script
+  src="https://kit.fontawesome.com/1f2bcb7d29.js"
+  crossorigin="anonymous"
+></script>
