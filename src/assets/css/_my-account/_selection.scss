@@ -507,6 +507,9 @@
     }
 
     form {
+      .input-wraper {
+         position: relative;
+      }
       input {
         display: block;
         border-bottom: 1px solid $gray-color;

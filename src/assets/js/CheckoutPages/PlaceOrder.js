@@ -26,7 +26,7 @@ export const placeOrder = (paymentMethod) => {
    // Перевірка на номер телефону
    function isValidPhoneNumber(phoneNumber) {
       // Встановлюємо шаблон для номеру телефону у форматі "+код країни-номер телефону"
-      let phonePattern = /^(\+\d{11}|\d{9})$/;
+      let phonePattern = /^(\+\d{12}|\d{9}|\d{10})$/;
 
       // Перевірка, чи введений номер телефону відповідає шаблону
       return phonePattern.test(phoneNumber);
