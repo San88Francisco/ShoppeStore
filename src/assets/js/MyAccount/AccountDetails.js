@@ -111,6 +111,8 @@ export const accountDetails = () => {
       if (isValid) {
          // Всі перевірки пройшли без помилок
          console.log('work');
+         // Скидаємо значення полів форми
+         detailsForm.reset();
       }
    }
 
@@ -185,6 +187,8 @@ export const accountDetails = () => {
       if (isValid) {
          // Всі перевірки пройшли без помилок
          console.log('valid');
+         // Скидаємо значення полів форми
+         detailsForm.reset();
       }
    }
 
@@ -207,17 +211,10 @@ export const accountDetails = () => {
       localStorage.setItem('userSignIn', JSON.stringify(myProfile.emailInput));
    });
 
-   // Password logic
-   const accountDetailsPass = document.querySelector('.account__details-pass');
-   const accountDetailsMewPass = document.querySelector(
-      '.account__details-newPass'
-   );
-   const accountConfirmPass = document.querySelector('.account__confirm-pass');
-
    const btnSavePass = document.querySelector('.save__account-password');
    btnSavePass.addEventListener('click', () => {
-      myProfile.passwordInput = accountConfirmPass.value;
-
+      myProfile.passwordInput = confirmPass.value;
+      displayErrorPassword();
       localStorage.setItem('myProfile', JSON.stringify(myProfile));
    });
 };
