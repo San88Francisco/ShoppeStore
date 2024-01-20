@@ -204,6 +204,6 @@ if (window.location.pathname.includes('/shop')) {
 
       // анімація випадання Aside
 
-      // animationDropBox('.mobile-filter_button', 'aside')
+      animationDropBox('.mobile-filter_button', 'aside')
    });
 }

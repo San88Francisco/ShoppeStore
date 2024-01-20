@@ -1,5 +1,7 @@
 export const addressEdit = () => {
+
    const btnSaveChanges = document.querySelector('.btn__address-edit');
+   console.log('addressEdit  btnSaveChanges:', btnSaveChanges);
 
    const addressFirstName = document.querySelector('.address__first-name');
    const addressLastName = document.querySelector('.address__last-name');
@@ -12,6 +14,7 @@ export const addressEdit = () => {
 
    const userAddressInfo =
       JSON.parse(localStorage.getItem('userAddressInfo')) || false;
+   console.log('placeOrder  userAddressInfo:', userAddressInfo);
 
    if (userAddressInfo) {
       addressFirstName.value = userAddressInfo.name;
@@ -36,7 +39,7 @@ export const addressEdit = () => {
    // Перевірка на номер телефону
    function ValidPhoneNumber(phoneNumber) {
       // Встановлюємо шаблон для номеру телефону у форматі "+код країни-номер телефону"
-      let phonePattern = /^(\+\d{11}|\d{9})$/;
+      let phonePattern = /^(\+\d{12}|\d{9}|\d{10})$/;
 
       // Перевірка, чи введений номер телефону відповідає шаблону
       return phonePattern.test(phoneNumber);
@@ -59,12 +62,12 @@ export const addressEdit = () => {
 
       function clearAllErrors() {
          const errors = formAdress.querySelectorAll('.error-message');
-         errors.forEach((error) => error.remove());
+         errors.forEach(error => error.remove());
       }
 
       // Додаємо обробник події для видалення всіх помилок при кліку на кожне поле вводу
       const inputFields = formAdress.querySelectorAll('input');
-      inputFields.forEach((input) => {
+      inputFields.forEach(input => {
          input.addEventListener('click', () => {
             clearAllErrors();
             clearFieldError(input);
@@ -148,7 +151,7 @@ export const addressEdit = () => {
          }
 
          // Додаємо обробник події для видалення помилок при кліку на кожне поле вводу
-         inputFields.forEach((input) => {
+         inputFields.forEach(input => {
             input.addEventListener('click', () => clearAllErrors());
          });
       }
@@ -159,6 +162,7 @@ export const addressEdit = () => {
          formAdress.reset();
       }
    }
+
 
    btnSaveChanges.addEventListener('click', () => {
       const blockData = {
@@ -175,5 +179,6 @@ export const addressEdit = () => {
       localStorage.setItem('userAddressInfo', JSON.stringify(blockData));
 
       displayErrorAdress();
-   });
+   })
+
 };

@@ -1,12 +1,12 @@
 
-// export const animationDropBox = (btn, dropBox) => {
-//    const mobileFilterButton = document.querySelector(btn)
-//    const asideMenu = document.querySelector(dropBox)
+export const animationDropBox = (btn, dropBox) => {
+   const mobileFilterButton = document.querySelector(btn)
+   const asideMenu = document.querySelector(dropBox)
 
-//    mobileFilterButton.addEventListener('click', () => {
-//       asideMenu.classList.toggle('active-filter-shop');
-//    })
-// }
+   mobileFilterButton.addEventListener('click', () => {
+      asideMenu.classList.toggle('active-filter-shop');
+   })
+}
 
 // function handleIntersection(entries) {
 //    entries.forEach((entry) => {
