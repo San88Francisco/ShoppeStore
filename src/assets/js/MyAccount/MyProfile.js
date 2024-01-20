@@ -1,11 +1,13 @@
 import { accountDetails } from './AccountDetails';
 import { addressEdit } from './AddressEdit';
+import { deleteAccount } from './DeleteAccount';
 import { myAddress } from './MyProfileAddress';
 
 export const myProfile = () => {
   addressEdit();
   myAddress();
   accountDetails();
+  deleteAccount();
 
   const {
     nameInput,

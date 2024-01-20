@@ -1,5 +1,5 @@
 import { loadCartItems } from './LoadCart';
-import { applyCoupon } from './applyCoupon';
+import { applyCoupon } from './ApplyCoupon';
 import { emptyCartWindow } from './EmptyCart';
 import { amountItem } from './AmountItem';
 import { saveCount } from './SaveCount';
@@ -174,12 +174,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       cartAllProduct.forEach((item) => {
         const priceDiscount = item.discountPrice || item.price;
-        const totalPriceItem = item.count * parseFloat(priceDiscount.replace('$', '').replace(',', '.'));
+        const totalPriceItem =
+          item.count *
+          parseFloat(priceDiscount.replace('$', '').replace(',', '.'));
 
         const blockData = {
           name: item.name,
           price: totalPriceItem,
-          count: item.count
+          count: item.count,
         };
 
         return itemToCheckout.push(blockData);
