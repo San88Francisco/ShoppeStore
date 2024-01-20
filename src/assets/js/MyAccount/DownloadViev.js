@@ -1,6 +1,28 @@
 export const downloadView = () => {
   const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
 
+  const orderLinkDownloads = (link) => {
+    const vievOrderLink = document.querySelectorAll(`${link}`);
+
+    vievOrderLink.forEach((link, index) => {
+      link.addEventListener('click', () => {
+        const info = orderVievItem[index].orderInfo;
+        const item = orderVievItem[index].orderItem;
+        const checkoutInfo = {
+          item: item,
+          info: info,
+        };
+
+        localStorage.setItem(
+          'userOrderInfo',
+          JSON.stringify(orderVievItem[index].userInfo)
+        );
+        localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
+        localStorage.setItem('checkoutPopupOrder', 0);
+      });
+    });
+  };
+
   // Наш основний блок Orders
   const targetOfDownloads = document.querySelector('.targetOf-downloads');
 
@@ -25,11 +47,12 @@ export const downloadView = () => {
             </tr>
             `;
     accountDownloadsThead.insertAdjacentHTML('beforeend', html);
+    orderLinkDownloads('.link__downloads-viev');
   } else {
     targetOfDownloads.innerHTML = `
             <div class="alert-not-address">
               <p>No downloads available yet.</p>
-              <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>   
+              <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>
             </div>
           `;
   }
@@ -83,7 +106,7 @@ export const downloadView = () => {
           <li class="mobile__value-text">Delivered</li>
           <li class="mobile__value-text">${orderInfo[0].totalPrice}</li>
           <li class="mobile__value-link">
-            <a href="http://localhost:3000/order-confirmation.html" class="link__downloads-viev do-sth">
+            <a href="http://localhost:3000/order-confirmation.html" class="link__downloads-mobile do-sth">
               View Order
             </a>
   
@@ -98,7 +121,9 @@ export const downloadView = () => {
         `;
       });
 
-      orderLink();
+      orderLinkDownloads('.link__downloads-mobile');
+    } else {
+      orderLinkDownloads('.link__downloads-viev');
     }
   }
 
@@ -107,27 +132,4 @@ export const downloadView = () => {
   window.addEventListener('resize', handleResize);
 
   // href="http://localhost:3000/order-confirmation.html"
-  const orderLink = () => {
-    const vievOrderLink = document.querySelectorAll('.link__downloads-viev');
-
-    vievOrderLink.forEach((link, index) => {
-      link.addEventListener('click', () => {
-        const info = orderVievItem[index].orderInfo;
-        const item = orderVievItem[index].orderItem;
-        const checkoutInfo = {
-          item: item,
-          info: info,
-        };
-
-        localStorage.setItem(
-          'userOrderInfo',
-          JSON.stringify(orderVievItem[index].userInfo)
-        );
-        localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
-        localStorage.setItem('checkoutPopupOrder', 0);
-      });
-    });
-  };
-
-  orderLink();
 };

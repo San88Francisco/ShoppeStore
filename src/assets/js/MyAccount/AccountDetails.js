@@ -1,6 +1,5 @@
 export const accountDetails = () => {
   const myProfile = JSON.parse(localStorage.getItem('myProfile'));
-  console.log(' myProfile:', myProfile);
 
   const detailsFirstName = document.querySelector(
     '.account__details-firstName'

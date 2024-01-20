@@ -1,6 +1,28 @@
 export const orderViev = () => {
   const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
-  console.log('orderVievItem:', orderVievItem);
+
+  const orderLink = (link) => {
+    const vievOrderLink = document.querySelectorAll(`${link}`);
+
+    vievOrderLink.forEach((link, index) => {
+      link.addEventListener('click', () => {
+        console.log(link);
+        const info = orderVievItem[index].orderInfo;
+        const item = orderVievItem[index].orderItem;
+        const checkoutInfo = {
+          item: item,
+          info: info,
+        };
+
+        localStorage.setItem(
+          'userOrderInfo',
+          JSON.stringify(orderVievItem[index].userInfo)
+        );
+        localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
+        localStorage.setItem('checkoutPopupOrder', 0);
+      });
+    });
+  };
 
   // Наш основний блок Orders
   const targetOfOrders = document.querySelector('.targetOf-orders');
@@ -22,6 +44,7 @@ export const orderViev = () => {
       </tr>
       `;
     accountOrderThead.insertAdjacentHTML('beforeend', html);
+    orderLink('.link__order-viev');
   } else {
     targetOfOrders.innerHTML = `
       <div class="alert-not-ofer">
@@ -53,7 +76,7 @@ export const orderViev = () => {
     const screenWidth =
       window.innerWidth || document.documentElement.clientWidth;
 
-    if (screenWidth < 600) {
+    if (screenWidth <= 600) {
       const showMobileDownloads = document.querySelector('.order__mobile');
       showMobileDownloads.innerHTML = '';
 
@@ -74,7 +97,7 @@ export const orderViev = () => {
             <li class="mobile__value-text">Delivered</li>
             <li class="mobile__value-text">${orderInfo[0].totalPrice}</li>
             <li class="mobile__value-text">
-              <a href="http://localhost:3000/order-confirmation.html" class="link__order-viev do-sth">
+              <a href="http://localhost:3000/order-confirmation.html" class="link__order-mobile do-sth">
                 View Order
               </a>
             </li>
@@ -83,7 +106,9 @@ export const orderViev = () => {
         `;
       });
 
-      orderLink();
+      orderLink('.link__order-mobile');
+    } else {
+      orderLink('.link__order-viev');
     }
   }
 
@@ -92,28 +117,4 @@ export const orderViev = () => {
   window.addEventListener('resize', handleResizeOrder);
 
   // href="http://localhost:3000/order-confirmation.html"
-
-  const orderLink = () => {
-    const vievOrderLink = document.querySelectorAll('.link__order-viev');
-
-    vievOrderLink.forEach((link, index) => {
-      link.addEventListener('click', () => {
-        const info = orderVievItem[index].orderInfo;
-        const item = orderVievItem[index].orderItem;
-        const checkoutInfo = {
-          item: item,
-          info: info,
-        };
-
-        localStorage.setItem(
-          'userOrderInfo',
-          JSON.stringify(orderVievItem[index].userInfo)
-        );
-        localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
-        localStorage.setItem('checkoutPopupOrder', 0);
-      });
-    });
-  };
-
-  orderLink();
 };
