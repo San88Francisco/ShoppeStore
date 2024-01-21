@@ -318,7 +318,6 @@ footer {
                   margin: 11px 0 0 0;
                }
                .checkbox {
-         
                   input[type='checkbox']+label>span {
                  
                      @media (max-width: 564.98px){
@@ -417,10 +416,10 @@ footer {
                   display: flex;
                   gap: 4px;
                   align-items: center;
-                  margin: 11px 0 0 0;
+                  margin: 11px 0 0 13px;
 
                   input {
-                     width: 13px;
+                     width: 0;
                      height: 13px;
                   }
 

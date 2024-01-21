@@ -36,6 +36,7 @@
       p {
         @include price_text;
         font-size: 18px;
+        text-align: center;
       }
 
       div {
@@ -650,22 +651,12 @@
     }
 
     .btn__profile {
-      width: 100%;
-      background-color: $white-color;
-      border: 1px solid $black-color;
-      border-radius: 4px;
-      color: $black-color;
-      font-family: DM Sans;
+      @include white-btn;
       font-size: 16px;
       font-weight: 600;
       padding: 10px 15px;
-      transition: 0.2s all linear;
-
       &:hover {
-        transition: 0.2s all linear;
-        background-color: $black-color;
         border: 1px solid $black-color;
-        color: $white-color;
       }
     }
   }
@@ -1058,6 +1049,8 @@
       }
     }
   }
+
+ 
   @media (max-width: 400px) {
     .mobile {
       &__title-text,
@@ -1066,5 +1059,63 @@
         font-size: 12px;
       }
     }
+  }
+}
+@media (max-width: 850px){
+  .my-account{
+  
+      .targetOf-logout{
+        .targetOf__my-profile{
+          .my__profile-info{
+            flex-direction: column;
+            hr{
+              display: none;
+            }
+          }
+          
+        }
+        .my__profile-address{
+          width: 100%;
+        }
+      }
+   
+  }
+}
+
+@media (max-width: 600px){
+  .my-account{
+    .popup{
+      padding: 50px;
+    }
+      .targetOf-logout{
+        .targetOf__my-profile{
+          .my__profile-info{
+            .my__profile-user{
+            grid-template-columns: none;
+            li{
+              span:last-child{
+                font-size: 14px;
+              }
+            }
+           }
+           .my__profile-avatar{
+            max-width: 150px;
+           }
+          }
+          
+        }
+        .my__profile-address{
+         .btn__profile{
+          font-size: 14px;
+         }
+        }
+        .user__editing-btn{
+          width: 100%;
+          .btn__profile{
+            font-size: 14px;
+           }
+        }
+      }
+   
   }
 }
