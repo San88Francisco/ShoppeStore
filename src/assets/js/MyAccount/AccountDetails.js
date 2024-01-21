@@ -10,7 +10,6 @@ export const accountDetails = () => {
    const newPass = document.querySelector('.account__details-newPass');
    const confirmPass = document.querySelector('.account__confirm-pass');
 
-
    // Перевірка на номер телефону
    function ValidPhoneNumber(phoneNumber) {
       // Встановлюємо шаблон для номеру телефону у форматі "+код країни-номер телефону"
@@ -29,7 +28,7 @@ export const accountDetails = () => {
       const latinLettersRegex = /^[a-zA-Z]+$/;
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const isErrorMessage = detailsForm.querySelector('.error-message');
-      let isValid = true;
+
 
       function clearFieldError(field) {
          let error = field.nextElementSibling;
@@ -106,18 +105,23 @@ export const accountDetails = () => {
          inputFields.forEach(input => {
             input.addEventListener('click', () => clearAllErrors());
          });
-      }
-
-      if (isValid) {
-         // Всі перевірки пройшли без помилок
-         console.log('work');
-         // Скидаємо значення полів форми
-         detailsForm.reset();
+      } else {
+         myProfile.nameInput = detailsFirstName.value;
+         myProfile.lastNameInput = detailsLastName.value;
+         myProfile.displayName = detailsDisplayName.value;
+         myProfile.phone = detailsPhone.value;
+         myProfile.emailInput = detailsFirstEmail.value;
+         localStorage.setItem('myProfile', JSON.stringify(myProfile));
+         localStorage.setItem('userSignIn', JSON.stringify(myProfile.emailInput));
       }
    }
 
+   const formPassword = document.querySelector('.account-passwords');
+   console.log(formPassword);
+
+
    function displayErrorPassword() {
-      const isErrorMessage = detailsForm.querySelector('.error-message');
+      const isErrorMessage = formPassword.querySelector('.error-message');
       let isValid = true;
 
       function addError(input, errorMessage) {
@@ -127,56 +131,52 @@ export const accountDetails = () => {
          isValid = false;
       }
 
-      function clearFieldError(field) {
-         let error = field.nextElementSibling;
-         if (error && error.classList.contains('error-message')) {
-            error.remove();
-         }
-      }
-
       function clearAllErrors() {
-         const errors = detailsForm.querySelectorAll('.error-message');
+         const errors = formPassword.querySelectorAll('.error-message');
          errors.forEach(error => error.remove());
       }
 
-      const inputFields = detailsForm.querySelectorAll('input');
+      const inputFields = formPassword.querySelectorAll('input');
 
       inputFields.forEach(input => {
          input.addEventListener('click', () => {
             clearAllErrors();
-            clearFieldError(input);
          });
       });
 
-      switch (true) {
-         case curentPass.value.length < 8:
-            addError(curentPass, 'The password must be at least 8 characters long');
-            break;
-         case !/[a-zA-Z]/.test(curentPass.value):
-            addError(curentPass, 'Password must contain at least one letter');
-            break;
-      }
+      if (curentPass.value !== myProfile.passwordInput) {
+         addError(curentPass, 'The password is incorrect');
+      } else {
+         switch (true) {
+            case curentPass.value.length < 8:
+               addError(curentPass, 'The password must be at least 8 characters long');
+               break;
+            case !/[a-zA-Z]/.test(curentPass.value):
+               addError(curentPass, 'Password must contain at least one letter');
+               break;
+         }
 
-      switch (true) {
-         case newPass.value.length < 8:
-            addError(newPass, 'The password must be at least 8 characters long');
-            break;
-         case !/[a-zA-Z]/.test(newPass.value):
-            addError(newPass, 'Password must contain at least one letter');
-            break;
-      }
+         switch (true) {
+            case newPass.value.length < 8:
+               addError(newPass, 'The password must be at least 8 characters long');
+               break;
+            case !/[a-zA-Z]/.test(newPass.value):
+               addError(newPass, 'Password must contain at least one letter');
+               break;
+         }
 
-      switch (true) {
-         case confirmPass.value.length < 8:
-            addError(confirmPass, 'The password must be at least 8 characters long');
-            break;
-         case !/[a-zA-Z]/.test(confirmPass.value):
-            addError(confirmPass, 'Password must contain at least one letter');
-            break;
-         case newPass.value.trim() !== confirmPass.value:
-            addError(confirmPass, 'Your passwords are different');
-            addError(newPass, 'Your passwords are different');
-            break;
+         switch (true) {
+            case confirmPass.value.length < 8:
+               addError(confirmPass, 'The password must be at least 8 characters long');
+               break;
+            case !/[a-zA-Z]/.test(confirmPass.value):
+               addError(confirmPass, 'Password must contain at least one letter');
+               break;
+            case newPass.value.trim() !== confirmPass.value:
+               addError(confirmPass, 'Your passwords are different');
+               addError(newPass, 'Your passwords are different');
+               break;
+         }
       }
 
       // Додаємо обробник події для видалення помилок при кліку на кожне поле вводу
@@ -187,8 +187,11 @@ export const accountDetails = () => {
       if (isValid) {
          // Всі перевірки пройшли без помилок
          console.log('valid');
-         // Скидаємо значення полів форми
-         detailsForm.reset();
+         // Зберігаємо дані у локальне сховище
+         myProfile.passwordInput = confirmPass.value;
+         localStorage.setItem('myProfile', JSON.stringify(myProfile));
+         // Очищаємо значення полів форми
+         formPassword.reset();
       }
    }
 
@@ -200,21 +203,14 @@ export const accountDetails = () => {
    detailsFirstEmail.value = myProfile.emailInput;
 
    const btnSaveDetails = document.querySelector('.save__account-details');
-   btnSaveDetails.addEventListener('click', () => {
-      myProfile.nameInput = detailsFirstName.value;
-      myProfile.lastNameInput = detailsLastName.value;
-      myProfile.displayName = detailsDisplayName.value;
-      myProfile.phone = detailsPhone.value;
-      myProfile.emailInput = detailsFirstEmail.value;
+   btnSaveDetails.addEventListener('click', (e) => {
+      e.preventDefault();
       displayErrorDetails();
-      localStorage.setItem('myProfile', JSON.stringify(myProfile));
-      localStorage.setItem('userSignIn', JSON.stringify(myProfile.emailInput));
    });
 
    const btnSavePass = document.querySelector('.save__account-password');
-   btnSavePass.addEventListener('click', () => {
-      myProfile.passwordInput = confirmPass.value;
+   btnSavePass.addEventListener('click', (e) => {
+      e.preventDefault();
       displayErrorPassword();
-      localStorage.setItem('myProfile', JSON.stringify(myProfile));
    });
 };
