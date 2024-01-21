@@ -163,7 +163,8 @@ export const addressEdit = () => {
    }
 
 
-   btnSaveChanges.addEventListener('click', () => {
+   btnSaveChanges.addEventListener('click', (e) => {
+      e.preventDefault();
       const blockData = {
          name: addressFirstName.value,
          lastName: addressLastName.value,

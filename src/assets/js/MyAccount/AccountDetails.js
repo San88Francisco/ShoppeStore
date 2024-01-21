@@ -28,7 +28,7 @@ export const accountDetails = () => {
       const latinLettersRegex = /^[a-zA-Z]+$/;
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const isErrorMessage = detailsForm.querySelector('.error-message');
-      let isValid = true;
+
 
       function clearFieldError(field) {
          let error = field.nextElementSibling;

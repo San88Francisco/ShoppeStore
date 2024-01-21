@@ -33,6 +33,8 @@ export const placeOrder = (paymentMethod) => {
       return phonePattern.test(phoneNumber);
    }
 
+
+
    const date = new Date();
    const currentDate = date.toLocaleDateString('en-US', {
       month: 'long',
