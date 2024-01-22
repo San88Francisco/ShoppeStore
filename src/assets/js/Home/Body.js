@@ -129,10 +129,15 @@ const renderProducts = async () => {
    const item = JSON.parse(localStorage.getItem('allProduct'));
    const contents = item ? item : await fetchData();
 
+   if (window.location.pathname.includes('/index')) {
+      renderPage(currentPage, contents);
+   }
+
    if (contents) {
       const totalPages = Math.ceil(contents.length / itemsPerPage);
-      renderPage(currentPage, contents);
+
       if (window.location.pathname.includes('/shop')) {
+         renderPage(currentPage, contents);
          generateBtn(totalPages);
          clickToInotherPage(contents, totalPages);
       }
