@@ -108,7 +108,7 @@
           position: relative;
 
           &::after {
-            content: '';
+            content: "";
             transition: 50ms all ease-in-out;
             z-index: 5;
             width: 100%;
@@ -343,16 +343,16 @@
         display: none;
 
         form {
-        .bill-user-name {
-         .input-wraper {
-           .error-message {
-            bottom: 20px;
-           }
-         }
-        }
-         .input-wraper {
+          .bill-user-name {
+            .input-wraper {
+              .error-message {
+                bottom: 20px;
+              }
+            }
+          }
+          .input-wraper {
             position: relative;
-         }
+          }
           input {
             display: block;
             border-bottom: 1px solid $gray-color;
@@ -509,7 +509,7 @@
 
     form {
       .input-wraper {
-         position: relative;
+        position: relative;
       }
       input {
         display: block;
@@ -604,7 +604,7 @@
               &:nth-child(2) {
                 color: $black-color;
                 font-size: 18px;
-                font-weight: 500;
+                font-weight: 400;
                 padding-bottom: 5px;
                 border-bottom: 0.5px solid $placeholder-color;
               }
@@ -1050,7 +1050,6 @@
     }
   }
 
- 
   @media (max-width: 400px) {
     .mobile {
       &__title-text,
@@ -1061,61 +1060,56 @@
     }
   }
 }
-@media (max-width: 850px){
-  .my-account{
-  
-      .targetOf-logout{
-        .targetOf__my-profile{
-          .my__profile-info{
-            flex-direction: column;
-            hr{
-              display: none;
-            }
+@media (max-width: 850px) {
+  .my-account {
+    .targetOf-logout {
+      .targetOf__my-profile {
+        .my__profile-info {
+          flex-direction: column;
+          hr {
+            display: none;
           }
-          
-        }
-        .my__profile-address{
-          width: 100%;
         }
       }
-   
+      .my__profile-address {
+        width: 100%;
+      }
+    }
   }
 }
 
-@media (max-width: 600px){
-  .my-account{
-    .popup{
+@media (max-width: 600px) {
+  .my-account {
+    .popup {
       padding: 50px;
     }
-      .targetOf-logout{
-        .targetOf__my-profile{
-          .my__profile-info{
-            .my__profile-user{
+    .targetOf-logout {
+      .targetOf__my-profile {
+        .my__profile-info {
+          .my__profile-user {
             grid-template-columns: none;
-            li{
-              span:last-child{
+            li {
+              span:last-child {
                 font-size: 14px;
               }
             }
-           }
-           .my__profile-avatar{
-            max-width: 150px;
-           }
           }
-          
-        }
-        .my__profile-address{
-         .btn__profile{
-          font-size: 14px;
-         }
-        }
-        .user__editing-btn{
-          width: 100%;
-          .btn__profile{
-            font-size: 14px;
-           }
+          .my__profile-avatar {
+            max-width: 150px;
+          }
         }
       }
-   
+      .my__profile-address {
+        .btn__profile {
+          font-size: 14px;
+        }
+      }
+      .user__editing-btn {
+        width: 100%;
+        .btn__profile {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
