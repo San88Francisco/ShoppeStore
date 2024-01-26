@@ -1,5 +1,4 @@
-import { updateAccountLinksVisibility } from "../Account/SingIn.js";
-import { handleUserSignIn } from "../Account/SingIn.js";
+import * as AccountFunctions from "../Account/SingIn.js";
 
 const PAGES = [
   "index",
@@ -32,10 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!pageExists && !is404Page) {
     redirectTo404();
   } else {
-    updateAccountLinksVisibility();
-
+    AccountFunctions.updateAccountLinksVisibility(); // Використовуємо нове ім'я функції
     const { redirectToLoginPage, handleLogout, userSignedIn } =
-      handleUserSignIn();
+      AccountFunctions.handleUserSignIn(); // Використовуємо нове ім'я функції
 
     const signInLinkPhone = document.getElementById("signInLink");
     const logoutLinkPhone = document.getElementById("logoutLink");
