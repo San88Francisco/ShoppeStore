@@ -131,25 +131,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? (arrowBack.style.display = "flex")
                 : (arrowBack.style.display = "none");
             }
-          }
-        });
-      });
-    };
 
-    const renderProducts = async () => {
-      const item = JSON.parse(localStorage.getItem("allProduct"));
-      const contents = item ? item : await fetchData();
+         }
+      })
+   })
+}
 
-      if (contents) {
-        const totalPages = Math.ceil(contents.length / itemsPerPage);
-        renderPage(currentPage, contents);
-        if (window.location.pathname.includes("/shop")) {
-          generateBtn(totalPages);
-          clickToInotherPage(contents, totalPages);
-        }
+const renderProducts = async () => {
+   const item = JSON.parse(localStorage.getItem('allProduct'));
+   const contents = item ? item : await fetchData();
+
+   if (window.location.pathname.includes('/index')) {
+      renderPage(currentPage, contents);
+   }
+
+   if (contents) {
+      const totalPages = Math.ceil(contents.length / itemsPerPage);
+
+      if (window.location.pathname.includes('/shop')) {
+         renderPage(currentPage, contents);
+         generateBtn(totalPages);
+         clickToInotherPage(contents, totalPages);
       }
     };
-
-    renderProducts();
   }
 });
+renderProducts();

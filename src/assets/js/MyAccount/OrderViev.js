@@ -1,6 +1,8 @@
 export const orderViev = () => {
   const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
 
+  let isHandleResizeOrderEnabled = true;
+
   const orderLink = (link) => {
     const vievOrderLink = document.querySelectorAll(`${link}`);
 
@@ -52,6 +54,7 @@ export const orderViev = () => {
         <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>   
       </div>
     `;
+    isHandleResizeOrderEnabled = false;
   }
 
   orderVievItem.forEach((order) => {
@@ -76,7 +79,7 @@ export const orderViev = () => {
     const screenWidth =
       window.innerWidth || document.documentElement.clientWidth;
 
-    if (screenWidth <= 600) {
+    if (screenWidth <= 600 && isHandleResizeOrderEnabled) {
       const showMobileDownloads = document.querySelector('.order__mobile');
       showMobileDownloads.innerHTML = '';
 
