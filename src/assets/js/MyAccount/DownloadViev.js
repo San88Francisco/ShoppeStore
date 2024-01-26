@@ -1,6 +1,8 @@
 export const downloadView = () => {
   const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
 
+  let isHandleResizeEnabled = true;
+
   const orderLinkDownloads = (link) => {
     const vievOrderLink = document.querySelectorAll(`${link}`);
 
@@ -50,11 +52,12 @@ export const downloadView = () => {
     orderLinkDownloads('.link__downloads-viev');
   } else {
     targetOfDownloads.innerHTML = `
-            <div class="alert-not-address">
-              <p>No downloads available yet.</p>
-              <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>
-            </div>
-          `;
+      <div class="alert-not-address">
+        <p>No downloads available yet.</p>
+        <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>
+      </div>
+    `;
+    isHandleResizeEnabled = false;
   }
 
   orderVievItem.forEach((order) => {
@@ -85,7 +88,7 @@ export const downloadView = () => {
     const screenWidth =
       window.innerWidth || document.documentElement.clientWidth;
 
-    if (screenWidth < 600) {
+    if (screenWidth < 600 && isHandleResizeEnabled) {
       const showMobileDownloads = document.querySelector('.downloads__mobile');
       showMobileDownloads.innerHTML = '';
 
