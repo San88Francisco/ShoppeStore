@@ -18,6 +18,7 @@ import './Product/SliderProductMain';
 import './Product/SliderProductSecond';
 import './Product/ProductAdaptive';
 import './Product/generateItems';
+import './Product/clickToItem'
 
 import './Contact/ContactUs';
 
