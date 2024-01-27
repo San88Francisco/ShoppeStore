@@ -1,21 +1,7 @@
 import { fetchData } from '../API/fetch-products';
 import { discount } from '../Shop/Discount';
 
-const shopLatestBlocks = document.querySelector('.shop-latest-blocks');
 
-const BASE_URL = '../../../assets/img/Home_img/Body/heart_bg.png';
-const ACTIVE_HEART_URL = '../../../assets/img/Home_img/Body/red_heart.png';
-
-shopLatestBlocks &&
-  shopLatestBlocks.addEventListener('click', (e) => {
-    const targetHeart = e.target.closest('.shop-latest__heart');
-
-    if (targetHeart) {
-      targetHeart.id = targetHeart.id === 'default' ? 'active' : 'default';
-      targetHeart.src =
-        targetHeart.id === 'default' ? BASE_URL : ACTIVE_HEART_URL;
-    }
-  });
 
 const itemsPerPage = 6;
 let currentPage = 1;
@@ -49,7 +35,6 @@ const renderPage = (page, contents) => {
             <a href="">
                 <p>ADD TO CART</p>
             </a>
-            <img src=${BASE_URL} class="shop-latest__heart" id="default"/>
           </div>
       </div>
       <div class="label-container">
