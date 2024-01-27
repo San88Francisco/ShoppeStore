@@ -215,6 +215,7 @@
          }
          .leave-reply{
             padding-bottom: 70px;
+            padding-top: 50px;
             h5{
                padding-top: 20px;
                font-size: 26px;
@@ -237,6 +238,7 @@
                      position: relative;
                      img{
                         opacity: 0;
+                        cursor: pointer;
                         width: 20px;
                         position: absolute;
                         top: 5px;
@@ -488,7 +490,7 @@
                   font-size: 14px;
                   line-height: 22px;
                   color: $placeholder-color;
-                  padding-left: 10px;
+                  padding-left: 16px;
                   margin-right: auto;
                   margin-top: auto;
                   margin-bottom: auto;
