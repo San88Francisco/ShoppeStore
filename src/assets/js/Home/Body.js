@@ -1,7 +1,6 @@
 import { fetchData } from '../API/fetch-products';
 import { discount } from '../Shop/Discount';
-
-
+import { LinkAddToCart } from './LinkAddToCart';
 
 const itemsPerPage = 6;
 let currentPage = 1;
@@ -32,7 +31,7 @@ const renderPage = (page, contents) => {
       <p class="productVariant">${productVariant}</p>
       <div class="shop-latest_hover">
           <div class="shop-latest_hover_container">
-            <a href="">
+            <a>
                 <p>ADD TO CART</p>
             </a>
           </div>
@@ -132,6 +131,7 @@ const renderProducts = async () => {
       clickToInotherPage(contents, totalPages);
     }
   }
+  LinkAddToCart(contents);
 };
 
 renderProducts();
