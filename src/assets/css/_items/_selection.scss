@@ -19,32 +19,27 @@
             min-width: 100%;
             position: absolute;
             bottom: 4px;
-            padding: 0 30px 0 30px;
             transition: all 0.4s ease;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
- 
+            cursor: pointer;
+
          }
 
          &:hover .shop-latest_hover {
             opacity: 1;
          }
-         
-         .shop-latest__heart {
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-         }
+
+
 
          .shop-latest_hover_container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             min-width: 100%;
             transition: all 0.3s ease;
-
             p {
                font-size: 16px;
                font-style: normal;
@@ -53,9 +48,7 @@
                text-transform: uppercase;
             }
 
-            a {
-               border: none;
-            }
+            
          }
 
          .add-new,
@@ -123,15 +116,7 @@
          }
       }
 
-      .shop-latest_hover_container {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         min-height: 45px;
-         min-width: 100%;
-         transition: all 0.3s ease;
-         position: relative;
-      }
+      
 
       .price-discount {
          margin-right: 16px;
@@ -162,13 +147,9 @@
          .shop-latest__img {
             .shop-latest_hover {
                min-height: 40px;
-               padding: 0 20px 0 20px;
             }
 
-            .shop-latest__heart {
-               width: 22px;
-               height: 22px;
-            }
+
          }
 
          .shop-latest_hover_container {
@@ -215,13 +196,9 @@
          .shop-latest__img {
             .shop-latest_hover {
                min-height: 35px;
-               padding: 0 10px 0 10px;
             }
 
-            .shop-latest__heart {
-               width: 24px;
-               height: 24px;
-            }
+
          }
 
          .shop-latest_hover_container {

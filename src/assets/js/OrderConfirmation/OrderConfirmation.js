@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Автовидалення checkoutInfo, щоб після перезагрузки сторінки, order-confirmation не відображався
     setTimeout(() => {
       localStorage.removeItem('checkoutInfo');
+      localStorage.removeItem('userOrderInfo');
       // localStorage.setItem('checkoutPopupOrder', 1);
       console.log('Працює');
     }, 2000);
