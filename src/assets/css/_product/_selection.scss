@@ -100,7 +100,7 @@
             display: grid;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-columns: repeat(5, 1fr);
-            gap: clamp(30px, 2%, 40px);
+            gap: clamp(40px, 2%, 40px);
             position: relative;
 
             img {
@@ -258,7 +258,7 @@
                .messengers {
                   width: 170px;
                   height: 20px;
-                  border-left: 1px solid $dark-gray-color;
+                 
                   user-select: none;
                   li {
                      display: inline-block;
@@ -267,7 +267,7 @@
                      color: $placeholder-color;
 
                      &:first-child {
-                        margin-left: 20px;
+                        padding: 0 10px 0 0;
                      }
                      i{
                         &:hover {
@@ -297,7 +297,7 @@
    }
 
    .b {
-      top: -10vw;
+      top: -11vw;
       position: relative;
       width: 100%;
 
@@ -328,7 +328,7 @@
          margin-bottom: 35px;
 
          li {
-            margin-right: clamp(36px, 5vw, 96px);
+            margin-right: clamp(36px, 6vw, 96px);
 
             h3 {
                color: $placeholder-color;
@@ -439,7 +439,7 @@
                }
 
                .stars__amount {
-                  margin: 17px 0px 17px 0px;
+                  margin: 17px 0px 21px 0px;
                }
             }
 
@@ -511,7 +511,11 @@
                   font-family: DM Sans;
                   font-size: 16px;
                   font-weight: 400;
+                
                }
+               #ReviewUserMail{
+                  margin-bottom: 0;
+                 }
             }
 
             .checkbox-to-save {
@@ -975,6 +979,17 @@
 
 @media screen and (max-width: 700px) {
    .Product {
+      .a {
+         .product--overview {
+            .product--overview__view {
+               p {
+                 
+                  margin-bottom: clamp(calc(43px - 40%), 7vw, 10px);
+                
+               }
+            }
+         }
+      }
       .cart__window-block {
          min-width: 320px;
          width: 100%;
@@ -992,7 +1007,10 @@
          font-size: 14px;
       }
    }
-
+   .Product .c .similar__title{
+      margin: 0 0 20px 0;
+      font-size: 20px;
+   }
 }
 
 
@@ -1101,6 +1119,7 @@
       .window-link {
          font-size: 12px;
       }
+        
    }
 }
 
@@ -1125,6 +1144,7 @@
                padding: 0px;
 
                .btn--row {
+                  margin-bottom: 0;
                   .change--amount {
                      display: none;
                   }
@@ -1275,5 +1295,6 @@
             }
          }
       }
+      
    }
 }

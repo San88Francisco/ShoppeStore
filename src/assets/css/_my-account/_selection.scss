@@ -348,7 +348,11 @@
            .error-message {
             bottom: 20px;
            }
+          
          }
+        }
+        .address__email{
+          margin-bottom: 64px;
         }
          .input-wraper {
             position: relative;
@@ -370,7 +374,7 @@
               line-height: 22px;
               color: $placeholder-color;
               margin-bottom: 40px;
-            }
+            }   
           }
 
           .bill-user-name {
@@ -504,10 +508,13 @@
       font-weight: 500;
       line-height: 130.30303%;
       text-align: center;
-      padding-bottom: 65px;
+      padding-bottom: 40px;
     }
 
     form {
+      .account__confirm-pass{
+        margin-bottom: 64px;
+      }
       .input-wraper {
          position: relative;
       }
@@ -530,6 +537,7 @@
           color: $placeholder-color;
           margin-bottom: 40px;
         }
+       
       }
 
       h3 {
@@ -912,6 +920,8 @@
   }
 
   @media (max-width: 600px) {
+
+      
     table {
       display: none;
     }
@@ -1043,7 +1053,7 @@
         }
 
         p {
-          margin-top: 40px;
+          margin-top: 15px;
           margin-bottom: 25px;
         }
       }
@@ -1084,6 +1094,15 @@
 
 @media (max-width: 600px){
   .my-account{
+    
+      .targetOf-accountDetails{
+        form{
+          .account__details-displayName{
+            margin: 0 0 8px 0;
+          }
+        }
+      }
+    
     .popup{
       padding: 50px;
     }

@@ -190,9 +190,11 @@
           background-color: $light-gray-color;
 
           .amount {
-            width: 7px;
+            width: 17px;
             position: relative;
             color: $placeholder-color;
+            display: flex;
+            justify-content: center;
           }
 
           button {
@@ -513,6 +515,7 @@
         display: block;
         position: relative;
         z-index: 2;
+        margin: 0 0 48px 0;
       }
       .checkout__total-cost {
         display: flex;
@@ -902,7 +905,9 @@
              }
           }
           .btn__checkout-cart {
-            display: none;
+            padding: 12px 0px;
+            font-size: 13px;
+            font-weight: 400;
           }
         }
       }
@@ -1033,7 +1038,14 @@
         }
       }
       }
-      
+      .cart-totals{
+        .cart-total__checkout{
+          .btn__checkout-cart {
+            padding: 7px 0px;
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
 }
@@ -1045,7 +1057,7 @@
        .cart__block-item{
         .cart__item{
           .change--amount{
-            right: 125px; 
+            right: 125px;
           }
         }
       }
@@ -1062,7 +1074,7 @@
        .cart__block-item{
         .cart__item{
           .change--amount{
-            right: 95px; 
+            right: 95px;
           }
         }
       }
