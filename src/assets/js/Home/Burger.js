@@ -28,7 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
     this.classList.toggle("active");
     menuItems.classList.toggle("active");
    
-
+    if (checkbox.classList.contains("active")) {
+      body.style.overflowY = "hidden";
+    } else {
+      setTimeout(function () {
+        body.style.overflowY = "auto";
+      }, 100);
+     
+    }
     
   
 

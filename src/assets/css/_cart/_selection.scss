@@ -186,9 +186,11 @@
           background-color: $light-gray-color;
 
           .amount {
-            width: 7px;
+            width: 17px;
             position: relative;
             color: $placeholder-color;
+            display: flex;
+            justify-content: center;
           }
 
           button {
@@ -505,6 +507,7 @@
         display: block;
         position: relative;
         z-index: 2;
+        margin: 0 0 48px 0;
       }
       .checkout__total-cost {
         display: flex;
@@ -876,7 +879,12 @@
             }
             .new__total-price {
               color: $placeholder-color;
-            }
+             }
+          }
+          .btn__checkout-cart {
+            padding: 12px 0px;
+            font-size: 13px;
+            font-weight: 400;
           }
         }
       }

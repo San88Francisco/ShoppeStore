@@ -1,8 +1,8 @@
 .Shop {
    max-width: 1248px;
    min-height: 1100px;
-   margin: 0 auto;
-
+   margin: 50px auto 0;
+   
 
    h1 {
       margin-bottom: 39px;
@@ -42,7 +42,7 @@
 
       display: flex;
       justify-content: space-between;
-      gap: 30px;
+      gap: 36px;
 
 
 
@@ -234,7 +234,7 @@
             .price-range {
                display: flex;
                justify-content: space-between;
-               margin: 16px 0 21px 0;
+               margin: 16px 0 39px 0;
             }
 
             .price-range-summ {
@@ -479,6 +479,7 @@
       }
 
       // .Shop {
+      
       .mobile-filter,
       .mobile-filter_button {
          display: flex;
@@ -487,5 +488,8 @@
       h1 {
          display: none;
       }
+   }
+   @media (max-width: 600px) {
+      margin: 0 auto;
    }
 }
