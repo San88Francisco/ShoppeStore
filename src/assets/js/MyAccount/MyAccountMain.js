@@ -2,7 +2,9 @@ import { downloadView } from './DownloadViev';
 import { myProfile } from './MyProfile';
 import { orderViev } from './OrderViev';
 
-if (window.location.pathname.includes('/my-account')) {
+const signInUser = localStorage.getItem('userSignIn') || false;
+
+if (window.location.pathname.includes('/my-account') && signInUser) {
   orderViev();
   downloadView();
   myProfile();
