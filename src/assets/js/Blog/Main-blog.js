@@ -52,6 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
       //! search
       const searchInput = document.querySelector('#search-input') 
       const searchTheItem = () => {
+         const inputIsSelect = localStorage.getItem('inputIsSelect')
+         if(inputIsSelect !== null){
+            searchInput.focus()
+            localStorage.removeItem('inputIsSelect')
+         } 
          if (searchInput !== null) {
             const numberOfSelectPage = document.querySelector('.act_page').classList[0].replace(/[^+\d]/g, '')
             const cardsBlock = document.querySelectorAll('.blog__cards__content')
@@ -312,26 +317,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const nowSelectCategories = localStorage.getItem('nowSelectCategories')
       if(nowSelectCategories !== null){
-         const selectItem = document.querySelectorAll(`.categories__${nowSelectCategories.toLocaleLowerCase()}`)
-         selectItem.forEach(item => {
-            item.classList.add('selectCategories')
-            item.style.color = 'black'
-         })
-     
-         let val = nowSelectCategories.trim().toLowerCase();
-         let lettersItems = document.querySelectorAll('#blogCategories');
-         lettersItems.forEach(function (e) {
-            const shopLatestBlock2 = e.closest('.content__cards');
-      
-            if (val == '') {
-               shopLatestBlock2.style.display = 'block';
-            } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
-               shopLatestBlock2.style.display = 'block';
-            } else {
-               shopLatestBlock2.style.display = 'none';
-            }
-         });
-
+         const selectItem = document.querySelector(`.categories__${nowSelectCategories.toLocaleLowerCase()}`)
+         sortByCategories(selectItem)
+         
          setTimeout(function() {
             localStorage.removeItem('nowSelectCategories')
           }, 1000);
