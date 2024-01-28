@@ -1,87 +1,127 @@
 <header class="Scroll_js_right">
-   <div class="header__logo">
-      <a href="./index.html">
-         <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
+  <div class="item__window-block">
+    <p>
+      <img src="./assets/img/Cart_img/svg/checked.svg" alt="cheked" />The item
+      added to your Shopping bag.
+    </p>
+    <a class="window-link" href="./cart.html">viev cart</a>
+  </div>
+
+  <div class="header__logo">
+    <a href="./index.html">
+      <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
+    </a>
+  </div>
+
+  <ul class="decstop-nav">
+    <li><a href="./shop.html">Shop</a></li>
+    <li><a href="./blog.html">Blog</a></li>
+    <li><a href="./our-story.html" class="">Our Story</a></li>
+    <li>|</li>
+    <li>
+      <a href="#" id="search-link">
+        <img
+          id="icon-search-global"
+          src="./assets/img/Home_img/header/search.svg"
+          alt=""
+        />
       </a>
-   </div>
-
-   <ul class="decstop-nav">
-      <li><a href="./shop.html">Shop</a></li>
-      <li><a href="./blog.html">Blog</a></li>
-      <li><a href="./our-story.html" class="">Our Story</a></li>
-      <li>|</li>
-      <li>
-         <a href="#" id="search-link">
-            <img id="icon-search-global" src="./assets/img/Home_img/header/search.svg" alt="" />
-         </a>
-      </li>
-      <li class="active-cart-visual header_link_cart">
-         <a href="./cart.html">
-            <img src="./assets/img/Home_img/header/shop.svg" alt="" />
-            <span class="cart__count"></span>
-         </a>
-      </li>
-      <li class="dropdown" id="accountDropdownWrapper">
-         <a href="#" class="dropbtn account__href" id="accountToggle">
-            <img src="./assets/img/Home_img/header/user.svg" alt="" />
-         </a>
-         <div class="dropdown-content account-dropdown" id="accountDropdown">
-            <a href="./account.html">Sign In</a>
-            <a href="./my-account.html" style="display:none">My account</a>
-            <a href="#" id="logout" style="display:none">Sign Out</a>
-         </div>
-      </li>
-
-      <label class="button-burger" for="check">
-         <input class="checkbox" type="checkbox" id="check" />
-         <span></span>
-         <span></span>
-         <span></span>
-      </label>
-   </ul>
-   <div class="navbar">
-      <div class="container nav-container">
-         <div class="menu-items">
-            <div class="burger__header">
-               <div class="header__logo">
-                  <a href="./index.html">
-                     <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
-                  </a>
-               </div>
-            </div>
-            <ul class="burger-list">
-               <li class="burger-menu__item "><a class="burger__link_home" href="./index.html">Home</a></li>
-               <li class="burger-menu__item"><a class="burger__link_shop" href="./shop.html">Shop</a></li>
-               <li class="burger-menu__item"><a class="burger__link_ourstory" href="./our-story.html">About</a>
-               </li>
-               <li class="burger-menu__item"><a class="burger__link_blog" href="./blog.html">Blog</a></li>
-               <li class="burger-menu__item"><a class="burger__link_help" href="./help.html">Help</a>
-               </li>
-               <li class="burger-menu__item"><a class="burger__link_contact" href="./contact.html">Contact</a></li>
-   
-            </ul>
-            <hr class="burger-line" />
-            <div class="burger__signIn">
-               <a class="burger__footer" href="#" id="signInLink">
-                  <img src="./assets/img/Home_img/header/login.png" height="21px" width="21px" alt="" />
-                  <p>Sign In</p>
-               </a>
-            </div>
-            <div id="myAccountContainer" style="display:none;" class="burger__myAccount">
-               <a class="burger__footer" href="./my-account.html">
-                  <img src="./assets/img/Home_img/header/user.png" height="21px" width="21px" alt="" />
-                  <p class="burger__link_myaccount">My account</p>
-               </a>
-            </div>
-            <div id="logoutContainer" style="display:none;" class="burger__logout">
-               <a class="burger__footer" href="#" id="logoutLink">
-                  <img src="./assets/img/Home_img/header/logout.png" height="21px" width="21px" alt="" />
-                  <p>Logout</p>
-               </a>
-            </div>
-         </div>
+    </li>
+    <li class="active-cart-visual header_link_cart">
+      <a href="./cart.html">
+        <img src="./assets/img/Home_img/header/shop.svg" alt="" />
+        <span class="cart__count"></span>
+      </a>
+    </li>
+    <li class="dropdown" id="accountDropdownWrapper">
+      <a href="#" class="dropbtn account__href" id="accountToggle">
+        <img src="./assets/img/Home_img/header/user.svg" alt="" />
+      </a>
+      <div class="dropdown-content account-dropdown" id="accountDropdown">
+        <a href="./account.html">Sign In</a>
+        <a href="./my-account.html" style="display: none">My account</a>
+        <a href="#" id="logout" style="display: none">Sign Out</a>
       </div>
-   </div>
+    </li>
+
+    <label class="button-burger" for="check">
+      <input class="checkbox" type="checkbox" id="check" />
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </ul>
+  <div class="navbar">
+    <div class="container nav-container">
+      <div class="menu-items">
+        <div class="burger__header">
+          <div class="header__logo">
+            <a href="./index.html">
+              <img src="./assets/img/Home_img/header/SHOPPE.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <ul class="burger-list">
+          <li class="burger-menu__item">
+            <a class="burger__link_home" href="./index.html">Home</a>
+          </li>
+          <li class="burger-menu__item">
+            <a class="burger__link_shop" href="./shop.html">Shop</a>
+          </li>
+          <li class="burger-menu__item">
+            <a class="burger__link_ourstory" href="./our-story.html">About</a>
+          </li>
+          <li class="burger-menu__item">
+            <a class="burger__link_blog" href="./blog.html">Blog</a>
+          </li>
+          <li class="burger-menu__item">
+            <a class="burger__link_help" href="./help.html">Help</a>
+          </li>
+          <li class="burger-menu__item">
+            <a class="burger__link_contact" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+        <hr class="burger-line" />
+        <div class="burger__signIn">
+          <a class="burger__footer" href="#" id="signInLink">
+            <img
+              src="./assets/img/Home_img/header/login.png"
+              height="21px"
+              width="21px"
+              alt=""
+            />
+            <p>Sign In</p>
+          </a>
+        </div>
+        <div
+          id="myAccountContainer"
+          style="display: none"
+          class="burger__myAccount"
+        >
+          <a class="burger__footer" href="./my-account.html">
+            <img
+              src="./assets/img/Home_img/header/user.png"
+              height="21px"
+              width="21px"
+              alt=""
+            />
+            <p class="burger__link_myaccount">My account</p>
+          </a>
+        </div>
+        <div id="logoutContainer" style="display: none" class="burger__logout">
+          <a class="burger__footer" href="#" id="logoutLink">
+            <img
+              src="./assets/img/Home_img/header/logout.png"
+              height="21px"
+              width="21px"
+              alt=""
+            />
+            <p>Logout</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <!--! conect search global -->
