@@ -220,7 +220,7 @@ header {
       gap: 10px;
       transform: translate(0%);
       transition: transform 1s ease-in-out;
-      margin: 16px 0;
+      margin: 4px 0;
       padding-left: 10px;
 
       &.active {
@@ -307,14 +307,14 @@ header {
       position: absolute;
       left: 11px;
       top: -7px;
-      min-width: 20px;
-      height: 20px;
+      min-width: 21px;
+      height: 21px;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       border: 1px solid $black-color;
       border-radius: 50px;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 600;
       color: $black-color;
       padding: 2px;
@@ -340,7 +340,7 @@ header {
   //ховаємо Burger після 700px
 
   .decstop-nav {
-    width: 400px;
+    width: 470px;
     height: 50px;
 
     color: $black-color;
@@ -475,7 +475,7 @@ header {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   header {
     margin-top: 16px;
 
@@ -483,7 +483,7 @@ header {
       flex-direction: row;
       align-items: center;
       justify-content: flex-end;
-      width: 437px;
+      width: 540px;
 
       li {
         display: none;

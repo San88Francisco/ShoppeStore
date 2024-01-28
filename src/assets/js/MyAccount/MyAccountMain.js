@@ -9,55 +9,64 @@ if (window.location.pathname.includes('/my-account') && signInUser) {
   downloadView();
   myProfile();
 
-  const tabPageClickToTarget = () => {
-    const click = document.querySelectorAll('[class*="click-"]');
-    let thisClickGroup = [];
-    let item;
-    if (click !== null) {
-      click.forEach((itemClick) => {
-        itemClick.addEventListener('click', () => {
-          item = itemClick;
-          thisClickGroup = [];
-          const perentGroupName = itemClick.parentElement.className;
-          click.forEach((clearItem) =>
-            clearItem.parentElement.className === perentGroupName
-              ? thisClickGroup.push(clearItem)
-              : 0
-          );
-          const itemName = item.className.match(/\bclick-\w+\b/g).join(' ');
-          const itemIndex = itemName.split('click-').join('');
-          const itemTarget = document.querySelectorAll(
-            `.targetOf-${itemIndex}`
-          );
-          const targetGroup = document.querySelectorAll('[class*="targetOf-"]');
+  const click = document.querySelectorAll('[class*="click-"]');
+  let thisClickGroup = [];
+  let item;
 
-          const eventClickName = item.className
-            .match(/\baddClass-\w+\b/g)
-            .join(' ');
-          const eventClickIndex = eventClickName.split('addClass-').join('');
-          //  console.log(itemTarget);
-          targetGroup.forEach(
-            (targetItem) => (targetItem.style.display = 'none')
-          );
-          click.forEach((clearItem) =>
-            clearItem.classList.remove(eventClickIndex)
-          );
-          itemTarget.forEach((item) => (item.style.display = 'flex'));
-          item.classList.add(eventClickIndex);
-        });
+  click.forEach((itemClick) => {
+    itemClick.addEventListener('click', () => {
+      // Розрахунок половини ширини вікна перегляду
+      const halfViewportWidth = window.innerWidth / 2;
+
+      // Розрахунок половини ширини об'єкта
+      const halfItemWidth = itemClick.clientWidth / 2;
+
+      // Розрахунок відстані, яку потрібно прокрутити, щоб об'єкт був по центру
+      const scrollDistance = itemClick.offsetLeft - halfViewportWidth + halfItemWidth;
+
+      // Прокрутка контейнера, щоб об'єкт був по центру
+      sliderContainer.scrollTo({
+        left: scrollDistance,
+        behavior: 'smooth',
       });
-    }
-  };
-  //function of tab page
-  tabPageClickToTarget();
 
-  //add bill code
+      item = itemClick;
+      thisClickGroup = [];
+      const perentGroupName = itemClick.parentElement.className;
+      click.forEach((clearItem) =>
+        clearItem.parentElement.className === perentGroupName
+          ? thisClickGroup.push(clearItem)
+          : 0
+      );
+      const itemName = item.className.match(/\bclick-\w+\b/g).join(' ');
+      const itemIndex = itemName.split('click-').join('');
+      const itemTarget = document.querySelectorAll(
+        `.targetOf-${itemIndex}`
+      );
+      const targetGroup = document.querySelectorAll('[class*="targetOf-"]');
+
+      const eventClickName = item.className
+        .match(/\baddClass-\w+\b/g)
+        .join(' ');
+      const eventClickIndex = eventClickName.split('addClass-').join('');
+
+      targetGroup.forEach(
+        (targetItem) => (targetItem.style.display = 'none')
+      );
+      click.forEach((clearItem) =>
+        clearItem.classList.remove(eventClickIndex)
+      );
+      itemTarget.forEach((item) => (item.style.display = 'flex'));
+      item.classList.add(eventClickIndex);
+    });
+  });
+
   const addAddress = document.querySelector('#addAddress');
   addAddress.addEventListener('click', () => {
     addAddress.classList.add('none');
     document.querySelector('.bill-registr').style.display = 'block';
   });
-  //folder code
+
   const selectYourItem = document.querySelectorAll('.selectYourItem');
   selectYourItem.forEach((itemClick) => {
     itemClick.addEventListener('click', () => {
@@ -82,65 +91,6 @@ if (window.location.pathname.includes('/my-account') && signInUser) {
     });
     itemClick.children[1].checked = false;
   });
-
-  // add to underline for element
-  /*  const underlineLine = document.querySelector('.underline-header__line');
-      const navLinks = document.querySelectorAll('.myAccount__navigation ul li a');
-   
-      function updateLineOnSliderScroll() {
-         const activeLink = document.querySelector('.myAccount__navigation ul li a.act');
-         // const underlineLine = document.querySelector('.underline-header__line');
-         const screenWidth = window.innerWidth;
-   
-         if (activeLink && underlineLine) {
-            const activeLinkWidth = activeLink.getBoundingClientRect().width;
-            const activeLinkOffsetLeft = activeLink.getBoundingClientRect().left - document.querySelector('.myAccount__navigation').getBoundingClientRect().left;
-   
-            underlineLine.style.width = `${activeLinkWidth}px`;
-   
-            if (screenWidth > 700) {
-               underlineLine.style.transform = `translateX(${activeLinkOffsetLeft}px)`;
-            } else {
-               underlineLine.style.transform = `translateX(${activeLinkOffsetLeft - 13.59}px)`;
-            }
-         }
-      }
-      function updateLinePosition(activeLink) {
-         const activeLinkWidth = activeLink.getBoundingClientRect().width;
-         const activeLinkOffsetLeft = activeLink.getBoundingClientRect().left - document.querySelector('.myAccount__navigation').getBoundingClientRect().left;
-   
-         underlineLine.style.width = `${activeLinkWidth}px`;
-         const screenWidth = window.innerWidth;
-         if (screenWidth > 700) {
-            underlineLine.style.transform = `translateX(${activeLinkOffsetLeft}px)`;
-         } else {
-            underlineLine.style.transform = `translateX(${activeLinkOffsetLeft - 13.59}px)`;
-         }
-      }
-   
-      navLinks.forEach(link => {
-         link.addEventListener('click', function (event) {
-            event.preventDefault();
-   
-            // Помітити активний елемент
-            navLinks.forEach(link => link.classList.remove('act'));
-            link.classList.add('act');
-   
-            updateLinePosition(this);
-         });
-      });
-   
-      window.addEventListener('resize', function () {
-         const activeLink = document.querySelector('.myAccount__navigation ul li a.act');
-         if (activeLink) {
-            updateLinePosition(activeLink);
-         }
-      });
-   
-      const sliderContainer = document.querySelector('.slider-container');
-      sliderContainer.addEventListener('scroll', () => {
-         updateLineOnSliderScroll();
-      });*/
 
   const prevButton = document.querySelector('.prev');
   const nextButton = document.querySelector('.next');
@@ -214,60 +164,4 @@ if (window.location.pathname.includes('/my-account') && signInUser) {
   }
 
   sliderContainer.addEventListener('scroll', updateButtons);
-  //  Отримуємо данні з таблиці, і поміщаємо їх в блок
-  /*   document.addEventListener("DOMContentLoaded", function () {
-          const tableRows = document.querySelectorAll(".targetOf-orders tbody tr");
-    
-          const accountOrder = document.querySelector(".account__order"); // Знаходимо блок account__order
-    
-          tableRows.forEach(row => {
-             if (!row.querySelector("th")) { // Ігноруємо рядок з тегом <th>
-                const [orderNumber, date, status, total, actions] = row.querySelectorAll("td");
-    
-                const miniOrder = document.createElement("div");
-                miniOrder.classList.add("account__order-mini", "mini-order");
-    
-                const bodyDiv = document.createElement("div");
-                bodyDiv.classList.add("mini-order__body");
-    
-                const column1 = document.createElement("div");
-                column1.classList.add("mini-order__column");
-                const column2 = document.createElement("div");
-                column2.classList.add("mini-order__column");
-    
-                const item1 = document.createElement("div");
-                item1.classList.add("mini-order__item");
-                item1.textContent = orderNumber.textContent;
-    
-                const item2 = document.createElement("div");
-                item2.classList.add("mini-order__item");
-                item2.textContent = date.textContent;
-    
-                const item3 = document.createElement("div");
-                item3.classList.add("mini-order__item");
-                item3.textContent = status.textContent;
-    
-                const item4 = document.createElement("div");
-                item4.classList.add("mini-order__item");
-                item4.textContent = total.textContent;
-    
-                // ... Додаєте необхідні дані в блоки column1 і column2 для інших елементів таблиці
-    
-                column1.appendChild(item1);
-                column1.appendChild(item2);
-                column1.appendChild(item3);
-                column1.appendChild(item4);
-    
-                // Тут можна додати дані в column2 для інших елементів таблиці, якщо потрібно
-    
-                bodyDiv.appendChild(column1);
-                bodyDiv.appendChild(column2);
-    
-                miniOrder.appendChild(bodyDiv);
-                accountOrder.appendChild(miniOrder);
-             }
-          });
-       });
-    
-    */
 }
