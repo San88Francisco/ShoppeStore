@@ -126,7 +126,7 @@ const autoComplite = () => {
    const userIsSignIn = localStorage.getItem('userSignIn')
    const parseSignInDate = userIsSignIn !== null ? userIsSignIn : null
    if(parseSignInDate !== null){
-      const userData = JSON.parse(localStorage.getItem(parseSignInDate))
+      const userData = JSON.parse(localStorage.getItem('myProfile'))
       userName.value = `${userData.nameInput} ${userData.lastNameInput}`
       userMail.value = userData.emailInput
       const a = document.querySelectorAll('#userNotSign')
@@ -195,7 +195,7 @@ const addComment = (replyId) =>{
       if(replyCheckbox.checked === true){
          localStorage.setItem('replyAutoComplite', JSON.stringify({userName: userName.value, userMail: userMail.value,}))
       }
-
+      
       if(replyIdNow !== undefined){
          let isSecondUser = selectUser.getAttribute('name').split('#')[1] % 1 === 0 ? '' : `<a class='userLink' href='${selectUser.getAttribute('name')}'>@${selectUser.parentElement.children[0].textContent}</a>    `
          comentsNow[+replyIdNow -1].usersAnswers.push({
