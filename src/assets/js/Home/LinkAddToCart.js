@@ -1,5 +1,12 @@
 export const LinkAddToCart = (contents) => {
-  // console.log('contents:', contents);
+
+  let priceIndex = 0;
+  
+  if(contents.length === 3) {
+    priceIndex+=1;
+    console.log(priceIndex);
+  }
+
   let allProductCart = JSON.parse(localStorage.getItem('allProductCart')) || [];
   let totalCountCart = localStorage.getItem('totalCountCart') || 0;
 
@@ -39,27 +46,20 @@ export const LinkAddToCart = (contents) => {
       localStorage.setItem('totalCountCart', totalCountCart);
     }
 
-    // console.log(foundProduct);
-
     // Отримати текст з першого елементу <a>
     const firstPrice =
       itemPrice.querySelector('.price-discount') ||
       itemPrice.querySelector('a');
 
-    // // Отримати текст з другого елементу <a>
+    // Отримати текст з другого елементу <a>
     const secondPrice = itemPrice.querySelector('.discount');
-
-    // console.log('First Price:', firstPrice);
-    // console.log('Second Price:', secondPrice);
 
     const existingProductIndex = allProductCart.findIndex(
       (product) => product.name === productName
     );
-    // console.log('existingProductIndex:', existingProductIndex);
 
     if (existingProductIndex !== -1) {
       allProductCart[existingProductIndex].count += foundProduct.amount;
-      console.log(allProductCart);
     } else {
       const newProduct = {
         name: foundProduct.name,
@@ -70,26 +70,21 @@ export const LinkAddToCart = (contents) => {
         imgProduct: foundProduct.imageUrl,
         count: foundProduct.amount,
       };
-      // console.log(newProduct);
       allProductCart.push(newProduct);
-      console.log(allProductCart);
     }
 
     localStorage.setItem('allProductCart', JSON.stringify(allProductCart));
   };
-
-  const shopLatestHoverContainer = document.querySelectorAll(
-    '.shop-latest_hover_container'
+  const shopLatestHoverContainer = document.querySelectorAll('.shop-latest_hover_container'
   );
-
   const shopLatestPrice = document.querySelectorAll('.shop-latest__price');
-
   const shopLatestName = document.querySelectorAll('.shop-latest__name');
 
   shopLatestHoverContainer.forEach((link, index) => {
     link.addEventListener('click', () => {
+
       addProductToCart(
-        shopLatestPrice[index],
+        shopLatestPrice[index + priceIndex],
         shopLatestName[index].textContent
       );
     });

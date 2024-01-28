@@ -1,3 +1,4 @@
+import { dashboard } from './Dashboard';
 import { downloadView } from './DownloadViev';
 import { myProfile } from './MyProfile';
 import { orderViev } from './OrderViev';
@@ -8,6 +9,7 @@ if (window.location.pathname.includes('/my-account') && signInUser) {
   orderViev();
   downloadView();
   myProfile();
+  dashboard();
 
   const click = document.querySelectorAll('[class*="click-"]');
   let thisClickGroup = [];

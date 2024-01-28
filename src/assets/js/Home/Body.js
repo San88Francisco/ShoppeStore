@@ -32,7 +32,7 @@ const renderPage = (page, contents) => {
       <div class="shop-latest_hover">
           <div class="shop-latest_hover_container">
             <a>
-                <p>ADD TO CART</p>
+              <p>ADD TO CART</p>
             </a>
           </div>
       </div>
@@ -126,6 +126,7 @@ const renderProducts = async () => {
     const totalPages = Math.ceil(contents.length / itemsPerPage);
 
     renderPage(currentPage, contents);
+    console.log('good');
     if (window.location.pathname.includes('/shop')) {
       generateBtn(totalPages);
       clickToInotherPage(contents, totalPages);
