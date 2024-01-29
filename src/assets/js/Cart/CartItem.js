@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
 
-      window.location.href = 'http://localhost:3000/checkout-pages.html';
+      window.location.href = '/checkout-pages.html';
     };
   }
 });
