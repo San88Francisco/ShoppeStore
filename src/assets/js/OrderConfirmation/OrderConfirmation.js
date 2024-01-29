@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const checkPopupOrder = localStorage.getItem('checkoutPopupOrder');
     // Відображення вспливаючого вікна
-    if (checkPopupOrder == '1') {
+    if (checkPopupOrder == -1) {
       popupOrder();
     }
     // Виводить інформацію про данні користувача
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
       localStorage.removeItem('checkoutInfo');
       localStorage.removeItem('userOrderInfo');
-      // localStorage.setItem('checkoutPopupOrder', 1);
+      localStorage.setItem('checkoutPopupOrder', '-1');
       console.log('Працює');
     }, 2000);
   }

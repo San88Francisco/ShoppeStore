@@ -1,11 +1,20 @@
 export const orderInfo = () => {
-  const checkoutInfo = JSON.parse(localStorage.getItem('userAddressInfo'));
+  let checkoutInfo = []
+  console.log(checkoutInfo);
 
-  // Беремо всі замовлення та їх довжину (length) і задаємо в номер замовлення. Якщо замовлень ще не було, задаємо 0 .
-  const numberOrder = JSON.parse(localStorage.getItem('allOrders')) || '1';
-  console.log(' numberOrder:', numberOrder.length);
 
-  document.querySelector('.order__number').textContent = numberOrder.length;
+  const checkoutPopupOrder = localStorage.getItem('checkoutPopupOrder');
+  console.log(checkoutPopupOrder);
+  if (checkoutPopupOrder == 0) {
+    checkoutInfo = JSON.parse(localStorage.getItem('userOrderInfo'));
+    console.log(checkoutInfo);
+  } else {
+    checkoutInfo = JSON.parse(localStorage.getItem('userAddressInfo'));
+    console.log(checkoutInfo);
+  }
+
+
+  document.querySelector('.order__number').textContent = checkoutInfo.orderNumber;
   document.querySelector('.order__email').textContent = checkoutInfo.email;
   document.querySelector('.order__payment').textContent =
     checkoutInfo.paymentMethod;

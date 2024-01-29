@@ -31,8 +31,8 @@ export const myProfile = () => {
   profileEmail.textContent = emailInput;
   profileDateCreation.textContent = dataCreation;
 
-  profileDisplayName.textContent = displayName ? displayName : 'Not specified';
-  profilePhone.textContent = phone ? phone : 'Not specified';
+  profileDisplayName.textContent = displayName ? displayName : 'Need to enter';
+  profilePhone.textContent = phone ? phone : 'Need to enter';
 
   const btnEditAddress = document.querySelector('.profile__address-btn');
   // Перехід з MyProfile на Address при кліку на кнопку edit address

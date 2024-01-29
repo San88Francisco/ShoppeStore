@@ -58,10 +58,10 @@ export const orderViev = () => {
   }
 
   orderVievItem.forEach((order) => {
-    const { orderId, orderInfo, userInfo } = order;
+    const { orderInfo, userInfo } = order;
     const html = `
       <tr>
-        <td>${orderId}</td>
+        <td>${userInfo.orderNumber}</td>
         <td>${userInfo.date}</td>
         <td>Delivered</td>
         <td>$ ${orderInfo[0].totalPrice}</td>

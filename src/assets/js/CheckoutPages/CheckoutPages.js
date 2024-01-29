@@ -1,4 +1,3 @@
-// import { placeOrder } from './PlaceOrder';
 import { orderItemViev } from './OrderItemViev';
 import { clearOrderCart } from './ClearOrderCart';
 import { saveOrder } from './SaveOrder';
@@ -126,6 +125,14 @@ document.addEventListener('DOMContentLoaded', function () {
         year: 'numeric',
       });
 
+      const numberOrder = () => {
+        const randomNumber = Math.floor(Math.random() * 10000000);
+        const paddedNumber = randomNumber.toString().padStart(7, '0');
+        console.log("numberOrder paddedNumber:", paddedNumber)
+        return paddedNumber;
+      }
+      const orderNumber = numberOrder();
+
       // Створюємо обєкт з нашими данними
       const blockData = {
         name: inputFirstName.value,
@@ -139,7 +146,9 @@ document.addEventListener('DOMContentLoaded', function () {
         orderNotes: inputOrderNotes.value,
         paymentMethod: paymentMethod,
         date: currentDate,
+        orderNumber: orderNumber,
       };
+      console.log(blockData);
 
       function displayErrorCheckout() {
         const latinLettersRegex = /^[a-zA-Z]+$/;
