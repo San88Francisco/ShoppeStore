@@ -65,7 +65,9 @@ const generateBtn = (countBlock) => {
   }
 };
 
-const clickToInotherPage = (contents, totalPages) => {
+export const clickToInotherPage = (contents, totalPages) => {
+  renderPage(currentPage, contents)
+  console.log('good',contents );
   const cardsPages = document.querySelectorAll('.cards__pages');
   cardsPages.forEach((item) => {
     item.addEventListener('click', () => {
@@ -77,6 +79,7 @@ const clickToInotherPage = (contents, totalPages) => {
       const nextActPage = parseFloat(item.getAttribute('data-index-Of-Btn'));
       const arrowBack = document.querySelector('.cards__pages__arrow-back');
       if (indexOfBtn !== 'tab-btn') {
+        console.log('renderPage(indexOfBtn, contents)',contents);
         renderPage(indexOfBtn, contents);
         document.querySelector('.act_page').classList.remove('act_page');
         item.classList.add('act_page');

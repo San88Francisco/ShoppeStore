@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         } else {
           window.location.href =
-            'http://localhost:3000/order-confirmation.html';
+            '/order-confirmation.html';
           // Зберігаємо інофрмацію клієнта в userOrderInfo
           localStorage.setItem('userAddressInfo', JSON.stringify(blockData));
           console.log('saveOrder');
