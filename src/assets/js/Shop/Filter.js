@@ -47,7 +47,7 @@ if (window.location.pathname.includes('/shop')) {
 
           const itemsPerPage = 6;
           const allProductData = JSON.parse(localStorage.getItem('allProduct'));
-          const totalPages = Math.ceil(testing.length / itemsPerPage);
+          const totalPages = Math.ceil(allProductData.length / itemsPerPage);
 
           debounceTimer = setTimeout(() => {
             const filteredData = allProductData.filter((item) => {

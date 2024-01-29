@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     links.forEach((link) => {
-      link.href = 'http://localhost:3000/product.html';
+      link.href = '/product.html';
     });
   }
 
