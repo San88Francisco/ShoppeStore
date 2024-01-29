@@ -27,7 +27,7 @@ const renderPage = (page, contents) => {
       shopLatestBlocks.innerHTML += `
     <li id="hide" class="shop-latest__block">
     <div class="shop-latest__img">
-      <a href="./product.html"><img src="${imageUrl}" alt="" /></a>
+      <a href="/product.html"><img src="${imageUrl}" alt="" /></a>
       <p class="productVariant">${productVariant}</p>
       <div class="shop-latest_hover">
           <div class="shop-latest_hover_container">

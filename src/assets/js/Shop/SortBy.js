@@ -1,7 +1,14 @@
 import { animationDropBox } from '../Global/GlobalFunctions';
+import { clickToInotherPage } from '../Home/Body';
 
 if (window.location.pathname.includes('/shop')) {
    document.addEventListener('DOMContentLoaded', function () {
+
+      const itemsPerPage = 6;
+      const allProductData = JSON.parse(localStorage.getItem('allProduct'));
+      const totalPages = Math.ceil(allProductData.length / itemsPerPage);
+
+      // clickToInotherPage(allProductData, totalPages);
 
       // Випадання кнопок sortBy and shopBy
       const shopByBtn = document.getElementById("shopByBtn");
