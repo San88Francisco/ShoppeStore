@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (img.classList.contains('picture-big')) return;
 
-        img.style.border = "1.3px solid rgb(161, 138, 104)";
+        img.style.border = '1.3px solid rgb(161, 138, 104)';
         img.style.borderRadius = '5px';
 
         let oldImage = document.querySelector('.picture-big');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let img = el.querySelector('.shop-latest__img img');
     let productName = el.querySelector('.shop-latest__name a');
     let productPrice = el.querySelector('.shop-latest__price a');
-    let heart = el.querySelector('.shop-latest__heart');
+    // let heart = el.querySelector('.shop-latest__heart');
     let discount = el.querySelector('.shop-latest__price').outerHTML;
     let discountLink = el.querySelector('.shop-latest__price .discount');
     let productVariant = el.querySelector('.productVariant');
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         img,
         productName,
         productPrice,
-        heart,
+        // heart,
         discount,
         productVariant
       );
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         img,
         productName,
         productPrice,
-        heart,
+        // heart,
         discount,
         productVariant
       );
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         img,
         productName,
         productPrice,
-        heart,
+        // heart,
         discount,
         productVariant
       );
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
           img,
           productName,
           productPrice,
-          heart,
+          // heart,
           discount,
           productVariant
         );
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
     img,
     productName,
     productPrice,
-    heart,
+    // heart,
     discount,
     productVariant
   ) {
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('selectedImgPath', imgPath);
     localStorage.setItem('selectedProductName', productName.textContent);
     localStorage.setItem('selectedProductPrice', productPrice.textContent);
-    localStorage.setItem('selectedHeart', heart.src);
+    // localStorage.setItem('selectedHeart', heart.src);
     localStorage.setItem('selectedDiscount', discount);
     localStorage.setItem('selectVariant', productVariant.textContent);
 
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const imgPath = localStorage.getItem('selectedImgPath');
   const productName = localStorage.getItem('selectedProductName');
   const productPrice = localStorage.getItem('selectedProductPrice');
-  const heart = localStorage.getItem('selectedHeart');
+  // const heart = localStorage.getItem('selectedHeart');
   const discount = localStorage.getItem('selectedDiscount');
   const productVariant = localStorage.getItem('selectVariant');
 
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
         productName;
       document.querySelector('.product--overview__view .price').textContent =
         productPrice;
-      document.querySelector('.icons--row .product__heart').src = heart;
+      // document.querySelector('.icons--row .product__heart').src = heart;
       document.querySelector('.product--overview__view .price').outerHTML =
         discount;
       document.querySelector('.productValue').textContent = productVariant;
@@ -192,30 +192,30 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-const productHeart = document.querySelector('.product__heart');
-const similiarItem = document.querySelector('.product-latest-blocks');
+// const productHeart = document.querySelector('.product__heart');
+// const similiarItem = document.querySelector('.product-latest-blocks');
 
-const BASE_URL = './assets/img/Home_img/Body/heart_bg.png';
-const ACTIVE_HEART_URL = './assets/img/Home_img/Body/red_heart.png';
+// const BASE_URL = './assets/img/Home_img/Body/heart_bg.png';
+// const ACTIVE_HEART_URL = './assets/img/Home_img/Body/red_heart.png';
 
-productHeart &&
-  productHeart.addEventListener('click', (e) => {
-    const targetHeart = e.target.closest('.product__heart');
+// productHeart &&
+//   productHeart.addEventListener('click', (e) => {
+//     const targetHeart = e.target.closest('.product__heart');
 
-    if (targetHeart) {
-      targetHeart.id = targetHeart.id === 'default' ? 'active' : 'default';
-      targetHeart.src =
-        targetHeart.id === 'default' ? BASE_URL : ACTIVE_HEART_URL;
-    }
-  });
+//     if (targetHeart) {
+//       targetHeart.id = targetHeart.id === 'default' ? 'active' : 'default';
+//       targetHeart.src =
+//         targetHeart.id === 'default' ? BASE_URL : ACTIVE_HEART_URL;
+//     }
+//   });
 
-similiarItem &&
-  similiarItem.addEventListener('click', (e) => {
-    const targetHeart = e.target.closest('.shop-latest__heart');
+// similiarItem &&
+//   similiarItem.addEventListener('click', (e) => {
+//     const targetHeart = e.target.closest('.shop-latest__heart');
 
-    if (targetHeart) {
-      targetHeart.id = targetHeart.id === 'default' ? 'active' : 'default';
-      targetHeart.src =
-        targetHeart.id === 'default' ? BASE_URL : ACTIVE_HEART_URL;
-    }
-  });
+//     if (targetHeart) {
+//       targetHeart.id = targetHeart.id === 'default' ? 'active' : 'default';
+//       targetHeart.src =
+//         targetHeart.id === 'default' ? BASE_URL : ACTIVE_HEART_URL;
+//     }
+//   });
