@@ -170,21 +170,21 @@ if (window.location.pathname.includes('/shop')) {
 
 
       //* OnSale/InStock
-      const shopLatestBlocks = document.querySelectorAll('.shop-latest__block');
+
       const checkboxes = document.querySelectorAll('.toggle-switch input[type="checkbox"]');
 
       const filterByDiscount = () => {
-         shopLatestBlocks.forEach((item) => {
-            const hasDiscount = item.querySelector('.add-discount');
-            item.style.display = hasDiscount ? 'block' : 'none';
+         const filterDiscount = allProductData.filter((item) => {
+            return item.categoryClass === 'add-discount'
          });
+         clickToInotherPage(filterDiscount, totalPages);
       };
 
       const filterByStock = () => {
-         shopLatestBlocks.forEach((item) => {
-            const hasStock = item.querySelector('.add-sold');
-            item.style.display = hasStock ? 'none' : 'block';
+         const filterInStock = allProductData.filter((item) => {
+            return item.categoryClass != 'add-sold'
          });
+         clickToInotherPage(filterInStock, totalPages);
       };
 
       // Додаємо обробник подій для кожного checkbox
@@ -204,7 +204,8 @@ if (window.location.pathname.includes('/shop')) {
                   filterByStock();
                }
             } else {
-               shopLatestBlocks.forEach((item) => (item.style.display = 'block'));
+               // Якщо не одна з кнопок не активна, перезаписуємо всі наші товари
+               clickToInotherPage(allProductData, totalPages)
             }
          });
       });
