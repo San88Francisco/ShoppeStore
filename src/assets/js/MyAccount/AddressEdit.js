@@ -137,7 +137,7 @@ export const addressEdit = () => {
             if (!isErrorMessage) {
                addressPhone.insertAdjacentHTML(
                   'afterend',
-                  '<div class="error-message">Invalid phone number, please enter a 9 or 11 digit phone number</div>'
+                  '<div class="error-message phone-error">Invalid phone number, please enter a 9 or 11 digit phone number</div>'
                );
             }
          }
