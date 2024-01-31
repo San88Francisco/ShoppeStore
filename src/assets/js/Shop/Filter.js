@@ -5,69 +5,70 @@ import { clickToInotherPage } from "../Home/Body";
 if (window.location.pathname.includes('/shop')) {
   document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Shop"
-    const rangeInput = document.querySelectorAll('.range-input input');
-    const priceSum = document.querySelectorAll('.price-range-summ span');
-    const progress = document.querySelector('.slider-progress .range-progress');
+    // const rangeInput = document.querySelectorAll('.range-input input');
+    // const priceSum = document.querySelectorAll('.price-range-summ span');
+    // const progress = document.querySelector('.slider-progress .range-progress');
 
-    let priceGap = 10;
-    let maxRange = 180; // Змінено максимальне значення
+    // let priceGap = 10;
+    // let maxRange = 180; // Змінено максимальне значення
 
-    rangeInput.forEach((input) => {
-      input.addEventListener('input', (e) => {
-        let minVal = parseInt(rangeInput[0].value);
-        let maxVal = parseInt(rangeInput[1].value);
+    // rangeInput.forEach((input) => {
+    //   input.addEventListener('input', (e) => {
+    //     let minVal = parseInt(rangeInput[0].value);
+    //     let maxVal = parseInt(rangeInput[1].value);
 
-        if (maxVal - minVal < priceGap) {
-          if (e.target.className === 'range-min') {
-            rangeInput[0].value = maxVal - priceGap;
-            priceSum[0].innerText = `${rangeInput[0].value}`;
-            progress.style.left = (rangeInput[0].value / maxRange) * 100 + '%';
-          } else {
-            rangeInput[1].value = minVal + priceGap;
-            priceSum[1].innerText = `${rangeInput[1].value}`;
-            progress.style.right =
-              100 - (rangeInput[1].value / maxRange) * 100 + '%';
-          }
-        } else {
-          priceSum[0].innerText = `${+minVal}`;
-          priceSum[1].innerText = `${+maxVal}`;
-          progress.style.left = (minVal / maxRange) * 100 + '%';
-          progress.style.right = 100 - (maxVal / maxRange) * 100 + '%';
-        }
-      });
+    //     if (maxVal - minVal < priceGap) {
+    //       if (e.target.className === 'range-min') {
+    //         rangeInput[0].value = maxVal - priceGap;
+    //         priceSum[0].innerText = `${rangeInput[0].value}`;
+    //         progress.style.left = (rangeInput[0].value / maxRange) * 100 + '%';
+    //       } else {
+    //         rangeInput[1].value = minVal + priceGap;
+    //         priceSum[1].innerText = `${rangeInput[1].value}`;
+    //         progress.style.right =
+    //           100 - (rangeInput[1].value / maxRange) * 100 + '%';
+    //       }
+    //     } else {
+    //       priceSum[0].innerText = `${+minVal}`;
+    //       priceSum[1].innerText = `${+maxVal}`;
+    //       progress.style.left = (minVal / maxRange) * 100 + '%';
+    //       progress.style.right = 100 - (maxVal / maxRange) * 100 + '%';
+    //     }
+    //   });
 
-      /* ||| Filter price - logic ||| */
+    //   /* ||| Filter price - logic ||| */
 
-      let debounceTimer; /** В цю змінну ми вставимо setTimeout, щоб можна було його обнуляти */
+    //   let debounceTimer; /** В цю змінну ми вставимо setTimeout, щоб можна було його обнуляти */
 
-      rangeInput.forEach((input) => {
-        input.addEventListener('mouseup', () => {
-          /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
-          clearTimeout(debounceTimer);
+    //   rangeInput.forEach((input) => {
+    //     input.addEventListener('mouseup', () => {
+    //       /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
+    //       clearTimeout(debounceTimer);
 
-          const itemsPerPage = 6;
-          const allProductData = JSON.parse(localStorage.getItem('allProduct'));
-          const totalPages = Math.ceil(allProductData.length / itemsPerPage);
+    //       const itemsPerPage = 6;
+    //       const allProductData = JSON.parse(localStorage.getItem('allProduct'));
+    //       const totalPages = Math.ceil(allProductData.length / itemsPerPage);
 
-          debounceTimer = setTimeout(() => {
-            const filteredData = allProductData.filter((item) => {
-              // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
-              const itemPrice = item.price + '00';
-              // console.log(itemPrice + '00');
+    //       debounceTimer = setTimeout(() => {
+    //         const filteredData = allProductData.filter((item) => {
+    //           // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
+    //           const itemPrice = item.price + '00';
+    //           // console.log(itemPrice + '00');
 
-              return (
-                /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
-                +rangeInput[0].value * 100 <= +itemPrice &&
-                +rangeInput[1].value * 100 >= +itemPrice
-              );
-            });
-            /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
-            // myTest(filteredData);
-            clickToInotherPage(filteredData, totalPages);
+    //           return (
+    //             /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
+    //             +rangeInput[0].value * 100 <= +itemPrice &&
+    //             +rangeInput[1].value * 100 >= +itemPrice
+    //           );
+    //         });
+    //         /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
+    //         // myTest(filteredData);
+    //         clickToInotherPage(filteredData, totalPages);
+    //         console.log('Новий масив',filteredData );
 
-          }, 2000);
-        });
-      });
+    //       }, 2000);
+    //     });
+    //   });
 
       /* Доступаємося до всіх наших карток з товарами */
       const shopLatestBlocks = Array.from(
@@ -145,8 +146,8 @@ if (window.location.pathname.includes('/shop')) {
     });
 
     // *InStock* //
-  });
-}
+  };
+
 
 
 // /** ||| Filter - In Stock, "Shop page" ||| */

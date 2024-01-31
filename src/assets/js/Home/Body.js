@@ -67,7 +67,6 @@ const generateBtn = (countBlock) => {
 
 export const clickToInotherPage = (contents, totalPages) => {
   renderPage(currentPage, contents)
-  console.log('good',contents );
   const cardsPages = document.querySelectorAll('.cards__pages');
   cardsPages.forEach((item) => {
     item.addEventListener('click', () => {
@@ -129,7 +128,7 @@ const renderProducts = async () => {
     const totalPages = Math.ceil(contents.length / itemsPerPage);
 
     renderPage(currentPage, contents);
-    console.log('good');
+
     if (window.location.pathname.includes('/shop')) {
       generateBtn(totalPages);
       clickToInotherPage(contents, totalPages);

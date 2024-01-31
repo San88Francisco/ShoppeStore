@@ -8,6 +8,13 @@ if (window.location.pathname.includes('/shop')) {
       const allProductData = JSON.parse(localStorage.getItem('allProduct'));
       const totalPages = Math.ceil(allProductData.length / itemsPerPage);
 
+      // Масиви з відсортованими товарами
+      let shopBy = [];
+      let sortBy = [];
+      let filterPrice = [];
+      let onSale = [];
+      let inStock = [];
+
       // clickToInotherPage(allProductData, totalPages);
 
       // Випадання кнопок sortBy and shopBy
@@ -166,6 +173,22 @@ if (window.location.pathname.includes('/shop')) {
 
 
 
+      const validatItemFilter = () => {
+         switch (true) {
+            case (filterPrice.length):
+               console.log('filterPrice.length', filterPrice.length);
+               break;
+            // case filterPrice.length:
+            //    console.log('filterPrice.length', filterPrice.length);
+            //    break;
+            // case filterPrice.length:
+            //    console.log('filterPrice.length', filterPrice.length);
+            //    break;
+         
+            default:
+               break;
+         }
+      }
 
 
 
@@ -173,15 +196,40 @@ if (window.location.pathname.includes('/shop')) {
 
       const checkboxes = document.querySelectorAll('.toggle-switch input[type="checkbox"]');
 
+
       const filterByDiscount = () => {
-         const filterDiscount = allProductData.filter((item) => {
+         validatItemFilter();
+         let itemInSale = allProductData;
+         console.log("itemInSale:", itemInSale)
+
+         console.log(filterPrice.length > 1);
+         if (filterPrice.length) {
+            console.log('Масив є');
+            itemInSale = filterPrice;
+         } else {
+            console.log("Масива немає");
+         }
+
+         const filterDiscount = itemInSale.filter((item) => {
             return item.categoryClass === 'add-discount'
          });
+         console.log(filterDiscount);
          clickToInotherPage(filterDiscount, totalPages);
       };
 
       const filterByStock = () => {
-         const filterInStock = allProductData.filter((item) => {
+
+         let itemInStock = allProductData;
+         console.log("itemInSale:", itemInStock)
+
+         if (filterPrice.length) {
+            console.log('Масив є');
+            itemInStock = filterPrice;
+         } else {
+            console.log("Масива немає");
+         }
+
+         const filterInStock = itemInStock.filter((item) => {
             return item.categoryClass != 'add-sold'
          });
          clickToInotherPage(filterInStock, totalPages);
@@ -205,10 +253,96 @@ if (window.location.pathname.includes('/shop')) {
                }
             } else {
                // Якщо не одна з кнопок не активна, перезаписуємо всі наші товари
-               clickToInotherPage(allProductData, totalPages)
+               // clickToInotherPage(allProductData, totalPages);
+               zeroingCheckboxes();
             }
          });
       });
+
+
+
+
+
+
+      const zeroingCheckboxes = () => {
+         if (shopBy.length || sortBy.length || filterPrice.length || onSale.length || inStock.length) {
+            console.log('if zeroingCheckboxes');
+            clickToInotherPage(filterPrice, totalPages);
+         } else {
+            console.log('else zeroingCheckboxes');
+            clickToInotherPage(allProductData, totalPages);
+         }
+      }
+
+
+      /* ||| Filter price - logic ||| */
+
+      const rangeInput = document.querySelectorAll('.range-input input');
+      const priceSum = document.querySelectorAll('.price-range-summ span');
+      const progress = document.querySelector('.slider-progress .range-progress');
+  
+      let priceGap = 10;
+      let maxRange = 180; // Змінено максимальне значення
+
+      rangeInput.forEach((input) => {
+         input.addEventListener('input', (e) => {
+           let minVal = parseInt(rangeInput[0].value);
+           let maxVal = parseInt(rangeInput[1].value);
+   
+           if (maxVal - minVal < priceGap) {
+             if (e.target.className === 'range-min') {
+               rangeInput[0].value = maxVal - priceGap;
+               priceSum[0].innerText = `${rangeInput[0].value}`;
+               progress.style.left = (rangeInput[0].value / maxRange) * 100 + '%';
+             } else {
+               rangeInput[1].value = minVal + priceGap;
+               priceSum[1].innerText = `${rangeInput[1].value}`;
+               progress.style.right =
+                 100 - (rangeInput[1].value / maxRange) * 100 + '%';
+             }
+           } else {
+             priceSum[0].innerText = `${+minVal}`;
+             priceSum[1].innerText = `${+maxVal}`;
+             progress.style.left = (minVal / maxRange) * 100 + '%';
+             progress.style.right = 100 - (maxVal / maxRange) * 100 + '%';
+           }
+         });
+   
+         let debounceTimer; /** В цю змінну ми вставимо setTimeout, щоб можна було його обнуляти */
+   
+         rangeInput.forEach((input) => {
+           input.addEventListener('mouseup', () => {
+             /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
+             clearTimeout(debounceTimer);
+   
+             debounceTimer = setTimeout(() => {
+               const filteredData = allProductData.filter((item) => {
+                 // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
+                 const itemPrice = item.price + '00';
+                 // console.log(itemPrice + '00');
+   
+                 return (
+                   /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
+                   +rangeInput[0].value * 100 <= +itemPrice &&
+                   +rangeInput[1].value * 100 >= +itemPrice
+                 );
+               });
+               /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
+               // myTest(filteredData);
+               filterPrice = filteredData;
+
+               clickToInotherPage(filteredData, totalPages);
+               console.log('Новий filterPrice',filterPrice );
+   
+             }, 2000);
+           });
+         });
+
+      });
+
+
+
+
 
       // анімація випадання Aside
 

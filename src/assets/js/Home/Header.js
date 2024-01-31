@@ -48,12 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
 // фун для підчеркування сторінок
 (function () {
    const hrefPags = location.href;
-   console.log('✌️hrefPags --->', hrefPags);
    const menuLinks = document.querySelectorAll('.decstop-nav li');
-   console.log('✌️menuLinks --->', menuLinks);
 
    const header = document.querySelector('header');
-   console.log('✌️header --->', header);
 
    // Об'єкт для визначення відповідних індексів елементів меню
    const pageMapping = {
@@ -78,12 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
          const currentPage = Object.keys(pageMapping).find((key) =>
             hrefPags.includes(key)
          );
-         console.log('✌️currentPage --->', currentPage);
          const typeIndex = pageMapping[currentPage];
-         console.log('✌️typeIndex --->', typeIndex);
          if (typeIndex >= 0) {
             const type = menuLinks[typeIndex];
-            console.log('✌️type --->', type);
             type.classList.add('active-header-li');
          }
          break;
