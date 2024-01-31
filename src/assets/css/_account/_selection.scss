@@ -79,7 +79,7 @@ button {
 
       &__items {
          height: 60px;
-         background-color: $light-gray-color;
+         background-color: var(--account-background);
          padding: 5px;
          display: flex;
          gap: 14px;
@@ -131,6 +131,7 @@ button {
          font-weight: 400;
          line-height: 26px;
          transition: all 0.3s ease-in-out;
+         color: var(--black-color);
 
          //mobile
          @media (max-width: 700.98px) {
@@ -191,6 +192,7 @@ button {
          line-height: 27px;
          text-align: center;
          transition: color 0.3s;
+         color: var(--black-color);
 
          &:hover {
             color: $placeholder-color;
@@ -234,6 +236,7 @@ button {
          border-bottom: 1px solid $gray-color;
          padding: 12px 0;
          width: 100%;
+         background-color: transparent;
 
          &::placeholder {
             font-family: DM Sans;
@@ -428,13 +431,13 @@ button {
       top: 100%;
       left: 0;
       width: 100%;
-      color: $black-color;
+      color: var(--black-color);
       cursor: pointer;
       font-weight: 400;
       border-bottom: 1px solid $light-gray-color;
       line-height: 1.57;
       text-align: left;
-      background-color: $white-color;
+      background-color: var(--main-background);
       margin-top: 10px;
       z-index: 6;
    }
@@ -457,7 +460,7 @@ button {
    }
 
    ._active {
-      background-color: $white-color;
+      background-color: var(--main-background);
       border-radius: 8px;
    }
 
@@ -495,7 +498,7 @@ button {
 
       @media (any-hover: hover) {
          &:hover {
-            color: $black-color;
+            color: var(--black-color);
          }
       }
    }

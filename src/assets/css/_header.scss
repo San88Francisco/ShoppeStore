@@ -258,7 +258,7 @@ header {
 
   // клас для підчеркування nav-li в Header.js
   .decstop-nav li.active-header-li {
-    border-bottom: 2px solid $black-color;
+    border-bottom: 2px solid var(--black-color);
   }
 
   .header_link_cart {
@@ -276,7 +276,7 @@ header {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      border: 1px solid $black-color;
+      border: 1px solid var(--black-color);
       border-radius: 50px;
       font-size: 11px;
       font-weight: 600;
@@ -307,7 +307,7 @@ header {
     width: 470px;
     height: 50px;
 
-    color: $black-color;
+    color: var(--black-color);
 
     font-family: DM Sans;
     font-size: 16px;
@@ -340,7 +340,7 @@ header {
     }
 
     label span {
-      background: $black-color;
+      background: var(--black-color);
       border-radius: 10px;
       height: 2px;
       margin: 3px 0;

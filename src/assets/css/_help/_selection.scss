@@ -19,7 +19,7 @@
    }
 
    .help {
-      // border: 1px solid $black-color;
+      // border: 1px solid var(--black-color);
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -50,7 +50,7 @@
             padding-left: 16px;
             padding-right: 16px;
 
-            // border: 1px solid $black-color;
+            // border: 1px solid var(--black-color);
             div {
                margin-bottom: 22px;
                display: flex;
@@ -91,12 +91,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid $black-color;
+            border: 1px solid var(--black-color);
             transition: all .3s linear;
 
             &:hover {
-               background-color: $black-color;
-               color: $white-color;
+               background-color: var(--black-color);
+               color: var(--white-color);
             }
          }
 

@@ -92,7 +92,7 @@
          }
 
          h1 {
-            color: $black-color;
+            color: var(--black-color);
             font-size: 19px;
          }
 
@@ -232,7 +232,7 @@
 
       h1 {
          font-size: 33px;
-         color: $black-color;
+         color: var(--black-color);
       }
 
       p {

@@ -1,5 +1,7 @@
+import renderBlackThem from '../Home/Body'
 document.addEventListener('DOMContentLoaded', ()=> {
-   if(pageName = document.title.toLowerCase().replace(/\s/g, "") === 'product'){
+   const pageName = document.title.toLowerCase().replace(/\s/g, "")
+   if(pageName === 'product'){
       document.querySelector('.name-reviews').textContent = document.querySelector('.product--overview__view').children[0].textContent
       document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
       document.querySelector('.amount-reviews2').innerHTML = document.querySelector('.reviews').children.length / 2
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
          document.querySelectorAll('.amount-reviews2').forEach(item => {
             item.innerHTML = document.querySelector('.reviews').children.length / 2
          })
+         renderBlackThem()
       }
 
       const submitReviews = document.querySelector('#submitReviews')
@@ -71,15 +74,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
             starsRatingD.insertAdjacentElement('afterend', p)
          
             if(formObject.starsRating == '1'){
-               starsRatingD.innerHTML = '<img src="./assets/img/Product_img/svg/starSvgFillone.svg" alt="star">'
+               starsRatingD.innerHTML = '<img class="light-them" data-src="./assets/img/dark-them/stars-dark-them-one.svg" data-black="./assets/img/Product_img/svg/starSvgFillone.svg" src="./assets/img/Product_img/svg/starSvgFillone.svg" alt="star">'
             }else if(formObject.starsRating == '2'){
-               starsRatingItemsD.innerHTML = '<img src="./assets/img/Product_img/svg/starSvgFilltwo.svg" alt="star">'
+               starsRatingItemsD.innerHTML = '<img class="light-them" data-src="./assets/img/dark-them/stars-dark-them-two.svg" data-black="./assets/img/Product_img/svg/starSvgFilltwo.svg" src="./assets/img/Product_img/svg/starSvgFilltwo.svg" alt="star">'
             }else if(formObject.starsRating == '3'){
-               starsRatingItemsD.innerHTML = '<img src="./assets/img/Product_img/svg/starSvgFillthree.svg" alt="star">'
+               starsRatingItemsD.innerHTML = '<img class="light-them" data-src="./assets/img/dark-them/stars-dark-them-three.svg" data-black="./assets/img/Product_img/svg/starSvgFillthree.svg" src="./assets/img/Product_img/svg/starSvgFillthree.svg" alt="star">'
             }else if(formObject.starsRating == '4'){
-               starsRatingItemsD.innerHTML = '<img src="./assets/img/Product_img/svg/starSvgFillfore.svg" alt="star">'
+               starsRatingItemsD.innerHTML = '<img class="light-them" data-src="./assets/img/dark-them/stars-dark-them-fore.svg" data-black="./assets/img/Product_img/svg/starSvgFillfore.svg" src="./assets/img/Product_img/svg/starSvgFillfore.svg" alt="star">'
             }else if(formObject.starsRating == '5'){
-               starsRatingItemsD.innerHTML = '<img src="./assets/img/Product_img/svg/starSvgFillfive.svg" alt="star">'
+               starsRatingItemsD.innerHTML = '<img class="light-them" data-src="./assets/img/dark-them/stars-dark-them-five.svg" data-black="./assets/img/Product_img/svg/starSvgFillfive.svg" src="./assets/img/Product_img/svg/starSvgFillfive.svg" alt="star">'
             }
          }
          document.getElementById('form').addEventListener('submit', function(event) {

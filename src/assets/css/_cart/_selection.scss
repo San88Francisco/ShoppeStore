@@ -15,7 +15,7 @@
     padding: 100px;
 
     .popup__coupon {
-      background-color: $white-color;
+      background-color: var(--white-color);
       max-width: 550px;
       width: 100%;
       height: 150px;
@@ -49,7 +49,7 @@
     place-items: center;
 
     .popup__cart {
-      background-color: $white-color;
+      background-color: var(--white-color);
       max-width: 450px;
       width: 100%;
       height: 150px;
@@ -245,6 +245,7 @@
         position: relative;
 
         .input__coupon {
+          background-color: transparent;
           width: 336px;
           border-bottom: 2px solid $gray-color;
         }
@@ -285,7 +286,7 @@
     padding: 40px 0 40px 60px;
 
     h3 {
-      color: $black-color;
+      color: var(--black-color);
       font-family: DM Sans;
       font-size: 26px;
       font-weight: 400;
@@ -293,7 +294,7 @@
       margin-bottom: 45px;
     }
     h5 {
-      color: $black-color;
+      color: var(--black-color);
       font-family: DM Sans;
       font-size: 16px;
       font-weight: 400;
@@ -306,6 +307,9 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 27px;
+      span{
+        color: inherit;
+      }
     }
     .cart-totals__subtotal {
       display: grid;
@@ -356,7 +360,7 @@
             transform: rotate(180deg);
             &::after {
               transition: 0.2s all linear;
-              content: url(../img/Cart_img/svg/arrow_up.svg);
+              content: var(--arrow-Url);
               position: relative;
               top: -4px;
             }
@@ -407,7 +411,7 @@
               display: none;
               position: absolute;
               width: 100%;
-              background-color: $white-color;
+              background-color: var(--white-color);
               z-index: 2;
               border: 1px solid $gray-color;
               border-radius: 5px;
@@ -427,9 +431,9 @@
                 border: 3px solid $light-gray-color;
               }
               li {
-                color: $black-color;
+                color: var(--black-color);
                 display: block;
-                background-color: $white-color;
+                background-color: var(--main-background);
                 padding: 5px;
                 width: 100%;
                 border-bottom: 1px solid $gray-color;
@@ -447,7 +451,7 @@
               transition: 0.2s all linear;
               &::after {
                 transition: 0.2s all linear;
-                content: url(../img/Cart_img/svg/arrow_up.svg);
+                content: var(--arrow-Url);
               }
             }
           }
@@ -516,7 +520,7 @@
         margin-top: 20px;
         p {
           font-family: DM Sans;
-          color: $black-color;
+          color: var(--black-color);
           font-size: 16px;
           font-weight: 700;
         }

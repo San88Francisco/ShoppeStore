@@ -28,9 +28,18 @@
 @import "./header";
 @import "./footer";
 
-body {
-  padding: 0px 16px;
+.on-dark-them{
+   .light-them{
+      display: none;
+   }
+   .dark-them{
+      display: block;
+   }
+}
 
+body {
+   padding: 0px 16px;
+   background-color: var(--main-background);
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -44,6 +53,10 @@ body {
     border-radius: 20px;
     border: 3px solid $light-gray-color;
   }
+}
+
+input{
+   background-color: transparent;
 }
 
 // .Scroll_js_right {
@@ -135,7 +148,7 @@ body {
 
    input[type='checkbox']+label:hover,
    input[type='checkbox']:focus+label {
-      color: $black-color;
+      color: var(--black-color);
    }
 
    input[type='checkbox']+label:hover>span,
@@ -162,7 +175,7 @@ body {
 
    input[type='checkbox']+label:hover,
    input[type='checkbox']:focus+label {
-      color: $black-color;
+      color: var(--black-color);
    }
 
    input[type='checkbox']+label:hover>span,
@@ -205,7 +218,7 @@ body {
       0% {
          width: 0;
          height: 0;
-         border-color: $white-color;
+         border-color: var(--white-color);
          transform: translate3d(0, 0, 0) rotate(45deg);
       }
 
@@ -218,7 +231,7 @@ body {
       100% {
          width: 0.2em;
          height: 0.5em;
-         border-color: $white-color;
+         border-color: var(--white-color);
          transform: translate3d(0, -0.5em, 0) rotate(45deg);
       }
    }

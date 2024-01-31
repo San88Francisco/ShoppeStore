@@ -35,6 +35,7 @@
 
 		&__text {
          font-family: DM Sans;
+         color: var(--black-color);
          font-size: 20px;
          font-weight: 400;
          line-height: 130%; /* 26/20 */
@@ -275,13 +276,13 @@
          top: 100%;
          left: 0;
          width: 100%;
-         color: $black-color;
+         color: var(--black-color);
          cursor: pointer;
          font-weight: 400;
          border-bottom: 1px solid $light-gray-color;
          line-height: 1.57;
          text-align: left;
-         background-color: $white-color;
+         background-color: var(--main-background);
          margin-top: 10px;
        }
        

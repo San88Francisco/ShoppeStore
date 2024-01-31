@@ -135,3 +135,67 @@ const renderProducts = async () => {
 };
 
 renderProducts();
+
+
+// function onBlackThem() {
+//   const color = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, li, font, span, button, div'); 
+//   color.forEach(function(element) {
+//       const style = getComputedStyle(element); 
+
+//       if (style.color === 'rgb(0, 0, 0)' || style.color === '#000000' && element.classList.contains('category' !== false)) { 
+//         element.style.color = '#FBFBFB'; 
+//       }
+//   });
+//   // const background = document.querySelectorAll('*'); 
+//   // background.forEach(function(element) {
+//   //     var style = getComputedStyle(element); 
+
+//   //     if (style.backgroundColor === 'rgb(0, 0, 0)' || style.backgroundColor === '#000000') { 
+//   //       element.style.background = '#FBFBFB'; 
+//   //     }
+//   // });
+//   const border = document.querySelectorAll('hr, div, input'); 
+//   border.forEach(function(element) {
+//       const style = getComputedStyle(element); 
+//       if (style.borderColor === 'rgb(0, 0, 0)' || style.borderColor === '#000000' || style.borderColor === 'black'
+//       || style.borderBottomColor === 'rgb(0, 0, 0)' || style.borderBottomColor === '#000000' || style.borderBottomColor === 'black') { 
+//         element.style.borderColor = '#3D3D3D'; 
+//       }
+//   })
+//   const body = document.querySelector('body')
+//   body.style.backgroundColor = '#1c2128'
+// }
+
+  sessionStorage.setItem('darkThemIsOn', 'true')
+  const renderBlackThem = () => {
+    const darkThemIsOn = sessionStorage.getItem('darkThemIsOn')
+    if(darkThemIsOn === 'true'){
+      const imgLightThem = document.querySelectorAll('.light-them')
+      const root = document.documentElement;
+      root.style.setProperty('--black-color',' rgb(256, 256,256)');
+      root.style.setProperty('--white-color', 'rgb(1,1,1)');
+      root.style.setProperty('--main-background', 'rgb(28, 33, 40)');
+      root.style.setProperty('--arrow-Url',"url('../img/dark-them/arrowSmall-dark-them.svg')");
+      root.style.setProperty('--account-background','rgb(120,120,120)');
+
+      root.style.setProperty('--stars-fill-null','url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg)');
+      root.style.setProperty('--star-fill-black','url(../img/dark-them/star.svg)');
+      root.style.setProperty('--star-fill-null','url(../img/dark-them/star-dark-them-none.svg)');
+      
+      root.style.setProperty('--white-color-rgba','rgba(1,1,1,0.5)');
+
+      imgLightThem.forEach(item => {
+        const newSrc = item.getAttribute('data-src')
+        item.src = newSrc
+      })
+    }else if(document.title.toLowerCase().replace(/\s/g, "") === 'product'){
+      const productStars = document.querySelectorAll('[data-black]')
+        productStars.forEach(item => {
+        const newSrc = item.getAttribute('data-black')
+        item.src = newSrc
+      })
+    }
+  }
+  renderBlackThem()
+
+export default renderBlackThem

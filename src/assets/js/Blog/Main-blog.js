@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                item.style.color = 'rgb(112,112,112)'
                item.classList.remove('selectCategories')
             })
-            item.style.color = 'black'
+            item.style.color = 'var(--black-color)'
             item.classList.add('selectCategories')
 
             let val = item.textContent.trim().toLowerCase();
