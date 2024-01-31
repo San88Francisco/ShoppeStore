@@ -75,7 +75,7 @@ if (window.location.pathname.includes('/shop')) {
       function sortExpensiveCheapest(btnSort) {
          // Створення масиву з елементів .shop-latest__block та їх цін
          const blocksArray = [...document.querySelectorAll('.shop-latest__block')];
-         console.log(" blocksArray:", blocksArray)
+         // console.log(" blocksArray:", blocksArray)
          const pricesArray = Array.from(shopLatestPrice).map((elem) => {
             const sortT = elem.textContent;
             return parseFloat(sortT.replace(/\$/g, ''));
@@ -122,23 +122,7 @@ if (window.location.pathname.includes('/shop')) {
 
 
 
-      //* пошук категорій
-      function sortShopBy(btn, className) {
-         btn.addEventListener('click', () => {
-            const hideElements = document.querySelectorAll('#hide');
-            console.log("hideElements:", hideElements)
 
-            hideElements.forEach((hideElement) => {
-               const categoryName = hideElement.querySelectorAll(`.${className}`);
-               hideElement.style.display = 'none';
-
-               categoryName.forEach((earring) => {
-                  console.log(earring);
-                  hideElement.style.display = 'block';
-               });
-            });
-         });
-      }
 
       //? SortBy
       //*Earrings
@@ -147,7 +131,7 @@ if (window.location.pathname.includes('/shop')) {
 
       //*Rings
       const bntRings = document.querySelector('#btn-rings');
-      sortShopBy(bntRings, 'add-rings');
+      sortShopBy(bntRings, 'add-brooch');
 
       //*Bracelets
       const bntBracelsts = document.querySelector('#btn-bracelets');
@@ -157,37 +141,52 @@ if (window.location.pathname.includes('/shop')) {
       const bntPendants = document.querySelector('#btn-pendants');
       sortShopBy(bntPendants, 'add-pendants');
 
+      // <||||||||>
 
-      //? ShopBy
+      //? ShopBy 
       //*Popular
       const bntPopular = document.querySelector('#btn-popular');
-      sortShopBy(bntPopular, 'add-popular');
+      sortInfoBy(bntPopular, 'add-popular');
 
       //*New
       const bntNew = document.querySelector('#btn-new');
-      sortShopBy(bntNew, 'add-new');
-
-      //*Discounts
-      const bntDiscounts = document.querySelector('#btn-discounts');
-      sortShopBy(bntDiscounts, 'add-discount');
+      sortInfoBy(bntNew, 'add-new');
 
 
+      //* пошук категорій
+      function sortShopBy(btn, className) {
+         btn.addEventListener('click', () => {
 
-      const validatItemFilter = () => {
-         switch (true) {
-            case (filterPrice.length):
-               console.log('filterPrice.length', filterPrice.length);
-               break;
-            // case filterPrice.length:
-            //    console.log('filterPrice.length', filterPrice.length);
-            //    break;
-            // case filterPrice.length:
-            //    console.log('filterPrice.length', filterPrice.length);
-            //    break;
-         
-            default:
-               break;
-         }
+            const hideElements = allProductData;
+            console.log("hideElements:", hideElements)
+
+            const sortItemBy = hideElements.filter((item) => {
+               return item.typeClass === className
+            });
+
+            shopBy = sortItemBy;
+
+            clickToInotherPage(sortItemBy, totalPages);
+            console.log(sortItemBy);
+         });
+      }
+
+      //* пошук категорій
+      function sortInfoBy(btn, className) {
+         btn.addEventListener('click', () => {
+
+            const hideElements = allProductData;
+            console.log("hideElements:", hideElements)
+
+            const sortInfoBy = hideElements.filter((item) => {
+               return item.categoryClass === className
+            });
+
+            sortBy = sortInfoBy;
+            
+            clickToInotherPage(sortInfoBy, totalPages);
+            console.log(sortInfoBy);
+         });
       }
 
 
@@ -200,33 +199,34 @@ if (window.location.pathname.includes('/shop')) {
       const filterByDiscount = () => {
          validatItemFilter();
          let itemInSale = allProductData;
-         console.log("itemInSale:", itemInSale)
+         // console.log("itemInSale:", itemInSale)
 
-         console.log(filterPrice.length > 1);
+         // console.log(filterPrice.length > 1);
          if (filterPrice.length) {
-            console.log('Масив є');
+            // console.log('Масив є');
             itemInSale = filterPrice;
          } else {
-            console.log("Масива немає");
+            // console.log("Масива немає");
          }
 
          const filterDiscount = itemInSale.filter((item) => {
             return item.categoryClass === 'add-discount'
          });
-         console.log(filterDiscount);
+         // console.log(filterDiscount);
+         onSale = filterDiscount;
          clickToInotherPage(filterDiscount, totalPages);
       };
 
       const filterByStock = () => {
 
          let itemInStock = allProductData;
-         console.log("itemInSale:", itemInStock)
+         // console.log("itemInSale:", itemInStock)
 
          if (filterPrice.length) {
-            console.log('Масив є');
+            // console.log('Масив є');
             itemInStock = filterPrice;
          } else {
-            console.log("Масива немає");
+            // console.log("Масива немає");
          }
 
          const filterInStock = itemInStock.filter((item) => {
@@ -265,13 +265,16 @@ if (window.location.pathname.includes('/shop')) {
 
 
       const zeroingCheckboxes = () => {
-         if (shopBy.length || sortBy.length || filterPrice.length || onSale.length || inStock.length) {
-            console.log('if zeroingCheckboxes');
-            clickToInotherPage(filterPrice, totalPages);
-         } else {
-            console.log('else zeroingCheckboxes');
+
+         const selectedArray = [shopBy, sortBy, filterPrice].find(array => array.length > 0) || inStock;
+
+         if (selectedArray.length) {
+            // console.log('if zeroingCheckboxes', selectedArray);
+            clickToInotherPage(selectedArray, totalPages);
+          } else {
+            // console.log('else zeroingCheckboxes', allProductData);
             clickToInotherPage(allProductData, totalPages);
-         }
+          }
       }
 
 
@@ -313,32 +316,49 @@ if (window.location.pathname.includes('/shop')) {
          rangeInput.forEach((input) => {
            input.addEventListener('mouseup', () => {
              /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
-             clearTimeout(debounceTimer);
-   
-             debounceTimer = setTimeout(() => {
-               const filteredData = allProductData.filter((item) => {
-                 // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
-                 const itemPrice = item.price + '00';
-                 // console.log(itemPrice + '00');
-   
-                 return (
-                   /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
-                   +rangeInput[0].value * 100 <= +itemPrice &&
-                   +rangeInput[1].value * 100 >= +itemPrice
-                 );
-               });
-               /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
-               // myTest(filteredData);
-               filterPrice = filteredData;
+            clearTimeout(debounceTimer);
 
-               clickToInotherPage(filteredData, totalPages);
-               console.log('Новий filterPrice',filterPrice );
+            let itemFilterPrice = allProductData;
+            debounceTimer = setTimeout(() => {
+
+            const selectedArray = [shopBy, sortBy, onSale, inStock].find(array => array.length > 0) || inStock;
+
+            if (selectedArray.length && filterPrice.length >= allProductData.length) {
+               // console.log('if filteredData');
+               itemFilterPrice = selectedArray;
+               // console.log("itemFilterPrice:", itemFilterPrice)
+            } else {
+               // console.log('else filteredData');
+               // console.log("itemFilterPrice:", itemFilterPrice)
+            }
+             
+            const filteredData = itemFilterPrice.filter((item) => {
+               // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
+               const itemPrice = item.price + '00';
+               // console.log(itemPrice + '00');
+
+               return (
+                  /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
+                  +rangeInput[0].value * 100 <= +itemPrice &&
+                  +rangeInput[1].value * 100 >= +itemPrice
+               );
+            });
+            /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
+            // myTest(filteredData);
+            filterPrice = filteredData;
+
+            clickToInotherPage(filteredData, totalPages);
+            // console.log('Новий filterPrice',filterPrice );
    
              }, 2000);
            });
          });
 
       });
+
+      const validatItemFilter = () => {
+        
+      }
 
 
 
