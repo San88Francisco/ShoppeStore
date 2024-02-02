@@ -174,7 +174,7 @@ renderProducts();
       const root = document.documentElement;
       root.style.setProperty('--black-color',' rgb(256, 256,256)');
       root.style.setProperty('--white-color', 'rgb(1,1,1)');
-      root.style.setProperty('--main-background', 'rgb(28, 33, 40)');
+      root.style.setProperty('--main-background', 'rgb(29 32 35)');
       root.style.setProperty('--arrow-Url',"url('../img/dark-them/arrowSmall-dark-them.svg')");
       root.style.setProperty('--account-background','rgb(120,120,120)');
 
@@ -183,6 +183,8 @@ renderProducts();
       root.style.setProperty('--star-fill-null','url(../img/dark-them/star-dark-them-none.svg)');
       
       root.style.setProperty('--white-color-rgba','rgba(1,1,1,0.5)');
+
+      root.style.setProperty('--input-color','rgb(200,200,200)');
 
       imgLightThem.forEach(item => {
         const newSrc = item.getAttribute('data-src')
@@ -197,5 +199,5 @@ renderProducts();
     }
   }
   renderBlackThem()
-
+  // #dbdbdb
 export default renderBlackThem

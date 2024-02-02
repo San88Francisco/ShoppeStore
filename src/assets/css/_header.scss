@@ -61,7 +61,7 @@ header {
       &.active {
         transform: translate(0);
         animation: menu-bg 0.9s ease-in-out; // Apply the animation when active
-        background-color: #fff; // Set the target background color
+        background-color: var(--main-background); // Set the target background color
         display: flex;
       }
 
@@ -72,7 +72,7 @@ header {
         }
 
         100% {
-          background: #fff;
+          background: var(--main-background);
           transform: translate(0%);
         }
       }
@@ -142,6 +142,7 @@ header {
 
           a {
             font-family: DM Sans;
+            color: var(--black-color);
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
@@ -250,7 +251,7 @@ header {
         text-align: center;
 
         border-radius: 1px;
-        border-bottom: 2px solid #000;
+        border-bottom: 2px solid var(--black-color);
         border-width: 2px 0px;
       }
     }

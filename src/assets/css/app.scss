@@ -218,7 +218,7 @@ input{
       0% {
          width: 0;
          height: 0;
-         border-color: var(--white-color);
+         border-color: $white-color;
          transform: translate3d(0, 0, 0) rotate(45deg);
       }
 
@@ -231,7 +231,7 @@ input{
       100% {
          width: 0.2em;
          height: 0.5em;
-         border-color: var(--white-color);
+         border-color: $white-color;
          transform: translate3d(0, -0.5em, 0) rotate(45deg);
       }
    }

@@ -18,6 +18,8 @@
   --star-fill-null: url(../img/Product_img/svg/Vectorstar_null_background.svg);
 
   --white-color-rgba: rgb(256, 256,256, 0.5);
+
+  --input-color: rgb(112,112,112);
 }
 
 $accent-color: rgb(161, 138, 104);
@@ -115,7 +117,8 @@ input {
   border: none;
   outline: none;
   font-size: 16px;
-  color: $placeholder-color;
+  color: var(--input-color) !important;
+  // color: rgb(200,200,200) !important;
 
   &::placeholder {
     color: $placeholder-color;
