@@ -159,9 +159,19 @@ if (window.location.pathname.includes('/shop')) {
       sortInfoBy(bntNew, 'add-new');
 
 
+
+      const checkedItemShop = document.querySelector('.checked__item-shop')
+      const checkedItemSort = document.querySelector('.checked__item-sort')
+
+
+
       //* пошук категорій
       function sortShopBy(btn, className) {
          btn.addEventListener('click', () => {
+            console.log("sortShopBy  btn:", btn.textContent)
+
+            checkedItemShop.classList.add('active__filter-checked');
+            checkedItemShop.textContent = `Sort ${btn.textContent}`;
 
             const hideElements = allProductData;
             console.log("hideElements:", hideElements)
@@ -180,6 +190,9 @@ if (window.location.pathname.includes('/shop')) {
       //* пошук категорій
       function sortInfoBy(btn, className) {
          btn.addEventListener('click', () => {
+
+            checkedItemSort.classList.add('active__filter-checked');
+            checkedItemSort.textContent = `Sort ${btn.textContent}`;
 
             const hideElements = allProductData;
             console.log("hideElements:", hideElements)
@@ -233,19 +246,21 @@ if (window.location.pathname.includes('/shop')) {
          let itemInStock = allProductData;
          // console.log("itemInSale:", itemInStock)
 
-         if (filterPrice.length) {
-            // console.log('Масив є');
+         if (isActivePrice) {
+            console.log('Масив є в Stock');
             itemInStock = filterPrice;
+            console.log('itemInStock',itemInStock);
+
          } else {
             // console.log("Масива немає");
          }
 
-         
          const filterInStock = itemInStock.filter((item) => {
             return item.categoryClass != 'add-sold'
          });
 
          inStock = filterInStock;
+         isActiveStock = true;
          clickToInotherPage(filterInStock, totalPages);
       };
 
@@ -281,10 +296,6 @@ if (window.location.pathname.includes('/shop')) {
       });
 
 
-
-
-
-
       const zeroingCheckboxes = () => {
          checkedItemStock.classList.remove('active__filter-checked');
          checkedItemSale.classList.remove('active__filter-checked');
@@ -304,6 +315,7 @@ if (window.location.pathname.includes('/shop')) {
           } else {
             console.log('else zeroingCheckboxes', allProductData);
             clickToInotherPage(allProductData, totalPages);
+            // validatItemFilter();
           }
       }
 
@@ -401,6 +413,10 @@ if (window.location.pathname.includes('/shop')) {
             console.log('Good inSAle');
             console.log('filterPrice',filterPrice);
             filterByDiscount()
+         } else if (isActiveStock) {
+            console.log('Good inStock');
+            console.log('filterPrice',filterPrice);
+            filterByStock()
          } else {
             clickToInotherPage(filterPrice, totalPages);
          }
