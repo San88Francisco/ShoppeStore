@@ -304,7 +304,40 @@
             }
          }
 
-         //  Filter input range styles
+         //  Filter checked item styles
+
+         .filter__checked {
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            span {
+               height: 24px;
+               background-color: $light-gray-color;
+               border: 1px solid $accent-color;
+               border-radius: 4px;
+               font-family: DM Sans;
+               font-size: 13px;
+               font-style: normal;
+               font-weight: 500;
+               line-height: 20px;
+               padding: 1px 5px;
+               cursor: pointer;
+
+               &:hover {
+                  transform: scale(1.03);
+               }
+               &:active {
+                  transform: scale(1);
+               }
+            }
+
+            .active__filter-checked {
+               background-color: $accent-color;
+               color: $white-color;
+            }
+         }
       }
 
       @media (max-width: 860px) {
@@ -474,7 +507,8 @@
 
    @media (max-width: 860px) {
       .filter-menu {
-         @include animatedHideShow;
+         // Ivan
+         // @include animatedHideShow;
 
       }
 
