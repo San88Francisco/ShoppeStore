@@ -99,44 +99,8 @@ if (window.location.pathname.includes('/account')) {
       event.preventDefault(); // Запобігаємо стандартному переходу за посиланням
       await switchTabs(registerTab, signInTab, registerBlock, signInBlock);
     });
-
-    //первірка на правильність введення емаіл
-    const forms = document.querySelectorAll('.block-tabs__form');
-    /*
-            forms.forEach(function (form) {
-               const emailInput = form.querySelector('input[name="EmailAccount"]');
-               const errorMessage = document.createElement("div");
-               errorMessage.classList.add("error-message");
-               errorMessage.style.display = "none";
-      
-               form.addEventListener("submit", function (event) {
-                  const email = emailInput.value;
-                  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      
-                  if (!emailRegex.test(email)) {
-                     displayError(emailInput, "Please enter a valid email!");
-                     event.preventDefault();
-                  } else {
-                     hideError();
-                  }
-               });
-               
-                        emailInput.addEventListener("focus", function () {
-                           hideError();
-                        });
-               
-                        function displayError(element, message) {
-                           errorMessage.textContent = message;
-                           element.parentNode.appendChild(errorMessage);
-                           errorMessage.style.display = "block";
-                        }
-               
-                        function hideError() {
-                           errorMessage.style.display = "none";
-                        }
-            });*/
-
-    // кнопка reset в полях вводу
+    
+ // кнопка reset в полях вводу
     const inputFields = document.querySelectorAll('.form__input');
     const inputButtons = document.querySelectorAll('.form__button');
     const submitButton = document.querySelector('.block-tabs__button');
