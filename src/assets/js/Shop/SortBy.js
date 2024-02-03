@@ -16,6 +16,8 @@ if (window.location.pathname.includes('/shop')) {
       let inStock = [];
 
       // Validation filter
+      let isActiveShop = false;
+      let isActiveSort = false;
       let isActivePrice = false;
       let isActiveSale = false;
       let isActiveStock = false;
@@ -163,6 +165,21 @@ if (window.location.pathname.includes('/shop')) {
       const checkedItemShop = document.querySelector('.checked__item-shop')
       const checkedItemSort = document.querySelector('.checked__item-sort')
 
+      checkedItemShop.addEventListener('click', () => {
+         isActiveShop = false;
+         shopBy = [];
+         checkedItemShop.classList.remove('active__filter-checked');
+         checkedItemShop.textContent = `Shop By`;
+         clickToInotherPage(allProductData, totalPages);
+      })
+
+      checkedItemSort.addEventListener('click', () => {
+         isActiveSort = false;
+         sortBy = [];
+         checkedItemSort.classList.remove('active__filter-checked');
+         checkedItemSort.textContent = `Sort By`;
+         clickToInotherPage(allProductData, totalPages);
+      })
 
 
       //* пошук категорій
@@ -173,9 +190,15 @@ if (window.location.pathname.includes('/shop')) {
             checkedItemShop.classList.add('active__filter-checked');
             checkedItemShop.textContent = `Sort ${btn.textContent}`;
 
-            const hideElements = allProductData;
-            console.log("hideElements:", hideElements)
-
+            let hideElements = allProductData;
+            console.log("hideElements:", hideElements);
+            
+            if(isActiveSort) {
+               console.log(isActiveSort);
+               hideElements = sortBy;
+               console.log(sortBy);
+            }
+            
             const sortItemBy = hideElements.filter((item) => {
                return item.typeClass === className
             });
@@ -183,6 +206,7 @@ if (window.location.pathname.includes('/shop')) {
             shopBy = sortItemBy;
 
             clickToInotherPage(sortItemBy, totalPages);
+            isActiveShop = true;
             console.log(sortItemBy);
          });
       }
@@ -194,16 +218,22 @@ if (window.location.pathname.includes('/shop')) {
             checkedItemSort.classList.add('active__filter-checked');
             checkedItemSort.textContent = `Sort ${btn.textContent}`;
 
-            const hideElements = allProductData;
-            console.log("hideElements:", hideElements)
+            let hideElements = allProductData;
+            console.log("hideElements:", hideElements);
+
+            if(isActiveShop) {
+               console.log(isActiveShop);
+               hideElements = shopBy;
+            }
 
             const sortInfoBy = hideElements.filter((item) => {
                return item.categoryClass === className
             });
-
+ 
             sortBy = sortInfoBy;
             
             clickToInotherPage(sortInfoBy, totalPages);
+            isActiveSort = true;
             console.log(sortInfoBy);
          });
       }
@@ -215,6 +245,40 @@ if (window.location.pathname.includes('/shop')) {
       const checkedItemPrice = document.querySelector('.checked__item-price')
       const checkedItemSale = document.querySelector('.checked__item-sale')
       const checkedItemStock = document.querySelector('.checked__item-stock')
+
+
+      checkedItemPrice.addEventListener('click', () => {
+         progress.style.right = '0%'
+         rangeInput[0].value = 0;
+         rangeInput[1].value = 180;
+         isActivePrice = false;
+         filterPrice = [];
+         checkedItemPrice.classList.remove('active__filter-checked');
+         checkedItemPrice.textContent = `Sort By`;
+         clickToInotherPage(allProductData, totalPages);
+      })
+
+      
+      checkedItemSale.addEventListener('click', () => {
+         checkboxes[0].checked = false;
+         isActiveSale = false;
+         onSale = [];
+         checkedItemSale.classList.remove('active__filter-checked');
+         checkedItemSale.textContent = `Sort By`;
+         clickToInotherPage(allProductData, totalPages);
+      })
+
+      
+      checkedItemStock.addEventListener('click', () => {
+         checkboxes[1].checked = false;
+         isActiveStock = false;
+         inStock = [];
+         checkedItemStock.classList.remove('active__filter-checked');
+         checkedItemStock.textContent = `Sort By`;
+         clickToInotherPage(allProductData, totalPages);
+      })
+
+
 
       const checkboxes = document.querySelectorAll('.toggle-switch input[type="checkbox"]');
 
@@ -357,7 +421,7 @@ if (window.location.pathname.includes('/shop')) {
             let debounceTimer; /** В цю змінну ми вставимо setTimeout, щоб можна було його обнуляти */
       
             rangeInput.forEach((input) => {
-              input.addEventListener('mouseup', () => {
+              input.addEventListener('input', () => {
                 /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
                clearTimeout(debounceTimer);
    

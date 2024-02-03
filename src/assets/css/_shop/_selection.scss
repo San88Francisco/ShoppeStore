@@ -313,6 +313,7 @@
             gap: 10px;
 
             span {
+               display: none;
                height: 24px;
                background-color: $light-gray-color;
                border: 1px solid $accent-color;
@@ -327,6 +328,7 @@
 
                &:hover {
                   transform: scale(1.03);
+                  opacity: 0.6;
                }
                &:active {
                   transform: scale(1);
@@ -334,6 +336,8 @@
             }
 
             .active__filter-checked {
+               display: inline-block;
+               width: max-content;
                background-color: $accent-color;
                color: $white-color;
             }
