@@ -1,43 +1,5 @@
 if (window.location.pathname.includes('/contact')) {
-   //Провірка на правильність введення email
-   document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('.contact__form');
-      const emailInput = form.querySelector('input[name="inputEmail"]');
-      const errorMessage = document.createElement('div');
-      errorMessage.classList.add('error-message');
-      errorMessage.style.display = 'none';
-
-      form.addEventListener('submit', function (event) {
-         const email = emailInput.value;
-         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-         if (!emailRegex.test(email)) {
-            displayError(emailInput, 'Please enter email!');
-            event.preventDefault();
-         } else {
-            hideError();
-         }
-      });
-
-      emailInput.addEventListener('focus', function () {
-         hideError();
-      });
-
-      function displayError(element, message) {
-         errorMessage.textContent = message;
-         element.parentNode.appendChild(errorMessage);
-         errorMessage.style.display = 'block';
-      }
-
-      function hideError() {
-         errorMessage.style.display = 'none';
-      }
-   });
-
-
-
-
-
+ 
    class User {
       constructor(nameInput, lastNameInput, emailInput, selectInput, messageInput) {
          this.nameInput = nameInput;
@@ -47,16 +9,77 @@ if (window.location.pathname.includes('/contact')) {
          this.messageInput = messageInput;
       }
 
+      getSerializedUser() {
+         return {
+           name: this.nameInput,
+           lastName: this.lastNameInput,
+           email: this.emailInput,
+           subject: this.selectInput,
+           message: this.messageInput,
+         };
+       }
+
       register() {
-         if (this.nameInput.trim().length < 2) {
-            return { isValid: false, element: 'input[name="inputName"]' };
+         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+         const existingErrorMessage = form.querySelector('.error-message');
+         if(
+            this.nameInput.length < 2 ||
+            this.lastNameInput.length < 2 ||
+            !emailRegex.test(this.emailInput) ||
+            this.selectInput === 'Subject' ||
+            this.messageInput.length < 2
+         ) {
+            if (this.nameInput.length < 2) {
+               const nameError = form.querySelector('input[name="inputName"]');
+               if (!existingErrorMessage) {
+                 nameError.insertAdjacentHTML(
+                   'afterend',
+                   '<div class="error-message">Please enter at least 2 characters</div>'
+                 );
+               }
+             }
+             if (this.lastNameInput.length < 2) {
+               const lastNameError = form.querySelector('input[name="inputLastName"]');
+               // Перевіряємо, чи є вже відображена помилка цього виду
+               if (!existingErrorMessage) {
+                 lastNameError.insertAdjacentHTML(
+                   'afterend',
+                   '<div class="error-message">Please enter at least 2 characters</div>'
+                 );
+               }
+             }
+             if ( !emailRegex.test(this.emailInput)) {
+               if (!existingErrorMessage) {
+                  const emailError =  form.querySelector('input[name="inputEmail"]');
+                 emailError.insertAdjacentHTML(
+                   'afterend',
+                   '<div class="error-message">Please enter a valid email!</div>'
+                 );
+               }
+             }
+             if (this.selectInput === 'Subject') {
+               const selectHeaderText = document.querySelector('.select-header');
+               if (!existingErrorMessage) {
+                 selectHeaderText.insertAdjacentHTML(
+                   'afterend',
+                   '<div class="error-message">Please select subject</div>'
+                 );
+               }
+             }
+             if (this.messageInput.length < 2) {
+               const MassegeError = form.querySelector('input[name="messageInput"]');
+               if (!existingErrorMessage) {
+                  MassegeError.insertAdjacentHTML(
+                   'afterend',
+                   '<div class="error-message">Please enter at least 2 characters</div>'
+                 );
+               }
+             }
+             return
+         } else {
+            clientsArray.push(this.getSerializedUser());
+            console.log(clientsArray);
          }
-
-         if (this.lastNameInput.trim().length < 2) {
-            return { isValid: false, element: 'input[name="inputLastName"]' };
-         }
-
-         return { isValid: true };
       }
    }
 
@@ -75,32 +98,24 @@ if (window.location.pathname.includes('/contact')) {
       const user = new User(nameInput.value, lastNameInput.value, emailInput, selectInput, messageInput);
 
       const validationResult = user.register();
-      if (!validationResult.isValid) {
-         const errorMessage = document.createElement('div');
-         errorMessage.classList.add('error-message');
-         errorMessage.textContent = 'Please enter at least 2 characters';
-
-         const errorElement = form.querySelector(validationResult.element);
-         errorElement.parentNode.appendChild(errorMessage);
-      } else {
-         form.reset();
-         clientsArray.push(user);
-
-         const errorMessages = form.querySelectorAll('.error-message');
-         errorMessages.forEach(errorMessage => errorMessage.remove());
+      if (validationResult === true) {
+        form.reset();
+        const errorMessages = form.querySelectorAll('.error-message');
+        errorMessages.forEach((errorMessage) => errorMessage.remove());
       }
-
    });
 
 
    // Прибираємо всі повідомлення про помилки при кліку на поде вводу
    form.addEventListener('click', (event) => {
       const clickedElement = event.target;
-      if (clickedElement.tagName === 'INPUT' || clickedElement.tagName === 'SELECT') {
+      if (clickedElement.tagName === 'INPUT' || clickedElement.tagName === 'DIV') {
          const errorMessages = form.querySelectorAll('.error-message');
          errorMessages.forEach(errorMessage => errorMessage.remove());
       }
    });
+
+   
 
    // кнопка reset в полях вводу
    const inputFields = document.querySelectorAll('.columns-form__input');

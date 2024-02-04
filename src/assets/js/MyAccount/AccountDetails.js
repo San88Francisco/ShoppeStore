@@ -88,7 +88,7 @@ export const accountDetails = () => {
             if (!isErrorMessage) {
                detailsPhone.insertAdjacentHTML(
                   'afterend',
-                  '<div class="error-message phone-error">error, please enter a 9 or 11 digit phone number</div>'
+                  '<div class="error-message">error, please enter a 9 or 11 digit phone number</div>'
                );
             }
          }
