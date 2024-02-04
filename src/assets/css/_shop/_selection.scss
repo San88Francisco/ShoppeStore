@@ -201,7 +201,7 @@
                position: absolute;
                left: 10px;
                top: 50%;
-               background-color: var(--white-color);
+               background-color: $white-color;
                transform: translate(-50%, -50%);
                transition: 0.4s;
             }
