@@ -513,45 +513,24 @@
             margin-bottom: 0;
           }
         }
-
-        .checkbox-to-save {
-          margin-bottom: 50px;
-          input[type='checkbox'] + label > span {
-            @media (max-width: 564.98px) {
-              font-size: 12px;
-            }
-            @media (max-width: 400px) {
-              width: 12px;
-              height: 12px;
-            }
-          }
-          input[type='checkbox']:checked + label > span:before {
-            top: 43%;
-            left: 0.15em;
-            @media (max-width: 1200.98px) {
-              top: 40%;
-            }
-            @media (max-width: 749.98px) {
-              top: 0.55em;
-              left: 0.1em;
-            }
-            @media (max-width: 636.98px) {
-              top: 0.45em;
-              left: 0.15em;
-            }
-            @media (max-width: 488.98px) {
-              top: 13.5px;
-            }
-          }
-        }
         .checkbox-anim {
+          margin-bottom: 50px;
+          margin-top: 50px;
+          & label {
+            font-size: 12px;
+            color: #707070;
+              @media (max-width: 483.98px){
+                  top: 5px;
+              }
+          }
+          
           @media (max-width: 636.98px) {
             font-size: 14px;
           }
           @media (max-width: 564.98px) {
             font-size: 12px;
           }
-        }
+        } 
 
         .add-rating {
           margin-bottom: 50px;
@@ -999,22 +978,7 @@
   }
 }
 
-@media (max-width: 617px) {
-  .Product {
-    .b {
-      .product__page3,
-      .page3__content {
-        .add-reviews {
-          .checkbox-to-save {
-            input[type='checkbox'] + label {
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+
 
 @media screen and (max-width: 600px) {
   .Product {
