@@ -77,36 +77,40 @@
       }
 
       .checkout__checkbox-create {
-        div {
-          min-width: 228px;
-          margin-bottom: 37px;
-
-          &:not(:last-child) {
-            margin-bottom: 0px;
+        & .control__indicator {
+          top: 4px;
+        }
+        & label {
+          font-size: 16px;
+        }
+        @media (max-width: 600.98px){
+          & .control__indicator {
+            top: 6px;
           }
-
-          input {
-            margin: 0;
+          & label {
+            font-size: 12px;
           }
-
-          input[type='checkbox']:checked+label>span:before {
-            top: 40%;
-            left: 0.15em;
-          } 
-          label {
-            color: rgba(0, 0, 0, 1);
+          & .control--checkbox .control__indicator:after {
+            left: 3.5px;
+            top: -0.5px;
           }
         }
+        div {
+          margin-bottom: 15px;
+        }
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
       }
-
-      input[type='number']::-webkit-inner-spin-button,
-      input[type='number']::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
+      .checkboxAcount{
+        top: -20px;
       }
-
-      input[type='number'] {
-        -moz-appearance: textfield;
+      .checkboxAcount,
+      .checkboxAddress  {
+        left: 0;
+        & label{
+          display: inline-block;
+        }
       }
     }
   }

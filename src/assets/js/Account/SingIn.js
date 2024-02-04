@@ -99,8 +99,8 @@ if (window.location.pathname.includes('/account')) {
       event.preventDefault(); // Запобігаємо стандартному переходу за посиланням
       await switchTabs(registerTab, signInTab, registerBlock, signInBlock);
     });
-    
- // кнопка reset в полях вводу
+
+    // кнопка reset в полях вводу
     const inputFields = document.querySelectorAll('.form__input');
     const inputButtons = document.querySelectorAll('.form__button');
     const submitButton = document.querySelector('.block-tabs__button');
@@ -289,9 +289,6 @@ if (window.location.pathname.includes('/account')) {
           }
           return;
         }
-
-        // localStorage.setItem(this.emailInput, JSON.stringify(this));
-        // localStorage.setItem('Testing', JSON.stringify(this));
         localStorage.setItem('myProfile', JSON.stringify(this));
         const registerWindow = document.getElementById('registerWindow');
         const headerLine = document.querySelector('header');
@@ -300,10 +297,10 @@ if (window.location.pathname.includes('/account')) {
         setTimeout(function () {
           registerWindow.style.opacity = '0';
           headerLine.style.borderBottom = '1.5px solid rgb(216, 216, 216)';
-        }, 800);
+        }, 2000);
         setTimeout(function () {
           registerWindow.style.display = 'none';
-        }, 1100);
+        }, 2200);
         return true;
       }
     }
@@ -390,11 +387,7 @@ if (window.location.pathname.includes('/account')) {
 
       const loginEmail = loginElement.value.trim();
       const loginPass = passElement.value.trim();
-      // const userData = localStorage.getItem(loginEmail);
-      // console.log(' userData:', userData);
       const userData = localStorage.getItem('myProfile');
-      // console.log('loginForm.addEventListener  userData2:', userData2);
-      // const userData = userData2.emailInput;
       console.log('userData:', userData);
 
       function displayErrorMessage(element, message) {
@@ -442,11 +435,9 @@ if (window.location.pathname.includes('/account')) {
         // Перевірка наявності користувача та інші операції
         if (userData) {
           user = JSON.parse(userData);
-          // user = JSON.parse(myProfile);
           console.log(' user:', user);
 
           if (user.passwordInput === loginPass) {
-            //alert("You are signed in");
             localStorage.setItem('userSignIn', loginEmail);
             const windwSingIn = document.getElementById('registerWindow');
             const headerLine = document.querySelector('header');
@@ -457,10 +448,10 @@ if (window.location.pathname.includes('/account')) {
             setTimeout(function () {
               windwSingIn.style.opacity = '0';
               headerLine.style.borderBottom = 'solid 1.5px rgb(216, 216, 216)';
-            }, 500);
+            }, 2000);
             setTimeout(function () {
               window.location.href = 'http://localhost:3000/index.html';
-            }, 1500);
+            }, 2100);
           } else {
             invalidLoginAttempts++;
             displayErrorMessage(passElement, 'The password is incorrect');
