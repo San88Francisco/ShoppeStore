@@ -83,10 +83,13 @@ body {
   font-size: 10px;
   font-weight: 400;
   line-height: 10px;
+  @media (max-width: 476.98px){
+      bottom: -15px;
+  }
 }
 .phone-error, .order__error-phone, .order__error-zip {
   @media (max-width: 325.98px) {
-    bottom: -35px;
+    bottom: -30px;
     line-height: 125%;
   }
  }
@@ -94,6 +97,9 @@ body {
 /* .checkbox,
 .checkbox-new,
 .checkout__checkbox-create {
+  input[type='checkbox'] {
+    display: none;
+  }
   input[type='checkbox'] {
     height: 0;
     width: 0;
