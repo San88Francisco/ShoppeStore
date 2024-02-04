@@ -11,7 +11,7 @@
             <label for="search-input"></label>
             <div class="input-div">
                <input type="text" placeholder="Search..." id="search-input" />
-               <img class="light-them" data-src="./assets/img/dark-them/search-dark-them.svg" src="./assets/img/Shop_img/search-icon.svg" alt="" />
+               <img class="light-them" data-dark-src="./assets/img/dark-them/search-dark-them.svg" data-light-src="./assets/img/Shop_img/search-icon.svg" src="./assets/img/Shop_img/search-icon.svg" alt="" />
             </div>
          </div>
          <div class="blog_categories">
@@ -128,12 +128,14 @@
       </div>
       <div class="blog__cards__pages">
          <div class="cards__pages cards__pages__arrow-back">
-            <img data-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" src="./assets/img/Blog_img/svg/arrow.svg" alt="arrow">
+            <img data-dark-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" data-light-src="./assets/img/Blog_img/svg/arrow.svg" src="./assets/img/Blog_img/svg/arrow.svg" alt="arrow">
          </div>
 
          <div class="cards__pages cards__pages__arrow">
-            <img  data-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" src="./assets/img/Blog_img/svg/arrow.svg" alt="arrow">
+            <img data-dark-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" data-light-src="./assets/img/Blog_img/svg/arrow.svg" src="./assets/img/Blog_img/svg/arrow.svg" alt="arrow">
          </div>
       </div>
    </div>
 </section>
+
+{% include "_html/_base/_includes/_Them-switcher.html" %}

@@ -96,7 +96,32 @@ input{
    font-size: 10px;
    font-weight: 400;
    line-height: 10px;
+}
 
+.them-swither{
+   position: fixed;
+   bottom: 15px; 
+   left: 15px;
+   z-index: 10;
+   div{
+      transition: .1s all linear;
+      display: inline-block;
+      background-color: var(--them-swch-backround);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      &:hover{
+         transition: .1s all linear;
+         opacity: .75;
+      }
+      img{
+         width: 50px;
+         height: 50px;
+      }
+   }
+   @media screen and (max-width: 700px){
+      display: none;
+   }
 }
 
 // Чекбокс Загальні стилі 

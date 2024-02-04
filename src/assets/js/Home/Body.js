@@ -137,41 +137,12 @@ const renderProducts = async () => {
 renderProducts();
 
 
-// function onBlackThem() {
-//   const color = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, li, font, span, button, div'); 
-//   color.forEach(function(element) {
-//       const style = getComputedStyle(element); 
-
-//       if (style.color === 'rgb(0, 0, 0)' || style.color === '#000000' && element.classList.contains('category' !== false)) { 
-//         element.style.color = '#FBFBFB'; 
-//       }
-//   });
-//   // const background = document.querySelectorAll('*'); 
-//   // background.forEach(function(element) {
-//   //     var style = getComputedStyle(element); 
-
-//   //     if (style.backgroundColor === 'rgb(0, 0, 0)' || style.backgroundColor === '#000000') { 
-//   //       element.style.background = '#FBFBFB'; 
-//   //     }
-//   // });
-//   const border = document.querySelectorAll('hr, div, input'); 
-//   border.forEach(function(element) {
-//       const style = getComputedStyle(element); 
-//       if (style.borderColor === 'rgb(0, 0, 0)' || style.borderColor === '#000000' || style.borderColor === 'black'
-//       || style.borderBottomColor === 'rgb(0, 0, 0)' || style.borderBottomColor === '#000000' || style.borderBottomColor === 'black') { 
-//         element.style.borderColor = '#3D3D3D'; 
-//       }
-//   })
-//   const body = document.querySelector('body')
-//   body.style.backgroundColor = '#1c2128'
-// }
-
-  sessionStorage.setItem('darkThemIsOn', 'true')
-  const renderBlackThem = () => {
+const renderBlackThem = () => {
     const darkThemIsOn = sessionStorage.getItem('darkThemIsOn')
+    const imgLightThem = document.querySelectorAll('.light-them')
+    const root = document.documentElement;
+
     if(darkThemIsOn === 'true'){
-      const imgLightThem = document.querySelectorAll('.light-them')
-      const root = document.documentElement;
       root.style.setProperty('--black-color',' rgb(256, 256,256)');
       root.style.setProperty('--white-color', 'rgb(1,1,1)');
       root.style.setProperty('--main-background', 'rgb(29 32 35)');
@@ -186,18 +157,45 @@ renderProducts();
 
       root.style.setProperty('--input-color','rgb(200,200,200)');
 
+      root.style.setProperty('--them-swch-backround','rgb(60,60,60)');
+
+      root.style.setProperty('--light-gray-color','rgb(58,58,58)');
+      
       imgLightThem.forEach(item => {
-        const newSrc = item.getAttribute('data-src')
+        const newSrc = item.getAttribute('data-dark-src')
         item.src = newSrc
       })
-    }else if(document.title.toLowerCase().replace(/\s/g, "") === 'product'){
-      const productStars = document.querySelectorAll('[data-black]')
-        productStars.forEach(item => {
-        const newSrc = item.getAttribute('data-black')
+
+    }else if(darkThemIsOn === 'false'){
+
+      root.style.setProperty('--black-color','rgb(1,1,1)');
+      root.style.setProperty('--white-color', 'rgb(256, 256,256)');
+      root.style.setProperty('--main-background', 'rgb(256, 256,256)');
+      root.style.setProperty('--arrow-Url',"url('../img/Cart_img/svg/arrow_up.svg')");
+      root.style.setProperty('--account-background','rgb(239, 239, 239)');
+
+      root.style.setProperty('--stars-fill-null','url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg)');
+      root.style.setProperty('--star-fill-black','url(../img/Product_img/svg/Vectorstar_black_background.svg)');
+      root.style.setProperty('--star-fill-null','url(../img/Product_img/svg/Vectorstar_null_background.svg)');
+      
+      root.style.setProperty('--white-color-rgba','rgb(256, 256,256, 0.5)');
+
+      root.style.setProperty('--input-color','rgb(112,112,112)');
+
+      root.style.setProperty('--them-swch-backround','rgb(170,170,170)');
+
+      root.style.setProperty('--light-gray-color','rgb(239, 239, 239)');
+
+
+      imgLightThem.forEach(item => {
+        const newSrc = item.getAttribute('data-light-src')
         item.src = newSrc
       })
     }
-  }
-  renderBlackThem()
-  // #dbdbdb
+}
+
+renderBlackThem()
+// #dbdbdb
+
 export default renderBlackThem
+

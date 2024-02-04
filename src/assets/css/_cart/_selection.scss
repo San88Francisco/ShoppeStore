@@ -605,7 +605,7 @@
       .cart-totals {
         padding: 15px;
         margin: 40px 0 0 0;
-        background: $light-gray-color;
+        background: var(--light-gray-color);
         border-radius: 5px;
         width: 100%;
       }

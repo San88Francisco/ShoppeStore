@@ -54,7 +54,8 @@ export const loadCartItems = (cartAllProduct, cartBlockItem) => {
             </div>
             <img
               class="cart__delete light-them"
-              data-src="./assets/img/dark-them/x-dark-them.svg"
+              data-dark-src="./assets/img/dark-them/x-dark-them.svg"
+              data-light-src="./assets/img/Cart_img/svg/delete.svg"
               src="./assets/img/Cart_img/svg/delete.svg"
               alt=""
             />
