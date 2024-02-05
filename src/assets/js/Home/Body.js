@@ -1,7 +1,6 @@
 import { fetchData } from '../API/fetch-products';
 import { discount } from '../Shop/Discount';
-
-
+import { LinkAddToCart } from './LinkAddToCart';
 
 const itemsPerPage = 6;
 let currentPage = 1;
@@ -28,12 +27,12 @@ const renderPage = (page, contents) => {
       shopLatestBlocks.innerHTML += `
     <li id="hide" class="shop-latest__block">
     <div class="shop-latest__img">
-      <a href="./product.html"><img src="${imageUrl}" alt="" /></a>
+      <a href="/product.html"><img src="${imageUrl}" alt="" /></a>
       <p class="productVariant">${productVariant}</p>
       <div class="shop-latest_hover">
           <div class="shop-latest_hover_container">
-            <a href="">
-                <p>ADD TO CART</p>
+            <a>
+              <p>ADD TO CART</p>
             </a>
           </div>
       </div>
@@ -66,7 +65,9 @@ const generateBtn = (countBlock) => {
   }
 };
 
-const clickToInotherPage = (contents, totalPages) => {
+export const clickToInotherPage = (contents, totalPages) => {
+  renderPage(currentPage, contents)
+  console.log('good',contents );
   const cardsPages = document.querySelectorAll('.cards__pages');
   cardsPages.forEach((item) => {
     item.addEventListener('click', () => {
@@ -78,6 +79,7 @@ const clickToInotherPage = (contents, totalPages) => {
       const nextActPage = parseFloat(item.getAttribute('data-index-Of-Btn'));
       const arrowBack = document.querySelector('.cards__pages__arrow-back');
       if (indexOfBtn !== 'tab-btn') {
+        console.log('renderPage(indexOfBtn, contents)',contents);
         renderPage(indexOfBtn, contents);
         document.querySelector('.act_page').classList.remove('act_page');
         item.classList.add('act_page');
@@ -127,11 +129,13 @@ const renderProducts = async () => {
     const totalPages = Math.ceil(contents.length / itemsPerPage);
 
     renderPage(currentPage, contents);
+    console.log('good');
     if (window.location.pathname.includes('/shop')) {
       generateBtn(totalPages);
       clickToInotherPage(contents, totalPages);
     }
   }
+  LinkAddToCart(contents);
 };
 
 renderProducts();

@@ -129,7 +129,7 @@ export const addressEdit = () => {
             if (!isErrorMessage) {
                addressPostcode.insertAdjacentHTML(
                   'afterend',
-                  '<div class="error-message">Incorrect index, please enter an index</div>'
+                  '<div class="error-message">Incorrect area index city, please enter a 5-digit index</div>'
                );
             }
          }
@@ -137,7 +137,7 @@ export const addressEdit = () => {
             if (!isErrorMessage) {
                addressPhone.insertAdjacentHTML(
                   'afterend',
-                  '<div class="error-message">Incorrect phone number, please enter a phone number</div>'
+                  '<div class="error-message phone-error">Invalid phone number, please enter a 9 or 11 digit phone number</div>'
                );
             }
          }

@@ -1,4 +1,3 @@
-// import { placeOrder } from './PlaceOrder';
 import { orderItemViev } from './OrderItemViev';
 import { clearOrderCart } from './ClearOrderCart';
 import { saveOrder } from './SaveOrder';
@@ -13,20 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = 'http://localhost:3000/error404.html';
     }
 
-    const checkboxCreate = document.querySelectorAll(
-      '.checkout__checkbox-create div'
-    );
-    const checkedCreate = document.querySelectorAll(
-      '.checkout__checkbox-create input'
-    );
-
+ /*    const checkboxCreate = document.querySelectorAll('.checkout__checkbox-create div');
+    const checkedCreate = document.querySelectorAll('.checkout__checkbox-create input');
+    
     // Логіка checkbox create account and different address
     checkboxCreate.forEach((checked, index) => {
       checked.addEventListener('click', () => {
-        checkedCreate[index].checked = !checkedCreate[index].checked;
+        if (checkedCreate[index]) {
+          checkedCreate[index].checked = !checkedCreate[index].checked;
+        }
       });
-    });
-
+    }); */
+    
     // Логіка відображення наших товарів і ціни в правому блоці checkout-pages !
     orderItemViev();
 
@@ -126,6 +123,14 @@ document.addEventListener('DOMContentLoaded', function () {
         year: 'numeric',
       });
 
+      const numberOrder = () => {
+        const randomNumber = Math.floor(Math.random() * 10000000);
+        const paddedNumber = randomNumber.toString().padStart(7, '0');
+        console.log("numberOrder paddedNumber:", paddedNumber)
+        return paddedNumber;
+      }
+      const orderNumber = numberOrder();
+
       // Створюємо обєкт з нашими данними
       const blockData = {
         name: inputFirstName.value,
@@ -139,7 +144,9 @@ document.addEventListener('DOMContentLoaded', function () {
         orderNotes: inputOrderNotes.value,
         paymentMethod: paymentMethod,
         date: currentDate,
+        orderNumber: orderNumber,
       };
+      console.log(blockData);
 
       function displayErrorCheckout() {
         const latinLettersRegex = /^[a-zA-Z]+$/;
@@ -198,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         } else {
           window.location.href =
-            'http://localhost:3000/order-confirmation.html';
+            '/order-confirmation.html';
           // Зберігаємо інофрмацію клієнта в userOrderInfo
           localStorage.setItem('userAddressInfo', JSON.stringify(blockData));
           console.log('saveOrder');

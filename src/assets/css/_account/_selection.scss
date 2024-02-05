@@ -22,17 +22,21 @@ button {
       align-items: center;
       display: none;
       padding: 5px clamp(0px,1vw,24px);
-      margin-top: -126px;
+      margin-top: -95px;
       flex-wrap: wrap;
  
       transition: all 1s;
       p {
         display: flex;
         align-items: center;
-        i {
+        
+        img {
           margin-right: 10px;
-          font-size: 25px;
         }
+        i {
+         margin-right: 10px;
+         font-size: 25px;
+       }
       }
       & div {
          letter-spacing: 1.5px;
@@ -41,7 +45,9 @@ button {
       @media (max-width: 700.98px){
          width: 100%;
          align-items: center;
-         margin-top: -136px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
       & p {
          font-size: 14px;
          @media (max-width: 548.98px){
@@ -330,36 +336,30 @@ button {
    }
 
    .checkbox {
-      margin-top: -40px;
-
-      input[type='checkbox']+label {
-         position: relative;
-         display: flex;
-         margin: .6em 0;
-      }
-
-      input[type='checkbox']:checked+label>span:before {
-         top: .42em;
-         left: .15em;
-      }
+      margin-top: -25px;
+      & .control__indicator {
+         top: 1px;
+        }
       &:not(:last-child) {
          margin-bottom: 69px;
       }
-
       //mobile
       @media (max-width: 700.98px) {
          &:not(:last-child) {
             margin-bottom: 30px;
-            font-size: 14px;
          }
       }
-
+      @media (max-width: 600.98px){
+         & .control__indicator {
+            top: 0;
+           }
+           & .control {
+            font-size: 12px;
+           }
+      }
       //mobile
       @media (max-width: 467.98px) {
-         &:not(:last-child) {
             margin-bottom: 16px;
-            font-size: 12px;
-         }
       }
    }
 

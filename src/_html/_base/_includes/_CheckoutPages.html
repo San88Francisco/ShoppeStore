@@ -34,36 +34,36 @@
             </div>
             <div class="order__form-info">
                <input class="order__field input__postcode" type="tel" placeholder="Postcode / ZIP *" />
-               <label class="order__error-zip">Incorrect index, please enter an index</label>
+               <label class="order__error-zip">Incorrect area index city, please enter a 5-digit index</label>
             </div>
             <div class="order__form-info">
                <input class="order__field input__phone" type="tel" placeholder="Phone *" />
-               <label class="order__error-phone">Incorrect phone number, please enter a phone number</label>
+               <label class="order__error-phone">error, please enter a 9 or 11 digit phone number</label>
             </div>
             <div class="order__form-info">
                <input class="order__field input__email" type="email" placeholder="Email *"
                   data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" />
                <label class="order__error-email">Incorrect email, please enter email</label>
             </div>
-
-            <div class="checkout__checkbox-create">
-               <div class="">
-                  <input type="checkbox" name="" class="checkboxAcount" />
-                  <label for="myCheckbox">
-                     <span></span>
-                     Create an acoount?
-                     <ins><i>Create an acoount?</i></ins>
+            <div class="checkout__checkbox-create checkbox-new">
+               <div class="checkbox_one">
+                  <label  class="control control--checkbox">
+                     Create an account
+                     <input type="checkbox" id="checkboxAccount" name="checkboxAccount" class="checkboxAcount" />
+                     <div class="control__indicator"></div>
                   </label>
                </div>
                <div>
-                  <input type="checkbox" name="" class="checkboxAddress" />
-                  <label for="myCheckbox">
-                     <span></span>
-                     Ship to a different address?
-                     <ins><i>Ship to a different address?</i></ins>
-                  </label>
+                <div class="checkbox_two">
+                     <label class="control control--checkbox">
+                        Ship to a different address
+                        <input type="checkbox" id="checkboxAddress" name="checkboxAddress" class="checkboxAddress" />
+                        <div class="control__indicator"></div>
+                     </label>
+                </div>
                </div>
             </div>
+             
             <input class="input__order-notes" type="text" placeholder="Order notes" />
          </div>
       </div>

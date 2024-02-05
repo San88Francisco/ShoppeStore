@@ -1,5 +1,7 @@
 /* ||| Filter price - input range, "Shop page" повзунок ||| */
 
+import { clickToInotherPage } from "../Home/Body";
+
 if (window.location.pathname.includes('/shop')) {
   document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Shop"
@@ -43,12 +45,15 @@ if (window.location.pathname.includes('/shop')) {
           /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
           clearTimeout(debounceTimer);
 
+          const itemsPerPage = 6;
+          const allProductData = JSON.parse(localStorage.getItem('allProduct'));
+          const totalPages = Math.ceil(allProductData.length / itemsPerPage);
+
           debounceTimer = setTimeout(() => {
-            const filteredData = allBlockData.filter((item) => {
-              const itemPrice = item.price.replace(
-                /[^\d]/g,
-                ''
-              ); /* забираємо пробіли та лишні знаки $ з  ціни */
+            const filteredData = allProductData.filter((item) => {
+              // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
+              const itemPrice = item.price + '00';
+              // console.log(itemPrice + '00');
 
               return (
                 /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
@@ -57,7 +62,9 @@ if (window.location.pathname.includes('/shop')) {
               );
             });
             /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
-            myTest(filteredData);
+            // myTest(filteredData);
+            clickToInotherPage(filteredData, totalPages);
+
           }, 2000);
         });
       });
@@ -95,12 +102,13 @@ if (window.location.pathname.includes('/shop')) {
       });
 
       const myTest = (filter) => {
+        console.log('filter', filter);
         shopLatestBlocks.forEach((item) => {
           // Вертаємо всім display block, щоб всі блоки зявилися
           item.style.display = 'block';
 
           let latestName = item.querySelector('.shop-latest__name a').innerText;
-          console.log('latestName:', latestName);
+          // console.log('latestName:', latestName);
 
           // Перевіряємо кожен елемент в filter
           const match = filter.find(
