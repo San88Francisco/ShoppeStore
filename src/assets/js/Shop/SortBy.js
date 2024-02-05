@@ -12,15 +12,12 @@ if (window.location.pathname.includes('/shop')) {
       let shopBy = [];
       let sortBy = [];
       let filterPrice = [];
-      let onSale = [];
-      let inStock = [];
+
 
       // Validation filter
       let isActiveShop = false;
       let isActiveSort = false;
       let isActivePrice = false;
-      let isActiveSale = false;
-      let isActiveStock = false;
 
 
       // clickToInotherPage(allProductData, totalPages);
@@ -127,11 +124,6 @@ if (window.location.pathname.includes('/shop')) {
 
 
 
-
-
-
-
-
       //? SortBy
       //*Earrings
       const bntEarrings = document.querySelector('#bnt-earrings');
@@ -183,7 +175,6 @@ if (window.location.pathname.includes('/shop')) {
       //* пошук категорій
       function sortShopBy(btn, className) {
          btn.addEventListener('click', () => {
-            console.log("sortShopBy  btn:", btn.textContent)
 
             checkedItemShop.classList.add('active__filter-checked');
             checkedItemShop.textContent = `Sort ${btn.textContent}`;
@@ -195,7 +186,7 @@ if (window.location.pathname.includes('/shop')) {
             // console.log("electedArray:", selectedArray)
 
             if(selectedArray.length) {
-               console.log("isActivePrice:", selectedArray);
+               console.log("selectedArray if:", selectedArray);
                hideElements = selectedArray;
             }
             
@@ -205,14 +196,9 @@ if (window.location.pathname.includes('/shop')) {
 
             shopBy = sortItemBy;
 
-            if (isActivePrice) {
-               filterRangePrice(sortItemBy)
-            } else {
-               clickToInotherPage(sortItemBy, totalPages);
-            }
-
             isActiveShop = true;
-            // console.log(sortItemBy);
+            console.log(sortItemBy);
+            clickToInotherPage(sortItemBy, totalPages);
          });
       }
 
@@ -263,18 +249,12 @@ if (window.location.pathname.includes('/shop')) {
       
       checkedItemSale.addEventListener('click', () => {
          checkboxes[0].checked = false;
-         isActiveSale = false;
-         onSale = [];
-         checkedItemSale.classList.remove('active__filter-checked');
-         clickToInotherPage(allProductData, totalPages);
+         zeroingCheckboxes();
       })
    
       checkedItemStock.addEventListener('click', () => {
          checkboxes[1].checked = false;
-         isActiveStock = false;
-         inStock = [];
-         checkedItemStock.classList.remove('active__filter-checked');
-         clickToInotherPage(allProductData, totalPages);
+         zeroingCheckboxes();
       })
 
       const checkboxes = document.querySelectorAll('.toggle-switch input[type="checkbox"]');
@@ -282,16 +262,6 @@ if (window.location.pathname.includes('/shop')) {
 
       const filterByDiscount = () => {
          let itemInSale = allProductData;
-         // console.log("itemInSale:", itemInSale)
-
-         // filterPrice.length  || filterPrice.length === 0 && 
-         if (isActivePrice) {
-            // console.log('Масив є');
-            itemInSale = filterPrice;
-            // console.log('itemInSale',itemInSale);
-         } else {
-            // console.log("Масива немає");
-         }
 
          const filterDiscount = itemInSale.filter((item) => {
             return item.categoryClass === 'add-discount'
@@ -336,22 +306,17 @@ if (window.location.pathname.includes('/shop')) {
 
             if (checkbox.checked) {
                if (checkbox.classList.contains('toggle-sale')) {
-                  filterByDiscount();
-                  inStock = [];
                   checkedItemStock.classList.remove('active__filter-checked');
                   checkedItemSale.classList.add('active__filter-checked');
-                  
+                  filterByDiscount();
                }
                if (checkbox.classList.contains('toggle-stock')) {
-                  filterByStock();
-                  onSale = [];
-                  isActiveSale = false;
                   checkedItemSale.classList.remove('active__filter-checked');
                   checkedItemStock.classList.add('active__filter-checked');
+                  filterByStock();
                }
             } else {
                // Якщо не одна з кнопок не активна, перезаписуємо всі наші товари
-               // clickToInotherPage(allProductData, totalPages);
                zeroingCheckboxes();
             }
          });
@@ -361,24 +326,8 @@ if (window.location.pathname.includes('/shop')) {
       const zeroingCheckboxes = () => {
          checkedItemStock.classList.remove('active__filter-checked');
          checkedItemSale.classList.remove('active__filter-checked');
-         onSale = [];
-         inStock = [];
-         isActiveSale = false;
-         const selectedArray = [shopBy, sortBy, filterPrice].find(array => array.length > 0) || [];
 
-         // console.log('shopBy', shopBy);
-         // console.log('sortBy', sortBy);
-         // console.log('filterPrice', filterPrice);
-         // console.log('onSale', onSale);
-         // console.log('inStock', inStock);
-         if (selectedArray.length) {
-            // console.log('if zeroingCheckboxes', selectedArray);
-            clickToInotherPage(selectedArray, totalPages);
-          } else {
-            // console.log('else zeroingCheckboxes', allProductData);
-            clickToInotherPage(allProductData, totalPages);
-            // validatItemFilter();
-          }
+         clickToInotherPage(allProductData, totalPages);
       };
 
 
@@ -455,7 +404,6 @@ if (window.location.pathname.includes('/shop')) {
 
             // clickToInotherPage(filteredData, totalPages);
             console.log('Новий filterPrice',filterPrice );
-            console.log('onSale',onSale);
             validatItemFilter(filterPrice, totalPages)
    
              }, 2000);
@@ -467,15 +415,11 @@ if (window.location.pathname.includes('/shop')) {
 
       const validatItemFilter = (filterPrice, totalPages) => {
 
-         if(isActiveSale) {
+         if(false) {
             console.log('Good inSAle');
             console.log('filterPrice',filterPrice);
             filterByDiscount()
-         } else if (isActiveStock) {
-            console.log('Good inStock');
-            console.log('filterPrice',filterPrice);
-            filterByStock()
-         } else {
+         }  else {
             clickToInotherPage(filterPrice, totalPages);
          }
         
