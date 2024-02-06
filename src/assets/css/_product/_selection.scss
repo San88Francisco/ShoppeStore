@@ -40,7 +40,7 @@
     p {
       display: flex;
       align-items: center;
-
+      color: $black-color;
       img {
         margin-right: 10px;
       }
@@ -197,6 +197,7 @@
             .amount {
               width: 7px;
               position: relative;
+              color: inherit;
             }
 
             button {
@@ -233,7 +234,7 @@
 
               // Selected class for button
               .selected {
-                background-color: $black-color;
+                background-color: var(--black-color);
                 color: $white-color;
               }
             }
@@ -269,7 +270,7 @@
               }
               i {
                 &:hover {
-                  color: $black-color;
+                  color: var(--black-color);
                   transition: $transition-time ease-in;
                 }
               }
@@ -283,6 +284,9 @@
 
             font {
               margin-right: 16px;
+            }
+            span{
+              color: inherit;
             }
           }
         }
@@ -312,7 +316,7 @@
     h3,
     h5,
     a {
-      color: $black-color;
+      color: var(--black-color);
       font-size: 16px;
       line-height: 27px;
       font-weight: 400;
@@ -331,6 +335,9 @@
           color: $placeholder-color;
           font-size: clamp(16px, 3.5vw, 24px);
           cursor: pointer;
+          span{
+            color: inherit;
+          }
         }
       }
 
@@ -339,7 +346,7 @@
       }
 
       .info__tab__line {
-        color: $black-color;
+        color: var(--black-color);
         position: relative;
 
         &::after {
@@ -354,7 +361,7 @@
           right: 0;
           text-align: center;
           border-radius: 1px;
-          border-bottom: 2px solid $black-color;
+          border-bottom: 2px solid var(--black-color);
           padding-bottom: 30px;
         }
       }
@@ -425,7 +432,7 @@
           margin-bottom: 75px;
 
           span {
-            color: $black-color;
+            color: var(--black-color);
             font-size: 20px;
           }
         }
@@ -441,7 +448,7 @@
         }
 
         h3 {
-          color: $black-color;
+          color: var(--black-color);
           font-size: 20px;
         }
 
@@ -464,7 +471,7 @@
         grid-column: 2/3;
 
         h3 {
-          color: $black-color;
+          color: var(--black-color);
           font-size: 20px;
           margin-bottom: 10px;
         }
@@ -501,10 +508,11 @@
             resize: none;
             outline: none;
             border: none;
+            background-color: transparent;
             border-bottom: 1px solid $placeholder-color;
             margin-bottom: 50px;
             padding: 7px 0px 15px;
-            color: $black-color;
+            color: var(--black-color);
             font-family: DM Sans;
             font-size: 16px;
             font-weight: 400;
@@ -547,11 +555,7 @@
             display: inline-block;
 
             &::before {
-              content: url(../img/Product_img/svg/Vectorstar_null_background.svg)
-                url(../img/Product_img/svg/Vectorstar_null_background.svg)
-                url(../img/Product_img/svg/Vectorstar_null_background.svg)
-                url(../img/Product_img/svg/Vectorstar_null_background.svg)
-                url(../img/Product_img/svg/Vectorstar_null_background.svg);
+              content: var(--stars-fill-null);
               display: block;
               opacity: 0;
             }
@@ -579,7 +583,7 @@
 
             .stars-rating__item:checked,
             .stars-rating__item:checked ~ .stars-rating__label {
-              content: url(../img/Product_img/svg/Vectorstar_black_background.svg);
+              content: var(--star-fill-black);
             }
 
             .stars-rating__label {
@@ -587,7 +591,7 @@
               cursor: pointer;
 
               &::before {
-                content: url(../img/Product_img/svg/Vectorstar_null_background.svg);
+                content: var(--star-fill-null);
                 display: block;
               }
             }
@@ -595,7 +599,7 @@
             .stars-rating__label:hover,
             .stars-rating__label:hover ~ .stars-rating__label,
             .stars-rating__label:checked ~ .stars-rating__label:hover {
-              content: url(../img/Product_img/svg/Vectorstar_black_background.svg);
+              content: var(--star-fill-black);
             }
           }
         }
@@ -603,25 +607,25 @@
         .submit__btn {
           button {
             @include black-btn;
-            border: 2px solid $black-color;
-            padding: 15px 33px;
-            width: auto;
-            &:hover,
-            &:active {
-              background-color: $white-color;
-              border: 2px solid $black-color;
-            }
+             border: 2px solid var(--black-color);
+             padding: 15px 33px;
+             width: auto;
+             // &:hover,
+             // &:active {
+             //    background-color: var(--white-color);
+             //    border: 2px solid var(--black-color);
+             // }
 
-            &:hover span,
-            &:active span {
-              color: $black-color;
-            }
+             &:hover span,
+             &:active span {
+                color: var(--black-color);
+             }
 
-            span {
-              line-height: 20px;
-            }
+             span {  
+                line-height: 20px;
+             }
           }
-        }
+       }
       }
     }
 
@@ -678,7 +682,7 @@
 
         .shop-latest_hover {
           opacity: 0;
-          background-color: $white-color-rgba;
+          background-color: var(--white-color-rgba);
           min-width: 100%;
           position: absolute;
           bottom: 4px;
