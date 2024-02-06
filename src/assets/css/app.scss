@@ -131,7 +131,6 @@ input{
     bottom: -30px;
     line-height: 125%;
   }
->>>>>>> 9c839c3452fb7ab1de9f1485699269e5e7c955bd
  }
 // Чекбокс Загальні стилі
 /* .checkbox,
@@ -187,7 +186,7 @@ input{
 
   input[type='checkbox'] + label:hover,
   input[type='checkbox']:focus + label {
-    color: $black-color;
+    color: var(--black-color);
   }
 
   input[type='checkbox'] + label:hover > span,
@@ -214,7 +213,7 @@ input{
 
   input[type='checkbox'] + label:hover,
   input[type='checkbox']:focus + label {
-    color: $black-color;
+    color: var(--black-color);
   }
 
   input[type='checkbox'] + label:hover > span,
