@@ -28,14 +28,6 @@
 @import './header';
 @import './footer';
 
-.on-dark-them{
-   .light-them{
-      display: none;
-   }
-   .dark-them{
-      display: block;
-   }
-}
 
 body {
    padding: 0px 16px;
@@ -275,6 +267,7 @@ input{
   }
 } */
 .checkbox-new .control {
+  color: var(--black-color);
   display: block;
   position: relative;
   padding-left: 30px;
