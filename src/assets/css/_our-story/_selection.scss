@@ -35,7 +35,7 @@
    .title,
    .description {
       line-height: 130%;
-      color: $black-color;
+      color: var(--black-color);
       text-align: center;
    }
 
@@ -58,7 +58,7 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 168%;
-      color: $black-color;
+      color: var(--black-color);
 
       &:not(:last-child) {
          margin-bottom: 40px;
@@ -87,7 +87,7 @@
    .list {
       padding-left: 15px;
       font-size: 12px;
-      color: $black-color;
+      color: var(--black-color);
       font-weight: 400;
       line-height: 1.67;
 
@@ -105,7 +105,7 @@
             flex: 0 0 4px;
             height: 4px;
             border-radius: 50%;
-            background-color: $black-color;
+            background-color: var(--black-color);
             margin-right: 4px;
          }
 

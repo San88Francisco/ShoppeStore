@@ -22,17 +22,21 @@ button {
       align-items: center;
       display: none;
       padding: 5px clamp(0px,1vw,24px);
-      margin-top: -126px;
+      margin-top: -95px;
       flex-wrap: wrap;
  
       transition: all 1s;
       p {
         display: flex;
         align-items: center;
-        i {
+        
+        img {
           margin-right: 10px;
-          font-size: 25px;
         }
+        i {
+         margin-right: 10px;
+         font-size: 25px;
+       }
       }
       & div {
          letter-spacing: 1.5px;
@@ -41,7 +45,9 @@ button {
       @media (max-width: 700.98px){
          width: 100%;
          align-items: center;
-         margin-top: -136px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
       & p {
          font-size: 14px;
          @media (max-width: 548.98px){
@@ -79,7 +85,7 @@ button {
 
       &__items {
          height: 60px;
-         background-color: $light-gray-color;
+         background-color: var(--account-background);
          padding: 5px;
          display: flex;
          gap: 14px;
@@ -131,6 +137,7 @@ button {
          font-weight: 400;
          line-height: 26px;
          transition: all 0.3s ease-in-out;
+         color: var(--black-color);
 
          //mobile
          @media (max-width: 700.98px) {
@@ -191,6 +198,7 @@ button {
          line-height: 27px;
          text-align: center;
          transition: color 0.3s;
+         color: var(--black-color);
 
          &:hover {
             color: $placeholder-color;
@@ -234,6 +242,7 @@ button {
          border-bottom: 1px solid $gray-color;
          padding: 12px 0;
          width: 100%;
+         background-color: transparent;
 
          &::placeholder {
             font-family: DM Sans;
@@ -327,36 +336,30 @@ button {
    }
 
    .checkbox {
-      margin-top: -40px;
-
-      input[type='checkbox']+label {
-         position: relative;
-         display: flex;
-         margin: .6em 0;
-      }
-
-      input[type='checkbox']:checked+label>span:before {
-         top: .42em;
-         left: .15em;
-      }
+      margin-top: -25px;
+      & .control__indicator {
+         top: 1px;
+        }
       &:not(:last-child) {
          margin-bottom: 69px;
       }
-
       //mobile
       @media (max-width: 700.98px) {
          &:not(:last-child) {
             margin-bottom: 30px;
-            font-size: 14px;
          }
       }
-
+      @media (max-width: 600.98px){
+         & .control__indicator {
+            top: 0;
+           }
+           & .control {
+            font-size: 12px;
+           }
+      }
       //mobile
       @media (max-width: 467.98px) {
-         &:not(:last-child) {
             margin-bottom: 16px;
-            font-size: 12px;
-         }
       }
    }
 
@@ -428,13 +431,13 @@ button {
       top: 100%;
       left: 0;
       width: 100%;
-      color: $black-color;
+      color: var(--black-color);
       cursor: pointer;
       font-weight: 400;
       border-bottom: 1px solid $light-gray-color;
       line-height: 1.57;
       text-align: left;
-      background-color: $white-color;
+      background-color: var(--main-background);
       margin-top: 10px;
       z-index: 6;
    }
@@ -457,7 +460,7 @@ button {
    }
 
    ._active {
-      background-color: $white-color;
+      background-color: var(--main-background);
       border-radius: 8px;
    }
 
@@ -495,7 +498,7 @@ button {
 
       @media (any-hover: hover) {
          &:hover {
-            color: $black-color;
+            color: var(--black-color);
          }
       }
    }

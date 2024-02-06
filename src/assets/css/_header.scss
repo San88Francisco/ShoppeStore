@@ -97,7 +97,7 @@ header {
       &.active {
         transform: translate(0);
         animation: menu-bg 0.9s ease-in-out; // Apply the animation when active
-        background-color: #fff; // Set the target background color
+        background-color: var(--main-background); // Set the target background color
         display: flex;
       }
 
@@ -108,7 +108,7 @@ header {
         }
 
         100% {
-          background: #fff;
+          background: var(--main-background);
           transform: translate(0%);
         }
       }
@@ -178,6 +178,7 @@ header {
 
           a {
             font-family: DM Sans;
+            color: var(--black-color);
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
@@ -286,7 +287,7 @@ header {
         text-align: center;
 
         border-radius: 1px;
-        border-bottom: 2px solid #000;
+        border-bottom: 2px solid var(--black-color);
         border-width: 2px 0px;
       }
     }
@@ -294,7 +295,7 @@ header {
 
   // клас для підчеркування nav-li в Header.js
   .decstop-nav li.active-header-li {
-    border-bottom: 2px solid $black-color;
+    border-bottom: 2px solid var(--black-color);
   }
 
   .header_link_cart {
@@ -312,7 +313,7 @@ header {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      border: 1px solid $black-color;
+      border: 1px solid var(--black-color);
       border-radius: 50px;
       font-size: 11px;
       font-weight: 600;
@@ -335,6 +336,14 @@ header {
       font-weight: 200;
       font-size: 20px;
     }
+    .switcherBtn{
+      display: none;
+      position: relative;
+      top: -5px;
+      @media screen and (max-width:700px){
+        display: flex;
+      }
+    }
   }
 
   //ховаємо Burger після 700px
@@ -343,7 +352,7 @@ header {
     width: 470px;
     height: 50px;
 
-    color: $black-color;
+    color: var(--black-color);
 
     font-family: DM Sans;
     font-size: 16px;
@@ -376,7 +385,7 @@ header {
     }
 
     label span {
-      background: $black-color;
+      background: var(--black-color);
       border-radius: 10px;
       height: 2px;
       margin: 3px 0;

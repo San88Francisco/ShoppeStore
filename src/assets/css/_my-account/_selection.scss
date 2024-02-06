@@ -1,11 +1,11 @@
 .my-account {
   max-width: 1240px;
   margin: 0 auto;
-  padding-bottom: 205px;
+ // padding-bottom: 205px;
   font-family: DM Sans;
   font-weight: 400;
   line-height: 26px;
-  color: $black-color;
+  color: var(--black-color);
 
   .popup {
     background-color: rgba(0, 0, 0, 0.4);
@@ -23,7 +23,7 @@
     place-items: center;
 
     .popup__profile {
-      background-color: $white-color;
+      background-color: var(--white-color);
       max-width: 450px;
       width: 100%;
       height: 150px;
@@ -62,7 +62,7 @@
   }
 
   h1 {
-    color: $black-color;
+    color: var(--black-color);
     font-size: 33px;
     font-weight: 500;
     line-height: 130.30303%;
@@ -104,7 +104,7 @@
         transition: all 0.3s;
 
         .act {
-          color: $black-color;
+          color: var(--black-color);
           position: relative;
 
           &::after {
@@ -120,7 +120,7 @@
             right: 0;
             text-align: center;
             border-radius: 1px;
-            border-bottom: 2px solid $black-color;
+            border-bottom: 2px solid var(--black-color);
             padding-bottom: 30px;
           }
         }
@@ -130,7 +130,7 @@
     .header__underline {
       display: block;
       margin-bottom: 40px;
-      background-color: $black-color;
+      background-color: var(--black-color);
       position: relative;
       z-index: -1;
     }
@@ -149,7 +149,7 @@
     }
 
     .go i {
-      color: $black-color;
+      color: var(--black-color);
     }
   }
 
@@ -216,7 +216,7 @@
       }
 
       thead {
-        border-bottom: 1px solid $black-color;
+        border-bottom: 1px solid var(--black-color);
       }
 
       tbody {
@@ -276,7 +276,7 @@
               font-style: normal;
               font-weight: 400;
               line-height: 20px;
-              color: $black-color;
+              color: var(--black-color);
               &:last-child {
                 color: $placeholder-color;
                 text-align: right;
@@ -348,7 +348,6 @@
            .error-message {
             bottom: 20px;
            }
-          
          }
         }
         .address__email{
@@ -421,7 +420,7 @@
               display: none;
               position: absolute;
               width: 100%;
-              background-color: $white-color;
+              background-color: var(--white-color);
               z-index: 2;
               border: 1px solid $gray-color;
               border-radius: 5px;
@@ -443,9 +442,9 @@
               }
 
               li {
-                color: $black-color;
+                color: var(--black-color);
                 display: block;
-                background-color: $white-color;
+                background-color: var(--white-color);
                 padding: 5px;
                 width: 100%;
                 border-bottom: 1px solid $gray-color;
@@ -503,7 +502,7 @@
     align-items: center;
 
     & h2 {
-      color: $black-color;
+      color: var(--black-color);
       font-size: 33px;
       font-weight: 500;
       line-height: 130.30303%;
@@ -551,6 +550,26 @@
         margin-bottom: 40px;
         font-size: 12px;
         color: $placeholder-color;
+      }
+    }
+    .account-passwords {
+      max-width: 473.31px;
+      & button {
+        padding: 16px 169.35px;
+      }
+      @media (max-width: 700.98px){
+        & button {
+          padding: 10px 160px;
+        }
+      }
+      @media (max-width: 481.98px){
+          width: 100%;
+          & button {
+            padding: 0;
+            width: 100%;
+            height: 32px;
+            justify-content: center;
+          }
       }
     }
   }
@@ -610,7 +629,7 @@
               color: $placeholder-color;
 
               &:nth-child(2) {
-                color: $black-color;
+                color: var(--black-color);
                 font-size: 18px;
                 font-weight: 500;
                 padding-bottom: 5px;
@@ -645,7 +664,7 @@
           font-size: 16px;
           font-weight: 400;
           line-height: 22px;
-          color: $placeholder-color;
+          color: var(--input-color);
           margin-bottom: 10px;
         }
       }
@@ -664,7 +683,7 @@
       font-weight: 600;
       padding: 10px 15px;
       &:hover {
-        border: 1px solid $black-color;
+        border: 1px solid var(--black-color);
       }
     }
   }
@@ -683,7 +702,7 @@
       line-height: 166.666667%;
     }
     &__title-text {
-      color: $black-color;
+      color: var(--black-color);
     }
     &__value-text,
     &__value-link {
@@ -694,7 +713,7 @@
         & .value-border {
           padding-right: 12px;
           margin-right: 12px;
-          border-right: 1px solid $black-color;
+          border-right: 1px solid var(--black-color);
         }
       }
     }
@@ -852,8 +871,7 @@
       }
 
       .my-address {
-        grid-gap: 30px;
-
+        display: block;
         & h3 {
           font-size: 18px;
           padding-bottom: 18px;
@@ -870,10 +888,7 @@
                 grid-template-columns: auto;
                 grid-gap: 0;
               }
-
               & input {
-                margin-bottom: 28px;
-
                 &::placeholder {
                   font-size: 12px;
                 }
@@ -933,9 +948,10 @@
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid $gray-color;
-        padding-bottom: 40px;
-        margin-bottom: 40px;
-
+        &:not(:last-child) {
+          padding-bottom: 40px;
+          margin-bottom: 40px;
+        }
         &:last-child {
           border-bottom: none;
         }
@@ -951,7 +967,20 @@
       }
     }
   }
+@media (max-width: 481.98px){
+  .btn__black {
+    padding: 0;
+    width: 100%;
+    height: 32px;
+    justify-content: center;
 
+    span {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 166.666667%;
+    }
+  }
+}
   @media (max-width: 467.98px) {
     h1 {
       font-size: 20px;
@@ -1017,20 +1046,6 @@
         }
       }
     }
-
-    .btn__black {
-      padding: 0;
-      width: 100%;
-      height: 32px;
-      justify-content: center;
-
-      span {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 166.666667%;
-      }
-    }
-
     .targetOf-accountDetails {
       & h2 {
         display: none;
@@ -1135,6 +1150,6 @@
            }
         }
       }
-   
   }
+  
 }

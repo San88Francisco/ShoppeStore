@@ -28,9 +28,10 @@
 @import './header';
 @import './footer';
 
-body {
-  padding: 0px 16px;
 
+body {
+   padding: 0px 16px;
+   background-color: var(--main-background);
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -44,6 +45,10 @@ body {
     border-radius: 20px;
     border: 3px solid $light-gray-color;
   }
+}
+
+input{
+   background-color: transparent;
 }
 
 // .Scroll_js_right {
@@ -72,7 +77,33 @@ body {
 //    transform: translateY(0);
 // }
 // стилі для помилок
-.error-message {
+.them-swither{
+   position: fixed;
+   bottom: 15px; 
+   left: 15px;
+   z-index: 10;
+   div{
+      transition: .1s all linear;
+      display: inline-block;
+      background-color: var(--them-swch-backround);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      &:hover{
+         transition: .1s all linear;
+         opacity: .75;
+      }
+      img{
+         width: 50px;
+         height: 50px;
+      }
+   }
+   @media screen and (max-width: 700px){
+      display: none;
+   }
+}
+
+.error-message, .phone-error {
   position: absolute;
   z-index: 5;
   width: 100%;
@@ -83,12 +114,23 @@ body {
   font-size: 10px;
   font-weight: 400;
   line-height: 10px;
+  @media (max-width: 476.98px){
+      bottom: -15px;
+  }
 }
-
+.phone-error, .order__error-phone, .order__error-zip {
+  @media (max-width: 325.98px) {
+    bottom: -30px;
+    line-height: 125%;
+  }
+ }
 // Чекбокс Загальні стилі
-.checkbox,
-.checkbox-to-save,
+/* .checkbox,
+.checkbox-new,
 .checkout__checkbox-create {
+  input[type='checkbox'] {
+    display: none;
+  }
   input[type='checkbox'] {
     height: 0;
     width: 0;
@@ -136,7 +178,7 @@ body {
 
   input[type='checkbox'] + label:hover,
   input[type='checkbox']:focus + label {
-    color: $black-color;
+    color: var(--black-color);
   }
 
   input[type='checkbox'] + label:hover > span,
@@ -163,7 +205,7 @@ body {
 
   input[type='checkbox'] + label:hover,
   input[type='checkbox']:focus + label {
-    color: $black-color;
+    color: var(--black-color);
   }
 
   input[type='checkbox'] + label:hover > span,
@@ -223,4 +265,76 @@ body {
       transform: translate3d(0, -0.5em, 0) rotate(45deg);
     }
   }
+} */
+.checkbox-new .control {
+  color: var(--black-color);
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  @media (max-width: 600.98px){
+  padding-left: 20px;
+  }
+}
+.checkbox-new .control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.checkbox-new .control__indicator {
+  position: absolute;
+ top: -1px;
+ left: 0;
+  height: 18px;
+  width: 18px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
+  @media (max-width: 600.98px){
+      width: 13px;
+      height: 13px;
+      top: 2px;
+  }
+}
+.checkbox-new .control:hover input ~ .control__indicator,
+.checkbox-new .control input:focus ~ .control__indicator {
+  background: #fff;
+}
+.checkbox-new .control input:checked ~ .control__indicator {
+  background: #707070;
+  border-color: #707070;
+}
+.checkbox-new .control:hover input:not([disabled]):checked ~ .control__indicator,
+.checkbox-new .control input:checked:focus ~ .control__indicator {
+  background: #707070;
+}
+.checkbox-new .control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.checkbox-new .control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.checkbox-new .control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.checkbox-new .control--checkbox .control__indicator:after {
+  left: 6.3px;
+  top: 2px;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  @media (max-width: 600.98px){
+    left: 3px;
+    top: -1px;
+}
+}
+.checkbox-new .control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #707070;
 }

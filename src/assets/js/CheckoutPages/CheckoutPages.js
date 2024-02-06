@@ -12,20 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = 'http://localhost:3000/error404.html';
     }
 
-    const checkboxCreate = document.querySelectorAll(
-      '.checkout__checkbox-create div'
-    );
-    const checkedCreate = document.querySelectorAll(
-      '.checkout__checkbox-create input'
-    );
-
+ /*    const checkboxCreate = document.querySelectorAll('.checkout__checkbox-create div');
+    const checkedCreate = document.querySelectorAll('.checkout__checkbox-create input');
+    
     // Логіка checkbox create account and different address
     checkboxCreate.forEach((checked, index) => {
       checked.addEventListener('click', () => {
-        checkedCreate[index].checked = !checkedCreate[index].checked;
+        if (checkedCreate[index]) {
+          checkedCreate[index].checked = !checkedCreate[index].checked;
+        }
       });
-    });
-
+    }); */
+    
     // Логіка відображення наших товарів і ціни в правому блоці checkout-pages !
     orderItemViev();
 

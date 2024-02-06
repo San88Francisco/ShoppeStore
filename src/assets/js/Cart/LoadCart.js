@@ -1,5 +1,5 @@
 // Функція яка відображає наші товари
-
+import renderBlackThem from '../Home/Body'
 export const loadCartItems = (cartAllProduct, cartBlockItem) => {
   cartBlockItem.innerHTML = '';
 
@@ -53,7 +53,9 @@ export const loadCartItems = (cartAllProduct, cartBlockItem) => {
               <button class="plus">+</button>
             </div>
             <img
-              class="cart__delete"
+              class="cart__delete light-them"
+              data-dark-src="./assets/img/dark-them/x-dark-them.svg"
+              data-light-src="./assets/img/Cart_img/svg/delete.svg"
               src="./assets/img/Cart_img/svg/delete.svg"
               alt=""
             />
@@ -62,4 +64,5 @@ export const loadCartItems = (cartAllProduct, cartBlockItem) => {
         </div>
           `;
   });
+  renderBlackThem()
 };

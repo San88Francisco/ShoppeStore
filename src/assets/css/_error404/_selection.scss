@@ -38,8 +38,8 @@
       }
 
       a:active {
-         background-color: $black-color;
-         color: $white-color;
+         background-color: var(--black-color);
+         color: var(--white-color);
       }
    }
 
