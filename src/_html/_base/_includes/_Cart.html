@@ -19,7 +19,7 @@
 
    <div class="empty__cart Scroll_js_right">
       <div>
-         <img src="./assets/img/Cart_img//svg/empty-cart.svg" alt="empty-cart" />
+         <img class="light-them" data-dark-src="./assets/img/dark-them/empty-cart.svg" data-light-src="./assets/img/Cart_img//svg/empty-cart.svg" src="./assets/img/Cart_img//svg/empty-cart.svg" alt="empty-cart" />
       </div>
       <h2>Opss... the product is missing</h2>
       <a class="btn__white" href="./shop.html">Select a product</a>
@@ -61,7 +61,7 @@
                <div class="shipping__content__folder">
                   <h5>Calculate Shipping</h5>
                   <input type="checkbox" id="folder__checkbox">
-                  <label for="folder__checkbox"></label>
+                  <label for="folder__checkbox" src="../img/Cart_img/svg/arrow_up.svg"></label>
                   <div class="folder__content">
                      <form action="#" method="post">
                         <div class="selectYourCountry selectYourItem">
@@ -128,3 +128,5 @@
       </aside>
    </div>
 </section>
+
+{% include "_html/_base/_includes/_Them-switcher.html" %}

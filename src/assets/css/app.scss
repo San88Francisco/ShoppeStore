@@ -28,9 +28,18 @@
 @import './header';
 @import './footer';
 
-body {
-  padding: 0px 16px;
+.on-dark-them{
+   .light-them{
+      display: none;
+   }
+   .dark-them{
+      display: block;
+   }
+}
 
+body {
+   padding: 0px 16px;
+   background-color: var(--main-background);
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -44,6 +53,10 @@ body {
     border-radius: 20px;
     border: 3px solid $light-gray-color;
   }
+}
+
+input{
+   background-color: transparent;
 }
 
 // .Scroll_js_right {
@@ -72,6 +85,32 @@ body {
 //    transform: translateY(0);
 // }
 // стилі для помилок
+.them-swither{
+   position: fixed;
+   bottom: 15px; 
+   left: 15px;
+   z-index: 10;
+   div{
+      transition: .1s all linear;
+      display: inline-block;
+      background-color: var(--them-swch-backround);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      &:hover{
+         transition: .1s all linear;
+         opacity: .75;
+      }
+      img{
+         width: 50px;
+         height: 50px;
+      }
+   }
+   @media screen and (max-width: 700px){
+      display: none;
+   }
+}
+
 .error-message, .phone-error {
   position: absolute;
   z-index: 5;
@@ -92,6 +131,7 @@ body {
     bottom: -30px;
     line-height: 125%;
   }
+>>>>>>> 9c839c3452fb7ab1de9f1485699269e5e7c955bd
  }
 // Чекбокс Загальні стилі
 /* .checkbox,

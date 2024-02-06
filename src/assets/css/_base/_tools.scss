@@ -1,4 +1,31 @@
 // VARS
+// :root{
+//   --black-color: rgb(256, 256,256);
+//   --white-color: rgb(1,1,1);
+//   --main-background: rgb(28, 33, 40);
+//   --arrow-Url: url('../img/dark-them/arrowSmall-dark-them.svg');
+//   --account-background: rgb(120,120,120);
+// }
+:root{
+  --black-color: rgb(1,1,1);
+  --white-color: rgb(256, 256,256);
+  --main-background: rgb(256, 256,256);
+  --arrow-Url: url('../img/Cart_img/svg/arrow_up.svg');
+  --account-background: rgb(239, 239, 239);
+
+  --stars-fill-null: url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg);
+  --star-fill-black: url(../img/Product_img/svg/Vectorstar_black_background.svg);
+  --star-fill-null: url(../img/Product_img/svg/Vectorstar_null_background.svg);
+
+  --white-color-rgba: rgb(256, 256,256, 0.5);
+
+  --input-color: rgb(112,112,112);
+
+  --them-swch-backround: rgb(170,170,170);
+
+  --light-gray-color: rgb(239, 239, 239);
+}
+
 $accent-color: rgb(161, 138, 104);
 $white-color: rgb(255, 255, 255); // #fff
 $white-color-rgba: rgba(255, 255, 255, 0.5); 
@@ -21,13 +48,18 @@ $line-height: 1.68;
   box-sizing: border-box;
 }
 
+span{
+  color: var(--black-color);
+}
+
 body {
   font-family: sans-serif;
   height: 100vh;
-  background-color: $white-color;
+  background-color: var(--white-color);
 }
 
 a {
+  color: var(--black-color);
   color: inherit;
   text-decoration: none;
 }
@@ -39,38 +71,58 @@ button {
 
 ul {
   list-style: none;
+  color: var(--black-color);
+}
+
+font{
+  color: var(--black-color);
+}
+
+p{
+  color: var(--black-color);
 }
 
 h1 {
   font-weight: 500;
   font-size: 33px;
+  color: var(--black-color);
+
 }
 h2 {
   font-weight: 400;
   font-size: 26px;
   line-height: 1.34;
+  color: var(--black-color);
+
 }
 h3 {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.3;
+  color: var(--black-color);
+
 }
 h4 {
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
+  color: var(--black-color);
+
 }
 h5 {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.68;
+  color: var(--black-color);
+
 }
 
 input {
   border: none;
   outline: none;
   font-size: 16px;
-  color: $placeholder-color;
+  color: var(--input-color) !important;
+  // color: rgb(200,200,200) !important;
 
   &::placeholder {
     color: $placeholder-color;

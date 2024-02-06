@@ -6,6 +6,7 @@ import './Home/Body';
 import './Home/Burger';
 import './Home/ItemsLoad';
 import './Home/SearchGlobalInput';
+import './Home/Switcher-them'
 
 import './Shop/Discount';
 import './Shop/Filter';

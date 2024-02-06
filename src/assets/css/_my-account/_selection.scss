@@ -5,7 +5,7 @@
   font-family: DM Sans;
   font-weight: 400;
   line-height: 26px;
-  color: $black-color;
+  color: var(--black-color);
 
   .popup {
     background-color: rgba(0, 0, 0, 0.4);
@@ -23,7 +23,7 @@
     place-items: center;
 
     .popup__profile {
-      background-color: $white-color;
+      background-color: var(--white-color);
       max-width: 450px;
       width: 100%;
       height: 150px;
@@ -62,7 +62,7 @@
   }
 
   h1 {
-    color: $black-color;
+    color: var(--black-color);
     font-size: 33px;
     font-weight: 500;
     line-height: 130.30303%;
@@ -104,7 +104,7 @@
         transition: all 0.3s;
 
         .act {
-          color: $black-color;
+          color: var(--black-color);
           position: relative;
 
           &::after {
@@ -120,7 +120,7 @@
             right: 0;
             text-align: center;
             border-radius: 1px;
-            border-bottom: 2px solid $black-color;
+            border-bottom: 2px solid var(--black-color);
             padding-bottom: 30px;
           }
         }
@@ -130,7 +130,7 @@
     .header__underline {
       display: block;
       margin-bottom: 40px;
-      background-color: $black-color;
+      background-color: var(--black-color);
       position: relative;
       z-index: -1;
     }
@@ -149,7 +149,7 @@
     }
 
     .go i {
-      color: $black-color;
+      color: var(--black-color);
     }
   }
 
@@ -216,7 +216,7 @@
       }
 
       thead {
-        border-bottom: 1px solid $black-color;
+        border-bottom: 1px solid var(--black-color);
       }
 
       tbody {
@@ -276,7 +276,7 @@
               font-style: normal;
               font-weight: 400;
               line-height: 20px;
-              color: $black-color;
+              color: var(--black-color);
               &:last-child {
                 color: $placeholder-color;
                 text-align: right;
@@ -420,7 +420,7 @@
               display: none;
               position: absolute;
               width: 100%;
-              background-color: $white-color;
+              background-color: var(--white-color);
               z-index: 2;
               border: 1px solid $gray-color;
               border-radius: 5px;
@@ -442,9 +442,9 @@
               }
 
               li {
-                color: $black-color;
+                color: var(--black-color);
                 display: block;
-                background-color: $white-color;
+                background-color: var(--white-color);
                 padding: 5px;
                 width: 100%;
                 border-bottom: 1px solid $gray-color;
@@ -502,7 +502,7 @@
     align-items: center;
 
     & h2 {
-      color: $black-color;
+      color: var(--black-color);
       font-size: 33px;
       font-weight: 500;
       line-height: 130.30303%;
@@ -629,7 +629,7 @@
               color: $placeholder-color;
 
               &:nth-child(2) {
-                color: $black-color;
+                color: var(--black-color);
                 font-size: 18px;
                 font-weight: 500;
                 padding-bottom: 5px;
@@ -664,7 +664,7 @@
           font-size: 16px;
           font-weight: 400;
           line-height: 22px;
-          color: $placeholder-color;
+          color: var(--input-color);
           margin-bottom: 10px;
         }
       }
@@ -683,7 +683,7 @@
       font-weight: 600;
       padding: 10px 15px;
       &:hover {
-        border: 1px solid $black-color;
+        border: 1px solid var(--black-color);
       }
     }
   }
@@ -702,7 +702,7 @@
       line-height: 166.666667%;
     }
     &__title-text {
-      color: $black-color;
+      color: var(--black-color);
     }
     &__value-text,
     &__value-link {
@@ -713,7 +713,7 @@
         & .value-border {
           padding-right: 12px;
           margin-right: 12px;
-          border-right: 1px solid $black-color;
+          border-right: 1px solid var(--black-color);
         }
       }
     }

@@ -49,6 +49,7 @@ footer {
       .info-input {
          width: 305px;
          padding-right: 64px;
+         background-color: transparent;
       }
 
       .info-input::placeholder {
@@ -73,7 +74,7 @@ footer {
             display: flex;
             justify-content: space-between;
             height: 40px;
-            border-bottom: 1px solid $black-color;
+            border-bottom: 1px solid var(--black-color);
             padding-bottom: 13px;
             margin-left: 10px;
          }
@@ -93,7 +94,7 @@ footer {
 
       .info-item:hover,
       .info-item:active {
-         color: $black-color;
+         color: var(--black-color);
          transition: 0.3s;
       }
 
@@ -104,12 +105,13 @@ footer {
 
       .fa:hover,
       .fa:active {
-         color: $black-color;
+         color: var(--black-color);
          transition: 0.3s;
       }
 
       button {
          border: none;
+         background-color: transparent;
       }
    }
 
@@ -157,7 +159,7 @@ footer {
 
             .info-item:hover,
             .info-item:active {
-               color: $black-color;
+               color: var(--black-color);
                transition: 0.3s;
             }
          }
@@ -166,7 +168,7 @@ footer {
             padding: 0 0 6px 0;
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid $black-color;
+            border-bottom: 1px solid var(--black-color);
          }
 
          .info-input {
@@ -226,11 +228,12 @@ footer {
 
       .fa:hover,
       .fa:active {
-         color: $black-color;
+         color: var(--black-color);
          transition: 0.3s;
       }
 
       button {
+         background-color: transparent;
          border: none;
       }
    }
@@ -437,7 +440,7 @@ footer {
 
                hr {
                   width: 47px;
-                  border: 1px solid $black-color;
+                  border: 1px solid var(--black-color);
                   margin: 0 8px 0 16px;
                }
 

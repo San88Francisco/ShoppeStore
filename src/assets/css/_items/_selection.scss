@@ -15,7 +15,7 @@
 
          .shop-latest_hover {
             opacity: 0;
-            background-color: $white-color-rgba;
+            background-color: var(--white-color-rgba);
             min-width: 100%;
             position: absolute;
             bottom: 4px;
@@ -89,14 +89,14 @@
 
          // Class for "Sold" label
          .add-sold {
-            color: $white-color;
+            color: var(--white-color);
             background-color: $accent-color;
          }
 
          // Class for "-%price%" label
          .add-discount,
          .add-popular {
-            color: $white-color;
+            color: var(--white-color);
             background-color: $accent-color;
          }
 
@@ -105,14 +105,14 @@
          .add-brooch,
          .add-bracelets,
          .add-pendants {
-            background-color: $black-color;
-            color: $white-color;
+            background-color: var(--black-color);
+            color: var(--white-color);
          }
 
          // Class for "New" label
          .add-new {
-            background-color: $white-color;
-            color: $black-color;
+            background-color: var(--white-color);
+            color: var(--black-color);
          }
       }
 

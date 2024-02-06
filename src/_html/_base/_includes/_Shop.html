@@ -16,7 +16,7 @@
          <label for="search-input"></label>
          <div class="input-div">
             <input type="text" placeholder="Search..." id="search-input" />
-            <img src="./assets/img/Shop_img/search-icon.svg" alt="" />
+            <img class="light-them" data-dark-src="./assets/img/dark-them/search-dark-them.svg" data-light-src="./assets/img/Shop_img/search-icon.svg" src="./assets/img/Shop_img/search-icon.svg" alt="" />
          </div>
 
          <div class="container-sort-btns">
@@ -25,7 +25,7 @@
                <div class="dropdown">
                   <button type="button" class="drop-btn" id="shopByBtn">
                      Shop By
-                     <img class="" src="./assets/img/svg/toggle.svg" />
+                     <img class="light-them" data-dark-src="./assets/img/dark-them/arrowDown-dark-them.svg" data-light-src="./assets/img/svg/toggle.svg" src="./assets/img/svg/toggle.svg" />
                   </button>
                   <div id="shopByDropdown" class="dropdown-content">
                      <button type="button" id="bnt-earrings">Earrings</button>
@@ -36,7 +36,7 @@
                </div>
                <div class="dropdown">
                   <button type="button" class="drop-btn" id="sortByBtn">
-                     Sort By<img class="" src="./assets/img/svg/toggle.svg" alt="toggle-icon" />
+                     Sort By<img class="light-them" data-dark-src="./assets/img/dark-them/arrowDown-dark-them.svg" data-light-src="./assets/img/svg/toggle.svg" src="./assets/img/svg/toggle.svg" alt="toggle-icon" />
                   </button>
                   <div id="sortByDropdown" class="dropdown-content">
                      <button type="button" id="btn-cheapest">Cheapest</button>
@@ -97,13 +97,15 @@
             <div class="shop-latest-container">
                <div class="shop-latest-blocks"></div>
                <div class="navigation-bar">
-                  <div id="prev-page" class="cards__pages cards__pages__arrow-back" data-index-Of-Btn="tab-btn" data-tab-to="back"><img src="./assets/img/Blog_img/svg/arrow.svg" alt="img"></div>
+                  <div id="prev-page" class="cards__pages cards__pages__arrow-back" data-index-Of-Btn="tab-btn" data-tab-to="back"><img data-dark-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" data-light-src="./assets/img/Blog_img/svg/arrow.svg" src="./assets/img/Blog_img/svg/arrow.svg" alt="img"></div>
                   <!-- <div id="pagination-info"></div> -->
 
-                  <div id="next-page" class="cards__pages lastPageBtn" data-index-Of-Btn="tab-btn" data-tab-to="forward"><img src="./assets/img/Blog_img/svg/arrow.svg" alt="img"></div>
+                  <div id="next-page" class="cards__pages lastPageBtn" data-index-Of-Btn="tab-btn" data-tab-to="forward"><img data-dark-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" data-light-src="./assets/img/Blog_img/svg/arrow.svg" src="./assets/img/Blog_img/svg/arrow.svg" alt="img"></div>
                </div>
             </div>
          </div>
       </article>
    </div>
 </section>
+
+{% include "_html/_base/_includes/_Them-switcher.html" %}

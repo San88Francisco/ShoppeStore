@@ -35,6 +35,7 @@
          }
 
          .input-div input {
+            background-color: transparent;
             width: 100%;
             height: 43px;
             border: none;
@@ -44,7 +45,8 @@
          }
 
          .input-div img {
-            background: $white-color;
+            // background: $white-color;
+            background-color: transparent;
             position: absolute;
             right: 0px;
             top: 5px;
@@ -112,7 +114,7 @@
          line-height: 27px;
          padding-bottom: 40px;
          .blog__author{
-            color: $black-color;
+            color: var(--black-color);
          }
       }
       .blog_content{
@@ -154,7 +156,7 @@
             hr{
                width: clamp(45px, 4vw, 64px);
                height: 1px;
-               border: 1px solid $black-color;
+               border: 1px solid var(--black-color);
                margin: 0px 6px;
             }
             .tags{
@@ -168,7 +170,7 @@
                   a{
                      &:hover{
                         transition: .2s all linear;
-                        color: $black-color;
+                        color: var(--black-color);
                         font-weight: 400;
                      }
                   }
@@ -265,6 +267,7 @@
                }
                .form__body:last-child{
                   textarea{
+                     background-color: transparent;
                      // padding-bottom: 60px;
                      border: 0px;
                      border-bottom: 1px solid $gray-color;
@@ -287,6 +290,7 @@
                }
                
                .leave-reply__input {
+                  background-color: transparent;
                   border-bottom: 1px solid $gray-color;
                   padding: 12px 0;
                   width: 100%;
@@ -378,7 +382,7 @@
                   h3{
                      font-size: 20px;
                      line-height: 26px;
-                     color: $black-color;
+                     color: var(--black-color);
                   }
                }
                .userDate{
