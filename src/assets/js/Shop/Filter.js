@@ -1,7 +1,5 @@
 /* ||| Filter price - input range, "Shop page" повзунок ||| */
 
-import { clickToInotherPage } from "../Home/Body";
-
 if (window.location.pathname.includes('/shop')) {
   document.addEventListener('DOMContentLoaded', function () {
   // Перевірка, чи ми на сторінці "Shop"
@@ -127,22 +125,7 @@ if (window.location.pathname.includes('/shop')) {
       // Filter price - logic, "Shop page"
 
       // ====Search====
-      document.querySelector('#search-input').oninput = function () {
-        let val = this.value.trim().toLowerCase();
-        let lettersItems = document.querySelectorAll('.shop-latest__name a');
 
-        lettersItems.forEach(function (e) {
-          const shopLatestBlock2 = e.closest('.shop-latest__block');
-
-          if (val == '') {
-            shopLatestBlock2.style.display = 'block';
-          } else if (val !== '' && e.innerText.toLowerCase().includes(val)) {
-            shopLatestBlock2.style.display = 'block';
-          } else {
-            shopLatestBlock2.style.display = 'none';
-          }
-        });
-      };
     });
 
     // *InStock* //
