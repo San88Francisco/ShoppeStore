@@ -232,13 +232,11 @@ if (window.location.pathname.includes('/shop')) {
           if (checkbox.classList.contains('toggle-sale')) {
             checkedItemStock.classList.remove('active__filter-checked');
             checkedItemSale.classList.add('active__filter-checked');
-            deleteCheckedItem();
             filterByDiscount();
           }
           if (checkbox.classList.contains('toggle-stock')) {
             checkedItemSale.classList.remove('active__filter-checked');
             checkedItemStock.classList.add('active__filter-checked');
-            deleteCheckedItem();
             filterByStock();
           }
         } else {

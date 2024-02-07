@@ -13,6 +13,7 @@ export const LinkAddToCart = (contents) => {
   const navCartCount = document.querySelector('.cart__count');
 
   const popupWindow = document.querySelector('.item__window-block');
+  console.log("LinkAddToCart  popupWindow:", popupWindow)
   const headerUnderline = document.querySelector('header');
 
   const addProductToCart = (itemPrice, productName) => {
