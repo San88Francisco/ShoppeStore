@@ -20,7 +20,6 @@ if (window.location.pathname.includes('/shop')) {
 
 
     document.querySelector('#search-input').oninput = function () {
-      deleteCheckedItem();
       let val = this.value.trim().toLowerCase();
     
       if (this.debounceTimerSearch) {
@@ -28,6 +27,9 @@ if (window.location.pathname.includes('/shop')) {
       }
     
       this.debounceTimerSearch = setTimeout(() => {
+        deleteCheckedItem();
+        zeroingCheckboxes();
+
         let searchFilter = allProductData.filter(product => product.name.toLowerCase().includes(val));
         clickToInotherPage(searchFilter, totalPages);
         console.log(searchFilter);
@@ -84,6 +86,8 @@ if (window.location.pathname.includes('/shop')) {
     function sortExpensiveCheapest(btnSort) {
       // Сортування масиву елементів за відповідними цінами
       if (btnSort.textContent === 'Expensive') {
+        deleteCheckedItem();
+        zeroingCheckboxes();
         checkedItemSort.classList.add('active__filter-checked');
         checkedItemSort.textContent = `Sort ${btnSort.textContent}`;
 
@@ -92,6 +96,8 @@ if (window.location.pathname.includes('/shop')) {
         });
         clickToInotherPage(sortExpensive, totalPages);
       } else if (btnSort.textContent === 'Cheapest') {
+        deleteCheckedItem();
+        zeroingCheckboxes();
         checkedItemSort.classList.add('active__filter-checked');
         checkedItemSort.textContent = `Sort ${btnSort.textContent}`;
 
@@ -155,6 +161,7 @@ if (window.location.pathname.includes('/shop')) {
     function sortShopBy(btn, className) {
       btn.addEventListener('click', () => {
         deleteCheckedItem();
+        zeroingCheckboxes();
         checkedItemShop.classList.add('active__filter-checked');
         checkedItemShop.textContent = `Sort ${btn.textContent}`;
         const sortItemBy = allProductData.filter((item) => {
@@ -168,6 +175,7 @@ if (window.location.pathname.includes('/shop')) {
     function sortInfoBy(btn, className) {
       btn.addEventListener('click', () => {
         deleteCheckedItem();
+        zeroingCheckboxes();
         checkedItemSort.classList.add('active__filter-checked');
         checkedItemSort.textContent = `Sort ${btn.textContent}`;
         const sortInfoBy = allProductData.filter((item) => {
@@ -187,6 +195,7 @@ if (window.location.pathname.includes('/shop')) {
       progress.style.right = '0%';
       rangeInput[0].value = 0;
       rangeInput[1].value = 180;
+      priceSum[1].textContent = 180;
       checkedItemPrice.classList.remove('active__filter-checked');
       clickToInotherPage(allProductData, totalPages);
     });
@@ -230,11 +239,13 @@ if (window.location.pathname.includes('/shop')) {
 
         if (checkbox.checked) {
           if (checkbox.classList.contains('toggle-sale')) {
+            deleteCheckedItem();
             checkedItemStock.classList.remove('active__filter-checked');
             checkedItemSale.classList.add('active__filter-checked');
             filterByDiscount();
           }
           if (checkbox.classList.contains('toggle-stock')) {
+            deleteCheckedItem();
             checkedItemSale.classList.remove('active__filter-checked');
             checkedItemStock.classList.add('active__filter-checked');
             filterByStock();
@@ -242,6 +253,7 @@ if (window.location.pathname.includes('/shop')) {
         } else {
           // Якщо не одна з кнопок не активна, перезаписуємо всі наші товари
           zeroingCheckboxes();
+          clickToInotherPage(allProductData, totalPages);
         }
       });
     });
@@ -250,14 +262,14 @@ if (window.location.pathname.includes('/shop')) {
       checkedItemShop.classList.remove('active__filter-checked');
       checkedItemSort.classList.remove('active__filter-checked');
       checkedItemPrice.classList.remove('active__filter-checked');
-      checkedItemSale.classList.remove('active__filter-checked');
-      checkedItemStock.classList.remove('active__filter-checked');
+
     };
 
     const zeroingCheckboxes = () => {
       checkedItemStock.classList.remove('active__filter-checked');
       checkedItemSale.classList.remove('active__filter-checked');
-      clickToInotherPage(allProductData, totalPages);
+      checkboxes[0].checked = false;
+      checkboxes[1].checked = false;
     };
 
     /* ||| Filter price - logic ||| */
@@ -314,7 +326,8 @@ if (window.location.pathname.includes('/shop')) {
                 +rangeInput[1].value * 100 >= +itemPrice
               );
             });
-            console.log('123');
+            deleteCheckedItem();
+            zeroingCheckboxes();
             checkedItemPrice.classList.add('active__filter-checked');
             clickToInotherPage(filteredData, totalPages);
           }, 2000);
