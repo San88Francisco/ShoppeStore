@@ -52,6 +52,8 @@ const renderPage = (page, contents) => {
 };
 
 const generateBtn = (countBlock) => {
+  document.querySelector('.navigation-bar').innerHTML = '';
+
   for (let i = 1; i <= countBlock; i++) {
     const lastPageBtn = document.querySelector('.lastPageBtn');
     const div = document.createElement('div');
@@ -66,58 +68,89 @@ const generateBtn = (countBlock) => {
 };
 
 export const clickToInotherPage = (contents, totalPages) => {
+  console.log('totalPages', contents);
+
   renderPage(currentPage, contents)
-  const cardsPages = document.querySelectorAll('.cards__pages');
-  cardsPages.forEach((item) => {
-    item.addEventListener('click', () => {
-      const indexOfBtn = item.getAttribute('data-index-Of-Btn');
-      const actPage = document.querySelector('.act_page');
-      const nuberOfNowPage = parseFloat(
-        actPage.getAttribute('data-index-Of-Btn')
-      );
-      const nextActPage = parseFloat(item.getAttribute('data-index-Of-Btn'));
-      const arrowBack = document.querySelector('.cards__pages__arrow-back');
-      if (indexOfBtn !== 'tab-btn') {
-        console.log('renderPage(indexOfBtn, contents)',contents);
-        renderPage(indexOfBtn, contents);
-        document.querySelector('.act_page').classList.remove('act_page');
-        item.classList.add('act_page');
-        nextActPage !== 1
-          ? (arrowBack.style.display = 'flex')
-          : (arrowBack.style.display = 'none');
-      } else {
-        const tabTo = item.getAttribute('data-tab-to');
-        if (tabTo === 'forward') {
-          if (nuberOfNowPage !== totalPages) {
-            renderPage(nuberOfNowPage + 1, contents);
-            const nextElememt = document.querySelector(
-              `[data-index-Of-Btn="${nuberOfNowPage + 1}"]`
-            );
-            nextElememt.classList.add('act_page');
-            arrowBack.style.display = 'flex';
-          } else {
-            renderPage(1, contents);
-            const nextElememt = document.querySelector(
-              `[data-index-Of-Btn="1"]`
-            );
-            nextElememt.classList.add('act_page');
-            arrowBack.style.display = 'none';
-          }
-          actPage.classList.remove('act_page');
-        } else {
-          renderPage(nuberOfNowPage - 1, contents);
-          actPage.classList.remove('act_page');
-          const nextElememt = document.querySelector(
-            `[data-index-Of-Btn="${nuberOfNowPage - 1}"]`
-          );
-          nextElememt.classList.add('act_page');
-          nuberOfNowPage - 1 !== 1
+
+  if (contents.length) {
+
+    const cardsPages = document.querySelectorAll('.cards__pages');
+    cardsPages.forEach((item) => {
+      item.addEventListener('click', () => {
+        const indexOfBtn = item.getAttribute('data-index-Of-Btn');
+        const actPage = document.querySelector('.act_page');
+        const nuberOfNowPage = parseFloat(
+          actPage.getAttribute('data-index-Of-Btn')
+        );
+        const nextActPage = parseFloat(item.getAttribute('data-index-Of-Btn'));
+        const arrowBack = document.querySelector('.cards__pages__arrow-back');
+        const lastPageBtn = document.querySelector('.lastPageBtn');
+        const goTopItems = document.querySelector('.background-block-input');
+  
+        if (indexOfBtn !== 'tab-btn') {
+          renderPage(indexOfBtn, contents);
+          document.querySelector('.act_page').classList.remove('act_page');
+          item.classList.add('act_page');
+          nextActPage !== 1
             ? (arrowBack.style.display = 'flex')
             : (arrowBack.style.display = 'none');
+  
+            nextActPage === totalPages
+            ? (lastPageBtn.style.display = 'none')
+            : (lastPageBtn.style.display = 'flex');
+  
+            goTopItems.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          const tabTo = item.getAttribute('data-tab-to');
+          goTopItems.scrollIntoView({ behavior: 'smooth' });
+          lastPageBtn.style.display = 'flex';
+  
+          if (tabTo === 'forward') {
+            if (nuberOfNowPage !== totalPages) {
+              renderPage(nuberOfNowPage + 1, contents);
+              // console.log('nextActPage2',nextActPage);
+  
+              const nextElememt = document.querySelector(
+                `[data-index-Of-Btn="${nuberOfNowPage + 1}"]`
+              );
+  
+              nuberOfNowPage === totalPages-1 
+              ? (lastPageBtn.style.display = 'none')
+              : (lastPageBtn.style.display = 'flex');
+  
+              goTopItems.scrollIntoView({ behavior: 'smooth' });
+  
+              nextElememt.classList.add('act_page');
+              arrowBack.style.display = 'flex';
+            } else {
+              renderPage(1, contents);
+              // console.log('nextActPage3',nextActPage);
+              const nextElememt = document.querySelector(
+                `[data-index-Of-Btn="1"]`
+              );
+              nextElememt.classList.add('act_page');
+              arrowBack.style.display = 'none';
+            }
+            actPage.classList.remove('act_page');
+          } else {
+            renderPage(nuberOfNowPage - 1, contents);
+            actPage.classList.remove('act_page');
+            const nextElememt = document.querySelector(
+              `[data-index-Of-Btn="${nuberOfNowPage - 1}"]`
+            );
+            nextElememt.classList.add('act_page');
+            nuberOfNowPage - 1 !== 1
+              ? (arrowBack.style.display = 'flex')
+              : (arrowBack.style.display = 'none');
+          }
         }
-      }
+      });
     });
-  });
+  } else {
+    console.log('Пусто');
+  }
+
+
 };
 
 const renderProducts = async () => {

@@ -532,8 +532,7 @@
 
    @media (max-width: 860px) {
       .filter-menu {
-         // Ivan
-         // @include animatedHideShow;
+         @include animatedHideShow;
 
       }
 
