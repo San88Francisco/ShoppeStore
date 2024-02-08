@@ -97,7 +97,9 @@ header {
       &.active {
         transform: translate(0);
         animation: menu-bg 0.9s ease-in-out; // Apply the animation when active
-        background-color: var(--main-background); // Set the target background color
+        background-color: var(
+          --main-background
+        ); // Set the target background color
         display: flex;
       }
 
@@ -336,11 +338,11 @@ header {
       font-weight: 200;
       font-size: 20px;
     }
-    .switcherBtn{
+    .switcherBtn {
       display: none;
       position: relative;
       top: -5px;
-      @media screen and (max-width:700px){
+      @media screen and (max-width: 700px) {
         display: flex;
       }
     }
@@ -500,7 +502,7 @@ header {
 
       .active-cart-visual {
         display: block;
-        margin: 5px 20px 5px 0;
+        margin: 5px 8px 5px 0;
         z-index: 9;
       }
 

@@ -66,8 +66,8 @@ const generateBtn = (countBlock) => {
 };
 
 export const clickToInotherPage = (contents, totalPages) => {
-  renderPage(currentPage, contents)
-  console.log('good',contents );
+  renderPage(currentPage, contents);
+  console.log('good', contents);
   const cardsPages = document.querySelectorAll('.cards__pages');
   cardsPages.forEach((item) => {
     item.addEventListener('click', () => {
@@ -79,7 +79,7 @@ export const clickToInotherPage = (contents, totalPages) => {
       const nextActPage = parseFloat(item.getAttribute('data-index-Of-Btn'));
       const arrowBack = document.querySelector('.cards__pages__arrow-back');
       if (indexOfBtn !== 'tab-btn') {
-        console.log('renderPage(indexOfBtn, contents)',contents);
+        console.log('renderPage(indexOfBtn, contents)', contents);
         renderPage(indexOfBtn, contents);
         document.querySelector('.act_page').classList.remove('act_page');
         item.classList.add('act_page');
@@ -140,66 +140,85 @@ const renderProducts = async () => {
 
 renderProducts();
 
-
 const renderBlackThem = () => {
-    const darkThemIsOn = sessionStorage.getItem('darkThemIsOn')
-    const imgLightThem = document.querySelectorAll('.light-them')
-    const root = document.documentElement;
+  const darkThemIsOn = sessionStorage.getItem('darkThemIsOn');
+  const imgLightThem = document.querySelectorAll('.light-them');
+  const root = document.documentElement;
 
-    if(darkThemIsOn === 'true'){
-      root.style.setProperty('--black-color',' rgb(256, 256,256)');
-      root.style.setProperty('--white-color', 'rgb(1,1,1)');
-      root.style.setProperty('--main-background', 'rgb(29 32 35)');
-      root.style.setProperty('--arrow-Url',"url('../img/dark-them/arrowSmall-dark-them.svg')");
-      root.style.setProperty('--account-background','rgb(120,120,120)');
+  if (darkThemIsOn === 'true') {
+    root.style.setProperty('--black-color', ' rgb(256, 256,256)');
+    root.style.setProperty('--white-color', 'rgb(1,1,1)');
+    root.style.setProperty('--main-background', 'rgb(29 32 35)');
+    root.style.setProperty(
+      '--arrow-Url',
+      "url('../img/dark-them/arrowSmall-dark-them.svg')"
+    );
+    root.style.setProperty('--account-background', 'rgb(120,120,120)');
 
-      root.style.setProperty('--stars-fill-null','url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg)');
-      root.style.setProperty('--star-fill-black','url(../img/dark-them/star.svg)');
-      root.style.setProperty('--star-fill-null','url(../img/dark-them/star-dark-them-none.svg)');
-      
-      root.style.setProperty('--white-color-rgba','rgba(1,1,1,0.5)');
+    root.style.setProperty(
+      '--stars-fill-null',
+      'url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg) url(../img/dark-them/star-dark-them-none.svg)'
+    );
+    root.style.setProperty(
+      '--star-fill-black',
+      'url(../img/dark-them/star.svg)'
+    );
+    root.style.setProperty(
+      '--star-fill-null',
+      'url(../img/dark-them/star-dark-them-none.svg)'
+    );
 
-      root.style.setProperty('--input-color','rgb(200,200,200)');
+    root.style.setProperty('--white-color-rgba', 'rgba(1,1,1,0.5)');
 
-      root.style.setProperty('--them-swch-backround','rgb(60,60,60)');
+    root.style.setProperty('--input-color', 'rgb(200,200,200)');
 
-      root.style.setProperty('--light-gray-color','rgb(58,58,58)');
-      
-      imgLightThem.forEach(item => {
-        const newSrc = item.getAttribute('data-dark-src')
-        item.src = newSrc
-      })
+    root.style.setProperty('--them-swch-backround', 'rgb(60,60,60)');
 
-    }else if(darkThemIsOn === 'false'){
+    root.style.setProperty('--light-gray-color', 'rgb(58,58,58)');
 
-      root.style.setProperty('--black-color','rgb(1,1,1)');
-      root.style.setProperty('--white-color', 'rgb(256, 256,256)');
-      root.style.setProperty('--main-background', 'rgb(256, 256,256)');
-      root.style.setProperty('--arrow-Url',"url('../img/Cart_img/svg/arrow_up.svg')");
-      root.style.setProperty('--account-background','rgb(239, 239, 239)');
+    imgLightThem.forEach((item) => {
+      const newSrc = item.getAttribute('data-dark-src');
+      item.src = newSrc;
+    });
+  } else if (darkThemIsOn === 'false') {
+    root.style.setProperty('--black-color', 'rgb(1,1,1)');
+    root.style.setProperty('--white-color', 'rgb(256, 256,256)');
+    root.style.setProperty('--main-background', 'rgb(256, 256,256)');
+    root.style.setProperty(
+      '--arrow-Url',
+      "url('../img/Cart_img/svg/arrow_up.svg')"
+    );
+    root.style.setProperty('--account-background', 'rgb(239, 239, 239)');
 
-      root.style.setProperty('--stars-fill-null','url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg)');
-      root.style.setProperty('--star-fill-black','url(../img/Product_img/svg/Vectorstar_black_background.svg)');
-      root.style.setProperty('--star-fill-null','url(../img/Product_img/svg/Vectorstar_null_background.svg)');
-      
-      root.style.setProperty('--white-color-rgba','rgb(256, 256,256, 0.5)');
+    root.style.setProperty(
+      '--stars-fill-null',
+      'url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg)'
+    );
+    root.style.setProperty(
+      '--star-fill-black',
+      'url(../img/Product_img/svg/Vectorstar_black_background.svg)'
+    );
+    root.style.setProperty(
+      '--star-fill-null',
+      'url(../img/Product_img/svg/Vectorstar_null_background.svg)'
+    );
 
-      root.style.setProperty('--input-color','rgb(112,112,112)');
+    root.style.setProperty('--white-color-rgba', 'rgb(256, 256,256, 0.5)');
 
-      root.style.setProperty('--them-swch-backround','rgb(170,170,170)');
+    root.style.setProperty('--input-color', 'rgb(112,112,112)');
 
-      root.style.setProperty('--light-gray-color','rgb(239, 239, 239)');
+    root.style.setProperty('--them-swch-backround', 'rgb(239, 239, 239)');
 
+    root.style.setProperty('--light-gray-color', 'rgb(239, 239, 239)');
 
-      imgLightThem.forEach(item => {
-        const newSrc = item.getAttribute('data-light-src')
-        item.src = newSrc
-      })
-    }
-}
+    imgLightThem.forEach((item) => {
+      const newSrc = item.getAttribute('data-light-src');
+      item.src = newSrc;
+    });
+  }
+};
 
-renderBlackThem()
+renderBlackThem();
 // #dbdbdb
 
-export default renderBlackThem
-
+export default renderBlackThem;
