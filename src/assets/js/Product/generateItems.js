@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const renderProducts = async () => {
-      const item = JSON.parse(localStorage.getItem('allProduct'));
+      const item = JSON.parse(sessionStorage.getItem('allProduct'));
       const contents = item ? item : await fetchData();
 
       if (contents) {

@@ -1,10 +1,10 @@
 import { animationDropBox } from '../Global/GlobalFunctions';
-import { clickToInotherPage } from '../Home/Body';
+import { clickToInotherPage, generateBtn } from '../Home/Body';
 
 if (window.location.pathname.includes('/shop')) {
   document.addEventListener('DOMContentLoaded', function () {
     const itemsPerPage = 6;
-    const allProductData = JSON.parse(localStorage.getItem('allProduct'));
+    const allProductData = JSON.parse(sessionStorage.getItem('allProduct'));
     // let totalPages = Math.ceil(allProductData.length / itemsPerPage);
     let totalPages = 0;
 
@@ -37,6 +37,7 @@ if (window.location.pathname.includes('/shop')) {
 
         console.log(totalPages);
 
+        generateBtn(totalPages);
         clickToInotherPage(searchFilter, totalPages);
         console.log(searchFilter);
     
