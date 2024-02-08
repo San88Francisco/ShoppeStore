@@ -6,6 +6,7 @@ const itemsPerPage = 6;
 let currentPage = 1;
 
 const renderPage = (page, contents) => {
+  console.log(contents);
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
@@ -51,8 +52,27 @@ const renderPage = (page, contents) => {
   discount();
 };
 
+const renderPagePlaceHolder = () => {
+  console.log('Спочатку це');
+  const shopLatestBlocks = document.querySelector('.shop-latest-blocks') || [];
+  console.log("renderPagePlaceHolder  shopLatestBlocks:", shopLatestBlocks)
+
+  Array(6).fill(0).map(() => {
+    shopLatestBlocks.innerHTML += `
+      <div class="card">
+        <div class="image-placeholder placeholder"></div>
+        <div class="title-placeholder placeholder"></div>
+        <div class="text-placeholder placeholder"></div>
+        <div class="text-placeholder placeholder"></div>
+      </div>
+    `
+  })
+
+}
+renderPagePlaceHolder();
+
 const generateBtn = (countBlock) => {
-  document.querySelector('.navigation-bar').innerHTML = '';
+  const navigationBar = document.querySelectorAll('.navigation-bar cards__pages')
 
   for (let i = 1; i <= countBlock; i++) {
     const lastPageBtn = document.querySelector('.lastPageBtn');
@@ -64,7 +84,9 @@ const generateBtn = (countBlock) => {
     p.textContent = i;
     lastPageBtn.insertAdjacentElement('beforebegin', div);
     div.insertAdjacentElement('afterbegin', p);
+    console.log("  navigationBar:", navigationBar)
   }
+
 };
 
 export const clickToInotherPage = (contents, totalPages) => {

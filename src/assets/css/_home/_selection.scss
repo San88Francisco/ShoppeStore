@@ -161,6 +161,56 @@
       gap: 54px;
       grid-row-gap: 178px;
       margin: 0 auto;
+
+      .card {
+         // width: 300px;
+         // height: 300px;
+         aspect-ratio: 4 / 5;
+         border-radius: 1rem;
+         background: #fff;
+         box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+         padding: 1rem;
+         box-sizing: border-box;
+       }
+       .placeholder {
+         background: #eee;
+         border-radius: 1rem;
+         position: relative;
+         overflow: hidden;
+       }
+       .placeholder:after {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         width: 100px;
+         background: linear-gradient(90deg, #eee, #f4f4f4, #eee);
+         animation: gradient 1s infinite ease-in-out;
+       }
+       .image-placeholder {
+         aspect-ratio: 16 / 12;
+         margin-bottom: 1rem;
+       }
+       .title-placeholder {
+         aspect-ratio: 16 / 1.5;
+         margin-bottom: 2rem;
+       }
+       .text-placeholder {
+         aspect-ratio: 16 / 1;
+         margin-top: 1rem;
+         margin-bottom: 0;
+       }
+       @keyframes gradient {
+         from  {
+           left: 0%;
+         }
+         
+         to {
+           left: 100%;
+         }
+       }
+
    }
 
    .shop-latest__block {
