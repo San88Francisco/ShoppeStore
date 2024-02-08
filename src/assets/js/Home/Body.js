@@ -71,19 +71,37 @@ const renderPagePlaceHolder = () => {
 renderPagePlaceHolder();
 
 export const generateBtn = (countBlock) => {
+  const lastPageBtn = document.querySelector('.lastPageBtn');
+  const paginationInfo = document.querySelector('.pagination-info');
+  paginationInfo.innerHTML = '';
 
-  for (let i = 1; i <= countBlock; i++) {
-    const lastPageBtn = document.querySelector('.lastPageBtn');
-    const div = document.createElement('div');
-    const p = document.createElement('p');
-    div.classList.add(`cards__pages`);
-    div.setAttribute('data-index-Of-Btn', i);
-    i === 1 ? div.classList.add('act_page') : 0;
-    p.textContent = i;
-    lastPageBtn.insertAdjacentElement('beforebegin', div);
-    div.insertAdjacentElement('afterbegin', p);
+  Array(countBlock).fill(0).map((item, index) => {
+    console.log(index);
+    paginationInfo.innerHTML += `
+      <div class='cards__pages ${(index +1 ) === 1 ? 'act_page' : ''}' data-index-Of-Btn=${index + 1}>
+        <p>${index + 1}</p>
+      </div>
+    `
 
+  })
+
+  if (countBlock === 1) {
+    console.log(lastPageBtn);
+    lastPageBtn.style.display = 'none';
   }
+
+  // for (let i = 1; i <= countBlock; i++) {
+  //   const lastPageBtn = document.querySelector('.lastPageBtn');
+  //   const div = document.createElement('div');
+  //   const p = document.createElement('p');
+  //   div.classList.add(`cards__pages`);
+  //   div.setAttribute('data-index-Of-Btn', i);
+  //   i === 1 ? div.classList.add('act_page') : 0;
+  //   p.textContent = i;
+  //   lastPageBtn.insertAdjacentElement('beforebegin', div);
+  //   div.insertAdjacentElement('afterbegin', p);
+
+  // }
 
 };
 
@@ -106,6 +124,7 @@ export const clickToInotherPage = (contents, totalPages) => {
         const lastPageBtn = document.querySelector('.lastPageBtn');
         const goTopItems = document.querySelector('.background-block-input');
   
+
         if (indexOfBtn !== 'tab-btn') {
           renderPage(indexOfBtn, contents);
           document.querySelector('.act_page').classList.remove('act_page');
@@ -142,6 +161,7 @@ export const clickToInotherPage = (contents, totalPages) => {
               nextElememt.classList.add('act_page');
               arrowBack.style.display = 'flex';
             } else {
+
               renderPage(1, contents);
               // console.log('nextActPage3',nextActPage);
               const nextElememt = document.querySelector(
@@ -152,11 +172,16 @@ export const clickToInotherPage = (contents, totalPages) => {
             }
             actPage.classList.remove('act_page');
           } else {
+            console.log(nextActPage);
+            console.log(indexOfBtn);
+            console.log(contents);
+            console.log(nuberOfNowPage);
             renderPage(nuberOfNowPage - 1, contents);
             actPage.classList.remove('act_page');
             const nextElememt = document.querySelector(
               `[data-index-Of-Btn="${nuberOfNowPage - 1}"]`
             );
+            console.log("nextElememt:", nextElememt)
             nextElememt.classList.add('act_page');
             nuberOfNowPage - 1 !== 1
               ? (arrowBack.style.display = 'flex')

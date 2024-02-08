@@ -5,6 +5,7 @@ if (window.location.pathname.includes('/shop')) {
   document.addEventListener('DOMContentLoaded', function () {
     const itemsPerPage = 6;
     const allProductData = JSON.parse(sessionStorage.getItem('allProduct'));
+    console.log("allProductData:", allProductData)
     // let totalPages = Math.ceil(allProductData.length / itemsPerPage);
     let totalPages = 0;
 
@@ -32,6 +33,7 @@ if (window.location.pathname.includes('/shop')) {
         zeroingCheckboxes();
 
         let searchFilter = allProductData.filter(product => product.name.toLowerCase().includes(val));
+        console.log("searchFilter:", searchFilter)
 
         totalPages = Math.ceil(searchFilter.length / itemsPerPage);
 
