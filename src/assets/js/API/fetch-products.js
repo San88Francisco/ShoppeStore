@@ -3,10 +3,16 @@ export const fetchData = async () => {
     const response = await fetch(
       'https://650f314454d18aabfe99ec68.mockapi.io/cart'
     );
+
     // Обробка отриманих даних
     const data = await response.json();
     // Записуємо данні в локальне сховище
-    localStorage.setItem('allProduct', JSON.stringify(data));
+    // localStorage.setItem('allProduct', JSON.stringify(data));
+
+      
+    localStorage.removeItem('allProduct');
+    // Записуємо данні в sessionStorage, щоб після перезаходу, змінювалися данні з бази данних
+    sessionStorage.setItem('allProduct', JSON.stringify(data));
 
     return data;
   } catch (error) {

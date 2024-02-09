@@ -29,7 +29,7 @@
                   </button>
                   <div id="shopByDropdown" class="dropdown-content">
                      <button type="button" id="bnt-earrings">Earrings</button>
-                     <button type="button" id="btn-rings">Rings</button>
+                     <button type="button" id="btn-rings">Brooch</button>
                      <button type="button" id="btn-bracelets">Bracelets</button>
                      <button type="button" id="btn-pendants">Pendants</button>
                   </div>
@@ -43,7 +43,6 @@
                      <button type="button" id="btn-expensive">Expensive</button>
                      <button type="button" id="btn-popular">Popular</button>
                      <button type="button" id="btn-new">New</button>
-                     <button type="button" id="btn-discounts">Discounts</button>
                   </div>
                </div>
             </div>
@@ -88,9 +87,37 @@
                   </div>
                </div>
             </div>
+
+            <div class="filter__checked">
+               <span class="checked__item-shop">
+                  Shop By
+               </span>
+               <span class="checked__item-sort">
+                  Sort By
+               </span>
+               <span class="checked__item-price">
+                  Filter Price
+               </span>
+               <span class="checked__item-sale">
+                  On Sale
+               </span>
+               <span class="checked__item-stock">
+                  In Stock
+               </span>
+            </div>
          </div>
 
       </aside>
+
+      <div class="container__search container-not-found-search Scroll_js_up">
+         <img src="./assets/img/Home_img/header/searchGold.svg" alt="search-icon" />
+
+         <div >
+            <h2>Search...</h2>
+            <p>This product was not found</p>
+         </div>
+      </div>
+
       <article class="conteiner-items Scroll_js_right">
          <!-- Shop The Latest -->
          <div id="deBag_marginTop" class="shop-latest">
@@ -98,7 +125,8 @@
                <div class="shop-latest-blocks"></div>
                <div class="navigation-bar">
                   <div id="prev-page" class="cards__pages cards__pages__arrow-back" data-index-Of-Btn="tab-btn" data-tab-to="back"><img data-dark-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" data-light-src="./assets/img/Blog_img/svg/arrow.svg" src="./assets/img/Blog_img/svg/arrow.svg" alt="img"></div>
-                  <!-- <div id="pagination-info"></div> -->
+                  
+                  <div id="pagination-info" class="pagination-info"></div>
 
                   <div id="next-page" class="cards__pages lastPageBtn" data-index-Of-Btn="tab-btn" data-tab-to="forward"><img data-dark-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" data-light-src="./assets/img/Blog_img/svg/arrow.svg" src="./assets/img/Blog_img/svg/arrow.svg" alt="img"></div>
                </div>

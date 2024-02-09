@@ -4,7 +4,6 @@ export const LinkAddToCart = (contents) => {
   
   if(contents.length === 3) {
     priceIndex+=1;
-    console.log(priceIndex);
   }
 
   let allProductCart = JSON.parse(localStorage.getItem('allProductCart')) || [];

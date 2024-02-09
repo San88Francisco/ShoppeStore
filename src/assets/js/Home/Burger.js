@@ -28,16 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
     this.classList.toggle("active");
     menuItems.classList.toggle("active");
    
-    if (checkbox.classList.contains("active")) {
-      body.style.overflowY = "hidden";
+    if (menuItems.classList.contains("active")) { 
+      body.style.overflowY = 'hidden';
     } else {
-      setTimeout(function () {
-        body.style.overflowY = "auto";
-      }, 100);
-     
+        body.style.overflowY = 'auto';
     }
-    
-  
 
     burgerItems.forEach((item) => {
       item.classList.toggle("active");

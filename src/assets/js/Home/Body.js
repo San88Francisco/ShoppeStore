@@ -1,4 +1,5 @@
 import { fetchData } from '../API/fetch-products';
+import { addItemToProduct } from '../Product/AddToCart';
 import { discount } from '../Shop/Discount';
 import { LinkAddToCart } from './LinkAddToCart';
 
@@ -49,76 +50,151 @@ const renderPage = (page, contents) => {
     }
   );
   discount();
+  addItemToProduct();
 };
 
-const generateBtn = (countBlock) => {
-  for (let i = 1; i <= countBlock; i++) {
-    const lastPageBtn = document.querySelector('.lastPageBtn');
-    const div = document.createElement('div');
-    const p = document.createElement('p');
-    div.classList.add(`cards__pages`);
-    div.setAttribute('data-index-Of-Btn', i);
-    i === 1 ? div.classList.add('act_page') : 0;
-    p.textContent = i;
-    lastPageBtn.insertAdjacentElement('beforebegin', div);
-    div.insertAdjacentElement('afterbegin', p);
+const renderPagePlaceHolder = () => {
+  const shopLatestBlocks = document.querySelector('.shop-latest-blocks') || [];
+
+  Array(6).fill(0).map(() => {
+    shopLatestBlocks.innerHTML += `
+      <div class="card">
+        <div class="image-placeholder placeholder"></div>
+        <div class="title-placeholder placeholder"></div>
+        <div class="text-placeholder placeholder"></div>
+        <div class="text-placeholder placeholder"></div>
+      </div>
+    `
+  })
+
+}
+renderPagePlaceHolder();
+
+export const generateBtn = (countBlock) => {
+  const lastPageBtn = document.querySelector('.lastPageBtn');
+  const paginationInfo = document.querySelector('.pagination-info');
+  paginationInfo.innerHTML = '';
+
+  Array(countBlock).fill(0).map((item, index) => {
+    console.log(index);
+    paginationInfo.innerHTML += `
+      <div class='cards__pages ${(index +1 ) === 1 ? 'act_page' : ''}' data-index-Of-Btn=${index + 1}>
+        <p>${index + 1}</p>
+      </div>
+    `
+
+  })
+
+  if (countBlock === 1) {
+    console.log(lastPageBtn);
+    lastPageBtn.style.display = 'none';
   }
+
+  // for (let i = 1; i <= countBlock; i++) {
+  //   const lastPageBtn = document.querySelector('.lastPageBtn');
+  //   const div = document.createElement('div');
+  //   const p = document.createElement('p');
+  //   div.classList.add(`cards__pages`);
+  //   div.setAttribute('data-index-Of-Btn', i);
+  //   i === 1 ? div.classList.add('act_page') : 0;
+  //   p.textContent = i;
+  //   lastPageBtn.insertAdjacentElement('beforebegin', div);
+  //   div.insertAdjacentElement('afterbegin', p);
+
+  // }
+
 };
 
 export const clickToInotherPage = (contents, totalPages) => {
+
   renderPage(currentPage, contents);
-  console.log('good', contents);
-  const cardsPages = document.querySelectorAll('.cards__pages');
-  cardsPages.forEach((item) => {
-    item.addEventListener('click', () => {
-      const indexOfBtn = item.getAttribute('data-index-Of-Btn');
-      const actPage = document.querySelector('.act_page');
-      const nuberOfNowPage = parseFloat(
-        actPage.getAttribute('data-index-Of-Btn')
-      );
-      const nextActPage = parseFloat(item.getAttribute('data-index-Of-Btn'));
-      const arrowBack = document.querySelector('.cards__pages__arrow-back');
-      if (indexOfBtn !== 'tab-btn') {
-        console.log('renderPage(indexOfBtn, contents)', contents);
-        renderPage(indexOfBtn, contents);
-        document.querySelector('.act_page').classList.remove('act_page');
-        item.classList.add('act_page');
-        nextActPage !== 1
-          ? (arrowBack.style.display = 'flex')
-          : (arrowBack.style.display = 'none');
-      } else {
-        const tabTo = item.getAttribute('data-tab-to');
-        if (tabTo === 'forward') {
-          if (nuberOfNowPage !== totalPages) {
-            renderPage(nuberOfNowPage + 1, contents);
-            const nextElememt = document.querySelector(
-              `[data-index-Of-Btn="${nuberOfNowPage + 1}"]`
-            );
-            nextElememt.classList.add('act_page');
-            arrowBack.style.display = 'flex';
-          } else {
-            renderPage(1, contents);
-            const nextElememt = document.querySelector(
-              `[data-index-Of-Btn="1"]`
-            );
-            nextElememt.classList.add('act_page');
-            arrowBack.style.display = 'none';
-          }
-          actPage.classList.remove('act_page');
-        } else {
-          renderPage(nuberOfNowPage - 1, contents);
-          actPage.classList.remove('act_page');
-          const nextElememt = document.querySelector(
-            `[data-index-Of-Btn="${nuberOfNowPage - 1}"]`
-          );
-          nextElememt.classList.add('act_page');
-          nuberOfNowPage - 1 !== 1
+
+  if (contents.length) {
+
+    const cardsPages = document.querySelectorAll('.cards__pages');
+    cardsPages.forEach((item) => {
+      item.addEventListener('click', () => {
+        const indexOfBtn = item.getAttribute('data-index-Of-Btn');
+        const actPage = document.querySelector('.act_page');
+        const nuberOfNowPage = parseFloat(
+          actPage.getAttribute('data-index-Of-Btn')
+        );
+        const nextActPage = parseFloat(item.getAttribute('data-index-Of-Btn'));
+        const arrowBack = document.querySelector('.cards__pages__arrow-back');
+        const lastPageBtn = document.querySelector('.lastPageBtn');
+        const goTopItems = document.querySelector('.background-block-input');
+  
+
+        if (indexOfBtn !== 'tab-btn') {
+          renderPage(indexOfBtn, contents);
+          document.querySelector('.act_page').classList.remove('act_page');
+          item.classList.add('act_page');
+          nextActPage !== 1
             ? (arrowBack.style.display = 'flex')
             : (arrowBack.style.display = 'none');
+  
+            nextActPage === totalPages
+            ? (lastPageBtn.style.display = 'none')
+            : (lastPageBtn.style.display = 'flex');
+  
+            goTopItems.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          const tabTo = item.getAttribute('data-tab-to');
+          goTopItems.scrollIntoView({ behavior: 'smooth' });
+          lastPageBtn.style.display = 'flex';
+  
+          if (tabTo === 'forward') {
+            if (nuberOfNowPage !== totalPages) {
+              renderPage(nuberOfNowPage + 1, contents);
+              // console.log('nextActPage2',nextActPage);
+  
+              const nextElememt = document.querySelector(
+                `[data-index-Of-Btn="${nuberOfNowPage + 1}"]`
+              );
+  
+              nuberOfNowPage === totalPages-1 
+              ? (lastPageBtn.style.display = 'none')
+              : (lastPageBtn.style.display = 'flex');
+  
+              goTopItems.scrollIntoView({ behavior: 'smooth' });
+  
+              nextElememt.classList.add('act_page');
+              arrowBack.style.display = 'flex';
+            } else {
+
+              renderPage(1, contents);
+              // console.log('nextActPage3',nextActPage);
+              const nextElememt = document.querySelector(
+                `[data-index-Of-Btn="1"]`
+              );
+              nextElememt.classList.add('act_page');
+              arrowBack.style.display = 'none';
+            }
+            actPage.classList.remove('act_page');
+          } else {
+            console.log(nextActPage);
+            console.log(indexOfBtn);
+            console.log(contents);
+            console.log(nuberOfNowPage);
+            renderPage(nuberOfNowPage - 1, contents);
+            actPage.classList.remove('act_page');
+            const nextElememt = document.querySelector(
+              `[data-index-Of-Btn="${nuberOfNowPage - 1}"]`
+            );
+            console.log("nextElememt:", nextElememt)
+            nextElememt.classList.add('act_page');
+            nuberOfNowPage - 1 !== 1
+              ? (arrowBack.style.display = 'flex')
+              : (arrowBack.style.display = 'none');
+          }
         }
-      }
+      });
     });
-  });
+  } else {
+    console.log('Пусто');
+  }
+
+
 };
 
 const renderProducts = async () => {
@@ -129,7 +205,7 @@ const renderProducts = async () => {
     const totalPages = Math.ceil(contents.length / itemsPerPage);
 
     renderPage(currentPage, contents);
-    console.log('good');
+
     if (window.location.pathname.includes('/shop')) {
       generateBtn(totalPages);
       clickToInotherPage(contents, totalPages);

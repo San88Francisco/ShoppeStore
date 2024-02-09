@@ -8,7 +8,7 @@
     "categoryClass": "add-discount",
     "price": 20,
     "amount": 1,
-    "composition": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet fugit ab pariatur eum hic nulla, nemo vero impedit! Sit illum impedit cupiditate sequi aliquam odit voluptatum exercitationem! Ipsam, voluptatum corrupti?",
+    "composition": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet fugit ab pariatur eum hic nulla, nemo vero impedit! Sit illum impedit cupiditate sequi aliquam odit voluptatum exercitationem! Ipsam, voluptatum corruptit",
     "imageUrl": "./assets/img/Home_img/Body/Img 01.png",
     "productVariant": "Gold / Small"
   },
@@ -211,7 +211,7 @@
   {
     "id": 16,
     "name": "Tranquil Choker",
-    "typeProduct": "earrings",
+    "typeProduct": "Earrings",
     "typeClass": "add-earrings",
     "category": "-25%",
     "categoryClass": "add-discount",
