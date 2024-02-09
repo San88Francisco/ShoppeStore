@@ -1,6 +1,6 @@
 import { fetchData } from '../API/fetch-products';
 import { LinkAddToCart } from '../Home/LinkAddToCart';
-import { discount } from '../Shop/Discount';
+// import { discount } from '../Shop/Discount';
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.includes('/product')) {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>`;
         }
       );
-      discount();
+      // discount();
     };
 
     const renderProducts = async () => {

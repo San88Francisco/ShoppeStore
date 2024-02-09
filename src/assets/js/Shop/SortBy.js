@@ -9,6 +9,13 @@ if (window.location.pathname.includes('/shop')) {
     // let totalPages = Math.ceil(allProductData.length / itemsPerPage);
     let totalPages = 0;
 
+    const generateBtnAll = (items) => {
+      totalPages = Math.ceil(items.length / itemsPerPage);
+        console.log(totalPages);
+        generateBtn(totalPages);
+    }
+
+
     // Випадання кнопок sortBy and shopBy
     const shopByBtn = document.getElementById('shopByBtn');
     const sortByBtn = document.getElementById('sortByBtn');
@@ -103,6 +110,8 @@ if (window.location.pathname.includes('/shop')) {
         const sortExpensive = allProductData.sort((a, b) => {
           return b.price - a.price;
         });
+
+        generateBtnAll(sortExpensive);
         clickToInotherPage(sortExpensive, totalPages);
       } else if (btnSort.textContent === 'Cheapest') {
         deleteCheckedItem();
@@ -113,6 +122,8 @@ if (window.location.pathname.includes('/shop')) {
         const sortCheapest = allProductData.sort((a, b) => {
           return a.price - b.price;
         });
+
+        generateBtnAll(sortCheapest);
         clickToInotherPage(sortCheapest, totalPages);
       }
     }
@@ -158,11 +169,13 @@ if (window.location.pathname.includes('/shop')) {
 
     checkedItemShop.addEventListener('click', () => {
       checkedItemShop.classList.remove('active__filter-checked');
+      generateBtnAll(allProductData);
       clickToInotherPage(allProductData, totalPages);
     });
 
     checkedItemSort.addEventListener('click', () => {
       checkedItemSort.classList.remove('active__filter-checked');
+      generateBtnAll(allProductData);
       clickToInotherPage(allProductData, totalPages);
     });
 
@@ -176,6 +189,8 @@ if (window.location.pathname.includes('/shop')) {
         const sortItemBy = allProductData.filter((item) => {
           return item.typeClass === className;
         });
+
+        generateBtnAll(sortItemBy);
         clickToInotherPage(sortItemBy, totalPages);
       });
     }
@@ -190,6 +205,7 @@ if (window.location.pathname.includes('/shop')) {
         const sortInfoBy = allProductData.filter((item) => {
           return item.categoryClass === className;
         });
+        generateBtnAll(sortInfoBy);
         clickToInotherPage(sortInfoBy, totalPages);
       });
     }
@@ -206,6 +222,7 @@ if (window.location.pathname.includes('/shop')) {
       rangeInput[1].value = 180;
       priceSum[1].textContent = 180;
       checkedItemPrice.classList.remove('active__filter-checked');
+      generateBtnAll(allProductData);
       clickToInotherPage(allProductData, totalPages);
     });
 
@@ -227,6 +244,7 @@ if (window.location.pathname.includes('/shop')) {
       const filterDiscount = allProductData.filter((item) => {
         return item.categoryClass === 'add-discount';
       });
+      generateBtnAll(filterDiscount);
       clickToInotherPage(filterDiscount, totalPages);
     };
 
@@ -234,6 +252,7 @@ if (window.location.pathname.includes('/shop')) {
       const filterInStock = allProductData.filter((item) => {
         return item.categoryClass != 'add-sold';
       });
+      generateBtnAll(filterInStock);
       clickToInotherPage(filterInStock, totalPages);
     };
 
@@ -262,6 +281,7 @@ if (window.location.pathname.includes('/shop')) {
         } else {
           // Якщо не одна з кнопок не активна, перезаписуємо всі наші товари
           zeroingCheckboxes();
+          generateBtnAll(allProductData);
           clickToInotherPage(allProductData, totalPages);
         }
       });
@@ -338,6 +358,7 @@ if (window.location.pathname.includes('/shop')) {
             deleteCheckedItem();
             zeroingCheckboxes();
             checkedItemPrice.classList.add('active__filter-checked');
+            generateBtnAll(filteredData);
             clickToInotherPage(filteredData, totalPages);
           }, 2000);
         });

@@ -8,6 +8,9 @@ export const fetchData = async () => {
     const data = await response.json();
     // Записуємо данні в локальне сховище
     // localStorage.setItem('allProduct', JSON.stringify(data));
+
+      
+    localStorage.removeItem('allProduct');
     // Записуємо данні в sessionStorage, щоб після перезаходу, змінювалися данні з бази данних
     sessionStorage.setItem('allProduct', JSON.stringify(data));
 

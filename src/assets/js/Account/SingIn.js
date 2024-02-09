@@ -1,12 +1,14 @@
 // header - Оновлює відображення посилань на акаунт в залежності від входу в систему
 export function updateAccountLinksVisibility() {
   const userSignedIn = localStorage.getItem('userSignIn');
-  const signInLink = document.querySelector(
-    '#accountDropdown a[href="./account.html"]'
-  );
-  const myAccountLink = document.querySelector(
-    '#accountDropdown a[href="./my-account.html"]'
-  );
+  // const signInLink = document.querySelector(
+  //   '#accountDropdown a[href="./account.html"]'
+  // ) || null;
+  const signInLink = document.querySelector('.accountDropdownSignIn');
+  // const myAccountLink = document.querySelector(
+  //   '#accountDropdown a[href="./my-account.html"]'
+  // );
+  const myAccountLink = document.querySelector('.accountDropdownMyAccount');
   const signOutLink = document.querySelector('#accountDropdown #logout');
 
   /** Burger account logisctics */
