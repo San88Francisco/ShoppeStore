@@ -1,33 +1,37 @@
 // VARS
-:root{
-  --black-color: rgb(1,1,1);
-  --white-color: rgb(256, 256,256);
-  --main-background: rgb(256, 256,256);
+:root {
+  --black-color: rgb(1, 1, 1);
+  --white-color: rgb(256, 256, 256);
+  --main-background: rgb(256, 256, 256);
   --arrow-Url: url('../img/Cart_img/svg/arrow_up.svg');
   --account-background: rgb(239, 239, 239);
 
-  --stars-fill-null: url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg) url(../img/Product_img/svg/Vectorstar_null_background.svg);
+  --stars-fill-null: url(../img/Product_img/svg/Vectorstar_null_background.svg)
+    url(../img/Product_img/svg/Vectorstar_null_background.svg)
+    url(../img/Product_img/svg/Vectorstar_null_background.svg)
+    url(../img/Product_img/svg/Vectorstar_null_background.svg)
+    url(../img/Product_img/svg/Vectorstar_null_background.svg);
   --star-fill-black: url(../img/Product_img/svg/Vectorstar_black_background.svg);
   --star-fill-null: url(../img/Product_img/svg/Vectorstar_null_background.svg);
 
-  --white-color-rgba: rgb(256, 256,256, 0.5);
+  --white-color-rgba: rgb(256, 256, 256, 0.5);
 
-  --input-color: rgb(112,112,112);
+  --input-color: rgb(112, 112, 112);
 
-  --them-swch-backround: rgb(170,170,170);
+  --them-swch-backround: rgb(239, 239, 239);
 
   --light-gray-color: rgb(239, 239, 239);
 }
 
 $accent-color: rgb(161, 138, 104);
 $white-color: rgb(255, 255, 255); // #fff
-$white-color-rgba: rgba(255, 255, 255, 0.5); 
+$white-color-rgba: rgba(255, 255, 255, 0.5);
 $black-color: rgb(0, 0, 0); // #000
 $dark-gray-color: rgb(158, 158, 158); //9e9e9e
 $gray-color: rgb(216, 216, 216); // #d8d8d8
 $light-gray-color: rgb(239, 239, 239); // #efefef #f0f0f0 #f5f5f5 #f4f4f4
 $errors-color: rgb(216, 39, 0); //#d82700
-$placeholder-color: rgb(112,112,112); // #707070
+$placeholder-color: rgb(112, 112, 112); // #707070
 $hint-coupon-color: rgb(253, 255, 234); // #fdffea
 $dropdown-gray-color: rgb(51, 51, 51); //#333
 $transition-time: 300ms;
@@ -41,7 +45,7 @@ $line-height: 1.68;
   box-sizing: border-box;
 }
 
-span{
+span {
   color: var(--black-color);
 }
 
@@ -67,11 +71,11 @@ ul {
   color: var(--black-color);
 }
 
-font{
+font {
   color: var(--black-color);
 }
 
-p{
+p {
   color: var(--black-color);
 }
 
@@ -79,35 +83,30 @@ h1 {
   font-weight: 500;
   font-size: 33px;
   color: var(--black-color);
-
 }
 h2 {
   font-weight: 400;
   font-size: 26px;
   line-height: 1.34;
   color: var(--black-color);
-
 }
 h3 {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.3;
   color: var(--black-color);
-
 }
 h4 {
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
   color: var(--black-color);
-
 }
 h5 {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.68;
   color: var(--black-color);
-
 }
 
 input {
@@ -142,6 +141,6 @@ input {
     line-height: 1.85;
   }
   button {
-  border: 1px solid $dark-gray-color;
-}
+    border: 1px solid $dark-gray-color;
+  }
 }
