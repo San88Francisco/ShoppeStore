@@ -477,8 +477,7 @@ if (window.location.pathname.includes('/account')) {
                   'solid 1.5px rgb(216, 216, 216)';
               });
               setTimeout(function () {
-                window.location.href =
-                  'http://localhost:3000/reset-password.html'; // Перенаправлення на сторінку відновлення паролю
+                window.location.href = '/reset-password.html'; // Перенаправлення на сторінку відновлення паролю
               }, 1500);
             }
           }
