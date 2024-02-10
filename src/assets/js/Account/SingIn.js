@@ -452,7 +452,7 @@ if (window.location.pathname.includes('/account')) {
               headerLine.style.borderBottom = 'solid 1.5px rgb(216, 216, 216)';
             }, 2000);
             setTimeout(function () {
-              window.location.href = 'http://localhost:3000/index.html';
+              window.location.href = '/index.html';
             }, 2100);
           } else {
             invalidLoginAttempts++;
