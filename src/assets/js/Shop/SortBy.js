@@ -279,10 +279,17 @@ if (window.location.pathname.includes('/shop')) {
       });
     });
 
-    const deleteCheckedItem = () => {
+    const deleteCheckedItem = (price) => {
       checkedItemShop.classList.remove('active__filter-checked');
       checkedItemSort.classList.remove('active__filter-checked');
       checkedItemPrice.classList.remove('active__filter-checked');
+      if (!price) {
+        console.log(price);
+        progress.style.right = '0%';
+        rangeInput[0].value = 0;
+        rangeInput[1].value = 180;
+        priceSum[1].textContent = 180;
+      }
     };
 
     const zeroingCheckboxes = () => {
@@ -348,7 +355,7 @@ if (window.location.pathname.includes('/shop')) {
                 +rangeInput[1].value * 100 >= +itemPrice
               );
             });
-            deleteCheckedItem();
+            deleteCheckedItem(true);
             zeroingCheckboxes();
             checkedItemPrice.classList.add('active__filter-checked');
             generateBtnAll(filteredData);

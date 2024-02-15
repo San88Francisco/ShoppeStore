@@ -88,9 +88,9 @@ export const generateBtn = (countBlock) => {
     `;
     });
 
-  if (countBlock === 1) {
-    lastPageBtn.style.display = 'none';
-  }
+  // if (countBlock === 1) {
+  //   lastPageBtn.style.display = 'none';
+  // }
 
   // for (let i = 1; i <= countBlock; i++) {
   //   const lastPageBtn = document.querySelector('.lastPageBtn');
