@@ -175,7 +175,6 @@ export const addItemToProduct = () => {
     let imgChange = document.querySelectorAll(
       '.product--overview__pictures img'
     );
-    console.log("addItemToProduct  :", imgChange)
     imgChange.forEach((img) => {
       img.src = imgPath;
     });
@@ -192,4 +191,4 @@ export const addItemToProduct = () => {
       document.querySelector('.productValue').textContent = productVariant;
     }
   }
-}
+};

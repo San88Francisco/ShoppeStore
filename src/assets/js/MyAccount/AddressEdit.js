@@ -38,7 +38,7 @@ export const addressEdit = () => {
   // Перевірка на номер телефону
   function ValidPhoneNumber(phoneNumber) {
     // Встановлюємо шаблон для номеру телефону у форматі "+код країни-номер телефону"
-    let phonePattern = /^(\+\d{12}|\d{9}|\d{10})$/;
+    let phonePattern = /^(\d{10}|\d{12})$/;
 
     // Перевірка, чи введений номер телефону відповідає шаблону
     return phonePattern.test(phoneNumber);
@@ -74,16 +74,16 @@ export const addressEdit = () => {
     });
 
     if (
-      !latinLettersRegex.test(addressFirstName.value) ||
-      !latinLettersRegex.test(addressLastName.value) ||
-      !latinLettersRegex.test(addressCountry.value) ||
-      !latinLettersRegex.test(addressCity.value) ||
+      !latinLettersRegex.test(addressFirstName.value.trim()) ||
+      !latinLettersRegex.test(addressLastName.value.trim()) ||
+      !latinLettersRegex.test(addressCountry.value.trim()) ||
+      !latinLettersRegex.test(addressCity.value.trim()) ||
       addressStreet.value.length < 3 ||
-      !ValidPostalCode(addressPostcode.value) ||
-      !ValidPhoneNumber(addressPhone.value) ||
-      !emailRegex.test(addressEmail.value)
+      !ValidPostalCode(addressPostcode.value.trim()) ||
+      !ValidPhoneNumber(addressPhone.value.trim()) ||
+      !emailRegex.test(addressEmail.value.trim())
     ) {
-      if (!latinLettersRegex.test(addressFirstName.value)) {
+      if (!latinLettersRegex.test(addressFirstName.value.trim())) {
         if (!isErrorMessage) {
           addressFirstName.insertAdjacentHTML(
             'afterend',
@@ -92,7 +92,7 @@ export const addressEdit = () => {
           console.log('ku');
         }
       }
-      if (!latinLettersRegex.test(addressLastName.value)) {
+      if (!latinLettersRegex.test(addressLastName.value.trim())) {
         if (!isErrorMessage) {
           addressLastName.insertAdjacentHTML(
             'afterend',
@@ -100,7 +100,7 @@ export const addressEdit = () => {
           );
         }
       }
-      if (!latinLettersRegex.test(addressCountry.value)) {
+      if (!latinLettersRegex.test(addressCountry.value.trim())) {
         if (!isErrorMessage) {
           addressCountry.insertAdjacentHTML(
             'afterend',
@@ -108,7 +108,7 @@ export const addressEdit = () => {
           );
         }
       }
-      if (!latinLettersRegex.test(addressCity.value)) {
+      if (!latinLettersRegex.test(addressCity.value.trim())) {
         if (!isErrorMessage) {
           addressCity.insertAdjacentHTML(
             'afterend',
@@ -124,7 +124,7 @@ export const addressEdit = () => {
           );
         }
       }
-      if (!ValidPostalCode(addressPostcode.value)) {
+      if (!ValidPostalCode(addressPostcode.value.trim())) {
         if (!isErrorMessage) {
           addressPostcode.insertAdjacentHTML(
             'afterend',
@@ -132,7 +132,7 @@ export const addressEdit = () => {
           );
         }
       }
-      if (!ValidPhoneNumber(addressPhone.value)) {
+      if (!ValidPhoneNumber(addressPhone.value.trim())) {
         if (!isErrorMessage) {
           addressPhone.insertAdjacentHTML(
             'afterend',
@@ -140,7 +140,7 @@ export const addressEdit = () => {
           );
         }
       }
-      if (!emailRegex.test(addressEmail.value)) {
+      if (!emailRegex.test(addressEmail.value.trim())) {
         if (!isErrorMessage) {
           addressEmail.insertAdjacentHTML(
             'afterend',
@@ -172,6 +172,8 @@ export const addressEdit = () => {
 
       localStorage.setItem('userAddressInfo', JSON.stringify(blockData));
       alert('Ваші данні змінено');
+      // Оновити сторінку
+      location.reload();
     }
   }
 
