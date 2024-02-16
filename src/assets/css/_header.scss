@@ -341,9 +341,12 @@ header {
     .switcherBtn {
       display: none;
       position: relative;
-      top: -5px;
+      top: -10px;
       @media screen and (max-width: 700px) {
-        display: flex;
+        display: block;
+        img {
+          width: 50px;
+        }
       }
     }
   }
@@ -493,7 +496,7 @@ header {
     .decstop-nav {
       flex-direction: row;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-end !important;
       width: 540px;
 
       li {
