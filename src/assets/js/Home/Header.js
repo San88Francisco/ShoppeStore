@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
       cart: 5,
       checkout: 5,
       confirmation: 5,
-      account: 6,
+      account: 7,
    };
 
    // Перевірка чи частину URL містить ключі з pageMapping
