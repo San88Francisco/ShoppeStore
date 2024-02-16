@@ -1,244 +1,309 @@
 <section class="my-account">
-   <div class="popup__profile-delete popup">
-      <div class="popup__profile">
-         <p>Are you sure you want to delete this post?</p>
-         <div>
-            <button class="btn__white btn__popup-yes">Yes</button>
-            <button class="btn__white btn__popup-no">No</button>
-         </div>
+  <div class="popup__profile-delete popup">
+    <div class="popup__profile">
+      <p>Are you sure you want to delete this post?</p>
+      <div>
+        <button class="btn__white btn__popup-yes">Yes</button>
+        <button class="btn__white btn__popup-no">No</button>
       </div>
-   </div>
+    </div>
+  </div>
 
-   <h1 class="targetOf-dashboard">My Account</h1>
-   <nav class="myAccount__navigation">
-      <div class="slider">
-         <button class="prev">
-            <i class="fa-solid fa-chevron-left"></i>
-         </button>
-         <ul class="slider-container Scroll_js_right">
-            <li>
-               <a href="#" class="click-dashboard addClass-act act">Dashboard</a>
-            </li>
-            <li>
-               <a href="#" class="click-orders addClass-act">Orders</a>
-            </li>
-            <li>
-               <a href="#" class="click-downloads addClass-act">Downloads</a>
-            </li>
-            <li>
-               <a href="#" class="click-addresses addClass-act">Addresses</a>
-            </li>
-            <li>
-               <a href="#" class="click-accountDetails addClass-act">Account details</a>
-            </li>
-            <li>
-               <a href="#" class="click-logout addClass-act">My profile</a>
-            </li>
-         </ul>
-         <button class="next go">
-            <i class="fa-solid fa-chevron-right"></i>
-         </button>
+  <h1 class="targetOf-dashboard">My Account</h1>
+  <nav class="myAccount__navigation">
+    <div class="slider">
+      <button class="prev">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <ul class="slider-container Scroll_js_right">
+        <li>
+          <a href="#" class="click-dashboard addClass-act act">Dashboard</a>
+        </li>
+        <li>
+          <a href="#" class="click-orders addClass-act">Orders</a>
+        </li>
+        <li>
+          <a href="#" class="click-downloads addClass-act">Downloads</a>
+        </li>
+        <li>
+          <a href="#" class="click-addresses addClass-act">Addresses</a>
+        </li>
+        <li>
+          <a href="#" class="click-accountDetails addClass-act"
+            >Account details</a
+          >
+        </li>
+        <li>
+          <a href="#" class="click-logout addClass-act">My profile</a>
+        </li>
+      </ul>
+      <button class="next go">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+    <hr class="header__underline" />
+  </nav>
+  <div class="myAccount__tabPage">
+    <div class="targetOf-dashboard Scroll_js_right">
+      <p>
+        Hello <span class="dashboard__user-name">Vitatheme</span> (not
+        <span class="dashboard__user-name2">Vitatheme</span>?
+        <span class="do-sth dashboard__logout">
+          <a href="./account.html">Log out</a> </span
+        >)
+      </p>
+      <p>
+        From your account dashboard you can view your
+        <span class="do-sth dashboard__link-orders">recent orders</span>, manage
+        your
+        <span class="do-sth dashboard__link-addresses">billing addresses</span>,
+        and edit your
+        <span class="do-sth dashboard__link-account"
+          >password and account details.</span
+        >
+      </p>
+    </div>
+    <div class="targetOf-orders Scroll_js_right">
+      <div class="account__order">
+        <!-- тут наша таблиця Orders-->
+        <table class="account__order-table">
+          <thead class="account__order-thead"></thead>
+          <tbody class="account__order-tbody"></tbody>
+        </table>
+        <!-- тут наша таблиця -->
       </div>
-      <hr class="header__underline" />
-   </nav>
-   <div class="myAccount__tabPage">
-      <div class="targetOf-dashboard Scroll_js_right">
-         <p>
-            Hello <span class="dashboard__user-name">Vitatheme</span> (not <span class="dashboard__user-name2">Vitatheme</span>? 
-            <span class="do-sth dashboard__logout">
-               <a href="./account.html">Log out</a>
-            </span>)
-         </p>
-         <p>
-            From your account dashboard you can view your
-            <span class="do-sth dashboard__link-orders">recent orders</span>, manage your
-            <span class="do-sth dashboard__link-addresses">billing addresses</span>, and edit
-            your <span class="do-sth dashboard__link-account">password and account details.</span>
-         </p>
+      <div class="order__mobile mobile"></div>
+    </div>
+    <div class="targetOf-downloads Scroll_js_right">
+      <div class="account__order">
+        <!-- тут наша таблиця Downloads -->
+        <table class="account__downloads-table">
+          <thead class="account__downloads-thead"></thead>
+          <tbody class="account__downloads-tbody"></tbody>
+        </table>
       </div>
-      <div class="targetOf-orders Scroll_js_right">
-         <div class="account__order">
-            <!-- тут наша таблиця Orders-->
-            <table class="account__order-table">
-               <thead class="account__order-thead"></thead>
-               <tbody class="account__order-tbody"></tbody>
-            </table>
-            <!-- тут наша таблиця -->
-         </div>
-         <div class="order__mobile mobile">
-         </div>
-      </div>
-      <div class="targetOf-downloads Scroll_js_right">
-         <div class="account__order">
-            <!-- тут наша таблиця Downloads -->
-            <table class="account__downloads-table">
-               <thead class="account__downloads-thead">
-               </thead>
-               <tbody class="account__downloads-tbody">
-               </tbody>
-            </table>
-         </div>
 
-         <div class="downloads__mobile mobile">
-         </div>
-      </div>
-      <div class="targetOf-addresses targetOf-addBill">
-         <p>
-            The following addresses will be used on the checkout page by default.
-         </p>
-         <div class="my-address">
-            <div class="add-my-bill">
-               <h3>Billing address</h3>
-               <div class="user-not-have-bill">
-                  <p class="do-sth" id="addAddress">ADD</p>
-                  <p class="you-not-have-address">
-                     You have not set up this type of address yet.
-                  </p>
-               </div>
-               <div class="bill-registr">
-                  <form class="adress-form" action="">
-                     <div class="bill-user-name">
-                        <div class="input-wraper">
-                           <input class="address__first-name" type="text" placeholder="First name *" />
-                        </div>
-                        <div class="input-wraper">
-                           <input class="address__last-name bill-user-name_del" type="text" placeholder="Last name *" />
-                        </div>
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__country" type="text" placeholder="Country *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__city" type="text" placeholder="Town / City *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__street" type="text" placeholder="Street Address *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__postcode" type="text" placeholder="Postcode / ZIP *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__phone" type="text" placeholder="Phone *" />
-                     </div>
-                     <div class="input-wraper">
-                        <input class="address__email" type="text" placeholder="Email *" />
-                     </div>
-                     <button type="submit" class="btn__address-edit btn__black">
-                        <span>SAVE CHANGES</span>
-                     </button>
-                  </form>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="targetOf-accountDetails">
-         <h2>Account details</h2>
-         <form class="details-form" action="">
-            <div class="input-wraper">
-               <input class="account__details-firstName" type="text" placeholder="First name*" />
-            </div>
-            <div class="input-wraper">
-               <input class="account__details-lastName" type="text" placeholder="Last name*" />
-            </div>
-            <div class="input-wraper">
-               <input class="account__details-displayName" type="text" placeholder="Display name*" />
-            </div>
-            <p>
-               This will be how your name will be displayed in the account section
-               and in reviews.
+      <div class="downloads__mobile mobile"></div>
+    </div>
+    <div class="targetOf-addresses targetOf-addBill">
+      <p>The following address will be used on the checkout page by default.</p>
+      <div class="my-address">
+        <div class="add-my-bill">
+          <h3>Billing address</h3>
+          <div class="user-not-have-bill">
+            <p class="do-sth" id="addAddress">ADD</p>
+            <p class="you-not-have-address">
+              You have not set up this type of address yet.
             </p>
-            <div class="input-wraper">
-               <input class="account__details-phone" type="text" placeholder="Phone*" />
-            </div>
-            <div class="input-wraper">
-               <input class="account__details-email" type="text" placeholder="Email address*" />
-            </div>
-            <button type="submit" class="save__account-details btn__black">
-               <span>SAVE CHANGES</span>
-            </button>
-         </form>
-         <form class="account-passwords">
-            <h3>Password change</h3>
-            <div class="input-wraper">
-               <input class="account__details-pass" type="text"
-                  placeholder="Current password (leave blank to leave unchanged)" />
-            </div>
-            <div class="input-wraper">
-               <input class="account__details-newPass" type="text"
-                  placeholder="New password (leave blank to leave unchanged)" />
-            </div>
-            <div class="input-wraper">
-               <input class="account__confirm-pass" type="text" placeholder="Confirm new password" />
-            </div>
-
-            <button type="submit" class="save__account-password btn__black">
-               <span>SAVE PASSWORD</span>
-            </button>
-
-         </form>
+          </div>
+          <div class="bill-registr">
+            <form class="adress-form" action="">
+              <div class="bill-user-name">
+                <div class="input-wraper">
+                  <input
+                    class="address__first-name"
+                    type="text"
+                    placeholder="First name *"
+                  />
+                </div>
+                <div class="input-wraper">
+                  <input
+                    class="address__last-name bill-user-name_del"
+                    type="text"
+                    placeholder="Last name *"
+                  />
+                </div>
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__country"
+                  type="text"
+                  placeholder="Country *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__city"
+                  type="text"
+                  placeholder="Town / City *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__street"
+                  type="text"
+                  placeholder="Street Address *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__postcode"
+                  type="text"
+                  placeholder="Postcode / ZIP *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__phone"
+                  type="text"
+                  placeholder="Phone *"
+                />
+              </div>
+              <div class="input-wraper">
+                <input
+                  class="address__email"
+                  type="text"
+                  placeholder="Email *"
+                />
+              </div>
+              <button type="submit" class="btn__address-edit btn__black">
+                <span>SAVE CHANGES</span>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="targetOf-logout">
-         <div class="targetOf__my-profile">
-            <div class="my__profile-info">
-               <div class="my__profile-avatar">
-                  <img src="./assets/img/Home_img/header/user.svg" alt="user-svg" />
-               </div>
+    </div>
+    <div class="targetOf-accountDetails">
+      <h2>Account details</h2>
+      <form class="details-form" action="">
+        <div class="input-wraper">
+          <input
+            class="account__details-firstName"
+            type="text"
+            placeholder="First name*"
+          />
+        </div>
+        <div class="input-wraper">
+          <input
+            class="account__details-lastName"
+            type="text"
+            placeholder="Last name*"
+          />
+        </div>
+        <div class="input-wraper">
+          <input
+            class="account__details-displayName"
+            type="text"
+            placeholder="Display name*"
+          />
+        </div>
+        <p>
+          This will be how your name will be displayed in the account section
+          and in reviews.
+        </p>
+        <div class="input-wraper">
+          <input
+            class="account__details-phone"
+            type="text"
+            placeholder="Phone*"
+          />
+        </div>
+        <div class="input-wraper">
+          <input
+            class="account__details-email"
+            type="text"
+            placeholder="Email address*"
+          />
+        </div>
+        <button type="submit" class="save__account-details btn__black">
+          <span>SAVE CHANGES</span>
+        </button>
+      </form>
+      <form class="account-passwords">
+        <h3>Password change</h3>
+        <div class="input-wraper">
+          <input
+            class="account__details-pass"
+            type="text"
+            placeholder="Current password (leave blank to leave unchanged)"
+          />
+        </div>
+        <div class="input-wraper">
+          <input
+            class="account__details-newPass"
+            type="text"
+            placeholder="New password (leave blank to leave unchanged)"
+          />
+        </div>
+        <div class="input-wraper">
+          <input
+            class="account__confirm-pass"
+            type="text"
+            placeholder="Confirm new password"
+          />
+        </div>
 
-               <hr />
+        <button type="submit" class="save__account-password btn__black">
+          <span>SAVE PASSWORD</span>
+        </button>
+      </form>
+    </div>
+    <div class="targetOf-logout">
+      <div class="targetOf__my-profile">
+        <div class="my__profile-info">
+          <div class="my__profile-avatar">
+            <img src="./assets/img/Home_img/header/user.svg" alt="user-svg" />
+          </div>
 
-               <ul class="my__profile-user">
-                  <li class="">
-                     <span>Name :</span>
-                     <span class="user__first-name"></span>
-                  </li>
-                  <li class="">
-                     <span>Last Name :</span>
-                     <span class="user__last-name"></span>
-                  </li>
-                  <li class="">
-                     <span>Email :</span>
-                     <span class="user__email-name"></span>
-                  </li>
-                  <li class="">
-                     <span>Account name :</span>
-                     <span class="user__display-name"></span>
-                  </li>
-                  <li class="">
-                     <span>Date of creation :</span>
-                     <span class="user__date-creation"></span>
-                  </li>
-                  <li class="">
-                     <span>Phone :</span>
-                     <span class="user__phone"></span>
-                  </li>
-               </ul>
-            </div>
-         </div>
-         <div class="my__profile-address">
-            <div>
-               <h2>My address</h2>
-               <button class="profile__address-btn btn__profile">
-                  Edit address
-               </button>
-            </div>
-            <ul class="profile__address-list">
-               <li class="profile__address-nane">Need to enter</li>
-               <li class="profile__address-last">Need to enter</li>
-               <li class="profile__address-country">Need to enter</li>
-               <li class="profile__address-city">Need to enter</li>
-               <li class="profile__address-street">Need to enter </li>
-               <li class="profile__address-poscode">Need to enter</li>
-               <li class="profile__address-phone">Need to enter</li>
-               <li class="profile__address-email">Need to enter</li>
-            </ul>
-         </div>
-         <div class="user__editing-btn">
-            <button class="profile__edit-btn btn__profile">Edit profile</button>
-            <button class="profile__delete-btn btn__profile">Delete profile</button>
-         </div>
+          <hr />
+
+          <ul class="my__profile-user">
+            <li class="">
+              <span>Name :</span>
+              <span class="user__first-name"></span>
+            </li>
+            <li class="">
+              <span>Last Name :</span>
+              <span class="user__last-name"></span>
+            </li>
+            <li class="">
+              <span>Email :</span>
+              <span class="user__email-name"></span>
+            </li>
+            <li class="">
+              <span>Account name :</span>
+              <span class="user__display-name"></span>
+            </li>
+            <li class="">
+              <span>Date of creation :</span>
+              <span class="user__date-creation"></span>
+            </li>
+            <li class="">
+              <span>Phone :</span>
+              <span class="user__phone"></span>
+            </li>
+          </ul>
+        </div>
       </div>
-   </div>
+      <div class="my__profile-address">
+        <div>
+          <h2>My address</h2>
+          <button class="profile__address-btn btn__profile">
+            Edit address
+          </button>
+        </div>
+        <ul class="profile__address-list">
+          <li class="profile__address-nane">Need to enter</li>
+          <li class="profile__address-last">Need to enter</li>
+          <li class="profile__address-country">Need to enter</li>
+          <li class="profile__address-city">Need to enter</li>
+          <li class="profile__address-street">Need to enter</li>
+          <li class="profile__address-poscode">Need to enter</li>
+          <li class="profile__address-phone">Need to enter</li>
+          <li class="profile__address-email">Need to enter</li>
+        </ul>
+      </div>
+      <div class="user__editing-btn">
+        <button class="profile__edit-btn btn__profile">Edit profile</button>
+        <button class="profile__delete-btn btn__profile">Delete profile</button>
+      </div>
+    </div>
+  </div>
 </section>
-<script src="https://kit.fontawesome.com/1f2bcb7d29.js" crossorigin="anonymous"></script>
+<script
+  src="https://kit.fontawesome.com/1f2bcb7d29.js"
+  crossorigin="anonymous"
+></script>
 
 {% include "_html/_base/_includes/_Them-switcher.html" %}

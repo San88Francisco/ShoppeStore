@@ -16,6 +16,11 @@ export const addressEdit = () => {
   console.log('placeOrder  userAddressInfo:', userAddressInfo);
 
   if (userAddressInfo) {
+    const text = document.querySelector('.you-not-have-address');
+    const addAddress = document.getElementById('addAddress');
+    text.innerHTML = '';
+    addAddress.textContent = 'EDIT';
+
     addressFirstName.value = userAddressInfo.name;
     addressLastName.value = userAddressInfo.lastName;
     addressCountry.value = userAddressInfo.country;
