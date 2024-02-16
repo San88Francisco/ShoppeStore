@@ -1,3 +1,4 @@
+const parseItems = JSON.parse(sessionStorage.getItem('allProduct'));
 const globalSearch = document.querySelector('#global-nav-search-for-input');
 const backgroundBlockInput = document.querySelector('.background-block-input');
 
@@ -27,7 +28,6 @@ class Items {
 
   // Створення HTML-контейнера для продукту
   createContainer() {
-    const parseItems = JSON.parse(sessionStorage.getItem('allProduct'));
     const container = document.createElement('div');
 
     const discontThis = this.category;
@@ -162,8 +162,6 @@ class Items {
 
 // Функція для обробки подій DOMContentLoaded
 function handleDOMContentLoaded() {
-  const parseItems = JSON.parse(sessionStorage.getItem('allProduct'));
-
   if (parseItems) {
     parseItems.forEach((item) => {
       const itemsInstance = new Items(

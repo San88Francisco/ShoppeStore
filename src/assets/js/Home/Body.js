@@ -1,4 +1,5 @@
 import { fetchData } from '../API/fetch-products';
+import { handleDOMContentLoaded } from '../Adaptive/SearchBurger';
 import { addItemToProduct } from '../Product/AddToCart';
 import { discount } from '../Shop/Discount';
 import { LinkAddToCart } from './LinkAddToCart';
@@ -195,6 +196,7 @@ const renderProducts = async () => {
     const totalPages = Math.ceil(contents.length / itemsPerPage);
 
     renderPage(currentPage, contents);
+    startFunc();
 
     if (window.location.pathname.includes('/shop')) {
       generateBtn(totalPages);
