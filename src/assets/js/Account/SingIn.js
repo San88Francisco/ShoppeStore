@@ -1,12 +1,14 @@
 // header - Оновлює відображення посилань на акаунт в залежності від входу в систему
 export function updateAccountLinksVisibility() {
   const userSignedIn = localStorage.getItem('userSignIn');
-  const signInLink = document.querySelector(
-    '#accountDropdown a[href="./account.html"]'
-  );
-  const myAccountLink = document.querySelector(
-    '#accountDropdown a[href="./my-account.html"]'
-  );
+  // const signInLink = document.querySelector(
+  //   '#accountDropdown a[href="./account.html"]'
+  // ) || null;
+  const signInLink = document.querySelector('.accountDropdownSignIn');
+  // const myAccountLink = document.querySelector(
+  //   '#accountDropdown a[href="./my-account.html"]'
+  // );
+  const myAccountLink = document.querySelector('.accountDropdownMyAccount');
   const signOutLink = document.querySelector('#accountDropdown #logout');
 
   /** Burger account logisctics */
@@ -450,7 +452,7 @@ if (window.location.pathname.includes('/account')) {
               headerLine.style.borderBottom = 'solid 1.5px rgb(216, 216, 216)';
             }, 2000);
             setTimeout(function () {
-              window.location.href = 'http://localhost:3000/index.html';
+              window.location.href = '/index.html';
             }, 2100);
           } else {
             invalidLoginAttempts++;
@@ -475,8 +477,7 @@ if (window.location.pathname.includes('/account')) {
                   'solid 1.5px rgb(216, 216, 216)';
               });
               setTimeout(function () {
-                window.location.href =
-                  'http://localhost:3000/reset-password.html'; // Перенаправлення на сторінку відновлення паролю
+                window.location.href = '/reset-password.html'; // Перенаправлення на сторінку відновлення паролю
               }, 1500);
             }
           }

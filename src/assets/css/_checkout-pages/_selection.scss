@@ -286,6 +286,10 @@
     }
     .checkout__block-order{
       width: 100%;
+
+      .checkout__order-info{
+        padding: 20px;
+      }
     }
   }
 }
@@ -302,6 +306,14 @@
             max-width: 100% !important;
           }
         }
+      }
+    }
+
+    .checkout__block-order{
+      width: 100%;
+
+      .checkout__order-info{
+        padding: 16px;
       }
     }
   }

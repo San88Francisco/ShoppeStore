@@ -2,7 +2,7 @@
   max-width: 1248px;
   height: 100%;
   margin: 0 auto;
-  margin-bottom: clamp(0px,4vw,250px);
+  margin-bottom: clamp(0px, 4vw, 250px);
   position: relative;
 
   .order__window-block {
@@ -32,37 +32,37 @@
     margin-top: 40px;
 
     .checkout__block-order {
-      .checkout__order-info{
-        padding: clamp(24px,4vw,37px) clamp(30px,4vw,59px);
+      .checkout__order-info {
+        padding: clamp(24px, 4vw, 37px) clamp(30px, 4vw, 59px);
       }
     }
 
     .order__block-name {
       width: 50%;
-  
+
       .order__name-info {
         display: flex;
         gap: 80px;
-  
-        hr{
+
+        hr {
           display: none;
         }
         .order__details-left {
           width: 50%;
         }
-  
+
         .order__details-right {
           width: 50%;
         }
-  
+
         div {
           margin-bottom: 30px;
-  
+
           h5 {
             margin-bottom: 6px;
           }
         }
-  
+
         p {
           color: $placeholder-color;
         }
@@ -71,11 +71,10 @@
   }
 }
 
-
-@media screen and(max-width: 992px){
+@media screen and(max-width: 992px) {
   .order__confirmation {
     .order__block-name {
-      width: 100%;
+      width: 100% !important;
       .order__name-info {
         display: flex;
       }
@@ -84,26 +83,31 @@
   .checkout__container {
     gap: 0px;
   }
+  .checkout__order-info {
+    padding: 0px !important;
+  }
 }
 
-
-@media screen and(max-width: 475px){
-  .order__confirmation{
-
+@media screen and(max-width: 475px) {
+  .order__confirmation {
     .order__block-name {
-      width: 100%;
+      width: 100% !important;
       .order__name-info {
         display: flex;
-        gap: 0px;
         flex-direction: column;
+        gap: 0px !important;
+        text-align: center;
 
-        hr{
+        hr {
           display: block;
           margin: -30px 0px 30px;
         }
-        
-        .order__details-left{
-          width: 50%;
+
+        .order__details-left {
+          width: 100% !important;
+        }
+        .order__details-right {
+          width: 100% !important;
         }
       }
     }
@@ -112,4 +116,3 @@
     gap: 0px;
   }
 }
-

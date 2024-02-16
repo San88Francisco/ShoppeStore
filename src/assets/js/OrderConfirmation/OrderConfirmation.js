@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!checkoutInfo) {
       // Якщо userOrderInfo пустий, перенаправлення на error404
-      window.location.href = 'http://localhost:3000/error404.html';
+      window.location.href = '/error404.html';
     }
 
     const checkPopupOrder = localStorage.getItem('checkoutPopupOrder');
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.removeItem('checkoutInfo');
       localStorage.removeItem('userOrderInfo');
       localStorage.setItem('checkoutPopupOrder', '-1');
-      console.log('Працює');
     }, 2000);
   }
 });

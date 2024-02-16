@@ -28,14 +28,6 @@
 @import './header';
 @import './footer';
 
-.on-dark-them{
-   .light-them{
-      display: none;
-   }
-   .dark-them{
-      display: block;
-   }
-}
 
 body {
    padding: 0px 16px;
@@ -132,149 +124,9 @@ input{
     line-height: 125%;
   }
  }
-// Чекбокс Загальні стилі
-/* .checkbox,
-.checkbox-new,
-.checkout__checkbox-create {
-  input[type='checkbox'] {
-    display: none;
-  }
-  input[type='checkbox'] {
-    height: 0;
-    width: 0;
-  }
 
-  input[type='checkbox'] + label {
-    position: relative;
-    display: flex;
-    margin: 0.6em 0;
-    align-items: center;
-    color: $placeholder-color;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
-  }
-  input[type='checkbox'] + label > ins {
-    position: absolute;
-    display: block;
-    bottom: 0;
-    left: 2em;
-    height: 0;
-    width: 100%;
-    overflow: hidden;
-    text-decoration: none;
-    transition: height $transition-time cubic-bezier(0.4, 0, 0.23, 1);
-  }
-
-  input[type='checkbox'] + label > ins > i {
-    position: absolute;
-    bottom: 0;
-    font-style: normal;
-    color: $placeholder-color;
-  }
-  input[type='checkbox'] + label > span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1em;
-    width: 1em;
-    height: 1em;
-    background: transparent;
-    border: 2px solid $placeholder-color;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
-  }
-
-  input[type='checkbox'] + label:hover,
-  input[type='checkbox']:focus + label {
-    color: var(--black-color);
-  }
-
-  input[type='checkbox'] + label:hover > span,
-  input[type='checkbox']:focus + label > span {
-    background: $white-color;
-  }
-
-  input[type='checkbox']:checked + label > ins {
-    height: 100%;
-  }
-  input[type='checkbox'] + label > span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1em;
-    width: 1em;
-    height: 1em;
-    background: transparent;
-    border: 2px solid $placeholder-color;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
-  }
-
-  input[type='checkbox'] + label:hover,
-  input[type='checkbox']:focus + label {
-    color: var(--black-color);
-  }
-
-  input[type='checkbox'] + label:hover > span,
-  input[type='checkbox']:focus + label > span {
-    background: $white-color;
-  }
-
-  input[type='checkbox']:checked + label > ins {
-    height: 100%;
-  }
-  input[type='checkbox']:checked + label > span {
-    border: 0.5em solid$placeholder-color;
-    animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
-  }
-
-  input[type='checkbox']:checked + label > span:before {
-    content: '';
-    position: absolute;
-    border-right: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    transform: rotate(45deg);
-    transform-origin: 0% 100%;
-    animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
-  }
-  @keyframes shrink-bounce {
-    0% {
-      transform: scale(1);
-    }
-
-    33% {
-      transform: scale(0.85);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  @keyframes checkbox-check {
-    0% {
-      width: 0;
-      height: 0;
-      border-color: $white-color;
-      transform: translate3d(0, 0, 0) rotate(45deg);
-    }
-
-    33% {
-      width: 0.2em;
-      height: 0;
-      transform: translate3d(0, 0, 0) rotate(45deg);
-    }
-
-    100% {
-      width: 0.2em;
-      height: 0.5em;
-      border-color: $white-color;
-      transform: translate3d(0, -0.5em, 0) rotate(45deg);
-    }
-  }
-} */
 .checkbox-new .control {
+  color: var(--black-color);
   display: block;
   position: relative;
   padding-left: 30px;
@@ -344,4 +196,8 @@ input{
 }
 .checkbox-new .control--checkbox input:disabled ~ .control__indicator:after {
   border-color: #707070;
+}
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
 }

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
       window.location.href = 'http://localhost:3000/error404.html';
     }
 
- /*    const checkboxCreate = document.querySelectorAll('.checkout__checkbox-create div');
+    /*    const checkboxCreate = document.querySelectorAll('.checkout__checkbox-create div');
     const checkedCreate = document.querySelectorAll('.checkout__checkbox-create input');
     
     // Логіка checkbox create account and different address
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }); */
-    
+
     // Логіка відображення наших товарів і ціни в правому блоці checkout-pages !
     orderItemViev();
 
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Перевірка на номер телефону
       function isValidPhoneNumber(phoneNumber) {
         // Встановлюємо шаблон для номеру телефону у форматі "+код країни-номер телефону 1 знак та 10 цифр"
-        let phonePattern = /^(\+\d{11}|\d{9})$/;
+        let phonePattern = /^(\d{10}|\d{12})$/;
 
         // Перевірка, чи введений номер телефону відповідає шаблону
         return phonePattern.test(phoneNumber);
@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const numberOrder = () => {
         const randomNumber = Math.floor(Math.random() * 10000000);
         const paddedNumber = randomNumber.toString().padStart(7, '0');
-        console.log("numberOrder paddedNumber:", paddedNumber)
+        console.log('numberOrder paddedNumber:', paddedNumber);
         return paddedNumber;
-      }
+      };
       const orderNumber = numberOrder();
 
       // Створюємо обєкт з нашими данними
@@ -158,32 +158,32 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('displayErrorCheckout  valueStreet:', valueStreet);
 
         if (
-          !latinLettersRegex.test(inputFirstName.value) ||
-          !latinLettersRegex.test(inputLastName.value) ||
-          !latinLettersRegex.test(inputCountry.value) ||
-          !latinLettersRegex.test(inputCity.value) ||
+          !latinLettersRegex.test(inputFirstName.value.trim()) ||
+          !latinLettersRegex.test(inputLastName.value.trim()) ||
+          !latinLettersRegex.test(inputCountry.value.trim()) ||
+          !latinLettersRegex.test(inputCity.value.trim()) ||
           valueStreet.length < 3 ||
-          !isValidPostalCode(inputPostcode.value) ||
-          !isValidPhoneNumber(inputPhone.value) ||
-          !emailRegex.test(inputEmail.value)
+          !isValidPostalCode(inputPostcode.value.trim()) ||
+          !isValidPhoneNumber(inputPhone.value.trim()) ||
+          !emailRegex.test(inputEmail.value.trim())
         ) {
-          if (!latinLettersRegex.test(inputFirstName.value)) {
+          if (!latinLettersRegex.test(inputFirstName.value.trim())) {
             const errorName = document.querySelector('.order__error-name');
             errorName.style.opacity = '1';
           }
-          if (!latinLettersRegex.test(inputLastName.value)) {
+          if (!latinLettersRegex.test(inputLastName.value.trim())) {
             const errorNameLast = document.querySelector(
               '.order__error-lastName'
             );
             errorNameLast.style.opacity = '1';
           }
-          if (!latinLettersRegex.test(inputCountry.value)) {
+          if (!latinLettersRegex.test(inputCountry.value.trim())) {
             const errorCountry = document.querySelector(
               '.order__error-country'
             );
             errorCountry.style.opacity = '1';
           }
-          if (!latinLettersRegex.test(inputCity.value)) {
+          if (!latinLettersRegex.test(inputCity.value.trim())) {
             const errorAddress = document.querySelector('.order__error-city');
             errorAddress.style.opacity = '1';
           }
@@ -191,21 +191,20 @@ document.addEventListener('DOMContentLoaded', function () {
             const errorStreet = document.querySelector('.order__error-address');
             errorStreet.style.opacity = '1';
           }
-          if (!isValidPostalCode(inputPostcode.value)) {
+          if (!isValidPostalCode(inputPostcode.value.trim())) {
             const errorZip = document.querySelector('.order__error-zip');
             errorZip.style.opacity = '1';
           }
-          if (!isValidPhoneNumber(inputPhone.value)) {
+          if (!isValidPhoneNumber(inputPhone.value.trim())) {
             const errorPhone = document.querySelector('.order__error-phone');
             errorPhone.style.opacity = '1';
           }
-          if (!emailRegex.test(inputEmail.value)) {
+          if (!emailRegex.test(inputEmail.value.trim())) {
             const errorEmail = document.querySelector('.order__error-email');
             errorEmail.style.opacity = '1';
           }
         } else {
-          window.location.href =
-            '/order-confirmation.html';
+          window.location.href = '/order-confirmation.html';
           // Зберігаємо інофрмацію клієнта в userOrderInfo
           localStorage.setItem('userAddressInfo', JSON.stringify(blockData));
           console.log('saveOrder');
