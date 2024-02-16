@@ -1,7 +1,7 @@
 .my-account {
   max-width: 1240px;
   margin: 0 auto;
- // padding-bottom: 205px;
+  // padding-bottom: 205px;
   font-family: DM Sans;
   font-weight: 400;
   line-height: 26px;
@@ -343,19 +343,19 @@
         display: none;
 
         form {
-        .bill-user-name {
-         .input-wraper {
-           .error-message {
-            bottom: 20px;
-           }
-         }
-        }
-        .address__email{
-          margin-bottom: 64px;
-        }
-         .input-wraper {
+          .bill-user-name {
+            .input-wraper {
+              .error-message {
+                bottom: 20px;
+              }
+            }
+          }
+          .address__email {
+            margin-bottom: 64px;
+          }
+          .input-wraper {
             position: relative;
-         }
+          }
           input {
             display: block;
             border-bottom: 1px solid $gray-color;
@@ -373,7 +373,7 @@
               line-height: 22px;
               color: $placeholder-color;
               margin-bottom: 40px;
-            }   
+            }
           }
 
           .bill-user-name {
@@ -511,11 +511,11 @@
     }
 
     form {
-      .account__confirm-pass{
+      .account__confirm-pass {
         margin-bottom: 64px;
       }
       .input-wraper {
-         position: relative;
+        position: relative;
       }
       input {
         display: block;
@@ -536,7 +536,6 @@
           color: $placeholder-color;
           margin-bottom: 40px;
         }
-       
       }
 
       h3 {
@@ -557,19 +556,19 @@
       & button {
         padding: 16px 169.35px;
       }
-      @media (max-width: 700.98px){
+      @media (max-width: 700.98px) {
         & button {
           padding: 10px 160px;
         }
       }
-      @media (max-width: 481.98px){
+      @media (max-width: 481.98px) {
+        width: 100%;
+        & button {
+          padding: 0;
           width: 100%;
-          & button {
-            padding: 0;
-            width: 100%;
-            height: 32px;
-            justify-content: center;
-          }
+          height: 32px;
+          justify-content: center;
+        }
       }
     }
   }
@@ -935,8 +934,6 @@
   }
 
   @media (max-width: 600px) {
-
-      
     table {
       display: none;
     }
@@ -967,20 +964,20 @@
       }
     }
   }
-@media (max-width: 481.98px){
-  .btn__black {
-    padding: 0;
-    width: 100%;
-    height: 32px;
-    justify-content: center;
+  @media (max-width: 481.98px) {
+    .btn__black {
+      padding: 0;
+      width: 100%;
+      height: 32px;
+      justify-content: center;
 
-    span {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 166.666667%;
+      span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 166.666667%;
+      }
     }
   }
-}
   @media (max-width: 467.98px) {
     h1 {
       font-size: 20px;
@@ -1075,7 +1072,6 @@
     }
   }
 
- 
   @media (max-width: 400px) {
     .mobile {
       &__title-text,
@@ -1086,70 +1082,65 @@
     }
   }
 }
-@media (max-width: 850px){
-  .my-account{
-  
-      .targetOf-logout{
-        .targetOf__my-profile{
-          .my__profile-info{
-            flex-direction: column;
-            hr{
-              display: none;
-            }
+@media (max-width: 850px) {
+  .my-account {
+    .targetOf-logout {
+      .targetOf__my-profile {
+        .my__profile-info {
+          flex-direction: column;
+          hr {
+            display: none;
           }
-          
-        }
-        .my__profile-address{
-          width: 100%;
         }
       }
-   
+      .my__profile-address {
+        width: 100%;
+      }
+    }
   }
 }
 
-@media (max-width: 600px){
-  .my-account{
-    
-      .targetOf-accountDetails{
-        form{
-          .account__details-displayName{
-            margin: 0 0 8px 0;
-          }
+@media (max-width: 600px) {
+  .my-account {
+    .targetOf-accountDetails {
+      form {
+        p {
+          margin-top: -32px;
+          margin-bottom: 30px;
         }
       }
-    
-    .popup{
+    }
+
+    .popup {
       padding: 50px;
     }
-      .targetOf-logout{
-        .targetOf__my-profile{
-          .my__profile-info{
-            .my__profile-user{
+    .targetOf-logout {
+      .targetOf__my-profile {
+        .my__profile-info {
+          .my__profile-user {
             grid-template-columns: none;
-            li{
-              span:last-child{
+            li {
+              span:last-child {
                 font-size: 14px;
               }
             }
-           }
-           .my__profile-avatar{
-            max-width: 150px;
-           }
           }
-          
-        }
-        .my__profile-address{
-         .btn__profile{
-          font-size: 14px;
-         }
-        }
-        .user__editing-btn{
-          width: 100%;
-          .btn__profile{
-            font-size: 14px;
-           }
+          .my__profile-avatar {
+            max-width: 150px;
+          }
         }
       }
+      .my__profile-address {
+        .btn__profile {
+          font-size: 14px;
+        }
+      }
+      .user__editing-btn {
+        width: 100%;
+        .btn__profile {
+          font-size: 14px;
+        }
+      }
+    }
   }
-  
 }

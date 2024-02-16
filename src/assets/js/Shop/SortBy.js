@@ -5,16 +5,13 @@ if (window.location.pathname.includes('/shop')) {
   document.addEventListener('DOMContentLoaded', function () {
     const itemsPerPage = 6;
     const allProductData = JSON.parse(sessionStorage.getItem('allProduct'));
-    console.log("allProductData:", allProductData)
     // let totalPages = Math.ceil(allProductData.length / itemsPerPage);
     let totalPages = 0;
 
     const generateBtnAll = (items) => {
       totalPages = Math.ceil(items.length / itemsPerPage);
-        console.log(totalPages);
-        generateBtn(totalPages);
-    }
-
+      generateBtn(totalPages);
+    };
 
     // Випадання кнопок sortBy and shopBy
     const shopByBtn = document.getElementById('shopByBtn');
@@ -27,39 +24,36 @@ if (window.location.pathname.includes('/shop')) {
     let activeDropdown = null;
     let activeRotateImg = null;
 
-
     document.querySelector('#search-input').oninput = function () {
       let val = this.value.trim().toLowerCase();
-    
+
       if (this.debounceTimerSearch) {
         clearTimeout(this.debounceTimerSearch);
       }
-    
+
       this.debounceTimerSearch = setTimeout(() => {
         deleteCheckedItem();
         zeroingCheckboxes();
 
-        let searchFilter = allProductData.filter(product => product.name.toLowerCase().includes(val));
-        console.log("searchFilter:", searchFilter)
+        let searchFilter = allProductData.filter((product) =>
+          product.name.toLowerCase().includes(val)
+        );
+        console.log('searchFilter:', searchFilter);
 
         totalPages = Math.ceil(searchFilter.length / itemsPerPage);
 
-        console.log(totalPages);
-
         generateBtn(totalPages);
         clickToInotherPage(searchFilter, totalPages);
-        console.log(searchFilter);
-    
+
         if (!searchFilter.length) {
           console.log('Пустий масив');
           containerSearch.style.display = 'flex';
         } else {
           console.log(' Ne Пустий масив');
-          containerSearch.style.display = 'none'
+          containerSearch.style.display = 'none';
         }
-      }, 1500); 
+      }, 1500);
     };
-
 
     function closeActiveDropdown(target) {
       if (activeDropdown && target !== activeDropdown.previousElementSibling) {
@@ -281,17 +275,21 @@ if (window.location.pathname.includes('/shop')) {
         } else {
           // Якщо не одна з кнопок не активна, перезаписуємо всі наші товари
           zeroingCheckboxes();
-          generateBtnAll(allProductData);
-          clickToInotherPage(allProductData, totalPages);
         }
       });
     });
 
-    const deleteCheckedItem = () => {
+    const deleteCheckedItem = (price) => {
       checkedItemShop.classList.remove('active__filter-checked');
       checkedItemSort.classList.remove('active__filter-checked');
       checkedItemPrice.classList.remove('active__filter-checked');
-
+      if (!price) {
+        console.log(price);
+        progress.style.right = '0%';
+        rangeInput[0].value = 0;
+        rangeInput[1].value = 180;
+        priceSum[1].textContent = 180;
+      }
     };
 
     const zeroingCheckboxes = () => {
@@ -299,6 +297,8 @@ if (window.location.pathname.includes('/shop')) {
       checkedItemSale.classList.remove('active__filter-checked');
       checkboxes[0].checked = false;
       checkboxes[1].checked = false;
+      generateBtnAll(allProductData);
+      clickToInotherPage(allProductData, totalPages);
     };
 
     /* ||| Filter price - logic ||| */
@@ -355,7 +355,7 @@ if (window.location.pathname.includes('/shop')) {
                 +rangeInput[1].value * 100 >= +itemPrice
               );
             });
-            deleteCheckedItem();
+            deleteCheckedItem(true);
             zeroingCheckboxes();
             checkedItemPrice.classList.add('active__filter-checked');
             generateBtnAll(filteredData);
