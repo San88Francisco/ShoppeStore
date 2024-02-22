@@ -122,7 +122,7 @@
           height: 2px;
           background-color: $gray-color;
           position: absolute;
-          left: clamp(128px, 10.3vw, 150px);
+          right: 0px;
           top: clamp(500px, 46vw, 625px);
 
           .progress-bar__line {
@@ -1148,6 +1148,10 @@
               transition: opacity 0.5s, height 0.5s;
             }
 
+            .mobile-text{
+              color: var(--black-color);
+            }
+
             #showMoreTextProduct:checked ~ .mobile-text {
               .viweSmall {
                 display: none;
@@ -1210,6 +1214,7 @@
             }
 
             label {
+              color: var(--black-color);
               & span {
                 flex: 0 0 12px;
               }
