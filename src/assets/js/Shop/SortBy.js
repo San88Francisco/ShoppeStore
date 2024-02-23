@@ -38,7 +38,7 @@ if (window.location.pathname.includes('/shop')) {
         let searchFilter = allProductData.filter((product) =>
           product.name.toLowerCase().includes(val)
         );
-        console.log('searchFilter:', searchFilter);
+        'searchFilter:', searchFilter;
 
         totalPages = Math.ceil(searchFilter.length / itemsPerPage);
 
@@ -46,10 +46,10 @@ if (window.location.pathname.includes('/shop')) {
         clickToInotherPage(searchFilter, totalPages);
 
         if (!searchFilter.length) {
-          console.log('Пустий масив');
+          ('Пустий масив');
           containerSearch.style.display = 'flex';
         } else {
-          console.log(' Ne Пустий масив');
+          (' Ne Пустий масив');
           containerSearch.style.display = 'none';
         }
       }, 1500);
@@ -284,7 +284,7 @@ if (window.location.pathname.includes('/shop')) {
       checkedItemSort.classList.remove('active__filter-checked');
       checkedItemPrice.classList.remove('active__filter-checked');
       if (!price) {
-        console.log(price);
+        price;
         progress.style.right = '0%';
         rangeInput[0].value = 0;
         rangeInput[1].value = 180;
@@ -347,7 +347,7 @@ if (window.location.pathname.includes('/shop')) {
             const filteredData = allProductData.filter((item) => {
               // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
               const itemPrice = item.price + '00';
-              // console.log(itemPrice + '00');
+              // (itemPrice + '00');
 
               return (
                 /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */

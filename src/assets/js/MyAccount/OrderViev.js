@@ -8,7 +8,7 @@ export const orderViev = () => {
 
     vievOrderLink.forEach((link, index) => {
       link.addEventListener('click', () => {
-        console.log(link);
+        link;
         const info = orderVievItem[index].orderInfo;
         const item = orderVievItem[index].orderItem;
         const checkoutInfo = {

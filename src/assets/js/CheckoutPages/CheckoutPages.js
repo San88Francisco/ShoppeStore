@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Якщо вибраний чекбокс відповідає вибраному index, тоді задаємо цю логіку
             nuancesPayment[index].style.display = 'block';
             paymentMethod = radioInput.value;
-            // console.log('paymentMethod:', paymentMethod);
+            // ('paymentMethod:', paymentMethod);
             break;
           default:
             break;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const userAddressInfo =
       JSON.parse(localStorage.getItem('userAddressInfo')) || false;
-    console.log('placeOrder  userAddressInfo:', userAddressInfo);
+    'placeOrder  userAddressInfo:', userAddressInfo;
 
     if (userAddressInfo) {
       inputFirstName.value = userAddressInfo.name;
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const numberOrder = () => {
         const randomNumber = Math.floor(Math.random() * 10000000);
         const paddedNumber = randomNumber.toString().padStart(7, '0');
-        console.log('numberOrder paddedNumber:', paddedNumber);
+        'numberOrder paddedNumber:', paddedNumber;
         return paddedNumber;
       };
       const orderNumber = numberOrder();
@@ -146,16 +146,16 @@ document.addEventListener('DOMContentLoaded', function () {
         date: currentDate,
         orderNumber: orderNumber,
       };
-      console.log(blockData);
+      blockData;
 
       function displayErrorCheckout() {
         const latinLettersRegex = /^[a-zA-Z]+$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         let valueStreet = inputStreet.value;
-        console.log('valueStreet:', valueStreet);
+        'valueStreet:', valueStreet;
 
-        console.log('displayErrorCheckout  valueStreet:', valueStreet);
+        'displayErrorCheckout  valueStreet:', valueStreet;
 
         if (
           !latinLettersRegex.test(inputFirstName.value.trim()) ||
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
           window.location.href = '/order-confirmation.html';
           // Зберігаємо інофрмацію клієнта в userOrderInfo
           localStorage.setItem('userAddressInfo', JSON.stringify(blockData));
-          console.log('saveOrder');
+          ('saveOrder');
           // Функція запису замовлень
           saveOrder();
           // Функція очистки кошику !

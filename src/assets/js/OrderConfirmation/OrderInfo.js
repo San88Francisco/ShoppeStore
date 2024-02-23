@@ -1,20 +1,18 @@
 export const orderInfo = () => {
-  let checkoutInfo = []
-  console.log(checkoutInfo);
-
+  let checkoutInfo = [](checkoutInfo);
 
   const checkoutPopupOrder = localStorage.getItem('checkoutPopupOrder');
-  console.log(checkoutPopupOrder);
+  checkoutPopupOrder;
   if (checkoutPopupOrder == 0) {
     checkoutInfo = JSON.parse(localStorage.getItem('userOrderInfo'));
-    console.log(checkoutInfo);
+    checkoutInfo;
   } else {
     checkoutInfo = JSON.parse(localStorage.getItem('userAddressInfo'));
-    console.log(checkoutInfo);
+    checkoutInfo;
   }
 
-
-  document.querySelector('.order__number').textContent = checkoutInfo.orderNumber;
+  document.querySelector('.order__number').textContent =
+    checkoutInfo.orderNumber;
   document.querySelector('.order__email').textContent = checkoutInfo.email;
   document.querySelector('.order__payment').textContent =
     checkoutInfo.paymentMethod;

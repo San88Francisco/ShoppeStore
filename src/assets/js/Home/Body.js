@@ -145,7 +145,7 @@ export const clickToInotherPage = (contents, totalPages) => {
           if (tabTo === 'forward') {
             if (nuberOfNowPage !== totalPages) {
               renderPage(nuberOfNowPage + 1, contents);
-              // console.log('nextActPage2',nextActPage);
+              // ('nextActPage2',nextActPage);
 
               const nextElememt = document.querySelector(
                 `[data-index-Of-Btn="${nuberOfNowPage + 1}"]`
@@ -161,7 +161,7 @@ export const clickToInotherPage = (contents, totalPages) => {
               arrowBack.style.display = 'flex';
             } else {
               renderPage(1, contents);
-              // console.log('nextActPage3',nextActPage);
+              // ('nextActPage3',nextActPage);
               const nextElememt = document.querySelector(
                 `[data-index-Of-Btn="1"]`
               );
@@ -184,7 +184,7 @@ export const clickToInotherPage = (contents, totalPages) => {
       });
     });
   } else {
-    console.log('Пусто');
+    ('Пусто');
   }
 };
 

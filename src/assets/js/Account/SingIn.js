@@ -330,7 +330,7 @@ if (window.location.pathname.includes('/account')) {
       const selectHeaderText = form
         .querySelector('.select-header')
         .textContent.trim();
-      console.log(selectHeaderText);
+      selectHeaderText;
       const dataCreation = currentDate;
 
       const user = new User(
@@ -390,7 +390,7 @@ if (window.location.pathname.includes('/account')) {
       const loginEmail = loginElement.value.trim();
       const loginPass = passElement.value.trim();
       const userData = localStorage.getItem('myProfile');
-      console.log('userData:', userData);
+      'userData:', userData;
 
       function displayErrorMessage(element, message) {
         const existingErrorMessage = loginForm.querySelector('.error-message');
@@ -437,7 +437,7 @@ if (window.location.pathname.includes('/account')) {
         // Перевірка наявності користувача та інші операції
         if (userData) {
           user = JSON.parse(userData);
-          console.log(' user:', user);
+          ' user:', user;
 
           if (user.passwordInput === loginPass) {
             localStorage.setItem('userSignIn', loginEmail);

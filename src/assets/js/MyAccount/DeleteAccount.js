@@ -1,7 +1,7 @@
 export const deleteAccount = () => {
   const btnDeleteUser = document.querySelector('.profile__delete-btn');
   btnDeleteUser.addEventListener('click', () => {
-    console.log('Працює');
+    ('Працює');
     popupWindowQuick();
   });
 
@@ -36,7 +36,7 @@ export const deleteAccount = () => {
   window.onclick = (e) => {
     if (e.target === popupDelete) {
       popupDelete.style.display = 'none';
-      console.log('window.onclick');
+      ('window.onclick');
     }
   };
 };
