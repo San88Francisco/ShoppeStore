@@ -21,9 +21,16 @@ document.addEventListener('DOMContentLoaded', ()=> {
             productPages[index].setAttribute('data-is-page-select','true')
          });
       });
-      if(localStorage.getItem(document.querySelector('.product--overview__view').children[0].textContent) !== null){
+      const nameOfProduct = localStorage.getItem('selectedProductName')
+      console.log(nameOfProduct);
+      if(nameOfProduct !== null){
          const reviews = document.querySelector('.reviews')
-         reviews.innerHTML = localStorage.getItem(document.querySelector('.product--overview__view').children[0].textContent)
+         const reviewsContent = localStorage.getItem(nameOfProduct)
+         if(reviewsContent !== null) {
+            reviews.innerHTML = reviewsContent  
+         }
+         // reviews.innerHTML = localStorage.getItem(nameOfProduct)
+         console.log(localStorage.getItem(nameOfProduct));
          document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
          document.querySelectorAll('.amount-reviews2').forEach(item => {
             item.innerHTML = document.querySelector('.reviews').children.length / 2
@@ -115,6 +122,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             if(ReviewUserComment && ReviewUserName && ReviewUserMail && formObject.starsRating){
                addReviewBlock(ReviewUserComment, ReviewUserName, ReviewUserMail, formObject)
                localStorage.setItem(document.querySelector('.product--overview__view').children[0].textContent, document.querySelector(`.reviews`).innerHTML)
+               console.log(document.querySelector(`.reviews`).innerHTML);
             }else {
                alert('Please enter a rating')
             }

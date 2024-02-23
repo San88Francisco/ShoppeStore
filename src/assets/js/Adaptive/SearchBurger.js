@@ -60,10 +60,7 @@ export const searchGlobalItems = () => {
         localStorage.setItem('selectedImgPath', itemProduct.imageUrl);
         localStorage.setItem('selectedProductName', itemProduct.name);
         localStorage.setItem('selectedProductPrice', itemProduct.priceDiscount);
-        localStorage.setItem(
-          'selectedHeart',
-          'http://localhost:3000/assets/img/Home_img/Body/heart_bg.png'
-        );
+
         localStorage.setItem(
           'selectedDiscount',
           `
@@ -76,7 +73,7 @@ export const searchGlobalItems = () => {
           }</a></h4>`
         );
         localStorage.setItem('selectVariant', itemProduct.productVariant);
-        window.location.href = 'http://localhost:3000/product.html';
+        window.location.href = '/product.html';
       });
       return container;
     }

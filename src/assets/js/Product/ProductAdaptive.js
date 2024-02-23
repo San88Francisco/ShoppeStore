@@ -86,7 +86,7 @@ const addaptiveProductSliser = () => {
        currentIndex = Math.max(0, Math.min(currentIndex, slides.length - 1));
      }
    
-     currentTranslate = -currentIndex * 100;
+     currentTranslate = -currentIndex * 104;
      swiperWrapper.style.transform = `translateX(${currentTranslate}%)`;
      swiperWrapper.setAttribute('data-slides-num', currentIndex + 1)
      const mobileProgresBar = document.querySelector('.progress-bar-mobile__line')
