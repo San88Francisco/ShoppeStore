@@ -1,14 +1,19 @@
 export const amountItem = () => {
-  const btnDecrease = document.querySelectorAll('.minus');
-  const btnIncrease = document.querySelectorAll('.plus');
+  const btnDecreaseCart = document.querySelectorAll('.minus__cart');
+  const btnIncreaseCart = document.querySelectorAll('.plus__cart');
   const numberOfShoppings = document.querySelectorAll('.amount');
 
   const btnDecreaseTel = document.querySelectorAll('.minus_tel');
   const btnIncreaseTel = document.querySelectorAll('.plus_tel');
-  
 
-  if (btnDecrease.length && btnIncrease.length && numberOfShoppings.length && btnDecreaseTel && btnIncreaseTel) {
-    btnIncrease.forEach((button, index) => {
+  if (
+    btnDecreaseCart.length &&
+    btnIncreaseCart.length &&
+    numberOfShoppings.length &&
+    btnDecreaseTel &&
+    btnIncreaseTel
+  ) {
+    btnIncreaseCart.forEach((button, index) => {
       button.addEventListener('click', () => {
         let numberOfShoppingsValue = +numberOfShoppings[index].textContent;
         // Якщо в кошику вибрано товара більше 99, тоді зупиняємо функцію. Таким чином максимально буде 99 товарів
@@ -21,22 +26,19 @@ export const amountItem = () => {
     // Кнопка плюс для телефонів
     btnIncreaseTel.forEach((button, index) => {
       button.addEventListener('click', () => {
-       
         let numberOfShoppingsValue = +numberOfShoppings[index].textContent;
         numberOfShoppings[index].textContent = `${++numberOfShoppingsValue}`;
       });
     });
 
-   
-    
-    btnDecrease.forEach((button, index) => {
+    btnDecreaseCart.forEach((button, index) => {
       button.addEventListener('click', () => {
         let numberOfShoppingsValue = +numberOfShoppings[index].textContent;
         if (numberOfShoppingsValue === 1) return;
         numberOfShoppings[index].textContent = `${--numberOfShoppingsValue}`;
       });
     });
-     // Кнопка мінус для телефонів
+    // Кнопка мінус для телефонів
     btnDecreaseTel.forEach((button, index) => {
       button.addEventListener('click', () => {
         let numberOfShoppingsValue = +numberOfShoppings[index].textContent;
