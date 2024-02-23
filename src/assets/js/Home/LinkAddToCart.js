@@ -1,9 +1,8 @@
 export const LinkAddToCart = (contents) => {
-
   let priceIndex = 0;
-  
-  if(contents.length === 3) {
-    priceIndex+=1;
+
+  if (contents.length === 3) {
+    priceIndex += 1;
   }
 
   let allProductCart = JSON.parse(localStorage.getItem('allProductCart')) || [];
@@ -29,7 +28,7 @@ export const LinkAddToCart = (contents) => {
     const foundProduct = contents.find((item) => {
       return item.name === productName;
     });
-    console.log('foundProduct:', foundProduct.amount);
+    'foundProduct:', foundProduct.amount;
 
     if (totalCountCart === '0' || !totalCountCart) {
       // Якщо в кошику пусто, це означає що перше значення буде яке ми виберемо в amount
@@ -74,14 +73,14 @@ export const LinkAddToCart = (contents) => {
 
     localStorage.setItem('allProductCart', JSON.stringify(allProductCart));
   };
-  const shopLatestHoverContainer = document.querySelectorAll('.shop-latest_hover_container'
+  const shopLatestHoverContainer = document.querySelectorAll(
+    '.shop-latest_hover_container'
   );
   const shopLatestPrice = document.querySelectorAll('.shop-latest__price');
   const shopLatestName = document.querySelectorAll('.shop-latest__name');
 
   shopLatestHoverContainer.forEach((link, index) => {
     link.addEventListener('click', () => {
-
       addProductToCart(
         shopLatestPrice[index + priceIndex],
         shopLatestName[index].textContent

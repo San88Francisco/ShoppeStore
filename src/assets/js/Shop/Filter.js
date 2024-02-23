@@ -2,7 +2,7 @@
 
 if (window.location.pathname.includes('/shop')) {
   document.addEventListener('DOMContentLoaded', function () {
-  // Перевірка, чи ми на сторінці "Shop"
+    // Перевірка, чи ми на сторінці "Shop"
     // const rangeInput = document.querySelectorAll('.range-input input');
     // const priceSum = document.querySelectorAll('.price-range-summ span');
     // const progress = document.querySelector('.slider-progress .range-progress');
@@ -51,7 +51,7 @@ if (window.location.pathname.includes('/shop')) {
     //         const filteredData = allProductData.filter((item) => {
     //           // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
     //           const itemPrice = item.price + '00';
-    //           // console.log(itemPrice + '00');
+    //           // (itemPrice + '00');
 
     //           return (
     //             /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
@@ -62,76 +62,73 @@ if (window.location.pathname.includes('/shop')) {
     //         /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
     //         // myTest(filteredData);
     //         clickToInotherPage(filteredData, totalPages);
-    //         console.log('Новий масив',filteredData );
+    //         ('Новий масив',filteredData );
 
     //       }, 2000);
     //     });
     //   });
 
-      /* Доступаємося до всіх наших карток з товарами */
-      const shopLatestBlocks = Array.from(
-        document.querySelectorAll('.shop-latest__block')
+    /* Доступаємося до всіх наших карток з товарами */
+    const shopLatestBlocks = Array.from(
+      document.querySelectorAll('.shop-latest__block')
+    );
+
+    /* Отримуємо дані з кожного блоку в масиві */
+    const allBlockData = [];
+
+    /** Тут ми створюємо наш масив з всіма данними з карток товарів */
+    shopLatestBlocks.forEach((shopLatestBlock) => {
+      /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
+      const discountPrice = shopLatestBlock.querySelector(
+        '.shop-latest__price .discount'
       );
+      const discountNull = discountPrice ? discountPrice : null;
 
-      /* Отримуємо дані з кожного блоку в масиві */
-      const allBlockData = [];
+      const discountFilter =
+        discountNull !== null
+          ? discountPrice
+          : shopLatestBlock.querySelector('.shop-latest__price a');
 
-      /** Тут ми створюємо наш масив з всіма данними з карток товарів */
-      shopLatestBlocks.forEach((shopLatestBlock) => {
-        /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
-        const discountPrice = shopLatestBlock.querySelector(
-          '.shop-latest__price .discount'
-        );
-        const discountNull = discountPrice ? discountPrice : null;
-
-        const discountFilter =
-          discountNull !== null
-            ? discountPrice
-            : shopLatestBlock.querySelector('.shop-latest__price a');
-
-        const blockData = {
-          name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
-          price: discountFilter.innerText,
-          imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img')
-            .src,
-          addStyle: shopLatestBlock.firstElementChild.classList[1],
-        };
-
-        return allBlockData.push(blockData);
-      });
-
-      const myTest = (filter) => {
-        console.log('filter', filter);
-        shopLatestBlocks.forEach((item) => {
-          // Вертаємо всім display block, щоб всі блоки зявилися
-          item.style.display = 'block';
-
-          let latestName = item.querySelector('.shop-latest__name a').innerText;
-          // console.log('latestName:', latestName);
-
-          // Перевіряємо кожен елемент в filter
-          const match = filter.find(
-            (filterItem) => latestName === filterItem.name
-          );
-
-          if (!match) {
-            // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
-            const block = item;
-            block.style.display = 'none';
-          }
-        });
+      const blockData = {
+        name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
+        price: discountFilter.innerText,
+        imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img')
+          .src,
+        addStyle: shopLatestBlock.firstElementChild.classList[1],
       };
 
-      // Filter price - logic, "Shop page"
-
-      // ====Search====
-
+      return allBlockData.push(blockData);
     });
 
-    // *InStock* //
-  };
+    const myTest = (filter) => {
+      'filter', filter;
+      shopLatestBlocks.forEach((item) => {
+        // Вертаємо всім display block, щоб всі блоки зявилися
+        item.style.display = 'block';
 
+        let latestName = item.querySelector('.shop-latest__name a').innerText;
+        // ('latestName:', latestName);
 
+        // Перевіряємо кожен елемент в filter
+        const match = filter.find(
+          (filterItem) => latestName === filterItem.name
+        );
+
+        if (!match) {
+          // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
+          const block = item;
+          block.style.display = 'none';
+        }
+      });
+    };
+
+    // Filter price - logic, "Shop page"
+
+    // ====Search====
+  });
+
+  // *InStock* //
+}
 
 // /** ||| Filter - In Stock, "Shop page" ||| */
 // const shopLatestBlocks = Array.from(
@@ -154,9 +151,9 @@ if (window.location.pathname.includes('/shop')) {
 
 // const filterInStock = (filter) => {
 //   shopLatestBlocks.forEach((item) => {
-//     // console.log('item:', item);
+//     // ('item:', item);
 //     let latestName = item.firstElementChild.classList[0];
-//     // console.log(' latestName:', latestName);
+//     // (' latestName:', latestName);
 
 //     item.style.display = 'block';
 //     // add-sold Перевіряємо чи є співпадіння з класом

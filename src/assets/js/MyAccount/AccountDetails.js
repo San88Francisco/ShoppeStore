@@ -121,7 +121,7 @@ export const accountDetails = () => {
   }
 
   const formPassword = document.querySelector('.account-passwords');
-  console.log(formPassword);
+  formPassword;
 
   function displayErrorPassword() {
     const isErrorMessage = formPassword.querySelector('.error-message');
@@ -198,7 +198,7 @@ export const accountDetails = () => {
 
     if (isValid) {
       // Всі перевірки пройшли без помилок
-      console.log('valid');
+      ('valid');
       // Зберігаємо дані у локальне сховище
       myProfile.passwordInput = confirmPass.value;
       localStorage.setItem('myProfile', JSON.stringify(myProfile));

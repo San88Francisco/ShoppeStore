@@ -56,7 +56,7 @@ export const addItemToProduct = () => {
   const blocksArr = Array.from(
     document.querySelectorAll('.shop-latest__block')
   );
-  // console.log("blocksArr:", blocksArr);
+  // ("blocksArr:", blocksArr);
 
   // Створюємо наші елементи які перенесуться на сторінку product !
 

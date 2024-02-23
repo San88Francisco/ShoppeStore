@@ -17,7 +17,7 @@ export const myProfile = () => {
     displayName,
     phone,
   } = JSON.parse(localStorage.getItem('myProfile'));
-  // console.log('myProfile  profileInfo:', nameInput);
+  // ('myProfile  profileInfo:', nameInput);
 
   const profileFirstName = document.querySelector('.user__first-name');
   const profileLastName = document.querySelector('.user__last-name');

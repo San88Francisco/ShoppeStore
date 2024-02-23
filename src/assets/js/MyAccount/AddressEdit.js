@@ -1,6 +1,6 @@
 export const addressEdit = () => {
   const btnSaveChanges = document.querySelector('.btn__address-edit');
-  console.log('addressEdit  btnSaveChanges:', btnSaveChanges);
+  'addressEdit  btnSaveChanges:', btnSaveChanges;
 
   const addressFirstName = document.querySelector('.address__first-name');
   const addressLastName = document.querySelector('.address__last-name');
@@ -13,7 +13,7 @@ export const addressEdit = () => {
 
   const userAddressInfo =
     JSON.parse(localStorage.getItem('userAddressInfo')) || false;
-  console.log('placeOrder  userAddressInfo:', userAddressInfo);
+  'placeOrder  userAddressInfo:', userAddressInfo;
 
   if (userAddressInfo) {
     const text = document.querySelector('.you-not-have-address');
@@ -94,7 +94,7 @@ export const addressEdit = () => {
             'afterend',
             '<div class="error-message">Please enter name</div>'
           );
-          console.log('ku');
+          ('ku');
         }
       }
       if (!latinLettersRegex.test(addressLastName.value.trim())) {
@@ -162,7 +162,7 @@ export const addressEdit = () => {
 
     if (isValid) {
       // Всі перевірки пройшли без помилок
-      console.log('work');
+      ('work');
 
       const blockData = {
         name: addressFirstName.value,

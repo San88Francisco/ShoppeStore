@@ -1,7 +1,7 @@
 export const saveOrder = () => {
   // Якщо вже маємо замовлення, тоді беремо їх, якщо замовлень немає, створюємо пустий масив
   const allOrders = JSON.parse(localStorage.getItem('allOrders')) || [];
-  console.log("saveOrder  allOrders:", allOrders)
+  'saveOrder  allOrders:', allOrders;
 
   // Беремо інформацію користувача, записували її в placeOrder
   const userInfo = JSON.parse(localStorage.getItem('userAddressInfo'));
