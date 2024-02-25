@@ -1,5 +1,5 @@
 export const orderInfo = () => {
-  let checkoutInfo = [](checkoutInfo);
+  let checkoutInfo = [];
 
   const checkoutPopupOrder = localStorage.getItem('checkoutPopupOrder');
   checkoutPopupOrder;
