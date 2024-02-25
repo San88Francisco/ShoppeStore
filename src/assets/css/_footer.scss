@@ -2,7 +2,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
- // margin: 250px 0 90px 0;
+ margin: 250px 0 90px 0;
   padding-bottom: 50px;
   .big-container {
     width: 1248px;
@@ -257,6 +257,7 @@ footer {
     .mobile-container {
       border: none;
     }
+    margin-top: 130px;
   }
 }
 
@@ -322,6 +323,7 @@ footer {
                 margin-bottom: 16px;
                 font-size: 12px;
               }
+             
             }
           }
         }
@@ -332,7 +334,7 @@ footer {
 
 @media (max-width: 750px) {
   footer {
-    margin: 70px 0 0 0;
+    margin: 100px 0 0 0;
 
     .mobile-container {
       .footer-info {
@@ -437,4 +439,8 @@ footer {
       padding-bottom: 0;
     }
 }
-
+@media (max-width: 468.98px){
+  footer {
+    margin-top: 70px;
+  }
+}

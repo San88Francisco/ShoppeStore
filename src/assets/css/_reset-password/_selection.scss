@@ -1,17 +1,11 @@
 .reset-password {
-   padding-bottom: 250px;
    margin: 0 auto;
 
    //Mobile
    @media (max-width: 700.98px) {
       padding-top: 135px;
-      padding-bottom: 180px;
    }
 
-   //Mobile small
-   @media (max-width: 467.99px) {
-      padding-bottom: 96px;
-   }
 
    &__container {
       max-width: 561px;

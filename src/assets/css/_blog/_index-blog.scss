@@ -205,7 +205,7 @@
 @media (max-width: 992px) {
    .blog {
       margin-top: -10px;
-
+      margin-bottom: 90px;
       .blog__navbar {
          width: 100%;
 
@@ -255,7 +255,11 @@
       }
    }
 }
-
+@media (max-width: 750px){
+     .blog {
+      margin-bottom: 0;
+     }
+}
 @media (max-width: 700px) {
    .blog {
       margin-top: 20px;
@@ -298,7 +302,6 @@
 
 @media (max-width: 562px) {
    .blog {
-      margin-bottom: 100px;
       grid-gap: 0px;
 
       .blog__contents {
@@ -315,4 +318,9 @@
          }
       }
    }
+}
+@media (max-width: 467.98px){
+     .blog {
+      padding-bottom: 70px;
+     }
 }

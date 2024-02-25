@@ -3,7 +3,13 @@
   height: 100%;
   margin: 0 auto;
   margin-top: 5px;
-
+margin-bottom: 250px;
+@media (max-width: 1023.98px){
+    margin-bottom: 120px;
+}
+@media (max-width: 467px){
+    margin-bottom: 70px;
+}
   .popup {
     background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
