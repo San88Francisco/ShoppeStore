@@ -4,7 +4,6 @@ footer {
   align-items: center;
   margin: 250px 0 90px 0;
   padding-bottom: 90px;
-
   .big-container {
     width: 1248px;
     min-height: 159px;
@@ -433,3 +432,9 @@ footer {
     }
   }
 }
+@media (max-width: 700.98px){
+    footer {
+      padding-bottom: 0;
+    }
+}
+
