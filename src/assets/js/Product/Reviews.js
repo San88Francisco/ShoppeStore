@@ -110,9 +110,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
             });
           
 
-            const ReviewUserComment = document.querySelector('#ReviewUserComment').value
-            const ReviewUserName = document.querySelector('#ReviewUserName').value
-            const ReviewUserMail = document.querySelector('#ReviewUserMail').value
+            const ReviewUserComment = document.querySelector('.ReviewUserComment').value
+            const ReviewUserName = document.querySelector('.ReviewUserName').value
+            const ReviewUserMail = document.querySelector('.ReviewUserMail').value
    
             const userSaveDatas = {
                userName: ReviewUserName,

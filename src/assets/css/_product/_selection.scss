@@ -192,45 +192,6 @@
       display: flex;
       font-family: DM Sans;
 
-      .swiper-container {
-        display: none;
-        overflow: hidden;
-        width: 100%;
-        padding-bottom: 25px;
-
-        .swiper-wrapper {
-          display: flex;
-          transition: transform $transition-time ease;
-          padding-bottom: 15px;
-
-          .swiper-slide {
-            box-sizing: border-box;
-            flex: 0 0 100%;
-            max-width: 100%;
-
-            img {
-              display: block;
-              width: 100%;
-              height: clamp(300px, 100vw, 800px);
-            }
-          }
-        }
-
-        // .progress-bar-mobile {
-        //   width: 90%;
-        //   height: 2px;
-        //   background-color: $gray-color;
-        //   position: absolute;
-
-        //   .progress-bar-mobile__line {
-        //     background-color: $dark-gray-color;
-        //     height: 2px;
-        //     width: 25%;
-        //     position: relative;
-        //   }
-        // }
-      }
-
       .product--overview__pictures {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -447,6 +408,12 @@
       border-bottom: 1px solid $gray-color;
     }
 
+    label[for='pageOne__input'],
+    label[for='pageTwo__input'],
+    label[for='pageThree__input']{
+      display: none;
+    }
+
     p,
     li,
     h3,
@@ -606,6 +573,9 @@
       .add-reviews {
         grid-column: 2/3;
 
+        form{
+          margin-bottom: 15px;
+        }
         h3 {
           color: var(--black-color);
           font-size: 20px;
@@ -1124,10 +1094,6 @@
   .Product {
     .a {
       .product--overview {
-        // .swiper-container {
-        //   display: block;
-        // }
-
         .sliderProduct_top{
           display: flex;
         }
@@ -1220,12 +1186,6 @@
       padding: 0px 0px;
 
       .product--overview {
-        .swiper-container {
-          .progress-bar-mobile {
-            width: 100%;
-          }
-        }
-
         .product--overview__view {
           padding: 0px;
 
@@ -1331,12 +1291,11 @@
       }
 
       .product__info {
-        .info-mobile__tab-pages {
+        // .info-mobile__tab-pages {
           display: block;
 
-          .pages-folder {
-            padding-bottom: 15px;
-
+          // .pages-folder {
+            // padding-bottom: 15px;
             .page__contents {
               padding-top: 30px;
             }
@@ -1352,7 +1311,14 @@
               height: 0px;
             }
 
+            label[for='pageOne__input'],
+            label[for='pageTwo__input'],
+            label[for='pageThree__input']{
+              margin: 15px 0px;
+            }
             label {
+              display: block;
+              // margin: 15px 0px;
               color: var(--black-color);
               & span {
                 flex: 0 0 12px;
@@ -1365,18 +1331,34 @@
               }
             }
 
-            input:checked ~ label {
-              img {
-                transition: $transition-time all linear;
-                transform: rotate(-90deg);
-              }
+            #pageOne__input:checked ~ label[for='pageOne__input'] img {
+              transition: $transition-time all linear;
+              transform: rotate(-90deg);
             }
-
-            input:checked ~ div {
+            
+            #pageOne__input:checked ~ label[for='pageOne__input'] + #product__page1 {
               display: block;
             }
-          }
-        }
+            
+            #pageTwo__input:checked ~ label[for='pageTwo__input'] img {
+              transition: $transition-time all linear;
+              transform: rotate(-90deg);
+            }
+            
+            #pageTwo__input:checked ~ label[for='pageTwo__input'] + #product__page2 {
+              display: block;
+            }
+            
+            #pageThree__input:checked ~ label[for='pageThree__input'] img {
+              transition: $transition-time all linear;
+              transform: rotate(-90deg);
+            }
+            
+            #pageThree__input:checked ~ label[for='pageThree__input'] + #product__page3 {
+              display: block;
+            }
+          // }
+        // }
 
         .info__tab-pages,
         .header__underline,
