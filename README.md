@@ -15,6 +15,7 @@
 | <span style="font-size:20px">[**Andrii Dmytruk**](https://github.com/admitruk237 'Перейти на Git Hub')</span>      | <span style="font-size:20px">**Frontend Software Engineer**</span> |
 | <span style="font-size:20px">[**Andrij Pot**](https://github.com/AndrijPot 'Перейти на Git Hub')</span>            | <span style="font-size:20px">**Frontend Software Engineer**</span> |
 | <span style="font-size:20px">[**Denys Levchenko**](https://github.com/gitdenlev 'Перейти на Git Hub')</span>       | <span style="font-size:20px">**Frontend Software Engineer**</span> |
+| <span style="font-size:20px">[**Denys Tkachenko**](https://github.com/Tkachenko01001')</span>       | <span style="font-size:20px">**Frontend Software Engineer**</span> |
 | <span style="font-size:20px">[**Donatik**](https://github.com/ZD-Donatik')</span>       | <span style="font-size:20px">**Frontend Software Engineer**</span> |
 
 &nbsp;
