@@ -446,6 +446,7 @@ if (window.location.pathname.includes('/account')) {
             windwSingIn.innerHTML =
               '<p><img src="./assets/img/Cart_img/svg/checked.svg" alt="cheked">You are sing in!</p>';
             windwSingIn.style.display = 'flex';
+            windwSingIn.style.opacity = '1';
             headerLine.style.borderBottom = 'solid 1.5px #A18A68';
             setTimeout(function () {
               windwSingIn.style.opacity = '0';
