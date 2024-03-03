@@ -1,45 +1,45 @@
 export const downloadView = () => {
-  const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
+   const orderVievItem = JSON.parse(localStorage.getItem('allOrders')) || [];
 
-  let isHandleResizeEnabled = true;
+   let isHandleResizeEnabled = true;
 
-  const orderLinkDownloads = (link) => {
-    const vievOrderLink = document.querySelectorAll(`${link}`);
+   const orderLinkDownloads = (link) => {
+      const vievOrderLink = document.querySelectorAll(`${link}`);
 
-    vievOrderLink.forEach((link, index) => {
-      link.addEventListener('click', () => {
-        const info = orderVievItem[index].orderInfo;
-        const item = orderVievItem[index].orderItem;
-        const checkoutInfo = {
-          item: item,
-          info: info,
-        };
+      vievOrderLink.forEach((link, index) => {
+         link.addEventListener('click', () => {
+            const info = orderVievItem[index].orderInfo;
+            const item = orderVievItem[index].orderItem;
+            const checkoutInfo = {
+               item: item,
+               info: info,
+            };
 
-        localStorage.setItem(
-          'userOrderInfo',
-          JSON.stringify(orderVievItem[index].userInfo)
-        );
-        localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
-        localStorage.setItem('checkoutPopupOrder', 0);
+            localStorage.setItem(
+               'userOrderInfo',
+               JSON.stringify(orderVievItem[index].userInfo)
+            );
+            localStorage.setItem('checkoutInfo', JSON.stringify(checkoutInfo));
+            localStorage.setItem('checkoutPopupOrder', 0);
+         });
       });
-    });
-  };
+   };
 
-  // Наш основний блок Orders
-  const targetOfDownloads = document.querySelector('.targetOf-downloads');
+   // Наш основний блок Orders
+   const targetOfDownloads = document.querySelector('.targetOf-downloads');
 
-  // Таблиця thead
-  const accountDownloadsThead = document.querySelector(
-    '.account__downloads-thead'
-  );
+   // Таблиця thead
+   const accountDownloadsThead = document.querySelector(
+      '.account__downloads-thead'
+   );
 
-  // Таблиця tbody
-  const accountDownloadsTbody = document.querySelector(
-    '.account__downloads-tbody'
-  );
+   // Таблиця tbody
+   const accountDownloadsTbody = document.querySelector(
+      '.account__downloads-tbody'
+   );
 
-  if (orderVievItem.length >= 1) {
-    const html = `
+   if (orderVievItem.length >= 1) {
+      const html = `
             <tr>
               <td>ORDER NUMBER</td>
               <td>DATE</td>
@@ -48,21 +48,21 @@ export const downloadView = () => {
               <td>ACTIONS</td>
             </tr>
             `;
-    accountDownloadsThead.insertAdjacentHTML('beforeend', html);
-    orderLinkDownloads('.link__downloads-viev');
-  } else {
-    targetOfDownloads.innerHTML = `
+      accountDownloadsThead.insertAdjacentHTML('beforeend', html);
+      orderLinkDownloads('.link__downloads-viev');
+   } else {
+      targetOfDownloads.innerHTML = `
       <div class="alert-not-address">
         <p>No downloads available yet.</p>
-        <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>
+        <p class="do-sth"><a href="./market.html">BROWSE PRODUCT</a></p>
       </div>
     `;
-    isHandleResizeEnabled = false;
-  }
+      isHandleResizeEnabled = false;
+   }
 
-  orderVievItem.forEach((order) => {
-    const { orderInfo, userInfo } = order;
-    const html = `
+   orderVievItem.forEach((order) => {
+      const { orderInfo, userInfo } = order;
+      const html = `
             <tr>
               <td>${userInfo.orderNumber}</td>
               <td>${userInfo.date}</td>
@@ -81,20 +81,20 @@ export const downloadView = () => {
               </td>
             </tr>
           `;
-    accountDownloadsTbody.insertAdjacentHTML('beforeend', html);
-  });
+      accountDownloadsTbody.insertAdjacentHTML('beforeend', html);
+   });
 
-  function handleResize() {
-    const screenWidth =
-      window.innerWidth || document.documentElement.clientWidth;
+   function handleResize() {
+      const screenWidth =
+         window.innerWidth || document.documentElement.clientWidth;
 
-    if (screenWidth < 600 && isHandleResizeEnabled) {
-      const showMobileDownloads = document.querySelector('.downloads__mobile');
-      showMobileDownloads.innerHTML = '';
+      if (screenWidth < 600 && isHandleResizeEnabled) {
+         const showMobileDownloads = document.querySelector('.downloads__mobile');
+         showMobileDownloads.innerHTML = '';
 
-      orderVievItem.forEach((order) => {
-        const { orderId, orderInfo, userInfo } = order;
-        showMobileDownloads.innerHTML += `
+         orderVievItem.forEach((order) => {
+            const { orderId, orderInfo, userInfo } = order;
+            showMobileDownloads.innerHTML += `
         <div class="mobile__order-item">   
         <ul class="mobile__title">
           <li class="mobile__title-text">ORDER NUMBER</li>
@@ -122,17 +122,17 @@ export const downloadView = () => {
         </ul>
       </div>
         `;
-      });
+         });
 
-      orderLinkDownloads('.link__downloads-mobile');
-    } else {
-      orderLinkDownloads('.link__downloads-viev');
-    }
-  }
+         orderLinkDownloads('.link__downloads-mobile');
+      } else {
+         orderLinkDownloads('.link__downloads-viev');
+      }
+   }
 
-  // Викликаємо функцію при завантаженні сторінки та при зміні розміру вікна
-  window.addEventListener('load', handleResize);
-  window.addEventListener('resize', handleResize);
+   // Викликаємо функцію при завантаженні сторінки та при зміні розміру вікна
+   window.addEventListener('load', handleResize);
+   window.addEventListener('resize', handleResize);
 
-  // href="http://localhost:3000/order-confirmation.html"
+   // href="http://localhost:3000/order-confirmation.html"
 };

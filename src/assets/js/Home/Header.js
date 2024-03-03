@@ -47,14 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
    // фун для підчеркування сторінок
    (function () {
       const hrefPags = location.href;
+      console.log('✌️hrefPags --->', hrefPags);
       const menuLinks = document.querySelectorAll('.decstop-nav li');
 
       const header = document.querySelector('header');
 
       // Об'єкт для визначення відповідних індексів елементів меню
       const pageMapping = {
-         index: '', // Вказуємо -1 для сторінки "index", щоб не встановлювати клас
-         shop: 0,
+         index: '',
+         market: 0,
          product: 0,
          blog: 1,
          our: 2,

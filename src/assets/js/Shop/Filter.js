@@ -1,133 +1,133 @@
 /* ||| Filter price - input range, "Shop page" повзунок ||| */
 
-if (window.location.pathname.includes('/shop')) {
-  document.addEventListener('DOMContentLoaded', function () {
-    // Перевірка, чи ми на сторінці "Shop"
-    // const rangeInput = document.querySelectorAll('.range-input input');
-    // const priceSum = document.querySelectorAll('.price-range-summ span');
-    // const progress = document.querySelector('.slider-progress .range-progress');
+if (window.location.pathname.includes('/market')) {
+   document.addEventListener('DOMContentLoaded', function () {
+      // Перевірка, чи ми на сторінці "Shop"
+      // const rangeInput = document.querySelectorAll('.range-input input');
+      // const priceSum = document.querySelectorAll('.price-range-summ span');
+      // const progress = document.querySelector('.slider-progress .range-progress');
 
-    // let priceGap = 10;
-    // let maxRange = 180; // Змінено максимальне значення
+      // let priceGap = 10;
+      // let maxRange = 180; // Змінено максимальне значення
 
-    // rangeInput.forEach((input) => {
-    //   input.addEventListener('input', (e) => {
-    //     let minVal = parseInt(rangeInput[0].value);
-    //     let maxVal = parseInt(rangeInput[1].value);
+      // rangeInput.forEach((input) => {
+      //   input.addEventListener('input', (e) => {
+      //     let minVal = parseInt(rangeInput[0].value);
+      //     let maxVal = parseInt(rangeInput[1].value);
 
-    //     if (maxVal - minVal < priceGap) {
-    //       if (e.target.className === 'range-min') {
-    //         rangeInput[0].value = maxVal - priceGap;
-    //         priceSum[0].innerText = `${rangeInput[0].value}`;
-    //         progress.style.left = (rangeInput[0].value / maxRange) * 100 + '%';
-    //       } else {
-    //         rangeInput[1].value = minVal + priceGap;
-    //         priceSum[1].innerText = `${rangeInput[1].value}`;
-    //         progress.style.right =
-    //           100 - (rangeInput[1].value / maxRange) * 100 + '%';
-    //       }
-    //     } else {
-    //       priceSum[0].innerText = `${+minVal}`;
-    //       priceSum[1].innerText = `${+maxVal}`;
-    //       progress.style.left = (minVal / maxRange) * 100 + '%';
-    //       progress.style.right = 100 - (maxVal / maxRange) * 100 + '%';
-    //     }
-    //   });
+      //     if (maxVal - minVal < priceGap) {
+      //       if (e.target.className === 'range-min') {
+      //         rangeInput[0].value = maxVal - priceGap;
+      //         priceSum[0].innerText = `${rangeInput[0].value}`;
+      //         progress.style.left = (rangeInput[0].value / maxRange) * 100 + '%';
+      //       } else {
+      //         rangeInput[1].value = minVal + priceGap;
+      //         priceSum[1].innerText = `${rangeInput[1].value}`;
+      //         progress.style.right =
+      //           100 - (rangeInput[1].value / maxRange) * 100 + '%';
+      //       }
+      //     } else {
+      //       priceSum[0].innerText = `${+minVal}`;
+      //       priceSum[1].innerText = `${+maxVal}`;
+      //       progress.style.left = (minVal / maxRange) * 100 + '%';
+      //       progress.style.right = 100 - (maxVal / maxRange) * 100 + '%';
+      //     }
+      //   });
 
-    //   /* ||| Filter price - logic ||| */
+      //   /* ||| Filter price - logic ||| */
 
-    //   let debounceTimer; /** В цю змінну ми вставимо setTimeout, щоб можна було його обнуляти */
+      //   let debounceTimer; /** В цю змінну ми вставимо setTimeout, щоб можна було його обнуляти */
 
-    //   rangeInput.forEach((input) => {
-    //     input.addEventListener('mouseup', () => {
-    //       /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
-    //       clearTimeout(debounceTimer);
+      //   rangeInput.forEach((input) => {
+      //     input.addEventListener('mouseup', () => {
+      //       /** Обнуляємо таймер щоб, якщо вирішили перевибрати ціну раніше ніж 3 секунди */
+      //       clearTimeout(debounceTimer);
 
-    //       const itemsPerPage = 6;
-    //       const allProductData = JSON.parse(localStorage.getItem('allProduct'));
-    //       const totalPages = Math.ceil(allProductData.length / itemsPerPage);
+      //       const itemsPerPage = 6;
+      //       const allProductData = JSON.parse(localStorage.getItem('allProduct'));
+      //       const totalPages = Math.ceil(allProductData.length / itemsPerPage);
 
-    //       debounceTimer = setTimeout(() => {
-    //         const filteredData = allProductData.filter((item) => {
-    //           // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
-    //           const itemPrice = item.price + '00';
-    //           // (itemPrice + '00');
+      //       debounceTimer = setTimeout(() => {
+      //         const filteredData = allProductData.filter((item) => {
+      //           // const itemPrice = item.price.replace( /[^\d]/g,''); /* забираємо пробіли та лишні знаки $ з  ціни */
+      //           const itemPrice = item.price + '00';
+      //           // (itemPrice + '00');
 
-    //           return (
-    //             /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
-    //             +rangeInput[0].value * 100 <= +itemPrice &&
-    //             +rangeInput[1].value * 100 >= +itemPrice
-    //           );
-    //         });
-    //         /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
-    //         // myTest(filteredData);
-    //         clickToInotherPage(filteredData, totalPages);
-    //         ('Новий масив',filteredData );
+      //           return (
+      //             /* Перевірка самогу фільтру з ціною. Там де +rangeInput[0].value це лівий повзунок, +rangeInput[1].value це правий повзунок */
+      //             +rangeInput[0].value * 100 <= +itemPrice &&
+      //             +rangeInput[1].value * 100 >= +itemPrice
+      //           );
+      //         });
+      //         /* Запускаємо нашу функцію та передаємо туди фільтрований товар */
+      //         // myTest(filteredData);
+      //         clickToInotherPage(filteredData, totalPages);
+      //         ('Новий масив',filteredData );
 
-    //       }, 2000);
-    //     });
-    //   });
+      //       }, 2000);
+      //     });
+      //   });
 
-    /* Доступаємося до всіх наших карток з товарами */
-    const shopLatestBlocks = Array.from(
-      document.querySelectorAll('.shop-latest__block')
-    );
-
-    /* Отримуємо дані з кожного блоку в масиві */
-    const allBlockData = [];
-
-    /** Тут ми створюємо наш масив з всіма данними з карток товарів */
-    shopLatestBlocks.forEach((shopLatestBlock) => {
-      /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
-      const discountPrice = shopLatestBlock.querySelector(
-        '.shop-latest__price .discount'
+      /* Доступаємося до всіх наших карток з товарами */
+      const shopLatestBlocks = Array.from(
+         document.querySelectorAll('.shop-latest__block')
       );
-      const discountNull = discountPrice ? discountPrice : null;
 
-      const discountFilter =
-        discountNull !== null
-          ? discountPrice
-          : shopLatestBlock.querySelector('.shop-latest__price a');
+      /* Отримуємо дані з кожного блоку в масиві */
+      const allBlockData = [];
 
-      const blockData = {
-        name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
-        price: discountFilter.innerText,
-        imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img')
-          .src,
-        addStyle: shopLatestBlock.firstElementChild.classList[1],
+      /** Тут ми створюємо наш масив з всіма данними з карток товарів */
+      shopLatestBlocks.forEach((shopLatestBlock) => {
+         /** Це перевірка для виявлення карток з класом add-discount. До їхньої ціни доступаємося окремо */
+         const discountPrice = shopLatestBlock.querySelector(
+            '.shop-latest__price .discount'
+         );
+         const discountNull = discountPrice ? discountPrice : null;
+
+         const discountFilter =
+            discountNull !== null
+               ? discountPrice
+               : shopLatestBlock.querySelector('.shop-latest__price a');
+
+         const blockData = {
+            name: shopLatestBlock.querySelector('.shop-latest__name a').innerText,
+            price: discountFilter.innerText,
+            imgProduct: shopLatestBlock.querySelector('.shop-latest__img a img')
+               .src,
+            addStyle: shopLatestBlock.firstElementChild.classList[1],
+         };
+
+         return allBlockData.push(blockData);
+      });
+
+      const myTest = (filter) => {
+         'filter', filter;
+         shopLatestBlocks.forEach((item) => {
+            // Вертаємо всім display block, щоб всі блоки зявилися
+            item.style.display = 'block';
+
+            let latestName = item.querySelector('.shop-latest__name a').innerText;
+            // ('latestName:', latestName);
+
+            // Перевіряємо кожен елемент в filter
+            const match = filter.find(
+               (filterItem) => latestName === filterItem.name
+            );
+
+            if (!match) {
+               // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
+               const block = item;
+               block.style.display = 'none';
+            }
+         });
       };
 
-      return allBlockData.push(blockData);
-    });
+      // Filter price - logic, "Shop page"
 
-    const myTest = (filter) => {
-      'filter', filter;
-      shopLatestBlocks.forEach((item) => {
-        // Вертаємо всім display block, щоб всі блоки зявилися
-        item.style.display = 'block';
+      // ====Search====
+   });
 
-        let latestName = item.querySelector('.shop-latest__name a').innerText;
-        // ('latestName:', latestName);
-
-        // Перевіряємо кожен елемент в filter
-        const match = filter.find(
-          (filterItem) => latestName === filterItem.name
-        );
-
-        if (!match) {
-          // Отримуємо той блок, який не проходить фільтрацію ціни і задаємо йому display none
-          const block = item;
-          block.style.display = 'none';
-        }
-      });
-    };
-
-    // Filter price - logic, "Shop page"
-
-    // ====Search====
-  });
-
-  // *InStock* //
+   // *InStock* //
 }
 
 // /** ||| Filter - In Stock, "Shop page" ||| */

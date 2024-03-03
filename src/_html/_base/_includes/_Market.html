@@ -1,0 +1,167 @@
+<section class="Shop">
+  <!-- Mobile -->
+  <div class="mobile-filter Scroll_js_right">
+    <h2>Shop</h2>
+  </div>
+  <div class="mobile-filter_button Scroll_js_right">
+    <img src="./assets/img/Shop_img/filter.png" alt="" />
+    <p>Filters</p>
+  </div>
+
+  <div class="shop-container">
+    <aside class="filter-menu Scroll_js_right">
+      <h1>Shop The Latest</h1>
+
+      <!-- search input -->
+      <label for="search-input"></label>
+      <div class="input-div">
+        <input type="text" placeholder="Search..." id="search-input" />
+        <img
+          class="light-them"
+          data-dark-src="./assets/img/dark-them/search-dark-them.svg"
+          data-light-src="./assets/img/Shop_img/search-icon.svg"
+          src="./assets/img/Shop_img/search-icon.svg"
+          alt=""
+        />
+      </div>
+
+      <div class="container-sort-btns">
+        <!-- select section -->
+        <div class="select-container">
+          <div class="dropdown">
+            <button type="button" class="drop-btn" id="shopByBtn">
+              Shop By
+              <img
+                class="light-them"
+                data-dark-src="./assets/img/dark-them/arrowDown-dark-them.svg"
+                data-light-src="./assets/img/svg/toggle.svg"
+                src="./assets/img/svg/toggle.svg"
+              />
+            </button>
+            <div id="shopByDropdown" class="dropdown-content">
+              <button type="button" id="bnt-earrings">Earrings</button>
+              <button type="button" id="btn-rings">Brooch</button>
+              <button type="button" id="btn-bracelets">Bracelets</button>
+              <button type="button" id="btn-pendants">Pendants</button>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button type="button" class="drop-btn" id="sortByBtn">
+              Sort By<img
+                class="light-them"
+                data-dark-src="./assets/img/dark-them/arrowDown-dark-them.svg"
+                data-light-src="./assets/img/svg/toggle.svg"
+                src="./assets/img/svg/toggle.svg"
+                alt="toggle-icon"
+              />
+            </button>
+            <div id="sortByDropdown" class="dropdown-content">
+              <button type="button" id="btn-cheapest">Cheapest</button>
+              <button type="button" id="btn-expensive">Expensive</button>
+              <button type="button" id="btn-popular">Popular</button>
+              <button type="button" id="btn-new">New</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-filter">
+          <!-- slider section -->
+          <div class="price-filter">
+            <div class="slider-progress">
+              <div class="range-progress"></div>
+            </div>
+            <div class="range-input">
+              <input
+                step="5"
+                type="range"
+                class="range-min"
+                min="0"
+                max="180"
+                value="0"
+              />
+              <input
+                step="5"
+                type="range"
+                class="range-max"
+                min="0"
+                max="180"
+                value="180"
+              />
+            </div>
+            <div class="price-range">
+              <div class="price-range-summ">
+                Price: $<span class="price-range-min">0</span> - $<span
+                  class="price-range-max"
+                  >180</span
+                >
+              </div>
+              <div class="price-range-filter">Filter</div>
+            </div>
+          </div>
+
+          <!-- checkboxes section -->
+          <div class="for-button">
+            <p class="shop-bottoms">On sale</p>
+            <div>
+              <label class="toggle-switch">
+                <input
+                  class="toggle-sale"
+                  data-category="add-discount"
+                  type="checkbox"
+                />
+                <span class="toggle round"></span>
+              </label>
+            </div>
+          </div>
+          <div class="for-button">
+            <p class="shop-bottoms">In stock</p>
+            <div>
+              <label class="toggle-switch">
+                <input class="toggle-stock" type="checkbox" />
+                <span class="toggle round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter__checked">
+          <span class="checked__item-shop"> Shop By </span>
+          <span class="checked__item-sort"> Sort By </span>
+          <span class="checked__item-price"> Filter Price </span>
+          <span class="checked__item-sale"> On Sale </span>
+          <span class="checked__item-stock"> In Stock </span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container__search container-not-found-search Scroll_js_up">
+      <img
+        src="./assets/img/Home_img/header/searchGold.svg"
+        alt="search-icon"
+      />
+
+      <div>
+        <h2>Search...</h2>
+        <p>This product was not found</p>
+      </div>
+    </div>
+
+    <article class="conteiner-items Scroll_js_right">
+      <!-- Shop The Latest -->
+      <div id="deBag_marginTop" class="shop-latest">
+        <div class="shop-latest-container">
+          <div class="shop-latest-blocks"></div>
+          <div class="navigation-bar">
+            <!-- <div id="prev-page" class="cards__pages cards__pages__arrow-back" data-index-Of-Btn="tab-btn" data-tab-to="back"><img data-dark-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" data-light-src="./assets/img/Blog_img/svg/arrow.svg" src="./assets/img/Blog_img/svg/arrow.svg" alt="img"></div> -->
+
+            <div id="pagination-info" class="pagination-info"></div>
+
+            <!-- <div id="next-page" class="cards__pages lastPageBtn" data-index-Of-Btn="tab-btn" data-tab-to="forward"><img data-dark-src="./assets/img/dark-them/arrowRight-dark-them.svg" class="light-them" data-light-src="./assets/img/Blog_img/svg/arrow.svg" src="./assets/img/Blog_img/svg/arrow.svg" alt="img"></div> -->
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+{% include "_html/_base/_includes/_Them-switcher.html" %}
