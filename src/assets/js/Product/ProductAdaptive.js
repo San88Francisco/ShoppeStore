@@ -1,50 +1,51 @@
 const addaptiveTabMenu = () => {
-   const productPage = document.querySelectorAll('.product__page')
-   window.addEventListener('resize',()=> {
-      const nowScreenWidth = window.innerWidth
-      if(nowScreenWidth <= 425){
-         productPage.forEach(item => {
-            item.style.display = 'none'
-         })
-      } 
-      if(nowScreenWidth > 425){
-         productPage.forEach(item => {
-            const isPageSelect = item.getAttribute('data-is-page-select')
-            if(isPageSelect === 'true'){
-               item.style.display = 'grid'
-            }
-         })
-      }
-   })
-
+  const productPage = document.querySelectorAll('.product__page')
   const pagesFolderCheckbox = document.querySelectorAll('.pages-folder-checkbox')
    pagesFolderCheckbox.forEach(item => {
     item.addEventListener('click', ()=> {
       const pageNumber = item.getAttribute('data-page-nuber')
-      const isSelect = item.getAttribute('data-is-page-select')
       const pageActive = document.querySelector(`.product__page${pageNumber}`)
+      const isSelect = pageActive.getAttribute('data-is-page-select')
       
       if(isSelect === 'true'){
-        item.setAttribute('data-is-page-select', 'false')
+        pageActive.setAttribute('data-is-page-select', 'false')
         item.checked = false
         pageActive.style.display = 'none'
         return
       }
 
-      for(let i = 1; i <= 3; i++){
-        pagesFolderCheckbox[i].checked = false
+      for(let i = 1; i < 4; i++){
+        pagesFolderCheckbox[i - 1].checked = false
         const page = document.querySelector(`.product__page${i}`)
         page.style.display = 'none'
       }
 
-      pagesFolderCheckbox.forEach(checkbox => {
-        checkbox.setAttribute('data-is-page-select', 'false')
+      productPage.forEach(page => {
+        page.setAttribute('data-is-page-select', 'false')
       })
 
       item.checked = true
-      item.setAttribute('data-is-page-select', 'true')
+      pageActive.setAttribute('data-is-page-select', 'true')
       pageActive.style.display = 'grid'
 
+      const ReviewUserName = document.querySelector('.ReviewUserName')
+      const ReviewUserMail = document.querySelector('.ReviewUserMail')
+
+      const userData = localStorage.getItem('myProfile') !== null ? JSON.parse(localStorage.getItem('myProfile')) : null
+      if(userData !== null){
+         ReviewUserName.value = `${userData.nameInput} ${userData.lastNameInput}`
+         ReviewUserMail.value = userData.emailInput
+
+         const checkboxToSave = document.querySelector('.checkbox-to-save')
+         checkboxToSave.style.display = 'none'
+         ReviewUserName.style.display = 'none'
+         ReviewUserMail.style.display = 'none'
+         return
+      }
+
+      const tabButtons = document.querySelectorAll('.info__tab-page');
+      tabButtons.forEach(btn => btn.classList.remove('info__tab__line'));
+      tabButtons[parseFloat(pageNumber) - 1].classList.add('info__tab__line');
     })
    })
 }

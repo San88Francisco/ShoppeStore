@@ -19,6 +19,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
             });
             productPages[index].style.display = 'grid';
             productPages[index].setAttribute('data-is-page-select','true')
+            
+
+            const pagesFolderCheckbox = document.querySelectorAll('.pages-folder-checkbox')
+            pagesFolderCheckbox.forEach(item => {
+               item.checked = false
+            })
+            const dataPageNuber = document.querySelector(`[data-page-nuber='${index + 1}']`)
+            dataPageNuber.checked = true
          });
       });
       const nameOfProduct = localStorage.getItem('selectedProductName')
@@ -29,8 +37,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
          if(reviewsContent !== null) {
             reviews.innerHTML = reviewsContent  
          }
-         // reviews.innerHTML = localStorage.getItem(nameOfProduct)
-         console.log(localStorage.getItem(nameOfProduct));
          document.querySelector('.amount-reviews').innerHTML = document.querySelector('.reviews').children.length / 2
          document.querySelectorAll('.amount-reviews2').forEach(item => {
             item.innerHTML = document.querySelector('.reviews').children.length / 2
@@ -118,18 +124,32 @@ document.addEventListener('DOMContentLoaded', ()=> {
                userName: ReviewUserName,
                userMail: ReviewUserMail,
             }
-            saveUserData.classList[2] === 'checked' ? localStorage.setItem('UserReviewData', JSON.stringify(userSaveDatas)) : 0
+            saveUserData.classList[2] === 'checked' ? localStorage.setItem('replyAutoComplite', JSON.stringify(userSaveDatas)) : 0
             if(ReviewUserComment && ReviewUserName && ReviewUserMail && formObject.starsRating){
                addReviewBlock(ReviewUserComment, ReviewUserName, ReviewUserMail, formObject)
                localStorage.setItem(document.querySelector('.product--overview__view').children[0].textContent, document.querySelector(`.reviews`).innerHTML)
-               console.log(document.querySelector(`.reviews`).innerHTML);
             }else {
                alert('Please enter a rating')
             }
          });
 
       info_item3.addEventListener('click', ()=>{
-         const userSaveDatas = localStorage.getItem('UserReviewData') !== null ? JSON.parse(localStorage.getItem('UserReviewData')) : null
+         const ReviewUserName = document.querySelector('.ReviewUserName')
+         const ReviewUserMail = document.querySelector('.ReviewUserMail')
+
+         const userData = localStorage.getItem('myProfile') !== null ? JSON.parse(localStorage.getItem('myProfile')) : null
+         if(userData !== null){
+            ReviewUserName.value = `${userData.nameInput} ${userData.lastNameInput}`
+            ReviewUserMail.value = userData.emailInput
+
+            const checkboxToSave = document.querySelector('.checkbox-to-save')
+            checkboxToSave.style.display = 'none'
+            ReviewUserName.style.display = 'none'
+            ReviewUserMail.style.display = 'none'
+            return
+         }
+
+         const userSaveDatas = localStorage.getItem('replyAutoComplite') !== null ? JSON.parse(localStorage.getItem('replyAutoComplite')) : null
          if(userSaveDatas !== null) {
             ReviewUserName.value = userSaveDatas.userName
             ReviewUserMail.value = userSaveDatas.userMail
