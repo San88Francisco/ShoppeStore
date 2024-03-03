@@ -70,7 +70,7 @@ export const downloadView = () => {
               <td>$ ${orderInfo[0].totalPrice}</td>
               <td class="td__action-link">
                 <div>
-                    <a href="http://localhost:3000/order-confirmation.html" class="link__downloads-viev do-sth">
+                    <a href="/order-confirmation.html" class="link__downloads-viev do-sth">
                         View Order
                      </a>
                      <hr>
@@ -109,7 +109,7 @@ export const downloadView = () => {
           <li class="mobile__value-text">Delivered</li>
           <li class="mobile__value-text">${orderInfo[0].totalPrice}</li>
           <li class="mobile__value-link">
-            <a href="http://localhost:3000/order-confirmation.html" class="link__downloads-mobile do-sth">
+            <a href="/order-confirmation.html" class="link__downloads-mobile do-sth">
               View Order
             </a>
   
@@ -133,6 +133,4 @@ export const downloadView = () => {
   // Викликаємо функцію при завантаженні сторінки та при зміні розміру вікна
   window.addEventListener('load', handleResize);
   window.addEventListener('resize', handleResize);
-
-  // href="http://localhost:3000/order-confirmation.html"
 };

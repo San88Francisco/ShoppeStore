@@ -66,7 +66,7 @@ export const orderViev = () => {
         <td>Delivered</td>
         <td>$ ${orderInfo[0].totalPrice}</td>
         <td>
-          <a href="http://localhost:3000/order-confirmation.html" class="link__order-viev do-sth">
+          <a href="/order-confirmation.html" class="link__order-viev do-sth">
             View Order
           </a>
         </td>
@@ -100,7 +100,7 @@ export const orderViev = () => {
             <li class="mobile__value-text">Delivered</li>
             <li class="mobile__value-text">${orderInfo[0].totalPrice}</li>
             <li class="mobile__value-text">
-              <a href="http://localhost:3000/order-confirmation.html" class="link__order-mobile do-sth">
+              <a href="/order-confirmation.html" class="link__order-mobile do-sth">
                 View Order
               </a>
             </li>
@@ -118,6 +118,4 @@ export const orderViev = () => {
   // Викликаємо функцію при завантаженні сторінки та при зміні розміру вікна
   window.addEventListener('load', handleResizeOrder);
   window.addEventListener('resize', handleResizeOrder);
-
-  // href="http://localhost:3000/order-confirmation.html"
 };
