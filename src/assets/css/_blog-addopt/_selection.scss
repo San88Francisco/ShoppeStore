@@ -117,7 +117,7 @@
       }
       .blog_content{
          text-align: left;
-         //padding: 65px clamp(0px, 4vw,140px);
+         padding: 65px clamp(0px, 4vw,140px);
          hr{
             display: block;
          }
@@ -376,18 +376,16 @@
                justify-content: space-between;
                flex-wrap: wrap;
                padding-bottom: 12px;
-               .userName{
-                  h3{
-                     font-size: 20px;
-                     line-height: 26px;
-                     color: var(--black-color);
-                  }
+               h3{
+                  font-size: 20px;
+                  line-height: 26px;
+                  color: var(--black-color);
+                  margin-right: 16px;
                }
                .userDate{
                   font-size: 14px;
                   line-height: 22px;
                   color: $placeholder-color;
-                  padding-left: 16px;
                   margin-right: auto;
                   margin-top: auto;
                   margin-bottom: auto;

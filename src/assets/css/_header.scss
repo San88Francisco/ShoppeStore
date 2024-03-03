@@ -33,6 +33,7 @@ header {
       padding: 24px;
 
       p {
+         color: $black-color;
          display: flex;
          align-items: center;
 
@@ -86,7 +87,7 @@ header {
          z-index: 1;
          padding: 26px 26px 0 16px;
          transform: translate(150%);
-         background-color: #fff;
+         background-color: var(--main-background);
          transition: transform 0.7s ease-in-out 0.2s,
             background-color 0.9s ease-in-out;
 
@@ -221,7 +222,7 @@ header {
          gap: 10px;
          transform: translate(0%);
          transition: transform 1s ease-in-out;
-         margin: 4px 0;
+         margin-bottom: 8px;
          padding-left: 10px;
 
          &.active {

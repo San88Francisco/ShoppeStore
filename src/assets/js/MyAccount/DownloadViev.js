@@ -54,7 +54,7 @@ export const downloadView = () => {
     targetOfDownloads.innerHTML = `
       <div class="alert-not-address">
         <p>No downloads available yet.</p>
-        <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>
+        <p class="do-sth"><a href="./market.html">BROWSE PRODUCT</a></p>
       </div>
     `;
     isHandleResizeEnabled = false;

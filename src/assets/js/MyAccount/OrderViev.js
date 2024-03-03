@@ -51,7 +51,7 @@ export const orderViev = () => {
     targetOfOrders.innerHTML = `
       <div class="alert-not-ofer">
         <p>No order has been made yet.</p>
-        <p class="do-sth"><a href="./shop.html">BROWSE PRODUCT</a></p>   
+        <p class="do-sth"><a href="./market.html">BROWSE PRODUCT</a></p>   
       </div>
     `;
     isHandleResizeOrderEnabled = false;

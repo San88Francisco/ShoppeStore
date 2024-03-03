@@ -1,27 +1,26 @@
 import { fetchData } from '../API/fetch-products';
 import { LinkAddToCart } from '../Home/LinkAddToCart';
-// import { discount } from '../Shop/Discount';
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.location.pathname.includes('/product')) {
-    const itemsPerPage = 3;
+   if (window.location.pathname.includes('/product')) {
+      const itemsPerPage = 3;
 
-    const renderPage = (pageItems) => {
-      const shopLatestBlocks = document.querySelector('.product-latest-blocks');
-      shopLatestBlocks.innerHTML = '';
+      const renderPage = (pageItems) => {
+         const shopLatestBlocks = document.querySelector('.product-latest-blocks');
+         shopLatestBlocks.innerHTML = '';
 
-      pageItems.forEach(
-        ({
-          category,
-          categoryClass,
-          typeProduct,
-          typeClass,
-          imageUrl,
-          name,
-          price,
-          productVariant,
-        }) => {
-          shopLatestBlocks.innerHTML += `
+         pageItems.forEach(
+            ({
+               category,
+               categoryClass,
+               typeProduct,
+               typeClass,
+               imageUrl,
+               name,
+               price,
+               productVariant,
+            }) => {
+               shopLatestBlocks.innerHTML += `
        <div id="hide" class="shop-latest__block">
         <div class="shop-latest__img">
           <a href="./product.html"><img src="${imageUrl}" alt="" /></a>
@@ -43,25 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
           <a href="#">$ ${price},00</a>
         </h4>
       </div>`;
-        }
-      );
-      // discount();
-    };
+            }
+         );
+         // discount();
+      };
 
-    const renderProducts = async () => {
-      const item = JSON.parse(sessionStorage.getItem('allProduct'));
-      const contents = item ? item : await fetchData();
+      const renderProducts = async () => {
+         const item = JSON.parse(sessionStorage.getItem('allProduct'));
+         const contents = item ? item : await fetchData();
 
-      if (contents) {
+         if (contents) {
 
-        const shuffledContents = contents.sort(() => Math.random() - 0.5);
-        const pageItems = shuffledContents.slice(0, itemsPerPage);
+            const shuffledContents = contents.sort(() => Math.random() - 0.5);
+            const pageItems = shuffledContents.slice(0, itemsPerPage);
 
-        renderPage(pageItems);
-        LinkAddToCart(pageItems);
-      }
-    };
+            renderPage(pageItems);
+            LinkAddToCart(pageItems);
+         }
+      };
 
-    renderProducts();
-  }
+      renderProducts();
+   }
 });
