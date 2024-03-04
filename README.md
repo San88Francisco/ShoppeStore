@@ -8,7 +8,7 @@
 
 &nbsp;
 
-| УЧАСНИК                                                                                                            | СПЕЦІАЛЬНІСТЬ                                                       |
+| УЧАСНИК                                                                                                            | РОЛІ                                                                |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
 | <span style="font-size:20px">[**Vasyl Verbytskyi**](https://github.com/San88Francisco 'Перейти на Git Hub')</span> | <span style="font-size:20px">**Lead Software Developer**</span>     |
 | <span style="font-size:20px">[**Roman Vasylenko**](https://github.com/Akumuuu 'Перейти на Git Hub')</span>         | <span style="font-size:20px">**Lead Software Developer**</span>     |
