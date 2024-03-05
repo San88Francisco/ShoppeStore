@@ -3,12 +3,15 @@ export const addItemToProduct = () => {
   const btnDecrease = document.querySelector('.minus');
   const btnIncrease = document.querySelector('.plus');
   const numberOfShoppings = document.querySelector('.amount');
+  console.log(numberOfShoppings, '1');
 
   if (btnDecrease && btnIncrease && numberOfShoppings) {
     btnIncrease.addEventListener('click', function () {
       let numberOfShoppingsValue = +numberOfShoppings.textContent;
       numberOfShoppings.textContent = `${++numberOfShoppingsValue}`;
+      console.log(numberOfShoppings, '2');
       if (numberOfShoppingsValue === 100) {
+        console.log(numberOfShoppings, '3');
         return (numberOfShoppings.textContent = `${--numberOfShoppingsValue}`);
       }
     });
@@ -16,6 +19,7 @@ export const addItemToProduct = () => {
     btnDecrease.addEventListener('click', function () {
       let numberOfShoppingsValue = +numberOfShoppings.textContent;
       if (numberOfShoppingsValue === 1) return;
+      console.log(numberOfShoppings, '4');
       numberOfShoppings.textContent = `${--numberOfShoppingsValue}`;
     });
   }
