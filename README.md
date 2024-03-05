@@ -36,7 +36,7 @@
 
 ### [**Shoppe Store**](https://gleeful-faloodeh-752787.netlify.app/ 'Go to the project website') is a charitable project where only standard technologies for website development were used, namely - <u>**HTML**</u>, <u>**CSS**</u> and <u>**JAVASCRIPT**</u>.
 
-### Особливості
+### Features
 
 <ol style='font-size:18px; font-weight: 500'>
     <li><span style="font-size:18px"><b>Cooperation:</b></span>
