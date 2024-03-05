@@ -1,7 +1,7 @@
 import { saveCount } from './SaveCount';
 
 export const updateCartProduct = (cartAllProduct) => {
-  const cartBlockItem = document.querySelectorAll('.amount');
+  const cartBlockItem = document.querySelectorAll('.amountCart');
 
   // Шукаємо які значення були змінені в масиві з товарами
   cartAllProduct.forEach((item, index) => {

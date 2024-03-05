@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
           cartItemDelete.querySelector('.cart__item-title').textContent;
 
         productAmountToDelete =
-          cartItemDelete.querySelector('.amount').textContent;
+          cartItemDelete.querySelector('.amountCart').textContent;
 
         // Запускаємо функцію з відобразить повідомлення попередження про видалення товару
         popupWindowQuick();

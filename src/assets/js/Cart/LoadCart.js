@@ -38,7 +38,7 @@ export const loadCartItems = (cartAllProduct, cartBlockItem) => {
             <div class="change--amount">
               <button class="minus minus__cart">-</button>
              
-              <span class="amount">${item.count}</span>
+              <span class="amountCart">${item.count}</span>
               
               <div class="change--amount change--amount_tel">
                 <button class=" plus_tel">
