@@ -1,94 +1,97 @@
-# Командний проект **Shoppe Store** | Vanilla JS
+
+# Projekt zespołowy **Shoppe Store** | Vanilla JS
 
 &nbsp;
 
-# Посилання на проект [**ShoppeStore.com.ua**](https://shoppestore.netlify.app 'Перейти на сайт проекту')
+# Link do projektu [**ShoppeStore.com.ua**](https://shoppestore.netlify.app 'Przejdź do strony projektu')
 
 &nbsp;
 
-## Команда проекту
+## Zespół projektowy
 
 &nbsp;
 
 | УЧАСНИК                                                                                                            | РОЛІ                                                                |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| <span style="font-size:20px">[**Vasyl Verbytskyi**](https://github.com/San88Francisco 'Перейти на Git Hub')</span> | <span style="font-size:20px">**Lead Software Developer**</span>     |
-| <span style="font-size:20px">[**Roman Vasylenko**](https://github.com/Akumuuu 'Перейти на Git Hub')</span>         | <span style="font-size:20px">**Lead Software Developer**</span>     |
-| <span style="font-size:20px">[**Ivan Yakovchuk**](https://github.com/YakovchukIvan 'Перейти на Git Hub')</span>    | <span style="font-size:20px">**Frontend Software Developer**</span> |
-| <span style="font-size:20px">[**Danylo Glusov**](https://github.com/Xlussov 'Перейти на Git Hub')</span>           | <span style="font-size:20px">**Frontend Software Developer**</span> |
-| <span style="font-size:20px">[**Andrii Dmytruk**](https://github.com/admitruk237 'Перейти на Git Hub')</span>      | <span style="font-size:20px">**Frontend Software Developer**</span> |
-| <span style="font-size:20px">[**Andrij Pot**](https://github.com/AndrijPot 'Перейти на Git Hub')</span>            | <span style="font-size:20px">**Frontend Software Developer**</span> |
-| <span style="font-size:20px">[**Denys Levchenko**](https://github.com/gitdenlev 'Перейти на Git Hub')</span>       | <span style="font-size:20px">**Frontend Software Developer**</span> |
-| <span style="font-size:20px">[**Denys Tkachenko**](https://github.com/Tkachenko01001 'Перейти на Git Hub')</span>  | <span style="font-size:20px">**Frontend Software Developer**</span> |
-| <span style="font-size:20px">[**Volodymyr Kirilyuk**](https://github.com/ZD-Donatik 'Перейти на Git Hub')</span>   | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Vasyl Verbytskyi**](https://github.com/San88Francisco 'Przejdź do GitHub')</span> | <span style="font-size:20px">**Lead Software Developer**</span>     |
+| <span style="font-size:20px">[**Roman Vasylenko**](https://github.com/Akumuuu 'Przejdź do GitHub')</span>         | <span style="font-size:20px">**Lead Software Developer**</span>     |
+| <span style="font-size:20px">[**Ivan Yakovchuk**](https://github.com/YakovchukIvan 'Przejdź do GitHub')</span>    | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Danylo Glusov**](https://github.com/Xlussov 'Przejdź do GitHub')</span>           | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Andrii Dmytruk**](https://github.com/admitruk237 'Przejdź do GitHub')</span>      | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Andrij Pot**](https://github.com/AndrijPot 'Przejdź do GitHub')</span>            | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Denys Levchenko**](https://github.com/gitdenlev 'Przejdź do GitHub')</span>       | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Denys Tkachenko**](https://github.com/Tkachenko01001 'Przejdź do GitHub')</span>  | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Volodymyr Kirilyuk**](https://github.com/ZD-Donatik 'Przejdź do GitHub')</span>   | <span style="font-size:20px">**Frontend Software Developer**</span> |
 
 &nbsp;
 
-## Посилання на макет у Figma
+## Link do projektu w Figma
 
-[![Logo](./src/assets/img/Cover-figma.jpg)](<https://www.figma.com/file/yYKzT2pnaAR7UVJQKVhGJz/Shoppe-(Community)-(Copy)?type=design&node-id=1908-2067&mode=design&t=uM9WecxIjNGtVyRj-0> 'Перейти на проект')
-
-&nbsp;
-
-## Про проект
+[![Logo](./src/assets/img/Cover-figma.jpg)](<https://www.figma.com/file/yYKzT2pnaAR7UVJQKVhGJz/Shoppe-(Community)-(Copy)?type=design&node-id=1908-2067&mode=design&t=uM9WecxIjNGtVyRj-0> 'Przejdź do projektu')
 
 &nbsp;
 
-### [**Shoppe Store**](https://gleeful-faloodeh-752787.netlify.app/ 'Перейти на сайт проекту') є благодійним проектом, де застосовувалися виключно стандарті технології по розробці сайтів,а саме - <u>**HTML**</u>, <u>**CSS**</u> та <u>**JAVASCRIPT**</u>.
+## "O projekcie
 
-### Особливості
+&nbsp;
+
+### [**Shoppe Store**](https://gleeful-faloodeh-752787.netlify.app/ 'Przejdź na stronę projektu') To był projekt charytatywny, gdzie wyłącznie stosowano standardowe technologie do tworzenia stron internetowych - <u>**HTML**</u>, <u>**CSS**</u> та <u>**JAVASCRIPT**</u>.
+
+### Cechy szczególne
 
 <ol style='font-size:18px; font-weight: 500'>
-    <li><span style="font-size:18px"><b>Співпраця:</b></span>
+    <li><span style="font-size:18px"><b>Współpraca:</b></span>
         <ul>
-            <li style="font-size:16px">Щоденні мітинги для обговорення завдань.</li>
-            <li style="font-size:16px">Використання Trello для організації завдань.</li>
+            <li style="font-size:16px">Codzienne spotkania w celu omówienia zadań.</li>
+            <li style="font-size:16px">Użycie Trello do organizacji zadań.</li>
         </ul>
     </li>
-    <li><span style="font-size:18px">Розподіл завдань:</span>
+    <li><span style="font-size:18px">Podział zadań:</span>
         <ul>
-            <li style="font-size:16px">Завдання розподілялися за складністю.</li>
-            <li style="font-size:16px">Більше людей залучалися до складніших задач.</li>
+            <li style="font-size:16px">Zadania były przydzielane według ich trudności.</li>
+            <li style="font-size:16px">Więcej osób było zaangażowanych w bardziej skomplikowane zadania.</li>
         </ul>
     </li>
-    <li><span style="font-size:18px">Чистий код:</span>
+    <li><span style="font-size:18px">Czysty kod:</span>
         <ul>
-            <li style="font-size:16px; text-decoration: underline">Весь проект написаний без використання бібліотек та фреймворків (за винятком SASS).</li>
+            <li style="font-size:16px; text-decoration: underline">Cały projekt był pisany bez użycia bibliotek i frameworków (z wyjątkiem SASS).</li>
         </ul>
     </li>
-    <li><span style="font-size:18px">Огляд коду:</span>
+    <li><span style="font-size:18px">Przegląd kodu:</span>
         <ul>
-            <li style="font-size:16px">Кожна нова задача давалася на окремій сторінці.</li>
-            <li style="font-size:16px">Учасники команди мали можливість працювати з чужим кодом та вдосконалювати свої навички рецензування.</li>
+            <li style="font-size:16px">Każde nowe zadanie było przypisywane na osobnej stronie.</li>
+            <li style="font-size:16px">Członkowie zespołu mieli możliwość pracy z cudzym kodem i doskonalenia swoich umiejętności recenzowania.</li>
         </ul>
     </li>
     <li><span style="font-size:18px">Github:</span>
         <ul>
-            <li style="font-size:16px">Розробка та контроль проекту здійснювалися в Github.</li>
-            <li style="font-size:16px">Для кожного завдання використовувалась окрема гілка.</li>
-            <li style="font-size:16px">Тімліди регулярно перевіряли код та об'єднували гілки.</li>
-            <li style="font-size:16px">Тімліди навчили учасників команди оновлювати свої гілки з main перед внесенням змін.</li>
+            <li style="font-size:16px">Rozwój i kontrola projektu odbywały się na platformie Github.</li>
+            <li style="font-size:16px">Dla każdego zadania używano osobnego brancha.</li>
+            <li style="font-size:16px">Liderzy regularnie sprawdzali kod i łączyli branch'e.</li>
+            <li style="font-size:16px">Liderzy nauczyli uczestników zespołu aktualizować swoje branche z main przed wprowadzaniem zmian.</li>
         </ul>
     </li>
 </ol>
 
-## Цінність проекту:
 
-### Головною метою було вдосконалення навичок в сфері розробки багатофункціональних сайтів на чистому JavaScript.
+## Wartość projektu:
 
-### Цей проект є чудовим прикладом командної роботи, навичок кодування та здатності до навчання. Він став цінним доповненням для кожного хто над ним працював.
+### Głównym celem było doskonalenie umiejętności w zakresie tworzenia wielofunkcyjnych stron internetowych w czystym JavaScript.
 
-### <u>**Весь функціонал сайту виконано без використанні будь-яких бібліотек чи фреймворків.**</u> Єдине що було підключено, так це препроцесор SASS.
+### Ten projekt jest doskonałym przykładem pracy zespołowej, umiejętności kodowania i zdolności do nauki. Stał się cennym doświadczeniem dla każdego, kto nad nim pracował.
 
-### Використовувалася власна збірка, яка обєднує Webpack та Gulp, для кращого розуміння різних видів збірок.
+### <u>**Cała funkcjonalność strony została zaimplementowana bez użycia jakichkolwiek bibliotek ani frameworków.**</u> Jedynym wyjątkiem było wykorzystanie preprocesora SASS.
 
-#### Для початку роботи потрібно встановити пакети модулів :
+### Zastosowano własną konfigurację, która łączy Webpack i Gulp, aby lepiej zrozumieć różne rodzaje konfiguracji.
+
+#### Aby rozpocząć pracę, należy zainstalować pakiety modułów:
+
 
 ```
 npm install
 ```
 
-#### Далі запускаємо проект :
+#### Następnie uruchamiamy projekt :
 
 ```
 npm run dev
@@ -115,4 +118,7 @@ npm run dev
 
 &nbsp;
 
-# Дякуємо за ваш час!
+# Dziękuję za Twój czas!
+
+
+
