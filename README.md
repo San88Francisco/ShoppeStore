@@ -1,4 +1,6 @@
 # Team project **Shoppe Store** | Vanilla JS
+Read in another language [**Ukrainian**](https://github.com/San88Francisco/ShoppeStore/blob/main/README.ua.md 'Go to Ukrainin translate')
+Read in another language [**Polish**](https://github.com/San88Francisco/ShoppeStore/blob/main/README.pl.md 'Go to Polish translate')
 
 &nbsp;
 
