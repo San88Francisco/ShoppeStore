@@ -17,7 +17,7 @@
 | <span style="font-size:20px">[**Ivan Yakovchuk**](https://github.com/YakovchukIvan 'Перейти на Git Hub')</span>    | <span style="font-size:20px">**Frontend Software Developer**</span> |
 | <span style="font-size:20px">[**Danylo Glusov**](https://github.com/Xlussov 'Перейти на Git Hub')</span>           | <span style="font-size:20px">**Frontend Software Developer**</span> |
 | <span style="font-size:20px">[**Andrii Dmytruk**](https://github.com/admitruk237 'Перейти на Git Hub')</span>      | <span style="font-size:20px">**Frontend Software Developer**</span> |
-| <span style="font-size:20px">[**Andrij Pot**](https://github.com/AndrijPot 'Перейти на Git Hub')</span>            | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Andrij Potapov**](https://github.com/AndrijPot 'Перейти на Git Hub')</span>            | <span style="font-size:20px">**Frontend Software Developer**</span> |
 | <span style="font-size:20px">[**Denys Levchenko**](https://github.com/gitdenlev 'Перейти на Git Hub')</span>       | <span style="font-size:20px">**Frontend Software Developer**</span> |
 | <span style="font-size:20px">[**Denys Tkachenko**](https://github.com/Tkachenko01001 'Перейти на Git Hub')</span>  | <span style="font-size:20px">**Frontend Software Developer**</span> |
 | <span style="font-size:20px">[**Volodymyr Kirilyuk**](https://github.com/ZD-Donatik 'Перейти на Git Hub')</span>   | <span style="font-size:20px">**Frontend Software Developer**</span> |
