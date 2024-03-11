@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (preloader) {
     setTimeout(function () {
       preloader.classList.add("loaded");
+      preloader.style.display = 'none'
       document.body.classList.add("loaded");
     }, 1250);
   }
