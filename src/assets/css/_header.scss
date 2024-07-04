@@ -98,10 +98,8 @@ header {
       &.active {
         transform: translate(0);
         animation: menu-bg 0.9s ease-in-out;
-        background-color: var(
-          --main-background
-        ); // Set the target background color
-        display: flex;
+        background-color: var(--main-background);
+        display: flex; // 4
       }
 
       @keyframes menu-bg {
