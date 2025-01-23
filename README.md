@@ -17,7 +17,7 @@ Read in another language [**Polish**](https://github.com/San88Francisco/ShoppeSt
 | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | <span style="font-size:20px">[**Vasyl Verbytskyi**](https://github.com/San88Francisco 'Go to Git Hub')</span> | <span style="font-size:20px">**Lead Software Developer**</span>     |
 | <span style="font-size:20px">[**Roman Vasylenko**](https://github.com/Akumuuu 'Go to Git Hub')</span>         | <span style="font-size:20px">**Lead Software Developer**</span>     |
-| <span style="font-size:20px">[**Ivan Yakovchuk**](https://github.com/YakovchukIvan 'Go to Git Hub')</span>    | <span style="font-size:20px">**Frontend Software Developer**</span> |
+| <span style="font-size:20px">[**Ivan Yakovchuk**](https://github.com/YakovchukIvan 'Go to Git Hub')</span>    | <span style="font-size:20px">**Lead Software Developer**</span>     |
 | <span style="font-size:20px">[**Danylo Hlusov**](https://github.com/Xlussov 'Go to Git Hub')</span>           | <span style="font-size:20px">**Frontend Software Developer**</span> |
 | <span style="font-size:20px">[**Andrii Dmytruk**](https://github.com/admitruk237 'Go to Git Hub')</span>      | <span style="font-size:20px">**Frontend Software Developer**</span> |
 | <span style="font-size:20px">[**Andrij Potapov**](https://github.com/AndrijPot 'Go to Git Hub')</span>        | <span style="font-size:20px">**Frontend Software Developer**</span> |
